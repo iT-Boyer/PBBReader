@@ -32,6 +32,7 @@ class AppDelegate: NSObject, NSApplicationDelegate{
 //        appHelper.loadVideoWithLocalFiles(filenames[0])
         
     }
+    
 
 }
 

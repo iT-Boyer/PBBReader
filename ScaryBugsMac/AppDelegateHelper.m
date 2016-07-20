@@ -15,7 +15,8 @@
 #import "userDao.h"
 #import <Cocoa/Cocoa.h>
 #import "VerificationCodeDao.h"
-#import "ScaryBugsMac-Swift.h"
+//#import "ScaryBugsMac-Swift.h"
+#import "PBBReader-Swift.h"
 #import "PlayerLoader.h"
 @implementation AppDelegateHelper
 {

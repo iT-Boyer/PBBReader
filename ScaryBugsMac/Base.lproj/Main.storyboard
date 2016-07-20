@@ -167,7 +167,7 @@ CA
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="ScaryBugsMac"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="PBBReader" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-266" y="128"/>
@@ -193,7 +193,7 @@ CA
         <!--PBB Online 首页-->
         <scene sceneID="2Na-B8-7mL">
             <objects>
-                <viewController title="PBB Online 首页" storyboardIdentifier="ReceiveViewController" id="3OW-Ec-nEc" customClass="ReceiveViewController" customModule="ScaryBugsMac" sceneMemberID="viewController">
+                <viewController title="PBB Online 首页" storyboardIdentifier="ReceiveViewController" id="3OW-Ec-nEc" customClass="ReceiveViewController" customModule="PBBReader" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="zBH-0g-xG1">
                         <rect key="frame" x="0.0" y="0.0" width="836" height="535"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -709,7 +709,7 @@ CA
         <!--Master View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="MasterViewController" customModule="ScaryBugsMac" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="MasterViewController" customModule="PBBReader" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -910,7 +910,7 @@ CA
         <!--申请页面-->
         <scene sceneID="MgF-60-Lcx">
             <objects>
-                <viewController title="申请页面" storyboardIdentifier="ActivationController" id="oTm-0h-HP8" customClass="ActivationController" customModule="ScaryBugsMac" sceneMemberID="viewController">
+                <viewController title="申请页面" storyboardIdentifier="ActivationController" id="oTm-0h-HP8" customClass="ActivationController" customModule="PBBReader" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="bw0-Hz-rxj">
                         <rect key="frame" x="0.0" y="0.0" width="711" height="493"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1148,7 +1148,7 @@ CA
         <!--申请信息-->
         <scene sceneID="3fk-VP-cH5">
             <objects>
-                <viewController title="申请信息" storyboardIdentifier="ApplyInfoViewController" id="w1g-fK-lFK" customClass="ApplyInfoViewController" customModule="ScaryBugsMac" sceneMemberID="viewController">
+                <viewController title="申请信息" storyboardIdentifier="ApplyInfoViewController" id="w1g-fK-lFK" customClass="ApplyInfoViewController" customModule="PBBReader" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="usn-nm-GEk">
                         <rect key="frame" x="0.0" y="0.0" width="603" height="490"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1262,7 +1262,7 @@ CA
         <!--申请结果-->
         <scene sceneID="uSJ-zV-rZi">
             <objects>
-                <viewController title="申请结果" storyboardIdentifier="ActivationSuccessController" id="Vg1-Cs-IcE" customClass="ActivationSuccessController" customModule="ScaryBugsMac" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="申请结果" storyboardIdentifier="ActivationSuccessController" id="Vg1-Cs-IcE" customClass="ActivationSuccessController" customModule="PBBReader" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="ETz-w0-yOC">
                         <rect key="frame" x="0.0" y="0.0" width="755" height="520"/>
                         <autoresizingMask key="autoresizingMask"/>
