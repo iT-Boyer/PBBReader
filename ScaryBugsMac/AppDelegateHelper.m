@@ -18,6 +18,8 @@
 //#import "ScaryBugsMac-Swift.h"
 #import "PBBReader-Swift.h"
 #import "PlayerLoader.h"
+
+#import "MBProgressHUD.h"
 @implementation AppDelegateHelper
 {
     PycFile *_fileManager;
@@ -40,6 +42,8 @@
     NSString *applyflag;
     
     NSAlert *alertShow;
+    MBProgressHUD *hud;
+    NSWindow *keyWindow;
 }
 singleton_implementation(AppDelegateHelper);
 
@@ -263,9 +267,9 @@ singleton_implementation(AppDelegateHelper);
         [[ReceiveFileDao sharedReceiveFileDao] updateReceiveFileFirstOpenTime:seePycFile.firstSeeTime FileId:fileID];//seePycFile.fileID];
         
     }
-    
+    //通知更新主页
     NSDictionary  *dic = [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:fileID] forKey:@"pycFileID"];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"" object:self userInfo:dic];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"OpenINFile" object:self userInfo:dic];
     /*!
      *  @author shuguang, 15-06-10 15:06:27
      *
@@ -515,6 +519,46 @@ singleton_implementation(AppDelegateHelper);
     }
 }
 
+- (void)setText:(NSString *)text{
+    dispatch_async(dispatch_get_main_queue(), ^(void){
+        [self show];
+        hud.labelText = NSLocalizedString(text, nil);
+    });
+}
+
+- (void)show{
+//    isLoading = YES;
+    keyWindow = [[NSApplication sharedApplication] keyWindow];
+    if(!hud){
+        hud = [MBProgressHUD showHUDAddedTo:keyWindow.contentView animated:YES];
+        hud.removeFromSuperViewOnHide = YES;
+        hud.mode = MBProgressHUDModeIndeterminate;
+        [keyWindow setLevel:NSPopUpMenuWindowLevel];
+        [keyWindow makeKeyAndOrderFront:self];
+        [[keyWindow contentView] setHidden:NO];
+        [NSApp activateIgnoringOtherApps:YES];
+    }
+}
+
+- (void)hide:(NSTimeInterval)i{
+    dispatch_async(dispatch_get_main_queue(), ^(void){
+        [hud hide:YES afterDelay:i];
+        [NSTimer scheduledTimerWithTimeInterval:i+0.5
+                                         target:self
+                                       selector:@selector(hideWindow)
+                                       userInfo:nil
+                                        repeats:NO];
+    });
+}
+
+- (void)hideWindow{
+    [[keyWindow contentView] setHidden:YES];
+    [keyWindow setLevel:NSNormalWindowLevel-1];
+    [keyWindow orderBack:self];
+    hud = NULL;
+//    isLoading = NO;
+}
+
 #pragma mark  组装水印信息
 -(NSString *)waterMark:(PycFile *)fileObject
 {
@@ -761,6 +805,7 @@ singleton_implementation(AppDelegateHelper);
 #pragma mark - 申请手动激活
 - (NSString *)applyFileByFidAndOrderId:(NSInteger )fileId orderId:(NSInteger )thOrderId applyId:(NSInteger)theApplyId  qq:(NSString *)theQQ email:(NSString *)theEmail phone:(NSString *)thePhone field1:(NSString *)theField1 field2:(NSString *)theField2 seeLogName:(NSString *)theSeeLogName fileName:(NSString*)theFileName
 {
+    [self setText:@"申请激活..."];
     applyNum = 0;
     //重新申请
     if (_needReapply == 0) {
@@ -795,7 +840,7 @@ singleton_implementation(AppDelegateHelper);
 -(void)PycFile:(PycFile *)fileObject didFinishApply:(MAKEPYCRECEIVE *)receiveData
 {
     if (receiveData == nil || receiveData->returnValue == 0) {
-//        [_indicator stopAnimating];
+        [self hide:1.0];
         if([applyflag isEqualToString:@"1"]){
             [self setAlertView:@"您的网络不给力哦，请检查本地网络设置后重试！"];
         }else if ([applyflag isEqualToString:@"2"]){
@@ -807,14 +852,14 @@ singleton_implementation(AppDelegateHelper);
         
         if(receiveData->returnValue == -1)
         {
-//            [_indicator stopAnimating];
+            [self hide:1.0];
             [self setAlertView:@"服务器繁忙，请稍候再试。错误代码：1003！"];
             return;
         }
         
         if(receiveData->returnValue & ERR_NEED_UPDATE)
         {
-//            [_indicator stopAnimating];
+            [self hide:1.0];
 //            [[[VersionOldAlertView alloc] initWithIsInstalled:NO] show];
             return;
         }
@@ -830,13 +875,14 @@ singleton_implementation(AppDelegateHelper);
                 [self performSelector:@selector(seeFile:) withObject:fileObject afterDelay:2.0f];
             }else{
                 applyNum = 0;
-//                [_indicator stopAnimating];
+                [self hide:1.0];
                 //申请成功界面
                 [self letusGOActivationSucVc:fileObject];
             }
         }
         else
         {
+            [self hide:1.0];
             [self setAlertView:@"申请失败！"];
             return;
         }
@@ -849,7 +895,7 @@ singleton_implementation(AppDelegateHelper);
 -(void)PycFile:(PycFile *)fileObject didFinishReapply:(MAKEPYCRECEIVE *)receiveData
 {
     if (receiveData == nil || receiveData->returnValue == 0) {
-//        [_indicator stopAnimating];
+        [self hide:1.0];
         if([applyflag isEqualToString:@"1"]){
             [self setAlertView:@"您的网络不给力哦，请检查本地网络设置后重试！"];
         }else if ([applyflag isEqualToString:@"2"]){
@@ -861,14 +907,14 @@ singleton_implementation(AppDelegateHelper);
         
         if(receiveData->returnValue == -1)
         {
-//            [_indicator stopAnimating];
+            [self hide:1.0];
             [self setAlertView:@"数据传输错误，请重试！"];
             return;
         }
         
         if(receiveData->returnValue & ERR_NEED_UPDATE)
         {
-//            [_indicator stopAnimating];
+            [self hide:1.0];
 //            [[[VersionOldAlertView alloc] initWithIsInstalled:NO] show];
             return;
         }
@@ -883,7 +929,7 @@ singleton_implementation(AppDelegateHelper);
                 [self performSelector:@selector(seeFile:) withObject:fileObject afterDelay:2.0f];
             }else{
                 applyNum = 0;
-//                [_indicator stopAnimating];
+                [self hide:1.0];
                 [self letusGOActivationSucVc:fileObject];
            }
         }

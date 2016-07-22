@@ -291,10 +291,10 @@ class ActivationController: NSViewController {
             var sel1 = self1Field.stringValue
             var sel2 = self2Field.stringValue
             
-            if (field1needprotect) {
+            if (!self11Field.hidden) {
                 sel1 = self11Field.stringValue
             }
-            if (field2needprotect) {
+            if (!self22Field.hidden) {
                 sel2 = self22Field.stringValue
             }
             

@@ -10,6 +10,7 @@
 #import "ReceiveFileDao.h"
 #import "ToolString.h"
 #import <Cocoa/Cocoa.h>
+#import "PlayerView.h"
 #define THERMOMETER_FRAME (20, 5, 25, 5);
 @implementation AdvertisingView
 /*
@@ -67,15 +68,15 @@
     _adverTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerwithTimesNums1:) userInfo:nil repeats:YES];
     [[NSRunLoop currentRunLoop] addTimer:_adverTimer forMode:NSRunLoopCommonModes];
     NSWindow *superView = [[NSApplication sharedApplication] keyWindow];//.contentView;
-    if(!superView){
+    if(!superView && ![superView isKindOfClass:[PlayerView class]]){
         _finish = YES;
         return;
     }
-    superView = [[NSApplication sharedApplication] keyWindow];
-//    [superView resignKeyWindow];
-//    [superView deminiaturize:self];
-    [superView makeKeyAndOrderFront:NSApp];
-    [superView makeMainWindow];
+//    superView = [[NSApplication sharedApplication] keyWindow];
+////    [superView resignKeyWindow];
+////    [superView deminiaturize:self];
+//    [superView makeKeyAndOrderFront:NSApp];
+//    [superView makeMainWindow];
     NSView *lastView = superView.contentView;
     [lastView addSubview:self];
     [self setEdge:lastView view:self attr:NSLayoutAttributeTop constant:0];

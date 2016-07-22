@@ -51,7 +51,7 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
     @IBOutlet weak var rootView: NSView!
     //必须声明为全局属性，否则在声明PycFile调用delegate时，delegate = nil
     //还出现第一次启动执行两次openFiles方法
-    let appHelper = AppDelegateHelper()
+    let appHelper = AppDelegateHelper.sharedAppDelegateHelper()
     
     @IBOutlet var cntxMnuTableView: NSMenu!
 
@@ -64,7 +64,7 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
         receiveArray = ReceiveFileDao.sharedReceiveFileDao().selectReceiveFileAll(loginName)
         initThisView(false)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ReceiveViewController.openInPBBFile(_:)), name: "", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ReceiveViewController.openInPBBFile(_:)), name: "OpenINFile", object: nil)
         
         ReceiveTableView.setDraggingSourceOperationMask(.Every, forLocal: false)
     }
@@ -625,5 +625,23 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
     }
     
     
+    @IBAction func ibaBrowseFinder(sender: AnyObject) {
+        let panel = NSOpenPanel()
+        panel.message = ""
+        panel.prompt = "OK"
+        panel.canChooseDirectories = true
+        panel.canChooseFiles = true
+        var path_all = ""
+        var result = panel.runModal()
+        if result == NSFileHandlingPanelOKButton {
+            //
+            path_all = (panel.URL?.path!)!
+            print("文件路径：\(path_all)")
+            appHelper.phoneNo = ""
+            appHelper.messageID = ""
+            appHelper.openURLOfPycFileByLaunchedApp({path_all}())
+        }
+
+    }
     
 }

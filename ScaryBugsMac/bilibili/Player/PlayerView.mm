@@ -155,22 +155,19 @@ inline void check_error(int status)
     });
 }
 
+
 - (void)loadVideo:(VideoAddress *)video{
     NSLog(@"[PlayerView] Starting load video");
-
-    //添加业务代码
-//    [[AppDelegateHelper sharedAppDelegateHelper] openURLOfPycFileByLaunchedApp:[video nextPlayURL]];
-    
     dispatch_async(self.player.queue, ^{
-getInfo:
-
-        NSString *playURL = [video nextPlayURL];
+    getInfo:
+        
+        NSString *playURL = [video firstFragmentURL];
         if(!playURL){
             return [self setTip:@"所有视频源连接失败，可能视频已失效"];
         }
-
+        
         [self setTip:@"正在获取视频信息"];
-
+        
         NSLog(@"[PlayerView] Reading video info");
         
         NSString *firstVideo = [video firstFragmentURL];
@@ -196,8 +193,11 @@ getInfo:
         }
         
         [self playVideo: playURL];
-    });
+   
+     });
 }
+
+
 
 - (void)setMPVOption:(const char *)name :(const char*)data{
     int status = mpv_set_option_string(self.player.mpv, name, data);
@@ -211,11 +211,22 @@ getInfo:
     [window setTitle:title];
 }
 
-- (void)playVideo:(NSString *)URL{
+
+
+ -(void)playVideo:(NSString *)URL{
+     //添加业务代码
+     [[AppDelegateHelper sharedAppDelegateHelper] openURLOfPycFileByLaunchedApp:URL];
+     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(setKeyInfo:) name:@"set_key_info" object:nil];
+    
+}
+
+- (void)setKeyInfo:(NSNotification *) notification{
     if(self.player.pendingDealloc){
 //        return CLS_LOG(@"[PlayerView] Player is pending dealloc, stop loading.");
     }
 
+    NSString *URL = [notification.userInfo valueForKey:@"set_key_info"];
+    
     // Start Playing Video
     self.player.mpv  = mpv_create();
     
