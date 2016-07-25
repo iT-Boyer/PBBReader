@@ -93,7 +93,7 @@
     if(isLoading){
         return;
     }
-    [self setText:@"正在打开本地文件"];
+//    [self setText:@"正在打开本地文件"];
     dispatch_async(vl_queue, ^(void){
         @try {
             NSDictionary *params = @{
@@ -123,7 +123,7 @@
         NSDictionary *_attrs = attrs;
         BOOL haveSub = [subHelper canHandle:_attrs];
         if(haveSub){
-            [self setText:@"正在下载弹幕/字幕"];
+//            [self setText:@"正在下载弹幕/字幕"];
             _attrs = [subHelper getSubtitle:attrs];
         }
         dispatch_async(dispatch_get_main_queue(), ^(void){
@@ -133,7 +133,7 @@
 }
 
 - (void)_loadVideo:(VideoAddress *)video withAttrs:(NSDictionary *)attrs{
-    [self setText:@"正在创建播放器"];
+//    [self setText:@"正在创建播放器"];
     if(attrs[@"live"] && lastLivePlayerId){
         Player *p = [[PlayerManager sharedInstance] getPlayer:lastLivePlayerId];
         if(p){
@@ -158,7 +158,7 @@
     if(attrs[@"live"]){
         lastLivePlayerId = playerId;
     }
-    [self hide:1.0];
+//    [self hide:1.0];
 }
 
 

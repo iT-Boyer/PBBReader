@@ -49,22 +49,23 @@ singleton_implementation(AppDelegateHelper);
 
 -(void)loadVideoWithLocalFiles:(NSString *)openFilePath
 {
+    if(![openFilePath hasSuffix:@"pbb"]){
+        LookMedia *look = [[LookMedia alloc] init];
+        [look lookMedia:openFilePath];
+        return;
+    }
     [[PlayerLoader sharedInstance] loadVideoWithLocalFiles:@[openFilePath]];
 }
 
 -(BOOL)openURLOfPycFileByLaunchedApp:(NSString *)openURL
 {
-    if(![openURL hasSuffix:@"pbb"]){
-        LookMedia *look = [[LookMedia alloc] init];
-        [look lookMedia:openURL];
-        return YES;
-    }
+   
     _fileManager = [[PycFile alloc] init];
     _fileManager.delegate = self;
     filePath = openURL;
     fileID = [_fileManager getAttributePycFileId:filePath];
     if (fileID==0) {
-        NSLog(@"读取文件失败。可能错误原因：文件下载不完整，请重新下载！");
+       [self setAlertView:@"读取文件失败。可能错误原因：文件下载不完整，请重新下载！"];
         return YES;
     }
 
@@ -85,18 +86,24 @@ singleton_implementation(AppDelegateHelper);
     }
 
     //custormActivityView = (AdvertisingView *)[[NSWindowController alloc] initWithWindowNibName:@"AdvertisingView"];
-    NSArray *array;
-    NSNib *nib = [[NSNib alloc] initWithNibNamed:@"AdvertisingViewOSX" bundle:nil];
-    [nib instantiateWithOwner:self topLevelObjects:&array];
-    for (int i = 0; i < array.count; i++) {
-        //
-        id obj = array[i];
-        if ([obj isKindOfClass:[AdvertisingView class]]) {
-            custormActivityView = (AdvertisingView *)array[i];
-            [custormActivityView startLoading:fileID isOutLine:OutLine];
+    if(!custormActivityView){
+        NSArray *array;
+        NSNib *nib = [[NSNib alloc] initWithNibNamed:@"AdvertisingViewOSX" bundle:nil];
+        [nib instantiateWithOwner:self topLevelObjects:&array];
+        for (int i = 0; i < array.count; i++) {
+            //
+            id obj = array[i];
+            if ([obj isKindOfClass:[AdvertisingView class]]) {
+                custormActivityView = (AdvertisingView *)array[i];
+                [custormActivityView startLoading:fileID isOutLine:OutLine];
+            }
         }
+        
+    }else{
+        [custormActivityView startLoading:fileID isOutLine:OutLine];
     }
     
+//    [self setText:@""];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         BOOL isOffLine = FALSE;
         _fileManager.receiveFile = outFile;
@@ -149,6 +156,7 @@ singleton_implementation(AppDelegateHelper);
 
 - (void)didFinishSeePycFileForUser
 {
+    [self hide:1.0];
     if(returnValue == -1)
     {
         [custormActivityView removeFromSuperview];
@@ -456,7 +464,6 @@ singleton_implementation(AppDelegateHelper);
         {
             if (returnValue & ERR_AUTO_APPLIED) {
                 [self performSelector:@selector(seeFile:) withObject:seePycFile afterDelay:2.0f];
-                
             }else{
                 applyNum=0;
                 [custormActivityView removeFromSuperview];
@@ -499,6 +506,7 @@ singleton_implementation(AppDelegateHelper);
             [custormActivityView removeFromSuperview];
             //目前用不到
         }
+        
     }
 }
 
@@ -715,7 +723,7 @@ singleton_implementation(AppDelegateHelper);
 -(void)seeFile:(PycFile *)fileObject
 {
     BOOL reslut1 = NO;
-    if (!seePycFile.needShowDiff) {
+    if (!fileObject.needShowDiff) {
         applyNum++;
         if (applyNum <= 1) {
             
@@ -746,6 +754,7 @@ singleton_implementation(AppDelegateHelper);
                         });
                     }
                 }
+                
             });
             reslut1 = YES;
         }
@@ -753,7 +762,6 @@ singleton_implementation(AppDelegateHelper);
     
     if (!reslut1) {
         applyNum=0;
-        NSString *qq = seePycFile.QQ;
         [custormActivityView removeFromSuperview];
         //申请成功界面
         [self letusGOActivationSucVc:seePycFile];
@@ -805,7 +813,7 @@ singleton_implementation(AppDelegateHelper);
 #pragma mark - 申请手动激活
 - (NSString *)applyFileByFidAndOrderId:(NSInteger )fileId orderId:(NSInteger )thOrderId applyId:(NSInteger)theApplyId  qq:(NSString *)theQQ email:(NSString *)theEmail phone:(NSString *)thePhone field1:(NSString *)theField1 field2:(NSString *)theField2 seeLogName:(NSString *)theSeeLogName fileName:(NSString*)theFileName
 {
-    [self setText:@"申请激活..."];
+    [self setText:@"申请激活"];
     applyNum = 0;
     //重新申请
     if (_needReapply == 0) {
@@ -870,8 +878,9 @@ singleton_implementation(AppDelegateHelper);
          */
         if(receiveData->returnValue & ERR_OK_OR_CANOPEN || receiveData->returnValue & ERR_APPLIED)
         {
-            
             if (receiveData->returnValue & ERR_AUTO_APPLIED) {
+                //
+                NSLog(@"延迟2s,自动激活.....");
                 [self performSelector:@selector(seeFile:) withObject:fileObject afterDelay:2.0f];
             }else{
                 applyNum = 0;

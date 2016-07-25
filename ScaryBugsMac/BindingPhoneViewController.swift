@@ -77,7 +77,7 @@ class BindingPhoneViewController: NSViewController {
                 pycFileHelper.phoneNo = messageTF.stringValue
                 pycFileHelper.messageID = messageId
                 pycFileHelper.openedNum = 0
-                pycFileHelper.openURLOfPycFileByLaunchedApp(filePath)// 查看文件
+                pycFileHelper.loadVideoWithLocalFiles(filePath)// 查看文件
             }else{
                 //完善个人信息，绑定手机号
                 PycFile().bindPhoneByVerificationCode(messageTF.stringValue, logname: userDao.shareduserDao().getLogName(), messageId: messageId)

@@ -1477,9 +1477,9 @@ singleton_implementation(ReceiveFileManager)
     }
     [_db close];
 
-    if (fileurl) {
-        fileurl = [[SandboxFile GetHomeDirectoryPath] stringByAppendingString:fileurl];
-    }
+//    if (fileurl) {
+//        fileurl = [[SandboxFile GetHomeDirectoryPath] stringByAppendingString:fileurl];
+//    }
     
     return fileurl;
 }

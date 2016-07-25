@@ -26,6 +26,7 @@ class AppDelegate: NSObject, NSApplicationDelegate{
     
     func application(sender: NSApplication, openFiles filenames: [String]) {
         //
+        NSApplication.sharedApplication().unhide(self)
         appHelper.phoneNo = ""
         appHelper.messageID = ""
 //        appHelper.openURLOfPycFileByLaunchedApp(filenames[0])

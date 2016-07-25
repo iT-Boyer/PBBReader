@@ -73,7 +73,7 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
     @IBAction func readBtn(sender: AnyObject) {
         appHelper.phoneNo = ""
         appHelper.messageID = ""
-        appHelper.openURLOfPycFileByLaunchedApp({receiveFile.fileurl}())
+        appHelper.loadVideoWithLocalFiles({receiveFile.fileurl}())
     }
     //MARK: Delegate
     func tableViewSelectionDidChange(notification: NSNotification) {
@@ -639,7 +639,7 @@ class ReceiveViewController: NSViewController,NSTableViewDelegate,NSTableViewDat
             print("文件路径：\(path_all)")
             appHelper.phoneNo = ""
             appHelper.messageID = ""
-            appHelper.openURLOfPycFileByLaunchedApp({path_all}())
+            appHelper.loadVideoWithLocalFiles({path_all}())
         }
 
     }

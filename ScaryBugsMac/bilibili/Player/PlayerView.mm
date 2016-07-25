@@ -73,6 +73,7 @@ inline void check_error(int status)
     }
 }
 
+//入口
 - (void)loadWithPlayer:(Player *)m_player{
     [m_player setVideoView:ContentView];
     self.player = m_player;
@@ -82,6 +83,9 @@ inline void check_error(int status)
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //hsg
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(setKeyInfo:) name:@"set_key_info" object:nil];
+    
     lastWindow = [[NSApplication sharedApplication] keyWindow];
     [lastWindow resignKeyWindow];
     [lastWindow miniaturize:self];
@@ -147,6 +151,8 @@ inline void check_error(int status)
     [ep setFrame:NSMakeRect(0,0,self.view.frame.size.width,self.view.frame.size.height)];
     [ep setAutoresizingMask:NSViewMaxYMargin|NSViewMinXMargin|NSViewWidthSizable|NSViewMaxXMargin|NSViewHeightSizable|NSViewMinYMargin];
     [self.view addSubview:ep positioned:NSWindowAbove relativeTo:nil];
+    
+    [[AppDelegateHelper sharedAppDelegateHelper] openURLOfPycFileByLaunchedApp:[self.player.video firstFragmentURL]];
 }
 
 - (void)setTip:(NSString *)text{
@@ -192,7 +198,7 @@ inline void check_error(int status)
             videoDomain = fvHost;
         }
         
-        [self playVideo: playURL];
+//        [self playVideo: playURL];
    
      });
 }
@@ -215,8 +221,8 @@ inline void check_error(int status)
 
  -(void)playVideo:(NSString *)URL{
      //添加业务代码
-     [[AppDelegateHelper sharedAppDelegateHelper] openURLOfPycFileByLaunchedApp:URL];
-     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(setKeyInfo:) name:@"set_key_info" object:nil];
+     
+     
     
 }
 

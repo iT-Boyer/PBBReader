@@ -13,6 +13,7 @@
 #import "PlayerView.h"
 #define THERMOMETER_FRAME (20, 5, 25, 5);
 @implementation AdvertisingView
+singleton_implementation(AdvertisingView);
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
@@ -51,24 +52,11 @@
 }
 
 
-//设置Autolayout中的边距辅助方法
-- (void)setEdge:(NSView*)superview view:(NSView*)view attr:(NSLayoutAttribute)attr constant:(CGFloat)constant
-{
-    [superview addConstraint:[NSLayoutConstraint constraintWithItem:view
-                                                          attribute:attr
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:superview
-                                                          attribute:attr
-                                                         multiplier:1.0
-                                                           constant:constant]];
-}
+
 -(void)startLoading:(NSInteger)fileID isOutLine:(BOOL)OutLine
 {
-
-    _adverTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerwithTimesNums1:) userInfo:nil repeats:YES];
-    [[NSRunLoop currentRunLoop] addTimer:_adverTimer forMode:NSRunLoopCommonModes];
-    NSWindow *superView = [[NSApplication sharedApplication] keyWindow];//.contentView;
-    if(!superView && ![superView isKindOfClass:[PlayerView class]]){
+    NSWindow *superWindow = [[NSApplication sharedApplication] keyWindow];//.contentView;
+    if(![superWindow.contentView isKindOfClass:[NSView class]]){
         _finish = YES;
         return;
     }
@@ -77,17 +65,16 @@
 ////    [superView deminiaturize:self];
 //    [superView makeKeyAndOrderFront:NSApp];
 //    [superView makeMainWindow];
-    NSView *lastView = superView.contentView;
+    NSView *lastView = superWindow.contentView;
     [lastView addSubview:self];
     [self setEdge:lastView view:self attr:NSLayoutAttributeTop constant:0];
     [self setEdge:lastView view:self attr:NSLayoutAttributeBottom constant:0];
     [self setEdge:lastView view:self attr:NSLayoutAttributeLeft constant:0];
     [self setEdge:lastView view:self attr:NSLayoutAttributeRight constant:0];
     
-    if(fileID == -1)
-    {
-        return;
-    }
+    _adverTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerwithTimesNums1:) userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer:_adverTimer forMode:NSRunLoopCommonModes];
+    
     NSString *UidOrImgUrl = @"";
     NSInteger uid = [[ReceiveFileDao sharedReceiveFileDao] fetchUid:fileID];
     if ([ToolString isConnectionAvailable]) {
@@ -100,6 +87,8 @@
         _imgCache = [[AdvertisingImgCache alloc] init];
     }
     
+    [_ibIndicator setUsesThreadedAnimation:YES];
+    [_ibIndicator startAnimation:self];
     [_imgCache AdvertisingForTerm:UidOrImgUrl completionBlock:^(NSString *imgPath, NSInteger uid,NSError *error) {
         
 //        NSURLRequest *requestObj = [NSURLRequest requestWithURL:[NSURL URLWithString:imgPath]];
@@ -119,6 +108,7 @@
             while (!_finish) {
                 [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
             }
+//            [_ibIndicator stopAnimation:self];
             [_adverTimer invalidate];
         });
         _finish = YES;
@@ -131,4 +121,17 @@
     _advertime++;
 }
 
+
+
+//设置Autolayout中的边距辅助方法
+- (void)setEdge:(NSView*)superview view:(NSView*)view attr:(NSLayoutAttribute)attr constant:(CGFloat)constant
+{
+    [superview addConstraint:[NSLayoutConstraint constraintWithItem:view
+                                                          attribute:attr
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:superview
+                                                          attribute:attr
+                                                         multiplier:1.0
+                                                           constant:constant]];
+}
 @end
