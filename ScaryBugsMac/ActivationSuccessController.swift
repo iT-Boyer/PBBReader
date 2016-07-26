@@ -70,7 +70,7 @@ class ActivationSuccessController: NSViewController {
         
         if (needReapply == 1) {
             ibSelfTitleLabel.stringValue = "激活失败"
-            
+            ibRetoActivation.hidden = false
         }else{
             ibSelfTitleLabel.stringValue = "申请已提交"
             ibRetoActivation.hidden = true
@@ -91,5 +91,6 @@ class ActivationSuccessController: NSViewController {
     }
     
     @IBAction func ibaRetoActivation(sender: AnyObject) {
+        AppDelegateHelper.sharedAppDelegateHelper().getApplyFileInfoByApplyId(applyId)
     }
 }

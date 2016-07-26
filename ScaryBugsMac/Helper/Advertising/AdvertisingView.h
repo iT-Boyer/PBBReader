@@ -25,6 +25,6 @@ singleton_interface(AdvertisingView);
 @property(strong,nonatomic)NSTimer *adverTimer;
 
 
--(void)startLoading:(NSInteger)fileID isOutLine:(BOOL)isOutLine;
+-(void)startLoadingWindow:(NSWindow *)keywindow fileID:(NSInteger)fileID isOutLine:(BOOL)isOutLine;
 
 @end

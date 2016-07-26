@@ -217,15 +217,6 @@ inline void check_error(int status)
     [window setTitle:title];
 }
 
-
-
- -(void)playVideo:(NSString *)URL{
-     //添加业务代码
-     
-     
-    
-}
-
 - (void)setKeyInfo:(NSNotification *) notification{
     if(self.player.pendingDealloc){
 //        return CLS_LOG(@"[PlayerView] Player is pending dealloc, stop loading.");
