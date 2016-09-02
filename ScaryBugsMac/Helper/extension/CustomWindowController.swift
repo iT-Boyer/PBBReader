@@ -1,6 +1,6 @@
 //
 //  CustomWindowController.swift
-//  ScaryBugsMac
+//  PBBReaderForMac
 //
 //  Created by pengyucheng on 16/8/30.
 //  Copyright © 2016年 recomend. All rights reserved.

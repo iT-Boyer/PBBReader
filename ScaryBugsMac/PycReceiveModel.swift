@@ -1,6 +1,6 @@
 //
 //  PycReceiveModel.swift
-//  ScaryBugsMac
+//  PBBReaderForMac
 //
 //  Created by pengyucheng on 16/6/1.
 //  Copyright © 2016年 recomend. All rights reserved.

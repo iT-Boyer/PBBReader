@@ -1,6 +1,6 @@
 //
 //  ActivationController.swift
-//  ScaryBugsMac
+//  PBBReaderForMac
 //
 //  Created by pengyucheng on 16/7/12.
 //  Copyright © 2016年 recomend. All rights reserved.

@@ -1,6 +1,6 @@
 //
 //  AppDelegateHelper.m
-//  ScaryBugsMac
+//  PBBReaderForMac
 //
 //  Created by pengyucheng on 16/6/2.
 //  Copyright © 2016年 recomend. All rights reserved.
@@ -18,7 +18,7 @@
 #import "PlayerLoader.h"
 
 #if DEVELOPMENT
-#import "ScaryBugsMac-Swift.h"
+#import "PBBReaderForMac-Swift.h"
 #else
 #import "PBBReader-Swift.h"
 #endif

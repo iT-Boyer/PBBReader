@@ -31,7 +31,7 @@ platform :mac do
   desc "This will also make sure the profile is up to date"
   lane :beta do
     # match(type: "appstore") # more information: https://codesigning.guide
-    gym(scheme: "ScaryBugsMac") # Build your app - more options available
+    gym(scheme: "PBBReaderForMac") # Build your app - more options available
     pilot
 
     # sh "your_script.sh"
@@ -42,7 +42,7 @@ platform :mac do
   lane :appstore do
     # match(type: "appstore")
     # snapshot
-    gym(scheme: "ScaryBugsMac") # Build your app - more options available
+    gym(scheme: "PBBReaderForMac") # Build your app - more options available
     deliver(force: true)
     # frameit
   end

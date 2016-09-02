@@ -1,6 +1,6 @@
 //
 //  AppDelegateHelper.h
-//  ScaryBugsMac
+//  PBBReaderForMac
 //
 //  Created by pengyucheng on 16/6/2.
 //  Copyright © 2016年 recomend. All rights reserved.

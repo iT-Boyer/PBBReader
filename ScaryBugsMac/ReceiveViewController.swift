@@ -1,6 +1,6 @@
 //
 //  ReceiveViewController.swift
-//  ScaryBugsMac
+//  PBBReaderForMac
 //
 //  Created by pengyucheng on 16/7/11.
 //  Copyright © 2016年 recomend. All rights reserved.

@@ -1,6 +1,6 @@
 //
 //  selectedRowHighlightCell.m
-//  ScaryBugsMac
+//  PBBReaderForMac
 //
 //  Created by huoshuguang on 16/8/31.
 //  Copyright © 2016年 recomend. All rights reserved.
