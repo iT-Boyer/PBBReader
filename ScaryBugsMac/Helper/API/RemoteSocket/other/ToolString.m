@@ -111,7 +111,7 @@
     if ([platform isEqualToString:@"iPhone7,1"])    return @"iPhone 6 Plus ";
     if ([platform isEqualToString:@"iPhone7,2"])    return @"iPhone 6";
     //虚拟机
-    if ([platform isEqualToString:@"i386"]||[platform isEqualToString:@"x86_64"])         return @"Simulator";
+    if ([platform isEqualToString:@"i386"]||[platform isEqualToString:@"x86_64"])         return @"Mac";
     
     return platform;
 }

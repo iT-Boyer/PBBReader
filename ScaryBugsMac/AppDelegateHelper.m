@@ -15,12 +15,17 @@
 #import "userDao.h"
 #import <Cocoa/Cocoa.h>
 #import "VerificationCodeDao.h"
-//#import "ScaryBugsMac-Swift.h"
-#import "PBBReader-Swift.h"
 #import "PlayerLoader.h"
-#import "PlayerWindow.h"
+
+#if DEVELOPMENT
+#import "ScaryBugsMac-Swift.h"
+#else
+#import "PBBReader-Swift.h"
+#endif
 
 #import "MBProgressHUD.h"
+#import "PlayerWindow.h"
+
 @implementation AppDelegateHelper
 {
     PycFile *_fileManager;
@@ -43,37 +48,41 @@
     NSString *applyflag;
     
     NSAlert *alertShow;
+    
     MBProgressHUD *hud;
     NSWindow *keyWindow;
+    BOOL isLoading;
+    NSString *logname;
 }
 singleton_implementation(AppDelegateHelper);
 
 -(void)loadVideoWithLocalFiles:(NSString *)openFilePath
 {
-    if(![openFilePath hasSuffix:@"pbb"]){
-        LookMedia *look = [[LookMedia alloc] init];
-        [look lookMedia:openFilePath];
-        return;
-    }
-    [[PlayerLoader sharedInstance] loadVideoWithLocalFiles:@[openFilePath]];
+    NSString *waterPath = [[NSBundle mainBundle] pathForResource:@"water" ofType:@"xml"];
+    [[PlayerLoader sharedInstance] loadVideoWithLocalFiles:@[openFilePath,waterPath]];
 }
 
 -(BOOL)openURLOfPycFileByLaunchedApp:(NSString *)openURL
 {
-   
+    if(![openURL hasSuffix:@"pbb"]){
+        LookMedia *look = [[LookMedia alloc] init];
+        look.receviveFileId = @"1";
+        [look lookMedia:openURL];
+        return NO;
+    }
     _fileManager = [[PycFile alloc] init];
     _fileManager.delegate = self;
     filePath = openURL;
     fileID = [_fileManager getAttributePycFileId:filePath];
     if (fileID==0) {
-       [self setAlertView:@"读取文件失败。可能错误原因：文件下载不完整，请重新下载！"];
+        [self setAlertView:@"读取文件失败。可能错误原因：文件下载不完整，请重新下载！"];
         return YES;
     }
 
     // 判断已接受数据库是否存在
     NSInteger openedNum = 0;
     BOOL OutLine = NO;
-    NSString *logname = [[userDao shareduserDao] getLogName];
+    logname = [[userDao shareduserDao] getLogName];
     // 判断已接受数据库是否存在
     isReceiveFileExist = [[ReceiveFileDao sharedReceiveFileDao] findFileById:fileID forLogName:logname];
     if (isReceiveFileExist) {
@@ -87,6 +96,7 @@ singleton_implementation(AppDelegateHelper);
     }
 
     //custormActivityView = (AdvertisingView *)[[NSWindowController alloc] initWithWindowNibName:@"AdvertisingView"];
+    
     if(!custormActivityView){
         [self setKeyWindow];
         if (keyWindow) {
@@ -107,7 +117,6 @@ singleton_implementation(AppDelegateHelper);
         [custormActivityView startLoadingWindow:keyWindow fileID:fileID isOutLine:OutLine];
     }
     
-//    [self setText:@""];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         BOOL isOffLine = FALSE;
         _fileManager.receiveFile = outFile;
@@ -160,28 +169,24 @@ singleton_implementation(AppDelegateHelper);
 
 - (void)didFinishSeePycFileForUser
 {
-    [self hide:1.0];
+    isReceiveFileExist = [[ReceiveFileDao sharedReceiveFileDao] findFileById:fileID forLogName:logname];
+    
     if(returnValue == -1)
     {
         [custormActivityView removeFromSuperview];
+        [self setAlertView:@"条件到期，无权阅读!"];
         return;
     }
     if(returnValue & ERR_NEED_UPDATE)
     {
         applyNum =0;
         [custormActivityView removeFromSuperview];
+        [self setAlertView:@"条件到期，无权阅读!"];
         return;
     }
     
-    NSArray *arr =@[@"jpg", @"png", @"pdf", @"mp4",@"3gp",@"mov", @"mp3", @"wav",@"flv",@"wmv",@"avi"];
-    NSRange rang;
-    for (int i =0 ; i<[arr count]; i++) {
-        rang = [[seePycFile.filePycNameFromServer lowercaseString] rangeOfString:[NSString stringWithFormat:@".%@",arr[i]]];
-        if (rang.length>0) {
-            break;
-        }
-    }
-    if (rang.length == 0) {
+    if (![self fileIsTypeOfVideo:[[seePycFile.fileName pathExtension] lowercaseString]]){
+        [self setAlertView:[NSString stringWithFormat:@"不支持该(%@)格式文件...",[seePycFile.fileName pathExtension]]];
         return;
     }
     
@@ -279,9 +284,7 @@ singleton_implementation(AppDelegateHelper);
         [[ReceiveFileDao sharedReceiveFileDao] updateReceiveFileFirstOpenTime:seePycFile.firstSeeTime FileId:fileID];//seePycFile.fileID];
         
     }
-    //通知更新主页
-    NSDictionary  *dic = [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:fileID] forKey:@"pycFileID"];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"OpenINFile" object:self userInfo:dic];
+    
     /*!
      *  @author shuguang, 15-06-10 15:06:27
      *
@@ -330,6 +333,7 @@ singleton_implementation(AppDelegateHelper);
         applyNum =0;
         if (returnValue & ERR_OK_IS_FEE)
         {
+            [self hide:0.0];
             //重生0：未使用 1：已使用
             [[ReceiveFileDao sharedReceiveFileDao] updateReceiveFileToRebornedByFileId:fileID Status:0];//seePycFile.fileID Status:0];
             [[ReceiveFileDao sharedReceiveFileDao] updateReceiveFileApplyOpen:1 FileId:fileID];//seePycFile.fileID];
@@ -346,8 +350,8 @@ singleton_implementation(AppDelegateHelper);
             look.EncryptedLen = seePycFile.encryptedLen;
             look.fileSize = seePycFile.fileSize;
             look.offset = seePycFile.offset;
-            look.imageData = seePycFile.imageData;
             
+            look.imageData = seePycFile.imageData;
             [look lookMedia:seePycFile.filePycName];
         }
         else if(returnValue & ERR_FEE_SALER)
@@ -357,22 +361,23 @@ singleton_implementation(AppDelegateHelper);
         }
         else
         {
+            [self hide:0.0];
             //自由传播
             //重生0：未使用 1：已使用
             [[ReceiveFileDao sharedReceiveFileDao] updateReceiveFileToRebornedByFileId:fileID Status:0];//seePycFile.fileID
-            
             LookMedia *look = [[LookMedia alloc] init];
             look.urlImagePath = seePycFile.fileName;
             look.limitTime = seePycFile.openTimeLong;
             look.bOpenInCome = 1;
             look.receviveFileId = [NSString stringWithFormat:@"%ld",(long)fileID];//seePycFile.fileID];
-            //水印
-            //                look.waterMark = [self waterMark:seePycFile];
-            //                look.openinfoid = seePycFile.openinfoid;
+            //自由传播不需要水印
+            //look.waterMark = [self waterMark:seePycFile];
+            look.openinfoid = seePycFile.openinfoid;
             look.fileSecretkeyR1 = seePycFile.fileSecretkeyR1;
             look.EncryptedLen = seePycFile.encryptedLen;
             look.fileSize = seePycFile.fileSize;
             look.offset = seePycFile.offset;
+            
             look.imageData = seePycFile.imageData;
             [look lookMedia:seePycFile.filePycName];
         }
@@ -381,18 +386,6 @@ singleton_implementation(AppDelegateHelper);
         applyNum =0;
         [custormActivityView removeFromSuperview];
         
-        if (returnValue & ERR_OUTLINE_NUM_ERR) {
-            //次数已到
-            [self setAlertView:@"阅读次数已用完！再次打开该文件，需要重新申请！"];
-            [[ReceiveFileDao sharedReceiveFileDao]updateReceiveFileApplyOpen:0 FileId:fileID];//_fileObject.fileID];
-            return;
-        }
-        if (returnValue & ERR_OUTLINE_DAY_ERR) {
-            //时效已到
-            [self setAlertView:@"阅读时间已用完！再次打开该文件，需要重新申请！"];
-            [[ReceiveFileDao sharedReceiveFileDao]updateReceiveFileApplyOpen:0 FileId:fileID];//_fileObject.fileID];
-            return;
-        }
         if (returnValue & ERR_OUTLINE_HDID_ERR) {
             //硬件标识不对
             /**
@@ -401,43 +394,54 @@ singleton_implementation(AppDelegateHelper);
              3、  点击【是】，清除离线结构中设置的值，提示：再次打开后进行申请。（手机端提示文字：再次打开/阅读时进行申请）
              4、  结束
              */
-//            MyBlockAlertView *alert = [[MyBlockAlertView alloc] initWithTitle:nil
-//                                                                      message:@"不能阅读！与原阅读设备不符！是否在此设备上申请阅读？"
-//                                                            cancelButtonTitle:@"否" otherButtonTitles:@"是"
-//                                                                  ButtonBlock:^(NSInteger i) {
-//                                                                      
-//                                                                      if (i == 0) {
-//                                                                          [[ReceiveFileDao sharedReceiveFileDao]updateReceiveFileApplyOpen:0 FileId:_fileID];//_fileObject.fileID];
-//                                                                      }
-//                                                                      
-//                                                                      if (i == 1) {
-//                                                                          
-//                                                                          if ([_fileObject setOutLineStructData:_fileObject.filePycName isFirstSee:0 isSetFirst:1 isSee:0 isVerifyOk:0 isTimeIsChanged:0 isApplySucess:0 data:NULL]) {
-//                                                                              // 设置成功
-//                                                                              [self.window makeToast:@"再次打开/阅读时进行申请!" duration:1.0 position:@"center"];
-//                                                                          } else {
-//                                                                              // 设置失败时重新设置一次
-//                                                                              if ([_fileObject setOutLineStructData:_fileObject.filePycName  isFirstSee:0 isSetFirst:1 isSee:0 isVerifyOk:0 isTimeIsChanged:0 isApplySucess:0 data:NULL]) {
-//                                                                                  [self.window makeToast:@"再次打开/阅读时进行申请!" duration:1.0 position:@"center"];
-//                                                                              }
-//                                                                          }
-//                                                                      }
-//                                                                  }];
-//            [alert show];
-            
+            //            MyBlockAlertView *alert = [[MyBlockAlertView alloc] initWithTitle:nil
+            //                                                                      message:@"不能阅读！与原阅读设备不符！是否在此设备上申请阅读？"
+            //                                                            cancelButtonTitle:@"否" otherButtonTitles:@"是"
+            //                                                                  ButtonBlock:^(NSInteger i) {
+            //
+            //                                                                      if (i == 0) {
+            //                                                                          [[ReceiveFileDao sharedReceiveFileDao]updateReceiveFileApplyOpen:0 FileId:_fileID];//_fileObject.fileID];
+            //                                                                      }
+            //
+            //                                                                      if (i == 1) {
+            //
+            //                                                                          if ([_fileObject setOutLineStructData:_fileObject.filePycName isFirstSee:0 isSetFirst:1 isSee:0 isVerifyOk:0 isTimeIsChanged:0 isApplySucess:0 data:NULL]) {
+            //                                                                              // 设置成功
+            //                                                                              [self.window makeToast:@"再次打开/阅读时进行申请!" duration:1.0 position:@"center"];
+            //                                                                          } else {
+            //                                                                              // 设置失败时重新设置一次
+            //                                                                              if ([_fileObject setOutLineStructData:_fileObject.filePycName  isFirstSee:0 isSetFirst:1 isSee:0 isVerifyOk:0 isTimeIsChanged:0 isApplySucess:0 data:NULL]) {
+            //                                                                                  [self.window makeToast:@"再次打开/阅读时进行申请!" duration:1.0 position:@"center"];
+            //                                                                              }
+            //                                                                          }
+            //                                                                      }
+            //                                                                  }];
+            //            [alert show];
+            [self setAlertView:@"不能阅读！"];
             return;
         }
+        
+        [[ReceiveFileDao sharedReceiveFileDao]updateReceiveFileApplyOpen:0 FileId:fileID];//_fileObject.fileID];
+
+        if (returnValue & ERR_OUTLINE_NUM_ERR) {
+            //次数已到
+            [self setAlertView:@"阅读次数已用完！再次打开该文件，需要重新申请！"];
+            return;
+        }
+        if (returnValue & ERR_OUTLINE_DAY_ERR) {
+            //时效已到
+            [self setAlertView:@"阅读时间已用完！再次打开该文件，需要重新申请！"];
+            return;
+        }
+        
         if (returnValue & ERR_OUTLINE_IS_OTHER_ERR) {
             //并非原文件
             [self setAlertView:@"不能阅读！"];
-            [[ReceiveFileDao sharedReceiveFileDao]updateReceiveFileApplyOpen:0 FileId:fileID];//_fileObject.fileID];
             return;
         }
         if (returnValue & ERR_OUTLINE_TIME_CHANGED_ERR) {
-            
-            [[ReceiveFileDao sharedReceiveFileDao]updateReceiveFileApplyOpen:0 FileId:fileID];//_fileObject.fileID];
             //本地时间被修改  本地时间被人为修改，需要联网获取授权！
-            
+             [self setAlertView:@"本地时间被人为修改，需要联网获取授权！"];
             //联网校验
 //            MyBlockAlertView *alert = [[MyBlockAlertView alloc] initWithTitle:nil
 //                                                                      message:@"本地时间被人为修改，需要联网获取授权！"
@@ -458,7 +462,6 @@ singleton_implementation(AppDelegateHelper);
         if (returnValue & ERR_OUTLINE_STRUCTION_ERR) {
             //文件结构不对
             [self setAlertView:@"不能阅读！文件阅读错误！"];
-            [[ReceiveFileDao sharedReceiveFileDao]updateReceiveFileApplyOpen:0 FileId:fileID];//_fileObject.fileID];
             return;
         }
         
@@ -468,6 +471,7 @@ singleton_implementation(AppDelegateHelper);
         {
             if (returnValue & ERR_AUTO_APPLIED) {
                 [self performSelector:@selector(seeFile:) withObject:seePycFile afterDelay:2.0f];
+                
             }else{
                 applyNum=0;
                 [custormActivityView removeFromSuperview];
@@ -490,10 +494,14 @@ singleton_implementation(AppDelegateHelper);
                 // 需要验证手机号
                 BindingPhoneViewController *bindingPhone = (BindingPhoneViewController *)[[NSStoryboard storyboardWithName:@"Main" bundle:nil] instantiateControllerWithIdentifier:@"BindingPhoneViewController"];
                 bindingPhone.filePath = seePycFile.filePycName;
-                NSWindow *superView = [[NSApplication sharedApplication] keyWindow];
-                superView.contentViewController = bindingPhone;
+                bindingPhone.fileID = seePycFile.fileID;
+//                NSWindow *superView = [[NSApplication sharedApplication] keyWindow];
+//                superView.contentViewController = bindingPhone;
+                [self setKeyWindow];
+                [keyWindow.contentViewController presentViewControllerAsSheet:bindingPhone];
             } else {
                 applyNum =0;
+                [self setAlertView:@"条件到期，无权阅读!"];
                 [custormActivityView removeFromSuperview];
                 return;
             }
@@ -510,7 +518,6 @@ singleton_implementation(AppDelegateHelper);
             [custormActivityView removeFromSuperview];
             //目前用不到
         }
-        
     }
 }
 
@@ -518,70 +525,19 @@ singleton_implementation(AppDelegateHelper);
 {
     if (!alertShow) {
         alertShow = [[NSAlert alloc] init];
-        [alertShow addButtonWithTitle:@"我知道了"];
+        [alertShow addButtonWithTitle:@"查看详情"];
+//        [alertShow addButtonWithTitle:@"我知道了"];
     }
 
     //        [alert addButtonWithTitle:@"Cancel"];
     [alertShow setMessageText:msg];
     //        [alert setInformativeText:@"Deleted records cannot be restored."];
     [alertShow setAlertStyle:NSWarningAlertStyle];
-    if ([alertShow runModal] == NSAlertFirstButtonReturn) {
+    if ([alertShow runModal] == NSAlertFirstButtonReturn || [alertShow runModal] == NSAlertSecondButtonReturn) {
         // OK clicked, delete the record
-        
+        NSDictionary  *dic = [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:fileID] forKey:@"pycFileID"];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"CancleClosePlayerWindows" object:self userInfo:dic];
     }
-}
-
-- (void)setText:(NSString *)text{
-    dispatch_async(dispatch_get_main_queue(), ^(void){
-        [self show];
-        hud.labelText = NSLocalizedString(text, nil);
-    });
-}
-
-- (void)show{
-//    isLoading = YES;
-//    keyWindow = [[NSApplication sharedApplication] keyWindow];
-    [self setKeyWindow];
-    if(!hud){
-        hud = [MBProgressHUD showHUDAddedTo:keyWindow.contentView animated:YES];
-        hud.removeFromSuperViewOnHide = YES;
-        hud.mode = MBProgressHUDModeIndeterminate;
-        [keyWindow setLevel:NSPopUpMenuWindowLevel];
-        [keyWindow makeKeyAndOrderFront:self];
-        [[keyWindow contentView] setHidden:NO];
-        [NSApp activateIgnoringOtherApps:YES];
-    }
-}
-
--(void)setKeyWindow{
-    NSArray *windows = [[NSApplication sharedApplication] windows];
-    for (NSWindow *window in windows) {
-        //
-        if ([window isKindOfClass:[PlayerWindow class]]) {
-            //
-            keyWindow = (PlayerWindow *)window;
-        }
-    }
-}
-
-
-- (void)hide:(NSTimeInterval)i{
-    dispatch_async(dispatch_get_main_queue(), ^(void){
-        [hud hide:YES afterDelay:i];
-        [NSTimer scheduledTimerWithTimeInterval:i+0.5
-                                         target:self
-                                       selector:@selector(hideWindow)
-                                       userInfo:nil
-                                        repeats:NO];
-    });
-}
-
-- (void)hideWindow{
-    [[keyWindow contentView] setHidden:YES];
-    [keyWindow setLevel:NSNormalWindowLevel-1];
-    [keyWindow orderBack:self];
-    hud = NULL;
-//    isLoading = NO;
 }
 
 #pragma mark  组装水印信息
@@ -590,10 +546,12 @@ singleton_implementation(AppDelegateHelper);
     NSString *waterMark = nil;
     NSMutableArray *replace = [[NSMutableArray alloc] initWithArray:@[@"Q Q:",@"邮箱:",@"\n",@"手机:"]];
     if (fileObject.definechecked || fileObject.selffieldnum) {
+        //QQ
         if (fileObject.definechecked&1
             && ![ToolString isBlankString:fileObject.QQ]) {
             waterMark = [NSString stringWithFormat:@"Q Q:%@",fileObject.QQ];
         }
+        //手机
         if (fileObject.definechecked&2
             && ![ToolString isBlankString:fileObject.phone]) {
             
@@ -604,6 +562,7 @@ singleton_implementation(AppDelegateHelper);
             }
             
         }
+        //邮箱
         if (fileObject.definechecked&4
             && ![ToolString isBlankString:fileObject.email]) {
             
@@ -614,7 +573,7 @@ singleton_implementation(AppDelegateHelper);
             }
         }
         
-        
+        //自定义1
         if (fileObject.selffieldnum==1
             && fileObject.field1needprotect!=1
             && ![ToolString isBlankString:fileObject.fild1name]
@@ -627,7 +586,7 @@ singleton_implementation(AppDelegateHelper);
                 waterMark = [NSString stringWithFormat:@"%@:%@",fileObject.fild1name,fileObject.field1];
             }
         }
-        
+        //自定义2
         if (fileObject.selffieldnum==2) {
             
             if (fileObject.field1needprotect!=1
@@ -656,7 +615,7 @@ singleton_implementation(AppDelegateHelper);
             }
         }
     } else {
-        // 默认选项
+        //默认选项
         NSString *qq = fileObject.QQ;
         NSString *email = fileObject.email;
         NSString *phone = fileObject.phone;
@@ -681,6 +640,8 @@ singleton_implementation(AppDelegateHelper);
             }
         }
     }
+    
+    //仅当视频时处理
     if([fileObject.fileExtentionWithOutDot fileIsTypeOfVideo])
     {
         waterMark = [waterMark stringReplaceDelWater:replace];
@@ -706,9 +667,8 @@ singleton_implementation(AppDelegateHelper);
 {
     VerificationCodeModel *codeModel = [[VerificationCodeModel alloc] init];
     if (receiveData->returnValue == 0) {
-        [self setAlertView:@"您的网络不给力哦，请重试！"];
+        [self setAlertView:@"验证码发送失败！"];
     } else if(receiveData->returnValue == -1) {
-        
         [self setAlertView:@"数据传输错误，请重试！"];
     }
     else if (receiveData->returnValue == 256 && _userPhone)
@@ -729,6 +689,8 @@ singleton_implementation(AppDelegateHelper);
             codeModel.seeFile = @"0";
         }
         [[VerificationCodeDao sharedVerificationCodeDao] insertVerificationCode:codeModel];
+        //开始倒计时
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"getCodeFinish" object:nil];
     }
 }
 
@@ -759,6 +721,7 @@ singleton_implementation(AppDelegateHelper);
         
                 if (![result isEqualToString:@"0"]) {
                     applyNum=0;
+                    [self hide:0.0];
                     if ([result isEqualToString:@"1"]||[result isEqualToString:@"2"]||[result isEqualToString:@"3"]||
                         [result isEqualToString:@"4"]||[result isEqualToString:@"5"]) {
                         dispatch_async(dispatch_get_main_queue(), ^{
@@ -778,6 +741,7 @@ singleton_implementation(AppDelegateHelper);
     
     if (!reslut1) {
         applyNum=0;
+        [self hide:0.0];
         [custormActivityView removeFromSuperview];
         //申请成功界面
         [self letusGOActivationSucVc:seePycFile];
@@ -788,13 +752,14 @@ singleton_implementation(AppDelegateHelper);
 #pragma mark － 申请成功 0-0-0 重新提交
 -(BOOL)getApplyFileInfoByApplyId:(NSInteger)applyId
 {
+    [self setText:@"重新申请激活"];
     return [_fileManager getApplyFileInfoByApplyId:applyId];
 }
 
 //获取申请激活的文件信息
 -(void)PycFile:(PycFile *)fileObject didFinishGetApplyFileInfo:(MAKEPYCRECEIVE *)receiveData
 {
-//    [_indicator stopAnimating];
+    [self hide:1.0];
     if (receiveData == nil || receiveData->returnValue == 0) {
         [self setAlertView:@"您的网络不给力哦，请重试！"];
     } else {
@@ -829,9 +794,9 @@ singleton_implementation(AppDelegateHelper);
 #pragma mark - 申请手动激活
 - (NSString *)applyFileByFidAndOrderId:(NSInteger )fileId orderId:(NSInteger )thOrderId applyId:(NSInteger)theApplyId  qq:(NSString *)theQQ email:(NSString *)theEmail phone:(NSString *)thePhone field1:(NSString *)theField1 field2:(NSString *)theField2 seeLogName:(NSString *)theSeeLogName fileName:(NSString*)theFileName
 {
-    [self setText:@"申请激活"];
     applyNum = 0;
     //重新申请
+    [self setText:@"申请激活"];
     if (_needReapply == 0) {
         applyflag = [_fileManager applyFileByFidAndOrderId:fileId
                                             orderId:thOrderId
@@ -894,9 +859,8 @@ singleton_implementation(AppDelegateHelper);
          */
         if(receiveData->returnValue & ERR_OK_OR_CANOPEN || receiveData->returnValue & ERR_APPLIED)
         {
+            
             if (receiveData->returnValue & ERR_AUTO_APPLIED) {
-                //
-                NSLog(@"延迟2s,自动激活.....");
                 [self performSelector:@selector(seeFile:) withObject:fileObject afterDelay:2.0f];
             }else{
                 applyNum = 0;
@@ -951,7 +915,6 @@ singleton_implementation(AppDelegateHelper);
         if(receiveData->returnValue & ERR_OK_OR_CANOPEN || receiveData->returnValue & ERR_APPLIED)
         {
             if (receiveData->returnValue & ERR_AUTO_APPLIED) {
-                [self hide:1.0];
                 [self performSelector:@selector(seeFile:) withObject:fileObject afterDelay:2.0f];
             }else{
                 applyNum = 0;
@@ -961,6 +924,7 @@ singleton_implementation(AppDelegateHelper);
         }
         else
         {
+            [self hide:1.0];
             [self setAlertView:@"申请失败！"];
             return;
         }
@@ -984,12 +948,11 @@ singleton_implementation(AppDelegateHelper);
     activationSucVc.applyId = pycfileObject.applyId;
     activationSucVc.remark = pycfileObject.remark;
     activationSucVc.bOpenInCome = bOpenInCome;
+    activationSucVc.needReapply = pycfileObject.needReapply;
+    
     [[ReceiveFileDao sharedReceiveFileDao]updateReceiveFileApplyOpen:0 FileId:pycfileObject.fileID];
     [self setKeyWindow];
     [keyWindow.contentViewController presentViewControllerAsSheet:activationSucVc];
-//    NSWindow *superwindows = [[NSApplication sharedApplication] keyWindow];
-//    [superwindows.contentViewController presentViewControllerAsSheet:activationSucVc];
-//    [superView.contentViewController presentViewController:activationSucVc animator:nil];
 }
 
 
@@ -1001,19 +964,21 @@ singleton_implementation(AppDelegateHelper);
     activationVc.fileId = pycFileObject.fileID;
     activationVc.orderId = pycFileObject.orderID;
     activationVc.filename = [pycFileObject.filePycNameFromServer stringByDeletingPathExtension];
-    activationVc.field1name = pycFileObject.fild1name;
-    activationVc.field1needprotect = (pycFileObject.field1needprotect==1)?YES:NO;
-    activationVc.field2name = pycFileObject.fild2name;
-    activationVc.field2needprotect =(pycFileObject.field2needprotect==1)?YES:NO;
     activationVc.selffieldnum = pycFileObject.selffieldnum;
     activationVc.definechecked = pycFileObject.definechecked;
     activationVc.bOpenInCome = bOpenInCome;
     activationVc.qq = pycFileObject.QQ;
     activationVc.email = pycFileObject.email;
     activationVc.phone = pycFileObject.phone;
+    //自定义字段1
+    activationVc.field1name = pycFileObject.fild1name;
     activationVc.self1 = pycFileObject.field1;
+    activationVc.field1needprotect = (pycFileObject.field1needprotect==1)?YES:NO;
+    //自定义字段2
+    activationVc.field2name = pycFileObject.fild2name;
     activationVc.self2 = pycFileObject.field2;
-    
+    activationVc.field2needprotect =(pycFileObject.field2needprotect==1)?YES:NO;
+    //重新申请参数
     activationVc.needReApply = pycFileObject.needReapply;
     activationVc.applyId = pycFileObject.applyId;
     
@@ -1034,9 +999,77 @@ singleton_implementation(AppDelegateHelper);
     [[ReceiveFileDao sharedReceiveFileDao]updateReceiveFileApplyOpen:0 FileId:fileID];
     
     [self setKeyWindow];
-//    [superView.contentViewController presentViewControllerAsModalWindow:activationVc];
     [keyWindow.contentViewController presentViewControllerAsSheet:activationVc];
 }
 
+
+- (void)setText:(NSString *)text{
+    dispatch_async(dispatch_get_main_queue(), ^(void){
+        [self show];
+        hud.labelText = NSLocalizedString(text, nil);
+    });
+}
+
+- (void)show{
+    isLoading = YES;
+    //    keyWindow = [[NSApplication sharedApplication] keyWindow];
+    [self setKeyWindow];
+    if(!hud){
+        hud = [MBProgressHUD showHUDAddedTo:keyWindow.contentView animated:YES];
+        hud.removeFromSuperViewOnHide = YES;
+        hud.mode = MBProgressHUDModeIndeterminate;
+        [keyWindow setLevel:NSPopUpMenuWindowLevel];
+        [keyWindow makeKeyAndOrderFront:self];
+        [[keyWindow contentView] setHidden:NO];
+        [NSApp activateIgnoringOtherApps:YES];
+    }
+}
+
+-(void)setKeyWindow{
+    NSArray *windows = [[NSApplication sharedApplication] windows];
+    for (NSWindow *window in windows) {
+        //
+        if ([window isKindOfClass:[PlayerWindow class]]) {
+            //
+            keyWindow = (PlayerWindow *)window;
+        }
+    }
+}
+
+
+- (void)hide:(NSTimeInterval)i{
+    if (!isLoading) {
+        return;
+    }
+    dispatch_async(dispatch_get_main_queue(), ^(void){
+        [hud hide:YES afterDelay:i];
+        [NSTimer scheduledTimerWithTimeInterval:i+0.5
+                                         target:self
+                                       selector:@selector(hideWindow)
+                                       userInfo:nil
+                                        repeats:NO];
+    });
+}
+
+- (void)hideWindow{
+//    [[keyWindow contentView] setHidden:YES];
+//    [keyWindow setLevel:NSNormalWindowLevel-1];
+//    [keyWindow orderBack:self];
+    hud = NULL;
+    isLoading = NO;
+}
+
+
+-(BOOL)fileIsTypeOfVideo:(NSString *)pathExt
+{
+    NSString *str = [NSString stringWithFormat:@"%@",@"+rmvb+mkv+mpeg+mp4+mov+avi+3gp+flv+wmv+rm+mpg+vob+dat+"];
+    pathExt = [pathExt lowercaseString];
+    //    NSComparisonResult *result = [pathExt commonPrefixWithString:str options:NSCaseInsensitiveSearch|NSNumericSearch];
+    NSRange range=[str rangeOfString: pathExt];
+    if (!(range.location==NSNotFound)) {
+        return YES;
+    }
+    return NO;
+}
 
 @end

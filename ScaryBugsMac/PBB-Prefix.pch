@@ -90,9 +90,12 @@
 //#endif
 
 //数据库名，表名
-#define DB_NAME @"PBB.db"
+//#define DB_NAME @"PBB.db"
 #define TABLE_USER @"t_user"
 #define TABLE_FILE @"t_outfile"
+
+#define KDataBaseName @"PBB.db"
+#define KDataBasePath [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:KDataBaseName]
 
 //NSUserDefaults存储的字段列表
 #define DeviceTokenStringKEY @"deviceTokenStringKEY"

@@ -61,12 +61,12 @@
     [db open];
     if (![self isTableOK:TABLE_USER]) {
         
-        [db executeUpdate:[self SQL:@"CREATE TABLE IF NOT EXISTS %@ (Id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,Uid VARCHAR(4) NOT NULL,Uname VARCHAR(50) NOT NULL,Nick VARCHAR(50), Upwd VARCHAR(20) NOT NULL, Uemail VARCHAR(50), UemailStatus integer,Utel VARCHAR(20),UtelStatus integer,PwdStatus integer,QQNickName text,picStatus VARCHAR(4),UphoneStatus integer,childStatus integer)" inTable:TABLE_USER]];
+        BOOL result =  [db executeUpdate:[self SQL:@"CREATE TABLE IF NOT EXISTS %@ (Id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,Uid VARCHAR(4) NOT NULL,Uname VARCHAR(50) NOT NULL,Nick VARCHAR(50), Upwd VARCHAR(20) NOT NULL, Uemail VARCHAR(50), UemailStatus integer,Utel VARCHAR(20),UtelStatus integer,PwdStatus integer,QQNickName text,picStatus VARCHAR(4),UphoneStatus integer,childStatus integer)" inTable:TABLE_USER]];
         //        NSLog(@"%@ 表创建成功！",TABLE_USER);
         //新建表后，添加一条用户空记录
-        NSString *str = [self base64encode:@""];
-        NSString *str1 = [self base64encode:@"1"];
-        BOOL result = [db executeUpdate:[self SQL:@"INSERT INTO %@ (Uid, Uname, Nick, Upwd, Uemail, UemailStatus, Utel,UtelStatus,PwdStatus,QQNickName,picStatus,UphoneStatus,childStatus) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)" inTable:TABLE_USER],str,str,str,str,str,0,str,0,0,str,str1,0,0];
+//        NSString *str = [self base64encode:@""];
+//        NSString *str1 = [self base64encode:@"1"];
+//        BOOL result = [db executeUpdate:[self SQL:@"INSERT INTO %@ (Uid, Uname, Nick, Upwd, Uemail, UemailStatus, Utel,UtelStatus,PwdStatus,QQNickName,picStatus,UphoneStatus,childStatus) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)" inTable:TABLE_USER],str,str,str,str,str,0,str,0,0,str,str1,0,0];
         if ([db hadError]) {
             NSLog(@"Err %d :%@",[db lastErrorCode],[db lastErrorMessage]);
         }

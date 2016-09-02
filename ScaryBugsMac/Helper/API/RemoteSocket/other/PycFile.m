@@ -237,19 +237,19 @@ singleton_implementation(PycFile)
     }
 
     //判断是否是PBB文件
-    int structsize =  sizeof(PYCFILEEXT);
-    int fileheadoffset = (fileSize.intValue > structsize)? (fileSize.intValue - structsize):0;
+    long structsize =  sizeof(PYCFILEEXT);
+    long fileheadoffset = (fileSize.longValue > structsize)? (fileSize.longValue - structsize):0;
     if(fileheadoffset == 0)
     {
         NSLog(@"nothing in in");
         return FALSE;
     }
 
-    if (fileSize.intValue >= HASH_FILE_SIZE_TODO) {
+    if (fileSize.longValue >= HASH_FILE_SIZE_TODO) {
         fileSizeTodo = HASH_FILE_SIZE_TODO;
     }
     else{
-        fileSizeTodo = fileSize.intValue;
+        fileSizeTodo = fileSize.longValue;
         allFileContent = YES;
     }
     
@@ -276,7 +276,7 @@ singleton_implementation(PycFile)
 
         if (!allFileContent)
         {
-            fileOffest = fileSize.intValue - HASH_FILE_SIZE_TODO;
+            fileOffest = fileSize.longValue - HASH_FILE_SIZE_TODO;
             
         }
 
@@ -328,11 +328,11 @@ singleton_implementation(PycFile)
     if (fileAttributes != nil) {
         
         fileSize = [fileAttributes objectForKey:NSFileSize];
-        NSLog(@"%d", fileSize.intValue);
+        NSLog(@"%ld", fileSize.longValue);
     }
     
-    int structsize = sizeof(PYCFILEEXT);
-    int fileheadoffset = (fileSize.intValue > structsize)? (fileSize.intValue - structsize):0;
+    long structsize = sizeof(PYCFILEEXT);
+    long fileheadoffset = (fileSize.longValue > structsize)? (fileSize.longValue - structsize):0;
     if(fileheadoffset == 0)
     {
         NSLog(@"nothing in");
@@ -832,14 +832,14 @@ singleton_implementation(PycFile)
     memset(&fileHead, 0, sizeof(PYCFILEHEADER));
     NSLog(@"pychead size is   %ld",  sizeof(PYCFILEHEADER));
     fileHead.uTag = PycTag0;
-    fileHead.fileSize =fileSizeOriginal.intValue;
+    fileHead.fileSize =fileSizeOriginal.longValue;
     
     //补齐文件长度
-    int fileToAdd = [fileSizeOriginal intValue];
-    int a = (fileToAdd%16);
+    long fileToAdd = [fileSizeOriginal longValue];
+    long a = (fileToAdd%16);
     if (a != 0) {
         
-        NSLog(@"00 need to add %d", 16-a);
+        NSLog(@"00 need to add %ld", 16-a);
         Byte byteAdd[16 - a];
         memset(byteAdd, 0, 16 - a);
         NSData *dataAdd = [[NSData alloc] initWithBytes:byteAdd length:16-a];
@@ -1016,11 +1016,11 @@ _ALL_END:
     if (fileAttributes != nil) {
         
         fileSize = [fileAttributes objectForKey:NSFileSize];
-        NSLog(@"%d", fileSize.intValue);
+        NSLog(@"%ld", fileSize.longValue);
     }
     
-    int structsize =  sizeof(PYCFILEEXT);
-    int fileheadoffset = (fileSize.intValue > structsize)? (fileSize.intValue - structsize):0;
+    long structsize =  sizeof(PYCFILEEXT);
+    long fileheadoffset = (fileSize.longValue > structsize)? (fileSize.longValue - structsize):0;
     if(fileheadoffset == 0)
     {
         NSLog(@"nothing in in"); 
@@ -1274,11 +1274,11 @@ _ALL_END:
     if (fileAttributes != nil) {
         
         fileSize = [fileAttributes objectForKey:NSFileSize];
-        NSLog(@"%d", fileSize.intValue);
+        NSLog(@"%ld", fileSize.longValue);
     }
     
-    int structsize =  sizeof(PYCFILEEXT);
-    int fileheadoffset = (fileSize.intValue > structsize)? (fileSize.intValue - structsize):0;
+    long structsize =  sizeof(PYCFILEEXT);
+    long fileheadoffset = (fileSize.longValue > structsize)? (fileSize.longValue - structsize):0;
     if(fileheadoffset == 0)
     {
         NSLog(@"nothing in in");
@@ -1790,13 +1790,12 @@ _ALL_END:
     //
     return YES;
 }
+
+#pragma mark - 解析更新密文数据结构的内容信息
 -(BOOL) makeOpenFile
 {
-
-    
-    
-    int structsize = 0;
-    int fileheadoffset = 0;
+    long structsize = 0;
+    long fileheadoffset = 0;
 
     NSFileManager *manager = [NSFileManager defaultManager];
     NSNumber *fileSize ;
@@ -1805,11 +1804,11 @@ _ALL_END:
     NSDictionary *fileAttributes = [manager attributesOfItemAtPath:self.filePycName error:&err];
     if (fileAttributes != nil) {
         fileSize = [fileAttributes objectForKey:NSFileSize];
-        NSLog(@"%d", fileSize.intValue);
+        NSLog(@"%ld", fileSize.longValue);
     }
     
     structsize =  sizeof(PYCFILEEXT);
-    fileheadoffset = (fileSize.intValue > structsize)? (fileSize.intValue - structsize):0;
+    fileheadoffset = (fileSize.longValue > structsize)? (fileSize.longValue - structsize):0;
     if(fileheadoffset == 0)
     {
         return FALSE;
@@ -1855,8 +1854,8 @@ _ALL_END:
     }
     
     //计算开始解密的位置
-    int decodebegin = 0;
-    int fileToAdd =  header->fileSize;
+    long long decodebegin = 0;
+    long long fileToAdd =  header->fileSize;
     int a = (fileToAdd%16);
     if (a != 0) {
         
@@ -1865,7 +1864,9 @@ _ALL_END:
     }
     else
     {
+        decodebegin = fileToAdd;
         NSLog(@"000 need not");
+        
     }
     
     self.fileSize = header->fileSize;
@@ -1909,6 +1910,7 @@ _ALL_END:
     return NO;
 }
 
+#pragma mark - 封装网络数据包
 -(void)MakeFileOutPackage:(SENDDATA_NEW_NEW *)data
 {
     NSLog(@"*****************%s******************", __func__);
@@ -2012,8 +2014,6 @@ _ALL_END:
 
 -(void)receiveRefreshListInfoPackage:(RECEIVEDATA_NEW_NEW *)receiveData
 {
-   
-    
     int iLen = 0;
     Byte *receiveDataIinfo = (Byte *)&(receiveData->userData);
     while (receiveDataIinfo[iLen] != 0) {
@@ -2165,8 +2165,8 @@ _ALL_END:
         fileSize = [fileAttributes objectForKey:NSFileSize];
     }
     
-    int structsize =  sizeof(PYCFILEEXT);
-    int fileheadoffset = (fileSize.intValue > structsize)? (fileSize.intValue - structsize):0;
+    long structsize =  sizeof(PYCFILEEXT);
+    long fileheadoffset = (fileSize.longValue > structsize)? (fileSize.longValue - structsize):0;
     if(fileheadoffset == 0)
     {
         return bReturn;
@@ -2530,7 +2530,7 @@ _ALL_END:
     
 }
 
-#pragma mark finish connect
+#pragma mark - socket 连接成功，封装请求数据包，并发送
 -(void)PycSocket: (PycSocket *)fileObject didFinishConnect: (Byte *)receiveDataByte
 {
     NSLog(@"*****************%s******************", __func__);
@@ -2668,7 +2668,7 @@ _ALL_END:
 
 
 
-#pragma mark finish send
+#pragma mark - socket服务器响应，开始解析接收到的数据包
 -(void)PycSocket: (PycSocket *)fileObject didFinishSend: (Byte *)receiveDataByte
 {
     
@@ -3747,11 +3747,11 @@ _ALL_END:
     if (fileAttributes != nil) {
         
         fileSize = [fileAttributes objectForKey:NSFileSize];
-        NSLog(@"%d", fileSize.intValue);
+        NSLog(@"%ld", fileSize.longValue);
     }
     
-    int structsize =  sizeof(PYCFILEEXT);
-    int fileheadoffset = (fileSize.intValue > structsize)? (fileSize.intValue - structsize):0;
+    long structsize =  sizeof(PYCFILEEXT);
+    long fileheadoffset = (fileSize.longValue > structsize)? (fileSize.longValue - structsize):0;
     if(fileheadoffset == 0)
     {
         NSLog(@"nothing in in");
@@ -4006,11 +4006,11 @@ _ALL_END:
     if (fileAttributes != nil) {
         
         fileSize = [fileAttributes objectForKey:NSFileSize];
-        NSLog(@"%d", fileSize.intValue);
+        NSLog(@"%ld", fileSize.longValue);
     }
     
-    int structsize =  sizeof(PYCFILEEXT);
-    int fileheadoffset = (fileSize.intValue > structsize)? (fileSize.intValue - structsize):0;
+    long structsize =  sizeof(PYCFILEEXT);
+    long fileheadoffset = (fileSize.longValue > structsize)? (fileSize.longValue - structsize):0;
     if(fileheadoffset == 0)
     {
         NSLog(@"nothing in in");
@@ -4158,11 +4158,11 @@ _ALL_END:
     if (fileAttributes != nil) {
         
         fileSize = [fileAttributes objectForKey:NSFileSize];
-        NSLog(@"%d", fileSize.intValue);
+        NSLog(@"%ld", fileSize.longValue);
     }
     
-    int structsize =  sizeof(PYCFILEEXT);
-    int fileheadoffset = (fileSize.intValue > structsize)? (fileSize.intValue - structsize):0;
+    long structsize =  sizeof(PYCFILEEXT);
+    long fileheadoffset = (fileSize.longValue > structsize)? (fileSize.longValue - structsize):0;
     if(fileheadoffset == 0)
     {
         NSLog(@"nothing in in");
@@ -4313,11 +4313,11 @@ _ALL_END:
     if (fileAttributes != nil) {
         
         fileSize = [fileAttributes objectForKey:NSFileSize];
-        NSLog(@"%d", fileSize.intValue);
+        NSLog(@"%ld", fileSize.longValue);
     }
     
-    int structsize =  sizeof(PYCFILEEXT);
-    int fileheadoffset = (fileSize.intValue > structsize)? (fileSize.intValue - structsize):0;
+    long structsize =  sizeof(PYCFILEEXT);
+    long fileheadoffset = (fileSize.longValue > structsize)? (fileSize.longValue - structsize):0;
     if(fileheadoffset == 0)
     {
         NSLog(@"nothing in in");
@@ -4417,11 +4417,11 @@ _ALL_END:
     if (fileAttributes != nil) {
         
         fileSize = [fileAttributes objectForKey:NSFileSize];
-        NSLog(@"离线文件size=%d", fileSize.intValue);
+        NSLog(@"离线文件size=%ld", fileSize.longValue);
     }
     
-    int structsize =  sizeof(PYCFILEEXT);
-    int fileheadoffset = (fileSize.intValue > structsize)? (fileSize.intValue - structsize):0;
+    long structsize =  sizeof(PYCFILEEXT);
+    long fileheadoffset = (fileSize.longValue > structsize)? (fileSize.longValue - structsize):0;
     if(fileheadoffset == 0)
     {
         return iReturn;

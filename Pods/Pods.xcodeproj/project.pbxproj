@@ -7,66 +7,88 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0D619A711F71058C9238B17E9AF48AFC /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C037AAD24BDA09AF1E862C4409C592D /* FMDatabaseQueue.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		183A0D8AF38E0EE20E47F1FEF9B37327 /* FMResultSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 8037EF310A68E70BF02D8EC232BF8DF9 /* FMResultSet.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3ECC23FFAE400A6B2658AAF2990D83BE /* FMDB.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DD76E557B08082847FD9EC68ABB1E20 /* FMDB.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3F61BE79D4B46C119C136EDE960CE78C /* FMDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AF0AD815F36DB91C90DC4C8DF8DAB9B /* FMDatabase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		029F6954B4AFDCF7C03B6058DBB74669 /* Pods-PBBReader-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 79EA47C254FB83BFCE2F2A9777FCEA4C /* Pods-PBBReader-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0D619A711F71058C9238B17E9AF48AFC /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3126DD207C86226F4ED3F56D35CFCF6A /* FMDatabaseQueue.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		183A0D8AF38E0EE20E47F1FEF9B37327 /* FMResultSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A39FB267EA55C47F135525086C9FC05 /* FMResultSet.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2D6B106EACB4FDFD48618DB163C4D19C /* Pods-PBBReader-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 037679B4C812C699CCF4D6F5AEB360C0 /* Pods-PBBReader-dummy.m */; };
+		3109BF3DEE31DCED8EE251A17CC5E7DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D83AA663CD3BCEB30A5EA88EBF8CBAC /* Cocoa.framework */; };
+		33F852EF949085EE7EF02CC699290A24 /* SnapKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B02FC51541EF9D59F95AA55F44159253 /* SnapKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3DAD1FC7EF1971AEED71F3037A6AF046 /* ConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C527078975E60B8A478F58542109E8 /* ConstraintMaker.swift */; };
+		3ECC23FFAE400A6B2658AAF2990D83BE /* FMDB.h in Headers */ = {isa = PBXBuildFile; fileRef = AB8D5A8A0D8D11C21AAB613949361CD6 /* FMDB.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3F61BE79D4B46C119C136EDE960CE78C /* FMDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = 8828B8B8981CFCF978352BCB1C3FF270 /* FMDatabase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		41D18E023F2272498FC950816A1C1AEB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D83AA663CD3BCEB30A5EA88EBF8CBAC /* Cocoa.framework */; };
+		45D41BB1BAAC110830ECAF1CDF5348C3 /* ConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989CDE4E78F4F7B319AAA9764B6596C9 /* ConstraintItem.swift */; };
 		551864BF98FF39945A2F33B4C0B97A06 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D83AA663CD3BCEB30A5EA88EBF8CBAC /* Cocoa.framework */; };
 		58CE33E7875BEC7B12D551A398FB9A97 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86647C0008D0971DCB3D0068A0CF15D0 /* Security.framework */; };
-		5F6BF9B5FEB8DD9342325ACD9E626761 /* EDStarRating.h in Headers */ = {isa = PBXBuildFile; fileRef = EDC60C10ABC0A6EC0BC2384987B2F3E0 /* EDStarRating.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		656900B90D165C7F37D9A5456D9BA73B /* Pods-ScaryBugsMacTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 790179F452C9C1CB05DB6271ECD316D3 /* Pods-ScaryBugsMacTests-dummy.m */; };
-		6AAFA2F344A6B58F728AF958F3FE6D89 /* GCDAsyncSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 1839ABB23664BF61317DEC2D9F45517C /* GCDAsyncSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6C63E2BEBE2BC08BD46F6A91D0A08143 /* FMDatabasePool.h in Headers */ = {isa = PBXBuildFile; fileRef = 2220AA0EC87C96ADBD423A82FF31054F /* FMDatabasePool.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		74695802583BDB0C0818AC1B97F63815 /* FMDatabaseAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 5755AD37BE3025DD769A943B1F557108 /* FMDatabaseAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7C818AE74E830311E61FF1A7E42D0713 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2E82C9F3D7D37E23FDC5209F111A00 /* FMResultSet.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		7D257B350E085E7172216DA1A0F14CFC /* Pods-ScaryBugsMac-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CD9AF401FDE739F78C8172D4C2D690FF /* Pods-ScaryBugsMac-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		92AED971B91C640191A5ABA1567FE358 /* GCDAsyncUdpSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D9B4D8F0D2B22A9635C200332599606 /* GCDAsyncUdpSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		951236FAE425EEA05C9AF25FB7A20D98 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D83AA663CD3BCEB30A5EA88EBF8CBAC /* Cocoa.framework */; };
-		991BFD139F6A45C9B654960C2F6A7F09 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 7357363F946B1B4A29C40F1933948EF4 /* GCDAsyncSocket.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		9ED7D145E127C7882CC96F7450862BAE /* EDStarRating-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B7CC775FD92CD8505C17BFD229C6D8 /* EDStarRating-dummy.m */; };
-		ACFE60AB34A7FEF697E6EEFB62436A8D /* CocoaAsyncSocket-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E057745B13FF60D80DBB51C68ED8090D /* CocoaAsyncSocket-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AD01D434D8D120A3767270766AD30797 /* FMDB-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E397882F1FA565F6CE5547B7FC2CD9E /* FMDB-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B9696DF8710911BE3081BD31EADB4144 /* EDStarRating-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 242A3729E7B5DB2D9748CA875C7801BE /* EDStarRating-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BA88E88A631D6BD023521B7206CE6C25 /* FMDB-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BCCB99DE1790C130808389A46A55201 /* FMDB-dummy.m */; };
+		5F6BF9B5FEB8DD9342325ACD9E626761 /* EDStarRating.h in Headers */ = {isa = PBXBuildFile; fileRef = BD17B174E44AEDABCFD3704920EE1D99 /* EDStarRating.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		656900B90D165C7F37D9A5456D9BA73B /* Pods-ScaryBugsMacTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A224C0B118E39F71656943B0AE5000 /* Pods-ScaryBugsMacTests-dummy.m */; };
+		6AAFA2F344A6B58F728AF958F3FE6D89 /* GCDAsyncSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = BFB911FBD2BED1AD54E481EC3113D50F /* GCDAsyncSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6C63E2BEBE2BC08BD46F6A91D0A08143 /* FMDatabasePool.h in Headers */ = {isa = PBXBuildFile; fileRef = 41FB92A5A8EE462EC776F27922B95BA6 /* FMDatabasePool.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		73B9A5C250680583EA5E9A3BFE472201 /* EdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFA08DF07356281B22A3CEA726EDE26 /* EdgeInsets.swift */; };
+		74695802583BDB0C0818AC1B97F63815 /* FMDatabaseAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = A645D0DA2A8CBC6DC8831EA112485703 /* FMDatabaseAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7C818AE74E830311E61FF1A7E42D0713 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E121640DD746A799BFC5AAD783B3A7 /* FMResultSet.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		92AED971B91C640191A5ABA1567FE358 /* GCDAsyncUdpSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 8825DC7D2992FC8071BA6D280D580C9B /* GCDAsyncUdpSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		991BFD139F6A45C9B654960C2F6A7F09 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 2693717CA9A215E9984C236EEACA7526 /* GCDAsyncSocket.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		9B6CF657D8398F98ED42545DC26DA9B9 /* Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491FEF747725D875815E4372603DDFD6 /* Debugging.swift */; };
+		9D983721439BE0353687FDE4DE04CE47 /* ViewController+SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90F2DE7434727F5CE4174C5D15B3309 /* ViewController+SnapKit.swift */; };
+		9ED7D145E127C7882CC96F7450862BAE /* EDStarRating-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2669C62B5F39CAC3BAA1A2D8FD5E17FE /* EDStarRating-dummy.m */; };
+		ACFE60AB34A7FEF697E6EEFB62436A8D /* CocoaAsyncSocket-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AFA0109B957828A3D7DA496AE83B11D3 /* CocoaAsyncSocket-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AD01D434D8D120A3767270766AD30797 /* FMDB-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A74C0AA42A879594C0913B076A18E3FC /* FMDB-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AF06F7AF59D576DF2DE8A7B67D514F2D /* SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057ADBEE9B55664FEAB6BC2896C8D5E2 /* SnapKit.swift */; };
+		AF6EAD685442FAFE8420996FB1558D9A /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55484048A76E94477CFC918B2CFD3AE3 /* Constraint.swift */; };
+		AFBD92B88C90B42022F00F4963621864 /* SnapKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E09613C3B73D9A26300BE6C1CDD7146D /* SnapKit-dummy.m */; };
+		B4569EEE02EF4BF535571FE889D1CCC8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D83AA663CD3BCEB30A5EA88EBF8CBAC /* Cocoa.framework */; };
+		B9696DF8710911BE3081BD31EADB4144 /* EDStarRating-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 749490D3FB16CDEC1F46C4CF5ABA2272 /* EDStarRating-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BA88E88A631D6BD023521B7206CE6C25 /* FMDB-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 64603563A3F3385BE9A2D8979454D89C /* FMDB-dummy.m */; };
+		BC6EEEE6C15A1747480C9DC5C3829BE5 /* ConstraintDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9E8E1DFADAD3198AB5C2007F96841B /* ConstraintDescription.swift */; };
+		C038AFD25C1E35126FF5E971451407E4 /* ConstraintAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0512BF0BF4A851F304553F1BD6E69FE6 /* ConstraintAttributes.swift */; };
+		C43217A794BCE0ECFDBE07AB86FFFDAF /* View+SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BAF069EC9B346561388C08F319EB5F /* View+SnapKit.swift */; };
 		C5C58FEE0A35A9EF7DA80B26B6DF2089 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA894B433140FF78C796595C4661619E /* CoreServices.framework */; };
-		C8FC0929A42C36174794FE1ADFD620E3 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 95AA9DBD907F5DA54BEAB3BE4E3DA27D /* FMDatabasePool.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		C8FC0929A42C36174794FE1ADFD620E3 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B7F39103A5578EAF2B2A89146153FC /* FMDatabasePool.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		CDA51D1B4892D9DCD48B0CCD357C7EBE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D83AA663CD3BCEB30A5EA88EBF8CBAC /* Cocoa.framework */; };
-		CEBE35B313BB50A00991C4393786E7B2 /* Pods-ScaryBugsMac-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5033BAA3DD71A994EC0CB734B3338FDC /* Pods-ScaryBugsMac-dummy.m */; };
-		D04426CBCC74FCE2847788C31A630F98 /* Pods-ScaryBugsMacTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 71E0CAAB6CA97C7942143130E4E0E922 /* Pods-ScaryBugsMacTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D04426CBCC74FCE2847788C31A630F98 /* Pods-ScaryBugsMacTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 60EC83B663B98E94106BF4BF65A96862 /* Pods-ScaryBugsMacTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D0730416CF44A5A201BA58FA45EEE920 /* ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B723642DE48E391DF41EFE6CC790A146 /* ConstraintRelation.swift */; };
 		D92B24E1B94B2A572C0FAFF67E3544CD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F71D895FE4A90FBE97BA18CD019A62EB /* QuartzCore.framework */; };
-		D9A44696356E299F3C9A4BFF9E57343F /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = A2EDB5249AA2874AAFF04AA683508061 /* GCDAsyncUdpSocket.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		DCCE50BA42EC4671525ED005F1E7FCB9 /* EDStarRating.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F0B8869F2BAA36101A65D0E85CEEFA /* EDStarRating.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		E330886E0E7C450E9669C4BD025D9ABD /* FMDatabaseQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A6C4570644FC7B84B88790F8BD8243F /* FMDatabaseQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D9A44696356E299F3C9A4BFF9E57343F /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = EB69135B5FD34CDB9A299119E5353C51 /* GCDAsyncUdpSocket.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		DCCE50BA42EC4671525ED005F1E7FCB9 /* EDStarRating.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6B97AF28046B67528F582FFC18FD9F /* EDStarRating.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E330886E0E7C450E9669C4BD025D9ABD /* FMDatabaseQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 60171600869D4365EE03D89EC9425CFE /* FMDatabaseQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EF0CC690099FD83DFF59F3C48FF96047 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D83AA663CD3BCEB30A5EA88EBF8CBAC /* Cocoa.framework */; };
-		F0895B2A83F948153E1E5EA38A230B66 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FE79B86ED4FD866E1D7EBE82D12B94 /* FMDatabaseAdditions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		F45B40DF0BF596BDCD96B2D85EF848FA /* CocoaAsyncSocket-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 77ACD942EE502AABB996D57438B7969D /* CocoaAsyncSocket-dummy.m */; };
-		F5A0569CB70F6F37A16E32EE210D0C66 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E25C888B0372F94BBB7A60CE7FAECD9 /* FMDatabase.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		F0895B2A83F948153E1E5EA38A230B66 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 808C1640ACE2F85EFB1981E7FF522700 /* FMDatabaseAdditions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		F45B40DF0BF596BDCD96B2D85EF848FA /* CocoaAsyncSocket-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 156A6C51F639B621CB8925063ECE95CB /* CocoaAsyncSocket-dummy.m */; };
+		F5A0569CB70F6F37A16E32EE210D0C66 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B7C47BE4E4CF094CBD813C61CB3E23 /* FMDatabase.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		FF1CB5180ADA22FC2BFFEF2DC21A1A84 /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3A7652051B7C6C298E89EB1467ECB1 /* LayoutConstraint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		5361E84E196F49B51D935C41656D5A45 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 23CF27B2BA6AC7125EFFEDA8C5AA819F;
-			remoteInfo = FMDB;
-		};
-		6DE8DCBC9F98EBD576B4D7B697DE05EA /* PBXContainerItemProxy */ = {
+		2A4A67C371C42A9A174D310D9705B320 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = B37E19CA872A7535725D1E1946E5C271;
 			remoteInfo = CocoaAsyncSocket;
 		};
-		8BE0F9CCE102650551119E7885EA2237 /* PBXContainerItemProxy */ = {
+		54AB81AFEC8AA898CFCE9FC52EBD7987 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 23CF27B2BA6AC7125EFFEDA8C5AA819F;
+			remoteInfo = FMDB;
+		};
+		624FFB663FE6A111C39E96B40F1602FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 10E61158786CC447B2D83172216983F4;
+			remoteInfo = SnapKit;
+		};
+		C636F8D5A6B48CEC85A330832E03D445 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = A46399945D18308F6E6F073507A3A78B;
 			remoteInfo = EDStarRating;
 		};
-		C636F8D5A6B48CEC85A330832E03D445 /* PBXContainerItemProxy */ = {
+		F1417697105B8729A4044AE870499ED0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
@@ -76,71 +98,90 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		068CF22D1DC9BBD59C6AE3B11C6B3073 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		08995685600D8D58500D8F94865CD230 /* Pods-ScaryBugsMac.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-ScaryBugsMac.modulemap"; sourceTree = "<group>"; };
-		091899C925019E0D91F1AE143A42272E /* Pods-ScaryBugsMacTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ScaryBugsMacTests-frameworks.sh"; sourceTree = "<group>"; };
-		0AF0AD815F36DB91C90DC4C8DF8DAB9B /* FMDatabase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabase.h; path = src/fmdb/FMDatabase.h; sourceTree = "<group>"; };
-		10AE2141E5ACE161C296D084A677425A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1839ABB23664BF61317DEC2D9F45517C /* GCDAsyncSocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDAsyncSocket.h; path = Source/GCD/GCDAsyncSocket.h; sourceTree = "<group>"; };
-		1A2E82C9F3D7D37E23FDC5209F111A00 /* FMResultSet.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = src/fmdb/FMResultSet.m; sourceTree = "<group>"; };
+		01B07BEA32176CB17B9F9E03FD6779C9 /* Pods-ScaryBugsMacTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ScaryBugsMacTests.debug.xcconfig"; sourceTree = "<group>"; };
+		022FA0E2828FE84A25139763251CE68F /* EDStarRating.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = EDStarRating.modulemap; sourceTree = "<group>"; };
+		037679B4C812C699CCF4D6F5AEB360C0 /* Pods-PBBReader-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PBBReader-dummy.m"; sourceTree = "<group>"; };
+		0512BF0BF4A851F304553F1BD6E69FE6 /* ConstraintAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintAttributes.swift; path = Source/ConstraintAttributes.swift; sourceTree = "<group>"; };
+		057ADBEE9B55664FEAB6BC2896C8D5E2 /* SnapKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SnapKit.swift; path = Source/SnapKit.swift; sourceTree = "<group>"; };
+		0592DC7954FC04698D682BDF2A1E8BAB /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		09B7F39103A5578EAF2B2A89146153FC /* FMDatabasePool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabasePool.m; path = src/fmdb/FMDatabasePool.m; sourceTree = "<group>"; };
+		1072E5D5A5671CE9960365264DD1FA39 /* SnapKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.xcconfig; sourceTree = "<group>"; };
+		13BDB6C5B1A753294E547F97A2B45BEC /* EDStarRating-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EDStarRating-prefix.pch"; sourceTree = "<group>"; };
+		156A6C51F639B621CB8925063ECE95CB /* CocoaAsyncSocket-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CocoaAsyncSocket-dummy.m"; sourceTree = "<group>"; };
+		1613705E1512D977FE3263A83ED2B31C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19C741E62F7C18C883E97122D6E1B45C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A39FB267EA55C47F135525086C9FC05 /* FMResultSet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMResultSet.h; path = src/fmdb/FMResultSet.h; sourceTree = "<group>"; };
 		1D83AA663CD3BCEB30A5EA88EBF8CBAC /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
-		20F0B8869F2BAA36101A65D0E85CEEFA /* EDStarRating.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EDStarRating.m; path = EDStarRating/EDStarRating.m; sourceTree = "<group>"; };
-		2220AA0EC87C96ADBD423A82FF31054F /* FMDatabasePool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabasePool.h; path = src/fmdb/FMDatabasePool.h; sourceTree = "<group>"; };
-		242A3729E7B5DB2D9748CA875C7801BE /* EDStarRating-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EDStarRating-umbrella.h"; sourceTree = "<group>"; };
-		2C037AAD24BDA09AF1E862C4409C592D /* FMDatabaseQueue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseQueue.m; path = src/fmdb/FMDatabaseQueue.m; sourceTree = "<group>"; };
-		377BAA5A386B80897A74F320BABC4CAB /* Pods-ScaryBugsMacTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ScaryBugsMacTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		38F28AB20B6A51835D8FE3F25325D60E /* Pods-ScaryBugsMac-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ScaryBugsMac-acknowledgements.markdown"; sourceTree = "<group>"; };
-		4E397882F1FA565F6CE5547B7FC2CD9E /* FMDB-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FMDB-umbrella.h"; sourceTree = "<group>"; };
-		4E63438BF474FDE3F3F0DBD2AC36C4F2 /* EDStarRating.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = EDStarRating.modulemap; sourceTree = "<group>"; };
-		5033BAA3DD71A994EC0CB734B3338FDC /* Pods-ScaryBugsMac-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ScaryBugsMac-dummy.m"; sourceTree = "<group>"; };
-		50CBCAF2ECCD096CCCD8422A988A1E03 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		54FE79B86ED4FD866E1D7EBE82D12B94 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseAdditions.m; path = src/fmdb/FMDatabaseAdditions.m; sourceTree = "<group>"; };
-		5755AD37BE3025DD769A943B1F557108 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabaseAdditions.h; path = src/fmdb/FMDatabaseAdditions.h; sourceTree = "<group>"; };
-		57FC1CDEFD6EB1BCB78FFFD5C0D184A5 /* EDStarRating.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EDStarRating.xcconfig; sourceTree = "<group>"; };
-		585D72EF30C03C6D1AB61BB3E2924E21 /* Pods-ScaryBugsMac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ScaryBugsMac.release.xcconfig"; sourceTree = "<group>"; };
-		603EC9FA340BBA101C01F5826903C774 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6C0BDDB0809DDD0579D8DC654B780EF2 /* CocoaAsyncSocket-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CocoaAsyncSocket-prefix.pch"; sourceTree = "<group>"; };
-		6F21C0EC75CF9517DC1692E50D50CA88 /* Pods-ScaryBugsMacTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ScaryBugsMacTests.debug.xcconfig"; sourceTree = "<group>"; };
-		71E0CAAB6CA97C7942143130E4E0E922 /* Pods-ScaryBugsMacTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ScaryBugsMacTests-umbrella.h"; sourceTree = "<group>"; };
-		7357363F946B1B4A29C40F1933948EF4 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncSocket.m; path = Source/GCD/GCDAsyncSocket.m; sourceTree = "<group>"; };
-		77ACD942EE502AABB996D57438B7969D /* CocoaAsyncSocket-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CocoaAsyncSocket-dummy.m"; sourceTree = "<group>"; };
-		7892948BE1DD110BAF4057623940FB50 /* FMDB-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FMDB-prefix.pch"; sourceTree = "<group>"; };
-		790179F452C9C1CB05DB6271ECD316D3 /* Pods-ScaryBugsMacTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ScaryBugsMacTests-dummy.m"; sourceTree = "<group>"; };
-		7BCCB99DE1790C130808389A46A55201 /* FMDB-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FMDB-dummy.m"; sourceTree = "<group>"; };
-		7DD76E557B08082847FD9EC68ABB1E20 /* FMDB.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDB.h; path = src/fmdb/FMDB.h; sourceTree = "<group>"; };
-		8037EF310A68E70BF02D8EC232BF8DF9 /* FMResultSet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMResultSet.h; path = src/fmdb/FMResultSet.h; sourceTree = "<group>"; };
+		21ED089DAA490BD6EA331464584950AE /* Pods-ScaryBugsMacTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ScaryBugsMacTests-resources.sh"; sourceTree = "<group>"; };
+		2669C62B5F39CAC3BAA1A2D8FD5E17FE /* EDStarRating-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "EDStarRating-dummy.m"; sourceTree = "<group>"; };
+		2693717CA9A215E9984C236EEACA7526 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncSocket.m; path = Source/GCD/GCDAsyncSocket.m; sourceTree = "<group>"; };
+		27730AB546961095B4712C4063BFB57D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29EACC52C6F49BC05C08AA3DC5926580 /* Pods-ScaryBugsMacTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ScaryBugsMacTests.release.xcconfig"; sourceTree = "<group>"; };
+		30290BF73303A8670A8CB9601D43645D /* Pods-PBBReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PBBReader.release.xcconfig"; sourceTree = "<group>"; };
+		3126DD207C86226F4ED3F56D35CFCF6A /* FMDatabaseQueue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseQueue.m; path = src/fmdb/FMDatabaseQueue.m; sourceTree = "<group>"; };
+		3252EC404ED220F6235B4295EE3A7E18 /* Pods-PBBReader-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PBBReader-acknowledgements.plist"; sourceTree = "<group>"; };
+		359BB2639A150AB4BDDBEB5E6564CFBE /* CocoaAsyncSocket-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CocoaAsyncSocket-prefix.pch"; sourceTree = "<group>"; };
+		3ED45A4D3C331995F25EF9A869AFA7B9 /* Pods-PBBReader-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PBBReader-frameworks.sh"; sourceTree = "<group>"; };
+		41FB92A5A8EE462EC776F27922B95BA6 /* FMDatabasePool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabasePool.h; path = src/fmdb/FMDatabasePool.h; sourceTree = "<group>"; };
+		45E121640DD746A799BFC5AAD783B3A7 /* FMResultSet.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = src/fmdb/FMResultSet.m; sourceTree = "<group>"; };
+		4636E64EDC51C4F559417EB0DF7C1533 /* Pods-ScaryBugsMacTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ScaryBugsMacTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		491FEF747725D875815E4372603DDFD6 /* Debugging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Debugging.swift; path = Source/Debugging.swift; sourceTree = "<group>"; };
+		4D8BB6689147C9CE2D021C16F5B591ED /* SnapKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-prefix.pch"; sourceTree = "<group>"; };
+		4F4D68F61C6974893AF0F3F2CE318673 /* Pods-ScaryBugsMacTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-ScaryBugsMacTests.modulemap"; sourceTree = "<group>"; };
+		55484048A76E94477CFC918B2CFD3AE3 /* Constraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constraint.swift; path = Source/Constraint.swift; sourceTree = "<group>"; };
+		55A88A00FD8FA002621D6989FFE4D8DF /* Pods-PBBReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PBBReader.debug.xcconfig"; sourceTree = "<group>"; };
+		574C53BC4677444A288D5EBF4FA55A95 /* Pods-PBBReader-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PBBReader-resources.sh"; sourceTree = "<group>"; };
+		58B766E5103CE92891F10E8BF1F92163 /* Pods-PBBReader-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PBBReader-acknowledgements.markdown"; sourceTree = "<group>"; };
+		5CC7703F4812538779E66C39D48077DA /* Pods-PBBReader.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PBBReader.modulemap"; sourceTree = "<group>"; };
+		60171600869D4365EE03D89EC9425CFE /* FMDatabaseQueue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabaseQueue.h; path = src/fmdb/FMDatabaseQueue.h; sourceTree = "<group>"; };
+		60EC83B663B98E94106BF4BF65A96862 /* Pods-ScaryBugsMacTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ScaryBugsMacTests-umbrella.h"; sourceTree = "<group>"; };
+		64603563A3F3385BE9A2D8979454D89C /* FMDB-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FMDB-dummy.m"; sourceTree = "<group>"; };
+		6B29A180A97A33A1389C8FFB7507033E /* Pods_ScaryBugsMacTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScaryBugsMacTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		74166F09710B32713F3E57E3D739090F /* Pods_PBBReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PBBReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		749490D3FB16CDEC1F46C4CF5ABA2272 /* EDStarRating-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EDStarRating-umbrella.h"; sourceTree = "<group>"; };
+		79EA47C254FB83BFCE2F2A9777FCEA4C /* Pods-PBBReader-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PBBReader-umbrella.h"; sourceTree = "<group>"; };
+		808C1640ACE2F85EFB1981E7FF522700 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseAdditions.m; path = src/fmdb/FMDatabaseAdditions.m; sourceTree = "<group>"; };
 		86647C0008D0971DCB3D0068A0CF15D0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
-		872222D0BF3E66136EBDA9923853347E /* CocoaAsyncSocket.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = CocoaAsyncSocket.modulemap; sourceTree = "<group>"; };
-		8A6C4570644FC7B84B88790F8BD8243F /* FMDatabaseQueue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabaseQueue.h; path = src/fmdb/FMDatabaseQueue.h; sourceTree = "<group>"; };
-		8CF62D9CE71311EA53F350995CC2EAAE /* FMDB.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = FMDB.modulemap; sourceTree = "<group>"; };
-		8E25C888B0372F94BBB7A60CE7FAECD9 /* FMDatabase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabase.m; path = src/fmdb/FMDatabase.m; sourceTree = "<group>"; };
+		8825DC7D2992FC8071BA6D280D580C9B /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDAsyncUdpSocket.h; path = Source/GCD/GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		8828B8B8981CFCF978352BCB1C3FF270 /* FMDatabase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabase.h; path = src/fmdb/FMDatabase.h; sourceTree = "<group>"; };
+		9198DA6DAB1153549A5E56660586FB57 /* SnapKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SnapKit.modulemap; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		952DB0E8F567B4B7FDF3B4760A1AB02F /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CocoaAsyncSocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		95AA9DBD907F5DA54BEAB3BE4E3DA27D /* FMDatabasePool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabasePool.m; path = src/fmdb/FMDatabasePool.m; sourceTree = "<group>"; };
-		9D9B4D8F0D2B22A9635C200332599606 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDAsyncUdpSocket.h; path = Source/GCD/GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
-		A1EFAE0230CF3477B807A303647228AF /* Pods_ScaryBugsMacTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScaryBugsMacTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A2EDB5249AA2874AAFF04AA683508061 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncUdpSocket.m; path = Source/GCD/GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
-		ABEA20EEA048BD38755D79054E8F3CAB /* Pods-ScaryBugsMacTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-ScaryBugsMacTests.modulemap"; sourceTree = "<group>"; };
-		AD5410F54B68B622317486BD21B9BB90 /* Pods-ScaryBugsMac-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ScaryBugsMac-acknowledgements.plist"; sourceTree = "<group>"; };
-		B492F4EA7B98D3D698EBFAD7D0AABB42 /* CocoaAsyncSocket.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CocoaAsyncSocket.xcconfig; sourceTree = "<group>"; };
-		B6981A3203B9117F9475873D8592958B /* Pods-ScaryBugsMac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ScaryBugsMac.debug.xcconfig"; sourceTree = "<group>"; };
-		BA4ACD672C220FF05BABBE8CEED84A08 /* Pods-ScaryBugsMac-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ScaryBugsMac-resources.sh"; sourceTree = "<group>"; };
-		BDFED77A1515A06B223F0C8FDA71AA7D /* Pods-ScaryBugsMacTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ScaryBugsMacTests-resources.sh"; sourceTree = "<group>"; };
-		C2EEBCD671003FD588BF9384CDB882AE /* Pods_ScaryBugsMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScaryBugsMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C4A73ADFC374FB1990FB0AA2C3B1C779 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C64D4A98A56FDF238A37B62AD11EF48D /* Pods-ScaryBugsMacTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ScaryBugsMacTests.release.xcconfig"; sourceTree = "<group>"; };
-		C6B7CC775FD92CD8505C17BFD229C6D8 /* EDStarRating-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "EDStarRating-dummy.m"; sourceTree = "<group>"; };
-		CD9AF401FDE739F78C8172D4C2D690FF /* Pods-ScaryBugsMac-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ScaryBugsMac-umbrella.h"; sourceTree = "<group>"; };
-		D17041730988B1A86451C068F6C7D41F /* Pods-ScaryBugsMacTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ScaryBugsMacTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		D26B04F4AC0B422E4A0FCDE590A5EE40 /* EDStarRating.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EDStarRating.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E057745B13FF60D80DBB51C68ED8090D /* CocoaAsyncSocket-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CocoaAsyncSocket-umbrella.h"; sourceTree = "<group>"; };
-		E87619518333EF54F264FBD0F4271B7C /* FMDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FMDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		989CDE4E78F4F7B319AAA9764B6596C9 /* ConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintItem.swift; path = Source/ConstraintItem.swift; sourceTree = "<group>"; };
+		9DFA08DF07356281B22A3CEA726EDE26 /* EdgeInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EdgeInsets.swift; path = Source/EdgeInsets.swift; sourceTree = "<group>"; };
+		9E6151FA8EF4010F859150E58B72BF52 /* FMDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FMDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A645D0DA2A8CBC6DC8831EA112485703 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabaseAdditions.h; path = src/fmdb/FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		A74C0AA42A879594C0913B076A18E3FC /* FMDB-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FMDB-umbrella.h"; sourceTree = "<group>"; };
+		AA60BDA66F0A1DF0E3B9082B6CF0F63C /* CocoaAsyncSocket.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = CocoaAsyncSocket.modulemap; sourceTree = "<group>"; };
+		AA6B97AF28046B67528F582FFC18FD9F /* EDStarRating.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EDStarRating.m; path = EDStarRating/EDStarRating.m; sourceTree = "<group>"; };
+		AB8D5A8A0D8D11C21AAB613949361CD6 /* FMDB.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDB.h; path = src/fmdb/FMDB.h; sourceTree = "<group>"; };
+		AFA0109B957828A3D7DA496AE83B11D3 /* CocoaAsyncSocket-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CocoaAsyncSocket-umbrella.h"; sourceTree = "<group>"; };
+		B02FC51541EF9D59F95AA55F44159253 /* SnapKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-umbrella.h"; sourceTree = "<group>"; };
+		B6C527078975E60B8A478F58542109E8 /* ConstraintMaker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMaker.swift; path = Source/ConstraintMaker.swift; sourceTree = "<group>"; };
+		B723642DE48E391DF41EFE6CC790A146 /* ConstraintRelation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelation.swift; path = Source/ConstraintRelation.swift; sourceTree = "<group>"; };
+		B76CB9581B3DA7CB9C7B7909EA8B9B10 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B90F2DE7434727F5CE4174C5D15B3309 /* ViewController+SnapKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ViewController+SnapKit.swift"; path = "Source/ViewController+SnapKit.swift"; sourceTree = "<group>"; };
+		BCEB9B865ED00F8BC40B5D5F2EAA82E3 /* FMDB.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FMDB.xcconfig; sourceTree = "<group>"; };
+		BD17B174E44AEDABCFD3704920EE1D99 /* EDStarRating.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EDStarRating.h; path = EDStarRating/EDStarRating.h; sourceTree = "<group>"; };
+		BDBBDBE7EBAA87FBBB34127E43682BB6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE3A7652051B7C6C298E89EB1467ECB1 /* LayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraint.swift; path = Source/LayoutConstraint.swift; sourceTree = "<group>"; };
+		BFB911FBD2BED1AD54E481EC3113D50F /* GCDAsyncSocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDAsyncSocket.h; path = Source/GCD/GCDAsyncSocket.h; sourceTree = "<group>"; };
+		C5B7C47BE4E4CF094CBD813C61CB3E23 /* FMDatabase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabase.m; path = src/fmdb/FMDatabase.m; sourceTree = "<group>"; };
+		C98A55FA4E9399631AF333240EE550BB /* FMDB.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = FMDB.modulemap; sourceTree = "<group>"; };
+		CC98C3CB118157D91F4E4B3C2268097E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3A224C0B118E39F71656943B0AE5000 /* Pods-ScaryBugsMacTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ScaryBugsMacTests-dummy.m"; sourceTree = "<group>"; };
+		DD325EF1BDDBEC6AF26BAB8E4A0AB91B /* Pods-ScaryBugsMacTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ScaryBugsMacTests-frameworks.sh"; sourceTree = "<group>"; };
+		DF9E8E1DFADAD3198AB5C2007F96841B /* ConstraintDescription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDescription.swift; path = Source/ConstraintDescription.swift; sourceTree = "<group>"; };
+		E09613C3B73D9A26300BE6C1CDD7146D /* SnapKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SnapKit-dummy.m"; sourceTree = "<group>"; };
+		E30B171320E8E295B355E35A154A5B11 /* Pods-ScaryBugsMacTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ScaryBugsMacTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E9BAF069EC9B346561388C08F319EB5F /* View+SnapKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "View+SnapKit.swift"; path = "Source/View+SnapKit.swift"; sourceTree = "<group>"; };
 		EA894B433140FF78C796595C4661619E /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/CoreServices.framework; sourceTree = DEVELOPER_DIR; };
-		EDC60C10ABC0A6EC0BC2384987B2F3E0 /* EDStarRating.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EDStarRating.h; path = EDStarRating/EDStarRating.h; sourceTree = "<group>"; };
-		F5A76440712DBEBCABAD243C2F376F90 /* Pods-ScaryBugsMac-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ScaryBugsMac-frameworks.sh"; sourceTree = "<group>"; };
+		EB69135B5FD34CDB9A299119E5353C51 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncUdpSocket.m; path = Source/GCD/GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
+		ECDFC5E154BB489DF7EF7827BD38EBCA /* EDStarRating.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EDStarRating.xcconfig; sourceTree = "<group>"; };
+		EFBD8B587541F9BB3FFA8E4D3AE3C944 /* CocoaAsyncSocket.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CocoaAsyncSocket.xcconfig; sourceTree = "<group>"; };
+		F349DDE715C49DD26B6BFD28B73651CD /* EDStarRating.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EDStarRating.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F71D895FE4A90FBE97BA18CD019A62EB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		FA1BB2E4D795D113DDABD85349F2694C /* FMDB.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FMDB.xcconfig; sourceTree = "<group>"; };
-		FFF5F8339B74BC664ACC67A138A46C96 /* EDStarRating-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EDStarRating-prefix.pch"; sourceTree = "<group>"; };
+		F8AE49B23B961FBFCA414701E4B3FAF2 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CocoaAsyncSocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCC1DF0C261E06BECAC45F056A6DC781 /* FMDB-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FMDB-prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,19 +202,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6BFBD8D41282B9B73D626350FDE8C2F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4569EEE02EF4BF535571FE889D1CCC8 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		82DC9C7D93704B705E5F297B58D6B487 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				41D18E023F2272498FC950816A1C1AEB /* Cocoa.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AE45FF8FF87386B9FA2E656BCAF278AD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				951236FAE425EEA05C9AF25FB7A20D98 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,86 +228,78 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FCFB990184A3846F75E27C79732C2991 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3109BF3DEE31DCED8EE251A17CC5E7DA /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		018D95D13D72F4EC7A2FD85791611467 /* Targets Support Files */ = {
+		0853B32BC4EAD511C28A3733BA224406 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B5BDAC8D851367CE3B838D877B63EFD0 /* Pods-ScaryBugsMac */,
-				74D991DBB267D26838CE34D5FD2CF84C /* Pods-ScaryBugsMacTests */,
+				F8AE49B23B961FBFCA414701E4B3FAF2 /* CocoaAsyncSocket.framework */,
+				F349DDE715C49DD26B6BFD28B73651CD /* EDStarRating.framework */,
+				9E6151FA8EF4010F859150E58B72BF52 /* FMDB.framework */,
+				74166F09710B32713F3E57E3D739090F /* Pods_PBBReader.framework */,
+				6B29A180A97A33A1389C8FFB7507033E /* Pods_ScaryBugsMacTests.framework */,
+				0592DC7954FC04698D682BDF2A1E8BAB /* SnapKit.framework */,
 			);
-			name = "Targets Support Files";
+			name = Products;
 			sourceTree = "<group>";
 		};
-		07EC1D8A0EC99E09124EE6BCE852E164 /* EDStarRating */ = {
+		3B4330C2C5D199124DF1C528A20EC1B4 /* Pods-ScaryBugsMacTests */ = {
 			isa = PBXGroup;
 			children = (
-				EDC60C10ABC0A6EC0BC2384987B2F3E0 /* EDStarRating.h */,
-				20F0B8869F2BAA36101A65D0E85CEEFA /* EDStarRating.m */,
-				23A9A769406C407951C28A1B48375E9F /* Support Files */,
+				B76CB9581B3DA7CB9C7B7909EA8B9B10 /* Info.plist */,
+				4F4D68F61C6974893AF0F3F2CE318673 /* Pods-ScaryBugsMacTests.modulemap */,
+				E30B171320E8E295B355E35A154A5B11 /* Pods-ScaryBugsMacTests-acknowledgements.markdown */,
+				4636E64EDC51C4F559417EB0DF7C1533 /* Pods-ScaryBugsMacTests-acknowledgements.plist */,
+				D3A224C0B118E39F71656943B0AE5000 /* Pods-ScaryBugsMacTests-dummy.m */,
+				DD325EF1BDDBEC6AF26BAB8E4A0AB91B /* Pods-ScaryBugsMacTests-frameworks.sh */,
+				21ED089DAA490BD6EA331464584950AE /* Pods-ScaryBugsMacTests-resources.sh */,
+				60EC83B663B98E94106BF4BF65A96862 /* Pods-ScaryBugsMacTests-umbrella.h */,
+				01B07BEA32176CB17B9F9E03FD6779C9 /* Pods-ScaryBugsMacTests.debug.xcconfig */,
+				29EACC52C6F49BC05C08AA3DC5926580 /* Pods-ScaryBugsMacTests.release.xcconfig */,
 			);
-			path = EDStarRating;
+			name = "Pods-ScaryBugsMacTests";
+			path = "Target Support Files/Pods-ScaryBugsMacTests";
 			sourceTree = "<group>";
 		};
-		148C48AE7BDD7EC2B96F927307824293 /* Support Files */ = {
+		3ED0799ADD72A78721AA8FCD97CF385D /* standard */ = {
 			isa = PBXGroup;
 			children = (
-				8CF62D9CE71311EA53F350995CC2EAAE /* FMDB.modulemap */,
-				FA1BB2E4D795D113DDABD85349F2694C /* FMDB.xcconfig */,
-				7BCCB99DE1790C130808389A46A55201 /* FMDB-dummy.m */,
-				7892948BE1DD110BAF4057623940FB50 /* FMDB-prefix.pch */,
-				4E397882F1FA565F6CE5547B7FC2CD9E /* FMDB-umbrella.h */,
-				C4A73ADFC374FB1990FB0AA2C3B1C779 /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/FMDB";
-			sourceTree = "<group>";
-		};
-		23A9A769406C407951C28A1B48375E9F /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				4E63438BF474FDE3F3F0DBD2AC36C4F2 /* EDStarRating.modulemap */,
-				57FC1CDEFD6EB1BCB78FFFD5C0D184A5 /* EDStarRating.xcconfig */,
-				C6B7CC775FD92CD8505C17BFD229C6D8 /* EDStarRating-dummy.m */,
-				FFF5F8339B74BC664ACC67A138A46C96 /* EDStarRating-prefix.pch */,
-				242A3729E7B5DB2D9748CA875C7801BE /* EDStarRating-umbrella.h */,
-				068CF22D1DC9BBD59C6AE3B11C6B3073 /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/EDStarRating";
-			sourceTree = "<group>";
-		};
-		49251344218D2C3F8AB156AF8DB41173 /* standard */ = {
-			isa = PBXGroup;
-			children = (
-				0AF0AD815F36DB91C90DC4C8DF8DAB9B /* FMDatabase.h */,
-				8E25C888B0372F94BBB7A60CE7FAECD9 /* FMDatabase.m */,
-				5755AD37BE3025DD769A943B1F557108 /* FMDatabaseAdditions.h */,
-				54FE79B86ED4FD866E1D7EBE82D12B94 /* FMDatabaseAdditions.m */,
-				2220AA0EC87C96ADBD423A82FF31054F /* FMDatabasePool.h */,
-				95AA9DBD907F5DA54BEAB3BE4E3DA27D /* FMDatabasePool.m */,
-				8A6C4570644FC7B84B88790F8BD8243F /* FMDatabaseQueue.h */,
-				2C037AAD24BDA09AF1E862C4409C592D /* FMDatabaseQueue.m */,
-				7DD76E557B08082847FD9EC68ABB1E20 /* FMDB.h */,
-				8037EF310A68E70BF02D8EC232BF8DF9 /* FMResultSet.h */,
-				1A2E82C9F3D7D37E23FDC5209F111A00 /* FMResultSet.m */,
+				8828B8B8981CFCF978352BCB1C3FF270 /* FMDatabase.h */,
+				C5B7C47BE4E4CF094CBD813C61CB3E23 /* FMDatabase.m */,
+				A645D0DA2A8CBC6DC8831EA112485703 /* FMDatabaseAdditions.h */,
+				808C1640ACE2F85EFB1981E7FF522700 /* FMDatabaseAdditions.m */,
+				41FB92A5A8EE462EC776F27922B95BA6 /* FMDatabasePool.h */,
+				09B7F39103A5578EAF2B2A89146153FC /* FMDatabasePool.m */,
+				60171600869D4365EE03D89EC9425CFE /* FMDatabaseQueue.h */,
+				3126DD207C86226F4ED3F56D35CFCF6A /* FMDatabaseQueue.m */,
+				AB8D5A8A0D8D11C21AAB613949361CD6 /* FMDB.h */,
+				1A39FB267EA55C47F135525086C9FC05 /* FMResultSet.h */,
+				45E121640DD746A799BFC5AAD783B3A7 /* FMResultSet.m */,
 			);
 			name = standard;
 			sourceTree = "<group>";
 		};
-		50BAF025B4F6F6EA8D2965907A300295 /* Support Files */ = {
+		4A1D7DBBA58A12D1EEB1E9B35E6A76B8 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				872222D0BF3E66136EBDA9923853347E /* CocoaAsyncSocket.modulemap */,
-				B492F4EA7B98D3D698EBFAD7D0AABB42 /* CocoaAsyncSocket.xcconfig */,
-				77ACD942EE502AABB996D57438B7969D /* CocoaAsyncSocket-dummy.m */,
-				6C0BDDB0809DDD0579D8DC654B780EF2 /* CocoaAsyncSocket-prefix.pch */,
-				E057745B13FF60D80DBB51C68ED8090D /* CocoaAsyncSocket-umbrella.h */,
-				603EC9FA340BBA101C01F5826903C774 /* Info.plist */,
+				C98A55FA4E9399631AF333240EE550BB /* FMDB.modulemap */,
+				BCEB9B865ED00F8BC40B5D5F2EAA82E3 /* FMDB.xcconfig */,
+				64603563A3F3385BE9A2D8979454D89C /* FMDB-dummy.m */,
+				FCC1DF0C261E06BECAC45F056A6DC781 /* FMDB-prefix.pch */,
+				A74C0AA42A879594C0913B076A18E3FC /* FMDB-umbrella.h */,
+				1613705E1512D977FE3263A83ED2B31C /* Info.plist */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/CocoaAsyncSocket";
+			path = "../Target Support Files/FMDB";
 			sourceTree = "<group>";
 		};
 		5350A44F1D708EFDAD6108415EAC20D0 /* OS X */ = {
@@ -280,42 +313,72 @@
 			name = "OS X";
 			sourceTree = "<group>";
 		};
-		5AA46DB96D9BF4A23F89A7585CDFFB60 /* CocoaAsyncSocket */ = {
+		78C3A8D7B12725088CFA35A47E59F018 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				67810B8ACD0370496CA016C949B8C9FD /* GCD */,
-				50BAF025B4F6F6EA8D2965907A300295 /* Support Files */,
+				A465C8B797EBE05356C0417B400E0ED2 /* Pods-PBBReader */,
+				3B4330C2C5D199124DF1C528A20EC1B4 /* Pods-ScaryBugsMacTests */,
 			);
-			path = CocoaAsyncSocket;
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		67810B8ACD0370496CA016C949B8C9FD /* GCD */ = {
+		791462D40F6F4D766C7CD3A7C079EC4F /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				1839ABB23664BF61317DEC2D9F45517C /* GCDAsyncSocket.h */,
-				7357363F946B1B4A29C40F1933948EF4 /* GCDAsyncSocket.m */,
-				9D9B4D8F0D2B22A9635C200332599606 /* GCDAsyncUdpSocket.h */,
-				A2EDB5249AA2874AAFF04AA683508061 /* GCDAsyncUdpSocket.m */,
+				BDBBDBE7EBAA87FBBB34127E43682BB6 /* Info.plist */,
+				9198DA6DAB1153549A5E56660586FB57 /* SnapKit.modulemap */,
+				1072E5D5A5671CE9960365264DD1FA39 /* SnapKit.xcconfig */,
+				E09613C3B73D9A26300BE6C1CDD7146D /* SnapKit-dummy.m */,
+				4D8BB6689147C9CE2D021C16F5B591ED /* SnapKit-prefix.pch */,
+				B02FC51541EF9D59F95AA55F44159253 /* SnapKit-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SnapKit";
+			sourceTree = "<group>";
+		};
+		79435535776F08DD908AB590D8A03114 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				AA60BDA66F0A1DF0E3B9082B6CF0F63C /* CocoaAsyncSocket.modulemap */,
+				EFBD8B587541F9BB3FFA8E4D3AE3C944 /* CocoaAsyncSocket.xcconfig */,
+				156A6C51F639B621CB8925063ECE95CB /* CocoaAsyncSocket-dummy.m */,
+				359BB2639A150AB4BDDBEB5E6564CFBE /* CocoaAsyncSocket-prefix.pch */,
+				AFA0109B957828A3D7DA496AE83B11D3 /* CocoaAsyncSocket-umbrella.h */,
+				CC98C3CB118157D91F4E4B3C2268097E /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/CocoaAsyncSocket";
+			sourceTree = "<group>";
+		};
+		7AB26E69CDDC54A68C48FC754ACBE7E3 /* GCD */ = {
+			isa = PBXGroup;
+			children = (
+				BFB911FBD2BED1AD54E481EC3113D50F /* GCDAsyncSocket.h */,
+				2693717CA9A215E9984C236EEACA7526 /* GCDAsyncSocket.m */,
+				8825DC7D2992FC8071BA6D280D580C9B /* GCDAsyncUdpSocket.h */,
+				EB69135B5FD34CDB9A299119E5353C51 /* GCDAsyncUdpSocket.m */,
 			);
 			name = GCD;
 			sourceTree = "<group>";
 		};
-		74D991DBB267D26838CE34D5FD2CF84C /* Pods-ScaryBugsMacTests */ = {
+		7D0A0DD8C9AD873B2CA36C3E6DB4B22B /* SnapKit */ = {
 			isa = PBXGroup;
 			children = (
-				10AE2141E5ACE161C296D084A677425A /* Info.plist */,
-				ABEA20EEA048BD38755D79054E8F3CAB /* Pods-ScaryBugsMacTests.modulemap */,
-				377BAA5A386B80897A74F320BABC4CAB /* Pods-ScaryBugsMacTests-acknowledgements.markdown */,
-				D17041730988B1A86451C068F6C7D41F /* Pods-ScaryBugsMacTests-acknowledgements.plist */,
-				790179F452C9C1CB05DB6271ECD316D3 /* Pods-ScaryBugsMacTests-dummy.m */,
-				091899C925019E0D91F1AE143A42272E /* Pods-ScaryBugsMacTests-frameworks.sh */,
-				BDFED77A1515A06B223F0C8FDA71AA7D /* Pods-ScaryBugsMacTests-resources.sh */,
-				71E0CAAB6CA97C7942143130E4E0E922 /* Pods-ScaryBugsMacTests-umbrella.h */,
-				6F21C0EC75CF9517DC1692E50D50CA88 /* Pods-ScaryBugsMacTests.debug.xcconfig */,
-				C64D4A98A56FDF238A37B62AD11EF48D /* Pods-ScaryBugsMacTests.release.xcconfig */,
+				55484048A76E94477CFC918B2CFD3AE3 /* Constraint.swift */,
+				0512BF0BF4A851F304553F1BD6E69FE6 /* ConstraintAttributes.swift */,
+				DF9E8E1DFADAD3198AB5C2007F96841B /* ConstraintDescription.swift */,
+				989CDE4E78F4F7B319AAA9764B6596C9 /* ConstraintItem.swift */,
+				B6C527078975E60B8A478F58542109E8 /* ConstraintMaker.swift */,
+				B723642DE48E391DF41EFE6CC790A146 /* ConstraintRelation.swift */,
+				491FEF747725D875815E4372603DDFD6 /* Debugging.swift */,
+				9DFA08DF07356281B22A3CEA726EDE26 /* EdgeInsets.swift */,
+				BE3A7652051B7C6C298E89EB1467ECB1 /* LayoutConstraint.swift */,
+				057ADBEE9B55664FEAB6BC2896C8D5E2 /* SnapKit.swift */,
+				E9BAF069EC9B346561388C08F319EB5F /* View+SnapKit.swift */,
+				B90F2DE7434727F5CE4174C5D15B3309 /* ViewController+SnapKit.swift */,
+				791462D40F6F4D766C7CD3A7C079EC4F /* Support Files */,
 			);
-			name = "Pods-ScaryBugsMacTests";
-			path = "Target Support Files/Pods-ScaryBugsMacTests";
+			path = SnapKit;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -323,38 +386,28 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				CD75D5B60FCA72FBF7F9C770460B2C26 /* Frameworks */,
-				C7AF97CD942FB33A90D3B74D4318AA1F /* Pods */,
-				ED4067EE54D585F095537925161184E7 /* Products */,
-				018D95D13D72F4EC7A2FD85791611467 /* Targets Support Files */,
+				F42FFC578F10630FB309CF3509D4B518 /* Pods */,
+				0853B32BC4EAD511C28A3733BA224406 /* Products */,
+				78C3A8D7B12725088CFA35A47E59F018 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		B5BDAC8D851367CE3B838D877B63EFD0 /* Pods-ScaryBugsMac */ = {
+		A465C8B797EBE05356C0417B400E0ED2 /* Pods-PBBReader */ = {
 			isa = PBXGroup;
 			children = (
-				50CBCAF2ECCD096CCCD8422A988A1E03 /* Info.plist */,
-				08995685600D8D58500D8F94865CD230 /* Pods-ScaryBugsMac.modulemap */,
-				38F28AB20B6A51835D8FE3F25325D60E /* Pods-ScaryBugsMac-acknowledgements.markdown */,
-				AD5410F54B68B622317486BD21B9BB90 /* Pods-ScaryBugsMac-acknowledgements.plist */,
-				5033BAA3DD71A994EC0CB734B3338FDC /* Pods-ScaryBugsMac-dummy.m */,
-				F5A76440712DBEBCABAD243C2F376F90 /* Pods-ScaryBugsMac-frameworks.sh */,
-				BA4ACD672C220FF05BABBE8CEED84A08 /* Pods-ScaryBugsMac-resources.sh */,
-				CD9AF401FDE739F78C8172D4C2D690FF /* Pods-ScaryBugsMac-umbrella.h */,
-				B6981A3203B9117F9475873D8592958B /* Pods-ScaryBugsMac.debug.xcconfig */,
-				585D72EF30C03C6D1AB61BB3E2924E21 /* Pods-ScaryBugsMac.release.xcconfig */,
+				19C741E62F7C18C883E97122D6E1B45C /* Info.plist */,
+				5CC7703F4812538779E66C39D48077DA /* Pods-PBBReader.modulemap */,
+				58B766E5103CE92891F10E8BF1F92163 /* Pods-PBBReader-acknowledgements.markdown */,
+				3252EC404ED220F6235B4295EE3A7E18 /* Pods-PBBReader-acknowledgements.plist */,
+				037679B4C812C699CCF4D6F5AEB360C0 /* Pods-PBBReader-dummy.m */,
+				3ED45A4D3C331995F25EF9A869AFA7B9 /* Pods-PBBReader-frameworks.sh */,
+				574C53BC4677444A288D5EBF4FA55A95 /* Pods-PBBReader-resources.sh */,
+				79EA47C254FB83BFCE2F2A9777FCEA4C /* Pods-PBBReader-umbrella.h */,
+				55A88A00FD8FA002621D6989FFE4D8DF /* Pods-PBBReader.debug.xcconfig */,
+				30290BF73303A8670A8CB9601D43645D /* Pods-PBBReader.release.xcconfig */,
 			);
-			name = "Pods-ScaryBugsMac";
-			path = "Target Support Files/Pods-ScaryBugsMac";
-			sourceTree = "<group>";
-		};
-		C7AF97CD942FB33A90D3B74D4318AA1F /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				5AA46DB96D9BF4A23F89A7585CDFFB60 /* CocoaAsyncSocket */,
-				07EC1D8A0EC99E09124EE6BCE852E164 /* EDStarRating */,
-				DBF473CDD67DA728194E79F042692C72 /* FMDB */,
-			);
-			name = Pods;
+			name = "Pods-PBBReader";
+			path = "Target Support Files/Pods-PBBReader";
 			sourceTree = "<group>";
 		};
 		CD75D5B60FCA72FBF7F9C770460B2C26 /* Frameworks */ = {
@@ -365,30 +418,70 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DBF473CDD67DA728194E79F042692C72 /* FMDB */ = {
+		CEE0E89AC4416FE24E5C8F14075D06E6 /* EDStarRating */ = {
 			isa = PBXGroup;
 			children = (
-				49251344218D2C3F8AB156AF8DB41173 /* standard */,
-				148C48AE7BDD7EC2B96F927307824293 /* Support Files */,
+				BD17B174E44AEDABCFD3704920EE1D99 /* EDStarRating.h */,
+				AA6B97AF28046B67528F582FFC18FD9F /* EDStarRating.m */,
+				FE899FCCDD769FD860715CC66E0A8C4E /* Support Files */,
+			);
+			path = EDStarRating;
+			sourceTree = "<group>";
+		};
+		D4AC6DDC0B5136B50C92CD94B13D9A90 /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				3ED0799ADD72A78721AA8FCD97CF385D /* standard */,
+				4A1D7DBBA58A12D1EEB1E9B35E6A76B8 /* Support Files */,
 			);
 			path = FMDB;
 			sourceTree = "<group>";
 		};
-		ED4067EE54D585F095537925161184E7 /* Products */ = {
+		E7BA2AEC7D9E95D8B8D8F454D8B89F45 /* CocoaAsyncSocket */ = {
 			isa = PBXGroup;
 			children = (
-				952DB0E8F567B4B7FDF3B4760A1AB02F /* CocoaAsyncSocket.framework */,
-				D26B04F4AC0B422E4A0FCDE590A5EE40 /* EDStarRating.framework */,
-				E87619518333EF54F264FBD0F4271B7C /* FMDB.framework */,
-				C2EEBCD671003FD588BF9384CDB882AE /* Pods_ScaryBugsMac.framework */,
-				A1EFAE0230CF3477B807A303647228AF /* Pods_ScaryBugsMacTests.framework */,
+				7AB26E69CDDC54A68C48FC754ACBE7E3 /* GCD */,
+				79435535776F08DD908AB590D8A03114 /* Support Files */,
 			);
-			name = Products;
+			path = CocoaAsyncSocket;
+			sourceTree = "<group>";
+		};
+		F42FFC578F10630FB309CF3509D4B518 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E7BA2AEC7D9E95D8B8D8F454D8B89F45 /* CocoaAsyncSocket */,
+				CEE0E89AC4416FE24E5C8F14075D06E6 /* EDStarRating */,
+				D4AC6DDC0B5136B50C92CD94B13D9A90 /* FMDB */,
+				7D0A0DD8C9AD873B2CA36C3E6DB4B22B /* SnapKit */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FE899FCCDD769FD860715CC66E0A8C4E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				022FA0E2828FE84A25139763251CE68F /* EDStarRating.modulemap */,
+				ECDFC5E154BB489DF7EF7827BD38EBCA /* EDStarRating.xcconfig */,
+				2669C62B5F39CAC3BAA1A2D8FD5E17FE /* EDStarRating-dummy.m */,
+				13BDB6C5B1A753294E547F97A2B45BEC /* EDStarRating-prefix.pch */,
+				749490D3FB16CDEC1F46C4CF5ABA2272 /* EDStarRating-umbrella.h */,
+				27730AB546961095B4712C4063BFB57D /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/EDStarRating";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		388AD1A9DDA8ED0D01768BB8E79F6B47 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				029F6954B4AFDCF7C03B6058DBB74669 /* Pods-PBBReader-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		41F6279547BA8C6095CA882FB1059614 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -416,14 +509,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		787208AE03389ADE443A211370C19504 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7D257B350E085E7172216DA1A0F14CFC /* Pods-ScaryBugsMac-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A8A1B98F16F13F2F72C375E44D51EE8A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -438,9 +523,55 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B45B3297F3EFCB9B6564C7DC52ED0F9B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33F852EF949085EE7EF02CC699290A24 /* SnapKit-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		0B471F0B3491B36460B3852573E39993 /* Pods-PBBReader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 44F42D08476E9FBC90636DD6BDC536D3 /* Build configuration list for PBXNativeTarget "Pods-PBBReader" */;
+			buildPhases = (
+				967877FDA92A7A48F20EEF8FC4C50CCB /* Sources */,
+				FCFB990184A3846F75E27C79732C2991 /* Frameworks */,
+				388AD1A9DDA8ED0D01768BB8E79F6B47 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5C151149B0A44DE2E17E626A55B23CF9 /* PBXTargetDependency */,
+				7D2E09D046372552630A89E23B1FF388 /* PBXTargetDependency */,
+				4165829C814035AF1F54869F545FAC49 /* PBXTargetDependency */,
+				CF1327443D2F76424A9011DF93DDB0ED /* PBXTargetDependency */,
+			);
+			name = "Pods-PBBReader";
+			productName = "Pods-PBBReader";
+			productReference = 74166F09710B32713F3E57E3D739090F /* Pods_PBBReader.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		10E61158786CC447B2D83172216983F4 /* SnapKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 585EF4A941DBFE911DE8E91CA2451F27 /* Build configuration list for PBXNativeTarget "SnapKit" */;
+			buildPhases = (
+				40FF0B9F1AD08810B75F3D82BF9FB94E /* Sources */,
+				6BFBD8D41282B9B73D626350FDE8C2F3 /* Frameworks */,
+				B45B3297F3EFCB9B6564C7DC52ED0F9B /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SnapKit;
+			productName = SnapKit;
+			productReference = 0592DC7954FC04698D682BDF2A1E8BAB /* SnapKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		23CF27B2BA6AC7125EFFEDA8C5AA819F /* FMDB */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E130BB4A68655453C9FDC5692FA44094 /* Build configuration list for PBXNativeTarget "FMDB" */;
@@ -455,7 +586,7 @@
 			);
 			name = FMDB;
 			productName = FMDB;
-			productReference = E87619518333EF54F264FBD0F4271B7C /* FMDB.framework */;
+			productReference = 9E6151FA8EF4010F859150E58B72BF52 /* FMDB.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		280A0BBE61FBA4DEECC8D5BF4F4CB705 /* Pods-ScaryBugsMacTests */ = {
@@ -473,27 +604,7 @@
 			);
 			name = "Pods-ScaryBugsMacTests";
 			productName = "Pods-ScaryBugsMacTests";
-			productReference = A1EFAE0230CF3477B807A303647228AF /* Pods_ScaryBugsMacTests.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		4C88E2756805A2F1753E7C5796671779 /* Pods-ScaryBugsMac */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C2C1B80B117E0F9384AE847F62BC2CCA /* Build configuration list for PBXNativeTarget "Pods-ScaryBugsMac" */;
-			buildPhases = (
-				2C6DB841280C5152ED6A64544CDC3ABF /* Sources */,
-				AE45FF8FF87386B9FA2E656BCAF278AD /* Frameworks */,
-				787208AE03389ADE443A211370C19504 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				306CCBC9B26A31F9AC4794A33B6D8A4E /* PBXTargetDependency */,
-				D07B007798536EA98ECB67F6D2DCA06D /* PBXTargetDependency */,
-				5F81354135EBAA79A4277C61C3B6D551 /* PBXTargetDependency */,
-			);
-			name = "Pods-ScaryBugsMac";
-			productName = "Pods-ScaryBugsMac";
-			productReference = C2EEBCD671003FD588BF9384CDB882AE /* Pods_ScaryBugsMac.framework */;
+			productReference = 6B29A180A97A33A1389C8FFB7507033E /* Pods_ScaryBugsMacTests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		A46399945D18308F6E6F073507A3A78B /* EDStarRating */ = {
@@ -510,7 +621,7 @@
 			);
 			name = EDStarRating;
 			productName = EDStarRating;
-			productReference = D26B04F4AC0B422E4A0FCDE590A5EE40 /* EDStarRating.framework */;
+			productReference = F349DDE715C49DD26B6BFD28B73651CD /* EDStarRating.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		B37E19CA872A7535725D1E1946E5C271 /* CocoaAsyncSocket */ = {
@@ -527,7 +638,7 @@
 			);
 			name = CocoaAsyncSocket;
 			productName = CocoaAsyncSocket;
-			productReference = 952DB0E8F567B4B7FDF3B4760A1AB02F /* CocoaAsyncSocket.framework */;
+			productReference = F8AE49B23B961FBFCA414701E4B3FAF2 /* CocoaAsyncSocket.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -547,15 +658,16 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = ED4067EE54D585F095537925161184E7 /* Products */;
+			productRefGroup = 0853B32BC4EAD511C28A3733BA224406 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				B37E19CA872A7535725D1E1946E5C271 /* CocoaAsyncSocket */,
 				A46399945D18308F6E6F073507A3A78B /* EDStarRating */,
 				23CF27B2BA6AC7125EFFEDA8C5AA819F /* FMDB */,
-				4C88E2756805A2F1753E7C5796671779 /* Pods-ScaryBugsMac */,
+				0B471F0B3491B36460B3852573E39993 /* Pods-PBBReader */,
 				280A0BBE61FBA4DEECC8D5BF4F4CB705 /* Pods-ScaryBugsMacTests */,
+				10E61158786CC447B2D83172216983F4 /* SnapKit */,
 			);
 		};
 /* End PBXProject section */
@@ -571,11 +683,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2C6DB841280C5152ED6A64544CDC3ABF /* Sources */ = {
+		40FF0B9F1AD08810B75F3D82BF9FB94E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEBE35B313BB50A00991C4393786E7B2 /* Pods-ScaryBugsMac-dummy.m in Sources */,
+				AF6EAD685442FAFE8420996FB1558D9A /* Constraint.swift in Sources */,
+				C038AFD25C1E35126FF5E971451407E4 /* ConstraintAttributes.swift in Sources */,
+				BC6EEEE6C15A1747480C9DC5C3829BE5 /* ConstraintDescription.swift in Sources */,
+				45D41BB1BAAC110830ECAF1CDF5348C3 /* ConstraintItem.swift in Sources */,
+				3DAD1FC7EF1971AEED71F3037A6AF046 /* ConstraintMaker.swift in Sources */,
+				D0730416CF44A5A201BA58FA45EEE920 /* ConstraintRelation.swift in Sources */,
+				9B6CF657D8398F98ED42545DC26DA9B9 /* Debugging.swift in Sources */,
+				73B9A5C250680583EA5E9A3BFE472201 /* EdgeInsets.swift in Sources */,
+				FF1CB5180ADA22FC2BFFEF2DC21A1A84 /* LayoutConstraint.swift in Sources */,
+				AFBD92B88C90B42022F00F4963621864 /* SnapKit-dummy.m in Sources */,
+				AF06F7AF59D576DF2DE8A7B67D514F2D /* SnapKit.swift in Sources */,
+				C43217A794BCE0ECFDBE07AB86FFFDAF /* View+SnapKit.swift in Sources */,
+				9D983721439BE0353687FDE4DE04CE47 /* ViewController+SnapKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,6 +713,14 @@
 				0D619A711F71058C9238B17E9AF48AFC /* FMDatabaseQueue.m in Sources */,
 				BA88E88A631D6BD023521B7206CE6C25 /* FMDB-dummy.m in Sources */,
 				7C818AE74E830311E61FF1A7E42D0713 /* FMResultSet.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		967877FDA92A7A48F20EEF8FC4C50CCB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D6B106EACB4FDFD48618DB163C4D19C /* Pods-PBBReader-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,11 +744,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		306CCBC9B26A31F9AC4794A33B6D8A4E /* PBXTargetDependency */ = {
+		4165829C814035AF1F54869F545FAC49 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = CocoaAsyncSocket;
-			target = B37E19CA872A7535725D1E1946E5C271 /* CocoaAsyncSocket */;
-			targetProxy = 6DE8DCBC9F98EBD576B4D7B697DE05EA /* PBXContainerItemProxy */;
+			name = FMDB;
+			target = 23CF27B2BA6AC7125EFFEDA8C5AA819F /* FMDB */;
+			targetProxy = 54AB81AFEC8AA898CFCE9FC52EBD7987 /* PBXContainerItemProxy */;
 		};
 		4C8F257FA6422911DA7928FF604AA883 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -624,62 +756,30 @@
 			target = A46399945D18308F6E6F073507A3A78B /* EDStarRating */;
 			targetProxy = C636F8D5A6B48CEC85A330832E03D445 /* PBXContainerItemProxy */;
 		};
-		5F81354135EBAA79A4277C61C3B6D551 /* PBXTargetDependency */ = {
+		5C151149B0A44DE2E17E626A55B23CF9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = FMDB;
-			target = 23CF27B2BA6AC7125EFFEDA8C5AA819F /* FMDB */;
-			targetProxy = 5361E84E196F49B51D935C41656D5A45 /* PBXContainerItemProxy */;
+			name = CocoaAsyncSocket;
+			target = B37E19CA872A7535725D1E1946E5C271 /* CocoaAsyncSocket */;
+			targetProxy = 2A4A67C371C42A9A174D310D9705B320 /* PBXContainerItemProxy */;
 		};
-		D07B007798536EA98ECB67F6D2DCA06D /* PBXTargetDependency */ = {
+		7D2E09D046372552630A89E23B1FF388 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = EDStarRating;
 			target = A46399945D18308F6E6F073507A3A78B /* EDStarRating */;
-			targetProxy = 8BE0F9CCE102650551119E7885EA2237 /* PBXContainerItemProxy */;
+			targetProxy = F1417697105B8729A4044AE870499ED0 /* PBXContainerItemProxy */;
+		};
+		CF1327443D2F76424A9011DF93DDB0ED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SnapKit;
+			target = 10E61158786CC447B2D83172216983F4 /* SnapKit */;
+			targetProxy = 624FFB663FE6A111C39E96B40F1602FB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		035055281C2FB9A64FC820303DC9EFDF /* Release */ = {
+		03FB47EE9460EAABCD646D9B56208359 /* Release */ = {
 			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		22E1B933B435A6CDC7F2DDEA5826ADB0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B492F4EA7B98D3D698EBFAD7D0AABB42 /* CocoaAsyncSocket.xcconfig */;
+			baseConfigurationReference = 1072E5D5A5671CE9960365264DD1FA39 /* SnapKit.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -692,14 +792,14 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_VERSION = A;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/CocoaAsyncSocket/CocoaAsyncSocket-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/CocoaAsyncSocket/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/SnapKit/SnapKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SnapKit/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MODULEMAP_FILE = "Target Support Files/CocoaAsyncSocket/CocoaAsyncSocket.modulemap";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MODULEMAP_FILE = "Target Support Files/SnapKit/SnapKit.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = CocoaAsyncSocket;
+				PRODUCT_NAME = SnapKit;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -707,229 +807,7 @@
 			};
 			name = Release;
 		};
-		5FD2699F52FF2F020BAE493F5B9FD012 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6F21C0EC75CF9517DC1692E50D50CA88 /* Pods-ScaryBugsMacTests.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-ScaryBugsMacTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				MODULEMAP_FILE = "Target Support Files/Pods-ScaryBugsMacTests/Pods-ScaryBugsMacTests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_ScaryBugsMacTests;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		637DF05D2B943F577EF69ECBD7C23479 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C64D4A98A56FDF238A37B62AD11EF48D /* Pods-ScaryBugsMacTests.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-ScaryBugsMacTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				MODULEMAP_FILE = "Target Support Files/Pods-ScaryBugsMacTests/Pods-ScaryBugsMacTests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_ScaryBugsMacTests;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		89EFB65A45E38CE3B33BF1534454B86F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 57FC1CDEFD6EB1BCB78FFFD5C0D184A5 /* EDStarRating.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/EDStarRating/EDStarRating-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/EDStarRating/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				MODULEMAP_FILE = "Target Support Files/EDStarRating/EDStarRating.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = EDStarRating;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		8A7393BAE6579D1EDD563D74C0FECEAC /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 57FC1CDEFD6EB1BCB78FFFD5C0D184A5 /* EDStarRating.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/EDStarRating/EDStarRating-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/EDStarRating/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				MODULEMAP_FILE = "Target Support Files/EDStarRating/EDStarRating.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = EDStarRating;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		A90011D82CA29B4843494F8E11C491DA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FA1BB2E4D795D113DDABD85349F2694C /* FMDB.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/FMDB/FMDB-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/FMDB/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				MODULEMAP_FILE = "Target Support Files/FMDB/FMDB.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = FMDB;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		AC06A033185F3EDFA2433C8F90A0A7F2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B492F4EA7B98D3D698EBFAD7D0AABB42 /* CocoaAsyncSocket.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/CocoaAsyncSocket/CocoaAsyncSocket-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/CocoaAsyncSocket/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MODULEMAP_FILE = "Target Support Files/CocoaAsyncSocket/CocoaAsyncSocket.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = CocoaAsyncSocket;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		CA01FCE1A5270CF04C7E4B7E1939EBCF /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 585D72EF30C03C6D1AB61BB3E2924E21 /* Pods-ScaryBugsMac.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-ScaryBugsMac/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				MODULEMAP_FILE = "Target Support Files/Pods-ScaryBugsMac/Pods-ScaryBugsMac.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_ScaryBugsMac;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		DC9E4240B07ECBF69DD3DA1D3B614ED4 /* Debug */ = {
+		0577E960F68FF02722D75DA2D211E3A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -964,16 +842,372 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				ONLY_ACTIVE_ARCH = YES;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
+		22E1B933B435A6CDC7F2DDEA5826ADB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFBD8B587541F9BB3FFA8E4D3AE3C944 /* CocoaAsyncSocket.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/CocoaAsyncSocket/CocoaAsyncSocket-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CocoaAsyncSocket/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MODULEMAP_FILE = "Target Support Files/CocoaAsyncSocket/CocoaAsyncSocket.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = CocoaAsyncSocket;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		2A9310037D86F8DC968E0FDFBAF82114 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29EACC52C6F49BC05C08AA3DC5926580 /* Pods-ScaryBugsMacTests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ScaryBugsMacTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MODULEMAP_FILE = "Target Support Files/Pods-ScaryBugsMacTests/Pods-ScaryBugsMacTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ScaryBugsMacTests;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		578820E498FFD85CA5D93A33D365FBED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		76F716882E562DA714BB514500ED6F90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1072E5D5A5671CE9960365264DD1FA39 /* SnapKit.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SnapKit/SnapKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SnapKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MODULEMAP_FILE = "Target Support Files/SnapKit/SnapKit.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SnapKit;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		89EFB65A45E38CE3B33BF1534454B86F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECDFC5E154BB489DF7EF7827BD38EBCA /* EDStarRating.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/EDStarRating/EDStarRating-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/EDStarRating/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MODULEMAP_FILE = "Target Support Files/EDStarRating/EDStarRating.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = EDStarRating;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8A7393BAE6579D1EDD563D74C0FECEAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECDFC5E154BB489DF7EF7827BD38EBCA /* EDStarRating.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/EDStarRating/EDStarRating-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/EDStarRating/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MODULEMAP_FILE = "Target Support Files/EDStarRating/EDStarRating.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = EDStarRating;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A90011D82CA29B4843494F8E11C491DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BCEB9B865ED00F8BC40B5D5F2EAA82E3 /* FMDB.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FMDB/FMDB-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FMDB/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MODULEMAP_FILE = "Target Support Files/FMDB/FMDB.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = FMDB;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AC06A033185F3EDFA2433C8F90A0A7F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFBD8B587541F9BB3FFA8E4D3AE3C944 /* CocoaAsyncSocket.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/CocoaAsyncSocket/CocoaAsyncSocket-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CocoaAsyncSocket/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MODULEMAP_FILE = "Target Support Files/CocoaAsyncSocket/CocoaAsyncSocket.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = CocoaAsyncSocket;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CF604D8CC19EE3A8179399352CE0D522 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30290BF73303A8670A8CB9601D43645D /* Pods-PBBReader.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PBBReader/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MODULEMAP_FILE = "Target Support Files/Pods-PBBReader/Pods-PBBReader.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_PBBReader;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D567C7F904753B2E0CB845CFC0C2F527 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55A88A00FD8FA002621D6989FFE4D8DF /* Pods-PBBReader.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PBBReader/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MODULEMAP_FILE = "Target Support Files/Pods-PBBReader/Pods-PBBReader.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_PBBReader;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E558094300D572D57DB00C584147B7D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01B07BEA32176CB17B9F9E03FD6779C9 /* Pods-ScaryBugsMacTests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ScaryBugsMacTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MODULEMAP_FILE = "Target Support Files/Pods-ScaryBugsMacTests/Pods-ScaryBugsMacTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ScaryBugsMacTests;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		E5CAAD8DE0DFEA0F0D4435E90E556B89 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FA1BB2E4D795D113DDABD85349F2694C /* FMDB.xcconfig */;
+			baseConfigurationReference = BCEB9B865ED00F8BC40B5D5F2EAA82E3 /* FMDB.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1001,48 +1235,23 @@
 			};
 			name = Release;
 		};
-		EF05CE5015E0B745B91715C1AA046534 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B6981A3203B9117F9475873D8592958B /* Pods-ScaryBugsMac.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-ScaryBugsMac/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				MODULEMAP_FILE = "Target Support Files/Pods-ScaryBugsMac/Pods-ScaryBugsMac.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_ScaryBugsMac;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DC9E4240B07ECBF69DD3DA1D3B614ED4 /* Debug */,
-				035055281C2FB9A64FC820303DC9EFDF /* Release */,
+				0577E960F68FF02722D75DA2D211E3A8 /* Debug */,
+				578820E498FFD85CA5D93A33D365FBED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		44F42D08476E9FBC90636DD6BDC536D3 /* Build configuration list for PBXNativeTarget "Pods-PBBReader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D567C7F904753B2E0CB845CFC0C2F527 /* Debug */,
+				CF604D8CC19EE3A8179399352CE0D522 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1056,11 +1265,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		585EF4A941DBFE911DE8E91CA2451F27 /* Build configuration list for PBXNativeTarget "SnapKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76F716882E562DA714BB514500ED6F90 /* Debug */,
+				03FB47EE9460EAABCD646D9B56208359 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5E1B69B550C8EB6836478E094EF40110 /* Build configuration list for PBXNativeTarget "Pods-ScaryBugsMacTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5FD2699F52FF2F020BAE493F5B9FD012 /* Debug */,
-				637DF05D2B943F577EF69ECBD7C23479 /* Release */,
+				E558094300D572D57DB00C584147B7D5 /* Debug */,
+				2A9310037D86F8DC968E0FDFBAF82114 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1070,15 +1288,6 @@
 			buildConfigurations = (
 				89EFB65A45E38CE3B33BF1534454B86F /* Debug */,
 				8A7393BAE6579D1EDD563D74C0FECEAC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C2C1B80B117E0F9384AE847F62BC2CCA /* Build configuration list for PBXNativeTarget "Pods-ScaryBugsMac" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				EF05CE5015E0B745B91715C1AA046534 /* Debug */,
-				CA01FCE1A5270CF04C7E4B7E1939EBCF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

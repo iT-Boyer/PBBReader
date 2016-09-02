@@ -6,9 +6,6 @@
 //  Copyright (c) 2013年 pyc.com.cn. All rights reserved.
 //
 
-#define KDataBaseName @"PBB.db"
-#define KDataBasePath [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:KDataBaseName]
-
 #import "SendFileManager.h"
 #import "FMDatabase.h"
 #import "NSDate+String.h"

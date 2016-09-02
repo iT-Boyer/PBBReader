@@ -22,7 +22,7 @@
 @property(nonatomic,copy)NSString *verificationCode;
 // 接收时间
 @property(nonatomic,copy)NSDate *reciveTime;
-// 1:绑定用户  0:激活文件
+// 1:绑定用户手机号完善个人消息  0:激活文件
 @property(nonatomic,copy)NSString *seeFile;
 
 

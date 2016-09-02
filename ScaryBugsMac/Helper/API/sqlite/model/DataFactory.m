@@ -25,13 +25,16 @@ static FMDatabaseQueue* sqlqueue;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         ShardInstance=[[self alloc]init];
+        if ([ShardInstance IsDataBase]) {
+            [ShardInstance CreateDataBase];
+        }
     });
     return ShardInstance;
 }
 -(BOOL)IsDataBase
 {
     BOOL Value=NO;
-    if (![SandboxFile IsFileExists:GetDataBasePath])
+    if (![SandboxFile IsFileExists:KDataBasePath])
     {
         Value=YES;
     }
@@ -39,7 +42,7 @@ static FMDatabaseQueue* sqlqueue;
 }
 -(void)CreateDataBase
 {
-    sqlqueue=[[FMDatabaseQueue alloc]initWithPath:GetDataBasePath];
+    sqlqueue=[[FMDatabaseQueue alloc]initWithPath:KDataBasePath];
 }
 -(void)CreateTable
 {
@@ -51,7 +54,7 @@ static FMDatabaseQueue* sqlqueue;
 -(id)Factory:(FSO)type
 {
     id result;
-    sqlqueue=[[FMDatabaseQueue alloc]initWithPath:GetDataBasePath];
+    sqlqueue=[[FMDatabaseQueue alloc]initWithPath:KDataBasePath];
     switch (type)
     {
         case secret:
@@ -76,7 +79,7 @@ static FMDatabaseQueue* sqlqueue;
 }
 -(void)insertToDB:(id)Model Classtype:(FSO)type
 {
-     NSLog(@"%@",GetDataBasePath);
+     NSLog(@"%@",KDataBasePath);
     self.classValues=[self Factory:type];
     [classValues insertToDB:Model callback:^(BOOL Values)
      {
@@ -86,7 +89,7 @@ static FMDatabaseQueue* sqlqueue;
 
 -(void)updateTable:(id)Model Classtype:(FSO)type
 {
-    NSLog(@"%@",GetDataBasePath);
+    NSLog(@"%@",KDataBasePath);
     self.classValues=[self Factory:type];
     [classValues updateTable:Model callback:^(BOOL Values)
      {

@@ -10,7 +10,6 @@
 #import <Cocoa/Cocoa.h>
 #import "AdvertisingImgCache.h"
 @interface AdvertisingView : NSView
-singleton_interface(AdvertisingView);
 
 @property (weak, nonatomic) IBOutlet NSImageView *ibImageView;
 @property (weak) IBOutlet NSProgressIndicator *ibIndicator;
@@ -23,7 +22,6 @@ singleton_interface(AdvertisingView);
 
 @property(assign,nonatomic)NSInteger advertime;
 @property(strong,nonatomic)NSTimer *adverTimer;
-
 
 -(void)startLoadingWindow:(NSWindow *)keywindow fileID:(NSInteger)fileID isOutLine:(BOOL)isOutLine;
 

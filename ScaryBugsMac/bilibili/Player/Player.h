@@ -10,7 +10,7 @@
 
 #import "PlayerView.h"
 #import "VideoAddress.h"
-//#import "BarrageRenderer.h"
+#import "BarrageRenderer.h"
 
 #include "client.h"
 
@@ -26,7 +26,7 @@
 @property (nonatomic) NSString *siteName;
 @property (nonatomic) NSString *playerName;
 
-//@property (nonatomic) BarrageRenderer *barrageRenderer;
+@property (nonatomic) BarrageRenderer *barrageRenderer;
 @property (nonatomic) VideoAddress *video;
 
 @property (nonatomic) BOOL pendingDealloc;

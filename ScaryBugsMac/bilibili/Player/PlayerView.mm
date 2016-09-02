@@ -10,18 +10,21 @@
 #import "PlayerView.h"
 #import "MediaInfoDLL.h"
 #import "SimpleVideoFormatParser.h"
-//#import "BarrageHeader.h"
+#import "BarrageHeader.h"
 //#import "PreloadManager.h"
 #import "Player.h"
 #import "PlayerWindow.h"
 #import "PlayerControlView.h"
 #import "PlayerEventProxy.h"
-//#import "LiveChat.h"
-//#import "PlayPosition.h"
+#import "LiveChat.h"
+#import "PlayPosition.h"
 
 #import "AppDelegateHelper.h"
+#import "PBBReader-Swift.h"
 
-//#import "../CommentConvert/danmaku2ass.hpp"
+#import "../CommentConvert/danmaku2ass.hpp"
+
+typedef void (^ShadeBlock)();
 
 @interface PlayerView (){
     __weak PlayerWindow *window;
@@ -30,6 +33,10 @@
     
     __weak IBOutlet NSView *ContentView;
     __weak IBOutlet NSView *LoadingView;
+    
+    __weak IBOutlet NSTextField *ibWaterLabel;
+    
+    NSTextField *CountDownLabel;
     
     PlayerControlWindowController *playerControlWindowController;
     NSString *videoDomain;
@@ -41,6 +48,9 @@
 
 
 @implementation PlayerView
+
+ShadeBlock shadeblock;
+ShadeBlock countDownblock;
 
 @synthesize windowSetup;
 @synthesize liveChatWC;
@@ -73,19 +83,15 @@ inline void check_error(int status)
     }
 }
 
-//入口
 - (void)loadWithPlayer:(Player *)m_player{
     [m_player setVideoView:ContentView];
     self.player = m_player;
     [self loadControls];
-    [self loadVideo:self.player.video];
+//    [self loadVideo:self.player.video];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //hsg
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(setKeyInfo:) name:@"set_key_info" object:nil];
-    
     lastWindow = [[NSApplication sharedApplication] keyWindow];
     [lastWindow resignKeyWindow];
     [lastWindow miniaturize:self];
@@ -99,8 +105,19 @@ inline void check_error(int status)
             windowSetup = YES;
         }
     });
+    
+    //hsg
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(setKeyInfo:) name:@"set_key_info" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(CancleClosePlayerWindows:) name:@"CancleClosePlayerWindows" object:nil];
 }
 
+//关闭播放器
+-(void)CancleClosePlayerWindows:(NSNotification *)info {
+    [self.view.window performClose:self];
+    //通知主页面刷新
+    NSDictionary  *dic = [NSDictionary dictionaryWithObject:[info.userInfo valueForKey:@"pycFileID"] forKey:@"pycFileID"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshOpenInFile" object:self userInfo:dic];
+}
 - (void)viewDidAppear{
     window = (PlayerWindow *)self.view.window;
     [window makeKeyAndOrderFront:NSApp];
@@ -125,9 +142,10 @@ inline void check_error(int status)
     NSRect rect = window.frame;
     double WX = [ud doubleForKey:@"playerX"];
     double WY = [ud doubleForKey:@"playerY"];
-    if(WX > -1 && WY > -1){
+    //hsg再次打开导致位置跳到默认位置
+//    if(WX > -1 && WY > -1){
         rect.origin = NSMakePoint(WX, WY);
-    }
+//    }
     
     double Wheight = [ud doubleForKey:@"playerheight"];
     double Wwidth = [ud doubleForKey:@"playerwidth"];
@@ -144,14 +162,29 @@ inline void check_error(int status)
     [window setPlayerAndInit:self.player];
     [window setLastWindow:lastWindow];
     [window setAcceptsMouseMovedEvents:YES];
-    [self.loadingImage setAnimates:YES];
+//    [self.loadingImage setAnimates:YES];
     
     PlayerEventProxy *ep = [[PlayerEventProxy alloc] init];
     [ep setAcceptsTouchEvents:YES];
     [ep setFrame:NSMakeRect(0,0,self.view.frame.size.width,self.view.frame.size.height)];
     [ep setAutoresizingMask:NSViewMaxYMargin|NSViewMinXMargin|NSViewWidthSizable|NSViewMaxXMargin|NSViewHeightSizable|NSViewMinYMargin];
+    
+    //水印
+    [ep addSubview:ibWaterLabel positioned:NSWindowAbove relativeTo:nil];
+    //倒计时
+    CountDownLabel = [NSTextField new];
+    [ep addSubview:CountDownLabel positioned:NSWindowAbove relativeTo:nil];
     [self.view addSubview:ep positioned:NSWindowAbove relativeTo:nil];
     
+//    ep.translatesAutoresizingMaskIntoConstraints = NO;
+//    NSArray *epV = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[ep]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(ep)];
+//    NSArray *epH = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[ep]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(ep)];
+//    [self.view addConstraints:epV];
+//    [self.view addConstraints:epH];
+    
+    [self.view setWantsLayer:YES];
+    
+    //hsg
     [[AppDelegateHelper sharedAppDelegateHelper] openURLOfPycFileByLaunchedApp:[self.player.video firstFragmentURL]];
 }
 
@@ -161,22 +194,40 @@ inline void check_error(int status)
     });
 }
 
+//- (void)loadVideo:(VideoAddress *)video{
 
-- (void)loadVideo:(VideoAddress *)video{
+- (void)setKeyInfo:(NSNotification *) notification{
+    NSString *URL = [notification.userInfo valueForKey:@"set_key_info"];
+    NSString *water = [notification.userInfo valueForKey:@"waterMark"];
+    NSNumber *limitTime = [notification.userInfo valueForKey:@"CountDownTime"];
+    if (water) {
+        ibWaterLabel.stringValue = water;
+    }else{
+        ibWaterLabel.hidden = YES;
+    }
+    
+    if (limitTime.integerValue != 0) {
+        CountDownLabel.countDownNumber = limitTime.integerValue;
+        //不启动并隐藏倒计时
+        CountDownLabel.countDownNumber = -1;
+    }else{
+        CountDownLabel.countDownNumber = -1;
+    }
+
     NSLog(@"[PlayerView] Starting load video");
     dispatch_async(self.player.queue, ^{
-    getInfo:
-        
-        NSString *playURL = [video firstFragmentURL];
+getInfo:
+
+        NSString *playURL = URL;
         if(!playURL){
             return [self setTip:@"所有视频源连接失败，可能视频已失效"];
         }
-        
+
         [self setTip:@"正在获取视频信息"];
-        
+
         NSLog(@"[PlayerView] Reading video info");
         
-        NSString *firstVideo = [video firstFragmentURL];
+        NSString *firstVideo = URL;
         if([self.player getAttr:@"commentFile"]){
             NSDictionary *VideoInfoJson = [self getVideoInfo:firstVideo];
             
@@ -186,11 +237,13 @@ inline void check_error(int status)
             NSNumber *height = [VideoInfoJson objectForKey:@"height"];
             
             if([height intValue] < 100 || [width intValue] < 100){
-                goto getInfo;
+                //goto getInfo;
+                [self.player setAttr:@"vheight" data:[NSNumber numberWithInt:500]];
+                [self.player setAttr:@"vwidth" data:[NSNumber numberWithInt:500]];
             }
             
-            [self.player setAttr:@"vheight" data:height];
-            [self.player setAttr:@"vwidth" data:width];
+            [self.player setAttr:@"vheight" data:width];
+            [self.player setAttr:@"vwidth" data:height];
         }
         
         NSString *fvHost = [[NSURL URLWithString:firstVideo] host];
@@ -198,12 +251,9 @@ inline void check_error(int status)
             videoDomain = fvHost;
         }
         
-//        [self playVideo: playURL];
-   
-     });
+        [self playVideo: playURL];
+    });
 }
-
-
 
 - (void)setMPVOption:(const char *)name :(const char*)data{
     int status = mpv_set_option_string(self.player.mpv, name, data);
@@ -217,12 +267,11 @@ inline void check_error(int status)
     [window setTitle:title];
 }
 
-- (void)setKeyInfo:(NSNotification *) notification{
-    if(self.player.pendingDealloc){
-//        return CLS_LOG(@"[PlayerView] Player is pending dealloc, stop loading.");
-    }
+-(void)playVideo:(NSString *)URL{
 
-    NSString *URL = [notification.userInfo valueForKey:@"set_key_info"];
+    if(self.player.pendingDealloc){
+        //        return CLS_LOG(@"[PlayerView] Player is pending dealloc, stop loading.");
+    }
     
     // Start Playing Video
     self.player.mpv  = mpv_create();
@@ -279,18 +328,18 @@ inline void check_error(int status)
 
     if([self.player getAttr:@"live"] && [self.player getAttr:@"cid"]){
         dispatch_async(dispatch_get_main_queue(), ^{
-//            BarrageRenderer *_renderer = [[BarrageRenderer alloc] init];
-//            [self.view setWantsLayer:YES];
-//            [_renderer.view setFrame:NSMakeRect(0,0,self.view.frame.size.width,self.view.frame.size.height)];
-//            [_renderer.view setAutoresizingMask:NSViewMaxYMargin|NSViewMinXMargin|NSViewWidthSizable|NSViewMaxXMargin|NSViewHeightSizable|NSViewMinYMargin];
-//            [self.view addSubview:_renderer.view positioned:NSWindowAbove relativeTo:nil];
-//            [_renderer start];
-//            self.player.barrageRenderer = _renderer;
-//            NSStoryboard *storyBoard = [NSStoryboard storyboardWithName:@"Main" bundle:nil];
-//            self.liveChatWC = [storyBoard instantiateControllerWithIdentifier:@"LiveChatWindow"];
-//            [self.liveChatWC showWindow:self];
-//            LiveChat *lc = (LiveChat *)self.liveChatWC.window.contentViewController;
-//            [lc setPlayerAndInit:self.player];
+            BarrageRenderer *_renderer = [[BarrageRenderer alloc] init];
+            [self.view setWantsLayer:YES];
+            [_renderer.view setFrame:NSMakeRect(0,0,self.view.frame.size.width,self.view.frame.size.height)];
+            [_renderer.view setAutoresizingMask:NSViewMaxYMargin|NSViewMinXMargin|NSViewWidthSizable|NSViewMaxXMargin|NSViewHeightSizable|NSViewMinYMargin];
+            [self.view addSubview:_renderer.view positioned:NSWindowAbove relativeTo:nil];
+            [_renderer start];
+            self.player.barrageRenderer = _renderer;
+            NSStoryboard *storyBoard = [NSStoryboard storyboardWithName:@"Main" bundle:nil];
+            self.liveChatWC = [storyBoard instantiateControllerWithIdentifier:@"LiveChatWindow"];
+            [self.liveChatWC showWindow:self];
+            LiveChat *lc = (LiveChat *)self.liveChatWC.window.contentViewController;
+            [lc setPlayerAndInit:self.player];
         });
     }
 
@@ -311,7 +360,7 @@ inline void check_error(int status)
         }else if(converted_comment){ // If convert success but not have sub file
             subfile = converted_comment;
         }else{
-            windowTitle = [windowTitle stringByAppendingString:NSLocalizedString(@" - 弹幕转换失败", nil)];
+           // windowTitle = [windowTitle stringByAppendingString:NSLocalizedString(@" - 弹幕转换失败", nil)];
         }
     }
     
@@ -324,13 +373,13 @@ inline void check_error(int status)
         }
     }
     
-//    NSString *cid = [self.player getAttr:@"cid"];
-//    if(cid && [cid length]){
-//        int64_t start_pos = [[PlayPosition sharedManager] getKey:cid];
-//        if(start_pos > 1){
-//            [self setMPVOption:"start" :[[NSString stringWithFormat:@"%lld",start_pos] UTF8String]];
-//        }
-//    }
+    NSString *cid = [self.player getAttr:@"cid"];
+    if(cid && [cid length]){
+        int64_t start_pos = [[PlayPosition sharedManager] getKey:cid];
+        if(start_pos > 1){
+            [self setMPVOption:"start" :[[NSString stringWithFormat:@"%lld",start_pos] UTF8String]];
+        }
+    }
     
     dispatch_async(dispatch_get_main_queue(), ^(void){
         [self setTitle:windowTitle];
@@ -607,6 +656,9 @@ inline void check_error(int status)
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.loadingImage setAnimates:NO];
                 [LoadingView setHidden:YES];
+                //开始播放时，开启水印动画
+                shadeblock = [ibWaterLabel fireTimer:0];
+                countDownblock = [CountDownLabel fireTimer:CountDownLabel.countDownNumber];
             });
             break;
         }
@@ -629,14 +681,25 @@ inline void check_error(int status)
         }
             
         case MPV_EVENT_PAUSE: {
+            //暂停
+            if (shadeblock)
+                shadeblock();
+            
+//            if (countDownblock) {
+//                countDownblock();
+//            }
+            
             break;
         }
         case MPV_EVENT_UNPAUSE: {
+            //继续
+            shadeblock = [ibWaterLabel fireTimer:0];
+//            countDownblock = [CountDownLabel fireTimer:CountDownLabel.countDownNumber];
             break;
         }
             
         default: ;
-            //NSLog(@"Player Event: %s", mpv_event_name(event->event_id));
+            NSLog(@"Player Event: %s", mpv_event_name(event->event_id));
     }
 }
 
@@ -710,6 +773,13 @@ inline void check_error(int status)
 
 
 - (void)dealloc{
+    if (countDownblock) {
+        countDownblock();
+    }
+    if (shadeblock){
+        shadeblock();
+    }
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     NSLog(@"[PlayerView] Dealloc");
 }
 

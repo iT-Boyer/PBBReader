@@ -10,10 +10,8 @@
 #import "ReceiveFileDao.h"
 #import "ToolString.h"
 #import <Cocoa/Cocoa.h>
-#import "PlayerView.h"
 #define THERMOMETER_FRAME (20, 5, 25, 5);
 @implementation AdvertisingView
-singleton_implementation(AdvertisingView);
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
@@ -52,14 +50,26 @@ singleton_implementation(AdvertisingView);
 }
 
 
-
+//设置Autolayout中的边距辅助方法
+- (void)setEdge:(NSView*)superview view:(NSView*)view attr:(NSLayoutAttribute)attr constant:(CGFloat)constant
+{
+    [superview addConstraint:[NSLayoutConstraint constraintWithItem:view
+                                                          attribute:attr
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:superview
+                                                          attribute:attr
+                                                         multiplier:1.0
+                                                           constant:constant]];
+}
 -(void)startLoadingWindow:(NSWindow *)keywindow fileID:(NSInteger)fileID isOutLine:(BOOL)OutLine
 {
+    //重置缓存图片
+    [_ibImageView setImage:nil];
     if(![keywindow.contentView isKindOfClass:[NSView class]]){
         _finish = YES;
         return;
     }
-
+    
     NSView *keyView = keywindow.contentView;
     [keyView addSubview:self];
     [self setEdge:keyView view:self attr:NSLayoutAttributeTop constant:0];
@@ -70,6 +80,10 @@ singleton_implementation(AdvertisingView);
     _adverTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerwithTimesNums1:) userInfo:nil repeats:YES];
     [[NSRunLoop currentRunLoop] addTimer:_adverTimer forMode:NSRunLoopCommonModes];
     
+    if(fileID == -1)
+    {
+        return;
+    }
     NSString *UidOrImgUrl = @"";
     NSInteger uid = [[ReceiveFileDao sharedReceiveFileDao] fetchUid:fileID];
     if ([ToolString isConnectionAvailable]) {
@@ -81,8 +95,6 @@ singleton_implementation(AdvertisingView);
     if (!_imgCache) {
         _imgCache = [[AdvertisingImgCache alloc] init];
     }
-    
-    [_ibIndicator setUsesThreadedAnimation:YES];
     [_ibIndicator startAnimation:self];
     [_imgCache AdvertisingForTerm:UidOrImgUrl completionBlock:^(NSString *imgPath, NSInteger uid,NSError *error) {
         
@@ -103,7 +115,6 @@ singleton_implementation(AdvertisingView);
             while (!_finish) {
                 [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
             }
-//            [_ibIndicator stopAnimation:self];
             [_adverTimer invalidate];
         });
         _finish = YES;
@@ -116,17 +127,4 @@ singleton_implementation(AdvertisingView);
     _advertime++;
 }
 
-
-
-//设置Autolayout中的边距辅助方法
-- (void)setEdge:(NSView*)superview view:(NSView*)view attr:(NSLayoutAttribute)attr constant:(CGFloat)constant
-{
-    [superview addConstraint:[NSLayoutConstraint constraintWithItem:view
-                                                          attribute:attr
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:superview
-                                                          attribute:attr
-                                                         multiplier:1.0
-                                                           constant:constant]];
-}
 @end

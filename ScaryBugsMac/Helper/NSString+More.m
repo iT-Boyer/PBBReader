@@ -54,8 +54,7 @@
         NSString *tmp = items[i];
         water = [water stringByReplacingOccurrencesOfString:tmp withString:@" "];
     }
-    [water stringByReplacingOccurrencesOfString:@":" withString:@""];
-    return water;
+    return [water stringByReplacingOccurrencesOfString:@":" withString:@""];
 }
 
 

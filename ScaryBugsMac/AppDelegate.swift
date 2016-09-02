@@ -13,7 +13,7 @@ class AppDelegate: NSObject, NSApplicationDelegate{
 
     //必须声明为全局属性，否则在声明PycFile调用delegate时，delegate = nil
     //还出现第一次启动执行两次openFiles方法
-    let appHelper = AppDelegateHelper.sharedAppDelegateHelper()
+    let appHelper = AppDelegateHelper()
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // Insert code here to initialize your application
@@ -26,7 +26,6 @@ class AppDelegate: NSObject, NSApplicationDelegate{
     
     func application(sender: NSApplication, openFiles filenames: [String]) {
         //
-        NSApplication.sharedApplication().unhide(self)
         appHelper.phoneNo = ""
         appHelper.messageID = ""
 //        appHelper.openURLOfPycFileByLaunchedApp(filenames[0])
@@ -34,7 +33,18 @@ class AppDelegate: NSObject, NSApplicationDelegate{
         
     }
 
+    func applicationShouldHandleReopen(sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
+//       return true
+        //dock点击图标显示主页面
+        if let mainWindow:NSWindow? = sender.windows[0]
+        {
+            mainWindow!.makeKeyAndOrderFront(nil)
+            return true
+        }else
+        {
+            return false
+        }
+        
+    }
 }
-
-
 

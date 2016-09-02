@@ -91,6 +91,14 @@ class ActivationSuccessController: NSViewController {
     }
     
     @IBAction func ibaRetoActivation(sender: AnyObject) {
+        self.dismissController(true)
         AppDelegateHelper.sharedAppDelegateHelper().getApplyFileInfoByApplyId(applyId)
+    }
+    
+    override func dismissController(sender: AnyObject?) {
+        super.dismissController(sender)
+        if !(sender is Bool){
+            NSNotificationCenter.defaultCenter().postNotificationName("CancleClosePlayerWindows", object: nil, userInfo: ["pycFileID":fileId])
+        }
     }
 }

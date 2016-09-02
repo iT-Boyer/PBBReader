@@ -62,6 +62,8 @@ struct priv {
     bool close;
     bool regular;
 };
+
+
 //-------------------------------------
 //解密算法
 //-------------------------------------
@@ -88,7 +90,7 @@ struct priv {
  **   look up in SboxTable and get the related value.
  ** args:    [in] inch: 0x00~0xFF (8 bits unsigned value).
  **============================================================================*/
-uint8 SMS4Sbox(uint8 inch)
+ uint8 SMS4Sbox(uint8 inch)
 {
     uint8 *pTable = (uint8 *)SboxTable;
     uint8 retVal = (uint8)(pTable[inch]);
@@ -102,7 +104,7 @@ uint8 SMS4Sbox(uint8 inch)
  ** args:    [in] a: a is a 32 bits unsigned value;
  ** return: c: c is calculated with line algorithm "L" and nonline algorithm "t"
  **============================================================================*/
-uint32 SMS4Lt(uint32 a)
+ uint32 SMS4Lt(uint32 a)
 {
     uint32 b = 0;
     uint32 c = 0;
@@ -127,7 +129,7 @@ uint32 SMS4Lt(uint32 a)
  ** args:    [in] a: a is a 32 bits unsigned value;
  ** return: ENRK[i]: i{0,1,2,3,...31}.
  **============================================================================*/
-uint32 SMS4CalciRK(uint32 a)
+ uint32 SMS4CalciRK(uint32 a)
 {
     uint32 b = 0;
     uint32 rk = 0;
@@ -152,7 +154,7 @@ uint32 SMS4CalciRK(uint32 a)
  ** args:    [in] ulflag: if 0: not calculate DERK , else calculate;
  ** return: NONE.
  **============================================================================*/
-void SMS4CalcRK(uint32 ulflag)
+ void SMS4CalcRK(uint32 ulflag)
 {
     uint32 k[36];
     uint32 i = 0;
@@ -182,7 +184,7 @@ void SMS4CalcRK(uint32 ulflag)
  **   "T algorithm" == "L algorithm" + "t algorithm".
  ** args:    [in] a: a is a 32 bits unsigned value.
  **============================================================================*/
-uint32 SMS4T(uint32 a)
+ uint32 SMS4T(uint32 a)
 {
     return (SMS4Lt(a));
 }
@@ -197,7 +199,7 @@ uint32 SMS4T(uint32 a)
  ** args:    [in] rk: encryption/decryption key;
  ** return the contents of encryption/decryption contents.
  **============================================================================*/
-uint32 SMS4F(uint32 x0, uint32 x1, uint32 x2, uint32 x3, uint32 rk)
+ uint32 SMS4F(uint32 x0, uint32 x1, uint32 x2, uint32 x3, uint32 rk)
 {
     return (x0^SMS4Lt(x1^x2^x3^rk));
 }
@@ -399,15 +401,28 @@ uint32 *SMS4Decrypt(uint32 *psrc, uint32 lgsrc)
 }
 
 
-//#include "pbb_key.h"
-#include "../libmpv/client.h"
+#include "pbb_key.h"
 
 #define KEY_LEN 16
 #define format16_right(x) ( (x)%16 !=0 ? (x)+16-(x)%16 : (x) )
 #define format16_left(x) ( (x)%16 !=0 ? (x)-(x)%16 : (x) )
 #define min(x,y) ( (x)>(y) ? (y):(x) )
 
-//1.mp4.pbb
+//2.mp4.pbb
+//unsigned char key_r[KEY_LEN+1] = {-1,54,-34,48,-51,-21,-97,-116,22,55,-116,-110,-37,-96,98,29};
+//long long code_len_r = 1486272;
+////long long code_len_r = 0;
+//long long offset_r = 2097154;   //第二次加密，文件头部的偏移量
+//long long file_len_r = 1486261;
+
+//邓紫棋
+//unsigned char key_r[KEY_LEN+1] = {18,106,-35,-58,52,-99,-75,35,-85,-49,-99,53,84,120,-10,106};
+//long long code_len_r = 54476192;
+////long long code_len_r = 0;
+//long long offset_r = 2097155;   //第二次加密，文件头部的偏移量
+//long long file_len_r = 54476185;
+
+////1.mp4.pbb
 //unsigned char key_r[KEY_LEN+1] = {45,35,92,-47,-58,-36,-20,49,-75,32,39,-86,15,7,-40,-88};
 //long long code_len_r = 2030336;
 ////long long code_len_r = 0;
@@ -415,10 +430,31 @@ uint32 *SMS4Decrypt(uint32 *psrc, uint32 lgsrc)
 //long long file_len_r = 2030327;
 
 //usb的文件
-unsigned char key_r[KEY_LEN+1] = {118,-86,-54,37,15,-51,-49,10,-55,-87,95,44,39,-126,61,-104};
+//unsigned char key_r[KEY_LEN+1] = {118,-86,-54,37,15,-51,-49,10,-55,-87,95,44,39,-126,61,-104};
+//long long code_len_r = 136252912;
+////long long code_len_r = 0;
+//long long offset_r = 0;   //第二次加密，文件头部的偏移量
+//long long file_len_r = 136252898;
+
+//燕测试文件
+//unsigned char key_r[KEY_LEN+1] = {-29,-69,-24,-80,29,127,-113,43,-96,84,44,59,-7,-20,-65,-76};
+//long long code_len_r = 2408944;
+////long long code_len_r = 0;
+//long long offset_r = 0;   //第二次加密，文件头部的偏移量
+//long long file_len_r = 2408936;
+//const unsigned char *path = "/storage/emulated/0/0.log";
+
+unsigned char key_r[KEY_LEN+1];
 long long code_len_r = 0;
+//long long code_len_r = 0;
 long long offset_r = 0;   //第二次加密，文件头部的偏移量
 long long file_len_r = 0;
+
+
+long long get_offset()
+{
+    return offset_r;
+}
 
 /*
  * 设置密钥和加密长度
@@ -451,7 +487,7 @@ void release_key() {
     file_len_r = 0;
 }
 
-char buf_tmp[2<<20];
+ char buf_tmp[2<<20];
 //char code_bu[16];
 //    char test[] = {"abcdefghijklmnopqrstuvwxyz"};
 //From Me
@@ -526,12 +562,12 @@ static int file_read(int fd,  char *buf, int size) {
     
     //    //我们的key中间可能含有"\0"结束符，所以不能以key的长度判断
     //    //if(strlen(key)==KEY_LEN&&code_len_r>0)
-    
-    //     long long cur_pos_1 = lseek(fd, 0, SEEK_CUR);
-    //     printf("当前位置：：： %d   要求的大小：：：%d\n",cur_pos_1,size);
+
+//     long long cur_pos_1 = lseek(fd, 0, SEEK_CUR);
+//     printf("当前位置：：： %d   要求的大小：：：%d\n",cur_pos_1,size);
     if (code_len_r > 0) {
         long long cur_pos = lseek(fd, 0, SEEK_CUR); //SEEK_CUR可以确定当前位置，还有一个tell函数也可以，但linux不支持
-        //        printf("1   %d  %d\n",cur_pos,size);
+//        printf("1   %d  %d\n",cur_pos,size);
         if (cur_pos<offset_r) {
             lseek(fd,offset_r,SEEK_SET);
             cur_pos = offset_r;
@@ -540,7 +576,7 @@ static int file_read(int fd,  char *buf, int size) {
             //                    fprintf(file,"Read调整偏移量 offset: %d \n",offset_r);
             //                    fclose(file);
             
-            //            printf("2\n");
+//            printf("2\n");
         }
         
         // 有时候cur_pos是-1（加入long long 之后应该不会了）
@@ -549,7 +585,7 @@ static int file_read(int fd,  char *buf, int size) {
             return r;
         }
         
-        //        printf("3\n");
+//        printf("3\n");
         
         /*
          * 我们的加密算法要求数据其实位置是16的倍数，加密长度是16的倍数。即左右节点都得是16的倍数
@@ -562,88 +598,88 @@ static int file_read(int fd,  char *buf, int size) {
         
         int size_tmp = right_pos - left_pos;
         
-        //        printf("需要缓冲的字节大小：%d",size_tmp);
+//        printf("需要缓冲的字节大小：%d",size_tmp);
         
-        //        printf("left:%d,right:%d,size:%d\n",left_pos,right_pos,size_tmp);
+//        printf("left:%d,right:%d,size:%d\n",left_pos,right_pos,size_tmp);
         
         if (left_pos!=cur_pos) {
-            lseek(fd, left_pos, SEEK_SET);
+        lseek(fd, left_pos, SEEK_SET);
         }
         
         int read_tmp = read(fd, buf_tmp, size_tmp); //注意：read_tmp<=size_tmp，后面的判断就是因为这个原因
         
-        //        printf("4\n");
+//        printf("4\n");
         
         const long long cur_pos_now = left_pos + read_tmp; //现在流所处的实际位置，要区别cur_pos
         int code_len = 0;
         if (code_len_r + offset_r > cur_pos_now) {
             code_len = read_tmp; //读到的全是密文
-            //            printf("全是密文 read_tmp::%d\n",read_tmp);
+//            printf("全是密文 read_tmp::%d\n",read_tmp);
         } else {
             code_len = code_len_r + offset_r - left_pos; //一部分是密文，那么code_len就等于这“一部分”的大小
-            //            printf("部分密文\n");
+//            printf("部分密文\n");
         }
         
-        //        printf("5\n");
+//        printf("5\n");
         
-        //        memcpy(code_bu,buf_tmp,16);
-        //        SMS4SetKey((uint32 *) key_r, 1);
-        //        printf("加密前：\n");
-        //        for (int i=0; i<16; i++) {
-        //            printf("%d ",code_bu[i]);
-        //        }
-        //        printf("\n");
-        //        SMS4Encrypt((uint32 *)code_bu,16,16);
-        //        printf("加密后：\n");
-        //        for (int i=0; i<16; i++) {
-        //            printf("%d ",code_bu[i]);
-        //        }
-        //        printf("\n");
-        //
-        //        SMS4SetKey((uint32 *) key_r, 1);
-        //        SMS4Decrypt((uint32 *) code_bu, 16);
-        //        printf("解密后：\n");
-        //        for (int i=0; i<16; i++) {
-        //            printf("%d ",code_bu[i]);
-        //        }
-        //        printf("\n");
+//        memcpy(code_bu,buf_tmp,16);
+//        SMS4SetKey((uint32 *) key_r, 1);
+//        printf("加密前：\n");
+//        for (int i=0; i<16; i++) {
+//            printf("%d ",code_bu[i]);
+//        }
+//        printf("\n");
+//        SMS4Encrypt((uint32 *)code_bu,16,16);
+//        printf("加密后：\n");
+//        for (int i=0; i<16; i++) {
+//            printf("%d ",code_bu[i]);
+//        }
+//        printf("\n");
+//    
+//        SMS4SetKey((uint32 *) key_r, 1);
+//        SMS4Decrypt((uint32 *) code_bu, 16);
+//        printf("解密后：\n");
+//        for (int i=0; i<16; i++) {
+//            printf("%d ",code_bu[i]);
+//        }
+//        printf("\n");
         
         SMS4SetKey((uint32 *) key_r, 1);
         SMS4Decrypt((uint32 *) buf_tmp, code_len);
+
         
-        
-        //        printf("加密前：  %s\n",test);
-        //
-        //        SMS4Encrypt((uint32 *)test,16,1);
-        //
-        //        printf("加密后：  %s\n",test);
-        //
-        //        SMS4Decrypt((uint32*) test, 16);
-        //
-        //        printf("解密后：  %s\n",test);
-        //
-        //
-        //        printf("\n6\n");
+//        printf("加密前：  %s\n",test);
+//        
+//        SMS4Encrypt((uint32 *)test,16,1);
+//        
+//        printf("加密后：  %s\n",test);
+//        
+//        SMS4Decrypt((uint32*) test, 16);
+//        
+//        printf("解密后：  %s\n",test);
+//        
+//        
+//        printf("\n6\n");
         
         const int left_offset = cur_pos - left_pos;
         //valid_read即播放器实际需要的数据（<=size)
         const int valid_read =
         read_tmp - left_offset < size ? read_tmp - left_offset : size; //去掉因加密规则而format的那些数据
         
-        //        printf("7   valid_read：：：%d\n",valid_read);
+//        printf("7   valid_read：：：%d\n",valid_read);
         
         memcpy(buf, buf_tmp + left_offset, valid_read);
-        //        for (int i=left_offset; i<left_offset+valid_read; i++) {
-        //            buf[i-left_offset] = buf_tmp[i];
-        //        }
+//        for (int i=left_offset; i<left_offset+valid_read; i++) {
+//            buf[i-left_offset] = buf_tmp[i];
+//        }
         
-        //        printf("71\n");
-        //        free(buf_tmp);
+//        printf("71\n");
+//        free(buf_tmp);
         
-        //        printf("72\n");
+//        printf("72\n");
         lseek(fd, cur_pos + valid_read, SEEK_SET); //这个是必须的。还原到和直接调用read(fd, buf, size)一样的效果
-        //
-        //        printf("8\n");
+//        
+//        printf("8\n");
         
         r = valid_read;
         return  r;
@@ -670,30 +706,12 @@ static int fill_buffer(stream_t *s, char *buffer, int max_len)
             return -1;
     }
 #endif
-    //        int r = read(p->fd, buffer, max_len);
+//        int r = read(p->fd, buffer, max_len);
     int r = file_read(p->fd,buffer,max_len);
     return (r <= 0) ? -1 : r;
 }
 
 
-//static int fill_buffer(stream_t *s, char *buffer, int max_len)
-//{
-//    struct priv *p = s->priv;
-//#ifndef __MINGW32__
-//    if (!p->regular) {
-//        int c = s->cancel ? mp_cancel_get_fd(s->cancel) : -1;
-//        struct pollfd fds[2] = {
-//            {.fd = p->fd, .events = POLLIN},
-//            {.fd = c, .events = POLLIN},
-//        };
-//        poll(fds, c >= 0 ? 2 : 1, -1);
-//        if (fds[1].revents & POLLIN)
-//            return -1;
-//    }
-//#endif
-//    int r = read(p->fd, buffer, max_len);
-//    return (r <= 0) ? -1 : r;
-//}
 
 static int write_buffer(stream_t *s, char *buffer, int len)
 {
@@ -712,24 +730,23 @@ static int write_buffer(stream_t *s, char *buffer, int len)
 
 static int seek(stream_t *s, int64_t newpos)
 {
-    
     struct priv *p = s->priv;
-    return lseek(p->fd, newpos += offset_r, SEEK_SET) != (off_t)-1;
+    return lseek(p->fd, newpos+offset_r, SEEK_SET) != (off_t)-1;
 }
 
 static int control(stream_t *s, int cmd, void *arg)
 {
     struct priv *p = s->priv;
     switch (cmd) {
-        case STREAM_CTRL_GET_SIZE: {
-            off_t size = lseek(p->fd, 0, SEEK_END);
-            lseek(p->fd, s->pos += offset_r, SEEK_SET);
-            if (size != (off_t)-1) {
-                *(int64_t *)arg = size;
-                return 1;
-            }
-            break;
+    case STREAM_CTRL_GET_SIZE: {
+        off_t size = lseek(p->fd, 0, SEEK_END);
+        lseek(p->fd, s->pos+offset_r, SEEK_SET);
+        if (size != (off_t)-1) {
+            *(int64_t *)arg = size;
+            return 1;
         }
+        break;
+    }
     }
     return STREAM_UNSUPPORTED;
 }
@@ -778,7 +795,7 @@ static bool check_stream_network(int fd)
             if (strcmp(stypes[i], fs.f_fstypename) == 0)
                 return true;
     return false;
-    
+
 }
 #elif HAVE_LINUX_FSTATFS
 static bool check_stream_network(int fd)
@@ -801,38 +818,38 @@ static bool check_stream_network(int fd)
         }
     }
     return false;
-    
+
 }
 #elif defined(_WIN32)
 static bool check_stream_network(int fd)
 {
     NTSTATUS (NTAPI *pNtQueryVolumeInformationFile)(HANDLE,
-                                                    PIO_STATUS_BLOCK, PVOID, ULONG, FS_INFORMATION_CLASS) = NULL;
-    
+        PIO_STATUS_BLOCK, PVOID, ULONG, FS_INFORMATION_CLASS) = NULL;
+
     // NtQueryVolumeInformationFile is an internal Windows function. It has
     // been present since Windows XP, however this code should fail gracefully
     // if it's removed from a future version of Windows.
     HMODULE ntdll = GetModuleHandleW(L"ntdll.dll");
     pNtQueryVolumeInformationFile = (NTSTATUS (NTAPI*)(HANDLE,
-                                                       PIO_STATUS_BLOCK, PVOID, ULONG, FS_INFORMATION_CLASS))
-    GetProcAddress(ntdll, "NtQueryVolumeInformationFile");
-    
+        PIO_STATUS_BLOCK, PVOID, ULONG, FS_INFORMATION_CLASS))
+        GetProcAddress(ntdll, "NtQueryVolumeInformationFile");
+
     if (!pNtQueryVolumeInformationFile)
         return false;
-    
+
     HANDLE h = (HANDLE)_get_osfhandle(fd);
     if (h == INVALID_HANDLE_VALUE)
         return false;
-    
+
     FILE_FS_DEVICE_INFORMATION info = { 0 };
     IO_STATUS_BLOCK io;
     NTSTATUS status = pNtQueryVolumeInformationFile(h, &io, &info,
-                                                    sizeof(info), FileFsDeviceInformation);
+        sizeof(info), FileFsDeviceInformation);
     if (!NT_SUCCESS(status))
         return false;
-    
+
     return info.DeviceType == FILE_DEVICE_NETWORK_FILE_SYSTEM ||
-    (info.Characteristics & FILE_REMOTE_DEVICE);
+           (info.Characteristics & FILE_REMOTE_DEVICE);
 }
 #else
 static bool check_stream_network(int fd)
@@ -849,17 +866,17 @@ static int open_f(stream_t *stream)
     };
     stream->priv = p;
     stream->type = STREAMTYPE_FILE;
-    
+
     bool write = stream->mode == STREAM_WRITE;
     int m = O_CLOEXEC | (write ? O_RDWR | O_CREAT | O_TRUNC : O_RDONLY);
-    
+
     char *filename = mp_file_url_to_filename(stream, bstr0(stream->url));
     if (filename) {
         stream->path = filename;
     } else {
         filename = stream->path;
     }
-    
+
     if (strncmp(stream->url, "fd://", 5) == 0) {
         char *end = NULL;
         p->fd = strtol(stream->url + 5, &end, 0);
@@ -908,28 +925,28 @@ static int open_f(stream_t *stream)
         }
         p->close = true;
     }
-    
+
 #ifdef __MINGW32__
     setmode(p->fd, O_BINARY);
 #endif
-    
+
     off_t len = lseek(p->fd, 0, SEEK_END);
-    lseek(p->fd, offset_r, SEEK_SET);
+    lseek(p->fd, 0+offset_r, SEEK_SET);
     if (len != (off_t)-1) {
         stream->seek = seek;
         stream->seekable = true;
     }
-    
+
     stream->fast_skip = true;
     stream->fill_buffer = fill_buffer;
     stream->write_buffer = write_buffer;
     stream->control = control;
     stream->read_chunk = 64 * 1024;
     stream->close = s_close;
-    
+
     if (check_stream_network(p->fd))
         stream->streaming = true;
-    
+
     return STREAM_OK;
 }
 

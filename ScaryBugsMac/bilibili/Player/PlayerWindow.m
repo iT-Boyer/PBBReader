@@ -158,6 +158,8 @@
 
 - (void)windowDidExitFullScreen:(NSNotification *)notification{
     enteringFullScreen = NO;
+     //控制条上的全屏返回时，画面消失
+    [self makeKeyAndOrderFront:self];
 }
 
 - (void)resizePlayerControlView:(NSRect)old new:(NSRect)new{
@@ -582,6 +584,10 @@ CFStringRef stringByKeyCode(CGKeyCode keyCode)
 
 - (void)close{
     [super close];
+    
+    //从Docker上重新打开主页
+    [[[NSApplication sharedApplication]delegate] performSelector:@selector(applicationShouldHandleReopen:hasVisibleWindows:) withObject:[NSApplication sharedApplication] withObject:[NSNumber numberWithInt:0]];
+    
 }
 
 - (void)dealloc{

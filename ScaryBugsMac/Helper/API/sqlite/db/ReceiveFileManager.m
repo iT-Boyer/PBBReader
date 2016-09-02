@@ -6,9 +6,6 @@
 //  Copyright (c) 2013年 pyc.com.cn. All rights reserved.
 //
 
-#define KDataBaseName @"PBB.db"
-#define KDataBasePath [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:KDataBaseName]
-
 #import "ReceiveFileManager.h"
 #import "FMDatabase.h"
 #import "NSDate+String.h"
@@ -703,6 +700,7 @@ singleton_implementation(ReceiveFileManager)
               ];
         of.readnum = [rs intForColumn:@"readNum"];
         of.fileTimeType = [rs intForColumn:@"timeType"];
+        of.filetype = [self base64decode:[rs stringForColumn:@"fileType"]];
         [receiveArr addObject:of];
     }
     

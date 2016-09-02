@@ -23,39 +23,41 @@
 
 - (void)lookMedia:(NSString *)openFilePath
 {
-    NSDictionary  *dic = [NSDictionary dictionaryWithObject:openFilePath forKey:@"set_key_info"];
-    //明文
-    if(![openFilePath hasSuffix:@"pbb"]){
+    NSMutableDictionary  *dic = [NSMutableDictionary dictionaryWithObject:openFilePath forKey:@"set_key_info"];
+    if([openFilePath hasSuffix:@"pbb"]){
+        //pbb文件
+        [[ReceiveFileDao sharedReceiveFileDao] updateReceiveFileToAddReadNumByFileId:[_receviveFileId integerValue]];
+        [[ReceiveFileDao sharedReceiveFileDao]updateReceiveFileApplyOpen:1 FileId:[_receviveFileId integerValue]];
+        
+        _receiveFile = [[ReceiveFileDao sharedReceiveFileDao] fetchReceiveFileCellByFileId:[_receviveFileId integerValue]
+                                                                                   LogName:[[userDao shareduserDao] getLogName]];
+        if(!_receiveFile){
+            return;
+        }
+        
+        //通知主页面刷新
+        NSDictionary  *dic = [NSDictionary dictionaryWithObject:[NSNumber numberWithInteger:[_receviveFileId integerValue]] forKey:@"pycFileID"];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshOpenInFile" object:self userInfo:dic];
+        
+        //bilibili
+        NSString *bytestr = @"";
+        for (int i = 0; i<16; i++)
+        {
+            bytestr = [bytestr stringByAppendingString:[NSString stringWithFormat:@"%d,",((Byte *)[_fileSecretkeyR1 bytes])[i]]];
+        }
+//        NSLog(@"密钥=====:%@",bytestr);
+        set_key_info((unsigned char*)(Byte *)[_fileSecretkeyR1 bytes],
+                     (long)_EncryptedLen,
+                     (long)_fileSize,
+                     (long)_offset);
+    }else{
+        //明文
         set_key_info(nil,0,0,0);
-//        [[PlayerLoader sharedInstance] loadVideoWithLocalFiles:@[openFilePath]];
-        
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"set_key_info" object:nil userInfo: dic];
-        
     }
-
-    //pbb文件
-    [[ReceiveFileDao sharedReceiveFileDao] updateReceiveFileToAddReadNumByFileId:[_receviveFileId integerValue]];
-    [[ReceiveFileDao sharedReceiveFileDao]updateReceiveFileApplyOpen:1 FileId:[_receviveFileId integerValue]];
-    
-    _receiveFile = [[ReceiveFileDao sharedReceiveFileDao] fetchReceiveFileCellByFileId:[_receviveFileId integerValue]
-                                                                               LogName:[[userDao shareduserDao] getLogName]];
-    if(!_receiveFile){
-        return;
+    if (_waterMark) {
+        [dic setObject:_waterMark forKey:@"waterMark"];
     }
-    
-    //bilibili
-    NSString *bytestr = @"";
-    for (int i = 0; i<16; i++)
-    {
-        bytestr = [bytestr stringByAppendingString:[NSString stringWithFormat:@"%d,",((Byte *)[_fileSecretkeyR1 bytes])[i]]];
-    }
-    NSLog(@"密钥=====:%@",bytestr);
-//    NSLog(@"密钥=====:%s",(char*)(Byte *)[_fileSecretkeyR1 bytes]);
-    set_key_info((unsigned char*)(Byte *)[_fileSecretkeyR1 bytes],
-                 (long)_EncryptedLen,
-                 (long)_fileSize,
-                 (long)_offset);
-//    [[PlayerLoader sharedInstance] loadVideoWithLocalFiles:@[openFilePath]];
+    [dic setObject:[NSNumber numberWithInteger:_limitTime] forKey:@"CountDownTime"];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"set_key_info" object:nil userInfo: dic];
     
 }
@@ -113,18 +115,6 @@
 {
     NSString *str = [NSString stringWithFormat:@"%@",@"+mp3+wav+"];
     pathExt = [pathExt lowercaseString];
-    NSRange range=[str rangeOfString: pathExt];
-    if (!(range.location==NSNotFound)) {
-        return YES;
-    }
-    return NO;
-}
-
--(BOOL)fileIsTypeOfVideo:(NSString *)pathExt
-{
-    NSString *str = [NSString stringWithFormat:@"%@",@"+rmvb+mkv+mpeg+mp4+mov+avi+3gp+flv+wmv+rm+mpg+vob+dat+"];
-    pathExt = [pathExt lowercaseString];
-    //    NSComparisonResult *result = [pathExt commonPrefixWithString:str options:NSCaseInsensitiveSearch|NSNumericSearch];
     NSRange range=[str rangeOfString: pathExt];
     if (!(range.location==NSNotFound)) {
         return YES;

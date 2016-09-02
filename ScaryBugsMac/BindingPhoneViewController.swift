@@ -21,16 +21,19 @@ class BindingPhoneViewController: NSViewController {
     var timer:NSTimer!  // 计时器
     var phoneNumber:String!  // 手机号码
     var remainedTime:Int!   // 剩余时间
+    var fileID = 0
 //    var indicator:
     var codeModel:VerificationCodeModel!
-    var userPhone:Bool!
+    //个人信息页面，绑定手机号flag
+    var userPhone:Bool = false
     
-    let pycFileHelper = AppDelegateHelper()
+    let pycFileHelper = AppDelegateHelper.sharedAppDelegateHelper()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
         codeModel = VerificationCodeModel()
+        
 
     }
     
@@ -44,11 +47,16 @@ class BindingPhoneViewController: NSViewController {
             return ;
         }
         phoneNumber = phoneTF.stringValue;
-        getMessageBtn.hidden = true; // 获取验证码按钮不可用
-
         // 调取获取验证码业务
-        pycFileHelper.getVerificationCodeByPhone(phoneNumber, userPhone: userPhone)
-        getCodeFinish()  // 获取验证码成功后 调整界面
+        let result = pycFileHelper.getVerificationCodeByPhone(phoneNumber, userPhone: userPhone)
+        if result {
+            // 获取验证码成功后 调整界面
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(BindingPhoneViewController.getCodeFinish), name: "getCodeFinish", object: nil)
+        }else
+        {
+            pycFileHelper.setAlertView("验证码请求发送失败，请重试！")
+        }
+        
     }
     
     @IBAction func submitBtnAction(sender: AnyObject) {
@@ -61,7 +69,7 @@ class BindingPhoneViewController: NSViewController {
         
         //用户输入短信验证码后，查询本地是否存在
         codeModel.seeFile = "1"
-        if ((userPhone) != nil) {
+        if (!userPhone) {
             codeModel.seeFile = "0"
         }
         
@@ -71,20 +79,21 @@ class BindingPhoneViewController: NSViewController {
         
         /* 判断输入验证码正确性，如果正确，调用查看文件接口，不正确给出提示*/
         if (messageId != nil) {
+            self.dismissController(true)
             getCodeStateYes() // 调整界面控件状态
 
             if(!userPhone){
                 pycFileHelper.phoneNo = messageTF.stringValue
                 pycFileHelper.messageID = messageId
                 pycFileHelper.openedNum = 0
-                pycFileHelper.loadVideoWithLocalFiles(filePath)// 查看文件
+                pycFileHelper.openURLOfPycFileByLaunchedApp(filePath)// 查看文件
             }else{
                 //完善个人信息，绑定手机号
                 PycFile().bindPhoneByVerificationCode(messageTF.stringValue, logname: userDao.shareduserDao().getLogName(), messageId: messageId)
             }
             
         } else {
-//            [self.view makeToast:@"验证码失效，请重新获取！" duration:1.0 position:@"center"];
+            pycFileHelper.setAlertView("验证码无效，请重新获取！")
         }
     }
     
@@ -96,8 +105,7 @@ class BindingPhoneViewController: NSViewController {
         //
         timer.invalidate()   // 停止时间刷新计时器
         showMessageLabel.stringValue = "\(60)秒后可重新获取验证码"
-        showMessageLabel.hidden = true   // 剩余时间隐藏
-        getMessageBtn.hidden = false    // 获取验证码按钮可用
+        getMessageBtn.enabled = true // 获取验证码按钮不可用
     }
     
     /**
@@ -106,8 +114,12 @@ class BindingPhoneViewController: NSViewController {
     func getCodeFinish() {
         ///
         remainedTime = 59  // 剩余时间
-        showMessageLabel.hidden = false  // 剩余时间label变为可见
-        timer = NSTimer.init(timeInterval: 1, target: self, selector: #selector(BindingPhoneViewController.changeLabelTime), userInfo: nil, repeats: true) // 启用计时器更改剩余时间
+        getMessageBtn.enabled = false // 获取验证码按钮不可用
+        // 启用计时器更改剩余时间
+        if timer == nil {
+            timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(BindingPhoneViewController.changeLabelTime), userInfo: nil, repeats: true)
+        }
+        
     }
     
     /**
@@ -141,9 +153,17 @@ class BindingPhoneViewController: NSViewController {
         if ((phoneString.longLongValue < 13000000000) || (phoneString.longLongValue > 18999999999)) {
             return false  // 不在13X－18X之间
         }
-        
         return true
     }
     
-    
+    override func dismissController(sender: AnyObject?) {
+        if timer != nil {
+            timer.invalidate()   // 停止时间刷新计时器
+        }
+        super.dismissController(sender)
+        if !(sender is Bool){
+            NSNotificationCenter.defaultCenter().postNotificationName("CancleClosePlayerWindows", object: nil, userInfo: ["pycFileID":fileID])
+        }
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
 }

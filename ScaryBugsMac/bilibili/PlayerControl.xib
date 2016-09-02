@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9532"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="PlayerControlWindowController">
@@ -22,7 +22,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <button toolTip="Enter/Exit Fullscreen" id="BIn-rS-nkp" userLabel="Full Screen Button" customClass="NSButtonWithVibracy">
-                        <rect key="frame" x="418" y="31" width="22" height="22"/>
+                        <rect key="frame" x="450" y="31" width="22" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="enterfullscreen" imagePosition="overlaps" alignment="left" alternateImage="exitfullscreen" imageScaling="axesIndependently" inset="2" id="0Q9-Lf-Hft">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -32,7 +32,7 @@
                             <action selector="fullScreen:" target="JST-bT-Zjs" id="07a-N1-mrh"/>
                         </connections>
                     </button>
-                    <button toolTip="Toggle Fillscreen" id="XkJ-oN-pvE" userLabel="KeepAspect Button" customClass="NSButtonWithVibracy">
+                    <button hidden="YES" toolTip="Toggle Fillscreen" id="XkJ-oN-pvE" userLabel="KeepAspect Button" customClass="NSButtonWithVibracy">
                         <rect key="frame" x="382" y="30" width="24" height="24"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="fillscreen_ub" imagePosition="overlaps" alignment="center" alternateImage="exitfillscreen_ub" state="on" imageScaling="axesIndependently" inset="2" id="gZu-4V-PeM">
@@ -88,8 +88,8 @@
                             <action selector="seekTo:" target="JST-bT-Zjs" id="5cS-NP-e3m"/>
                         </connections>
                     </slider>
-                    <button toolTip="Show/Hide Subtitles" id="I0h-Gf-ylJ" userLabel="Sub Visibility Button" customClass="NSButtonWithVibracy">
-                        <rect key="frame" x="450" y="31" width="22" height="22"/>
+                    <button hidden="YES" toolTip="Show/Hide Subtitles" id="I0h-Gf-ylJ" userLabel="Sub Visibility Button" customClass="NSButtonWithVibracy">
+                        <rect key="frame" x="418" y="31" width="22" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="fold" imagePosition="only" alignment="center" alternateImage="unfold" controlSize="mini" imageScaling="axesIndependently" inset="2" id="kvV-DU-ajL">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -123,7 +123,7 @@
                                     <action selector="playPause:" target="JST-bT-Zjs" id="gbk-n8-8mW"/>
                                 </connections>
                             </button>
-                            <button id="QlD-VB-ZI6" customClass="NSButtonWithVibracy">
+                            <button hidden="YES" id="QlD-VB-ZI6" customClass="NSButtonWithVibracy">
                                 <rect key="frame" x="110" y="2" width="24" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="next-episode" imagePosition="overlaps" alignment="center" imageScaling="axesIndependently" inset="2" id="4St-Zn-pcR">
@@ -134,7 +134,7 @@
                                     <action selector="nextEP:" target="JST-bT-Zjs" id="O7V-Ww-ntG"/>
                                 </connections>
                             </button>
-                            <button id="N1P-Sm-ilq" customClass="NSButtonWithVibracy">
+                            <button hidden="YES" id="N1P-Sm-ilq" customClass="NSButtonWithVibracy">
                                 <rect key="frame" x="2" y="2" width="24" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="prev-episode" imagePosition="overlaps" alignment="center" imageScaling="axesIndependently" inset="2" id="bLl-am-l34">

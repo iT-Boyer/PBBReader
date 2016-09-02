@@ -89,14 +89,16 @@ class ActivationController: NSViewController {
             qqField.stringValue = qq
             emailField.stringValue = email
             phoneField.stringValue = phone
-            self1Field.stringValue = field1name
-            self2Field.stringValue = field2name
+            self1Field.stringValue = self1
+            self2Field.stringValue = self2
+            self1label.stringValue = "\(field1name):"
+            self2label.stringValue = "\(field2name):"
+        }else{
+            //label
+            self1label.stringValue = self1
+            self2label.stringValue = self2
         }
-        //label
-        self1label.stringValue = self1
-        self2label.stringValue = self2
-        
-       
+      
         initWithWidgetLayout()
 
     }
@@ -200,7 +202,6 @@ class ActivationController: NSViewController {
         
         ////判断自定义字段的个数,是否用原有规则
         if (isShowSelf1) {
-            self1label.stringValue = "\(self1):"
             if (isSHowEmail) {
                 //默认以相邻的控件之间的约束为主
             }else if (isSHowPhone){
@@ -217,6 +218,9 @@ class ActivationController: NSViewController {
             if (field1needprotect) {
                 self1Field.hidden = true
                 self11Field.hidden = false
+            }else{
+                self1Field.hidden = false
+                self11Field.hidden = true
             }
             
         }else{
@@ -226,8 +230,6 @@ class ActivationController: NSViewController {
         }
         
         if (isShowSelf2) {
-            
-            self2label.stringValue = "\(self2):"
             if (isShowSelf1) {
                 //默认以相邻的控件之间的约束为主
             }else if(isSHowEmail){
@@ -246,6 +248,9 @@ class ActivationController: NSViewController {
             if (field2needprotect) {
                 self2Field.hidden = true
                 self22Field.hidden = false
+            }else{
+                self2Field.hidden = false
+                self22Field.hidden = true
             }
         } else {
             self2label.hidden = true
@@ -290,7 +295,6 @@ class ActivationController: NSViewController {
         var sel2 = self2Field.stringValue
         
         if (selffieldnum==1 || selffieldnum==2) {
-            
             if (!self11Field.hidden) {
                 sel1 = self11Field.stringValue
             }
@@ -329,8 +333,7 @@ class ActivationController: NSViewController {
             }
             
         }
-        
-        self.dismissController(nil)
+        self.dismissController(true)
         let userName = userDao.shareduserDao().getLogName()
         let fileUrl = ReceiveFileDao.sharedReceiveFileDao().selectReceiveFileURLByFileId(fileId, logName: userName)
         pycFileHelper.phoneNo = ""
@@ -376,6 +379,13 @@ class ActivationController: NSViewController {
             applyInfo.needReApply = needReApply
             applyInfo.applyId = applyId
             
+        }
+    }
+    
+    override func dismissController(sender: AnyObject?) {
+        super.dismissController(sender)
+        if !(sender is Bool){
+            NSNotificationCenter.defaultCenter().postNotificationName("CancleClosePlayerWindows", object: nil, userInfo: ["pycFileID":fileId])
         }
     }
 }

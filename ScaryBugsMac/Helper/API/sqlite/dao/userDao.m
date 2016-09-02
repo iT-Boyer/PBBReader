@@ -180,7 +180,8 @@ singleton_implementation(userDao)
 {
 //    return [SZUser sharedSZUser].userName;
     //
-    if (![db open]) return NO;
+    if (![db open]) return @"";
+    
     NSString *logname = @"";
     FMResultSet *rs = [db executeQuery:[self SQL:@"select Uname from %@" inTable:TABLE_USER]];
     if ([db hadError]) {
@@ -306,7 +307,7 @@ singleton_implementation(userDao)
 
 -(NSString *)getPhone
 {
-    if (![db open]) return NO;
+    if (![db open]) return @"";
     FMResultSet *rs = [db executeQuery:[self SQL:@"select Utel from %@" inTable:TABLE_USER]];
     if ([db hadError]) {
         NSLog(@"Err %d: %@", [db lastErrorCode], [db lastErrorMessage]);
@@ -408,7 +409,7 @@ singleton_implementation(userDao)
 
 -(NSString *)GetEmail
 {
-    if (![db open]) return NO;
+    if (![db open]) return @"";
     NSString *email;
     FMResultSet *rs = [db executeQuery:[self SQL:@"select Uemail from %@" inTable:TABLE_USER]];
     if ([db hadError]) {
@@ -456,7 +457,7 @@ singleton_implementation(userDao)
 -(NSString *)getQQNickName
 {
     
-    if (![db open]) return NO;
+    if (![db open]) return @"";
     NSString *qqnick;
     FMResultSet *rs = [db executeQuery:[self SQL:@"select QQNickName from %@" inTable:TABLE_USER]];
     if ([db hadError]) {
@@ -488,7 +489,7 @@ singleton_implementation(userDao)
 
 -(NSString *)getPass
 {
-    if (![db open]) return NO;
+    if (![db open]) return @"";
     
     NSString *pwd;
     FMResultSet *rs = [db executeQuery:[self SQL:@"select Upwd from %@" inTable:TABLE_USER]];

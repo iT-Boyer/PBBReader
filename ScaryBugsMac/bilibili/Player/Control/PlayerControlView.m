@@ -439,7 +439,7 @@
     [super windowDidLoad];
     [self.window setOpaque:NO];
     [self.window setBackgroundColor:[NSColor clearColor]];
-    [self.window setMovable:YES];
+    [self.window setMovable:NO];
     [self.window setMovableByWindowBackground:YES];
 }
 

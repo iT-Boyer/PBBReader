@@ -58,7 +58,7 @@
     if(isLoading){
         return;
     }
-    [self setText:@"正在生成解析参数"];
+//    [self setText:@"正在生成解析参数"];
     dispatch_async(vl_queue, ^(void){
         NSDictionary *dict = [provider generateParamsFromURL:url];
         if(!dict){
@@ -74,7 +74,7 @@
     if(isLoading && !IS_VL_QUEUE){
         return;
     }
-    [self setText:@"正在解析视频地址"];
+//    [self setText:@"正在解析视频地址"];
     dispatch_async(vl_queue, ^(void){
         @try {
             VideoAddress *video = [provider getVideoAddress:params];
@@ -124,6 +124,7 @@
         BOOL haveSub = [subHelper canHandle:_attrs];
         if(haveSub){
 //            [self setText:@"正在下载弹幕/字幕"];
+//            [self setText:@"添加水印"];
             _attrs = [subHelper getSubtitle:attrs];
         }
         dispatch_async(dispatch_get_main_queue(), ^(void){
@@ -147,6 +148,12 @@
     NSString *playerId = [NSString stringWithFormat:@"%ld",result];
     
     //
+    NSDictionary* players = [[PlayerManager sharedInstance] getPlayerList];
+    if ([[players allKeys] count] >= 1) {
+        //
+        [self showError:@"提示" :@"仅支持单个视频播放!"];
+        return;
+    }
     Player *p = [[PlayerManager sharedInstance] createPlayer:playerId withVideo:video attrs:attrs];
     if(!p){
         [self showError:@"错误" :@"播放器创建失败"];
@@ -158,7 +165,7 @@
     if(attrs[@"live"]){
         lastLivePlayerId = playerId;
     }
-//    [self hide:1.0];
+    [self hide:1.0];
 }
 
 
