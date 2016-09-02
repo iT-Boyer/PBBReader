@@ -2,12 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/pengyucheng/git-svn/PBBReaderForOSX/PBBReaderForMac.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:MyPlayground.playground">
+   </FileRef>
+   <FileRef
+      location = "group:PBBReaderForMac.xcodeproj">
    </FileRef>
 </Workspace>
