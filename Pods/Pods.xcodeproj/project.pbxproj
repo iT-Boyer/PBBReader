@@ -16,7 +16,6 @@
 		3DAD1FC7EF1971AEED71F3037A6AF046 /* ConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C527078975E60B8A478F58542109E8 /* ConstraintMaker.swift */; };
 		3ECC23FFAE400A6B2658AAF2990D83BE /* FMDB.h in Headers */ = {isa = PBXBuildFile; fileRef = AB8D5A8A0D8D11C21AAB613949361CD6 /* FMDB.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3F61BE79D4B46C119C136EDE960CE78C /* FMDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = 8828B8B8981CFCF978352BCB1C3FF270 /* FMDatabase.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		41D18E023F2272498FC950816A1C1AEB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D83AA663CD3BCEB30A5EA88EBF8CBAC /* Cocoa.framework */; };
 		45D41BB1BAAC110830ECAF1CDF5348C3 /* ConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989CDE4E78F4F7B319AAA9764B6596C9 /* ConstraintItem.swift */; };
 		551864BF98FF39945A2F33B4C0B97A06 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D83AA663CD3BCEB30A5EA88EBF8CBAC /* Cocoa.framework */; };
 		58CE33E7875BEC7B12D551A398FB9A97 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86647C0008D0971DCB3D0068A0CF15D0 /* Security.framework */; };
@@ -79,13 +78,6 @@
 			remoteGlobalIDString = 10E61158786CC447B2D83172216983F4;
 			remoteInfo = SnapKit;
 		};
-		C636F8D5A6B48CEC85A330832E03D445 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A46399945D18308F6E6F073507A3A78B;
-			remoteInfo = EDStarRating;
-		};
 		F1417697105B8729A4044AE870499ED0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
@@ -128,7 +120,6 @@
 		5CC7703F4812538779E66C39D48077DA /* Pods-PBBReader.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PBBReader.modulemap"; sourceTree = "<group>"; };
 		60171600869D4365EE03D89EC9425CFE /* FMDatabaseQueue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabaseQueue.h; path = src/fmdb/FMDatabaseQueue.h; sourceTree = "<group>"; };
 		64603563A3F3385BE9A2D8979454D89C /* FMDB-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FMDB-dummy.m"; sourceTree = "<group>"; };
-		6B29A180A97A33A1389C8FFB7507033E /* Pods_ScaryBugsMacTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScaryBugsMacTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74166F09710B32713F3E57E3D739090F /* Pods_PBBReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PBBReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		749490D3FB16CDEC1F46C4CF5ABA2272 /* EDStarRating-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EDStarRating-umbrella.h"; sourceTree = "<group>"; };
 		79EA47C254FB83BFCE2F2A9777FCEA4C /* Pods-PBBReader-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PBBReader-umbrella.h"; sourceTree = "<group>"; };
@@ -198,14 +189,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		82DC9C7D93704B705E5F297B58D6B487 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				41D18E023F2272498FC950816A1C1AEB /* Cocoa.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F324C34599273EC2FE98A8DA30CE302F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -234,7 +217,6 @@
 				F349DDE715C49DD26B6BFD28B73651CD /* EDStarRating.framework */,
 				9E6151FA8EF4010F859150E58B72BF52 /* FMDB.framework */,
 				74166F09710B32713F3E57E3D739090F /* Pods_PBBReader.framework */,
-				6B29A180A97A33A1389C8FFB7507033E /* Pods_ScaryBugsMacTests.framework */,
 				0592DC7954FC04698D682BDF2A1E8BAB /* SnapKit.framework */,
 			);
 			name = Products;
@@ -461,13 +443,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		45448C65B5091EC62660CBEA59B5BB0F /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		5377335086645B4335DBDDD4E7183933 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -557,24 +532,6 @@
 			productReference = 9E6151FA8EF4010F859150E58B72BF52 /* FMDB.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		280A0BBE61FBA4DEECC8D5BF4F4CB705 /* Pods-ScaryBugsMacTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5E1B69B550C8EB6836478E094EF40110 /* Build configuration list for PBXNativeTarget "Pods-ScaryBugsMacTests" */;
-			buildPhases = (
-				9F762C6021C87E1C9E3D96414068A314 /* Sources */,
-				82DC9C7D93704B705E5F297B58D6B487 /* Frameworks */,
-				45448C65B5091EC62660CBEA59B5BB0F /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4C8F257FA6422911DA7928FF604AA883 /* PBXTargetDependency */,
-			);
-			name = "Pods-ScaryBugsMacTests";
-			productName = "Pods-ScaryBugsMacTests";
-			productReference = 6B29A180A97A33A1389C8FFB7507033E /* Pods_ScaryBugsMacTests.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		A46399945D18308F6E6F073507A3A78B /* EDStarRating */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 83568DC6D394A7A138093B1FB3CA9AAF /* Build configuration list for PBXNativeTarget "EDStarRating" */;
@@ -634,7 +591,6 @@
 				A46399945D18308F6E6F073507A3A78B /* EDStarRating */,
 				23CF27B2BA6AC7125EFFEDA8C5AA819F /* FMDB */,
 				0B471F0B3491B36460B3852573E39993 /* Pods-PBBReader */,
-				280A0BBE61FBA4DEECC8D5BF4F4CB705 /* Pods-ScaryBugsMacTests */,
 				10E61158786CC447B2D83172216983F4 /* SnapKit */,
 			);
 		};
@@ -701,13 +657,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9F762C6021C87E1C9E3D96414068A314 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -716,12 +665,6 @@
 			name = FMDB;
 			target = 23CF27B2BA6AC7125EFFEDA8C5AA819F /* FMDB */;
 			targetProxy = 54AB81AFEC8AA898CFCE9FC52EBD7987 /* PBXContainerItemProxy */;
-		};
-		4C8F257FA6422911DA7928FF604AA883 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = EDStarRating;
-			target = A46399945D18308F6E6F073507A3A78B /* EDStarRating */;
-			targetProxy = C636F8D5A6B48CEC85A330832E03D445 /* PBXContainerItemProxy */;
 		};
 		5C151149B0A44DE2E17E626A55B23CF9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -839,39 +782,6 @@
 				MODULEMAP_FILE = "Target Support Files/CocoaAsyncSocket/CocoaAsyncSocket.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = CocoaAsyncSocket;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		2A9310037D86F8DC968E0FDFBAF82114 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-ScaryBugsMacTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MODULEMAP_FILE = "Target Support Files/Pods-ScaryBugsMacTests/Pods-ScaryBugsMacTests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_ScaryBugsMacTests;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1137,39 +1047,6 @@
 			};
 			name = Debug;
 		};
-		E558094300D572D57DB00C584147B7D5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-ScaryBugsMacTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MODULEMAP_FILE = "Target Support Files/Pods-ScaryBugsMacTests/Pods-ScaryBugsMacTests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_ScaryBugsMacTests;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		E5CAAD8DE0DFEA0F0D4435E90E556B89 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BCEB9B865ED00F8BC40B5D5F2EAA82E3 /* FMDB.xcconfig */;
@@ -1235,15 +1112,6 @@
 			buildConfigurations = (
 				76F716882E562DA714BB514500ED6F90 /* Debug */,
 				03FB47EE9460EAABCD646D9B56208359 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5E1B69B550C8EB6836478E094EF40110 /* Build configuration list for PBXNativeTarget "Pods-ScaryBugsMacTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E558094300D572D57DB00C584147B7D5 /* Debug */,
-				2A9310037D86F8DC968E0FDFBAF82114 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
