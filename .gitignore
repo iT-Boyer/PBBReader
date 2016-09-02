@@ -1,0 +1,9 @@
+.DS_Store
+xcshareddata
+*.xcscheme
+*.zip
+xcuserdata
+*.xcuserstate
+xcdebugger
+ImportSVN
+
