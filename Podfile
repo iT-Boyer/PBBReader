@@ -6,9 +6,4 @@ target 'PBBReader' do
     pod 'CocoaAsyncSocket'
     pod 'FMDB'
     pod 'SnapKit', '~> 0.30.0.beta2'
-
-    target 'PBBReaderForMacTests' do
-        inherit! :search_paths
-        pod 'EDStarRating'
-    end
 end
