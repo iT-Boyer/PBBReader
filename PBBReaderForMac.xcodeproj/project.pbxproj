@@ -201,6 +201,7 @@
 		14B9EE5F1D79744400EC8986 /* PBBReader-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14B9EE5E1D79744400EC8986 /* PBBReader-Info.plist */; };
 		14BF317A1D77C9DE000EFF66 /* CellhighlightColorTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BF31791D77C9DE000EFF66 /* CellhighlightColorTableView.swift */; };
 		14BF31811D780AB1000EFF66 /* CustomBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BF31801D780AB1000EFF66 /* CustomBox.swift */; };
+		14EA57C11D7D6A480026602B /* importSVN.sh in Resources */ = {isa = PBXBuildFile; fileRef = 14EA57C01D7D6A480026602B /* importSVN.sh */; };
 		A7FCF66363745C0CAFC4371C /* Pods_PBBReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9556540B6FE647FA50015D1C /* Pods_PBBReader.framework */; };
 /* End PBXBuildFile section */
 
@@ -527,6 +528,7 @@
 		14BF31791D77C9DE000EFF66 /* CellhighlightColorTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellhighlightColorTableView.swift; sourceTree = "<group>"; };
 		14BF31801D780AB1000EFF66 /* CustomBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBox.swift; sourceTree = "<group>"; };
 		14C75DCC1D6AE9C6009CBE09 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		14EA57C01D7D6A480026602B /* importSVN.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = importSVN.sh; path = ShellScript/importSVN.sh; sourceTree = "<group>"; };
 		14EE618B1CF816E50051FD1A /* Array+RemoveObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+RemoveObject.swift"; sourceTree = "<group>"; };
 		14EE618C1CF816E50051FD1A /* NSImage+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+Extras.h"; sourceTree = "<group>"; };
 		14EE618D1CF816E50051FD1A /* NSImage+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+Extras.m"; sourceTree = "<group>"; };
@@ -1154,9 +1156,18 @@
 			path = model;
 			sourceTree = "<group>";
 		};
+		14EA57BF1D7D6A150026602B /* shellScript */ = {
+			isa = PBXGroup;
+			children = (
+				14EA57C01D7D6A480026602B /* importSVN.sh */,
+			);
+			name = shellScript;
+			sourceTree = "<group>";
+		};
 		14EE61891CF816E50051FD1A /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				14EA57BF1D7D6A150026602B /* shellScript */,
 				148AB4731CFFD24E00CAF9BA /* AppDelegateHelper.h */,
 				148AB4741CFFD24E00CAF9BA /* AppDelegateHelper.m */,
 				14430C291D012D1D00A5394D /* LookMedia.h */,
@@ -1284,6 +1295,7 @@
 				14815B371D4B02CD00922A62 /* 单个文件执行install_name_tool */,
 				14A420411D582EE3009B9DF3 /* import svn */,
 				14B9EE5D1D79685D00EC8986 /* git-svn */,
+				14EA57C71D7D6C9A0026602B /* 启动Package */,
 			);
 			buildRules = (
 			);
@@ -1386,6 +1398,7 @@
 				143E388F1D3F1809004B0A4D /* menubutton.png in Resources */,
 				143E38901D3F1809004B0A4D /* copyright.txt in Resources */,
 				14815B531D4B131A00922A62 /* water.xml in Resources */,
+				14EA57C11D7D6A480026602B /* importSVN.sh in Resources */,
 				143E38911D3F1809004B0A4D /* fillscreen_ub.pdf in Resources */,
 				143E38921D3F1809004B0A4D /* keywords.txt in Resources */,
 				143E38931D3F1809004B0A4D /* resizeindicator.png in Resources */,
@@ -1532,7 +1545,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "###############获取版本号,bundleID\n#获取版本号\n#方式一\n#bundleBuildVersion=\"`/usr/libexec/PlistBuddy -c \\\"Print CFBundleVersion\\\" $INFOPLIST_FILE`\"\n#echo $bundleBuildVersion\n#方法二CFBundleShortVersionString\n#http://stackoverflow.com/questions/6851660/version-vs-build-in-xcode\nversionNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"$INFOPLIST_FILE\")\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\n#\n#新建导入目录\nProductName=\"$PRODUCT_NAME.$versionNumber.${buildNumber}\"\nProductPath=\"$TARGET_BUILD_DIR/$PRODUCT_NAME.app\"\nImportSVN=\"ImportSVN\"\n#上传时，先删除SVN目录\nrm -rf ${ImportSVN}\npwd\nif [ -d \"$ImportSVN\" ]; then\n    echo 'svn目录已存在'\nelse\n    echo '新建svn目录'\n    mkdir $ImportSVN\nfi\necho \"cp -rf $ProductPath ${ImportSVN}/$ProductName.app\"\n#压缩\n#拷贝\ncp -rf $ProductPath ${ImportSVN}/$ProductName.app\ncd $ImportSVN\npwd\necho \"zip -r $ProductName.app.zip . -i ./*\"\n#压缩后删除源文件\nzip -rm \"$ProductName.app.zip\" ./*  \n#*/\ncd ../\npwd\n\necho \"import \"${ImportSVN}\" https:\\/\\/192.168.85.64/svn/安装包/MAC -m \"${ProductName}\"\"\nexport LC_CTYPE=\"zh_CN.UTF-8\" #设置当前系统的 locale,支持中文路径\n#svn import \"${ImportSVN}\" https:\\/\\/192.168.85.64/svn/安装包/MAC -m \"${ProductName}\"\n";
+			shellScript = "#SHELL_PATH=$PROJECT_DIR/$PRODUCT_NAME/Helper/ShellScript/importSVN.sh\n#chmod +x ${SHELL_PATH}\n#sh ${SHELL_PATH}\n\n###############获取版本号,bundleID\n#获取版本号\n#方式一\n#bundleBuildVersion=\"`/usr/libexec/PlistBuddy -c \\\"Print CFBundleVersion\\\" $INFOPLIST_FILE`\"\n#echo $bundleBuildVersion\n#方法二CFBundleShortVersionString\n#http://stackoverflow.com/questions/6851660/version-vs-build-in-xcode\nversionNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"$INFOPLIST_FILE\")\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\n#\n#新建导入目录\nProductName=\"$PRODUCT_NAME.$versionNumber.${buildNumber}\"\nProductPath=\"$TARGET_BUILD_DIR/$PRODUCT_NAME.app\"\nImportSVN=\"ImportSVN\"\n#上传时，先删除SVN目录\nrm -rf ${ImportSVN}\npwd\nif [ -d \"$ImportSVN\" ]; then\n    echo 'svn目录已存在'\nelse\n    echo '新建svn目录'\n    mkdir $ImportSVN\nfi\necho \"cp -rf $ProductPath ${ImportSVN}/$ProductName.app\"\n#压缩\n#拷贝\ncp -rf $ProductPath ${ImportSVN}/$ProductName.app\n\ncd $ImportSVN\n#压缩后删除源文件\necho \"压缩后删除源文件\"\n#保留源文件\nzip -r \"$ProductName.app.zip\" ./*\n#删除\n#zip -rm \"$ProductName.app.zip\" ./*\n#*/\n#重命名\nmv $ProductName.app PBBReaderForOSX.app\n#导入svn库中\necho \"导入svn库中...\"\ncd ../\nexport LC_CTYPE=\"zh_CN.UTF-8\" #设置当前系统的 locale,支持中文路径\n#svn import \"${ImportSVN}\" https:\\/\\/192.168.85.64/svn/安装包/MAC -m \"${ProductName}\"\n";
 		};
 		14B9EE5D1D79685D00EC8986 /* git-svn */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1548,6 +1561,20 @@
 			shellPath = /bin/sh;
 			shellScript = "#clone源码\ngit svn clone https://192.168.85.64/svn/PBBforIOS/PBBReaderForOSX\n#提交更新\ngit svn dcommit\n#变基：从服务器拉取本地还没有的改动，并将你所有的工作变基到服务器的内容之上\ngit svn rebase\n\n#拉取最新\ngit svn fetch\n#根据SVN项目中的svn:ignore设置生成对应git忽略文件.gitnore\ngit svn create-ignore\ngit svn show-ignore > .git/info/exclude\n\n#查看内容变化\ngit diff\ngit diff --staged\ngit diff --cached\n#强制覆盖服务器端上的分支\ngit push -u origin master -f";
 			showEnvVarsInLog = 0;
+		};
+		14EA57C71D7D6C9A0026602B /* 启动Package */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "启动Package";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#下载\n\nPerfect=\"/Applications/Packages.app\"\n# -f 参数判断 $file 是否存在\nif [ -f \"$Perfect\" ]; then\n    echo 'Packages.app已安装'\nelse\n    echo '下载Packages.dmg程序...'\n    curl -o Packages.dmg http://s.sudre.free.fr/Software/files/Packages.dmg\nfi\n#安装Packages.app\nopen /Applications/Packages.app\n#打开程序\nopen $PROJECT_DIR/PBBReaderForOSX.pkgproj";
 		};
 		6FF822FB36820B453C9B8EDD /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1883,7 +1910,7 @@
 				PODS_BUILD_DIR = $BUILD_DIR;
 				PODS_CONFIGURATION_BUILD_DIR = "$PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				PODS_ROOT = "${SRCROOT}/Pods";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.com.recomend.PBBReaderForMac;
+				PRODUCT_BUNDLE_IDENTIFIER = pyc.cn.com.PBBReaderForOSX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "PBBReaderForMac/PBBReaderForMac-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1944,7 +1971,7 @@
 				PODS_BUILD_DIR = $BUILD_DIR;
 				PODS_CONFIGURATION_BUILD_DIR = "$PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				PODS_ROOT = "${SRCROOT}/Pods";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.com.recomend.PBBReaderForMac;
+				PRODUCT_BUNDLE_IDENTIFIER = pyc.cn.com.PBBReaderForOSX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "PBBReaderForMac/PBBReaderForMac-Bridging-Header.h";
 				USER_HEADER_SEARCH_PATHS = "\"${PODS_ROOT}/FMDB/src/fmdb\"";
