@@ -194,6 +194,7 @@
 		14B9EE5F1D79744400EC8986 /* PBBReader-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14B9EE5E1D79744400EC8986 /* PBBReader-Info.plist */; };
 		14BF317A1D77C9DE000EFF66 /* CellhighlightColorTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BF31791D77C9DE000EFF66 /* CellhighlightColorTableView.swift */; };
 		14BF31811D780AB1000EFF66 /* CustomBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BF31801D780AB1000EFF66 /* CustomBox.swift */; };
+		14EA57EA1D7EBEAA0026602B /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EA57E91D7EBEA90026602B /* CustomView.swift */; };
 		A7FCF66363745C0CAFC4371C /* Pods_PBBReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9556540B6FE647FA50015D1C /* Pods_PBBReader.framework */; };
 /* End PBXBuildFile section */
 
@@ -529,6 +530,7 @@
 		14EA57DC1D7E723E0026602B /* Readme.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Readme.rtf; sourceTree = "<group>"; };
 		14EA57DD1D7E723E0026602B /* Welcome.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Welcome.rtf; sourceTree = "<group>"; };
 		14EA57E31D7E963B0026602B /* Licence.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Licence.txt; sourceTree = "<group>"; };
+		14EA57E91D7EBEA90026602B /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		14EE618B1CF816E50051FD1A /* Array+RemoveObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+RemoveObject.swift"; sourceTree = "<group>"; };
 		14EE618C1CF816E50051FD1A /* NSImage+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+Extras.h"; sourceTree = "<group>"; };
 		14EE618D1CF816E50051FD1A /* NSImage+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+Extras.m"; sourceTree = "<group>"; };
@@ -1233,6 +1235,7 @@
 				84548C891D772AF600715F4B /* SelectedRowHighlightCell.m */,
 				14BF31791D77C9DE000EFF66 /* CellhighlightColorTableView.swift */,
 				14BF31801D780AB1000EFF66 /* CustomBox.swift */,
+				14EA57E91D7EBEA90026602B /* CustomView.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -1775,6 +1778,7 @@
 				143E38441D3F1809004B0A4D /* PlayerManager.m in Sources */,
 				143E38451D3F1809004B0A4D /* PlayLocalFile.m in Sources */,
 				143E38461D3F1809004B0A4D /* PlayerEventProxy.m in Sources */,
+				14EA57EA1D7EBEAA0026602B /* CustomView.swift in Sources */,
 				143E38471D3F1809004B0A4D /* PlayerControlView.m in Sources */,
 				143E38481D3F1809004B0A4D /* PostComment.m in Sources */,
 				143E38491D3F1809004B0A4D /* SimpleVideoFormatParser.mm in Sources */,

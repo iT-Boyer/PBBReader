@@ -195,7 +195,7 @@ CA
                                         <rect key="frame" x="0.0" y="0.0" width="186" height="520"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <subviews>
-                                            <customView horizontalHuggingPriority="249" verticalHuggingPriority="249" id="vHS-NP-Zqw" userLabel="浏览...">
+                                            <customView horizontalHuggingPriority="249" verticalHuggingPriority="249" id="vHS-NP-Zqw" userLabel="浏览..." customClass="CustomView" customModule="PBBReader" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="186" height="33"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
@@ -222,16 +222,15 @@ CA
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
-                                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="value" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
                                                     </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="wantsLayer" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </customView>
                                             <customView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" id="RMf-Wn-zsi" userLabel="接收列表">
                                                 <rect key="frame" x="0.0" y="34" width="186" height="486"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
-                                                    <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="28" horizontalPageScroll="10" verticalLineScroll="28" verticalPageScroll="10" hasHorizontalScroller="NO" horizontalScrollElasticity="none" verticalScrollElasticity="none" scrollerKnobStyle="light" translatesAutoresizingMaskIntoConstraints="NO" id="fEd-sd-PMh">
+                                                    <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="27" horizontalPageScroll="10" verticalLineScroll="27" verticalPageScroll="10" hasHorizontalScroller="NO" horizontalScrollElasticity="none" verticalScrollElasticity="none" scrollerKnobStyle="light" translatesAutoresizingMaskIntoConstraints="NO" id="fEd-sd-PMh">
                                                         <rect key="frame" x="0.0" y="0.0" width="186" height="486"/>
                                                         <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="aFh-iY-Jsf">
                                                             <rect key="frame" x="0.0" y="0.0" width="186" height="486"/>
@@ -240,8 +239,8 @@ CA
                                                                 <tableView verticalHuggingPriority="750" columnAutoresizingStyle="firstColumnOnly" selectionHighlightStyle="sourceList" columnSelection="YES" emptySelection="NO" autosaveColumns="NO" rowHeight="20" viewBased="YES" id="DGV-oq-2Kh">
                                                                     <rect key="frame" x="0.0" y="0.0" width="187" height="486"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
-                                                                    <size key="intercellSpacing" width="26" height="8"/>
-                                                                    <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                    <size key="intercellSpacing" width="26" height="7"/>
+                                                                    <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <tableViewGridLines key="gridStyleMask" dashed="YES"/>
                                                                     <color key="gridColor" red="0.86274509799999999" green="0.87843137250000003" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <tableColumns>
@@ -260,7 +259,7 @@ CA
                                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES"/>
                                                                             <prototypeCellViews>
                                                                                 <tableCellView focusRingType="exterior" id="Q1U-uF-fvd">
-                                                                                    <rect key="frame" x="13" y="4" width="161" height="19"/>
+                                                                                    <rect key="frame" x="13" y="3" width="161" height="19"/>
                                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                     <subviews>
                                                                                         <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="876-Em-s9i">
@@ -570,6 +569,7 @@ CA
                                                                 <constraint firstItem="tJa-Vz-Ekf" firstAttribute="leading" secondItem="ihb-K2-VpE" secondAttribute="leading" id="AYv-Ew-EAq"/>
                                                                 <constraint firstItem="Be2-Gh-QUG" firstAttribute="leading" secondItem="tJa-Vz-Ekf" secondAttribute="trailing" constant="-1" id="B5I-or-FqD"/>
                                                                 <constraint firstItem="Be2-Gh-QUG" firstAttribute="centerY" secondItem="ihb-K2-VpE" secondAttribute="centerY" id="NuB-vF-Xlp"/>
+                                                                <constraint firstAttribute="height" constant="21" id="uAj-9K-NvJ"/>
                                                             </constraints>
                                                         </customView>
                                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QN2-0m-NQi">
