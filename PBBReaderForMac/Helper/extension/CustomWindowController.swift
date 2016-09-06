@@ -16,9 +16,15 @@ class CustomWindowController: NSWindowController {
         self.window!.titlebarAppearsTransparent = true // 标题栏透明，重要
         self.window!.contentView!.wantsLayer = true // 设置整个内容view都有layer
         
+        // 使用图片生成颜色
+//        let bannerColor = NSColor.init(patternImage: NSImage.init(named: "liulan")!)
+        //R:246.G:246.B:246   #f6f6f6
+        let bannerColor = NSColor.init(red: 246, green: 246, blue: 246, alpha: 1) // NSColor.lightGrayColor()
+        
         // 自定义一个view
         let topBannerView = NSView.init(frame: NSZeroRect)
         topBannerView.wantsLayer = true
+        topBannerView.layer!.backgroundColor = bannerColor.CGColor
         self.window?.contentView?.addSubview(topBannerView)
         topBannerView.snp_makeConstraints { (make) in
             //
@@ -35,7 +41,7 @@ class CustomWindowController: NSWindowController {
         titleLabel.editable = false
         titleLabel.bordered = false //设置无边框
         titleLabel.textColor = NSColor.whiteColor()
-        titleLabel.backgroundColor = NSColor.lightGrayColor()
+        titleLabel.backgroundColor = bannerColor
         topBannerView.addSubview(titleLabel)
         titleLabel.sizeToFit()
         titleLabel.snp_makeConstraints { (make) in
@@ -45,19 +51,22 @@ class CustomWindowController: NSWindowController {
             make.top.equalTo(3)
             
         }
+        titleLabel.hidden = true
         
-        
-        // 使用图片生成颜色
-//        let bannerColor = NSColor.init(patternImage: NSImage.init(named: "send_recover1")!).CGColor
-        let bannerColor = NSColor.lightGrayColor().CGColor
-        topBannerView.layer!.backgroundColor = bannerColor
-        
+        //标题图片镂空文字
+        let titleImageView = NSImageView()
+        titleImageView.image = NSImage.init(named: "titlePBBReader")
+        topBannerView.addSubview(titleImageView)
+        titleImageView.snp_makeConstraints { (make) in
+            make.centerX.equalTo(topBannerView)
+            make.top.equalTo(3)
+        }
         
         // 取出标题栏的view并且改变背景色
         var views = self.window!.contentView!.superview!.subviews
         let titlebarContainerView = views[1]
         let titlebarView = titlebarContainerView.subviews[0]
-        titlebarView.layer!.backgroundColor = bannerColor
+        titlebarView.layer!.backgroundColor = bannerColor.CGColor
         //        CGColorRelease(bannerColor)
 //        self.window?.contentView?.superview?.addSubview(titlebarView,positioned: .Below,relativeTo: topBannerView)
 

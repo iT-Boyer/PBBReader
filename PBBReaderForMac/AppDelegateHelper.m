@@ -96,7 +96,7 @@ singleton_implementation(AppDelegateHelper);
     }
 
     //custormActivityView = (AdvertisingView *)[[NSWindowController alloc] initWithWindowNibName:@"AdvertisingView"];
-    
+    //加载广告
     if(!custormActivityView){
         [self setKeyWindow];
         if (keyWindow) {
@@ -651,6 +651,124 @@ singleton_implementation(AppDelegateHelper);
     
 }
 
+#pragma mark - 刷新文件详情
+-(BOOL)getFileInfoById:(NSInteger)theFileId pbbFile:(NSString *)pbbFileName PycFile:(NSString *)pycFileName fileType:(NSInteger)theFileType
+{
+    if (!_fileManager) {
+        //
+        _fileManager = [[PycFile alloc] init];
+        _fileManager.delegate = self;
+    }
+    
+    BOOL result = [_fileManager getFileInfoById:theFileId pbbFile:pbbFileName PycFile:pycFileName fileType:1];
+    if (!result) {
+        [self setAlertView:@"刷新失败，请稍后再试！"];
+    }else{
+        [self setText:@"开始刷新"];
+    }
+    return result;
+}
+
+/**
+ *  更新文件信息
+ *
+ *  @param fileObject  文件对象
+ *  @param receiveData 返回值
+ */
+-(void)PycFile:(PycFile *)fileObject didFinishGetFileInfo:(MAKEPYCRECEIVE *)receiveData
+{
+    [self hide:1.0];
+    int _returnValue = receiveData->returnValue;
+    if(receiveData == nil || _returnValue == 0)
+    {
+        [self setAlertView:@"您的网络不给力哦，请重试！"];
+        return;
+    }
+    if(_returnValue == -1)
+    {
+        [self setAlertView:@"数据传输错误，请重试！"];
+        return;
+    }
+    if(_returnValue & ERR_NEED_UPDATE)
+    {
+//        [[[VersionOldAlertView alloc] initWithIsInstalled:NO] show];
+        return;
+    }
+    
+    NSString *qq = fileObject.QQ;
+    NSInteger makeType = _returnValue & ERR_FREE?1:0;
+    NSInteger forbid = 0;
+    NSInteger isEye = 1;
+    //更新接收查看文件
+    if(_returnValue & ERR_OK_OR_CANOPEN)
+    {
+        
+        if (makeType == 1) {
+            forbid = fileObject.iCanOpen;
+        }else{
+            forbid = (_returnValue) & ERR_SALER?0:1;
+            isEye = fileObject.canseeCondition==1;
+            qq = @"#cansee";
+        }
+    }
+    NSDate *startDay = [NSDate dateWithStringByDay:fileObject.startDay];
+    NSDate *endDay = [NSDate dateWithStringByDay:fileObject.endDay];
+    NSDate *receiveDay = [NSDate dateWithStringByDay:[[NSDate date] dateStringByDay]];
+    [[ReceiveFileDao sharedReceiveFileDao] updateReceiveFile:[OutFile initWithReceiveFileId:fileObject.fileID
+                                                                                   FileName:[fileObject.filePycNameFromServer stringByDeletingPathExtension]
+                                                                                    LogName:logname
+                                                                                  FileOwner:fileObject.fileOwner
+                                                                              FileOwnerNick:fileObject.nickname
+                                                                                    FileUrl:fileObject.filePycName
+                                                                                   FileType:fileObject.fileExtentionWithOutDot
+                                                                                ReceiveTime:receiveDay
+                                                                                  StartTime:startDay
+                                                                                    EndTime:endDay
+                                                                                  LimitTime:fileObject.openTimeLong
+                                                                                     Forbid:forbid
+                                                                                   LimitNum:fileObject.AllowOpenmaxNum
+                                                                                    ReadNum:fileObject.haveOpenedNum
+                                                                                       Note:fileObject.remark
+                                                                                     Reborn:0
+                                                                                     FileQQ:qq
+                                                                                  FileEmail:fileObject.email
+                                                                                  FilePhone:fileObject.phone
+                                                                                FileOpenDay:1
+                                                                              FileDayRemain:fileObject.dayRemain
+                                                                               FileOpenYear:1
+                                                                             FileYearRemain:fileObject.yearRemain
+                                                                               FileMakeType:makeType
+                                                                               FileMakeTime:nil
+                                                                                    AppType:fileObject.makeFrom
+                                                                                      isEye:isEye]];
+    //首次阅读
+    if(![fileObject.firstSeeTime isEqualToString:@""]){
+        [[ReceiveFileDao sharedReceiveFileDao] updateReceiveFileFirstOpenTime:fileObject.firstSeeTime FileId:fileObject.fileID];
+    }
+    
+    if (_returnValue==1)
+    {
+        [[ReceiveFileDao sharedReceiveFileDao] updateReceiveFileToRebornedByFileId:fileObject.fileID Status:0];
+        
+    }
+    //将系列ID和文件关联
+    [[ReceiveFileDao sharedReceiveFileDao] updateReceiveSeriesID:fileObject.seriesID fileId:fileObject.fileID];
+    
+    //    if (fileObject.seriesID != 0) {
+    //TODO:插入系列表信息
+    SeriesModel *series = [[SeriesModel alloc] init];
+    series.seriesID = fileObject.seriesID;
+    series.seriesFileNum = fileObject.seriesFileNums;
+    series.seriesName = [fileObject.seriesName stringByReplacingOccurrencesOfString:@"\0"withString:@""];//fileObject.seriesName;
+    series.seriesAuthor = fileObject.nickname;
+    series.seriesClass = makeType;
+    [[SeriesDao sharedSeriesDao] insertToSeries:series];
+   
+    //通知主页面刷新
+    NSDictionary  *dic = [NSDictionary dictionaryWithObject:[NSNumber numberWithInteger:fileObject.fileID] forKey:@"pycFileID"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshOpenInFile" object:self userInfo:dic];
+}
+
 #pragma mark - 绑定手机号
 -(BOOL)getVerificationCodeByPhone:(NSString *)phone userPhone:(BOOL)userPhone
 {
@@ -930,6 +1048,9 @@ singleton_implementation(AppDelegateHelper);
         }
     }
 }
+
+//
+
 
 
 #pragma mark - 跳转页面

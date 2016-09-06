@@ -47,6 +47,7 @@ class ReceiveViewController: NSViewController{
     @IBOutlet weak var ibOnceLong: NSView!
     @IBOutlet weak var ibOpenInLocalFileButtion: NSButton!
     
+    @IBOutlet weak var ibDeleteButtion: NSButton!
     
     //必须声明为全局属性，否则在声明PycFile调用delegate时，delegate = nil
     //还出现第一次启动执行两次openFiles方法
@@ -108,6 +109,18 @@ class ReceiveViewController: NSViewController{
             appHelper.loadVideoWithLocalFiles({path_all}())
         }
         
+    }
+    
+    //删除该文件
+    @IBAction func ibaDeleteFileData(sender: AnyObject) {
+        mnuRemoveRowSelected(sender)
+    }
+    
+    //刷新该文件
+    @IBAction func ibaRefreshFileData(sender: AnyObject) {
+        appHelper.phoneNo = ""
+        appHelper.messageID = ""
+        appHelper.getFileInfoById(receiveFile.fileid, pbbFile: "\(receiveFile.filename).pbb", pycFile: receiveFile.fileurl, fileType: 1)
     }
     
     //MARK: 通知处理事件 更新主页
@@ -472,6 +485,9 @@ extension ReceiveViewController
             readBtn.image = NSImage.init(named: "send_read_no")
             readBtn.enabled = false
         }
+        
+        //删除按钮根据阅读按钮状态保持一直
+        ibDeleteButtion.enabled = readBtn.enabled
     }
     
     func isCanOpen(outFile:OutFile) -> Bool {

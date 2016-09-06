@@ -33,6 +33,10 @@ singleton_interface(AppDelegateHelper);
 //申请手动激活
 - (NSString *)applyFileByFidAndOrderId:(NSInteger )fileId orderId:(NSInteger )thOrderId applyId:(NSInteger)theApplyId qq:(NSString *)theQQ email:(NSString *)theEmail phone:(NSString *)thePhone field1:(NSString *)theField1 field2:(NSString *)theField2 seeLogName:(NSString *)theSeeLogName fileName:(NSString*)theFileName;
 
+
+//刷新单个文件信息
+-(BOOL)getFileInfoById:(NSInteger )theFileId pbbFile:(NSString *)pbbFileName PycFile:(NSString *)pycFileName fileType:(NSInteger) theFileType;
+
 -(BOOL)fileIsTypeOfVideo:(NSString *)pathExt;
 //浮动窗口
 -(void)setText:(NSString *)text;
