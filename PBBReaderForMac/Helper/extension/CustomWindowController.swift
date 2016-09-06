@@ -42,7 +42,7 @@ class CustomWindowController: NSWindowController {
             //居顶部5 ，水平居中topBanerView
             make.centerX.equalTo(topBannerView)
             make.left.right.equalTo(0)
-            make.top.equalTo(-5)
+            make.top.equalTo(3)
             
         }
         

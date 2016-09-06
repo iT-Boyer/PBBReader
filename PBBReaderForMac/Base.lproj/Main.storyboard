@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
     </dependencies>
@@ -143,15 +143,12 @@ CA
             <objects>
                 <windowController showSeguePresentationStyle="single" id="B8D-0N-5wS" customClass="CustomWindowController" customModule="PBBReader" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="IQv-IB-iLA">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES"/>
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES" unifiedTitleAndToolbar="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="454" y="262" width="800" height="550"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <value key="minSize" type="size" width="800" height="550"/>
-                        <value key="maxSize" type="size" width="800" height="550"/>
                         <value key="minFullScreenContentSize" type="size" width="800" height="550"/>
-                        <value key="maxFullScreenContentSize" type="size" width="800" height="550"/>
-                        <contentBorderThickness minY="0.0" maxY="0.0"/>
                     </window>
                     <connections>
                         <segue destination="3OW-Ec-nEc" kind="relationship" relationship="window.shadowedContentViewController" id="RP7-zd-31X"/>
@@ -233,16 +230,16 @@ CA
                                                 <rect key="frame" x="0.0" y="31" width="186" height="489"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
-                                                    <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="35" horizontalPageScroll="10" verticalLineScroll="35" verticalPageScroll="10" hasHorizontalScroller="NO" horizontalScrollElasticity="none" verticalScrollElasticity="none" scrollerKnobStyle="light" translatesAutoresizingMaskIntoConstraints="NO" id="fEd-sd-PMh">
+                                                    <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="30" horizontalPageScroll="10" verticalLineScroll="30" verticalPageScroll="10" hasHorizontalScroller="NO" horizontalScrollElasticity="none" verticalScrollElasticity="none" scrollerKnobStyle="light" translatesAutoresizingMaskIntoConstraints="NO" id="fEd-sd-PMh">
                                                         <rect key="frame" x="0.0" y="0.0" width="186" height="489"/>
                                                         <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="aFh-iY-Jsf">
                                                             <rect key="frame" x="0.0" y="0.0" width="186" height="489"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <tableView verticalHuggingPriority="750" columnAutoresizingStyle="firstColumnOnly" selectionHighlightStyle="sourceList" columnSelection="YES" emptySelection="NO" autosaveColumns="NO" rowHeight="20" viewBased="YES" id="DGV-oq-2Kh">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="186" height="489"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="186" height="0.0"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
-                                                                    <size key="intercellSpacing" width="25" height="15"/>
+                                                                    <size key="intercellSpacing" width="25" height="10"/>
                                                                     <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                     <color key="gridColor" red="0.86274509799999999" green="0.87843137250000003" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <tableColumns>
@@ -261,7 +258,7 @@ CA
                                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES"/>
                                                                             <prototypeCellViews>
                                                                                 <tableCellView focusRingType="exterior" id="Q1U-uF-fvd">
-                                                                                    <rect key="frame" x="12" y="7" width="161" height="19"/>
+                                                                                    <rect key="frame" x="12" y="5" width="161" height="19"/>
                                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                     <subviews>
                                                                                         <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="876-Em-s9i">
@@ -346,7 +343,7 @@ CA
                                                             </textFieldCell>
                                                         </textField>
                                                         <customView canDrawConcurrently="YES" appearanceType="aqua" translatesAutoresizingMaskIntoConstraints="NO" id="ZzF-PU-o90">
-                                                            <rect key="frame" x="30" y="286" width="508" height="121"/>
+                                                            <rect key="frame" x="30" y="286" width="498" height="121"/>
                                                             <subviews>
                                                                 <imageView focusRingType="exterior" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Qt-O0-0E4">
                                                                     <rect key="frame" x="0.0" y="1" width="498" height="120"/>
@@ -435,6 +432,7 @@ CA
                                                                 <constraint firstItem="7Sw-2p-Afz" firstAttribute="leading" secondItem="wpS-NR-ibR" secondAttribute="trailing" constant="-1" id="e5t-Qg-TUM"/>
                                                                 <constraint firstItem="wpS-NR-ibR" firstAttribute="top" secondItem="ZzF-PU-o90" secondAttribute="top" constant="15" id="vUj-RC-2fT"/>
                                                                 <constraint firstItem="ZjV-6p-I4T" firstAttribute="leading" secondItem="tWF-yf-b61" secondAttribute="leading" id="wW9-cu-jgf"/>
+                                                                <constraint firstAttribute="height" constant="121" id="x3z-ja-zfO"/>
                                                                 <constraint firstItem="gux-H6-7NY" firstAttribute="leading" secondItem="tWF-yf-b61" secondAttribute="trailing" constant="1" id="x85-bd-9Ro"/>
                                                                 <constraint firstAttribute="bottom" secondItem="7Qt-O0-0E4" secondAttribute="bottom" constant="1" id="xeF-aw-ury"/>
                                                             </constraints>
@@ -583,7 +581,6 @@ CA
                                                         <constraint firstItem="iAQ-jZ-9Ii" firstAttribute="top" secondItem="hps-IH-5jx" secondAttribute="bottom" constant="5" id="H4O-2v-sn8"/>
                                                         <constraint firstItem="0lh-R2-CLI" firstAttribute="bottom" secondItem="PUi-GE-5wk" secondAttribute="bottom" id="I58-EX-KPH"/>
                                                         <constraint firstItem="Hhm-KS-pUH" firstAttribute="centerX" secondItem="yIm-cG-SVy" secondAttribute="centerX" id="IRn-rO-1aE"/>
-                                                        <constraint firstAttribute="trailing" secondItem="ZzF-PU-o90" secondAttribute="trailing" constant="20" id="IWB-R4-xNd"/>
                                                         <constraint firstItem="Jlz-jx-He9" firstAttribute="trailing" secondItem="rJo-gm-rXP" secondAttribute="trailing" id="Lgv-fu-eVZ"/>
                                                         <constraint firstItem="ZYq-H1-S2i" firstAttribute="trailing" secondItem="rJo-gm-rXP" secondAttribute="trailing" id="Mgg-mE-aEU"/>
                                                         <constraint firstItem="0lh-R2-CLI" firstAttribute="leading" secondItem="hps-IH-5jx" secondAttribute="leading" id="PQH-oz-jjC"/>
@@ -624,7 +621,7 @@ CA
                                             <rect key="frame" x="-100" y="-100" width="645" height="11"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
-                                        <scroller key="verticalScroller" verticalHuggingPriority="750" mirrorLayoutDirectionWhenInternationalizing="never" controlSize="mini" horizontal="NO" id="SF0-9A-3Id">
+                                        <scroller key="verticalScroller" verticalHuggingPriority="750" mirrorLayoutDirectionWhenInternationalizing="never" doubleValue="1" controlSize="mini" horizontal="NO" id="SF0-9A-3Id">
                                             <rect key="frame" x="558" y="0.0" width="11" height="520"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
