@@ -95,7 +95,7 @@ class ReceiveViewController: NSViewController{
     @IBAction func ibaBrowseFinder(sender: AnyObject) {
         let panel = NSOpenPanel()
         panel.message = ""
-        panel.prompt = "open"
+        panel.prompt = "打开"
         panel.canChooseDirectories = true
         panel.canChooseFiles = true
         var path_all = ""
@@ -565,7 +565,8 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
         cellBounds.size.width = column.width
         cellBounds.size.height = CGFloat.max
         let cellSize = dycell!.cellSizeForBounds(cellBounds)
-        return cellSize.height
+//        return cellSize.height
+        return 40
     }
     
     func tableView(tableView: NSTableView, willDisplayCell cell: AnyObject, forTableColumn tableColumn: NSTableColumn?, row: Int) {
