@@ -18,9 +18,8 @@ class CustomWindowController: NSWindowController {
         
         // 使用图片生成颜色
 //        let bannerColor = NSColor.init(patternImage: NSImage.init(named: "liulan")!)
-        //R:246.G:246.B:246   #f6f6f6
-        let bannerColor = NSColor.init(red: 246, green: 246, blue: 246, alpha: 1) // NSColor.lightGrayColor()
-        
+        //R:246.0/255.0.G:246.0/255.0.B:246.0/255.0   #f6f6f6
+        let bannerColor = NSColor.init(red:246.0/255.0, green:246.0/255.0, blue:246.0/255.0, alpha:1.0)
         // 自定义一个view
         let topBannerView = NSView.init(frame: NSZeroRect)
         topBannerView.wantsLayer = true
