@@ -555,11 +555,7 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
     
     //自定义单元格选中样式
     func ChangeCellBySelectedStatus() {
-        
         //被选中的单元格
-//        indexesToProcessForContextMenu()
-//        return
-        
         guard let cellView = self.ReceiveTableView.viewAtColumn(0, row: ReceiveTableView.selectedRow, makeIfNecessary: true) as? CustomTableCellView
             else {
                 return
@@ -568,6 +564,7 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
         
     }
     
+    //拖动鼠标多选响应事件
     func tableView(tableView: NSTableView, draggingSession session: NSDraggingSession, willBeginAtPoint screenPoint: NSPoint, forRowIndexes rowIndexes: NSIndexSet) {
         //
         
@@ -684,7 +681,7 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
             ReceiveFileDao.sharedReceiveFileDao().deleteReceiveFile(ReceiveColumn.fileid, logName: self.loginName)
             
             //删除文件
-            //            try! NSFileManager.defaultManager().removeItemAtPath(ReceiveColumn.fileurl)
+            //try! NSFileManager.defaultManager().removeItemAtPath(ReceiveColumn.fileurl)
             //删除广告
             let uid = ReceiveFileDao.sharedReceiveFileDao().fetchUid(ReceiveColumn.fileid)
             if(ReceiveFileDao.sharedReceiveFileDao().fetchCountOfUid(ReceiveColumn.fileid) == 0)
