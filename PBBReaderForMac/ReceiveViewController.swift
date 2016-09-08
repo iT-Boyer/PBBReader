@@ -534,7 +534,7 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
         if let receiveFile = selectedFileList(){
             self.receiveFile = ReceiveFileDao.sharedReceiveFileDao().fetchReceiveFileCellByFileId(receiveFile.fileid, logName: loginName)
             //改变选中状态
-//            ChangeCellBySelectedStatus()
+            ChangeCellBySelectedStatus()
             
             //刷新详情
             initThisView(true)
@@ -601,14 +601,14 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
         //
         // Get a new ViewCell
-        let cellView = tableView.makeViewWithIdentifier((tableColumn?.identifier)!, owner: self) as! NSTableCellView // CustomTableCellView
+        let cellView = tableView.makeViewWithIdentifier((tableColumn?.identifier)!, owner: self) as! CustomTableCellView
         
         // Since this is a single-column table view, this would not be necessary.
         // But it's a good practice to do it in order by remember it when a table is multicolumn.
         if tableColumn?.identifier == "ReceiveColumn" {
             
             let ReceiveColumn = self.receiveArray[row] as! OutFile
-//            cellView.cellID = ReceiveColumn.fileid
+            cellView.cellID = ReceiveColumn.fileid
             cellView.textField?.stringValue = ReceiveColumn.filename
             
             //设置选中颜色

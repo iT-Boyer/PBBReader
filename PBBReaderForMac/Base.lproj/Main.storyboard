@@ -239,7 +239,7 @@ CA
                                                             <rect key="frame" x="0.0" y="0.0" width="186" height="486"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <tableView verticalHuggingPriority="750" columnAutoresizingStyle="firstColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" emptySelection="NO" autosaveColumns="NO" rowHeight="40" viewBased="YES" id="DGV-oq-2Kh">
+                                                                <tableView verticalHuggingPriority="750" columnAutoresizingStyle="firstColumnOnly" columnSelection="YES" emptySelection="NO" autosaveColumns="NO" rowHeight="40" viewBased="YES" id="DGV-oq-2Kh">
                                                                     <rect key="frame" x="0.0" y="0.0" width="200" height="486"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -259,7 +259,7 @@ CA
                                                                             <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="key"/>
                                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                             <prototypeCellViews>
-                                                                                <tableCellView focusRingType="exterior" id="Q1U-uF-fvd">
+                                                                                <tableCellView identifier="ReceiveColumn" focusRingType="exterior" id="Q1U-uF-fvd" userLabel="优先使用第一个cell" customClass="CustomTableCellView" customModule="PBBReader" customModuleProvider="target">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="186" height="40"/>
                                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                     <subviews>
@@ -299,10 +299,70 @@ CA
                                                                                         <outlet property="textField" destination="876-Em-s9i" id="LtB-9C-fWm"/>
                                                                                     </connections>
                                                                                 </tableCellView>
-                                                                                <customView identifier="NSTableViewRowViewKey" id="lin-za-v9C" customClass="CellhighlightColorTableView" customModule="PBBReader" customModuleProvider="target">
-                                                                                    <rect key="frame" x="0.0" y="40" width="186" height="96"/>
+                                                                                <customView identifier="NSTableViewRowViewKey" id="lin-za-v9C" userLabel="选中高亮时,绘制cell样式" customClass="CellhighlightColorTableView" customModule="PBBReader" customModuleProvider="target">
+                                                                                    <rect key="frame" x="0.0" y="40" width="186" height="40"/>
                                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                                    <subviews>
+                                                                                        <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IvN-kW-MYH">
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="4" height="40"/>
+                                                                                            <constraints>
+                                                                                                <constraint firstAttribute="width" constant="4" id="eAb-gV-6GP"/>
+                                                                                            </constraints>
+                                                                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" image="leftLine" id="Fg6-Vq-CYd"/>
+                                                                                        </imageView>
+                                                                                    </subviews>
+                                                                                    <constraints>
+                                                                                        <constraint firstItem="IvN-kW-MYH" firstAttribute="top" secondItem="lin-za-v9C" secondAttribute="top" id="SWy-em-5OA"/>
+                                                                                        <constraint firstAttribute="bottom" secondItem="IvN-kW-MYH" secondAttribute="bottom" id="bef-sW-soL"/>
+                                                                                        <constraint firstItem="IvN-kW-MYH" firstAttribute="leading" secondItem="lin-za-v9C" secondAttribute="leading" id="zlv-ZJ-mn1"/>
+                                                                                    </constraints>
+                                                                                    <connections>
+                                                                                        <outlet property="ibaLeftLineImageView" destination="IvN-kW-MYH" id="vVn-tp-b05"/>
+                                                                                    </connections>
                                                                                 </customView>
+                                                                                <tableCellView id="zKK-K7-7et" userLabel="拖动到顶部位置可以替换第一个cell" customClass="CustomTableCellView" customModule="PBBReader" customModuleProvider="target">
+                                                                                    <rect key="frame" x="0.0" y="80" width="186" height="40"/>
+                                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                                    <subviews>
+                                                                                        <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DAG-3n-gY9">
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="4" height="40"/>
+                                                                                            <constraints>
+                                                                                                <constraint firstAttribute="width" constant="4" id="AXm-tD-ayM"/>
+                                                                                            </constraints>
+                                                                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" image="leftLine" id="k8H-nV-uPO"/>
+                                                                                        </imageView>
+                                                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5k8-Je-oDz">
+                                                                                            <rect key="frame" x="7" y="11" width="178" height="19"/>
+                                                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="the-vG-bQ9">
+                                                                                                <font key="font" metaFont="system" size="15"/>
+                                                                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                                            </textFieldCell>
+                                                                                        </textField>
+                                                                                        <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="7Di-NF-tuj" userLabel="上">
+                                                                                            <rect key="frame" x="8" y="-2" width="170" height="5"/>
+                                                                                            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                                                                            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                                            <font key="titleFont" metaFont="system"/>
+                                                                                        </box>
+                                                                                    </subviews>
+                                                                                    <constraints>
+                                                                                        <constraint firstItem="7Di-NF-tuj" firstAttribute="top" secondItem="DAG-3n-gY9" secondAttribute="bottom" constant="-1" id="0mx-AC-Iro"/>
+                                                                                        <constraint firstItem="DAG-3n-gY9" firstAttribute="leading" secondItem="zKK-K7-7et" secondAttribute="leading" id="3rt-41-gpt"/>
+                                                                                        <constraint firstAttribute="trailing" secondItem="7Di-NF-tuj" secondAttribute="trailing" constant="8" id="Bwl-Jf-G2I"/>
+                                                                                        <constraint firstItem="7Di-NF-tuj" firstAttribute="leading" secondItem="zKK-K7-7et" secondAttribute="leading" constant="8" id="UTO-Tn-iht"/>
+                                                                                        <constraint firstItem="DAG-3n-gY9" firstAttribute="top" secondItem="zKK-K7-7et" secondAttribute="top" id="Ugo-F5-0hh"/>
+                                                                                        <constraint firstItem="5k8-Je-oDz" firstAttribute="centerY" secondItem="zKK-K7-7et" secondAttribute="centerY" id="kcr-7g-5UX"/>
+                                                                                        <constraint firstItem="5k8-Je-oDz" firstAttribute="leading" secondItem="DAG-3n-gY9" secondAttribute="trailing" constant="5" id="miK-da-fE5"/>
+                                                                                        <constraint firstAttribute="trailing" secondItem="5k8-Je-oDz" secondAttribute="trailing" constant="3" id="naD-ey-xpg"/>
+                                                                                        <constraint firstAttribute="bottom" secondItem="7Di-NF-tuj" secondAttribute="bottom" id="r7E-93-12K"/>
+                                                                                    </constraints>
+                                                                                    <connections>
+                                                                                        <outlet property="ibCellBackgroundImageView" destination="DAG-3n-gY9" id="4n5-9N-bTS"/>
+                                                                                        <outlet property="imageView" destination="DAG-3n-gY9" id="260-rW-Oot"/>
+                                                                                        <outlet property="textField" destination="5k8-Je-oDz" id="jay-sH-vHK"/>
+                                                                                    </connections>
+                                                                                </tableCellView>
                                                                             </prototypeCellViews>
                                                                         </tableColumn>
                                                                     </tableColumns>
@@ -1776,6 +1836,7 @@ CA
         <image name="NSRemoveTemplate" width="11" height="11"/>
         <image name="delete" width="16" height="20"/>
         <image name="dialog_bg" width="440" height="210"/>
+        <image name="leftLine" width="6" height="28"/>
         <image name="liulan" width="11" height="31"/>
         <image name="refresh" width="16" height="20"/>
         <image name="send_read" width="144" height="66"/>
