@@ -77,7 +77,7 @@ class ReceiveViewController: NSViewController{
         //取消行与行之间蓝白交替显示的背景
 //        ReceiveTableView.usesAlternatingRowBackgroundColors = false
         //显示背景色
-        ReceiveTableView.selectionHighlightStyle = .None //显示背景色 //.SourceList//去除背景色 //.Regular 显示背景色
+        //ReceiveTableView.selectionHighlightStyle = .None //显示背景色 //.SourceList//去除背景色 //.Regular 显示背景色
     }
     
     //阅读按钮
@@ -534,7 +534,7 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
         if let receiveFile = selectedFileList(){
             self.receiveFile = ReceiveFileDao.sharedReceiveFileDao().fetchReceiveFileCellByFileId(receiveFile.fileid, logName: loginName)
             //改变选中状态
-            ChangeCellBySelectedStatus()
+//            ChangeCellBySelectedStatus()
             
             //刷新详情
             initThisView(true)
@@ -581,7 +581,7 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
     }
     
     func tableView(tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
-        //
+        //http://blog.csdn.net/fengsh998/article/details/18809355
         let column = tableView.tableColumns[0]
         let dycell = tableView.preparedCellAtColumn(0, row: row)
         var cellBounds = NSZeroRect
@@ -601,14 +601,14 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
         //
         // Get a new ViewCell
-        let cellView = tableView.makeViewWithIdentifier((tableColumn?.identifier)!, owner: self) as! CustomTableCellView
+        let cellView = tableView.makeViewWithIdentifier((tableColumn?.identifier)!, owner: self) as! NSTableCellView // CustomTableCellView
         
         // Since this is a single-column table view, this would not be necessary.
         // But it's a good practice to do it in order by remember it when a table is multicolumn.
         if tableColumn?.identifier == "ReceiveColumn" {
             
             let ReceiveColumn = self.receiveArray[row] as! OutFile
-            cellView.cellID = ReceiveColumn.fileid
+//            cellView.cellID = ReceiveColumn.fileid
             cellView.textField?.stringValue = ReceiveColumn.filename
             
             //设置选中颜色
@@ -640,6 +640,7 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
     }
     
     //MARK: 右击事件
+    //https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/TableView/RowSelection/RowSelection.html#//apple_ref/doc/uid/10000026i-CH6-SW1
     func indexesToProcessForContextMenu() -> NSIndexSet {
         // If the clicked row was in the selectedIndexes, then we process all selectedIndexes. Otherwise, we process just the clickedRow
         var selectedIndexes = ReceiveTableView.selectedRowIndexes

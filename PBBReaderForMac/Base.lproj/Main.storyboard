@@ -239,10 +239,10 @@ CA
                                                             <rect key="frame" x="0.0" y="0.0" width="186" height="486"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <tableView verticalHuggingPriority="750" columnAutoresizingStyle="firstColumnOnly" selectionHighlightStyle="none" columnSelection="YES" emptySelection="NO" autosaveColumns="NO" rowHeight="40" viewBased="YES" id="DGV-oq-2Kh">
+                                                                <tableView verticalHuggingPriority="750" columnAutoresizingStyle="firstColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" emptySelection="NO" autosaveColumns="NO" rowHeight="40" viewBased="YES" id="DGV-oq-2Kh">
                                                                     <rect key="frame" x="0.0" y="0.0" width="200" height="486"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
-                                                                    <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                     <color key="gridColor" red="0.86274509799999999" green="0.87843137250000003" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <tableColumns>
                                                                         <tableColumn identifier="ReceiveColumn" width="186" minWidth="40" maxWidth="1000" id="zPf-lN-Jnv">
@@ -259,11 +259,11 @@ CA
                                                                             <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="key"/>
                                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                             <prototypeCellViews>
-                                                                                <tableCellView focusRingType="exterior" id="Q1U-uF-fvd" customClass="CustomTableCellView" customModule="PBBReader" customModuleProvider="target">
+                                                                                <tableCellView focusRingType="exterior" id="Q1U-uF-fvd">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="186" height="40"/>
                                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                     <subviews>
-                                                                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kBb-Cm-1ny">
+                                                                                        <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kBb-Cm-1ny">
                                                                                             <rect key="frame" x="-3" y="-2" width="192" height="43"/>
                                                                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="left" imageScaling="axesIndependently" imageFrameStyle="photo" image="CellBackground" id="e7v-JN-SQp"/>
                                                                                         </imageView>
@@ -299,6 +299,10 @@ CA
                                                                                         <outlet property="textField" destination="876-Em-s9i" id="LtB-9C-fWm"/>
                                                                                     </connections>
                                                                                 </tableCellView>
+                                                                                <customView identifier="NSTableViewRowViewKey" id="lin-za-v9C" customClass="CellhighlightColorTableView" customModule="PBBReader" customModuleProvider="target">
+                                                                                    <rect key="frame" x="0.0" y="40" width="186" height="96"/>
+                                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                                </customView>
                                                                             </prototypeCellViews>
                                                                         </tableColumn>
                                                                     </tableColumns>
