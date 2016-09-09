@@ -47,7 +47,7 @@ class ReceiveViewController: NSViewController{
     @IBOutlet weak var ibOnceLong: NSView!
     @IBOutlet weak var ibOpenInLocalFileButtion: NSButton!
     
-    @IBOutlet weak var ibDeleteButtion: NSButton!
+    @IBOutlet weak var ibRefreshFileButton: NSButton!
     
     //必须声明为全局属性，否则在声明PycFile调用delegate时，delegate = nil
     //还出现第一次启动执行两次openFiles方法
@@ -121,10 +121,16 @@ class ReceiveViewController: NSViewController{
         appHelper.phoneNo = ""
         appHelper.messageID = ""
         appHelper.getFileInfoById(receiveFile.fileid, pbbFile: "\(receiveFile.filename).pbb", pycFile: receiveFile.fileurl, fileType: 1)
+        
+        //开始刷新动画
+        ibRefreshFileButton.startRotate()
     }
     
     //MARK: 通知处理事件 更新主页
     func openInPBBFile(notification:NSNotification){
+        //停止刷新动画
+        ibRefreshFileButton.endUpdating()
+        
         let fileID = notification.userInfo!["pycFileID"] as! Int
         if receiveFile != nil && receiveFile.fileid == fileID {
             //当打开的文件是当前显示的文件，直接刷新详情
@@ -488,7 +494,7 @@ extension ReceiveViewController
         }
         
         //删除按钮根据阅读按钮状态保持一直
-        ibDeleteButtion.enabled = readBtn.enabled
+        ibRefreshFileButton.enabled = readBtn.enabled
     }
     
     func isCanOpen(outFile:OutFile) -> Bool {
@@ -611,12 +617,7 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
             cellView.cellID = ReceiveColumn.fileid
             cellView.textField?.stringValue = ReceiveColumn.filename
             
-            //设置选中颜色
-            //            let highlightCell = SelectedRowHighlightCell()
-            //            highlightCell.setSelectionBKColor(NSColor.lightGrayColor())
-            //            highlightCell.stringValue = ReceiveColumn.filename
-            //            tableColumn?.dataCell = highlightCell
-            
+            //设置单元格字体样式
             if NSFileManager.defaultManager().fileExistsAtPath(ReceiveColumn.fileurl) {
                 //原文件存在
                 cellView.textField?.textColor = NSColor.blackColor()

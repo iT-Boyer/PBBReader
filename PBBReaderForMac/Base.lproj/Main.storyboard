@@ -142,7 +142,7 @@ CA
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController showSeguePresentationStyle="single" id="B8D-0N-5wS" customClass="CustomWindowController" customModule="PBBReader" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" identifier="MainWindow" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES" unifiedTitleAndToolbar="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="454" y="262" width="800" height="550"/>
@@ -667,7 +667,7 @@ CA
                                                                 <action selector="ibaRefreshFileData:" target="3OW-Ec-nEc" id="d0w-Na-V1u"/>
                                                             </connections>
                                                         </button>
-                                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dNA-4v-KX3">
+                                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dNA-4v-KX3" userLabel="deleteButton">
                                                             <rect key="frame" x="374" y="487" width="81" height="32"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="81" id="vwD-As-daz"/>
@@ -776,11 +776,11 @@ CA
                         <outlet property="cntxMnuTableView" destination="e7c-5h-iuS" id="xGT-qM-HhZ"/>
                         <outlet property="emailLabel" destination="Cc1-Vd-weM" id="Y5y-wd-WgA"/>
                         <outlet property="fileFlageImage" destination="xIs-fe-RdK" id="zfj-c1-Udu"/>
-                        <outlet property="ibDeleteButtion" destination="QN2-0m-NQi" id="I9Y-4g-LBE"/>
                         <outlet property="ibMakeTime" destination="Xds-lv-Fve" id="dlD-nb-jX4"/>
                         <outlet property="ibNote" destination="70r-wq-hF2" id="fcM-Ec-bRN"/>
                         <outlet property="ibOnceLong" destination="ihb-K2-VpE" id="lCu-lp-bDa"/>
                         <outlet property="ibOpenInLocalFileButtion" destination="YhT-cF-n5W" id="dnR-mK-nmd"/>
+                        <outlet property="ibRefreshFileButton" destination="QN2-0m-NQi" id="gpS-TF-8rL"/>
                         <outlet property="ibSeriesLabel" destination="iAQ-jZ-9Ii" id="vr1-eg-va4"/>
                         <outlet property="ibSeriesNameLabel" destination="YAl-1G-Ctg" id="CpA-uc-x0g"/>
                         <outlet property="lastDayLabel" destination="rJo-gm-rXP" id="Qx2-V0-kXE"/>

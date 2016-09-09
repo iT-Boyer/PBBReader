@@ -333,7 +333,7 @@ singleton_implementation(AppDelegateHelper);
         applyNum =0;
         if (returnValue & ERR_OK_IS_FEE)
         {
-            [self hide:0.0];
+            [self hide:-0.5];
             //重生0：未使用 1：已使用
             [[ReceiveFileDao sharedReceiveFileDao] updateReceiveFileToRebornedByFileId:fileID Status:0];//seePycFile.fileID Status:0];
             [[ReceiveFileDao sharedReceiveFileDao] updateReceiveFileApplyOpen:1 FileId:fileID];//seePycFile.fileID];
@@ -361,7 +361,7 @@ singleton_implementation(AppDelegateHelper);
         }
         else
         {
-            [self hide:0.0];
+            [self hide:-0.5];
             //自由传播
             //重生0：未使用 1：已使用
             [[ReceiveFileDao sharedReceiveFileDao] updateReceiveFileToRebornedByFileId:fileID Status:0];//seePycFile.fileID
@@ -525,7 +525,7 @@ singleton_implementation(AppDelegateHelper);
 {
     if (!alertShow) {
         alertShow = [[NSAlert alloc] init];
-        [alertShow addButtonWithTitle:@"查看详情"];
+        [alertShow addButtonWithTitle:@"确定"];
 //        [alertShow addButtonWithTitle:@"我知道了"];
     }
 
@@ -534,9 +534,12 @@ singleton_implementation(AppDelegateHelper);
     //        [alert setInformativeText:@"Deleted records cannot be restored."];
     [alertShow setAlertStyle:NSWarningAlertStyle];
     if ([alertShow runModal] == NSAlertFirstButtonReturn || [alertShow runModal] == NSAlertSecondButtonReturn) {
-        // OK clicked, delete the record
+        
+        //当提示框在播放器页面时，通知关闭播放器窗口
         NSDictionary  *dic = [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:fileID] forKey:@"pycFileID"];
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"CancleClosePlayerWindows" object:self userInfo:dic];
+        if([keyWindow isKindOfClass:[PlayerWindow class]]){
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"CancleClosePlayerWindows" object:self userInfo:dic];
+        }
     }
 }
 
@@ -661,10 +664,9 @@ singleton_implementation(AppDelegateHelper);
     }
     
     BOOL result = [_fileManager getFileInfoById:theFileId pbbFile:pbbFileName PycFile:pycFileName fileType:1];
-    if (!result) {
+    if (!result)
+    {
         [self setAlertView:@"刷新失败，请稍后再试！"];
-    }else{
-        [self setText:@"开始刷新"];
     }
     return result;
 }
@@ -677,7 +679,6 @@ singleton_implementation(AppDelegateHelper);
  */
 -(void)PycFile:(PycFile *)fileObject didFinishGetFileInfo:(MAKEPYCRECEIVE *)receiveData
 {
-    [self hide:1.0];
     int _returnValue = receiveData->returnValue;
     if(receiveData == nil || _returnValue == 0)
     {
@@ -839,7 +840,7 @@ singleton_implementation(AppDelegateHelper);
         
                 if (![result isEqualToString:@"0"]) {
                     applyNum=0;
-                    [self hide:0.0];
+                    [self hide:-0.5];
                     if ([result isEqualToString:@"1"]||[result isEqualToString:@"2"]||[result isEqualToString:@"3"]||
                         [result isEqualToString:@"4"]||[result isEqualToString:@"5"]) {
                         dispatch_async(dispatch_get_main_queue(), ^{
@@ -859,7 +860,7 @@ singleton_implementation(AppDelegateHelper);
     
     if (!reslut1) {
         applyNum=0;
-        [self hide:0.0];
+        [self hide:-0.5];
         [custormActivityView removeFromSuperview];
         //申请成功界面
         [self letusGOActivationSucVc:seePycFile];
@@ -1151,8 +1152,14 @@ singleton_implementation(AppDelegateHelper);
     for (NSWindow *window in windows) {
         //
         if ([window isKindOfClass:[PlayerWindow class]]) {
-            //
+            //播放器窗口
             keyWindow = (PlayerWindow *)window;
+            
+        }
+        
+        if ([window.identifier isEqualToString:@"MainWindow"]) {
+            //详情页面窗口
+            keyWindow = window;
         }
     }
 }
@@ -1173,9 +1180,11 @@ singleton_implementation(AppDelegateHelper);
 }
 
 - (void)hideWindow{
-//    [[keyWindow contentView] setHidden:YES];
-//    [keyWindow setLevel:NSNormalWindowLevel-1];
-//    [keyWindow orderBack:self];
+    if ([keyWindow.identifier isEqualToString:@"MainWindow"]) {
+//        [[keyWindow contentView] setHidden:YES];
+        [keyWindow setLevel:NSNormalWindowLevel-1];
+        [keyWindow orderBack:self];
+    }
     hud = NULL;
     isLoading = NO;
 }
