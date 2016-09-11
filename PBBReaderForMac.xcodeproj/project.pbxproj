@@ -165,7 +165,6 @@
 		143EA9671D50368700457717 /* BindingPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B0CF731D34C715004D22B5 /* BindingPhoneViewController.swift */; };
 		144AD8931D3F855600765907 /* OpenPBBDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144AD8921D3F855500765907 /* OpenPBBDocument.swift */; };
 		146C08D11D7FF56A00AB3153 /* CustomTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146C08D01D7FF56A00AB3153 /* CustomTableCellView.swift */; };
-		146C08D31D82A81500AB3153 /* Button+RotateRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146C08D21D82A81400AB3153 /* Button+RotateRefresh.swift */; };
 		14815AE71D49D7E200922A62 /* Label+shadeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14815AE61D49D7E100922A62 /* Label+shadeAnimation.swift */; };
 		14815AE91D49D80400922A62 /* View+shadeGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14815AE81D49D80400922A62 /* View+shadeGuide.swift */; };
 		14815AF21D49FCBC00922A62 /* PlayPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815AF11D49FCBC00922A62 /* PlayPosition.m */; };
@@ -197,6 +196,7 @@
 		14BF317A1D77C9DE000EFF66 /* CellhighlightColorTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BF31791D77C9DE000EFF66 /* CellhighlightColorTableView.swift */; };
 		14BF31811D780AB1000EFF66 /* CustomBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BF31801D780AB1000EFF66 /* CustomBox.swift */; };
 		14EA57EA1D7EBEAA0026602B /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EA57E91D7EBEA90026602B /* CustomView.swift */; };
+		846754711D84604F006D8722 /* Button+RotateRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146C08D21D82A81400AB3153 /* Button+RotateRefresh.swift */; };
 		A7FCF66363745C0CAFC4371C /* Pods_PBBReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9556540B6FE647FA50015D1C /* Pods_PBBReader.framework */; };
 /* End PBXBuildFile section */
 
@@ -1774,7 +1774,7 @@
 				143E383D1D3F1809004B0A4D /* ControlsWithVibracy.m in Sources */,
 				14815B1F1D4AF55A00922A62 /* BarrageCanvas.m in Sources */,
 				143E383E1D3F1809004B0A4D /* MBProgressHUD.m in Sources */,
-				146C08D31D82A81500AB3153 /* Button+RotateRefresh.swift in Sources */,
+				846754711D84604F006D8722 /* Button+RotateRefresh.swift in Sources */,
 				146C08D11D7FF56A00AB3153 /* CustomTableCellView.swift in Sources */,
 				143E383F1D3F1809004B0A4D /* NSString+LcsDiff.m in Sources */,
 				143E38401D3F1809004B0A4D /* Player.m in Sources */,
