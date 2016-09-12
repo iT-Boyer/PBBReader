@@ -130,7 +130,7 @@ class ReceiveViewController: NSViewController{
     //MARK: 通知处理事件 更新主页
     func openInPBBFile(notification:NSNotification){
         //停止刷新动画
-        ibRefreshFileButton.endUpdating()
+        ibRefreshFileButton.layer?.removeAllAnimations()
         
         let fileID = notification.userInfo!["pycFileID"] as! Int
         if receiveFile != nil && receiveFile.fileid == fileID {
@@ -546,8 +546,6 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
             //刷新详情
             initThisView(true)
         }
-        
-        
     }
     
     //MARK: - Helper
