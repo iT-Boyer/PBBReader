@@ -120,10 +120,11 @@ class ReceiveViewController: NSViewController{
     @IBAction func ibaRefreshFileData(sender: AnyObject) {
         appHelper.phoneNo = ""
         appHelper.messageID = ""
-        appHelper.getFileInfoById(receiveFile.fileid, pbbFile: "\(receiveFile.filename).pbb", pycFile: receiveFile.fileurl, fileType: 1)
+//        appHelper.getFileInfoById(receiveFile.fileid, pbbFile: "\(receiveFile.filename).pbb", pycFile: receiveFile.fileurl, fileType: 1)
         
         //开始刷新动画
         ibRefreshFileButton.startRotate()
+//        ibRefreshFileButton.startAnimation()
     }
     
     //MARK: 通知处理事件 更新主页
@@ -494,7 +495,7 @@ extension ReceiveViewController
         }
         
         //删除按钮根据阅读按钮状态保持一直
-        ibRefreshFileButton.enabled = readBtn.enabled
+//        ibRefreshFileButton.enabled = readBtn.enabled
     }
     
     func isCanOpen(outFile:OutFile) -> Bool {
