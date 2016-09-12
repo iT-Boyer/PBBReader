@@ -33,11 +33,13 @@ extension NSButton
         animation.fromValue = NSNumber.init(float: 1.0)
         animation.toValue = NSNumber.init(float: 0.0)
         
-        //公转动画
+        //自转动画
         self.layer?.anchorPoint = NSMakePoint(0.5, 0.5)
+        //
+        layer?.position = NSMakePoint(frame.origin.x + frame.width/2, frame.origin.y + frame.height/2)
         let animation1 = CABasicAnimation.init(keyPath: "transform.rotation")
         animation1.duration = 2.0
-        animation1.autoreverses = true
+//        animation1.autoreverses = true
         animation1.repeatCount = MAXFLOAT
         animation1.fromValue = NSNumber.init(double: Double(self.angle))
         animation1.toValue = NSNumber.init(double: Double(self.angle))
@@ -45,35 +47,16 @@ extension NSButton
         
         let group = CAAnimationGroup.init()
         group.duration = 2.0
-        group.autoreverses = true
+//        group.autoreverses = true
         group.repeatCount = MAXFLOAT
         group.animations = [animation1]
         return group
-    
     }
     
-    var keyframeAnimation:CAKeyframeAnimation{
-        
-        let keyframeAnimation = CAKeyframeAnimation.init(keyPath: "position")
-        keyframeAnimation.duration = 2
-        keyframeAnimation.repeatCount = MAXFLOAT
-//        CGAffineTransformMakeRotation
-//        var endAngle = CGAffineTransformMakeRotation(CGFloat(Double(self.angle) * (M_PI/180.0)))
-//        var transform = CGAffineTransformTranslate(endAngle, 1, 0.6)
-        var transform = CGAffineTransformScale(CGAffineTransformIdentity, 1, 0.6)
 
-        let path = CGPathCreateMutable()
-        let center = NSMakePoint(0.5, 0.5)
-        CGPathAddArc(path, &transform, center.x, center.y, 70, 0, CGFloat(2 * M_PI), false)
-        keyframeAnimation.path = path
-//        CGPathRelease(path)
-        return keyframeAnimation
-    }
-    
     func startRotate() {
         //添加动画
         layer?.addAnimation(groupAnimation, forKey: "")
-//        layer?.addAnimation(keyframeAnimation, forKey: "")
         NSButton.stopRotating = false
 //        self.rotateRefreshImage(false)
     }

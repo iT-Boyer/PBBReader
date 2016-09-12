@@ -120,17 +120,16 @@ class ReceiveViewController: NSViewController{
     @IBAction func ibaRefreshFileData(sender: AnyObject) {
         appHelper.phoneNo = ""
         appHelper.messageID = ""
-//        appHelper.getFileInfoById(receiveFile.fileid, pbbFile: "\(receiveFile.filename).pbb", pycFile: receiveFile.fileurl, fileType: 1)
+        appHelper.getFileInfoById(receiveFile.fileid, pbbFile: "\(receiveFile.filename).pbb", pycFile: receiveFile.fileurl, fileType: 1)
         
         //开始刷新动画
         ibRefreshFileButton.startRotate()
-//        ibRefreshFileButton.startAnimation()
     }
     
     //MARK: 通知处理事件 更新主页
     func openInPBBFile(notification:NSNotification){
         //停止刷新动画
-        ibRefreshFileButton.endUpdating()
+        ibRefreshFileButton.layer?.removeAllAnimations()
         
         let fileID = notification.userInfo!["pycFileID"] as! Int
         if receiveFile != nil && receiveFile.fileid == fileID {
@@ -546,8 +545,6 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
             //刷新详情
             initThisView(true)
         }
-        
-        
     }
     
     //MARK: - Helper
