@@ -39,8 +39,8 @@ class CustomTableCellView: NSTableCellView {
         if !isManySelected {
             let fileID = info.userInfo!["pycFileID"] as! Int
             if fileID != cellID {
+                //重置默认状态
                 ibCellBackgroundImageView.hidden = true
-                //移除监听事件
                 NSNotificationCenter.defaultCenter().removeObserver(self)
             }
         }
