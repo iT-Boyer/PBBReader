@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
     </dependencies>
@@ -491,9 +491,9 @@ CA
                                                                     </textFieldCell>
                                                                 </textField>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="70r-wq-hF2">
-                                                                    <rect key="frame" x="7" y="3" width="498" height="36"/>
+                                                                    <rect key="frame" x="7" y="3" width="484" height="36"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="494" id="Uq1-Os-vM6"/>
+                                                                        <constraint firstAttribute="width" constant="480" id="Uq1-Os-vM6"/>
                                                                         <constraint firstAttribute="height" constant="36" id="sg2-PK-fL8"/>
                                                                     </constraints>
                                                                     <textFieldCell key="cell" selectable="YES" sendsActionOnEndEditing="YES" alignment="left" id="y1w-NB-TOh">
@@ -654,7 +654,7 @@ CA
                                                                 <constraint firstAttribute="height" constant="21" id="uAj-9K-NvJ"/>
                                                             </constraints>
                                                         </customView>
-                                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QN2-0m-NQi">
+                                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QN2-0m-NQi" customClass="CustomRotateButton" customModule="PBBReader" customModuleProvider="target">
                                                             <rect key="frame" x="464" y="483" width="80" height="40"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="80" id="ROT-UR-bHo"/>
