@@ -491,9 +491,9 @@ CA
                                                                     </textFieldCell>
                                                                 </textField>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="70r-wq-hF2">
-                                                                    <rect key="frame" x="7" y="3" width="498" height="36"/>
+                                                                    <rect key="frame" x="7" y="3" width="484" height="36"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="494" id="Uq1-Os-vM6"/>
+                                                                        <constraint firstAttribute="width" constant="480" id="Uq1-Os-vM6"/>
                                                                         <constraint firstAttribute="height" constant="36" id="sg2-PK-fL8"/>
                                                                     </constraints>
                                                                     <textFieldCell key="cell" selectable="YES" sendsActionOnEndEditing="YES" alignment="left" id="y1w-NB-TOh">
