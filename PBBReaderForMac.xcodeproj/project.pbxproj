@@ -166,6 +166,7 @@
 		1447A22D1D87A2D600057039 /* CustomRotateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1447A22C1D87A2D500057039 /* CustomRotateButton.swift */; };
 		144AD8931D3F855600765907 /* OpenPBBDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144AD8921D3F855500765907 /* OpenPBBDocument.swift */; };
 		146C08D11D7FF56A00AB3153 /* CustomTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146C08D01D7FF56A00AB3153 /* CustomTableCellView.swift */; };
+		146CF12D1D88F97D0021C6B4 /* water.xml in Resources */ = {isa = PBXBuildFile; fileRef = 14815B521D4B131A00922A62 /* water.xml */; };
 		14815AE71D49D7E200922A62 /* Label+shadeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14815AE61D49D7E100922A62 /* Label+shadeAnimation.swift */; };
 		14815AE91D49D80400922A62 /* View+shadeGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14815AE81D49D80400922A62 /* View+shadeGuide.swift */; };
 		14815AF21D49FCBC00922A62 /* PlayPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815AF11D49FCBC00922A62 /* PlayPosition.m */; };
@@ -1447,6 +1448,7 @@
 				143E38911D3F1809004B0A4D /* fillscreen_ub.pdf in Resources */,
 				143E38921D3F1809004B0A4D /* keywords.txt in Resources */,
 				143E38931D3F1809004B0A4D /* resizeindicator.png in Resources */,
+				146CF12D1D88F97D0021C6B4 /* water.xml in Resources */,
 				143E38951D3F1809004B0A4D /* play.png in Resources */,
 				143E38961D3F1809004B0A4D /* unfold.pdf in Resources */,
 				143E38981D3F1809004B0A4D /* vol_low.pdf in Resources */,

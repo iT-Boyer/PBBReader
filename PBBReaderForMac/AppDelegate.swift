@@ -21,6 +21,15 @@ class AppDelegate: NSObject, NSApplicationDelegate{
 
     func applicationWillTerminate(aNotification: NSNotification) {
         // Insert code here to tear down your application
+        //
+        ReceiveFileDao.sharedReceiveFileDao().selectReceiveFileAll(userDao.shareduserDao().getLogName()).enumerateObjectsUsingBlock { (outFile, index, stop) in
+            //取消所有刷新状态
+            let fileID = "\((outFile as! OutFile).fileid)"
+            if NSUserDefaults.standardUserDefaults().boolForKey(fileID){
+                NSUserDefaults.standardUserDefaults().setBool(false, forKey: fileID)
+                NSUserDefaults.standardUserDefaults().synchronize()
+            }
+        }
     }
 
     
@@ -47,18 +56,18 @@ class AppDelegate: NSObject, NSApplicationDelegate{
         
     }
     
-    func applicationShouldTerminate(sender: NSApplication) -> NSApplicationTerminateReply {
-        //
-        ReceiveFileDao.sharedReceiveFileDao().selectReceiveFileAll(userDao.shareduserDao().getLogName()).enumerateObjectsUsingBlock { (outFile, index, stop) in
-            //取消所有刷新状态
-            let fileID = "\((outFile as! OutFile).fileid)"
-            if NSUserDefaults.standardUserDefaults().boolForKey(fileID){
-                NSUserDefaults.standardUserDefaults().setBool(false, forKey: fileID)
-                NSUserDefaults.standardUserDefaults().synchronize()
-            }
-        }
-        return .TerminateNow
-    }
+//    func applicationShouldTerminate(sender: NSApplication) -> NSApplicationTerminateReply {
+//        //
+//        ReceiveFileDao.sharedReceiveFileDao().selectReceiveFileAll(userDao.shareduserDao().getLogName()).enumerateObjectsUsingBlock { (outFile, index, stop) in
+//            //取消所有刷新状态
+//            let fileID = "\((outFile as! OutFile).fileid)"
+//            if NSUserDefaults.standardUserDefaults().boolForKey(fileID){
+//                NSUserDefaults.standardUserDefaults().setBool(false, forKey: fileID)
+//                NSUserDefaults.standardUserDefaults().synchronize()
+//            }
+//        }
+//        return .TerminateNow
+//    }
     
 }
 

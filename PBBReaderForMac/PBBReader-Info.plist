@@ -96,7 +96,7 @@
 			<string>Owner</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>com.cn.pyc.PbbReader</string>
+				<string>pyc.cn.com.PBBReaderForOSX</string>
 			</array>
 			<key>NSDocumentClass</key>
 			<string>NSDocument</string>
@@ -126,7 +126,7 @@
 			<key>CFBundleURLIconFile</key>
 			<string>ladybug.jpg</string>
 			<key>CFBundleURLName</key>
-			<string>com.cn.pyc.PBBReader</string>
+			<string>pyc.cn.com.PBBReaderForOSX</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>PBBReader</string>
@@ -134,7 +134,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>4</string>
+	<string>9</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>NSAppTransportSecurity</key>
@@ -160,7 +160,7 @@
 			<key>UTTypeIconFile</key>
 			<string>114.png</string>
 			<key>UTTypeIdentifier</key>
-			<string>com.cn.pyc.PbbReader</string>
+			<string>pyc.cn.com.PBBReaderForOSX</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>

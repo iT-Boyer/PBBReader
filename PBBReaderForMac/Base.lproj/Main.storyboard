@@ -268,7 +268,7 @@ CA
                                                                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="left" imageScaling="axesIndependently" imageFrameStyle="photo" image="CellBackground" id="e7v-JN-SQp"/>
                                                                                         </imageView>
                                                                                         <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="876-Em-s9i">
-                                                                                            <rect key="frame" x="3" y="11" width="182" height="19"/>
+                                                                                            <rect key="frame" x="8" y="11" width="177" height="19"/>
                                                                                             <textFieldCell key="cell" lineBreakMode="charWrapping" focusRingType="none" alignment="left" title="Table View Cell" allowsEditingTextAttributes="YES" id="fAh-pD-7C9">
                                                                                                 <font key="font" metaFont="system" size="15"/>
                                                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -288,7 +288,7 @@ CA
                                                                                         <constraint firstItem="kBb-Cm-1ny" firstAttribute="leading" secondItem="Q1U-uF-fvd" secondAttribute="leading" id="KtB-D1-IQQ"/>
                                                                                         <constraint firstItem="kBb-Cm-1ny" firstAttribute="top" secondItem="Q1U-uF-fvd" secondAttribute="top" constant="2" id="LH0-jJ-7wr"/>
                                                                                         <constraint firstItem="ywj-YQ-YlW" firstAttribute="leading" secondItem="Q1U-uF-fvd" secondAttribute="leading" constant="8" id="MnF-YM-frb"/>
-                                                                                        <constraint firstItem="876-Em-s9i" firstAttribute="leading" secondItem="Q1U-uF-fvd" secondAttribute="leading" constant="5" id="SUa-ox-Gmi"/>
+                                                                                        <constraint firstItem="876-Em-s9i" firstAttribute="leading" secondItem="Q1U-uF-fvd" secondAttribute="leading" constant="10" id="SUa-ox-Gmi"/>
                                                                                         <constraint firstAttribute="trailing" secondItem="ywj-YQ-YlW" secondAttribute="trailing" constant="8" id="fyf-WT-P9I"/>
                                                                                         <constraint firstAttribute="bottom" secondItem="kBb-Cm-1ny" secondAttribute="bottom" constant="1" id="lnZ-4P-KDk"/>
                                                                                         <constraint firstAttribute="trailing" secondItem="kBb-Cm-1ny" secondAttribute="trailing" id="q5B-5W-Cl1"/>
