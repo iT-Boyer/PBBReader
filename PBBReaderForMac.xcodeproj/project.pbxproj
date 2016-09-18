@@ -197,6 +197,7 @@
 		14B9EE5F1D79744400EC8986 /* PBBReader-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14B9EE5E1D79744400EC8986 /* PBBReader-Info.plist */; };
 		14BF317A1D77C9DE000EFF66 /* CellhighlightColorTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BF31791D77C9DE000EFF66 /* CellhighlightColorTableView.swift */; };
 		14BF31811D780AB1000EFF66 /* CustomBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BF31801D780AB1000EFF66 /* CustomBox.swift */; };
+		14C9B6A61D8E859800A0C6B9 /* FSCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C9B6A51D8E859800A0C6B9 /* FSCustomCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		14EA57EA1D7EBEAA0026602B /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EA57E91D7EBEA90026602B /* CustomView.swift */; };
 		846754711D84604F006D8722 /* Button+RotateRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146C08D21D82A81400AB3153 /* Button+RotateRefresh.swift */; };
 		A7FCF66363745C0CAFC4371C /* Pods_PBBReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9556540B6FE647FA50015D1C /* Pods_PBBReader.framework */; };
@@ -528,6 +529,8 @@
 		14BF31791D77C9DE000EFF66 /* CellhighlightColorTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellhighlightColorTableView.swift; sourceTree = "<group>"; };
 		14BF31801D780AB1000EFF66 /* CustomBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBox.swift; sourceTree = "<group>"; };
 		14C75DCC1D6AE9C6009CBE09 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		14C9B6A41D8E859800A0C6B9 /* FSCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCustomCell.h; sourceTree = "<group>"; };
+		14C9B6A51D8E859800A0C6B9 /* FSCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCustomCell.m; sourceTree = "<group>"; };
 		14EA57CE1D7E62220026602B /* importSVN.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = importSVN.sh; sourceTree = "<group>"; };
 		14EA57CF1D7E62220026602B /* PreInstall.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = PreInstall.sh; sourceTree = "<group>"; };
 		14EA57D41D7E62790026602B /* PBBReaderForOSX.pkgproj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = PBBReaderForOSX.pkgproj; sourceTree = "<group>"; };
@@ -1238,6 +1241,8 @@
 				14EE618C1CF816E50051FD1A /* NSImage+Extras.h */,
 				14EE618D1CF816E50051FD1A /* NSImage+Extras.m */,
 				1422A89D1D757FD40057E9D4 /* CustomWindowController.swift */,
+				14C9B6A41D8E859800A0C6B9 /* FSCustomCell.h */,
+				14C9B6A51D8E859800A0C6B9 /* FSCustomCell.m */,
 				84548C881D772AF600715F4B /* SelectedRowHighlightCell.h */,
 				84548C891D772AF600715F4B /* SelectedRowHighlightCell.m */,
 				14BF31791D77C9DE000EFF66 /* CellhighlightColorTableView.swift */,
@@ -1581,7 +1586,7 @@
 		};
 		14A420411D582EE3009B9DF3 /* import svn */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
+			buildActionMask = 8;
 			files = (
 			);
 			inputPaths = (
@@ -1589,7 +1594,7 @@
 			name = "import svn";
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "#SHELL_PATH=$PROJECT_DIR/$PRODUCT_NAME/Helper/ShellScript/importSVN.sh\n#chmod +x ${SHELL_PATH}\n#sh ${SHELL_PATH}\n\n###############获取版本号,bundleID\n#获取版本号\n#方式一\n#bundleBuildVersion=\"`/usr/libexec/PlistBuddy -c \\\"Print CFBundleVersion\\\" $INFOPLIST_FILE`\"\n#echo $bundleBuildVersion\n#方法二CFBundleShortVersionString\n#http://stackoverflow.com/questions/6851660/version-vs-build-in-xcode\nversionNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"$INFOPLIST_FILE\")\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\n#\n#新建导入目录\nProductName=\"$PRODUCT_NAME.$versionNumber.${buildNumber}\"\nProductPath=\"$TARGET_BUILD_DIR/$PRODUCT_NAME.app\"\nImportSVN=\"Distribution/ImportSVN\"\n#上传时，先删除SVN目录\nrm -rf ${ImportSVN}\npwd\nif [ -d \"$ImportSVN\" ]; then\n    echo 'svn目录已存在'\nelse\n    echo '新建svn目录'\n    mkdir $ImportSVN\nfi\necho \"cp -rf $ProductPath ${ImportSVN}/$ProductName.app\"\n#压缩\n#拷贝\ncp -rf $ProductPath ${ImportSVN}/$ProductName.app\n\ncd $ImportSVN\n#压缩后删除源文件\necho \"压缩后删除源文件\"\n#保留源文件\nzip -r \"$ProductName.app.zip\" ./*\n#删除\n#zip -rm \"$ProductName.app.zip\" ./*\n#*/\n#重命名\nmv $ProductName.app PBBReaderForOSX.app\n#导入svn库中\necho \"导入svn库中...\"\ncd ../\nexport LC_CTYPE=\"zh_CN.UTF-8\" #设置当前系统的 locale,支持中文路径\n# \"${ImportSVN}\":导入的目标目录 -m:日志\n#svn import \"${ImportSVN}\" https:\\/\\/192.168.85.64/svn/安装包/MAC -m \"${ProductName}\"\n";
 		};
@@ -1606,11 +1611,10 @@
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "#clone源码\ngit svn clone https://192.168.85.64/svn/PBBforIOS/PBBReaderForOSX\n#提交更新\ngit svn dcommit\n#变基：从服务器拉取本地还没有的改动，并将你所有的工作变基到服务器的内容之上\ngit svn rebase\n\n#拉取最新\ngit svn fetch\n#根据SVN项目中的svn:ignore设置生成对应git忽略文件.gitnore\ngit svn create-ignore\ngit svn show-ignore > .git/info/exclude\n\n#查看内容变化\ngit diff\ngit diff --staged\ngit diff --cached\n#强制覆盖服务器端上的分支\ngit push -u origin master -f";
-			showEnvVarsInLog = 0;
 		};
 		14EA57C71D7D6C9A0026602B /* 启动Package */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
+			buildActionMask = 8;
 			files = (
 			);
 			inputPaths = (
@@ -1618,7 +1622,7 @@
 			name = "启动Package";
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "#下载\nPerfect=\"/Applications/Packages.app\"\n# -d: 判断目录是否存在  -f: 判断文件是否存在\nif [ -d \"$Perfect\" ]; then\n    echo 'Packages.app已安装'\nelse\n    echo '下载Packages.dmg程序...'\n    curl -o Packages.dmg http://s.sudre.free.fr/Software/files/Packages.dmg\n    #安装Packages.app\n    open /Applications/Packages.dmg\nfi\n#打开程序\nopen $PROJECT_DIR/Distribution/PBBReaderForOSX.pkgproj";
 		};
@@ -1783,6 +1787,7 @@
 				846754711D84604F006D8722 /* Button+RotateRefresh.swift in Sources */,
 				146C08D11D7FF56A00AB3153 /* CustomTableCellView.swift in Sources */,
 				143E383F1D3F1809004B0A4D /* NSString+LcsDiff.m in Sources */,
+				14C9B6A61D8E859800A0C6B9 /* FSCustomCell.m in Sources */,
 				143E38401D3F1809004B0A4D /* Player.m in Sources */,
 				143E38411D3F1809004B0A4D /* PlayerView.mm in Sources */,
 				143E38421D3F1809004B0A4D /* PlayerWindow.m in Sources */,
