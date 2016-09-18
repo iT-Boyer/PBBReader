@@ -8,6 +8,7 @@
 
 import Cocoa
 
+/// 通过监听cell选中事件发送广播，来控制背景图片的显示/隐藏
 class CustomTableCellView: NSTableCellView {
 
     override func drawRect(dirtyRect: NSRect) {

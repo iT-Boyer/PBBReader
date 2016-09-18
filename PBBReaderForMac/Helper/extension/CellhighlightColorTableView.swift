@@ -16,9 +16,12 @@ class CellhighlightColorTableView: NSTableRowView {
     
     override func drawSelectionInRect(dirtyRect:NSRect) {
         //
-        //let primaryColor = NSColor.alternateSelectedControlColor().colorWithAlphaComponent(0.5)
+//        let primaryColor = NSColor.alternateSelectedControlColor().colorWithAlphaComponent(0.5)
+        //选中时cell的背景色
         let primaryColor = NSColor.init(red: 225/255, green: 225/255, blue: 225/255, alpha: 1.0)
         let secondarySelectedControlColor = NSColor.secondarySelectedControlColor().colorWithAlphaComponent(0.5)
+        //选中时的字体颜色
+         
         
         // Implement our own custom alpha drawing
         switch self.selectionHighlightStyle {
@@ -28,9 +31,12 @@ class CellhighlightColorTableView: NSTableRowView {
                 
 //                ibaLeftLineImageView.hidden = false
                 
-                if self.emphasized {
+                if self.emphasized
+                {
                     primaryColor.set()
-                }else{
+                }
+                else
+                {
                     secondarySelectedControlColor.set()
                 }
                 

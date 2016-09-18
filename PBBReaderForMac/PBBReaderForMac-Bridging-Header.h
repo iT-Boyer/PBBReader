@@ -23,3 +23,5 @@
 //#import "SelectedRowHighlightCell.h"
 
 //@import Realm;
+
+#import "FSCustomCell.h"

@@ -49,6 +49,8 @@ class ReceiveViewController: NSViewController{
     
     @IBOutlet weak var ibRefreshFileButton: CustomRotateButton!
     
+    @IBOutlet weak var makeTimeToTitleConstraint: NSLayoutConstraint!
+    
     //必须声明为全局属性，否则在声明PycFile调用delegate时，delegate = nil
     //还出现第一次启动执行两次openFiles方法
     let appHelper = AppDelegateHelper.sharedAppDelegateHelper()
@@ -186,14 +188,20 @@ extension ReceiveViewController
         if ((seriesName as NSString).length == 0 || seriesName == "未分组文件") {
             ibSeriesNameLabel.hidden = true
             ibSeriesLabel.hidden = true
-        }
-        ibSeriesNameLabel.stringValue = seriesName
-        makerLabel.stringValue = "作者对你说:"
-        if (receiveFile.fileOwnerNick != "" && receiveFile.fileOwnerNick != nil) {
-            makerLabel.stringValue = "作者 \(receiveFile.fileOwnerNick) 对你说:"
+            makeTimeToTitleConstraint.constant = 10
+        }else{
+            ibSeriesNameLabel.hidden = false
+            ibSeriesLabel.hidden = false
+            makeTimeToTitleConstraint.constant = 41
+            ibSeriesNameLabel.stringValue = seriesName
         }
         
-        ibMakeTime.stringValue = "制作时间: \(receiveFile.sendtime.dateString())"
+        makerLabel.stringValue = "作者对你说："
+        if (receiveFile.fileOwnerNick != "" && receiveFile.fileOwnerNick != nil) {
+            makerLabel.stringValue = "作者 \(receiveFile.fileOwnerNick) 对你说："
+        }
+        
+        ibMakeTime.stringValue = "制作时间：\(receiveFile.sendtime.dateString())"
         titleLabel.stringValue = receiveFile.filename
         
         if let qq = receiveFile.fileQQ{
@@ -543,12 +551,15 @@ extension ReceiveViewController
 extension ReceiveViewController:NSSplitViewDelegate
 {
     //分屏大小变化
-    func splitView(splitView: NSSplitView, constrainMaxCoordinate proposedMaximumPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat {
+    func splitView(splitView: NSSplitView, constrainMaxCoordinate proposedMaximumPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat
+    {
         // Make sure the view on the right has at least 200 px wide
-        return splitView.bounds.size.width - 200
+        return splitView.bounds.size.width - 240
     }
-    func splitView(splitView: NSSplitView, constrainMinCoordinate proposedMinimumPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat {
-        return 200
+    
+    func splitView(splitView: NSSplitView, constrainMinCoordinate proposedMinimumPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat
+    {
+        return 240
     }
 }
 
@@ -615,12 +626,28 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
         cellBounds.size.height = CGFloat.max
         let cellSize = dycell!.cellSizeForBounds(cellBounds)
 //        return cellSize.height
-        return 40
+        return 30
     }
     
     func tableView(tableView: NSTableView, willDisplayCell cell: AnyObject, forTableColumn tableColumn: NSTableColumn?, row: Int) {
         //        let cellw = cell as! SelectedRowHighlightCell
         //        cellw.setSelectionBKColor(NSColor.lightGrayColor())
+//        if ([cell isKindOfClass:[FSCustomCell class]]) {
+//            FSCustomCell *acell = cell;
+//            acell.displayName.stringValue = @"kkkkk";
+//            [acell setSelectionBKColor:[NSColor lightGrayColor]];
+//            [acell setSelectionFontColor:[NSColor redColor]];
+//            //NSLog(@"调用顺序3");
+//            //[tableColumn setDataCell:acell];
+//        }
+        
+//        if (cell as? FSCustomCell) != nil
+//        {
+//           let customcell = cell as! FSCustomCell
+//            customcell.setSelectionBKColor(NSColor.lightGrayColor())
+//            customcell.setSelectionFontColor(NSColor.blackColor())
+//        }
+        
     }
     
     //初始化单元格状态信息
@@ -638,22 +665,27 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
             cellView.textField?.stringValue = ReceiveColumn.filename
             
             //设置单元格字体样式
-            if NSFileManager.defaultManager().fileExistsAtPath(ReceiveColumn.fileurl) {
+            if NSFileManager.defaultManager().fileExistsAtPath(ReceiveColumn.fileurl)
+            {
                 //原文件存在
                 cellView.textField?.textColor = NSColor.blackColor()
                 
+                //不支持文件格式
                 if !appHelper.fileIsTypeOfVideo(ReceiveColumn.filetype)
                 {
                     cellView.textField?.textColor = NSColor.grayColor()
                 }
+                
+                //不能看
                 if !isCanOpen(ReceiveColumn)
                 {
                     cellView.textField?.textColor = NSColor.grayColor()
                 }
-            }else{
+            }
+            else
+            {
                 //原文件不存在
                 cellView.textField?.textColor = NSColor.redColor()
-                
             }
             return cellView
         }
