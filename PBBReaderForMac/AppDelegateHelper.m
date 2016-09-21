@@ -58,9 +58,18 @@ singleton_implementation(AppDelegateHelper);
 
 -(void)loadVideoWithLocalFiles:(NSString *)openFilePath
 {
-    NSString *waterPath = [[NSBundle mainBundle] pathForResource:@"water" ofType:@"xml"];
-    [[PlayerLoader sharedInstance] loadVideoWithLocalFiles:@[openFilePath,waterPath]];
+    NSString *thisFilePathExtension = [[openFilePath stringByReplacingOccurrencesOfString:@".pbb" withString:@""] pathExtension];
+    if (![self fileIsTypeOfVideo:[thisFilePathExtension lowercaseString]])
+    {
+        [self setAlertView:[NSString stringWithFormat:@"不支持该(%@)格式文件...",thisFilePathExtension]];
+    }
+    else
+    {
+        NSString *waterPath = [[NSBundle mainBundle] pathForResource:@"water" ofType:@"xml"];
+        [[PlayerLoader sharedInstance] loadVideoWithLocalFiles:@[openFilePath,waterPath]];
+    }
 }
+
 
 -(BOOL)openURLOfPycFileByLaunchedApp:(NSString *)openURL
 {
@@ -79,6 +88,7 @@ singleton_implementation(AppDelegateHelper);
         return YES;
     }
 
+    
     // 判断已接受数据库是否存在
     NSInteger openedNum = 0;
     BOOL OutLine = NO;

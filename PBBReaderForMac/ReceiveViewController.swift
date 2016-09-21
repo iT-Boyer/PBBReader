@@ -668,18 +668,18 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
             if NSFileManager.defaultManager().fileExistsAtPath(ReceiveColumn.fileurl)
             {
                 //原文件存在
-                cellView.textField?.textColor = NSColor.blackColor()
+                cellView.textField?.textColor = NSColor.init(red: 58/255, green: 58/255, blue: 58/255, alpha: 1.0)
                 
                 //不支持文件格式
                 if !appHelper.fileIsTypeOfVideo(ReceiveColumn.filetype)
                 {
-                    cellView.textField?.textColor = NSColor.grayColor()
+//                    cellView.textField?.textColor = NSColor.grayColor()
                 }
                 
                 //不能看
                 if !isCanOpen(ReceiveColumn)
                 {
-                    cellView.textField?.textColor = NSColor.grayColor()
+//                    cellView.textField?.textColor = NSColor.grayColor()
                 }
             }
             else
