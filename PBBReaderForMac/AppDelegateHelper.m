@@ -58,16 +58,16 @@ singleton_implementation(AppDelegateHelper);
 
 -(void)loadVideoWithLocalFiles:(NSString *)openFilePath
 {
-    NSString *thisFilePathExtension = [[openFilePath stringByReplacingOccurrencesOfString:@".pbb" withString:@""] pathExtension];
-    if (![self fileIsTypeOfVideo:[thisFilePathExtension lowercaseString]])
-    {
-        [self setAlertView:[NSString stringWithFormat:@"不支持该(%@)格式文件...",thisFilePathExtension]];
-    }
-    else
-    {
+//    NSString *thisFilePathExtension = [[openFilePath stringByReplacingOccurrencesOfString:@".pbb" withString:@""] pathExtension];
+//    if (![self fileIsTypeOfVideo:[thisFilePathExtension lowercaseString]])
+//    {
+//        [self setAlertView:[NSString stringWithFormat:@"不支持该(%@)格式文件...",thisFilePathExtension]];
+//    }
+//    else
+//    {
         NSString *waterPath = [[NSBundle mainBundle] pathForResource:@"water" ofType:@"xml"];
         [[PlayerLoader sharedInstance] loadVideoWithLocalFiles:@[openFilePath,waterPath]];
-    }
+//    }
 }
 
 
@@ -196,7 +196,7 @@ singleton_implementation(AppDelegateHelper);
     }
     
     if (![self fileIsTypeOfVideo:[[seePycFile.fileName pathExtension] lowercaseString]]){
-        [self setAlertView:[NSString stringWithFormat:@"不支持该(%@)格式文件...",[seePycFile.fileName pathExtension]]];
+        [self setAlertView:[NSString stringWithFormat:@"不支持该(%@)格式文件!",[seePycFile.fileName pathExtension]]];
         return;
     }
     
@@ -879,10 +879,10 @@ singleton_implementation(AppDelegateHelper);
 
 
 #pragma mark － 申请成功 0-0-0 重新提交
--(BOOL)getApplyFileInfoByApplyId:(NSInteger)applyId
+-(BOOL)getApplyFileInfoByApplyId:(NSInteger)applyId FileID:(NSInteger)applyFileID
 {
     [self setText:@"重新申请激活"];
-    return [_fileManager getApplyFileInfoByApplyId:applyId];
+    return [_fileManager getApplyFileInfoByApplyId:applyId FileID:applyFileID];
 }
 
 //获取申请激活的文件信息

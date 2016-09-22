@@ -3262,10 +3262,11 @@ _ALL_END:
 
 #pragma mark 查看申请提交申请<信息>
 //查看申请提交申请信息
--(BOOL)getApplyFileInfoByApplyId:(NSInteger)applyId
+-(BOOL)getApplyFileInfoByApplyId:(NSInteger)applyId FileID:(NSInteger)fileID
 {
     BOOL bReturn = NO;
     self.applyId = applyId;
+    self.fileID = fileID;
     self.Random = arc4random() % ARC4RANDOM_MAX;
     
     self.pycsocket = [[PycSocket alloc] initWithDelegate:self];
@@ -3289,6 +3290,7 @@ _ALL_END:
     memcpy((Byte *)(data->userData.hardno ), [_OpenUUID UTF8String], HARDNO_LEN);
     data->userData.appType = CURRENTAPPTYPE;
     data->userData.applyId = (int)self.applyId;
+    data->userData.ID = (int)self.fileID;
     
     [coder codeBuffer:(Byte *)&((*data).userData) length:sizeof(STRUCTDATA_NEW_NEW)];
 }

@@ -92,7 +92,7 @@ class ActivationSuccessController: NSViewController {
     
     @IBAction func ibaRetoActivation(sender: AnyObject) {
         self.dismissController(true)
-        AppDelegateHelper.sharedAppDelegateHelper().getApplyFileInfoByApplyId(applyId)
+        AppDelegateHelper.sharedAppDelegateHelper().getApplyFileInfoByApplyId(applyId,fileID: fileId)
     }
     
     override func dismissController(sender: AnyObject?) {

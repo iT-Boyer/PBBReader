@@ -207,7 +207,7 @@ FileOpenedNum:(NSInteger)openedNum;
 //得到文件的所有信息,theFileType:0,发送文件；1，接收文件
 -(BOOL)getFileInfoById:(NSInteger )theFileId pbbFile:(NSString *)pbbFileName PycFile:(NSString *)pycFileName fileType:(NSInteger) theFileType;
 //得到文件申请激活信息
--(BOOL)getApplyFileInfoByApplyId:(NSInteger)applyId;
+-(BOOL)getApplyFileInfoByApplyId:(NSInteger)applyId FileID:(NSInteger)fileID;
 //申请手动激活
 - (NSString *)applyFileByFidAndOrderId:(NSInteger )fileId orderId:(NSInteger )thOrderId qq:(NSString *)theQQ email:(NSString *)theEmail phone:(NSString *)thePhone field1:(NSString *)theField1 field2:(NSString *)theField2 seeLogName:(NSString *)theSeeLogName fileName:(NSString*)theFileName;
 //重新申请手动激活

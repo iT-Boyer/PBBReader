@@ -26,7 +26,7 @@ singleton_interface(AppDelegateHelper);
 
 -(BOOL)getVerificationCodeByPhone:(NSString *)phone userPhone:(BOOL)userPhone;
 
--(BOOL)getApplyFileInfoByApplyId:(NSInteger)applyId;
+-(BOOL)getApplyFileInfoByApplyId:(NSInteger)applyId FileID:(NSInteger)applyFileID;
 
 -(void)setAlertView:(NSString *)msg;
 
