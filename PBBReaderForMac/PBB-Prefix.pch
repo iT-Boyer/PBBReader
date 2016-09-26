@@ -165,6 +165,10 @@
 #define IP_ADDRESS_CHARGE @"http://api.pyc.com.cn/api/v1/RechargeInit"
 #define IP_ADDRESS_PRODUCTLIST @"http://api.pyc.com.cn/api/v1/rechargeproduct"
 #define IP_ADDRESS_RECEIPT @"http://api.pyc.com.cn/api/v1/rechargesucc"
+//安装包下载地址
+#define IP_ADDRESS_INSTALLPACKAGE @"http://www.pyc.com.cn/appupdate/updateinfo.plist"
+
+
 //192.168.81.107
 //192.168.86.32
 //推送提供者服务器地址

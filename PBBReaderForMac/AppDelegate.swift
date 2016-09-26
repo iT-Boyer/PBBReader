@@ -17,6 +17,35 @@ class AppDelegate: NSObject, NSApplicationDelegate{
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // Insert code here to initialize your application
+        //监测升级
+        let infoFileURL = NSURL.init(string: "http://www.pyc.com.cn/appupdate/updateinfo.plist")
+        
+        if let updateInfo = NSDictionary.init(contentsOfURL: infoFileURL!)
+//        if let updateInfo = NSDictionary.init(contentsOfFile: NSBundle.mainBundle().pathForResource("updateinfo", ofType: "plist")!)
+        {
+//            let versionString = updateInfo.objectForKey("CFBundleShortVersionString")!
+            let version = updateInfo.objectForKey("CFBundleVersion") as! Double
+            let InstallerPackage = updateInfo.objectForKey("InstallerPackage")!
+            let UpdateContent = updateInfo.objectForKey("UpdateContent")!
+            //或当前运行程序版本号
+            let currentVersionCode = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleVersion") as! NSString
+            if version > currentVersionCode.doubleValue {
+                //提示下载更新安装包
+                let alert = NSAlert.init()
+                alert.addButtonWithTitle("下载")
+//                alert.addButtonWithTitle("稍后提醒")
+                alert.messageText = UpdateContent as! String
+                if alert.runModal() == NSAlertFirstButtonReturn {
+                    //打开safari下载安装包
+                    NSWorkspace.sharedWorkspace().openURL(NSURL.init(string: InstallerPackage as! String)!)
+                }
+//                if alert.runModal() == NSAlertSecondButtonReturn
+//                {
+//                    //稍后提醒
+//                    
+//                }
+            }
+        }
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {

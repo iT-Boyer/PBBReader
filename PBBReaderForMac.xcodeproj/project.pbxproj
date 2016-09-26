@@ -233,6 +233,7 @@
 		142EC39D1D2CDE0A00B88F96 /* 1.mp4.pbb */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1.mp4.pbb; sourceTree = "<group>"; };
 		142EC3AA1D2D0B1A00B88F96 /* readMe.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readMe.md; sourceTree = "<group>"; };
 		142EC3B01D2D0B8D00B88F96 /* mpv.def */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mpv.def; sourceTree = "<group>"; };
+		142F72EF1D991DB900302896 /* updateinfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = updateinfo.plist; sourceTree = "<group>"; };
 		1437DD6B1CF2A75F001BD2D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1437DD6F1CF2A75F001BD2D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1437DD721CF2A75F001BD2D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -644,6 +645,7 @@
 				1437DD6F1CF2A75F001BD2D2 /* Assets.xcassets */,
 				1437DD711CF2A75F001BD2D2 /* Main.storyboard */,
 				14B9EE5E1D79744400EC8986 /* PBBReader-Info.plist */,
+				142F72EF1D991DB900302896 /* updateinfo.plist */,
 				840AA6901CFCA2EA00819203 /* 114.png */,
 				14248E461D2CCEFC00D3704C /* for_the_birds.avi */,
 				142EC39D1D2CDE0A00B88F96 /* 1.mp4.pbb */,

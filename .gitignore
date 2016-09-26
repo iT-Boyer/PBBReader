@@ -1,1 +1,8 @@
-/.DS_Store,xcshareddata,*.xcscheme,*.zip,xcuserdata,*.xcuserstate,xcdebugger,ImportSVN
+.DS_Store
+xcshareddata
+*.xcscheme
+*.zip
+xcuserdata
+*.xcuserstate
+xcdebugger
+ImportSVN/*
