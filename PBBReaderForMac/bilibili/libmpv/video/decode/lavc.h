@@ -1,0 +1,100 @@
+#ifndef MPV_LAVC_H
+#define MPV_LAVC_H
+
+#include <stdbool.h>
+
+#include <libavcodec/avcodec.h>
+
+#include "demux/stheader.h"
+#include "video/mp_image.h"
+#include "video/hwdec.h"
+
+#define HWDEC_DELAY_QUEUE_COUNT 2
+
+typedef struct lavc_ctx {
+    struct mp_log *log;
+    struct MPOpts *opts;
+    AVCodecContext *avctx;
+    AVFrame *pic;
+    struct vd_lavc_hwdec *hwdec;
+    AVRational codec_timebase;
+    enum AVPixelFormat pix_fmt;
+    enum AVDiscard skip_frame;
+    bool flushing;
+    const char *decoder;
+    bool hwdec_failed;
+    bool hwdec_notified;
+
+    struct mp_image **delay_queue;
+    int num_delay_queue;
+    int max_delay_queue;
+
+    // From VO
+    struct mp_hwdec_devices *hwdec_devs;
+
+    // For free use by hwdec implementation
+    void *hwdec_priv;
+
+    int hwdec_fmt;
+    int hwdec_w;
+    int hwdec_h;
+    int hwdec_profile;
+
+    bool hwdec_request_reinit;
+    int hwdec_fail_count;
+} vd_ffmpeg_ctx;
+
+struct vd_lavc_hwdec {
+    enum hwdec_type type;
+    // If not-0: the IMGFMT_ format that should be accepted in the libavcodec
+    // get_format callback.
+    int image_format;
+    // Always returns a non-hwaccel image format.
+    bool copying;
+    // Setting this will queue the given number of frames before calling
+    // process_image() or returning them to the renderer. This can increase
+    // efficiency by not blocking on the hardware pipeline by reading back
+    // immediately after decoding.
+    int delay_queue;
+    int (*probe)(struct lavc_ctx *ctx, struct vd_lavc_hwdec *hwdec,
+                 const char *codec);
+    int (*init)(struct lavc_ctx *ctx);
+    int (*init_decoder)(struct lavc_ctx *ctx, int w, int h);
+    void (*uninit)(struct lavc_ctx *ctx);
+    // Note: if init_decoder is set, this will always use the values from the
+    //       last successful init_decoder call. Otherwise, it's up to you.
+    struct mp_image *(*allocate_image)(struct lavc_ctx *ctx, int w, int h);
+    // Process the image returned by the libavcodec decoder.
+    struct mp_image *(*process_image)(struct lavc_ctx *ctx, struct mp_image *img);
+    // For horrible Intel shit-drivers only
+    void (*lock)(struct lavc_ctx *ctx);
+    void (*unlock)(struct lavc_ctx *ctx);
+    // Optional; if a special hardware decoder is needed (instead of "hwaccel").
+    const char *(*get_codec)(struct lavc_ctx *ctx, const char *codec);
+    // Suffix for libavcodec decoder. If non-NULL, get_codec() is overridden
+    // with hwdec_find_decoder.
+    // Intuitively, this will force the corresponding wrapper decoder.
+    const char *lavc_suffix;
+};
+
+enum {
+    HWDEC_ERR_NO_CTX = -2,
+    HWDEC_ERR_NO_CODEC = -3,
+    HWDEC_ERR_EMULATED = -4,    // probing successful, but emulated API detected
+};
+
+struct hwdec_profile_entry {
+    enum AVCodecID av_codec;
+    int ff_profile;
+    uint64_t hw_profile;
+};
+
+const struct hwdec_profile_entry *hwdec_find_profile(
+    struct lavc_ctx *ctx, const struct hwdec_profile_entry *table);
+bool hwdec_check_codec_support(const char *codec,
+                               const struct hwdec_profile_entry *table);
+int hwdec_get_max_refs(struct lavc_ctx *ctx);
+
+const char *hwdec_find_decoder(const char *codec, const char *suffix);
+
+#endif
