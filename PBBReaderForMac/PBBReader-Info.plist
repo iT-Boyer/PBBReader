@@ -134,11 +134,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-<<<<<<< HEAD
-	<string>149</string>
-=======
-	<string>148</string>
->>>>>>> 9e63b682f22f2ff30dbb72bd0a37182e464cac28
+	<string>150</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>NSAppTransportSecurity</key>
