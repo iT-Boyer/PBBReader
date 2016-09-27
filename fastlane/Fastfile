@@ -11,11 +11,12 @@
 
 # This is the minimum version number required.
 # Update this, if you use features of a newer version
-fastlane_version "1.94.1"
+fastlane_version "1.104.0"
 
 default_platform :mac
 
 platform :mac do
+    
   before_all do
     # ENV["SLACK_URL"] = "https://hooks.slack.com/services/..."
     

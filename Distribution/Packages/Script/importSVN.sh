@@ -45,3 +45,26 @@ pwd
 echo "import "${ImportSVN}" https:\/\/192.168.85.64/svn/安装包/MAC -m "${ProductName}""
 export LC_CTYPE="zh_CN.UTF-8" #设置当前系统的 locale,支持中文路径
 #svn import "${ImportSVN}" https:\/\/192.168.85.64/svn/安装包/MAC -m "${ProductName}"
+
+
+
+
+#clone源码
+git svn clone https://192.168.85.64/svn/PBBforIOS/PBBReaderForOSX
+#提交更新
+git svn dcommit
+#变基：从服务器拉取本地还没有的改动，并将你所有的工作变基到服务器的内容之上
+git svn rebase
+
+#拉取最新
+git svn fetch
+#根据SVN项目中的svn:ignore设置生成对应git忽略文件.gitnore
+git svn create-ignore
+git svn show-ignore > .git/info/exclude
+
+#查看内容变化
+git diff
+git diff --staged
+git diff --cached
+#强制覆盖服务器端上的分支
+git push -u origin master -f

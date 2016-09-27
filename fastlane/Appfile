@@ -1,5 +1,5 @@
 app_identifier "pyc.cn.com.PBBReaderForOSX" # The bundle identifier of your app
-apple_id "724987481@qq.com" # Your Apple email address
+apple_id "mypyc@pyc.com.cn" # Your Apple email address
 
 team_id "FA78T6VRG8"  # Developer Portal Team ID
 

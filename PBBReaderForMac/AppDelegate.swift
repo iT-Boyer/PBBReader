@@ -18,7 +18,7 @@ class AppDelegate: NSObject, NSApplicationDelegate{
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // Insert code here to initialize your application
         //监测升级
-        let infoFileURL = NSURL.init(string: "http://www.pyc.com.cn/appupdate/updateinfo.plist")
+        let infoFileURL = NSURL.init(string: "http://www.pyc.com.cn/appupdate/pbbreader_mac/updateinfo.plist")
         
         if let updateInfo = NSDictionary.init(contentsOfURL: infoFileURL!)
 //        if let updateInfo = NSDictionary.init(contentsOfFile: NSBundle.mainBundle().pathForResource("updateinfo", ofType: "plist")!)

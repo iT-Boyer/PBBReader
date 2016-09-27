@@ -1354,7 +1354,6 @@
 				14815B361D4AFF0F00922A62 /* libmpv包文件执行install_name_tool */,
 				14815B371D4B02CD00922A62 /* 单个文件执行install_name_tool */,
 				14A420411D582EE3009B9DF3 /* import svn */,
-				14B9EE5D1D79685D00EC8986 /* git-svn */,
 				14EA57C71D7D6C9A0026602B /* 启动Package */,
 			);
 			buildRules = (
@@ -1375,6 +1374,11 @@
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = recomend;
+				TargetAttributes = {
+					143E37F71D3F1809004B0A4D = {
+						DevelopmentTeam = FA78T6VRG8;
+					};
+				};
 			};
 			buildConfigurationList = 1437DD631CF2A75E001BD2D2 /* Build configuration list for PBXProject "PBBReaderForMac" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1599,20 +1603,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "#SHELL_PATH=$PROJECT_DIR/$PRODUCT_NAME/Helper/ShellScript/importSVN.sh\n#chmod +x ${SHELL_PATH}\n#sh ${SHELL_PATH}\n\n###############获取版本号,bundleID\n#获取版本号\n#方式一\n#bundleBuildVersion=\"`/usr/libexec/PlistBuddy -c \\\"Print CFBundleVersion\\\" $INFOPLIST_FILE`\"\n#echo $bundleBuildVersion\n#方法二CFBundleShortVersionString\n#http://stackoverflow.com/questions/6851660/version-vs-build-in-xcode\nversionNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"$INFOPLIST_FILE\")\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\n#\n#新建导入目录\nProductName=\"$PRODUCT_NAME.$versionNumber.${buildNumber}\"\nProductPath=\"$TARGET_BUILD_DIR/$PRODUCT_NAME.app\"\nImportSVN=\"Distribution/ImportSVN\"\n#上传时，先删除SVN目录\nrm -rf ${ImportSVN}\npwd\nif [ -d \"$ImportSVN\" ]; then\n    echo 'svn目录已存在'\nelse\n    echo '新建svn目录'\n    mkdir $ImportSVN\nfi\necho \"cp -rf $ProductPath ${ImportSVN}/$ProductName.app\"\n#压缩\n#拷贝\ncp -rf $ProductPath ${ImportSVN}/$ProductName.app\n\ncd $ImportSVN\n#压缩后删除源文件\necho \"压缩后删除源文件\"\n#保留源文件\nzip -r \"$ProductName.app.zip\" ./*\n#删除\n#zip -rm \"$ProductName.app.zip\" ./*\n#*/\n#重命名\nmv $ProductName.app PBBReaderForOSX.app\n#导入svn库中\necho \"导入svn库中...\"\ncd ../\nexport LC_CTYPE=\"zh_CN.UTF-8\" #设置当前系统的 locale,支持中文路径\n# \"${ImportSVN}\":导入的目标目录 -m:日志\n#svn import \"${ImportSVN}\" https:\\/\\/192.168.85.64/svn/安装包/MAC -m \"${ProductName}\"\n";
-		};
-		14B9EE5D1D79685D00EC8986 /* git-svn */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "git-svn";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-			shellPath = /bin/sh;
-			shellScript = "#clone源码\ngit svn clone https://192.168.85.64/svn/PBBforIOS/PBBReaderForOSX\n#提交更新\ngit svn dcommit\n#变基：从服务器拉取本地还没有的改动，并将你所有的工作变基到服务器的内容之上\ngit svn rebase\n\n#拉取最新\ngit svn fetch\n#根据SVN项目中的svn:ignore设置生成对应git忽略文件.gitnore\ngit svn create-ignore\ngit svn show-ignore > .git/info/exclude\n\n#查看内容变化\ngit diff\ngit diff --staged\ngit diff --cached\n#强制覆盖服务器端上的分支\ngit push -u origin master -f";
 		};
 		14EA57C71D7D6C9A0026602B /* 启动Package */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1920,6 +1910,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1969,6 +1961,7 @@
 				PODS_ROOT = "${SRCROOT}/Pods";
 				PRODUCT_BUNDLE_IDENTIFIER = pyc.cn.com.PBBReaderForOSX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PBBReaderForMac/PBBReaderForMac-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				USER_HEADER_SEARCH_PATHS = "\"${PODS_ROOT}/FMDB/src/fmdb\"";
@@ -1981,6 +1974,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2030,6 +2025,7 @@
 				PODS_ROOT = "${SRCROOT}/Pods";
 				PRODUCT_BUNDLE_IDENTIFIER = pyc.cn.com.PBBReaderForOSX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PBBReaderForMac/PBBReaderForMac-Bridging-Header.h";
 				USER_HEADER_SEARCH_PATHS = "\"${PODS_ROOT}/FMDB/src/fmdb\"";
 			};
