@@ -165,6 +165,7 @@
 		143EA9671D50368700457717 /* BindingPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B0CF731D34C715004D22B5 /* BindingPhoneViewController.swift */; };
 		1447A22D1D87A2D600057039 /* CustomRotateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1447A22C1D87A2D500057039 /* CustomRotateButton.swift */; };
 		144AD8931D3F855600765907 /* OpenPBBDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144AD8921D3F855500765907 /* OpenPBBDocument.swift */; };
+		146872391D9A596200460B8E /* PBBReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146872381D9A596200460B8E /* PBBReaderTests.swift */; };
 		146C08D11D7FF56A00AB3153 /* CustomTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146C08D01D7FF56A00AB3153 /* CustomTableCellView.swift */; };
 		146CF12D1D88F97D0021C6B4 /* water.xml in Resources */ = {isa = PBXBuildFile; fileRef = 14815B521D4B131A00922A62 /* water.xml */; };
 		14815AE71D49D7E200922A62 /* Label+shadeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14815AE61D49D7E100922A62 /* Label+shadeAnimation.swift */; };
@@ -202,6 +203,16 @@
 		846754711D84604F006D8722 /* Button+RotateRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146C08D21D82A81400AB3153 /* Button+RotateRefresh.swift */; };
 		A7FCF66363745C0CAFC4371C /* Pods_PBBReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9556540B6FE647FA50015D1C /* Pods_PBBReader.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1468723B1D9A596200460B8E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1437DD601CF2A75E001BD2D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 143E37F71D3F1809004B0A4D;
+			remoteInfo = PBBReader;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		143E38A01D3F1809004B0A4D /* CopyFiles */ = {
@@ -251,6 +262,9 @@
 		14430C2A1D012D1D00A5394D /* LookMedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LookMedia.m; path = API/LookMedia.m; sourceTree = "<group>"; };
 		1447A22C1D87A2D500057039 /* CustomRotateButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomRotateButton.swift; sourceTree = "<group>"; };
 		144AD8921D3F855500765907 /* OpenPBBDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenPBBDocument.swift; sourceTree = "<group>"; };
+		146872361D9A596100460B8E /* PBBReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PBBReaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		146872381D9A596200460B8E /* PBBReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBBReaderTests.swift; sourceTree = "<group>"; };
+		1468723A1D9A596200460B8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		146C08D01D7FF56A00AB3153 /* CustomTableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableCellView.swift; sourceTree = "<group>"; };
 		146C08D21D82A81400AB3153 /* Button+RotateRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Button+RotateRefresh.swift"; sourceTree = "<group>"; };
 		147985B71D422DF8004EA246 /* stream_file.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = stream_file.c; sourceTree = "<group>"; };
@@ -592,6 +606,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		146872331D9A596100460B8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -613,6 +634,7 @@
 				843CADFD1D09367800CE84F4 /* fastlane */,
 				14EA57C91D7E62220026602B /* Distribution */,
 				1437DD6A1CF2A75F001BD2D2 /* PBBReaderForMac */,
+				146872371D9A596200460B8E /* PBBReaderTests */,
 				1437DD691CF2A75F001BD2D2 /* Products */,
 				E015C5766FC51DAFA87206A5 /* Pods */,
 				41FC969B23ABC5E9052852E0 /* Frameworks */,
@@ -623,6 +645,7 @@
 			isa = PBXGroup;
 			children = (
 				143E38AD1D3F1809004B0A4D /* PBBReader.app */,
+				146872361D9A596100460B8E /* PBBReaderTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -665,6 +688,15 @@
 				84E5CB1F1D032FFD003430F2 /* OutFileModel.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		146872371D9A596200460B8E /* PBBReaderTests */ = {
+			isa = PBXGroup;
+			children = (
+				146872381D9A596200460B8E /* PBBReaderTests.swift */,
+				1468723A1D9A596200460B8E /* Info.plist */,
+			);
+			path = PBBReaderTests;
 			sourceTree = "<group>";
 		};
 		14815AEF1D49FCBC00922A62 /* DataStore */ = {
@@ -1365,6 +1397,24 @@
 			productReference = 143E38AD1D3F1809004B0A4D /* PBBReader.app */;
 			productType = "com.apple.product-type.application";
 		};
+		146872351D9A596100460B8E /* PBBReaderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1468723F1D9A596200460B8E /* Build configuration list for PBXNativeTarget "PBBReaderTests" */;
+			buildPhases = (
+				146872321D9A596100460B8E /* Sources */,
+				146872331D9A596100460B8E /* Frameworks */,
+				146872341D9A596100460B8E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1468723C1D9A596200460B8E /* PBXTargetDependency */,
+			);
+			name = PBBReaderTests;
+			productName = PBBReaderTests;
+			productReference = 146872361D9A596100460B8E /* PBBReaderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1377,6 +1427,10 @@
 				TargetAttributes = {
 					143E37F71D3F1809004B0A4D = {
 						DevelopmentTeam = FA78T6VRG8;
+					};
+					146872351D9A596100460B8E = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 143E37F71D3F1809004B0A4D;
 					};
 				};
 			};
@@ -1394,6 +1448,7 @@
 			projectRoot = "";
 			targets = (
 				143E37F71D3F1809004B0A4D /* PBBReader */,
+				146872351D9A596100460B8E /* PBBReaderTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1466,6 +1521,13 @@
 				143E38991D3F1809004B0A4D /* fillscreen_lr.pdf in Resources */,
 				143E389A1D3F1809004B0A4D /* copy.png in Resources */,
 				143E389B1D3F1809004B0A4D /* credits.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		146872341D9A596100460B8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1807,7 +1869,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		146872321D9A596100460B8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				146872391D9A596200460B8E /* PBBReaderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1468723C1D9A596200460B8E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 143E37F71D3F1809004B0A4D /* PBBReader */;
+			targetProxy = 1468723B1D9A596200460B8E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1437DD711CF2A75F001BD2D2 /* Main.storyboard */ = {
@@ -2031,6 +2109,32 @@
 			};
 			name = Release;
 		};
+		1468723D1D9A596200460B8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PBBReaderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pyc.com.cn.PBBReaderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PBBReader.app/Contents/MacOS/PBBReader";
+			};
+			name = Debug;
+		};
+		1468723E1D9A596200460B8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PBBReaderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pyc.com.cn.PBBReaderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PBBReader.app/Contents/MacOS/PBBReader";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -2051,6 +2155,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		1468723F1D9A596200460B8E /* Build configuration list for PBXNativeTarget "PBBReaderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1468723D1D9A596200460B8E /* Debug */,
+				1468723E1D9A596200460B8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

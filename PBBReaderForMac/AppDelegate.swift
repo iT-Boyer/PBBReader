@@ -38,6 +38,10 @@ class AppDelegate: NSObject, NSApplicationDelegate{
                 if alert.runModal() == NSAlertFirstButtonReturn {
                     //打开safari下载安装包
                     NSWorkspace.sharedWorkspace().openURL(NSURL.init(string: InstallerPackage as! String)!)
+                    //版本升级过程中，更新数据库
+//                    ReceiveFileDao.sharedReceiveFileDao().updateTable()
+//                    ReceiveFileDao.sharedReceiveFileDao().updateReceiveFileForVersionPBB()
+//                    userDao.shareduserDao().updateTable()
                 }
 //                if alert.runModal() == NSAlertSecondButtonReturn
 //                {
