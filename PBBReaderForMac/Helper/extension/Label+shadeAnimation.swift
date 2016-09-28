@@ -107,7 +107,8 @@ extension NSTextField
             }
             //默认显示，24s之后隐藏
             timer = NSTimer(timeInterval: 24.0, target: self, selector: #selector(NSTextField.hiddenShade as (NSTextField) -> () -> ()), userInfo: nil, repeats: true)
-        }else
+        }
+        else
         {
             self.hidden = true
             return {}
