@@ -2373,7 +2373,7 @@ _ALL_END:
 
 
 //    NSString *strFileExtend = [NSString stringWithFormat:@".%@",[ self.filePycNameFromServer  pathExtension]];
-    NSMutableString *fileWithOutExtention = [NSMutableString stringWithFormat:@"%@", self.filePycNameFromServer ];
+    NSMutableString *fileWithOutExtention = [NSMutableString stringWithFormat:@"%@", [self.filePycNameFromServer stringByDeletingPathExtension]];
 //    NSRange range = [fileWithOutExtention rangeOfString:strFileExtend];
 //    if (range.location == NSNotFound) {
 //        NSLog(@"*****file name err");

@@ -9,6 +9,7 @@
 import Cocoa
 
 let kGreen = NSColor.init(colorLiteralRed: 37.0 / 255.0, green: 170.0 / 255, blue: 70.0 / 255, alpha: 1.0)
+let kGray =  NSColor.init(red: 58/255, green: 58/255, blue: 58/255, alpha: 1.0)
 class ReceiveViewController: NSViewController{
 
     var receiveArray:NSMutableArray!
@@ -69,6 +70,10 @@ class ReceiveViewController: NSViewController{
         attributedString.addAttribute(NSForegroundColorAttributeName, value: NSColor.whiteColor(), range: NSRange.init(location: 0, length: 12))
         ibOpenInLocalFileButtion.attributedTitle = attributedString
    
+        lastNumProgressView.layer?.borderColor = kGreen.CGColor
+        lastDayProgressView.layer?.borderColor = kGreen.CGColor
+        
+        
         //初始化详情页面
         initThisView(false)
         
@@ -148,10 +153,14 @@ class ReceiveViewController: NSViewController{
             //当打开的文件是当前显示的文件，直接刷新详情
             receiveFile = ReceiveFileDao.sharedReceiveFileDao().fetchReceiveFileCellByFileId(fileID, logName: loginName)
             initThisView(true)
-        }else{
+        }
+        else
+        {
             var isInset = true
-            for pycFile in receiveArray as! Array<OutFile> {
-                if(pycFile.fileid == fileID){
+            for pycFile in receiveArray as! Array<OutFile>
+            {
+                if(pycFile.fileid == fileID)
+                {
                     //如果文件已在列表中，显示该文件的详情信息
                     isInset = false
                     let theRow = receiveArray.indexOfObject(pycFile)
@@ -160,7 +169,8 @@ class ReceiveViewController: NSViewController{
                 }
             }
             //新增文件
-            if isInset {
+            if isInset
+            {
                 receiveFile = ReceiveFileDao.sharedReceiveFileDao().fetchReceiveFileCellByFileId(fileID, logName: loginName)
                 insertNewRow(receiveFile)
             }
@@ -242,20 +252,23 @@ extension ReceiveViewController
             
             if (receiveFile.fileTimeType == 4) {
                 lastNumLabel.attributedStringValue = NSMutableAttributedString.init(attributedString: NSAttributedString.init(string: "剩余\(lastNum)次，共 \(limitnum) 次"))
-                lastNumLabel.AddColorText(lastNum, AColor: kGreen, AFont: nil)
-                lastNumLabel.AddColorText(limitnum, AColor: kGreen, AFont: nil)
+                lastNumLabel.AddColorText("剩余", AColor: kGray, AFont: nil)
+                lastNumLabel.AddColorText("次，共", AColor: kGray, AFont: nil)
+                lastNumLabel.AddColorText(" 次", AColor: kGray, AFont: nil)
                 lastNumProgressView.doubleValue = (Double(receiveFile.lastnum) * 1.0) / Double(receiveFile.limitnum)
             }else{
                 
                 if (receiveFile.fileMakeType == 1) {
                     lastNumLabel.attributedStringValue = NSMutableAttributedString.init(attributedString: NSAttributedString.init(string: "剩余\(lastNum)次，共 \(limitnum) 次"))
-                    lastNumLabel.AddColorText(lastNum, AColor: kGreen, AFont: nil)
-                    lastNumLabel.AddColorText(limitnum, AColor: kGreen, AFont: nil)
+                    lastNumLabel.AddColorText("剩余", AColor: kGray, AFont: nil)
+                    lastNumLabel.AddColorText("次，共", AColor: kGray, AFont: nil)
+                    lastNumLabel.AddColorText(" 次", AColor: kGray, AFont: nil)
                     lastNumProgressView.doubleValue = (Double(receiveFile.lastnum) * 1.0) / Double(receiveFile.limitnum)
                 }else
                 {
                     self.lastNumLabel.attributedStringValue = NSMutableAttributedString.init(attributedString: NSAttributedString.init(string: "共 \(limitnum) 次"))
-                    lastNumLabel.AddColorText(limitnum, AColor: kGreen, AFont: nil)
+                    lastNumLabel.AddColorText("共", AColor: kGray, AFont: nil)
+                    lastNumLabel.AddColorText(" 次", AColor: kGray, AFont: nil)
                     lastNumProgressView.hidden = true
                 }
             }
@@ -301,8 +314,9 @@ extension ReceiveViewController
             let lastday = "\(receiveFile.lastday)"
             let allday = "\(receiveFile.allday)"
             lastDayLabel.attributedStringValue =  NSMutableAttributedString.init(attributedString: NSAttributedString.init(string: "剩余\(lastday)天，共 \(allday) 天"))
-            lastDayLabel.AddColorText(lastday, AColor: kGreen, AFont: nil)
-            lastDayLabel.AddColorText(allday, AColor: kGreen, AFont: nil)
+            lastDayLabel.AddColorText("剩余", AColor: kGray, AFont: nil)
+            lastDayLabel.AddColorText("天，共", AColor: kGray, AFont: nil)
+            lastDayLabel.AddColorText(" 天", AColor: kGray, AFont: nil)
             lastDayProgressView.doubleValue = (Double(receiveFile.lastday) * 1.0) / Double(receiveFile.allday)
             
             if let starttime = receiveFile.starttime,let endtime = receiveFile.endtime{
@@ -344,8 +358,9 @@ extension ReceiveViewController
                     let lastNum = "\(receiveFile.lastnum)"
                     let limitnum = "\(receiveFile.limitnum)"
                     lastNumLabel.attributedStringValue = NSMutableAttributedString.init(string: "剩余\(lastNum)次，共 \(limitnum) 次")
-                    lastNumLabel.AddColorText(lastNum, AColor: kGreen, AFont: nil)
-                    lastNumLabel.AddColorText(limitnum, AColor: kGreen, AFont: nil)
+                    lastNumLabel.AddColorText("剩余", AColor: kGray, AFont: nil)
+                    lastNumLabel.AddColorText("次，共", AColor: kGray, AFont: nil)
+                    lastNumLabel.AddColorText(" 次", AColor: kGray, AFont: nil)
                 }
             }
             else
@@ -359,8 +374,11 @@ extension ReceiveViewController
                     }else{
                         lastNumLabel.attributedStringValue = NSMutableAttributedString.init(string: "共 \(limitnum) 次")
                     }
-                    lastNumLabel.AddColorText(lastNum, AColor: kGreen, AFont: nil)
-                    lastNumLabel.AddColorText(limitnum, AColor: kGreen, AFont: nil)
+                    lastNumLabel.AddColorText("剩余", AColor: kGray, AFont: nil)
+                    lastNumLabel.AddColorText("次，共", AColor: kGray, AFont: nil)
+                    lastNumLabel.AddColorText(" 次", AColor: kGray, AFont: nil)
+                    lastNumLabel.AddColorText("共 ", AColor: kGray, AFont: nil)
+                    
                 }
             }
             
@@ -376,26 +394,32 @@ extension ReceiveViewController
                         if(receiveFile.fileYearRemain > 0 && receiveFile.fileDayRemain>0)
                         {
                             lastDayLabel.attributedStringValue = NSMutableAttributedString.init(string: "剩余\(yearRemain)年\(dayRemain)天，共 \(openDay) 天")
-                            lastDayLabel.AddColorText(yearRemain, AColor: kGreen, AFont: nil)
-                            lastDayLabel.AddColorText(dayRemain, AColor: kGreen, AFont: nil)
-                            lastDayLabel.AddColorText(openDay, AColor: kGreen, AFont: nil)
+                            lastDayLabel.AddColorText("剩余", AColor: kGray, AFont: nil)
+                            lastDayLabel.AddColorText("天，共", AColor: kGray, AFont: nil)
+                            lastDayLabel.AddColorText("年", AColor: kGray, AFont: nil)
+                            lastDayLabel.AddColorText(" 天", AColor: kGray, AFont: nil)
                         }
                         else if(receiveFile.fileYearRemain > 0)
                         {
                             lastDayLabel.attributedStringValue = NSMutableAttributedString.init(string: "剩余\(yearRemain)年，共 \(openDay) 天")
-                            lastDayLabel.AddColorText(yearRemain, AColor: kGreen, AFont: nil)
-                            lastDayLabel.AddColorText(openDay, AColor: kGreen, AFont: nil)
+                            lastDayLabel.AddColorText("剩余", AColor: kGray, AFont: nil)
+                            lastDayLabel.AddColorText("年，共 ", AColor: kGray, AFont: nil)
+                            lastDayLabel.AddColorText(" 天", AColor: kGray, AFont: nil)
+
                         }
                         else if(receiveFile.fileDayRemain > 0)
                         {
                             lastDayLabel.attributedStringValue = NSMutableAttributedString.init(string: "剩余\(dayRemain)天，共\(openDay) 天")
-                            lastDayLabel.AddColorText(dayRemain, AColor: kGreen, AFont: nil)
-                            lastDayLabel.AddColorText(openDay, AColor: kGreen, AFont: nil)
+                            lastDayLabel.AddColorText("剩余", AColor: kGray, AFont: nil)
+                            lastDayLabel.AddColorText("天，共", AColor: kGray, AFont: nil)
+                            lastDayLabel.AddColorText(" 天", AColor: kGray, AFont: nil)
+                            
                         }
                     }else{
                         //未激活
                         lastDayLabel.attributedStringValue = NSMutableAttributedString.init(string: "共\(openDay)天")
-                        lastDayLabel.AddColorText(openDay, AColor: kGreen, AFont: nil)
+                        lastDayLabel.AddColorText("共", AColor: kGray, AFont: nil)
+                        lastDayLabel.AddColorText("天", AColor: kGray, AFont: nil)
                         
                     }
                 }else if(receiveFile.fileOpenYear > 0) {
@@ -406,31 +430,34 @@ extension ReceiveViewController
                         if(receiveFile.fileYearRemain > 0 && receiveFile.fileDayRemain>0)
                         {
                             lastDayLabel.attributedStringValue = NSMutableAttributedString.init(string: "剩余\(yearRemain)年\(dayRemain)天，共 \(openYear) 年")
-                            lastDayLabel.AddColorText(yearRemain, AColor: kGreen, AFont: nil)
-                            lastDayLabel.AddColorText(dayRemain, AColor: kGreen, AFont: nil)
-                            lastDayLabel.AddColorText(openYear, AColor: kGreen, AFont: nil)
+                            lastDayLabel.AddColorText("剩余", AColor: kGray, AFont: nil)
+                            lastDayLabel.AddColorText("年", AColor: kGray, AFont: nil)
+                            lastDayLabel.AddColorText("天，共 ", AColor: kGray, AFont: nil)
+                            lastDayLabel.AddColorText(" 年", AColor: kGray, AFont: nil)
                         }
                         else if(receiveFile.fileYearRemain > 0)
                         {
                             lastDayLabel.attributedStringValue = NSMutableAttributedString.init(string: "剩余\(yearRemain)年，共 \(openYear) 年")
-                            lastDayLabel.AddColorText(yearRemain, AColor: kGreen, AFont: nil)
-                            lastDayLabel.AddColorText(openYear, AColor: kGreen, AFont: nil)
+                            lastDayLabel.AddColorText("剩余", AColor: kGray, AFont: nil)
+                            lastDayLabel.AddColorText("年，共 ", AColor: kGray, AFont: nil)
+                            lastDayLabel.AddColorText(" 年", AColor: kGray, AFont: nil)
                         }
                         else if(receiveFile.fileDayRemain > 0)
                         {
                             lastDayLabel.attributedStringValue = NSMutableAttributedString.init(string: "剩余\(dayRemain)天，共 \(openYear) 年")
-                            lastDayLabel.AddColorText(dayRemain, AColor: kGreen, AFont: nil)
-                            lastDayLabel.AddColorText(openYear, AColor: kGreen, AFont: nil)
+                            lastDayLabel.AddColorText("剩余", AColor: kGray, AFont: nil)
+                            lastDayLabel.AddColorText("天，共 ", AColor: kGray, AFont: nil)
+                            lastDayLabel.AddColorText(" 年", AColor: kGray, AFont: nil)
                         }
                     }
                     else{
                         //未激活
                         lastDayLabel.attributedStringValue = NSMutableAttributedString.init(string: "共 \(openYear) 年")
-                        lastDayLabel.AddColorText(openYear, AColor: kGreen, AFont: nil)
+                        lastDayLabel.AddColorText("共 ", AColor: kGray, AFont: nil)
+                        lastDayLabel.AddColorText(" 年", AColor: kGray, AFont: nil)
                     }
                 }else{
                     lastDayLabel.attributedStringValue = NSMutableAttributedString.init(string: "不限制")
-                    lastDayLabel.AddColorText("不限制", AColor: kGreen, AFont: nil)
                 }
                 
                 lastDayProgressView.hidden = true
@@ -501,18 +528,20 @@ extension ReceiveViewController
         
         //限制条件是否可见
         if (!receiveFile.isEye) {
-            //        ibisEyeView.hidden = true
+            //ibisEyeView.hidden = true
             readBtn.frame = CGRectMake(readBtn.frame.origin.x, 274, readBtn.frame.size.width, readBtn.frame.size.height);
         }
         
-        if !NSFileManager.defaultManager().fileExistsAtPath(receiveFile.fileurl) ||
-            !appHelper.fileIsTypeOfVideo(receiveFile.filetype){
+        if !NSFileManager.defaultManager().fileExistsAtPath(receiveFile.fileurl)
+            || !appHelper.fileIsTypeOfVideo(receiveFile.filetype)
+        {
             readBtn.image = NSImage.init(named: "send_read_no")
             readBtn.enabled = false
         }
         
-        //删除按钮根据阅读按钮状态保持一直
-        ibRefreshFileButton.enabled = readBtn.enabled
+        //刷新按钮根据阅读按钮状态保持一直
+//        ibRefreshFileButton.enabled = readBtn.enabled
+        
         if NSUserDefaults.standardUserDefaults().boolForKey("\(receiveFile.fileid)")
         {
             //当前处于刷新状态
@@ -668,7 +697,7 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
             if NSFileManager.defaultManager().fileExistsAtPath(ReceiveColumn.fileurl)
             {
                 //原文件存在
-                cellView.textField?.textColor = NSColor.init(red: 58/255, green: 58/255, blue: 58/255, alpha: 1.0)
+                cellView.textField?.textColor = kGray
                 
                 //不支持文件格式
                 if !appHelper.fileIsTypeOfVideo(ReceiveColumn.filetype)
