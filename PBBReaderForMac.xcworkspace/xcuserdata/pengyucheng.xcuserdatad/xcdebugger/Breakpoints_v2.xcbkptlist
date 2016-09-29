@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PBBReaderForMac/ReceiveViewController.swift"
-            timestampString = "496747738.433407"
+            timestampString = "496810031.241019"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "535"
-            endingLineNumber = "535"
+            startingLineNumber = "536"
+            endingLineNumber = "536"
             landmarkName = "initThisView(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PBBReaderForMac/ReceiveViewController.swift"
-            timestampString = "496747738.433407"
+            timestampString = "496810031.241019"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
             landmarkName = "openInPBBFile(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -106,28 +106,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PBBReaderForMac/ReceiveViewController.swift"
-            timestampString = "496747738.433407"
+            timestampString = "496810031.241019"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "558"
-            endingLineNumber = "558"
+            startingLineNumber = "559"
+            endingLineNumber = "559"
             landmarkName = "isCanOpen(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PBBReaderForMac/Helper/API/sqlite/db/ReceiveFileManager.m"
-            timestampString = "496742133.90889"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1185"
-            endingLineNumber = "1185"
-            landmarkName = "-fetchReceiveFileCellByFileId:LogName:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -144,22 +128,6 @@
             startingLineNumber = "728"
             endingLineNumber = "728"
             landmarkName = "-PycFile:didFinishGetFileInfo:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PBBReaderForMac/ReceiveViewController.swift"
-            timestampString = "496747738.433407"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
-            landmarkName = "ibaRefreshFileData(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -186,12 +154,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PBBReaderForMac/Helper/API/RemoteSocket/other/PycFile.m"
-            timestampString = "496742995.75314"
+            timestampString = "496743006.74431"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "506"
-            endingLineNumber = "506"
-            landmarkName = "-getFileType:"
+            startingLineNumber = "4280"
+            endingLineNumber = "4280"
+            landmarkName = "-setValueOfSelfByNewFile:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -201,13 +169,61 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PBBReaderForMac/Helper/API/RemoteSocket/other/PycFile.m"
-            timestampString = "496743006.74431"
+            filePath = "PBBReaderForMac/AppDelegateHelper.m"
+            timestampString = "496811402.063227"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "4280"
-            endingLineNumber = "4280"
-            landmarkName = "-setValueOfSelfByNewFile:"
+            startingLineNumber = "692"
+            endingLineNumber = "692"
+            landmarkName = "-PycFile:didFinishGetFileInfo:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PBBReaderForMac/ReceiveViewController.swift"
+            timestampString = "496811558.988076"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "305"
+            endingLineNumber = "305"
+            landmarkName = "initThisView(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PBBReaderForMac/ReceiveViewController.swift"
+            timestampString = "496811565.73195"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "328"
+            endingLineNumber = "328"
+            landmarkName = "initThisView(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PBBReaderForMac/ReceiveViewController.swift"
+            timestampString = "496811582.968252"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "498"
+            endingLineNumber = "498"
+            landmarkName = "initThisView(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1422A89E1D757FD40057E9D4 /* CustomWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1422A89D1D757FD40057E9D4 /* CustomWindowController.swift */; };
+		14389CA11D9CB4A100EAC29C /* CustomColorProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14389CA01D9CB4A100EAC29C /* CustomColorProgressIndicator.swift */; };
 		143E37FC1D3F1809004B0A4D /* PycReceiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A68681CFEC9AD00BC66A1 /* PycReceiveModel.swift */; };
 		143E37FD1D3F1809004B0A4D /* SecretDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FCC1CFD844E001BCE84 /* SecretDao.m */; };
 		143E37FE1D3F1809004B0A4D /* NSImage+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EE618D1CF816E50051FD1A /* NSImage+Extras.m */; };
@@ -252,6 +253,7 @@
 		1437DD9B1CF2AD92001BD2D2 /* ScaryBugData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScaryBugData.swift; path = Model/ScaryBugData.swift; sourceTree = "<group>"; };
 		1437DD9D1CF2AE72001BD2D2 /* ScaryBugDoc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScaryBugDoc.swift; path = Model/ScaryBugDoc.swift; sourceTree = "<group>"; };
 		1437DD9F1CF2AF7C001BD2D2 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
+		14389CA01D9CB4A100EAC29C /* CustomColorProgressIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomColorProgressIndicator.swift; sourceTree = "<group>"; };
 		143A685F1CFEB64300BC66A1 /* PycFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PycFile.h; sourceTree = "<group>"; };
 		143A68601CFEB64300BC66A1 /* PycFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PycFile.m; sourceTree = "<group>"; };
 		143A68661CFEC71600BC66A1 /* PycSocketClientManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PycSocketClientManager.swift; sourceTree = "<group>"; };
@@ -1285,6 +1287,7 @@
 				146C08D01D7FF56A00AB3153 /* CustomTableCellView.swift */,
 				146C08D21D82A81400AB3153 /* Button+RotateRefresh.swift */,
 				1447A22C1D87A2D500057039 /* CustomRotateButton.swift */,
+				14389CA01D9CB4A100EAC29C /* CustomColorProgressIndicator.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -1856,6 +1859,7 @@
 				143E38481D3F1809004B0A4D /* PostComment.m in Sources */,
 				143E38491D3F1809004B0A4D /* SimpleVideoFormatParser.mm in Sources */,
 				14BF317A1D77C9DE000EFF66 /* CellhighlightColorTableView.swift in Sources */,
+				14389CA11D9CB4A100EAC29C /* CustomColorProgressIndicator.swift in Sources */,
 				143E384A1D3F1809004B0A4D /* SubtitleProvider.m in Sources */,
 				143E384B1D3F1809004B0A4D /* SubtitleHelper.m in Sources */,
 				143E384C1D3F1809004B0A4D /* TimeSliderCell.m in Sources */,
@@ -2163,6 +2167,7 @@
 				1468723E1D9A596200460B8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

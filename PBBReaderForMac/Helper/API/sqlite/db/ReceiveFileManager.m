@@ -1100,7 +1100,7 @@ singleton_implementation(ReceiveFileManager)
         
         NSInteger openedNum = [rs intForColumn:@"readNum"];
         
-        if ([rs intForColumn:@"readNum"]>0) {
+        if ([rs intForColumn:@"readNum"]>0 && open != 2) {
             open = 1;
         }
         

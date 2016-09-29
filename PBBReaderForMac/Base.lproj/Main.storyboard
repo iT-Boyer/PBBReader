@@ -565,30 +565,53 @@ CA
                                                             </textFieldCell>
                                                         </textField>
                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Jlz-jx-He9">
-                                                            <rect key="frame" x="88" y="104" width="132" height="20"/>
+                                                            <rect key="frame" x="88" y="107" width="128" height="20"/>
                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="14.6.5- 12.4.5" id="Wgu-da-D7m">
                                                                 <font key="font" size="12" name="MicrosoftYaHei"/>
                                                                 <color key="textColor" red="0.44313725490196076" green="0.44313725490196076" blue="0.44313725490196076" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                         </textField>
-                                                        <progressIndicator wantsLayer="YES" maxValue="1" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="ZR0-dO-DmL">
-                                                            <rect key="frame" x="91" y="161" width="128" height="20"/>
+                                                        <progressIndicator wantsLayer="YES" maxValue="5" doubleValue="3" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="ZR0-dO-DmL" customClass="CustomColorProgressIndicator" customModule="PBBReader" customModuleProvider="target">
+                                                            <rect key="frame" x="91" y="173" width="128" height="4"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="2" id="PvW-Wo-P0p"/>
+                                                                <constraint firstAttribute="width" constant="128" id="cYz-vz-4fi"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="progressColor">
+                                                                    <color key="value" red="0.1450980392" green="0.66666666669999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
+                                                                    <color key="value" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </progressIndicator>
                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MTy-Ou-oki">
                                                             <rect key="frame" x="89" y="178" width="132" height="21"/>
-                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="剩余5次，共11333次" id="PsH-aq-nQz">
+                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="剩余5次，共11333次" id="PsH-aq-nQz">
                                                                 <font key="font" size="13" name="MicrosoftYaHei"/>
                                                                 <color key="textColor" red="0.14509803921568626" green="0.66666666666666663" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                         </textField>
-                                                        <progressIndicator wantsLayer="YES" maxValue="1" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="ZYq-H1-S2i">
-                                                            <rect key="frame" x="90" y="115" width="128" height="20"/>
+                                                        <progressIndicator wantsLayer="YES" maxValue="1" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="ZYq-H1-S2i" customClass="CustomColorProgressIndicator" customModule="PBBReader" customModuleProvider="target">
+                                                            <rect key="frame" x="90" y="127" width="124" height="4"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="2" id="eiF-Xd-JQX"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="progressColor">
+                                                                    <color key="value" red="0.1450980392" green="0.66666666669999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
+                                                                    <color key="value" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </progressIndicator>
                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rJo-gm-rXP">
-                                                            <rect key="frame" x="88" y="132" width="132" height="21"/>
-                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="剩余5天，共11333天" id="85o-7j-9Ot">
+                                                            <rect key="frame" x="88" y="132" width="128" height="21"/>
+                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="剩余5天，共11333天" id="85o-7j-9Ot">
                                                                 <font key="font" size="13" name="MicrosoftYaHei"/>
                                                                 <color key="textColor" red="0.1450980392" green="0.66666666669999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -691,7 +714,7 @@ CA
                                                         <constraint firstItem="Hhm-KS-pUH" firstAttribute="top" secondItem="ihb-K2-VpE" secondAttribute="bottom" constant="20" id="60e-vQ-HVy"/>
                                                         <constraint firstItem="FHe-E5-RgE" firstAttribute="leading" secondItem="hps-IH-5jx" secondAttribute="trailing" id="86n-W1-Oqj"/>
                                                         <constraint firstAttribute="bottom" secondItem="Hhm-KS-pUH" secondAttribute="bottom" priority="500" constant="30" id="8a8-q1-1V7"/>
-                                                        <constraint firstItem="ZYq-H1-S2i" firstAttribute="top" secondItem="rJo-gm-rXP" secondAttribute="bottom" constant="-2" id="Az3-8h-l6d"/>
+                                                        <constraint firstItem="ZYq-H1-S2i" firstAttribute="top" secondItem="rJo-gm-rXP" secondAttribute="bottom" constant="2" id="Az3-8h-l6d"/>
                                                         <constraint firstItem="Xds-lv-Fve" firstAttribute="top" secondItem="FHe-E5-RgE" secondAttribute="bottom" constant="41" id="B45-Ue-faX"/>
                                                         <constraint firstItem="ZR0-dO-DmL" firstAttribute="leading" secondItem="MTy-Ou-oki" secondAttribute="leading" id="Beq-S6-8JU"/>
                                                         <constraint firstItem="MTy-Ou-oki" firstAttribute="bottom" secondItem="SPU-4d-lcK" secondAttribute="bottom" id="FKw-de-Q1U"/>
@@ -705,7 +728,7 @@ CA
                                                         <constraint firstItem="YAl-1G-Ctg" firstAttribute="centerY" secondItem="iAQ-jZ-9Ii" secondAttribute="centerY" id="MqJ-bd-PC3"/>
                                                         <constraint firstItem="0lh-R2-CLI" firstAttribute="leading" secondItem="hps-IH-5jx" secondAttribute="leading" id="PQH-oz-jjC"/>
                                                         <constraint firstItem="ZYq-H1-S2i" firstAttribute="leading" secondItem="rJo-gm-rXP" secondAttribute="leading" id="Pea-gB-Mb0"/>
-                                                        <constraint firstItem="ZR0-dO-DmL" firstAttribute="top" secondItem="MTy-Ou-oki" secondAttribute="bottom" constant="-2" id="Qlq-mE-hLd"/>
+                                                        <constraint firstItem="ZR0-dO-DmL" firstAttribute="top" secondItem="MTy-Ou-oki" secondAttribute="bottom" constant="2" id="Qlq-mE-hLd"/>
                                                         <constraint firstItem="hps-IH-5jx" firstAttribute="leading" secondItem="yIm-cG-SVy" secondAttribute="leading" constant="20" symbolic="YES" id="S1Z-A3-D6m"/>
                                                         <constraint firstAttribute="trailing" secondItem="ihb-K2-VpE" secondAttribute="trailing" constant="20" id="SbB-AQ-MfS"/>
                                                         <constraint firstAttribute="trailing" secondItem="QN2-0m-NQi" secondAttribute="trailing" id="Sc8-Gx-zyi"/>
@@ -721,7 +744,7 @@ CA
                                                         <constraint firstItem="hps-IH-5jx" firstAttribute="top" secondItem="cfj-k6-G5T" secondAttribute="bottom" constant="14" id="fmI-uA-PG7"/>
                                                         <constraint firstItem="ZzF-PU-o90" firstAttribute="top" secondItem="0lh-R2-CLI" secondAttribute="bottom" constant="10" id="ftY-Bh-Jer"/>
                                                         <constraint firstItem="ZzF-PU-o90" firstAttribute="leading" secondItem="yIm-cG-SVy" secondAttribute="leading" constant="30" id="gCk-t9-THn"/>
-                                                        <constraint firstItem="Jlz-jx-He9" firstAttribute="top" secondItem="ZYq-H1-S2i" secondAttribute="bottom" constant="-8" id="gVx-j8-bEV"/>
+                                                        <constraint firstItem="Jlz-jx-He9" firstAttribute="top" secondItem="ZYq-H1-S2i" secondAttribute="bottom" constant="1" id="gVx-j8-bEV"/>
                                                         <constraint firstItem="QN2-0m-NQi" firstAttribute="top" secondItem="yIm-cG-SVy" secondAttribute="top" constant="8" id="i7L-o9-ASQ"/>
                                                         <constraint firstItem="iAQ-jZ-9Ii" firstAttribute="top" secondItem="FHe-E5-RgE" secondAttribute="bottom" constant="10" id="lFD-QD-DIv"/>
                                                         <constraint firstItem="ihb-K2-VpE" firstAttribute="leading" secondItem="nlA-v2-hP1" secondAttribute="leading" id="sZL-17-8w6"/>
