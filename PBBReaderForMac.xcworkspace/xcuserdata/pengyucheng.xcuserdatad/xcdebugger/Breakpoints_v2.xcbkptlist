@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PBBReaderForMac/AppDelegateHelper.m"
-            timestampString = "496228722.00025"
+            timestampString = "496814025.466898"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "885"
-            endingLineNumber = "885"
+            startingLineNumber = "892"
+            endingLineNumber = "892"
             landmarkName = "-getApplyFileInfoByApplyId:FileID:"
             landmarkType = "5">
          </BreakpointContent>
@@ -122,22 +122,6 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PBBReaderForMac/AppDelegateHelper.m"
-            timestampString = "496742177.796295"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "728"
-            endingLineNumber = "728"
-            landmarkName = "-PycFile:didFinishGetFileInfo:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PBBReaderForMac/AppDelegateHelper.m"
             timestampString = "496742617.777976"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -170,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PBBReaderForMac/AppDelegateHelper.m"
-            timestampString = "496811402.063227"
+            timestampString = "496814025.466898"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "692"
-            endingLineNumber = "692"
+            startingLineNumber = "694"
+            endingLineNumber = "694"
             landmarkName = "-PycFile:didFinishGetFileInfo:"
             landmarkType = "5">
          </BreakpointContent>

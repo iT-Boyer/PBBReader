@@ -676,7 +676,9 @@ singleton_implementation(AppDelegateHelper);
     BOOL result = [_fileManager getFileInfoById:theFileId pbbFile:pbbFileName PycFile:pycFileName fileType:1];
     if (!result)
     {
-        [self setAlertView:@"刷新失败，请稍后再试！"];
+        NSAlert *alertV = [NSAlert new];
+        [alertV addButtonWithTitle:@"确定"];
+        [alertV setMessageText:@"刷新失败，请稍后再试！"];
     }
     return result;
 }
@@ -692,12 +694,17 @@ singleton_implementation(AppDelegateHelper);
     int _returnValue = receiveData->returnValue;
     if(receiveData == nil || _returnValue == 0)
     {
-        [self setAlertView:@"您的网络不给力哦，请重试！"];
+        NSAlert *alertV = [NSAlert new];
+        [alertV addButtonWithTitle:@"确定"];
+        [alertV setMessageText:@"刷新失败，请稍后再试！"];
         return;
     }
     if(_returnValue == -1)
     {
         [self setAlertView:@"数据传输错误，请重试！"];
+        NSAlert *alertV = [NSAlert new];
+        [alertV addButtonWithTitle:@"确定"];
+        [alertV setMessageText:@"数据传输错误，请重试！"];
         return;
     }
     if(_returnValue & ERR_NEED_UPDATE)
