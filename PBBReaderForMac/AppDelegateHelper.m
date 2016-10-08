@@ -673,8 +673,7 @@ singleton_implementation(AppDelegateHelper);
         _fileManager.delegate = self;
     }
     
-    BOOL result = [_fileManager getFileInfoById:theFileId pbbFile:pbbFileName PycFile:pycFileName fileType:1];
-    if (!result)
+    BOOL result = [_fileManager getFileInfogit    if (!result)
     {
         NSAlert *alertV = [NSAlert new];
         [alertV addButtonWithTitle:@"确定"];

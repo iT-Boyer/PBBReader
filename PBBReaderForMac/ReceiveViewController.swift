@@ -149,7 +149,8 @@ class ReceiveViewController: NSViewController{
         NSUserDefaults.standardUserDefaults().setBool(false, forKey: "\(fileID)")
         NSUserDefaults.standardUserDefaults().synchronize()
         
-        if receiveFile != nil && receiveFile.fileid == fileID {
+        if receiveFile != nil && receiveFile.fileid == fileID
+        {
             //当打开的文件是当前显示的文件，直接刷新详情
             receiveFile = ReceiveFileDao.sharedReceiveFileDao().fetchReceiveFileCellByFileId(fileID, logName: loginName)
             initThisView(true)
