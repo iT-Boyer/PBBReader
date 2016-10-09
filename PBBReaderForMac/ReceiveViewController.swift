@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import Toasty
 
 let kGreen = NSColor.init(colorLiteralRed: 37.0 / 255.0, green: 170.0 / 255, blue: 70.0 / 255, alpha: 1.0)
 let kGray =  NSColor.init(red: 58/255, green: 58/255, blue: 58/255, alpha: 1.0)
@@ -148,6 +149,16 @@ class ReceiveViewController: NSViewController{
         ibRefreshFileButton.layer?.removeAllAnimations()
         NSUserDefaults.standardUserDefaults().setBool(false, forKey: "\(fileID)")
         NSUserDefaults.standardUserDefaults().synchronize()
+        
+        // Make a copy of default style.
+        var style = Toasty.defaultStyle
+        
+        // Navigation bar is translucent so the view starts from under the bars. Set margin accordingly.
+        style.margin.top = 0
+        style.backgroundColor = NSColor.whiteColor()
+        style.textColor = NSColor.blackColor()
+        // Show our toast.
+        rootView.showToastWithText("刷新完成！", usingStyle: style)
         
         if receiveFile != nil && receiveFile.fileid == fileID
         {

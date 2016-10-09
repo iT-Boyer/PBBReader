@@ -196,6 +196,10 @@
 		14815B4F1D4B0D0600922A62 /* BilibiliSocketClient.mm in Sources */ = {isa = PBXBuildFile; fileRef = 14815B4A1D4B0D0600922A62 /* BilibiliSocketClient.mm */; };
 		14815B501D4B0D0600922A62 /* LiveChat.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B4C1D4B0D0600922A62 /* LiveChat.m */; };
 		14815B511D4B0D0600922A62 /* Socket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14815B4D1D4B0D0600922A62 /* Socket.cpp */; };
+		14A505911DAA2656008BF666 /* Toasty.h in Headers */ = {isa = PBXBuildFile; fileRef = 14A505901DAA2656008BF666 /* Toasty.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		14A505951DAA2656008BF666 /* Toasty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A5058E1DAA2656008BF666 /* Toasty.framework */; };
+		14A505961DAA2656008BF666 /* Toasty.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14A5058E1DAA2656008BF666 /* Toasty.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		14A5059C1DAA269C008BF666 /* Toasty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A5059B1DAA269C008BF666 /* Toasty.swift */; };
 		14B9EE5F1D79744400EC8986 /* PBBReader-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14B9EE5E1D79744400EC8986 /* PBBReader-Info.plist */; };
 		14BF317A1D77C9DE000EFF66 /* CellhighlightColorTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BF31791D77C9DE000EFF66 /* CellhighlightColorTableView.swift */; };
 		14BF31811D780AB1000EFF66 /* CustomBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BF31801D780AB1000EFF66 /* CustomBox.swift */; };
@@ -212,6 +216,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 143E37F71D3F1809004B0A4D;
 			remoteInfo = PBBReader;
+		};
+		14A505931DAA2656008BF666 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1437DD601CF2A75E001BD2D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 14A5058D1DAA2656008BF666;
+			remoteInfo = Toasty;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -232,6 +243,17 @@
 				143E38A81D3F1809004B0A4D /* libswscale.4.dylib in CopyFiles */,
 				143E38A91D3F1809004B0A4D /* libz.1.dylib in CopyFiles */,
 			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14A5059A1DAA2657008BF666 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				14A505961DAA2656008BF666 /* Toasty.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -341,6 +363,10 @@
 		148AB47E1CFFD78600CAF9BA /* AdvertisingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvertisingView.m; sourceTree = "<group>"; };
 		148AB47F1CFFD78600CAF9BA /* advitising.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = advitising.jpg; sourceTree = "<group>"; };
 		1494D6081D36305900842CD1 /* ApplyInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyInfoViewController.swift; sourceTree = "<group>"; };
+		14A5058E1DAA2656008BF666 /* Toasty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Toasty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		14A505901DAA2656008BF666 /* Toasty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Toasty.h; sourceTree = "<group>"; };
+		14A505921DAA2656008BF666 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14A5059B1DAA269C008BF666 /* Toasty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toasty.swift; sourceTree = "<group>"; };
 		14AA3E0F1D2A187200838B88 /* client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = client.h; sourceTree = "<group>"; };
 		14AA3E351D2A187200838B88 /* libavcodec.57.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libavcodec.57.dylib; sourceTree = "<group>"; };
 		14AA3E361D2A187200838B88 /* libavdevice.57.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libavdevice.57.dylib; sourceTree = "<group>"; };
@@ -600,6 +626,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14A505951DAA2656008BF666 /* Toasty.framework in Frameworks */,
 				14815B451D4B08AF00922A62 /* libmpv.dylib in Frameworks */,
 				14815B461D4B08AF00922A62 /* libz.1.dylib in Frameworks */,
 				A7FCF66363745C0CAFC4371C /* Pods_PBBReader.framework in Frameworks */,
@@ -607,6 +634,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		146872331D9A596100460B8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14A5058A1DAA2656008BF666 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -635,6 +669,7 @@
 				14EA57C91D7E62220026602B /* Distribution */,
 				1437DD6A1CF2A75F001BD2D2 /* PBBReaderForMac */,
 				146872371D9A596200460B8E /* PBBReaderTests */,
+				14A5058F1DAA2656008BF666 /* Toasty */,
 				1437DD691CF2A75F001BD2D2 /* Products */,
 				E015C5766FC51DAFA87206A5 /* Pods */,
 				41FC969B23ABC5E9052852E0 /* Frameworks */,
@@ -646,6 +681,7 @@
 			children = (
 				143E38AD1D3F1809004B0A4D /* PBBReader.app */,
 				146872361D9A596100460B8E /* PBBReaderTests.xctest */,
+				14A5058E1DAA2656008BF666 /* Toasty.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -827,6 +863,16 @@
 				14430C1D1D01214000A5394D /* AdvertisingViewOSX.xib */,
 			);
 			path = Advertising;
+			sourceTree = "<group>";
+		};
+		14A5058F1DAA2656008BF666 /* Toasty */ = {
+			isa = PBXGroup;
+			children = (
+				14A505901DAA2656008BF666 /* Toasty.h */,
+				14A505921DAA2656008BF666 /* Info.plist */,
+				14A5059B1DAA269C008BF666 /* Toasty.swift */,
+			);
+			path = Toasty;
 			sourceTree = "<group>";
 		};
 		14AA3DC91D2A187200838B88 /* bilibili */ = {
@@ -1355,6 +1401,17 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		14A5058B1DAA2656008BF666 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14A505911DAA2656008BF666 /* Toasty.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		143E37F71D3F1809004B0A4D /* PBBReader */ = {
 			isa = PBXNativeTarget;
@@ -1378,10 +1435,12 @@
 				14815B371D4B02CD00922A62 /* 单个文件执行install_name_tool */,
 				14A420411D582EE3009B9DF3 /* import svn */,
 				14EA57C71D7D6C9A0026602B /* 启动Package */,
+				14A5059A1DAA2657008BF666 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				14A505941DAA2656008BF666 /* PBXTargetDependency */,
 			);
 			name = PBBReader;
 			productName = PBBReaderForMac;
@@ -1406,6 +1465,24 @@
 			productReference = 146872361D9A596100460B8E /* PBBReaderTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		14A5058D1DAA2656008BF666 /* Toasty */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14A505971DAA2657008BF666 /* Build configuration list for PBXNativeTarget "Toasty" */;
+			buildPhases = (
+				14A505891DAA2656008BF666 /* Sources */,
+				14A5058A1DAA2656008BF666 /* Frameworks */,
+				14A5058B1DAA2656008BF666 /* Headers */,
+				14A5058C1DAA2656008BF666 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Toasty;
+			productName = Toasty;
+			productReference = 14A5058E1DAA2656008BF666 /* Toasty.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1422,6 +1499,10 @@
 					146872351D9A596100460B8E = {
 						CreatedOnToolsVersion = 7.3.1;
 						TestTargetID = 143E37F71D3F1809004B0A4D;
+					};
+					14A5058D1DAA2656008BF666 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = FA78T6VRG8;
 					};
 				};
 			};
@@ -1440,6 +1521,7 @@
 			targets = (
 				143E37F71D3F1809004B0A4D /* PBBReader */,
 				146872351D9A596100460B8E /* PBBReaderTests */,
+				14A5058D1DAA2656008BF666 /* Toasty */,
 			);
 		};
 /* End PBXProject section */
@@ -1516,6 +1598,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		146872341D9A596100460B8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14A5058C1DAA2656008BF666 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1869,6 +1958,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		14A505891DAA2656008BF666 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14A5059C1DAA269C008BF666 /* Toasty.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1876,6 +1973,11 @@
 			isa = PBXTargetDependency;
 			target = 143E37F71D3F1809004B0A4D /* PBBReader */;
 			targetProxy = 1468723B1D9A596200460B8E /* PBXContainerItemProxy */;
+		};
+		14A505941DAA2656008BF666 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 14A5058D1DAA2656008BF666 /* Toasty */;
+			targetProxy = 14A505931DAA2656008BF666 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1983,6 +2085,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/CocoaAsyncSocket\"",
@@ -2047,6 +2150,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/CocoaAsyncSocket\"",
@@ -2127,6 +2231,57 @@
 			};
 			name = Release;
 		};
+		14A505981DAA2657008BF666 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = Toasty/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = pyc.com.cn.Toasty;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		14A505991DAA2657008BF666 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = Toasty/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = pyc.com.cn.Toasty;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -2156,6 +2311,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		14A505971DAA2657008BF666 /* Build configuration list for PBXNativeTarget "Toasty" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14A505981DAA2657008BF666 /* Debug */,
+				14A505991DAA2657008BF666 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
