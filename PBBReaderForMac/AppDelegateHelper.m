@@ -734,7 +734,7 @@ singleton_implementation(AppDelegateHelper);
     NSDate *receiveDay = [NSDate dateWithStringByDay:[[NSDate date] dateStringByDay]];
     [[ReceiveFileDao sharedReceiveFileDao] updateReceiveFile:[OutFile initWithReceiveFileId:fileObject.fileID
                                                                                    FileName:[fileObject.filePycNameFromServer stringByDeletingPathExtension]
-                                                                                    LogName:logname
+                                                                                    LogName:[[userDao shareduserDao] getLogName]
                                                                                   FileOwner:fileObject.fileOwner
                                                                               FileOwnerNick:fileObject.nickname
                                                                                     FileUrl:fileObject.filePycName

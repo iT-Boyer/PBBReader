@@ -158,7 +158,7 @@ class ReceiveViewController: NSViewController{
         style.backgroundColor = NSColor.whiteColor()
         style.textColor = NSColor.blackColor()
         // Show our toast.
-        rootView.showToastWithText("刷新完成！", usingStyle: style)
+        rootView.showToastWithText("加载完成！", usingStyle: style)
         
         if receiveFile != nil && receiveFile.fileid == fileID
         {
