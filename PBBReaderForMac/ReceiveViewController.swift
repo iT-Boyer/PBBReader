@@ -553,19 +553,6 @@ extension ReceiveViewController
         
         //刷新按钮根据阅读按钮状态保持一直
 //        ibRefreshFileButton.enabled = readBtn.enabled
-        
-        if NSUserDefaults.standardUserDefaults().boolForKey("\(receiveFile.fileid)")
-        {
-            //当前处于刷新状态
-            ibRefreshFileButton.addGroupRotateAnimation(receiveFile.fileid)
-        }
-        else
-        {
-            //停止刷新动画
-            ibRefreshFileButton.layer?.removeAllAnimations()
-            NSUserDefaults.standardUserDefaults().setBool(false, forKey: "\(receiveFile.fileid)")
-            NSUserDefaults.standardUserDefaults().synchronize()
-        }
     }
     
     func isCanOpen(outFile:OutFile) -> Bool {
@@ -613,11 +600,13 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
         
         if let receiveFile = selectedFileList(){
             self.receiveFile = ReceiveFileDao.sharedReceiveFileDao().fetchReceiveFileCellByFileId(receiveFile.fileid, logName: loginName)
-            //改变选中状态
-            ChangeCellBySelectedStatus()
+            
             
             //刷新详情
             initThisView(true)
+            
+            //改变选中状态
+            ChangeCellBySelectedStatus()
         }
     }
     
@@ -638,6 +627,42 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
             else {
                 return
             }
+        
+        // 判断本地文件ID是否和数据库中的id一致，否则更新状态
+        let fileID = PycFile().getAttributePycFileId(receiveFile.fileurl)
+        if fileID != Int32(receiveFile.fileid) {
+            //
+            //
+            readBtn.image = NSImage.init(named: "send_read_no")
+            readBtn.enabled = false
+            cellView.textField?.textColor = NSColor.redColor()
+            
+            //提示本地文件错误
+            // Make a copy of default style.
+            var style = Toasty.defaultStyle
+            // Navigation bar is translucent so the view starts from under the bars. Set margin accordingly.
+            style.margin.top = 0
+            style.backgroundColor = NSColor.whiteColor()
+            style.textColor = NSColor.blackColor()
+            // Show our toast.
+            rootView.showToastWithText("信息与本地文件不符，建议删除该条无效信息！", usingStyle: style)
+        }
+        
+        //刷新按钮状态
+        if NSUserDefaults.standardUserDefaults().boolForKey("\(receiveFile.fileid)")
+        {
+            //当前处于刷新状态
+            ibRefreshFileButton.addGroupRotateAnimation(receiveFile.fileid)
+        }
+        else
+        {
+            //停止刷新动画
+            ibRefreshFileButton.layer?.removeAllAnimations()
+            NSUserDefaults.standardUserDefaults().setBool(false, forKey: "\(receiveFile.fileid)")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+        
+        //发送通知，更新其他cell的状态
         cellView.SendBySelecedNotification(false)
         
     }
