@@ -65,18 +65,10 @@ class ReceiveViewController: NSViewController{
         // Do view setup here.
         loginName = userDao.shareduserDao().getLogName()
         receiveArray = ReceiveFileDao.sharedReceiveFileDao().selectReceiveFileAll(loginName)
-        
-        //设置按钮字体颜色
+        //设置浏览按钮字体颜色
         let attributedString = NSMutableAttributedString.init(attributedString: ibOpenInLocalFileButtion.attributedTitle)
         attributedString.addAttribute(NSForegroundColorAttributeName, value: NSColor.whiteColor(), range: NSRange.init(location: 0, length: 12))
         ibOpenInLocalFileButtion.attributedTitle = attributedString
-   
-        lastNumProgressView.layer?.borderColor = kGreen.CGColor
-        lastDayProgressView.layer?.borderColor = kGreen.CGColor
-        
-        
-        //初始化详情页面
-        initThisView(false)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ReceiveViewController.openInPBBFile(_:)), name: "RefreshOpenInFile", object: nil)
         
@@ -86,6 +78,17 @@ class ReceiveViewController: NSViewController{
 //        ReceiveTableView.usesAlternatingRowBackgroundColors = false
         //显示背景色
         //ReceiveTableView.selectionHighlightStyle = .None //显示背景色 //.SourceList//去除背景色 //.Regular 显示背景色
+        
+        
+        //更新列表选择第一条cell
+        rootView.hidden = true
+        performSelector(#selector(ReceiveViewController.refreshReceiveTableView(_:)), withObject:nil, afterDelay: 0.5)
+//        refreshReceiveTableView(1)
+    }
+    
+    override func viewDidAppear()
+    {
+        
     }
     
     //阅读按钮
@@ -164,7 +167,7 @@ class ReceiveViewController: NSViewController{
         {
             //当打开的文件是当前显示的文件，直接刷新详情
             receiveFile = ReceiveFileDao.sharedReceiveFileDao().fetchReceiveFileCellByFileId(fileID, logName: loginName)
-            initThisView(true)
+            initThisView()
         }
         else
         {
@@ -193,25 +196,20 @@ class ReceiveViewController: NSViewController{
 //MARK: UI
 extension ReceiveViewController
 {
-    func initThisView(result:Bool)
+    func initThisView()
     {
-        if !result || receiveArray.count == 0 {
-            //
-            rootView.hidden = true
-            return
-        }
-        else{
-            rootView.hidden = false
-        }
-        
+        rootView.hidden = false
         readBtn.enabled = true
         //refresh:YES 刷新
         let seriesName = SeriesDao.sharedSeriesDao().fetchSeriesNameFromSeriesId(receiveFile.seriesID)
-        if ((seriesName as NSString).length == 0 || seriesName == "未分组文件") {
+        if ((seriesName as NSString).length == 0 || seriesName == "未分组文件")
+        {
             ibSeriesNameLabel.hidden = true
             ibSeriesLabel.hidden = true
             makeTimeToTitleConstraint.constant = 10
-        }else{
+        }
+        else
+        {
             ibSeriesNameLabel.hidden = false
             ibSeriesLabel.hidden = false
             makeTimeToTitleConstraint.constant = 41
@@ -601,9 +599,8 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
         if let receiveFile = selectedFileList(){
             self.receiveFile = ReceiveFileDao.sharedReceiveFileDao().fetchReceiveFileCellByFileId(receiveFile.fileid, logName: loginName)
             
-            
             //刷新详情
-            initThisView(true)
+            initThisView()
             
             //改变选中状态
             ChangeCellBySelectedStatus()
@@ -735,7 +732,7 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
             {
                 //原文件存在
                 cellView.textField?.textColor = kGray
-                
+                ibRefreshFileButton.enabled = true
                 //不支持文件格式
                 if !appHelper.fileIsTypeOfVideo(ReceiveColumn.filetype)
                 {
@@ -752,6 +749,7 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
             {
                 //原文件不存在
                 cellView.textField?.textColor = NSColor.redColor()
+                ibRefreshFileButton.enabled = false
             }
             return cellView
         }
@@ -826,11 +824,11 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
         self.ReceiveTableView.endUpdates()
         //显示下一个文件详情
         self.selectRowStartingAtRow(selectedIndexes.firstIndex - 1)
-        self.initThisView(true)
+        self.initThisView()
     }
     
     //右击刷新功能
-    @IBAction func refreshReceiveTableView(sender:AnyObject){
+    @IBAction @objc func refreshReceiveTableView(sender:AnyObject){
         receiveArray = nil
         receiveArray = ReceiveFileDao.sharedReceiveFileDao().selectReceiveFileAll(loginName)
         ReceiveTableView.reloadData()

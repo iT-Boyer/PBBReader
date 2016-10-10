@@ -201,6 +201,7 @@ inline void check_error(int status)
     NSString *water = [notification.userInfo valueForKey:@"waterMark"];
     NSNumber *limitTime = [notification.userInfo valueForKey:@"CountDownTime"];
     if (water) {
+        ibWaterLabel.hidden = NO;
         ibWaterLabel.stringValue = water;
     }else{
         ibWaterLabel.hidden = YES;

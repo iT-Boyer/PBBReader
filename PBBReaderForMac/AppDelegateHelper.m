@@ -185,19 +185,19 @@ singleton_implementation(AppDelegateHelper);
     {
         [custormActivityView removeFromSuperview];
         [self setAlertView:@"条件到期，无权阅读!"];
-        return;
+//        return;
     }
     if(returnValue & ERR_NEED_UPDATE)
     {
         applyNum =0;
         [custormActivityView removeFromSuperview];
         [self setAlertView:@"条件到期，无权阅读!"];
-        return;
+//        return;
     }
     
     if (![self fileIsTypeOfVideo:[[seePycFile.fileName pathExtension] lowercaseString]]){
         [self setAlertView:[NSString stringWithFormat:@"不支持该(%@)格式文件!",[seePycFile.fileName pathExtension]]];
-        return;
+//        return;
     }
     
     
@@ -715,18 +715,31 @@ singleton_implementation(AppDelegateHelper);
     
     NSString *qq = fileObject.QQ;
     NSInteger makeType = _returnValue & ERR_FREE?1:0;
-    NSInteger forbid = 0;
+    NSInteger forbid = 0;  //0:不可读 1:可读
+    
     NSInteger isEye = 1;
     //更新接收查看文件
     if(_returnValue & ERR_OK_OR_CANOPEN)
     {
         
-        if (makeType == 1) {
+        if (makeType == 1)
+        {
             forbid = fileObject.iCanOpen;
-        }else{
-            forbid = (_returnValue) & ERR_SALER?0:1;
+        }
+        else
+        {
             isEye = fileObject.canseeCondition==1;
-            qq = @"#cansee";
+            forbid = (_returnValue) & ERR_SALER?0:1;
+            //1:没申请未激活 _returnValue & ERR_SALER
+            //0:已激活
+            //1:已申请 _returnValue & ERR_APPLIED
+            //0:未申请
+            if (forbid == 1)
+            {
+                //用于区分能看时，需要更新的字段
+                qq = @"#cansee";
+            }
+            
         }
     }
     NSDate *startDay = [NSDate dateWithStringByDay:fileObject.startDay];
@@ -1209,6 +1222,10 @@ singleton_implementation(AppDelegateHelper);
 
 -(BOOL)fileIsTypeOfVideo:(NSString *)pathExt
 {
+    if(pathExt == nil || pathExt.length == 0)
+    {
+        return NO;
+    }
     NSString *str = [NSString stringWithFormat:@"%@",@"+rmvb+mkv+mpeg+mp4+mov+avi+3gp+flv+wmv+rm+mpg+vob+dat+"];
     pathExt = [pathExt lowercaseString];
     //    NSComparisonResult *result = [pathExt commonPrefixWithString:str options:NSCaseInsensitiveSearch|NSNumericSearch];

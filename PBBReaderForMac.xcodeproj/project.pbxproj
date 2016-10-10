@@ -2319,6 +2319,7 @@
 				14A505991DAA2657008BF666 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
