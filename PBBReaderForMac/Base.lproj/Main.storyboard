@@ -533,8 +533,8 @@ CA
                                                             </textFieldCell>
                                                         </textField>
                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YAl-1G-Ctg">
-                                                            <rect key="frame" x="83" y="427" width="69" height="21"/>
-                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="冥王星系列" id="AbR-Yt-zcK">
+                                                            <rect key="frame" x="83" y="427" width="81" height="21"/>
+                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="1232324323" id="AbR-Yt-zcK">
                                                                 <font key="font" size="13" name="MicrosoftYaHei"/>
                                                                 <color key="textColor" red="0.2274509804" green="0.2274509804" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -736,7 +736,6 @@ CA
                                                         <constraint firstItem="cfj-k6-G5T" firstAttribute="top" secondItem="yIm-cG-SVy" secondAttribute="top" constant="44" id="VfJ-QF-ejl"/>
                                                         <constraint firstItem="MTy-Ou-oki" firstAttribute="leading" secondItem="SPU-4d-lcK" secondAttribute="trailing" constant="6" id="Xmr-j8-uWj"/>
                                                         <constraint firstItem="rJo-gm-rXP" firstAttribute="bottom" secondItem="nlA-v2-hP1" secondAttribute="bottom" id="Y4c-nS-BTf"/>
-                                                        <constraint firstItem="YAl-1G-Ctg" firstAttribute="top" secondItem="iAQ-jZ-9Ii" secondAttribute="top" id="Z8K-7F-cjG"/>
                                                         <constraint firstItem="cfj-k6-G5T" firstAttribute="leading" secondItem="yIm-cG-SVy" secondAttribute="leading" constant="-4" id="ZIc-f8-Gzt"/>
                                                         <constraint firstItem="cfj-k6-G5T" firstAttribute="top" secondItem="QN2-0m-NQi" secondAttribute="bottom" constant="4" id="adg-hF-AWx"/>
                                                         <constraint firstAttribute="trailing" secondItem="FHe-E5-RgE" secondAttribute="trailing" constant="20" id="czh-53-kWb"/>
@@ -750,6 +749,7 @@ CA
                                                         <constraint firstItem="ihb-K2-VpE" firstAttribute="leading" secondItem="nlA-v2-hP1" secondAttribute="leading" id="sZL-17-8w6"/>
                                                         <constraint firstItem="SPU-4d-lcK" firstAttribute="top" secondItem="ZzF-PU-o90" secondAttribute="bottom" constant="15" id="spL-DB-RGL"/>
                                                         <constraint firstItem="0lh-R2-CLI" firstAttribute="top" secondItem="Xds-lv-Fve" secondAttribute="bottom" constant="10" id="tNJ-gx-B1X"/>
+                                                        <constraint firstItem="YAl-1G-Ctg" firstAttribute="centerY" secondItem="iAQ-jZ-9Ii" secondAttribute="centerY" id="tTC-C7-XOG"/>
                                                         <constraint firstItem="PUi-GE-5wk" firstAttribute="leading" secondItem="0lh-R2-CLI" secondAttribute="trailing" constant="200" id="u6q-xD-krJ"/>
                                                         <constraint firstItem="ZR0-dO-DmL" firstAttribute="trailing" secondItem="MTy-Ou-oki" secondAttribute="trailing" id="vpN-8c-r6b"/>
                                                         <constraint firstItem="QN2-0m-NQi" firstAttribute="leading" secondItem="dNA-4v-KX3" secondAttribute="trailing" id="wGN-zb-A2i"/>

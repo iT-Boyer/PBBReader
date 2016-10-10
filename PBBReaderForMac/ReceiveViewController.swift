@@ -625,26 +625,6 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
                 return
             }
         
-        // 判断本地文件ID是否和数据库中的id一致，否则更新状态
-        let fileID = PycFile().getAttributePycFileId(receiveFile.fileurl)
-        if fileID != Int32(receiveFile.fileid) {
-            //
-            //
-            readBtn.image = NSImage.init(named: "send_read_no")
-            readBtn.enabled = false
-            cellView.textField?.textColor = NSColor.redColor()
-            
-            //提示本地文件错误
-            // Make a copy of default style.
-            var style = Toasty.defaultStyle
-            // Navigation bar is translucent so the view starts from under the bars. Set margin accordingly.
-            style.margin.top = 0
-            style.backgroundColor = NSColor.whiteColor()
-            style.textColor = NSColor.blackColor()
-            // Show our toast.
-            rootView.showToastWithText("信息与本地文件不符，建议删除该条无效信息！", usingStyle: style)
-        }
-        
         //刷新按钮状态
         if NSUserDefaults.standardUserDefaults().boolForKey("\(receiveFile.fileid)")
         {
@@ -657,6 +637,37 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
             ibRefreshFileButton.layer?.removeAllAnimations()
             NSUserDefaults.standardUserDefaults().setBool(false, forKey: "\(receiveFile.fileid)")
             NSUserDefaults.standardUserDefaults().synchronize()
+        }
+        
+        // 判断本地文件ID是否和数据库中的id一致，否则更新状态
+        //设置单元格字体样式
+        if NSFileManager.defaultManager().fileExistsAtPath(receiveFile.fileurl)
+        {
+            ibRefreshFileButton.enabled = true
+            
+            let fileID = PycFile().getAttributePycFileId(receiveFile.fileurl)
+            if fileID != Int32(receiveFile.fileid)
+            {
+                //
+                //
+                readBtn.image = NSImage.init(named: "send_read_no")
+                readBtn.enabled = false
+                cellView.textField?.textColor = NSColor.redColor()
+                
+                //提示本地文件错误
+                // Make a copy of default style.
+                var style = Toasty.defaultStyle
+                // Navigation bar is translucent so the view starts from under the bars. Set margin accordingly.
+                style.margin.top = 0
+                style.backgroundColor = NSColor.whiteColor()
+                style.textColor = NSColor.blackColor()
+                // Show our toast.
+                rootView.showToastWithText("信息与本地文件不符，建议删除该条无效信息！", usingStyle: style)
+            }
+        }
+        else
+        {
+            ibRefreshFileButton.enabled = false
         }
         
         //发送通知，更新其他cell的状态
@@ -732,7 +743,6 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
             {
                 //原文件存在
                 cellView.textField?.textColor = kGray
-                ibRefreshFileButton.enabled = true
                 //不支持文件格式
                 if !appHelper.fileIsTypeOfVideo(ReceiveColumn.filetype)
                 {
@@ -749,7 +759,6 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
             {
                 //原文件不存在
                 cellView.textField?.textColor = NSColor.redColor()
-                ibRefreshFileButton.enabled = false
             }
             return cellView
         }
