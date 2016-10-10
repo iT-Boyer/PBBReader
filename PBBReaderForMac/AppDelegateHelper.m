@@ -108,7 +108,7 @@ singleton_implementation(AppDelegateHelper);
     //custormActivityView = (AdvertisingView *)[[NSWindowController alloc] initWithWindowNibName:@"AdvertisingView"];
     //加载广告
     if(!custormActivityView){
-        [self setKeyWindow];
+        [self setKeyWindow:false];
         if (keyWindow) {
             NSArray *array;
             NSNib *nib = [[NSNib alloc] initWithNibNamed:@"AdvertisingViewOSX" bundle:nil];
@@ -123,7 +123,7 @@ singleton_implementation(AppDelegateHelper);
             }
         }
     }else{
-        [self setKeyWindow];
+        [self setKeyWindow:false];
         [custormActivityView startLoadingWindow:keyWindow fileID:fileID isOutLine:OutLine];
     }
     
@@ -507,7 +507,7 @@ singleton_implementation(AppDelegateHelper);
                 bindingPhone.fileID = seePycFile.fileID;
 //                NSWindow *superView = [[NSApplication sharedApplication] keyWindow];
 //                superView.contentViewController = bindingPhone;
-                [self setKeyWindow];
+                [self setKeyWindow:true];
                 [keyWindow.contentViewController presentViewControllerAsSheet:bindingPhone];
             } else {
                 applyNum =0;
@@ -859,7 +859,7 @@ singleton_implementation(AppDelegateHelper);
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                 NSString *userName = [[userDao shareduserDao] getLogName];
                 BOOL isOffLine = FALSE;
-            
+                
                 NSString *result=[_fileManager seePycFile2:fileObject.filePycName
                                                forUser:userName
                                                pbbFile:fileObject.filePycNameFromServer
@@ -901,6 +901,7 @@ singleton_implementation(AppDelegateHelper);
 #pragma mark － 申请成功 0-0-0 重新提交
 -(BOOL)getApplyFileInfoByApplyId:(NSInteger)applyId FileID:(NSInteger)applyFileID
 {
+    [self setKeyWindow:false];
     [self setText:@"重新申请激活"];
     return [_fileManager getApplyFileInfoByApplyId:applyId FileID:applyFileID];
 }
@@ -943,6 +944,7 @@ singleton_implementation(AppDelegateHelper);
 #pragma mark - 申请手动激活
 - (NSString *)applyFileByFidAndOrderId:(NSInteger )fileId orderId:(NSInteger )thOrderId applyId:(NSInteger)theApplyId  qq:(NSString *)theQQ email:(NSString *)theEmail phone:(NSString *)thePhone field1:(NSString *)theField1 field2:(NSString *)theField2 seeLogName:(NSString *)theSeeLogName fileName:(NSString*)theFileName
 {
+    [self setKeyWindow:false];
     applyNum = 0;
     //重新申请
     [self setText:@"申请激活"];
@@ -1103,7 +1105,7 @@ singleton_implementation(AppDelegateHelper);
     activationSucVc.needReapply = pycfileObject.needReapply;
     
     [[ReceiveFileDao sharedReceiveFileDao]updateReceiveFileApplyOpen:0 FileId:pycfileObject.fileID];
-    [self setKeyWindow];
+    [self setKeyWindow:true];
     [keyWindow.contentViewController presentViewControllerAsSheet:activationSucVc];
 }
 
@@ -1150,7 +1152,7 @@ singleton_implementation(AppDelegateHelper);
     }
     [[ReceiveFileDao sharedReceiveFileDao]updateReceiveFileApplyOpen:0 FileId:fileID];
     
-    [self setKeyWindow];
+    [self setKeyWindow:true];
     [keyWindow.contentViewController presentViewControllerAsSheet:activationVc];
 }
 
@@ -1165,7 +1167,7 @@ singleton_implementation(AppDelegateHelper);
 - (void)show{
     isLoading = YES;
     //    keyWindow = [[NSApplication sharedApplication] keyWindow];
-    [self setKeyWindow];
+    [self setKeyWindow:true];
     if(!hud){
         hud = [MBProgressHUD showHUDAddedTo:keyWindow.contentView animated:YES];
         hud.removeFromSuperViewOnHide = YES;
@@ -1177,14 +1179,18 @@ singleton_implementation(AppDelegateHelper);
     }
 }
 
--(void)setKeyWindow{
+-(void)setKeyWindow:(BOOL)isCanClose{
     NSArray *windows = [[NSApplication sharedApplication] windows];
     for (NSWindow *window in windows) {
         //
         if ([window isKindOfClass:[PlayerWindow class]]) {
             //播放器窗口
             keyWindow = (PlayerWindow *)window;
-            
+            if (isCanClose)
+            {
+                //服务器响应之后，设置window关闭按钮可用
+                [keyWindow setStyleMask:[window styleMask] | NSClosableWindowMask];
+            }
         }
         
         if ([window.identifier isEqualToString:@"MainWindow"]) {

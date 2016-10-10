@@ -162,6 +162,8 @@ inline void check_error(int status)
     [window setPlayerAndInit:self.player];
     [window setLastWindow:lastWindow];
     [window setAcceptsMouseMovedEvents:YES];
+    //设置在初始化时关闭按钮不可用
+    [window setStyleMask:[window styleMask] & ~ NSClosableWindowMask];
 //    [self.loadingImage setAnimates:YES];
     
     PlayerEventProxy *ep = [[PlayerEventProxy alloc] init];
@@ -196,7 +198,11 @@ inline void check_error(int status)
 
 //- (void)loadVideo:(VideoAddress *)video{
 
-- (void)setKeyInfo:(NSNotification *) notification{
+- (void)setKeyInfo:(NSNotification *) notification
+{
+    //服务器响应之后，设置window关闭按钮可用
+    [window setStyleMask:[window styleMask] | NSClosableWindowMask];
+    
     NSString *URL = [notification.userInfo valueForKey:@"set_key_info"];
     NSString *water = [notification.userInfo valueForKey:@"waterMark"];
     NSNumber *limitTime = [notification.userInfo valueForKey:@"CountDownTime"];

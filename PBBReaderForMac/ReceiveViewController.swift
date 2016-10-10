@@ -859,7 +859,17 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
     //双击打开文件
     @IBAction func tblvwDoubleClick(sender:AnyObject)
     {
-        if(!readBtn.enabled){
+        if(!readBtn.enabled)
+        {
+            //提示本地文件错误
+            // Make a copy of default style.
+            var style = Toasty.defaultStyle
+            // Navigation bar is translucent so the view starts from under the bars. Set margin accordingly.
+            style.margin.top = 0
+            style.backgroundColor = NSColor.whiteColor()
+            style.textColor = NSColor.blackColor()
+            // Show our toast.
+            rootView.showToastWithText("该文件无法阅读！", usingStyle: style)
             return
         }
         let row = ReceiveTableView.selectedRow
@@ -867,7 +877,17 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
             //
             let ReceiveColumn = self.receiveArray[row] as! OutFile
             
-            if !NSFileManager.defaultManager().fileExistsAtPath(ReceiveColumn.fileurl) {
+            if !NSFileManager.defaultManager().fileExistsAtPath(ReceiveColumn.fileurl)
+            {
+                //提示本地文件错误
+                // Make a copy of default style.
+                var style = Toasty.defaultStyle
+                // Navigation bar is translucent so the view starts from under the bars. Set margin accordingly.
+                style.margin.top = 0
+                style.backgroundColor = NSColor.whiteColor()
+                style.textColor = NSColor.blackColor()
+                // Show our toast.
+                rootView.showToastWithText("该文件无法阅读！", usingStyle: style)
                 return;
             }
             //            NSWorkspace.sharedWorkspace().selectFile(ReceiveColumn.fileurl, inFileViewerRootedAtPath: "")

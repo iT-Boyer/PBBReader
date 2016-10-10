@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PBBReaderForMac/bilibili/Player/PlayerView.mm"
-            timestampString = "497773178.689724"
+            timestampString = "497787551.201432"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "697"
-            endingLineNumber = "697"
+            startingLineNumber = "703"
+            endingLineNumber = "703"
             landmarkName = "-handleEvent:"
             landmarkType = "5">
          </BreakpointContent>

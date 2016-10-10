@@ -577,7 +577,8 @@ CFStringRef stringByKeyCode(CGKeyCode keyCode)
     return YES;
 }
 
-- (void)windowWillClose:(NSNotification *)notification{
+- (void)windowWillClose:(NSNotification *)notification
+{
     NSLog(@"[PlayerWindow] Destroy player");
     [self destroyPlayer];
 }
