@@ -1415,6 +1415,7 @@
 				E8F8A211AFB888C78DEE3106 /* 📦 Check Pods Manifest.lock */,
 				0DECE3213ECDCD8C67DD6428 /* [CP] Check Pods Manifest.lock */,
 				14A4203D1D549CD7009B9DF3 /* 自动递增build版本号 */,
+				14A5059A1DAA2657008BF666 /* Embed Frameworks */,
 				A7CEB6B6091EACAA3501D251 /* [CP] Check Pods Manifest.lock */,
 				143E37F91D3F1809004B0A4D /* [CP] Check Pods Manifest.lock */,
 				143E37FA1D3F1809004B0A4D /* [CP] Check Pods Manifest.lock */,
@@ -1430,7 +1431,6 @@
 				14815B371D4B02CD00922A62 /* 单个文件执行install_name_tool */,
 				14A420411D582EE3009B9DF3 /* import svn */,
 				14EA57C71D7D6C9A0026602B /* 启动Package */,
-				14A5059A1DAA2657008BF666 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1748,7 +1748,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = "#下载\nPerfect=\"/Applications/Packages.app\"\n# -d: 判断目录是否存在  -f: 判断文件是否存在\nif [ -d \"$Perfect\" ]; then\n    echo 'Packages.app已安装'\nelse\n    echo '下载Packages.dmg程序...'\n    curl -o Packages.dmg http://s.sudre.free.fr/Software/files/Packages.dmg\n    #安装Packages.app\n    open /Applications/Packages.dmg\nfi\n#打开程序\nopen $PROJECT_DIR/Distribution/PBBReaderForOSX.pkgproj";
+			shellScript = "#下载\nPerfect=\"/Applications/Packages.app\"\n# -d: 判断目录是否存在  -f: 判断文件是否存在\nif [ -d \"$Perfect\" ]; then\n    echo 'Packages.app已安装'\nelse\n    echo '下载Packages.dmg程序...'\n    curl -o Packages.dmg http://s.sudre.free.fr/Software/files/Packages.dmg\n    #安装Packages.app\n    open /Applications/Packages.dmg\nfi\n#打开程序\n#open $PROJECT_DIR/Distribution/PBBReaderForOSX.pkgproj";
 		};
 		6FF822FB36820B453C9B8EDD /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2097,7 +2097,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/PBBReaderForMac/bilibili/libmpv",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-iquote",
@@ -2163,7 +2163,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/PBBReaderForMac/bilibili/libmpv",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-iquote",
