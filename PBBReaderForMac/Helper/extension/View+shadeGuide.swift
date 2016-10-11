@@ -74,11 +74,11 @@ extension NSView{
             //将newValue视图移动到self.subviews最底层
             //self.sendSubviewToBack(newValue)
             newValue.translatesAutoresizingMaskIntoConstraints = false
-            let backgroundImageViewV = NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[ImageView]-0-|",
+            let backgroundImageViewV = NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[ImageView]-0-|",
                                                                                       options: [],
                                                                                       metrics: nil,
                                                                                       views: ["ImageView":newValue])
-            let backgroundImageViewH = NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[ImageView]-0-|",
+            let backgroundImageViewH = NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[ImageView]-0-|",
                                                                                       options: [],
                                                                                       metrics: nil,
                                                                                       views: ["ImageView":newValue])
@@ -93,18 +93,18 @@ extension NSView{
         get{
             
             let leftButton = NSButton()
-            leftButton.hidden = true
+            leftButton.isHidden = true
             return leftButton
         }
         
         set{
             self.addSubview(newValue)
             newValue.translatesAutoresizingMaskIntoConstraints = false
-            let leftItem_Vconstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:|-27-[leftItem]",
+            let leftItem_Vconstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|-27-[leftItem]",
                                                                                        options: [],
                                                                                        metrics: nil,
                                                                                        views: ["leftItem":newValue])
-            let leftItem_Hconstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|-leftConstant-[leftItem]",
+            let leftItem_Hconstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-leftConstant-[leftItem]",
                                                                                        options: [],
                                                                                        metrics: ["leftConstant":leftTraitHrizontalOfLeftItem],
                                                                                        views: ["leftItem":newValue])
@@ -129,11 +129,11 @@ extension NSView{
             newValue.translatesAutoresizingMaskIntoConstraints = false
             
             
-            let rightItem_Vconstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:|-31-[rightItem]",
+            let rightItem_Vconstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|-31-[rightItem]",
                                                                                         options: [],
                                                                                         metrics: nil,
                                                                                         views: ["rightItem":newValue])
-            let rightItem_Hconstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:[rightItem]-rightConstant-|",
+            let rightItem_Hconstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:[rightItem]-rightConstant-|",
                                                                                         options: [],
                                                                                         metrics: ["rightConstant":rightTraitHrizontalOfRightItem],
                                                                                         views: ["rightItem":newValue])
@@ -146,14 +146,14 @@ extension NSView{
     }
     public func addGuideShadeToFullScreen(){
         //
-        NSApplication.sharedApplication().keyWindow?.contentView!.addSubview(self)
+        NSApplication.shared().keyWindow?.contentView!.addSubview(self)
         self.translatesAutoresizingMaskIntoConstraints = false
-        let vConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[self]-0-|",
+        let vConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[self]-0-|",
                                                                           options: [],
                                                                           metrics: nil,
                                                                           views: ["self":self])
         
-        let hConstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[self]-0-|",
+        let hConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[self]-0-|",
                                                                           options: [],
                                                                           metrics: nil,
                                                                           views: ["self":self])
@@ -162,15 +162,15 @@ extension NSView{
     }
     
     //嵌套函数，隐藏操作
-    func hiddenGuideItem(item:NSButton) {
+    func hiddenGuideItem(_ item:NSButton) {
         //
         print("隐藏操作。。。。")
-        item.hidden = true
+        item.isHidden = true
         for view in self.subviews {
             //
-            if view != item && view.hidden {
+            if view != item && view.isHidden {
                 //
-                self.hidden = true
+                self.isHidden = true
                 self.removeFromSuperview()
             }
         }

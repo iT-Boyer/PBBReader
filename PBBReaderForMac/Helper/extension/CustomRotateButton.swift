@@ -47,10 +47,10 @@ class CustomRotateButton: NSButton {
     
     
     //添加旋转动画
-    func addGroupRotateAnimation(cellID:Int) {
+    func addGroupRotateAnimation(_ cellID:Int) {
         //持久化动画runing
-        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "\(cellID)")
-        NSUserDefaults.standardUserDefaults().synchronize()
+        UserDefaults.standard.set(true, forKey: "\(cellID)")
+        UserDefaults.standard.synchronize()
         
         //方法二: 观察者模式控制图标中心点位置
 //        addObserVerKVO()
@@ -61,16 +61,16 @@ class CustomRotateButton: NSButton {
         animation.duration = 2.0
         animation.autoreverses = true
         animation.repeatCount = MAXFLOAT //NSIntegerMax // CGFLOAT_MAX
-        animation.fromValue = NSNumber.init(float: 1.0)
-        animation.toValue = NSNumber.init(float: 0.0)
+        animation.fromValue = NSNumber.init(value: 1.0)
+        animation.toValue = NSNumber.init(value: 0.0)
         
         //自转动画
         let animation1 = CABasicAnimation.init(keyPath: "transform.rotation")
         animation1.duration = 2.0
         //        animation1.autoreverses = true
         animation1.repeatCount = MAXFLOAT
-        animation1.fromValue = NSNumber.init(double: Double(self.angle))
-        animation1.toValue = NSNumber.init(double: Double(self.angle))
+        animation1.fromValue = NSNumber.init(value: Double(self.angle))
+        animation1.toValue = NSNumber.init(value: Double(self.angle))
         //        animation1.toValue = NSNumber.init(double: Double(self.angle) * (M_PI/180.0))
         
         let group = CAAnimationGroup.init()
@@ -79,25 +79,25 @@ class CustomRotateButton: NSButton {
         group.repeatCount = MAXFLOAT
         group.animations = [animation1]
         
-        layer?.addAnimation(group, forKey: "")
+        layer?.add(group, forKey: "")
     }
     
     //添加KVO :http://www.jianshu.com/p/e036e53d240e
     private var myContext = 0
     func addObserVerKVO() {
         //
-        addObserver(self, forKeyPath: "frame", options: .New, context: &myContext)
+        addObserver(self, forKeyPath: "frame", options: .new, context: &myContext)
     }
     
-    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+    override func observeValue(forKeyPath keyPath: String?, of object: AnyObject?, change: [NSKeyValueChangeKey : AnyObject]?, context: UnsafeMutablePointer<Void>?) {
         //
         if context == &myContext {
-            if let newValue = change?[NSKeyValueChangeNewKey] {
+            if let newValue = change?[NSKeyValueChangeKey.newKey] {
                 NSLog("Date changed: \(newValue)")
                 resetLayerPoint()
             }
         } else {
-            super.observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
+            super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
         }
     }
     

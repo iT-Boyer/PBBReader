@@ -70,17 +70,17 @@ class ActivationSuccessController: NSViewController {
         
         if (needReapply == 1) {
             ibSelfTitleLabel.stringValue = "激活失败"
-            ibRetoActivation.hidden = false
+            ibRetoActivation.isHidden = false
         }else{
             ibSelfTitleLabel.stringValue = "申请已提交"
-            ibRetoActivation.hidden = true
+            ibRetoActivation.isHidden = true
         }
         
         
         if (needShowDiff == 0) {
             ibShowInfoLabel.textColor = kGreen
         }else{
-            ibShowInfoLabel.textColor = NSColor.orangeColor()
+            ibShowInfoLabel.textColor = NSColor.orange()
         }
         
         ibShowInfoLabel.stringValue = showInfo
@@ -90,15 +90,15 @@ class ActivationSuccessController: NSViewController {
         ibRemarkLabel.stringValue = remark
     }
     
-    @IBAction func ibaRetoActivation(sender: AnyObject) {
-        self.dismissController(true)
-        AppDelegateHelper.sharedAppDelegateHelper().getApplyFileInfoByApplyId(applyId,fileID: fileId)
+    @IBAction func ibaRetoActivation(_ sender: AnyObject) {
+        self.dismiss(true)
+        AppDelegateHelper.shared().getApplyFileInfo(byApplyId: applyId,fileID: fileId)
     }
     
-    override func dismissController(sender: AnyObject?) {
-        super.dismissController(sender)
+    override func dismiss(_ sender: AnyObject?) {
+        super.dismiss(sender)
         if !(sender is Bool){
-            NSNotificationCenter.defaultCenter().postNotificationName("CancleClosePlayerWindows", object: nil, userInfo: ["pycFileID":fileId])
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "CancleClosePlayerWindows"), object: nil, userInfo: ["pycFileID":fileId])
         }
     }
 }

@@ -55,7 +55,7 @@ class ReceiveViewController: NSViewController{
     
     //必须声明为全局属性，否则在声明PycFile调用delegate时，delegate = nil
     //还出现第一次启动执行两次openFiles方法
-    let appHelper = AppDelegateHelper.sharedAppDelegateHelper()
+    let appHelper = AppDelegateHelper.shared()
     
     //右击菜单
     @IBOutlet var cntxMnuTableView: NSMenu!
@@ -63,16 +63,16 @@ class ReceiveViewController: NSViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
-        loginName = userDao.shareduserDao().getLogName()
-        receiveArray = ReceiveFileDao.sharedReceiveFileDao().selectReceiveFileAll(loginName)
+        loginName = userDao.shareduser().getLogName()
+        receiveArray = ReceiveFileDao.shared().selectReceiveFileAll(loginName)
         //设置浏览按钮字体颜色
         let attributedString = NSMutableAttributedString.init(attributedString: ibOpenInLocalFileButtion.attributedTitle)
-        attributedString.addAttribute(NSForegroundColorAttributeName, value: NSColor.whiteColor(), range: NSRange.init(location: 0, length: 12))
+        attributedString.addAttribute(NSForegroundColorAttributeName, value: NSColor.white(), range: NSRange.init(location: 0, length: 12))
         ibOpenInLocalFileButtion.attributedTitle = attributedString
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ReceiveViewController.openInPBBFile(_:)), name: "RefreshOpenInFile", object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ReceiveViewController.openInPBBFile(_:)), name: "RefreshOpenInFile" as NSNotification.Name, object: nil)
         
-        ReceiveTableView.setDraggingSourceOperationMask(.Every, forLocal: false)
+        ReceiveTableView.setDraggingSourceOperationMask(.every, forLocal: false)
      
         //取消行与行之间蓝白交替显示的背景
 //        ReceiveTableView.usesAlternatingRowBackgroundColors = false
@@ -81,8 +81,8 @@ class ReceiveViewController: NSViewController{
         
         
         //更新列表选择第一条cell
-        rootView.hidden = true
-        performSelector(#selector(ReceiveViewController.refreshReceiveTableView(_:)), withObject:nil, afterDelay: 0.5)
+        rootView.isHidden = true
+        perform(#selector(ReceiveViewController.refreshReceiveTableView(_:)), with:nil, afterDelay: 0.5)
 //        refreshReceiveTableView(1)
     }
     
@@ -92,18 +92,18 @@ class ReceiveViewController: NSViewController{
     }
     
     //阅读按钮
-    @IBAction func readBtn(sender: AnyObject) {
-        if !NSFileManager.defaultManager().fileExistsAtPath(receiveFile.fileurl) {
+    @IBAction func readBtn(_ sender: AnyObject) {
+        if !FileManager.default.fileExists(atPath: receiveFile.fileurl) {
             return
         }
-        appHelper.phoneNo = ""
-        appHelper.messageID = ""
-        appHelper.loadVideoWithLocalFiles({receiveFile.fileurl}())
+        appHelper?.phoneNo = ""
+        appHelper?.messageID = ""
+        appHelper?.loadVideo(withLocalFiles: {receiveFile.fileurl}())
     }
     
 
     //浏览按钮
-    @IBAction func ibaBrowseFinder(sender: AnyObject) {
+    @IBAction func ibaBrowseFinder(_ sender: AnyObject) {
         let panel = NSOpenPanel()
         panel.message = ""
         panel.prompt = "打开"
@@ -113,60 +113,60 @@ class ReceiveViewController: NSViewController{
         let result = panel.runModal()
         if result == NSFileHandlingPanelOKButton {
             //
-            path_all = (panel.URL?.path!)!
+            path_all = (panel.url?.path!)!
             print("文件路径：\(path_all)")
-            appHelper.phoneNo = ""
-            appHelper.messageID = ""
-            appHelper.loadVideoWithLocalFiles({path_all}())
+            appHelper?.phoneNo = ""
+            appHelper?.messageID = ""
+            appHelper?.loadVideo(withLocalFiles: {path_all}())
         }
         
     }
     
     //删除该文件
-    @IBAction func ibaDeleteFileData(sender: AnyObject) {
+    @IBAction func ibaDeleteFileData(_ sender: AnyObject) {
         mnuRemoveRowSelected(sender)
     }
     
     //刷新该文件
-    @IBAction func ibaRefreshFileData(sender: AnyObject) {
+    @IBAction func ibaRefreshFileData(_ sender: AnyObject) {
         
-        if NSUserDefaults.standardUserDefaults().boolForKey("\(receiveFile.fileid)")
+        if UserDefaults.standard.bool(forKey: "\(receiveFile.fileid)")
         {
             //当前处于刷新状态
             return
         }
-        appHelper.phoneNo = ""
-        appHelper.messageID = ""
-        appHelper.getFileInfoById(receiveFile.fileid, pbbFile: "\(receiveFile.filename).pbb", pycFile: receiveFile.fileurl, fileType: 1)
+        appHelper?.phoneNo = ""
+        appHelper?.messageID = ""
+        appHelper?.getFileInfo(byId: receiveFile.fileid, pbbFile: "\(receiveFile.filename).pbb", pycFile: receiveFile.fileurl, fileType: 1)
         
         //开始刷新动画
         ibRefreshFileButton.addGroupRotateAnimation(receiveFile.fileid)
     }
     
     //MARK: 通知处理事件 更新主页
-    func openInPBBFile(notification:NSNotification){
+    func openInPBBFile(_ notification:Notification){
         
-        let fileID = notification.userInfo!["pycFileID"] as! Int
+        let fileID = (notification as NSNotification).userInfo!["pycFileID"] as! Int
         
         //停止刷新动画
         ibRefreshFileButton.layer?.removeAllAnimations()
-        NSUserDefaults.standardUserDefaults().setBool(false, forKey: "\(fileID)")
-        NSUserDefaults.standardUserDefaults().synchronize()
+        UserDefaults.standard.set(false, forKey: "\(fileID)")
+        UserDefaults.standard.synchronize()
         
         // Make a copy of default style.
         var style = Toasty.defaultStyle
         
         // Navigation bar is translucent so the view starts from under the bars. Set margin accordingly.
         style.margin.top = 0
-        style.backgroundColor = NSColor.whiteColor()
-        style.textColor = NSColor.blackColor()
+        style.backgroundColor = NSColor.white()
+        style.textColor = NSColor.black()
         // Show our toast.
         rootView.showToastWithText("加载完成！", usingStyle: style)
         
         if receiveFile != nil && receiveFile.fileid == fileID
         {
             //当打开的文件是当前显示的文件，直接刷新详情
-            receiveFile = ReceiveFileDao.sharedReceiveFileDao().fetchReceiveFileCellByFileId(fileID, logName: loginName)
+            receiveFile = ReceiveFileDao.shared().fetchReceiveFileCell(byFileId: fileID, logName: loginName)
             initThisView()
         }
         else
@@ -178,15 +178,15 @@ class ReceiveViewController: NSViewController{
                 {
                     //如果文件已在列表中，显示该文件的详情信息
                     isInset = false
-                    let theRow = receiveArray.indexOfObject(pycFile)
+                    let theRow = receiveArray.index(of: pycFile)
                     //选中cell事件
-                    ReceiveTableView.selectRowIndexes(NSIndexSet.init(index: theRow), byExtendingSelection: false)
+                    ReceiveTableView.selectRowIndexes(IndexSet.init(integer: theRow), byExtendingSelection: false)
                 }
             }
             //新增文件
             if isInset
             {
-                receiveFile = ReceiveFileDao.sharedReceiveFileDao().fetchReceiveFileCellByFileId(fileID, logName: loginName)
+                receiveFile = ReceiveFileDao.shared().fetchReceiveFileCell(byFileId: fileID, logName: loginName)
                 insertNewRow(receiveFile)
             }
         }
@@ -198,20 +198,20 @@ extension ReceiveViewController
 {
     func initThisView()
     {
-        rootView.hidden = false
-        readBtn.enabled = true
+        rootView.isHidden = false
+        readBtn.isEnabled = true
         //refresh:YES 刷新
-        let seriesName = SeriesDao.sharedSeriesDao().fetchSeriesNameFromSeriesId(receiveFile.seriesID)
-        if ((seriesName as NSString).length == 0 || seriesName == "未分组文件")
+        let seriesName = SeriesDao.shared().fetchSeriesName(fromSeriesId: receiveFile.seriesID)
+        if ((seriesName! as NSString).length == 0 || seriesName == "未分组文件")
         {
-            ibSeriesNameLabel.hidden = true
-            ibSeriesLabel.hidden = true
+            ibSeriesNameLabel.isHidden = true
+            ibSeriesLabel.isHidden = true
             makeTimeToTitleConstraint.constant = 10
         }
         else
         {
-            ibSeriesNameLabel.hidden = true
-            ibSeriesLabel.hidden = false
+            ibSeriesNameLabel.isHidden = true
+            ibSeriesLabel.isHidden = false
             makeTimeToTitleConstraint.constant = 41
 //            ibSeriesNameLabel.stringValue = seriesName
             ibSeriesLabel.stringValue = "所属系列：\(seriesName)"
@@ -223,7 +223,7 @@ extension ReceiveViewController
             makerLabel.stringValue = "作者 \(receiveFile.fileOwnerNick) 对你说："
         }
         
-        ibMakeTime.stringValue = "制作时间：\(receiveFile.sendtime.dateString())"
+//        ibMakeTime.stringValue = "制作时间：\(receiveFile.sendtime.dateString())"
         titleLabel.stringValue = receiveFile.filename
         
         if let qq = receiveFile.fileQQ
@@ -260,23 +260,23 @@ extension ReceiveViewController
         //次数限制
         if (receiveFile.limitnum == 0)
         {
-            self.lastNumProgressView.hidden = true
+            self.lastNumProgressView.isHidden = true
             lastNumLabel.stringValue = "不限制"
             lastNumLabel.textColor = kGreen
         }
         else
         {
             
-            self.lastNumProgressView.hidden = false
+            self.lastNumProgressView.isHidden = false
             let lastNum = "\(receiveFile.lastnum)"
             let limitnum = "\(receiveFile.limitnum)"
             
             if (receiveFile.fileTimeType == 4)
             {
-                lastNumLabel.attributedStringValue = NSMutableAttributedString.init(attributedString: NSAttributedString.init(string: "剩余\(lastNum)次，共 \(limitnum) 次"))
-                lastNumLabel.AddColorText("剩余", AColor: kGray, AFont: nil)
-                lastNumLabel.AddColorText("次，共", AColor: kGray, AFont: nil)
-                lastNumLabel.AddColorText(" 次", AColor: kGray, AFont: nil)
+                lastNumLabel.attributedStringValue = NSMutableAttributedString.init(attributedString: AttributedString.init(string: "剩余\(lastNum)次，共 \(limitnum) 次"))
+                lastNumLabel.addColorText("剩余", aColor: kGray, aFont: nil)
+                lastNumLabel.addColorText("次，共", aColor: kGray, aFont: nil)
+                lastNumLabel.addColorText(" 次", aColor: kGray, aFont: nil)
                 lastNumProgressView.doubleValue = (Double(receiveFile.lastnum) * 1.0) / Double(receiveFile.limitnum)
             }
             else
@@ -284,17 +284,17 @@ extension ReceiveViewController
                 
                 if (receiveFile.fileMakeType == 1)
                 {
-                    lastNumLabel.attributedStringValue = NSMutableAttributedString.init(attributedString: NSAttributedString.init(string: "剩余\(lastNum)次，共 \(limitnum) 次"))
-                    lastNumLabel.AddColorText("剩余", AColor: kGray, AFont: nil)
-                    lastNumLabel.AddColorText("次，共", AColor: kGray, AFont: nil)
-                    lastNumLabel.AddColorText(" 次", AColor: kGray, AFont: nil)
+                    lastNumLabel.attributedStringValue = NSMutableAttributedString.init(attributedString: AttributedString.init(string: "剩余\(lastNum)次，共 \(limitnum) 次"))
+                    lastNumLabel.addColorText("剩余", aColor: kGray, aFont: nil)
+                    lastNumLabel.addColorText("次，共", aColor: kGray, aFont: nil)
+                    lastNumLabel.addColorText(" 次", aColor: kGray, aFont: nil)
                     lastNumProgressView.doubleValue = (Double(receiveFile.lastnum) * 1.0) / Double(receiveFile.limitnum)
                 }else
                 {
-                    self.lastNumLabel.attributedStringValue = NSMutableAttributedString.init(attributedString: NSAttributedString.init(string: "共 \(limitnum) 次"))
-                    lastNumLabel.AddColorText("共", AColor: kGray, AFont: nil)
-                    lastNumLabel.AddColorText(" 次", AColor: kGray, AFont: nil)
-                    lastNumProgressView.hidden = true
+                    self.lastNumLabel.attributedStringValue = NSMutableAttributedString.init(attributedString: AttributedString.init(string: "共 \(limitnum) 次"))
+                    lastNumLabel.addColorText("共", aColor: kGray, aFont: nil)
+                    lastNumLabel.addColorText(" 次", aColor: kGray, aFont: nil)
+                    lastNumProgressView.isHidden = true
                 }
             }
         }
@@ -305,23 +305,23 @@ extension ReceiveViewController
             
             if (receiveFile.fileMakeType == 0) {
                 //hsg
-                ibOnceLong.hidden = true
+                ibOnceLong.isHidden = true
             }
             
         }else{
             let mm = receiveFile.limittime / 60;
             let ss = receiveFile.limittime % 60;
             if (mm == 0) {
-                onceTimeLabel.attributedStringValue = NSMutableAttributedString.init(attributedString: NSAttributedString.init(string: "\(ss) 秒"))
-                onceTimeLabel.AddColorText("秒", AColor: NSColor.blackColor(), AFont: nil)
+                onceTimeLabel.attributedStringValue = NSMutableAttributedString.init(attributedString: AttributedString.init(string: "\(ss) 秒"))
+                onceTimeLabel.addColorText("秒", aColor: NSColor.black(), aFont: nil)
             } else {
                 if (ss == 0) {
-                    onceTimeLabel.attributedStringValue =  NSMutableAttributedString.init(attributedString: NSAttributedString.init(string: "\(mm) 分钟"))
-                    onceTimeLabel.AddColorText("分钟", AColor: NSColor.blackColor(), AFont: nil)
+                    onceTimeLabel.attributedStringValue =  NSMutableAttributedString.init(attributedString: AttributedString.init(string: "\(mm) 分钟"))
+                    onceTimeLabel.addColorText("分钟", aColor: NSColor.black(), aFont: nil)
                 }else{
-                    onceTimeLabel.attributedStringValue = NSMutableAttributedString.init(attributedString: NSAttributedString.init(string: "\(mm)分\(ss)秒"))
-                    onceTimeLabel.AddColorText("分", AColor: NSColor.blackColor(), AFont: nil)
-                    onceTimeLabel.AddColorText("秒", AColor: NSColor.blackColor(), AFont: nil)
+                    onceTimeLabel.attributedStringValue = NSMutableAttributedString.init(attributedString: AttributedString.init(string: "\(mm)分\(ss)秒"))
+                    onceTimeLabel.addColorText("分", aColor: NSColor.black(), aFont: nil)
+                    onceTimeLabel.addColorText("秒", aColor: NSColor.black(), aFont: nil)
                 }
             }
         }
@@ -329,23 +329,23 @@ extension ReceiveViewController
         //天数限制
         if (!receiveFile.freetime){
             
-            lastDayProgressView.hidden = true
-            canTimeDateLabel.hidden = true
+            lastDayProgressView.isHidden = true
+            canTimeDateLabel.isHidden = true
             lastDayLabel.stringValue = "不限制"
-            lastDayLabel.AddColorText("不限制", AColor: kGreen, AFont: nil)
+            lastDayLabel.addColorText("不限制", aColor: kGreen, aFont: nil)
         }else {
-            lastDayProgressView.hidden = false
-            canTimeDateLabel.hidden = false
+            lastDayProgressView.isHidden = false
+            canTimeDateLabel.isHidden = false
             let lastday = "\(receiveFile.lastday)"
             let allday = "\(receiveFile.allday)"
-            lastDayLabel.attributedStringValue =  NSMutableAttributedString.init(attributedString: NSAttributedString.init(string: "剩余\(lastday)天，共 \(allday) 天"))
-            lastDayLabel.AddColorText("剩余", AColor: kGray, AFont: nil)
-            lastDayLabel.AddColorText("天，共", AColor: kGray, AFont: nil)
-            lastDayLabel.AddColorText(" 天", AColor: kGray, AFont: nil)
+            lastDayLabel.attributedStringValue =  NSMutableAttributedString.init(attributedString: AttributedString.init(string: "剩余\(lastday)天，共 \(allday) 天"))
+            lastDayLabel.addColorText("剩余", aColor: kGray, aFont: nil)
+            lastDayLabel.addColorText("天，共", aColor: kGray, aFont: nil)
+            lastDayLabel.addColorText(" 天", aColor: kGray, aFont: nil)
             lastDayProgressView.doubleValue = (Double(receiveFile.lastday) * 1.0) / Double(receiveFile.allday)
             
             if let starttime = receiveFile.starttime,let endtime = receiveFile.endtime{
-                canTimeDateLabel.stringValue = "从\(starttime.dateStringByDay())到\(endtime.dateStringByDay())"
+                canTimeDateLabel.stringValue = "从\((starttime as NSDate).dateStringByDay())到\((endtime as NSDate).dateStringByDay())"
             }
         }
         
@@ -353,17 +353,17 @@ extension ReceiveViewController
         if (receiveFile.fileMakeType == 0) {
             
             //手动激活
-            makerSayLabel.hidden = true
-            lastDayLabel.hidden = false
+            makerSayLabel.isHidden = true
+            lastDayLabel.isHidden = false
             //    nolimitDay.hidden = true
             
-            receiveFile.firstOpenTime = ReceiveFileDao.sharedReceiveFileDao().selectReceiveFileFistOpenTimeByFileId(receiveFile.fileid)
+            receiveFile.firstOpenTime = ReceiveFileDao.shared().selectReceiveFileFistOpenTime(byFileId: receiveFile.fileid)
             
             //首次阅读
             if (receiveFile.firstOpenTime == "" || receiveFile.firstOpenTime == nil) {
-                onceTimeNumLabel.hidden = true
-                onceTimeLabel.hidden = true
-                ibOnceLong.hidden = true
+                onceTimeNumLabel.isHidden = true
+                onceTimeLabel.isHidden = true
+                ibOnceLong.isHidden = true
             } else {
                 onceTimeNumLabel.stringValue = "首次阅读:"
                 onceTimeLabel.stringValue = receiveFile.firstOpenTime
@@ -383,9 +383,9 @@ extension ReceiveViewController
                     let lastNum = "\(receiveFile.lastnum)"
                     let limitnum = "\(receiveFile.limitnum)"
                     lastNumLabel.attributedStringValue = NSMutableAttributedString.init(string: "剩余\(lastNum)次，共 \(limitnum) 次")
-                    lastNumLabel.AddColorText("剩余", AColor: kGray, AFont: nil)
-                    lastNumLabel.AddColorText("次，共", AColor: kGray, AFont: nil)
-                    lastNumLabel.AddColorText(" 次", AColor: kGray, AFont: nil)
+                    lastNumLabel.addColorText("剩余", aColor: kGray, aFont: nil)
+                    lastNumLabel.addColorText("次，共", aColor: kGray, aFont: nil)
+                    lastNumLabel.addColorText(" 次", aColor: kGray, aFont: nil)
                 }
             }
             else
@@ -399,18 +399,18 @@ extension ReceiveViewController
                     }else{
                         lastNumLabel.attributedStringValue = NSMutableAttributedString.init(string: "共 \(limitnum) 次")
                     }
-                    lastNumLabel.AddColorText("剩余", AColor: kGray, AFont: nil)
-                    lastNumLabel.AddColorText("次，共", AColor: kGray, AFont: nil)
-                    lastNumLabel.AddColorText(" 次", AColor: kGray, AFont: nil)
-                    lastNumLabel.AddColorText("共 ", AColor: kGray, AFont: nil)
+                    lastNumLabel.addColorText("剩余", aColor: kGray, aFont: nil)
+                    lastNumLabel.addColorText("次，共", aColor: kGray, aFont: nil)
+                    lastNumLabel.addColorText(" 次", aColor: kGray, aFont: nil)
+                    lastNumLabel.addColorText("共 ", aColor: kGray, aFont: nil)
                     
                 }
             }
             
             if (receiveFile.fileTimeType==4) {
-                lastDayProgressView.hidden = false
-                canTimeDateLabel.hidden = false
-                lastNumProgressView.hidden = false
+                lastDayProgressView.isHidden = false
+                canTimeDateLabel.isHidden = false
+                lastNumProgressView.isHidden = false
             }else{
                 if (receiveFile.fileOpenDay > 0){
                     if(b_CanOpen)//能打开
@@ -419,32 +419,32 @@ extension ReceiveViewController
                         if(receiveFile.fileYearRemain > 0 && receiveFile.fileDayRemain>0)
                         {
                             lastDayLabel.attributedStringValue = NSMutableAttributedString.init(string: "剩余\(yearRemain)年\(dayRemain)天，共 \(openDay) 天")
-                            lastDayLabel.AddColorText("剩余", AColor: kGray, AFont: nil)
-                            lastDayLabel.AddColorText("天，共", AColor: kGray, AFont: nil)
-                            lastDayLabel.AddColorText("年", AColor: kGray, AFont: nil)
-                            lastDayLabel.AddColorText(" 天", AColor: kGray, AFont: nil)
+                            lastDayLabel.addColorText("剩余", aColor: kGray, aFont: nil)
+                            lastDayLabel.addColorText("天，共", aColor: kGray, aFont: nil)
+                            lastDayLabel.addColorText("年", aColor: kGray, aFont: nil)
+                            lastDayLabel.addColorText(" 天", aColor: kGray, aFont: nil)
                         }
                         else if(receiveFile.fileYearRemain > 0)
                         {
                             lastDayLabel.attributedStringValue = NSMutableAttributedString.init(string: "剩余\(yearRemain)年，共 \(openDay) 天")
-                            lastDayLabel.AddColorText("剩余", AColor: kGray, AFont: nil)
-                            lastDayLabel.AddColorText("年，共 ", AColor: kGray, AFont: nil)
-                            lastDayLabel.AddColorText(" 天", AColor: kGray, AFont: nil)
+                            lastDayLabel.addColorText("剩余", aColor: kGray, aFont: nil)
+                            lastDayLabel.addColorText("年，共 ", aColor: kGray, aFont: nil)
+                            lastDayLabel.addColorText(" 天", aColor: kGray, aFont: nil)
 
                         }
                         else if(receiveFile.fileDayRemain > 0)
                         {
                             lastDayLabel.attributedStringValue = NSMutableAttributedString.init(string: "剩余\(dayRemain)天，共\(openDay) 天")
-                            lastDayLabel.AddColorText("剩余", AColor: kGray, AFont: nil)
-                            lastDayLabel.AddColorText("天，共", AColor: kGray, AFont: nil)
-                            lastDayLabel.AddColorText(" 天", AColor: kGray, AFont: nil)
+                            lastDayLabel.addColorText("剩余", aColor: kGray, aFont: nil)
+                            lastDayLabel.addColorText("天，共", aColor: kGray, aFont: nil)
+                            lastDayLabel.addColorText(" 天", aColor: kGray, aFont: nil)
                             
                         }
                     }else{
                         //未激活
                         lastDayLabel.attributedStringValue = NSMutableAttributedString.init(string: "共\(openDay)天")
-                        lastDayLabel.AddColorText("共", AColor: kGray, AFont: nil)
-                        lastDayLabel.AddColorText("天", AColor: kGray, AFont: nil)
+                        lastDayLabel.addColorText("共", aColor: kGray, aFont: nil)
+                        lastDayLabel.addColorText("天", aColor: kGray, aFont: nil)
                         
                     }
                 }else if(receiveFile.fileOpenYear > 0) {
@@ -455,39 +455,39 @@ extension ReceiveViewController
                         if(receiveFile.fileYearRemain > 0 && receiveFile.fileDayRemain>0)
                         {
                             lastDayLabel.attributedStringValue = NSMutableAttributedString.init(string: "剩余\(yearRemain)年\(dayRemain)天，共 \(openYear) 年")
-                            lastDayLabel.AddColorText("剩余", AColor: kGray, AFont: nil)
-                            lastDayLabel.AddColorText("年", AColor: kGray, AFont: nil)
-                            lastDayLabel.AddColorText("天，共 ", AColor: kGray, AFont: nil)
-                            lastDayLabel.AddColorText(" 年", AColor: kGray, AFont: nil)
+                            lastDayLabel.addColorText("剩余", aColor: kGray, aFont: nil)
+                            lastDayLabel.addColorText("年", aColor: kGray, aFont: nil)
+                            lastDayLabel.addColorText("天，共 ", aColor: kGray, aFont: nil)
+                            lastDayLabel.addColorText(" 年", aColor: kGray, aFont: nil)
                         }
                         else if(receiveFile.fileYearRemain > 0)
                         {
                             lastDayLabel.attributedStringValue = NSMutableAttributedString.init(string: "剩余\(yearRemain)年，共 \(openYear) 年")
-                            lastDayLabel.AddColorText("剩余", AColor: kGray, AFont: nil)
-                            lastDayLabel.AddColorText("年，共 ", AColor: kGray, AFont: nil)
-                            lastDayLabel.AddColorText(" 年", AColor: kGray, AFont: nil)
+                            lastDayLabel.addColorText("剩余", aColor: kGray, aFont: nil)
+                            lastDayLabel.addColorText("年，共 ", aColor: kGray, aFont: nil)
+                            lastDayLabel.addColorText(" 年", aColor: kGray, aFont: nil)
                         }
                         else if(receiveFile.fileDayRemain > 0)
                         {
                             lastDayLabel.attributedStringValue = NSMutableAttributedString.init(string: "剩余\(dayRemain)天，共 \(openYear) 年")
-                            lastDayLabel.AddColorText("剩余", AColor: kGray, AFont: nil)
-                            lastDayLabel.AddColorText("天，共 ", AColor: kGray, AFont: nil)
-                            lastDayLabel.AddColorText(" 年", AColor: kGray, AFont: nil)
+                            lastDayLabel.addColorText("剩余", aColor: kGray, aFont: nil)
+                            lastDayLabel.addColorText("天，共 ", aColor: kGray, aFont: nil)
+                            lastDayLabel.addColorText(" 年", aColor: kGray, aFont: nil)
                         }
                     }
                     else{
                         //未激活
                         lastDayLabel.attributedStringValue = NSMutableAttributedString.init(string: "共 \(openYear) 年")
-                        lastDayLabel.AddColorText("共 ", AColor: kGray, AFont: nil)
-                        lastDayLabel.AddColorText(" 年", AColor: kGray, AFont: nil)
+                        lastDayLabel.addColorText("共 ", aColor: kGray, aFont: nil)
+                        lastDayLabel.addColorText(" 年", aColor: kGray, aFont: nil)
                     }
                 }else{
                     lastDayLabel.attributedStringValue = NSMutableAttributedString.init(string: "不限制")
                 }
                 
-                lastDayProgressView.hidden = true
-                canTimeDateLabel.hidden = true
-                lastNumProgressView.hidden = true
+                lastDayProgressView.isHidden = true
+                canTimeDateLabel.isHidden = true
+                lastNumProgressView.isHidden = true
             }
             
             if(receiveFile.forbid == 1)  //已经激活
@@ -526,27 +526,27 @@ extension ReceiveViewController
                 if (receiveFile.readnum > 0) {
                     str = "send_after_file_Detail";
                 }
-                readBtn.enabled = false
+                readBtn.isEnabled = false
                 readBtn.image = NSImage.init(named: "send_read_no")
                 
             } else if (receiveFile.open == 1) {
                 
                 str = "send_icon_already_Detail";
-                readBtn.enabled = true
+                readBtn.isEnabled = true
                 readBtn.image = NSImage.init(named: "send_read")
                 
             } else if (receiveFile.open == 0) {
                 
                 str = "send_icon_Detail";
-                readBtn.enabled = true
+                readBtn.isEnabled = true
                 readBtn.image = NSImage.init(named: "send_read")
                 
             }
             if (receiveFile.forbid == 1) {
                 //forbid: 1开放
-                makerSayLabel.hidden = true
+                makerSayLabel.isHidden = true
             }else{
-                makerSayLabel.hidden = false
+                makerSayLabel.isHidden = false
             }
             fileFlageImage.image = NSImage.init(named: str)
         }
@@ -554,21 +554,21 @@ extension ReceiveViewController
         //限制条件是否可见
         if (!receiveFile.isEye) {
             //ibisEyeView.hidden = true
-            readBtn.frame = CGRectMake(readBtn.frame.origin.x, 274, readBtn.frame.size.width, readBtn.frame.size.height);
+            readBtn.frame = CGRect(x: readBtn.frame.origin.x, y: 274, width: readBtn.frame.size.width, height: readBtn.frame.size.height);
         }
         
-        if !NSFileManager.defaultManager().fileExistsAtPath(receiveFile.fileurl)
-            || !appHelper.fileIsTypeOfVideo(receiveFile.filetype)
+        if !FileManager.default.fileExists(atPath: receiveFile.fileurl)
+            || !(appHelper?.fileIsType(ofVideo: receiveFile.filetype))!
         {
             readBtn.image = NSImage.init(named: "send_read_no")
-            readBtn.enabled = false
+            readBtn.isEnabled = false
         }
         
         //刷新按钮根据阅读按钮状态保持一直
 //        ibRefreshFileButton.enabled = readBtn.enabled
     }
     
-    func isCanOpen(outFile:OutFile) -> Bool {
+    func isCanOpen(_ outFile:OutFile) -> Bool {
         var b_CanOpen = false
         if(outFile.forbid == 1){
             
@@ -592,13 +592,13 @@ extension ReceiveViewController
 extension ReceiveViewController:NSSplitViewDelegate
 {
     //分屏大小变化
-    func splitView(splitView: NSSplitView, constrainMaxCoordinate proposedMaximumPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat
+    func splitView(_ splitView: NSSplitView, constrainMaxCoordinate proposedMaximumPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat
     {
         // Make sure the view on the right has at least 200 px wide
         return splitView.bounds.size.width - 240
     }
     
-    func splitView(splitView: NSSplitView, constrainMinCoordinate proposedMinimumPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat
+    func splitView(_ splitView: NSSplitView, constrainMinCoordinate proposedMinimumPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat
     {
         return 240
     }
@@ -609,10 +609,10 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
 {
     //MARK: tableView Delegate
     //单击单元格，显示详情信息
-    func tableViewSelectionDidChange(notification: NSNotification) {
+    func tableViewSelectionDidChange(_ notification: Notification) {
         
         if let receiveFile = selectedFileList(){
-            self.receiveFile = ReceiveFileDao.sharedReceiveFileDao().fetchReceiveFileCellByFileId(receiveFile.fileid, logName: loginName)
+            self.receiveFile = ReceiveFileDao.shared().fetchReceiveFileCell(byFileId: receiveFile.fileid, logName: loginName)
             
             //刷新详情
             initThisView()
@@ -635,13 +635,13 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
     //自定义单元格选中样式
     func ChangeCellBySelectedStatus() {
         //被选中的单元格
-        guard let cellView = self.ReceiveTableView.viewAtColumn(0, row: ReceiveTableView.selectedRow, makeIfNecessary: true) as? CustomTableCellView
+        guard let cellView = self.ReceiveTableView.view(atColumn: 0, row: ReceiveTableView.selectedRow, makeIfNecessary: true) as? CustomTableCellView
             else {
                 return
             }
         
         //刷新按钮状态
-        if NSUserDefaults.standardUserDefaults().boolForKey("\(receiveFile.fileid)")
+        if UserDefaults.standard.bool(forKey: "\(receiveFile.fileid)")
         {
             //当前处于刷新状态
             ibRefreshFileButton.addGroupRotateAnimation(receiveFile.fileid)
@@ -650,15 +650,15 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
         {
             //停止刷新动画
             ibRefreshFileButton.layer?.removeAllAnimations()
-            NSUserDefaults.standardUserDefaults().setBool(false, forKey: "\(receiveFile.fileid)")
-            NSUserDefaults.standardUserDefaults().synchronize()
+            UserDefaults.standard.set(false, forKey: "\(receiveFile.fileid)")
+            UserDefaults.standard.synchronize()
         }
         
         // 判断本地文件ID是否和数据库中的id一致，否则更新状态
         //设置单元格字体样式
-        if NSFileManager.defaultManager().fileExistsAtPath(receiveFile.fileurl)
+        if FileManager.default.fileExists(atPath: receiveFile.fileurl)
         {
-            ibRefreshFileButton.enabled = true
+            ibRefreshFileButton.isEnabled = true
             
             let fileID = PycFile().getAttributePycFileId(receiveFile.fileurl)
             if fileID != Int32(receiveFile.fileid)
@@ -666,23 +666,23 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
                 //
                 //
                 readBtn.image = NSImage.init(named: "send_read_no")
-                readBtn.enabled = false
-                cellView.textField?.textColor = NSColor.redColor()
+                readBtn.isEnabled = false
+                cellView.textField?.textColor = NSColor.red()
                 
                 //提示本地文件错误
                 // Make a copy of default style.
                 var style = Toasty.defaultStyle
                 // Navigation bar is translucent so the view starts from under the bars. Set margin accordingly.
                 style.margin.top = 0
-                style.backgroundColor = NSColor.whiteColor()
-                style.textColor = NSColor.blackColor()
+                style.backgroundColor = NSColor.white()
+                style.textColor = NSColor.black()
                 // Show our toast.
                 rootView.showToastWithText("信息与本地文件不符，建议删除该条无效信息！", usingStyle: style)
             }
         }
         else
         {
-            ibRefreshFileButton.enabled = false
+            ibRefreshFileButton.isEnabled = false
         }
         
         //发送通知，更新其他cell的状态
@@ -691,13 +691,13 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
     }
     
     //拖动鼠标多选响应事件
-    func tableView(tableView: NSTableView, draggingSession session: NSDraggingSession, willBeginAtPoint screenPoint: NSPoint, forRowIndexes rowIndexes: NSIndexSet) {
+    func tableView(_ tableView: NSTableView, draggingSession session: NSDraggingSession, willBeginAt screenPoint: NSPoint, forRowIndexes rowIndexes: IndexSet) {
         //
         
     }
     
     //MARK: tableDataSource
-    func numberOfRowsInTableView(tableView: NSTableView) -> Int {
+    func numberOfRows(in tableView: NSTableView) -> Int {
         //
         if receiveArray != nil
         {
@@ -706,19 +706,19 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
         return 0
     }
     
-    func tableView(tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
+    func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
         //http://blog.csdn.net/fengsh998/article/details/18809355
         let column = tableView.tableColumns[0]
-        let dycell = tableView.preparedCellAtColumn(0, row: row)
+        let dycell = tableView.preparedCell(atColumn: 0, row: row)
         var cellBounds = NSZeroRect
         cellBounds.size.width = column.width
-        cellBounds.size.height = CGFloat.max
-        let cellSize = dycell!.cellSizeForBounds(cellBounds)
+        cellBounds.size.height = CGFloat.greatestFiniteMagnitude
+        let cellSize = dycell!.cellSize(forBounds: cellBounds)
 //        return cellSize.height
         return 30
     }
     
-    func tableView(tableView: NSTableView, willDisplayCell cell: AnyObject, forTableColumn tableColumn: NSTableColumn?, row: Int) {
+    func tableView(_ tableView: NSTableView, willDisplayCell cell: AnyObject, for tableColumn: NSTableColumn?, row: Int) {
         //        let cellw = cell as! SelectedRowHighlightCell
         //        cellw.setSelectionBKColor(NSColor.lightGrayColor())
 //        if ([cell isKindOfClass:[FSCustomCell class]]) {
@@ -740,10 +740,10 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
     }
     
     //初始化单元格状态信息
-    func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
+    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         //
         // Get a new ViewCell
-        let cellView = tableView.makeViewWithIdentifier((tableColumn?.identifier)!, owner: self) as! CustomTableCellView
+        let cellView = tableView.make(withIdentifier: (tableColumn?.identifier)!, owner: self) as! CustomTableCellView
         
         // Since this is a single-column table view, this would not be necessary.
         // But it's a good practice to do it in order by remember it when a table is multicolumn.
@@ -754,12 +754,12 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
             cellView.textField?.stringValue = ReceiveColumn.filename
             
             //设置单元格字体样式
-            if NSFileManager.defaultManager().fileExistsAtPath(ReceiveColumn.fileurl)
+            if FileManager.default.fileExists(atPath: ReceiveColumn.fileurl)
             {
                 //原文件存在
                 cellView.textField?.textColor = kGray
                 //不支持文件格式
-                if !appHelper.fileIsTypeOfVideo(ReceiveColumn.filetype)
+                if !(appHelper?.fileIsType(ofVideo: ReceiveColumn.filetype))!
                 {
 //                    cellView.textField?.textColor = NSColor.grayColor()
                 }
@@ -773,7 +773,7 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
             else
             {
                 //原文件不存在
-                cellView.textField?.textColor = NSColor.redColor()
+                cellView.textField?.textColor = NSColor.red()
             }
             return cellView
         }
@@ -782,60 +782,61 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
     
     //MARK: 右击事件
     //https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/TableView/RowSelection/RowSelection.html#//apple_ref/doc/uid/10000026i-CH6-SW1
-    func indexesToProcessForContextMenu() -> NSIndexSet {
+    func indexesToProcessForContextMenu() -> IndexSet {
         // If the clicked row was in the selectedIndexes, then we process all selectedIndexes. Otherwise, we process just the clickedRow
         var selectedIndexes = ReceiveTableView.selectedRowIndexes
-        if (ReceiveTableView.clickedRow != -1 && !selectedIndexes.containsIndex(ReceiveTableView.clickedRow)) {
+        if (ReceiveTableView.clickedRow != -1 && !selectedIndexes.contains(ReceiveTableView.clickedRow)) {
             //
-            selectedIndexes = NSIndexSet.init(index:ReceiveTableView.clickedRow)
+            selectedIndexes = IndexSet.init(integer:ReceiveTableView.clickedRow)
         }
-        selectedIndexes.enumerateIndexesUsingBlock { (row, stop) in
-            //
-            guard let cellView = self.ReceiveTableView.viewAtColumn(0, row: row, makeIfNecessary: false) as? CustomTableCellView
+//        selectedIndexes.enumer
+//        http://stackoverflow.com/questions/39638538/swift-3-0-value-of-type-indexset-has-no-member-enumerateindexesusingblock
+//        selectedIndexes.enumerated()
+        for (index, value) in selectedIndexes.enumerated() {
+            guard let cellView = self.ReceiveTableView.view(atColumn: 0, row: index, makeIfNecessary: false) as? CustomTableCellView
                 else{
-                    return
-                }
+                    break
+            }
             
             cellView.SendBySelecedNotification(true)
-            
         }
         
         return selectedIndexes
     }
     
     //右击菜单在Finder中显示功能
-    @IBAction func mnuRevealInFinderSelected(sender: AnyObject) {
+    @IBAction func mnuRevealInFinderSelected(_ sender: AnyObject) {
         let selectedIndexes = indexesToProcessForContextMenu()
-        selectedIndexes.enumerateIndexesUsingBlock { (row, stop) in
+        for (row, value) in selectedIndexes.enumerated() {
             //
             let ReceiveColumn = self.receiveArray[row] as! OutFile
-            NSWorkspace.sharedWorkspace().selectFile(ReceiveColumn.fileurl, inFileViewerRootedAtPath: "")
+            NSWorkspace.shared().selectFile(ReceiveColumn.fileurl, inFileViewerRootedAtPath: "")
         }
     }
     
     //右击菜单删除功能
-    @IBAction func mnuRemoveRowSelected(sender: AnyObject) {
+    @IBAction func mnuRemoveRowSelected(_ sender: AnyObject) {
         
         let selectedIndexes = indexesToProcessForContextMenu()
-        selectedIndexes.enumerateIndexesUsingBlock { (row, stop) in
+        for (row, value) in selectedIndexes.enumerated() {
             //
             let ReceiveColumn = self.receiveArray[row] as! OutFile
-            ReceiveFileDao.sharedReceiveFileDao().deleteReceiveFile(ReceiveColumn.fileid, logName: self.loginName)
+            ReceiveFileDao.shared().deleteReceiveFile(ReceiveColumn.fileid, logName: self.loginName)
             
             //删除文件
             //try! NSFileManager.defaultManager().removeItemAtPath(ReceiveColumn.fileurl)
             //删除广告
-            let uid = ReceiveFileDao.sharedReceiveFileDao().fetchUid(ReceiveColumn.fileid)
-            if(ReceiveFileDao.sharedReceiveFileDao().fetchCountOfUid(ReceiveColumn.fileid) == 0)
+            let uid = ReceiveFileDao.shared().fetchUid(ReceiveColumn.fileid)
+            if(ReceiveFileDao.shared().fetchCount(ofUid: ReceiveColumn.fileid) == 0)
             {
-                let fileDir = SandboxFile.CreateList(SandboxFile.GetDocumentPath(), listName: "advert")
-                let pre = NSPredicate.init(format: "SELF contains[cd] '\(uid)'", argumentArray: nil)
-                let filesNames = SandboxFile.GetSubpathsAtPath(fileDir)
-                let oldFiles = (filesNames as NSArray).filteredArrayUsingPredicate(pre) as NSArray
-                oldFiles.enumerateObjectsUsingBlock({ (obj, idx, stop) in
+                let fileDir = SandboxFile.createList(SandboxFile.getDocumentPath(), listName: "advert")
+                let pre = Predicate.init(format: "SELF contains[cd] '\(uid)'", argumentArray: nil)
+                let filesNames = SandboxFile.getSubpathsAtPath(fileDir)
+                let oldFiles = (filesNames! as NSArray).filtered(using: pre) as NSArray
+                oldFiles.enumerateObjects({ (obj, idx, stop) in
                     //
                     let oldfile = "\(fileDir)/\(obj))"
-                    if(SandboxFile.IsFileExists(oldfile)){
+                    if(SandboxFile.isFileExists(oldfile)){
                         //                        try! NSFileManager.defaultManager().removeItemAtPath(oldfile)
                     }
                 })
@@ -843,46 +844,46 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
         }
         //从列表中移除所选项
         self.ReceiveTableView.beginUpdates()
-        self.receiveArray.removeObjectsAtIndexes(selectedIndexes)
-        self.ReceiveTableView.removeRowsAtIndexes(selectedIndexes, withAnimation: .EffectFade)
+        self.receiveArray.removeObjects(at: selectedIndexes)
+        self.ReceiveTableView.removeRows(at: selectedIndexes, withAnimation: .effectFade)
         self.ReceiveTableView.endUpdates()
         //显示下一个文件详情
-        self.selectRowStartingAtRow(selectedIndexes.firstIndex - 1)
+        self.selectRowStartingAtRow(selectedIndexes.first! - 1)
         self.initThisView()
     }
     
     //右击刷新功能
-    @IBAction @objc func refreshReceiveTableView(sender:AnyObject){
+    @IBAction @objc func refreshReceiveTableView(_ sender:AnyObject){
         receiveArray = nil
-        receiveArray = ReceiveFileDao.sharedReceiveFileDao().selectReceiveFileAll(loginName)
+        receiveArray = ReceiveFileDao.shared().selectReceiveFileAll(loginName)
         ReceiveTableView.reloadData()
     }
     
     //移动单元格 从 - 到 -
-    @IBAction func btnMoveRowClick(sender:AnyObject) {
+    @IBAction func btnMoveRowClick(_ sender:AnyObject) {
         //
         let fromRow = 1
         let toRow = 3
         ReceiveTableView.beginUpdates()
-        ReceiveTableView.moveRowAtIndex(fromRow, toIndex: toRow)
+        ReceiveTableView.moveRow(at: fromRow, to: toRow)
         let object = receiveArray[fromRow]
-        receiveArray.removeObjectAtIndex(fromRow)
-        receiveArray.insertObject(object, atIndex: toRow)
+        receiveArray.removeObject(at: fromRow)
+        receiveArray.insert(object, at: toRow)
         ReceiveTableView.endUpdates()
     }
     
     //双击打开文件
-    @IBAction func tblvwDoubleClick(sender:AnyObject)
+    @IBAction func tblvwDoubleClick(_ sender:AnyObject)
     {
-        if(!readBtn.enabled)
+        if(!readBtn.isEnabled)
         {
             //提示本地文件错误
             // Make a copy of default style.
             var style = Toasty.defaultStyle
             // Navigation bar is translucent so the view starts from under the bars. Set margin accordingly.
             style.margin.top = 0
-            style.backgroundColor = NSColor.whiteColor()
-            style.textColor = NSColor.blackColor()
+            style.backgroundColor = NSColor.white()
+            style.textColor = NSColor.black()
             // Show our toast.
             rootView.showToastWithText("该文件无法阅读！", usingStyle: style)
             return
@@ -892,29 +893,29 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
             //
             let ReceiveColumn = self.receiveArray[row] as! OutFile
             
-            if !NSFileManager.defaultManager().fileExistsAtPath(ReceiveColumn.fileurl)
+            if !FileManager.default.fileExists(atPath: ReceiveColumn.fileurl)
             {
                 //提示本地文件错误
                 // Make a copy of default style.
                 var style = Toasty.defaultStyle
                 // Navigation bar is translucent so the view starts from under the bars. Set margin accordingly.
                 style.margin.top = 0
-                style.backgroundColor = NSColor.whiteColor()
-                style.textColor = NSColor.blackColor()
+                style.backgroundColor = NSColor.white()
+                style.textColor = NSColor.black()
                 // Show our toast.
                 rootView.showToastWithText("该文件无法阅读！", usingStyle: style)
                 return;
             }
             //            NSWorkspace.sharedWorkspace().selectFile(ReceiveColumn.fileurl, inFileViewerRootedAtPath: "")
-            appHelper.phoneNo = ""
-            appHelper.messageID = ""
-            appHelper.loadVideoWithLocalFiles({ReceiveColumn.fileurl}())
+            appHelper?.phoneNo = ""
+            appHelper?.messageID = ""
+            appHelper?.loadVideo(withLocalFiles: {ReceiveColumn.fileurl}())
             
         }
     }
     
     //删除后，显示相邻的下一行
-    func selectRowStartingAtRow(row:Int)
+    func selectRowStartingAtRow(_ row:Int)
     {
         var theRow = row
         if ReceiveTableView.selectedRow == -1 {
@@ -927,7 +928,7 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
                 //
                 if !self.tableView(ReceiveTableView, isGroupRow:theRow) {
                     //
-                    ReceiveTableView.selectRowIndexes(NSIndexSet.init(index: theRow), byExtendingSelection: false)
+                    ReceiveTableView.selectRowIndexes(IndexSet.init(integer: theRow), byExtendingSelection: false)
                     return
                 }
                 theRow += 1
@@ -938,7 +939,7 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
                 //
                 if !tableView(ReceiveTableView, isGroupRow: theRow) {
                     //
-                    ReceiveTableView.selectRowIndexes(NSIndexSet.init(index: theRow), byExtendingSelection: false)
+                    ReceiveTableView.selectRowIndexes(IndexSet.init(integer: theRow), byExtendingSelection: false)
                     return
                 }
                 theRow -= 1
@@ -947,7 +948,7 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
     }
     
     // We want to make "group rows" for the folders
-    func tableView(tableView: NSTableView, isGroupRow row: Int) -> Bool {
+    func tableView(_ tableView: NSTableView, isGroupRow row: Int) -> Bool {
         //
         if receiveArray[row] is SeriesModel{
             return true
@@ -957,7 +958,7 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
     }
     
     //插入新cell
-    func insertNewRow(file:OutFile){
+    func insertNewRow(_ file:OutFile){
         var index = ReceiveTableView.selectedRow
         if index == -1 {
             //
@@ -969,12 +970,12 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
             }
         }
         //更新列表
-        receiveArray.insertObject(file, atIndex: index)
+        receiveArray.insert(file, at: index)
         ReceiveTableView.beginUpdates()
-        ReceiveTableView.insertRowsAtIndexes(NSIndexSet.init(index: index), withAnimation: .EffectFade)
+        ReceiveTableView.insertRows(at: IndexSet.init(integer: index), withAnimation: .effectFade)
         ReceiveTableView.scrollRowToVisible(index)
         ReceiveTableView.endUpdates()
         //更新详情页面
-        ReceiveTableView.selectRowIndexes(NSIndexSet.init(index: index), byExtendingSelection: false)
+        ReceiveTableView.selectRowIndexes(IndexSet.init(integer: index), byExtendingSelection: false)
     }
 }

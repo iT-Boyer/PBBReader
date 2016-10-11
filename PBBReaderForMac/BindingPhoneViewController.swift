@@ -18,7 +18,7 @@ class BindingPhoneViewController: NSViewController {
     @IBOutlet weak var showMessageLabel: NSTextField!
    
     @objc var filePath:String!
-    var timer:NSTimer!  // 计时器
+    var timer:Timer!  // 计时器
     var phoneNumber:String!  // 手机号码
     var remainedTime:Int!   // 剩余时间
     var fileID = 0
@@ -27,7 +27,7 @@ class BindingPhoneViewController: NSViewController {
     //个人信息页面，绑定手机号flag
     var userPhone:Bool = false
     
-    let pycFileHelper = AppDelegateHelper.sharedAppDelegateHelper()
+    let pycFileHelper = AppDelegateHelper.shared()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,33 +37,33 @@ class BindingPhoneViewController: NSViewController {
 
     }
     
-    @IBAction func getMessageBtnAction(sender: AnyObject) {
+    @IBAction func getMessageBtnAction(_ sender: AnyObject) {
         /* 判断手机号是否合法 */
         
 //        [alert runModal];
         if (!isPhoneNumberOfString(phoneTF.stringValue)) {
             // 手机号不合法
-            pycFileHelper.setAlertView("请输入正确的手机号")
+            pycFileHelper?.setAlertView("请输入正确的手机号")
             return ;
         }
         phoneNumber = phoneTF.stringValue;
         // 调取获取验证码业务
-        let result = pycFileHelper.getVerificationCodeByPhone(phoneNumber, userPhone: userPhone)
-        if result {
+        let result = pycFileHelper?.getVerificationCode(byPhone: phoneNumber, userPhone: userPhone)
+        if (result != nil) {
             // 获取验证码成功后 调整界面
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(BindingPhoneViewController.getCodeFinish), name: "getCodeFinish", object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(BindingPhoneViewController.getCodeFinish), name: "getCodeFinish" as NSNotification.Name, object: nil)
         }else
         {
-            pycFileHelper.setAlertView("验证码请求发送失败，请重试！")
+            pycFileHelper?.setAlertView("验证码请求发送失败，请重试！")
         }
         
     }
     
-    @IBAction func submitBtnAction(sender: AnyObject) {
+    @IBAction func submitBtnAction(_ sender: AnyObject) {
         /* 判断手机号是否合法 */
         if (!isPhoneNumberOfString(phoneTF.stringValue)) {
             // 手机号不合法
-            pycFileHelper.setAlertView("请输入正确的手机号")
+            pycFileHelper?.setAlertView("请输入正确的手机号")
             return
         }
         
@@ -75,25 +75,25 @@ class BindingPhoneViewController: NSViewController {
         
         codeModel.verificationCode = messageTF.stringValue
         
-        let messageId = VerificationCodeDao.sharedVerificationCodeDao().searchVerificationCodeOfMessageId(codeModel)
+        let messageId = VerificationCodeDao.shared().searchVerificationCode(ofMessageId: codeModel)
         
         /* 判断输入验证码正确性，如果正确，调用查看文件接口，不正确给出提示*/
         if (messageId != nil) {
-            self.dismissController(true)
+            self.dismiss(true)
             getCodeStateYes() // 调整界面控件状态
 
             if(!userPhone){
-                pycFileHelper.phoneNo = messageTF.stringValue
-                pycFileHelper.messageID = messageId
-                pycFileHelper.openedNum = 0
-                pycFileHelper.openURLOfPycFileByLaunchedApp(filePath)// 查看文件
+                pycFileHelper?.phoneNo = messageTF.stringValue
+                pycFileHelper?.messageID = messageId
+                pycFileHelper?.openedNum = 0
+                pycFileHelper?.openURLOfPycFile(byLaunchedApp: filePath)// 查看文件
             }else{
                 //完善个人信息，绑定手机号
-                PycFile().bindPhoneByVerificationCode(messageTF.stringValue, logname: userDao.shareduserDao().getLogName(), messageId: messageId)
+                PycFile().bindPhone(byVerificationCode: messageTF.stringValue, logname: userDao.shareduser().getLogName(), messageId: messageId)
             }
             
         } else {
-            pycFileHelper.setAlertView("验证码无效，请重新获取！")
+            pycFileHelper?.setAlertView("验证码无效，请重新获取！")
         }
     }
     
@@ -105,7 +105,7 @@ class BindingPhoneViewController: NSViewController {
         //
         timer.invalidate()   // 停止时间刷新计时器
         showMessageLabel.stringValue = "\(60)秒后可重新获取验证码"
-        getMessageBtn.enabled = true // 获取验证码按钮不可用
+        getMessageBtn.isEnabled = true // 获取验证码按钮不可用
     }
     
     /**
@@ -114,10 +114,10 @@ class BindingPhoneViewController: NSViewController {
     func getCodeFinish() {
         ///
         remainedTime = 59  // 剩余时间
-        getMessageBtn.enabled = false // 获取验证码按钮不可用
+        getMessageBtn.isEnabled = false // 获取验证码按钮不可用
         // 启用计时器更改剩余时间
         if timer == nil {
-            timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(BindingPhoneViewController.changeLabelTime), userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(BindingPhoneViewController.changeLabelTime), userInfo: nil, repeats: true)
         }
         
     }
@@ -141,7 +141,7 @@ class BindingPhoneViewController: NSViewController {
      * @param  phoneString 传入的手机号字符串
      * @return 合法返回Yes 不合法返回No
      */
-    func isPhoneNumberOfString(phone:String) -> Bool {
+    func isPhoneNumberOfString(_ phone:String) -> Bool {
         //
         let phoneString = (phone as NSString)
         if (phoneString.length != 11) {
@@ -156,14 +156,14 @@ class BindingPhoneViewController: NSViewController {
         return true
     }
     
-    override func dismissController(sender: AnyObject?) {
+    override func dismiss(_ sender: AnyObject?) {
         if timer != nil {
             timer.invalidate()   // 停止时间刷新计时器
         }
-        super.dismissController(sender)
+        super.dismiss(sender)
         if !(sender is Bool){
-            NSNotificationCenter.defaultCenter().postNotificationName("CancleClosePlayerWindows", object: nil, userInfo: ["pycFileID":fileID])
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "CancleClosePlayerWindows"), object: nil, userInfo: ["pycFileID":fileID])
         }
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
 }

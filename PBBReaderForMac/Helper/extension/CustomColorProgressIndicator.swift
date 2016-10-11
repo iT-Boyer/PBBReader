@@ -14,15 +14,15 @@ class CustomColorProgressIndicator: NSProgressIndicator {
     @IBInspectable var progressColor:NSColor!
     @IBInspectable var emptyColor:NSColor!
     
-    override func drawRect(dirtyRect: NSRect) {
-        super.drawRect(dirtyRect)
+    override func draw(_ dirtyRect: NSRect) {
+        super.draw(dirtyRect)
 
         // Drawing code here.
-        super.drawRect(dirtyRect)
+        super.draw(dirtyRect)
         self.wantsLayer = true
         
         // Clear background color
-        NSColor.clearColor().set()
+        NSColor.clear().set()
         NSRectFill(dirtyRect)
         
         // Draw progress line

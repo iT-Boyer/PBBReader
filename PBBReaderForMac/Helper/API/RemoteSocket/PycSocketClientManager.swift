@@ -18,16 +18,17 @@ struct ReceiveData {
 
 protocol PycSocketManagerDelegate{
     //查看获取文件信息
-    func PycSocketManager(Manager:PycSocketClientManager,didFinishSeePycFileForUser:ReceiveData)->()
+    func PycSocketManager(_ Manager:PycSocketClientManager,didFinishSeePycFileForUser:ReceiveData)->()
     //更新文件获取信息
-    func PycSocketManager(Manager:PycSocketClientManager,didFinishGetFileInfo:ReceiveData) -> ()
+    func PycSocketManager(_ Manager:PycSocketClientManager,didFinishGetFileInfo:ReceiveData) -> ()
 }
 
 class PycSocketClientManager{
     
     var Delegate:PycSocketManagerDelegate!
     var filePycNameFromServer = ""
-    func SeePycSocketFile(pycFileName:String,logName:String?,var fileName:String,phoneOn:String,messageID:String,inout isOffLine:Bool,openedNum:Int) -> String {
+    func SeePycSocketFile(_ pycFileName:String,logName:String?,fileName:String,phoneOn:String,messageID:String,isOffLine:inout Bool,openedNum:Int) -> String {
+        var fileName = fileName
         //
         if fileName == "" {
             fileName = (pycFileName as NSString).lastPathComponent
@@ -35,7 +36,7 @@ class PycSocketClientManager{
         }
         
         //文件是否存在
-        if !NSFileManager.defaultManager().fileExistsAtPath(pycFileName) {
+        if !FileManager.default.fileExists(atPath: pycFileName) {
             //
             return "1"
         }

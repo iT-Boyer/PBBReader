@@ -46,14 +46,14 @@ class ApplyInfoViewController: NSViewController {
         field1ValueField.stringValue = field1Str
         field2ValueField.stringValue = field2Str
     }
-    @IBAction func applyAction(sender: AnyObject) {
+    @IBAction func applyAction(_ sender: AnyObject) {
         
-        let userName = userDao.shareduserDao().getLogName()
-        let fileUrl = ReceiveFileDao.sharedReceiveFileDao().selectReceiveFileURLByFileId(fileId, logName: userName)
+        let userName = userDao.shareduser().getLogName()
+        let fileUrl = ReceiveFileDao.shared().selectReceiveFileURL(byFileId: fileId, logName: userName)
         let pycFileHelper = AppDelegateHelper()
         pycFileHelper.phoneNo = ""
         pycFileHelper.messageID = ""
-        pycFileHelper.applyFileByFidAndOrderId(fileId,
+        pycFileHelper.applyFile(byFidAndOrderId: fileId,
                                                orderId: orderId,
                                                applyId:  applyId,
                                                qq: qqField.stringValue,

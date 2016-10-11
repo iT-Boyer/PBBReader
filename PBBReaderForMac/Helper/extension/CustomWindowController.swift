@@ -23,7 +23,7 @@ class CustomWindowController: NSWindowController {
         // 自定义一个view
         let topBannerView = NSView.init(frame: NSZeroRect)
         topBannerView.wantsLayer = true
-        topBannerView.layer!.backgroundColor = bannerColor.CGColor
+        topBannerView.layer!.backgroundColor = bannerColor.cgColor
         self.window?.contentView?.addSubview(topBannerView)
         topBannerView.snp_makeConstraints { (make) in
             //
@@ -35,11 +35,11 @@ class CustomWindowController: NSWindowController {
         //自定义一个label
         let titleLabel = NSTextField()
         titleLabel.stringValue = "PBB Reader"
-        titleLabel.alignment = .Center
-        titleLabel.font = NSFont.systemFontOfSize(25)
-        titleLabel.editable = false
-        titleLabel.bordered = false //设置无边框
-        titleLabel.textColor = NSColor.whiteColor()
+        titleLabel.alignment = .center
+        titleLabel.font = NSFont.systemFont(ofSize: 25)
+        titleLabel.isEditable = false
+        titleLabel.isBordered = false //设置无边框
+        titleLabel.textColor = NSColor.white()
         titleLabel.backgroundColor = bannerColor
         topBannerView.addSubview(titleLabel)
         titleLabel.sizeToFit()
@@ -50,7 +50,7 @@ class CustomWindowController: NSWindowController {
             make.top.equalTo(3)
             
         }
-        titleLabel.hidden = true
+        titleLabel.isHidden = true
         
         //标题图片镂空文字
         let titleImageView = NSImageView()
@@ -65,7 +65,7 @@ class CustomWindowController: NSWindowController {
         var views = self.window!.contentView!.superview!.subviews
         let titlebarContainerView = views[1]
         let titlebarView = titlebarContainerView.subviews[0]
-        titlebarView.layer!.backgroundColor = bannerColor.CGColor
+        titlebarView.layer!.backgroundColor = bannerColor.cgColor
         //        CGColorRelease(bannerColor)
 //        self.window?.contentView?.superview?.addSubview(titlebarView,positioned: .Below,relativeTo: topBannerView)
 

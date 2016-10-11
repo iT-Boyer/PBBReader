@@ -32,11 +32,11 @@ class PycReceiveModel: NSObject {
     var  orderNo = ""
     
     var    fileID = 0
-    var fileHash:NSData?
-    var fileSecretkeyOrigianlR1:NSData?
-    var fileSessionkeyOrigianlRR2:NSData?
-    var fileSecretkeyR1:NSData?
-    var fileSessionkeyR2:NSData?
+    var fileHash:Data?
+    var fileSecretkeyOrigianlR1:Data?
+    var fileSessionkeyOrigianlRR2:Data?
+    var fileSecretkeyR1:Data?
+    var fileSessionkeyR2:Data?
     
     var    fileType = 0
     var fileExtentionWithOutDot = ""

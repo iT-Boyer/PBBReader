@@ -34,10 +34,10 @@ public struct ToastyStyle {
     public var cornerRadius: CGFloat = 0
     
     #if os(OSX)
-    public var backgroundColor = NSColor.blackColor().colorWithAlphaComponent(0.8)
-    public var textColor = NSColor.whiteColor()
+    public var backgroundColor = NSColor.black().withAlphaComponent(0.8)
+    public var textColor = NSColor.white()
     public var margin  = NSEdgeInsetsZero
-    public var padding = NSEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+    public var padding = EdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
     #else
     public var backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.8)
     public var textColor = UIColor.whiteColor()
@@ -46,7 +46,7 @@ public struct ToastyStyle {
     public var padding = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
     #endif
     
-    public var textAlignment = NSTextAlignment.Center
+    public var textAlignment = NSTextAlignment.center
 }
 
 // MARK: - Main Functionality
@@ -54,17 +54,17 @@ public struct ToastyStyle {
 public class Toasty {
     public static var defaultStyle = ToastyStyle()
     
-    public static let shortDuration: NSTimeInterval = 2
-    public static let longDuration: NSTimeInterval = 3.5
+    public static let shortDuration: TimeInterval = 2
+    public static let longDuration: TimeInterval = 3.5
     
     #if os(OSX)
     
-    public static func showToastWithText(text: String, inView view: NSView, forDuration duration: NSTimeInterval = Toasty.shortDuration, usingStyle style: ToastyStyle = Toasty.defaultStyle) {
+    public static func showToastWithText(_ text: String, inView view: NSView, forDuration duration: TimeInterval = Toasty.shortDuration, usingStyle style: ToastyStyle = Toasty.defaultStyle) {
 //        assert(false, "Toasty is not yet implemented for OS X")
         
         let toastView = NSView()
         toastView.wantsLayer = true
-        toastView.layer?.backgroundColor = style.backgroundColor.CGColor
+        toastView.layer?.backgroundColor = style.backgroundColor.cgColor
         toastView.layer?.borderColor  = style.borderColor
         toastView.layer?.borderWidth  = style.borderWidth
         toastView.layer?.cornerRadius = style.cornerRadius
@@ -73,7 +73,7 @@ public class Toasty {
         
         let messageLabel = NSTextField()
         messageLabel.stringValue   = text
-        messageLabel.backgroundColor = NSColor.clearColor()
+        messageLabel.backgroundColor = NSColor.clear()
         messageLabel.textColor     = style.textColor
         messageLabel.alignment     = NSTextAlignment(rawValue:2)! //居中
         
@@ -85,15 +85,15 @@ public class Toasty {
         
         // Add constraints.
         toastView.addConstraints([
-            NSLayoutConstraint(item: messageLabel, attribute: .Top, relatedBy: .Equal, toItem: toastView, attribute: .Top, multiplier: 1, constant: style.padding.top),
-            NSLayoutConstraint(item: messageLabel, attribute: .Right, relatedBy: .Equal, toItem: toastView, attribute: .Right, multiplier: 1, constant: -style.padding.right),
-            NSLayoutConstraint(item: messageLabel, attribute: .Bottom, relatedBy: .Equal, toItem: toastView, attribute: .Bottom, multiplier: 1, constant: -style.padding.bottom),
-            NSLayoutConstraint(item: messageLabel, attribute: .Left, relatedBy: .Equal, toItem: toastView, attribute: .Left, multiplier: 1, constant: style.padding.left)])
+            NSLayoutConstraint(item: messageLabel, attribute: .top, relatedBy: .equal, toItem: toastView, attribute: .top, multiplier: 1, constant: style.padding.top),
+            NSLayoutConstraint(item: messageLabel, attribute: .right, relatedBy: .equal, toItem: toastView, attribute: .right, multiplier: 1, constant: -style.padding.right),
+            NSLayoutConstraint(item: messageLabel, attribute: .bottom, relatedBy: .equal, toItem: toastView, attribute: .bottom, multiplier: 1, constant: -style.padding.bottom),
+            NSLayoutConstraint(item: messageLabel, attribute: .left, relatedBy: .equal, toItem: toastView, attribute: .left, multiplier: 1, constant: style.padding.left)])
         
         view.addConstraints([
-            NSLayoutConstraint(item: toastView, attribute: .Top, relatedBy: .Equal, toItem: view, attribute: .Top, multiplier: 1, constant: style.margin.top),
-            NSLayoutConstraint(item: toastView, attribute: .Right, relatedBy: .Equal, toItem: view, attribute: .Right, multiplier: 1, constant: -style.margin.right),
-            NSLayoutConstraint(item: toastView, attribute: .Left, relatedBy: .Equal, toItem: view, attribute: .Left, multiplier: 1, constant: style.margin.left)
+            NSLayoutConstraint(item: toastView, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: style.margin.top),
+            NSLayoutConstraint(item: toastView, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1, constant: -style.margin.right),
+            NSLayoutConstraint(item: toastView, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: style.margin.left)
 //            NSLayoutConstraint(item: messageLabel, attribute: .Bottom, relatedBy: .Equal, toItem: toastView, attribute: .Bottom, multiplier: 1, constant: -style.padding.bottom)
             ])
         
@@ -110,7 +110,9 @@ public class Toasty {
         }
 
         // Wait for duration and animate out.
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(duration * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
+        //http://stackoverflow.com/questions/38387939/dispatch-time-now-in-swift-3-and-backward-compatibility
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(duration * Double(NSEC_PER_SEC))), DispatchQueue.main)
+        (DispatchQueue.main).after(when: DispatchTime.now() + Double(Int64(duration * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) {
             NSAnimationContext.runAnimationGroup({ (context) in
                 //
                 context.duration = 0.2
@@ -183,7 +185,7 @@ public class Toasty {
     
     public extension NSView {
         
-        public func showToastWithText(text: String, forDuration duration: NSTimeInterval = Toasty.shortDuration, usingStyle style: ToastyStyle = Toasty.defaultStyle) {
+        public func showToastWithText(_ text: String, forDuration duration: TimeInterval = Toasty.shortDuration, usingStyle style: ToastyStyle = Toasty.defaultStyle) {
             Toasty.showToastWithText(text, inView: self, forDuration: duration, usingStyle: style)
         }
     }

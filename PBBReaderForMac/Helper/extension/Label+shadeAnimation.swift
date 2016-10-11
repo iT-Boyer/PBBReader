@@ -14,7 +14,7 @@ extension NSTextField
         guard let mvFrame = superview?.bounds
         else
         {
-            return CGPointMake(0,0);
+            return CGPoint(x: 0,y: 0);
         }
         //x 区间大小（0...x_max）
         let x_max = mvFrame.width - self.frame.size.width
@@ -34,7 +34,7 @@ extension NSTextField
         //            let x = x_random + UInt32(self.frame.size.width)
         //            let y = y_random + UInt32(self.frame.size.height)
 //        print("水印坐标：x = \(x_random),Y = \(y_random)")
-        return CGPointMake(CGFloat(x_random), CGFloat(y_random))
+        return CGPoint(x: CGFloat(x_random), y: CGFloat(y_random))
     }
     
     
@@ -67,38 +67,38 @@ extension NSTextField
         }
     }
     
-    func fireTimer(Countdown:Double)->()->()
+    func fireTimer(_ Countdown:Double)->()->()
     {
         //倒计时
-        var timer:NSTimer!
+        var timer:Timer!
         
         if Countdown > 0 {
             NSTextField.countDownNumber = Int(Countdown)
             self.translatesAutoresizingMaskIntoConstraints = false
-            let textFieldV = NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[textField]",
+            let textFieldV = NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[textField]",
                                                                                       options: [],
                                                                                       metrics: nil,
                                                                                       views: ["textField":self])
-            let textFieldH = NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[textField]-0-|",
+            let textFieldH = NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[textField]-0-|",
                                                                                       options: [],
                                                                                       metrics: nil,
                                                                                       views: ["textField":self])
             superview?.addConstraints(textFieldH)
             superview?.addConstraints(textFieldV)
             
-            self.editable = false
-            self.bordered = false
+            self.isEditable = false
+            self.isBordered = false
             
 //            (self as NSControl).alignment = NSTextAlignment(rawValue:2)!
             self.alignment = NSTextAlignment(rawValue:2)!
 //            (self as NSControl).font = NSFont.systemFontOfSize(CGFloat(20))
-            self.font = NSFont.systemFontOfSize(CGFloat(20))
-            self.textColor = NSColor.whiteColor()
-            self.backgroundColor = NSColor.grayColor()
+            self.font = NSFont.systemFont(ofSize: CGFloat(20))
+            self.textColor = NSColor.white()
+            self.backgroundColor = NSColor.gray()
             
             NSTextField.minutes = Int(Countdown / 60)
-            NSTextField.seconds = Int(Countdown % 60)
-            timer = NSTimer(timeInterval: 1.0, target: self, selector: #selector(NSTextField.Countdown), userInfo: nil, repeats: true)
+            NSTextField.seconds = Int(Countdown.truncatingRemainder(dividingBy: 60))
+            timer = Timer(timeInterval: 1.0, target: self, selector: #selector(NSTextField.Countdown), userInfo: nil, repeats: true)
             
         }else if Countdown == 0{
             //水印
@@ -106,20 +106,20 @@ extension NSTextField
                 return {}
             }
             //默认显示，24s之后隐藏
-            timer = NSTimer(timeInterval: 24.0, target: self, selector: #selector(NSTextField.hiddenShade as (NSTextField) -> () -> ()), userInfo: nil, repeats: true)
+            timer = Timer(timeInterval: 24.0, target: self, selector: #selector(NSTextField.hiddenShade as (NSTextField) -> () -> ()), userInfo: nil, repeats: true)
         }
         else
         {
-            self.hidden = true
+            self.isHidden = true
             return {}
         }
         
-        NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
+        RunLoop.current.add(timer, forMode: RunLoopMode.commonModes)
         
         //匿名函数
        return {
             self.animator().alphaValue = 1
-            self.hidden = false
+            self.isHidden = false
             timer.invalidate()
 //            print("关闭隐藏动画....")
         }
@@ -144,11 +144,11 @@ extension NSTextField
             if (NSTextField.seconds < 10)
             {
                 self.animator().alphaValue = 0.7
-                self.backgroundColor = NSColor.redColor()
+                self.backgroundColor = NSColor.red()
                 if (NSTextField.seconds == 0)
                 {
                     //关闭播放器
-                    NSNotificationCenter.defaultCenter().postNotificationName("CancleClosePlayerWindows", object: nil)
+                    NotificationCenter.default.post(name: Notification.Name(rawValue: "CancleClosePlayerWindows"), object: nil)
                 }
             }
             //s
@@ -165,13 +165,13 @@ extension NSTextField
         NSAnimationContext.runAnimationGroup({ (context) in
             //
             context.duration = 1.0
-            self.hidden = true
+            self.isHidden = true
             self.animator().alphaValue = 0
             
         }) {
 //            print("\(NSDate())水印隐藏....")
             //隐藏20秒之后，再显示出来
-            NSTimer.scheduledTimerWithTimeInterval(18.0, target: self, selector: #selector(NSTextField.show), userInfo: nil, repeats: false)
+            Timer.scheduledTimer(timeInterval: 18.0, target: self, selector: #selector(NSTextField.show), userInfo: nil, repeats: false)
         }
 
     }
@@ -182,7 +182,7 @@ extension NSTextField
         NSAnimationContext.runAnimationGroup({ (context) in
             //
             context.duration = 0
-            self.hidden = false
+            self.isHidden = false
             self.animator().alphaValue = 1
             self.animator().setFrameOrigin(self.shadeOrigin)
             

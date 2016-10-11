@@ -11,8 +11,8 @@ import Cocoa
 /// 通过监听cell选中事件发送广播，来控制背景图片的显示/隐藏
 class CustomTableCellView: NSTableCellView {
 
-    override func drawRect(dirtyRect: NSRect) {
-        super.drawRect(dirtyRect)
+    override func draw(_ dirtyRect: NSRect) {
+        super.draw(dirtyRect)
 
         // Drawing code here.
     }
@@ -24,25 +24,25 @@ class CustomTableCellView: NSTableCellView {
     
     
     //当被选中时，添加监听通知，同时发出取消通知
-    func SendBySelecedNotification(isManySelected:Bool) {
+    func SendBySelecedNotification(_ isManySelected:Bool) {
         //
-        ibCellBackgroundImageView.hidden = false
+        ibCellBackgroundImageView.isHidden = false
         //通知
-        NSNotificationCenter.defaultCenter().postNotificationName("BYSELECED_IS_ME", object: self, userInfo: ["pycFileID":cellID,"isManySelected":isManySelected])
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "BYSELECED_IS_ME"), object: self, userInfo: ["pycFileID":cellID,"isManySelected":isManySelected])
         //监听
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CustomTableCellView.CancelSelectedStatus(_:)), name: "BYSELECED_IS_ME", object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(CustomTableCellView.CancelSelectedStatus(_:)), name: "BYSELECED_IS_ME" as NSNotification.Name, object: nil)
     }
     
     //取消选中状态，移除监听事件
-    @objc func CancelSelectedStatus(info:NSNotification) {
+    @objc func CancelSelectedStatus(_ info:Notification) {
         //多选模式
-        let isManySelected = info.userInfo!["isManySelected"] as! Bool
+        let isManySelected = (info as NSNotification).userInfo!["isManySelected"] as! Bool
         if !isManySelected {
-            let fileID = info.userInfo!["pycFileID"] as! Int
+            let fileID = (info as NSNotification).userInfo!["pycFileID"] as! Int
             if fileID != cellID {
                 //重置默认状态
-                ibCellBackgroundImageView.hidden = true
-                NSNotificationCenter.defaultCenter().removeObserver(self)
+                ibCellBackgroundImageView.isHidden = true
+                NotificationCenter.default.removeObserver(self)
             }
         }
     }
