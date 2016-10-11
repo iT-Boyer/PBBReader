@@ -910,10 +910,12 @@ singleton_implementation(AppDelegateHelper);
 -(void)PycFile:(PycFile *)fileObject didFinishGetApplyFileInfo:(MAKEPYCRECEIVE *)receiveData
 {
     [self hide:1.0];
-    if (receiveData == nil || receiveData->returnValue == 0) {
+    if (receiveData == nil || receiveData->returnValue == 0)
+    {
         [self setAlertView:@"您的网络不给力哦，请重试！"];
-    } else {
-        
+    }
+    else
+    {
         if(receiveData->returnValue == -1)
         {
             [self setAlertView:@"数据传输错误，请重试！"];
@@ -1167,7 +1169,7 @@ singleton_implementation(AppDelegateHelper);
 - (void)show{
     isLoading = YES;
     //    keyWindow = [[NSApplication sharedApplication] keyWindow];
-    [self setKeyWindow:true];
+//    [self setKeyWindow:true];
     if(!hud){
         hud = [MBProgressHUD showHUDAddedTo:keyWindow.contentView animated:YES];
         hud.removeFromSuperViewOnHide = YES;
@@ -1190,6 +1192,10 @@ singleton_implementation(AppDelegateHelper);
             {
                 //服务器响应之后，设置window关闭按钮可用
                 [keyWindow setStyleMask:[window styleMask] | NSClosableWindowMask];
+            }
+            else
+            {
+                [keyWindow setStyleMask:[window styleMask] & ~ NSClosableWindowMask];
             }
         }
         

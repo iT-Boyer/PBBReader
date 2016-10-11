@@ -210,65 +210,80 @@ extension ReceiveViewController
         }
         else
         {
-            ibSeriesNameLabel.hidden = false
+            ibSeriesNameLabel.hidden = true
             ibSeriesLabel.hidden = false
             makeTimeToTitleConstraint.constant = 41
-            ibSeriesNameLabel.stringValue = seriesName
+//            ibSeriesNameLabel.stringValue = seriesName
+            ibSeriesLabel.stringValue = "所属系列：\(seriesName)"
         }
         
         makerLabel.stringValue = "作者对你说："
-        if (receiveFile.fileOwnerNick != "" && receiveFile.fileOwnerNick != nil) {
+        if (receiveFile.fileOwnerNick != "" && receiveFile.fileOwnerNick != nil)
+        {
             makerLabel.stringValue = "作者 \(receiveFile.fileOwnerNick) 对你说："
         }
         
         ibMakeTime.stringValue = "制作时间：\(receiveFile.sendtime.dateString())"
         titleLabel.stringValue = receiveFile.filename
         
-        if let qq = receiveFile.fileQQ{
+        if let qq = receiveFile.fileQQ
+        {
             qqLabel.stringValue = qq
         }
-        if let email = receiveFile.fileEmail{
+        if let email = receiveFile.fileEmail
+        {
             emailLabel.stringValue = email
         }
-        if let phone = receiveFile.filePhone{
+        if let phone = receiveFile.filePhone
+        {
             phoneLabel.stringValue = phone
         }
         
         
-        if (receiveFile.fileQQ == nil || receiveFile.fileQQ == "") {
+        if (receiveFile.fileQQ == nil || receiveFile.fileQQ == "")
+        {
             qqLabel.stringValue = "无"
         }
         
-        if (receiveFile.fileEmail == nil || receiveFile.fileEmail == "") {
+        if (receiveFile.fileEmail == nil || receiveFile.fileEmail == "")
+        {
             emailLabel.stringValue = "无"
         }
         
-        if (receiveFile.filePhone == nil || receiveFile.filePhone == "") {
+        if (receiveFile.filePhone == nil || receiveFile.filePhone == "")
+        {
             phoneLabel.stringValue = "无"
         }
         
         ibNote.stringValue = receiveFile.note
         
         //次数限制
-        if (receiveFile.limitnum == 0) {
+        if (receiveFile.limitnum == 0)
+        {
             self.lastNumProgressView.hidden = true
             lastNumLabel.stringValue = "不限制"
             lastNumLabel.textColor = kGreen
-        }else{
+        }
+        else
+        {
             
             self.lastNumProgressView.hidden = false
             let lastNum = "\(receiveFile.lastnum)"
             let limitnum = "\(receiveFile.limitnum)"
             
-            if (receiveFile.fileTimeType == 4) {
+            if (receiveFile.fileTimeType == 4)
+            {
                 lastNumLabel.attributedStringValue = NSMutableAttributedString.init(attributedString: NSAttributedString.init(string: "剩余\(lastNum)次，共 \(limitnum) 次"))
                 lastNumLabel.AddColorText("剩余", AColor: kGray, AFont: nil)
                 lastNumLabel.AddColorText("次，共", AColor: kGray, AFont: nil)
                 lastNumLabel.AddColorText(" 次", AColor: kGray, AFont: nil)
                 lastNumProgressView.doubleValue = (Double(receiveFile.lastnum) * 1.0) / Double(receiveFile.limitnum)
-            }else{
+            }
+            else
+            {
                 
-                if (receiveFile.fileMakeType == 1) {
+                if (receiveFile.fileMakeType == 1)
+                {
                     lastNumLabel.attributedStringValue = NSMutableAttributedString.init(attributedString: NSAttributedString.init(string: "剩余\(lastNum)次，共 \(limitnum) 次"))
                     lastNumLabel.AddColorText("剩余", AColor: kGray, AFont: nil)
                     lastNumLabel.AddColorText("次，共", AColor: kGray, AFont: nil)
