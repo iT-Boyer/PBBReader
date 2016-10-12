@@ -30,7 +30,7 @@ class CustomTableCellView: NSTableCellView {
         //通知
         NotificationCenter.default.post(name: Notification.Name(rawValue: "BYSELECED_IS_ME"), object: self, userInfo: ["pycFileID":cellID,"isManySelected":isManySelected])
         //监听
-        NotificationCenter.default.addObserver(self, selector: #selector(CustomTableCellView.CancelSelectedStatus(_:)), name: "BYSELECED_IS_ME" as NSNotification.Name, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(CustomTableCellView.CancelSelectedStatus(_:)), name: NSNotification.Name("BYSELECED_IS_ME"), object: nil)
     }
     
     //取消选中状态，移除监听事件

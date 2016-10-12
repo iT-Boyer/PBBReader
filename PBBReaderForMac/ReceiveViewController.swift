@@ -67,10 +67,10 @@ class ReceiveViewController: NSViewController{
         receiveArray = ReceiveFileDao.shared().selectReceiveFileAll(loginName)
         //设置浏览按钮字体颜色
         let attributedString = NSMutableAttributedString.init(attributedString: ibOpenInLocalFileButtion.attributedTitle)
-        attributedString.addAttribute(NSForegroundColorAttributeName, value: NSColor.white(), range: NSRange.init(location: 0, length: 12))
+        attributedString.addAttribute(NSForegroundColorAttributeName, value: NSColor.white, range: NSRange.init(location: 0, length: 12))
         ibOpenInLocalFileButtion.attributedTitle = attributedString
         
-        NotificationCenter.default.addObserver(self, selector: #selector(ReceiveViewController.openInPBBFile(_:)), name: "RefreshOpenInFile" as NSNotification.Name, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ReceiveViewController.openInPBBFile(_:)), name: NSNotification.Name("RefreshOpenInFile"), object: nil)
         
         ReceiveTableView.setDraggingSourceOperationMask(.every, forLocal: false)
      
@@ -113,7 +113,7 @@ class ReceiveViewController: NSViewController{
         let result = panel.runModal()
         if result == NSFileHandlingPanelOKButton {
             //
-            path_all = (panel.url?.path!)!
+            path_all = (panel.url?.path)!
             print("文件路径：\(path_all)")
             appHelper?.phoneNo = ""
             appHelper?.messageID = ""
@@ -158,8 +158,8 @@ class ReceiveViewController: NSViewController{
         
         // Navigation bar is translucent so the view starts from under the bars. Set margin accordingly.
         style.margin.top = 0
-        style.backgroundColor = NSColor.white()
-        style.textColor = NSColor.black()
+        style.backgroundColor = NSColor.white
+        style.textColor = NSColor.black
         // Show our toast.
         rootView.showToastWithText("加载完成！", usingStyle: style)
         
@@ -273,7 +273,7 @@ extension ReceiveViewController
             
             if (receiveFile.fileTimeType == 4)
             {
-                lastNumLabel.attributedStringValue = NSMutableAttributedString.init(attributedString: AttributedString.init(string: "剩余\(lastNum)次，共 \(limitnum) 次"))
+                lastNumLabel.attributedStringValue = NSMutableAttributedString.init(attributedString: NSAttributedString.init(string: "剩余\(lastNum)次，共 \(limitnum) 次"))
                 lastNumLabel.addColorText("剩余", aColor: kGray, aFont: nil)
                 lastNumLabel.addColorText("次，共", aColor: kGray, aFont: nil)
                 lastNumLabel.addColorText(" 次", aColor: kGray, aFont: nil)
@@ -284,14 +284,14 @@ extension ReceiveViewController
                 
                 if (receiveFile.fileMakeType == 1)
                 {
-                    lastNumLabel.attributedStringValue = NSMutableAttributedString.init(attributedString: AttributedString.init(string: "剩余\(lastNum)次，共 \(limitnum) 次"))
+                    lastNumLabel.attributedStringValue = NSMutableAttributedString.init(attributedString: NSAttributedString.init(string: "剩余\(lastNum)次，共 \(limitnum) 次"))
                     lastNumLabel.addColorText("剩余", aColor: kGray, aFont: nil)
                     lastNumLabel.addColorText("次，共", aColor: kGray, aFont: nil)
                     lastNumLabel.addColorText(" 次", aColor: kGray, aFont: nil)
                     lastNumProgressView.doubleValue = (Double(receiveFile.lastnum) * 1.0) / Double(receiveFile.limitnum)
                 }else
                 {
-                    self.lastNumLabel.attributedStringValue = NSMutableAttributedString.init(attributedString: AttributedString.init(string: "共 \(limitnum) 次"))
+                    self.lastNumLabel.attributedStringValue = NSMutableAttributedString.init(attributedString: NSAttributedString.init(string: "共 \(limitnum) 次"))
                     lastNumLabel.addColorText("共", aColor: kGray, aFont: nil)
                     lastNumLabel.addColorText(" 次", aColor: kGray, aFont: nil)
                     lastNumProgressView.isHidden = true
@@ -312,16 +312,16 @@ extension ReceiveViewController
             let mm = receiveFile.limittime / 60;
             let ss = receiveFile.limittime % 60;
             if (mm == 0) {
-                onceTimeLabel.attributedStringValue = NSMutableAttributedString.init(attributedString: AttributedString.init(string: "\(ss) 秒"))
-                onceTimeLabel.addColorText("秒", aColor: NSColor.black(), aFont: nil)
+                onceTimeLabel.attributedStringValue = NSMutableAttributedString.init(attributedString: NSAttributedString.init(string: "\(ss) 秒"))
+                onceTimeLabel.addColorText("秒", aColor: NSColor.black, aFont: nil)
             } else {
                 if (ss == 0) {
-                    onceTimeLabel.attributedStringValue =  NSMutableAttributedString.init(attributedString: AttributedString.init(string: "\(mm) 分钟"))
-                    onceTimeLabel.addColorText("分钟", aColor: NSColor.black(), aFont: nil)
+                    onceTimeLabel.attributedStringValue =  NSMutableAttributedString.init(attributedString: NSAttributedString.init(string: "\(mm) 分钟"))
+                    onceTimeLabel.addColorText("分钟", aColor: NSColor.black, aFont: nil)
                 }else{
-                    onceTimeLabel.attributedStringValue = NSMutableAttributedString.init(attributedString: AttributedString.init(string: "\(mm)分\(ss)秒"))
-                    onceTimeLabel.addColorText("分", aColor: NSColor.black(), aFont: nil)
-                    onceTimeLabel.addColorText("秒", aColor: NSColor.black(), aFont: nil)
+                    onceTimeLabel.attributedStringValue = NSMutableAttributedString.init(attributedString: NSAttributedString.init(string: "\(mm)分\(ss)秒"))
+                    onceTimeLabel.addColorText("分", aColor: NSColor.black, aFont: nil)
+                    onceTimeLabel.addColorText("秒", aColor: NSColor.black, aFont: nil)
                 }
             }
         }
@@ -338,7 +338,7 @@ extension ReceiveViewController
             canTimeDateLabel.isHidden = false
             let lastday = "\(receiveFile.lastday)"
             let allday = "\(receiveFile.allday)"
-            lastDayLabel.attributedStringValue =  NSMutableAttributedString.init(attributedString: AttributedString.init(string: "剩余\(lastday)天，共 \(allday) 天"))
+            lastDayLabel.attributedStringValue =  NSMutableAttributedString.init(attributedString: NSAttributedString.init(string: "剩余\(lastday)天，共 \(allday) 天"))
             lastDayLabel.addColorText("剩余", aColor: kGray, aFont: nil)
             lastDayLabel.addColorText("天，共", aColor: kGray, aFont: nil)
             lastDayLabel.addColorText(" 天", aColor: kGray, aFont: nil)
@@ -667,15 +667,15 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
                 //
                 readBtn.image = NSImage.init(named: "send_read_no")
                 readBtn.isEnabled = false
-                cellView.textField?.textColor = NSColor.red()
+                cellView.textField?.textColor = NSColor.red
                 
                 //提示本地文件错误
                 // Make a copy of default style.
                 var style = Toasty.defaultStyle
                 // Navigation bar is translucent so the view starts from under the bars. Set margin accordingly.
                 style.margin.top = 0
-                style.backgroundColor = NSColor.white()
-                style.textColor = NSColor.black()
+                style.backgroundColor = NSColor.white
+                style.textColor = NSColor.black
                 // Show our toast.
                 rootView.showToastWithText("信息与本地文件不符，建议删除该条无效信息！", usingStyle: style)
             }
@@ -708,17 +708,17 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
     
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
         //http://blog.csdn.net/fengsh998/article/details/18809355
-        let column = tableView.tableColumns[0]
-        let dycell = tableView.preparedCell(atColumn: 0, row: row)
-        var cellBounds = NSZeroRect
-        cellBounds.size.width = column.width
-        cellBounds.size.height = CGFloat.greatestFiniteMagnitude
-        let cellSize = dycell!.cellSize(forBounds: cellBounds)
+//        let column = tableView.tableColumns[0]
+//        let dycell = tableView.preparedCell(atColumn: 0, row: row)
+//        var cellBounds = NSZeroRect
+//        cellBounds.size.width = column.width
+//        cellBounds.size.height = CGFloat.greatestFiniteMagnitude
+//        _ = dycell!.cellSize(forBounds: cellBounds)
 //        return cellSize.height
         return 30
     }
     
-    func tableView(_ tableView: NSTableView, willDisplayCell cell: AnyObject, for tableColumn: NSTableColumn?, row: Int) {
+    private func tableView(_ tableView: NSTableView, willDisplayCell cell: AnyObject, for tableColumn: NSTableColumn?, row: Int) {
         //        let cellw = cell as! SelectedRowHighlightCell
         //        cellw.setSelectionBKColor(NSColor.lightGrayColor())
 //        if ([cell isKindOfClass:[FSCustomCell class]]) {
@@ -773,7 +773,7 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
             else
             {
                 //原文件不存在
-                cellView.textField?.textColor = NSColor.red()
+                cellView.textField?.textColor = NSColor.red
             }
             return cellView
         }
@@ -792,7 +792,7 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
 //        selectedIndexes.enumer
 //        http://stackoverflow.com/questions/39638538/swift-3-0-value-of-type-indexset-has-no-member-enumerateindexesusingblock
 //        selectedIndexes.enumerated()
-        for (index, value) in selectedIndexes.enumerated() {
+        for (index, _) in selectedIndexes.enumerated() {
             guard let cellView = self.ReceiveTableView.view(atColumn: 0, row: index, makeIfNecessary: false) as? CustomTableCellView
                 else{
                     break
@@ -807,7 +807,7 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
     //右击菜单在Finder中显示功能
     @IBAction func mnuRevealInFinderSelected(_ sender: AnyObject) {
         let selectedIndexes = indexesToProcessForContextMenu()
-        for (row, value) in selectedIndexes.enumerated() {
+        for (row, _) in selectedIndexes.enumerated() {
             //
             let ReceiveColumn = self.receiveArray[row] as! OutFile
             NSWorkspace.shared().selectFile(ReceiveColumn.fileurl, inFileViewerRootedAtPath: "")
@@ -818,7 +818,7 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
     @IBAction func mnuRemoveRowSelected(_ sender: AnyObject) {
         
         let selectedIndexes = indexesToProcessForContextMenu()
-        for (row, value) in selectedIndexes.enumerated() {
+        for (row, _) in selectedIndexes.enumerated() {
             //
             let ReceiveColumn = self.receiveArray[row] as! OutFile
             ReceiveFileDao.shared().deleteReceiveFile(ReceiveColumn.fileid, logName: self.loginName)
@@ -830,7 +830,7 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
             if(ReceiveFileDao.shared().fetchCount(ofUid: ReceiveColumn.fileid) == 0)
             {
                 let fileDir = SandboxFile.createList(SandboxFile.getDocumentPath(), listName: "advert")
-                let pre = Predicate.init(format: "SELF contains[cd] '\(uid)'", argumentArray: nil)
+                let pre = NSPredicate.init(format: "SELF contains[cd] '\(uid)'", argumentArray: nil)
                 let filesNames = SandboxFile.getSubpathsAtPath(fileDir)
                 let oldFiles = (filesNames! as NSArray).filtered(using: pre) as NSArray
                 oldFiles.enumerateObjects({ (obj, idx, stop) in
@@ -882,8 +882,8 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
             var style = Toasty.defaultStyle
             // Navigation bar is translucent so the view starts from under the bars. Set margin accordingly.
             style.margin.top = 0
-            style.backgroundColor = NSColor.white()
-            style.textColor = NSColor.black()
+            style.backgroundColor = NSColor.white
+            style.textColor = NSColor.black
             // Show our toast.
             rootView.showToastWithText("该文件无法阅读！", usingStyle: style)
             return
@@ -900,8 +900,8 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
                 var style = Toasty.defaultStyle
                 // Navigation bar is translucent so the view starts from under the bars. Set margin accordingly.
                 style.margin.top = 0
-                style.backgroundColor = NSColor.white()
-                style.textColor = NSColor.black()
+                style.backgroundColor = NSColor.white
+                style.textColor = NSColor.black
                 // Show our toast.
                 rootView.showToastWithText("该文件无法阅读！", usingStyle: style)
                 return;

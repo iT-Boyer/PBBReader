@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-import SnapKit
+//import SnapKit
 
 class CustomWindowController: NSWindowController {
 
@@ -25,13 +25,28 @@ class CustomWindowController: NSWindowController {
         topBannerView.wantsLayer = true
         topBannerView.layer!.backgroundColor = bannerColor.cgColor
         self.window?.contentView?.addSubview(topBannerView)
-        topBannerView.snp_makeConstraints { (make) in
-            //
-            make.top.equalTo((self.window?.contentView)!).offset(0)
-            make.left.equalTo((self.window?.contentView)!).offset(0)
-            make.right.equalTo((self.window?.contentView)!).offset(0)
-            make.height.equalTo(40)
-        }
+//        topBannerView.snp_makeConstraints { (make) in
+//            //
+//            make.top.equalTo((self.window?.contentView)!).offset(0)
+//            make.left.equalTo((self.window?.contentView)!).offset(0)
+//            make.right.equalTo((self.window?.contentView)!).offset(0)
+//            make.height.equalTo(40)
+//        }
+        
+        topBannerView.translatesAutoresizingMaskIntoConstraints = false
+        let topBannerViewV = NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[topBannerView(==40)]",
+                                                        options: [],
+                                                        metrics: nil,
+                                                        views: ["topBannerView":topBannerView])
+        let topBannerViewH = NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[topBannerView]-0-|",
+                                                        options: [],
+                                                        metrics: nil,
+                                                        views: ["topBannerView":topBannerView])
+        
+        (self.window?.contentView)!.addConstraints(topBannerViewV)
+        (self.window?.contentView)!.addConstraints(topBannerViewH)
+        
+        
         //自定义一个label
         let titleLabel = NSTextField()
         titleLabel.stringValue = "PBB Reader"
@@ -39,27 +54,55 @@ class CustomWindowController: NSWindowController {
         titleLabel.font = NSFont.systemFont(ofSize: 25)
         titleLabel.isEditable = false
         titleLabel.isBordered = false //设置无边框
-        titleLabel.textColor = NSColor.white()
+        titleLabel.textColor = NSColor.white
         titleLabel.backgroundColor = bannerColor
         topBannerView.addSubview(titleLabel)
         titleLabel.sizeToFit()
-        titleLabel.snp_makeConstraints { (make) in
-            //居顶部5 ，水平居中topBanerView
-            make.centerX.equalTo(topBannerView)
-            make.left.right.equalTo(0)
-            make.top.equalTo(3)
-            
-        }
+//        titleLabel.snp_makeConstraints { (make) in
+//            //居顶部5 ，水平居中topBanerView
+//            make.centerX.equalTo(topBannerView)
+//            make.left.right.equalTo(0)
+//            make.top.equalTo(3)
+//            
+//        }
+//        let titleLabelV = NSLayoutConstraint.constraints(withVisualFormat: "V:|-3-[titleLabel]",
+//                                                            options: [],
+//                                                            metrics: nil,
+//                                                            views: ["titleLabel":titleLabel])
+//        let titleLabelH = NSLayoutConstraint.constraints(withVisualFormat: "H:|-[titleLabel]-|",
+//                                                            options: [],
+//                                                            metrics: nil,
+//                                                            views: ["titleLabel":titleLabel])
+//        
+//        topBannerView.addConstraints(titleLabelV)
+//        topBannerView.addConstraints(titleLabelH)
+        
+        //文字版标题已废弃
         titleLabel.isHidden = true
         
         //标题图片镂空文字
         let titleImageView = NSImageView()
         titleImageView.image = NSImage.init(named: "titlePBBReader")
         topBannerView.addSubview(titleImageView)
-        titleImageView.snp_makeConstraints { (make) in
-            make.centerX.equalTo(topBannerView)
-            make.top.equalTo(3)
-        }
+//        titleImageView.snp_makeConstraints { (make) in
+//            make.centerX.equalTo(topBannerView)
+//            make.top.equalTo(3)
+//        }
+        
+        //居顶部3
+        titleImageView.translatesAutoresizingMaskIntoConstraints = false
+        let titleImageViewV = NSLayoutConstraint.constraints(withVisualFormat: "V:|-3-[titleImageView]",
+                                                         options: [],
+                                                         metrics: nil,
+                                                         views: ["titleImageView":titleImageView])
+        //水平居中
+        let titleImageViewH = NSLayoutConstraint.constraints(withVisualFormat: "H:|-[titleImageView]-|",
+                                                         options: [],
+                                                         metrics: nil,
+                                                         views: ["titleImageView":titleImageView])
+        
+        topBannerView.addConstraints(titleImageViewV)
+        topBannerView.addConstraints(titleImageViewH)
         
         // 取出标题栏的view并且改变背景色
         var views = self.window!.contentView!.superview!.subviews

@@ -51,7 +51,10 @@ class BindingPhoneViewController: NSViewController {
         let result = pycFileHelper?.getVerificationCode(byPhone: phoneNumber, userPhone: userPhone)
         if (result != nil) {
             // 获取验证码成功后 调整界面
-            NotificationCenter.default.addObserver(self, selector: #selector(BindingPhoneViewController.getCodeFinish), name: "getCodeFinish" as NSNotification.Name, object: nil)
+//            NotificationCenter.default.addObserver(self, selector: #selector(BindingPhoneViewController.getCodeFinish), name: ("getCodeFinish" as NSNotification.Name), object: nil)
+            
+            NotificationCenter.default.addObserver(self, selector: #selector(BindingPhoneViewController.getCodeFinish), name: NSNotification.Name("getCodeFinish"), object: nil)
+            
         }else
         {
             pycFileHelper?.setAlertView("验证码请求发送失败，请重试！")
@@ -79,7 +82,7 @@ class BindingPhoneViewController: NSViewController {
         
         /* 判断输入验证码正确性，如果正确，调用查看文件接口，不正确给出提示*/
         if (messageId != nil) {
-            self.dismiss(true)
+            self.dismiss(true as AnyObject?)
             getCodeStateYes() // 调整界面控件状态
 
             if(!userPhone){
@@ -156,14 +159,19 @@ class BindingPhoneViewController: NSViewController {
         return true
     }
     
-    override func dismiss(_ sender: AnyObject?) {
-        if timer != nil {
-            timer.invalidate()   // 停止时间刷新计时器
-        }
-        super.dismiss(sender)
-        if !(sender is Bool){
-            NotificationCenter.default.post(name: Notification.Name(rawValue: "CancleClosePlayerWindows"), object: nil, userInfo: ["pycFileID":fileID])
-        }
-        NotificationCenter.default.removeObserver(self)
+//    override func dismiss(_: Any?) {
+
+//    }
+    
+    override func dismiss(_ sender: Any?) {
+                if timer != nil {
+                    timer.invalidate()   // 停止时间刷新计时器
+                }
+                super.dismiss(sender)
+                if !(sender is Bool){
+                    NotificationCenter.default.post(name: Notification.Name(rawValue: "CancleClosePlayerWindows"), object: nil, userInfo: ["pycFileID":fileID])
+                }
+                NotificationCenter.default.removeObserver(self)
     }
+    
 }

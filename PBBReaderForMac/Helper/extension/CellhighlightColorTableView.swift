@@ -19,7 +19,7 @@ class CellhighlightColorTableView: NSTableRowView {
 //        let primaryColor = NSColor.alternateSelectedControlColor().colorWithAlphaComponent(0.5)
         //选中时cell的背景色
         let primaryColor = NSColor.init(red: 225/255, green: 225/255, blue: 225/255, alpha: 1.0)
-        let secondarySelectedControlColor = NSColor.secondarySelectedControlColor().withAlphaComponent(0.5)
+        let secondarySelectedControlColor = NSColor.secondarySelectedControlColor.withAlphaComponent(0.5)
         //选中时的字体颜色
          
         
@@ -65,7 +65,7 @@ class CellhighlightColorTableView: NSTableRowView {
         sepRect = NSIntersectionRect(sepRect, dirtyRect)
         if (!NSIsEmptyRect(sepRect)) {
 //            NSColor.gridColor().set()
-            NSColor.red().set()
+            NSColor.red.set()
             NSRectFill(sepRect)
         }
     }

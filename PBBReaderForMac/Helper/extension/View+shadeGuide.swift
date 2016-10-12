@@ -106,7 +106,7 @@ extension NSView{
                                                                                        views: ["leftItem":newValue])
             let leftItem_Hconstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-leftConstant-[leftItem]",
                                                                                        options: [],
-                                                                                       metrics: ["leftConstant":leftTraitHrizontalOfLeftItem],
+                                                                                       metrics: ["leftConstant":NSNumber(leftTraitHrizontalOfLeftItem)],
                                                                                        views: ["leftItem":newValue])
             self.addConstraints(leftItem_Hconstraints)
             self.addConstraints(leftItem_Vconstraints)
@@ -135,7 +135,7 @@ extension NSView{
                                                                                         views: ["rightItem":newValue])
             let rightItem_Hconstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:[rightItem]-rightConstant-|",
                                                                                         options: [],
-                                                                                        metrics: ["rightConstant":rightTraitHrizontalOfRightItem],
+                                                                                        metrics: ["rightConstant":NSNumber(rightTraitHrizontalOfRightItem)],
                                                                                         views: ["rightItem":newValue])
             self.addConstraints(rightItem_Hconstraints)
             self.addConstraints(rightItem_Vconstraints)

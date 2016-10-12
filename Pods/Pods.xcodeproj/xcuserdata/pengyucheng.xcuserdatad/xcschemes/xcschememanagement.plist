@@ -28,7 +28,7 @@
 		<key>Pods-PBBReader.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>4</integer>
+			<integer>5</integer>
 		</dict>
 		<key>SnapKit.xcscheme</key>
 		<dict>
@@ -66,6 +66,11 @@
 			<true/>
 		</dict>
 		<key>A46399945D18308F6E6F073507A3A78B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B35C3CB95C138BF7E9E44F4E6E01FBA9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

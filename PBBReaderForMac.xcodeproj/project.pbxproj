@@ -15,7 +15,6 @@
 		143E38001D3F1809004B0A4D /* userDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FD21CFD844E001BCE84 /* userDao.m */; };
 		143E38011D3F1809004B0A4D /* BaseDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FD71CFD844E001BCE84 /* BaseDao.m */; };
 		143E38021D3F1809004B0A4D /* DateTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FC31CFD8396001BCE84 /* DateTool.m */; };
-		143E38031D3F1809004B0A4D /* PycSocketClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A68661CFEC71600BC66A1 /* PycSocketClientManager.swift */; };
 		143E38041D3F1809004B0A4D /* PycFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F861CFD7823001BCE84 /* PycFolder.m */; };
 		143E38051D3F1809004B0A4D /* SeriesDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FD01CFD844E001BCE84 /* SeriesDao.m */; };
 		143E38061D3F1809004B0A4D /* ScaryBugDoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1437DD9D1CF2AE72001BD2D2 /* ScaryBugDoc.swift */; };
@@ -163,7 +162,6 @@
 		146C08D11D7FF56A00AB3153 /* CustomTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146C08D01D7FF56A00AB3153 /* CustomTableCellView.swift */; };
 		146CF12D1D88F97D0021C6B4 /* water.xml in Resources */ = {isa = PBXBuildFile; fileRef = 14815B521D4B131A00922A62 /* water.xml */; };
 		14815AE71D49D7E200922A62 /* Label+shadeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14815AE61D49D7E100922A62 /* Label+shadeAnimation.swift */; };
-		14815AE91D49D80400922A62 /* View+shadeGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14815AE81D49D80400922A62 /* View+shadeGuide.swift */; };
 		14815AF21D49FCBC00922A62 /* PlayPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815AF11D49FCBC00922A62 /* PlayPosition.m */; };
 		14815B1F1D4AF55A00922A62 /* BarrageCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815AF61D4AF55A00922A62 /* BarrageCanvas.m */; };
 		14815B201D4AF55A00922A62 /* BarrageClock.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815AF81D4AF55A00922A62 /* BarrageClock.m */; };
@@ -1825,7 +1823,6 @@
 				14815B311D4AF55A00922A62 /* NSView+UIView.m in Sources */,
 				143E38011D3F1809004B0A4D /* BaseDao.m in Sources */,
 				143E38021D3F1809004B0A4D /* DateTool.m in Sources */,
-				143E38031D3F1809004B0A4D /* PycSocketClientManager.swift in Sources */,
 				143E38041D3F1809004B0A4D /* PycFolder.m in Sources */,
 				143E38051D3F1809004B0A4D /* SeriesDao.m in Sources */,
 				14815B221D4AF55A00922A62 /* BarrageDispatcher.m in Sources */,
@@ -1878,7 +1875,6 @@
 				143E38241D3F1809004B0A4D /* PycPrivateFile.m in Sources */,
 				14815B261D4AF55A00922A62 /* BarrageFloatImageSprite.m in Sources */,
 				143E38251D3F1809004B0A4D /* AppDelegateHelper.m in Sources */,
-				14815AE91D49D80400922A62 /* View+shadeGuide.swift in Sources */,
 				143E38261D3F1809004B0A4D /* PycCode.mm in Sources */,
 				143E38271D3F1809004B0A4D /* PycCodeUrl.mm in Sources */,
 				143E38281D3F1809004B0A4D /* PycFileOperateCommon.m in Sources */,
@@ -2081,7 +2077,6 @@
 					"$(inherited)",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/CocoaAsyncSocket\"",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/EDStarRating\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/SnapKit\"",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/FMDB\"",
 				);
 				GCC_PREFIX_HEADER = "PBBReaderForMac/PBB-Prefix.pch";
@@ -2106,8 +2101,6 @@
 					"\"$PODS_CONFIGURATION_BUILD_DIR/EDStarRating/EDStarRating.framework/Headers\"",
 					"-iquote",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/FMDB/FMDB.framework/Headers\"",
-					"-iquote",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/SnapKit/SnapKit.framework/Headers\"",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -2117,8 +2110,6 @@
 					"\"EDStarRating\"",
 					"-framework",
 					"\"FMDB\"",
-					"-framework",
-					"\"SnapKit\"",
 				);
 				PODS_BUILD_DIR = $BUILD_DIR;
 				PODS_CONFIGURATION_BUILD_DIR = "$PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
@@ -2148,7 +2139,6 @@
 					"\"$PODS_CONFIGURATION_BUILD_DIR/CocoaAsyncSocket\"",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/EDStarRating\"",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/FMDB\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/SnapKit\"",
 				);
 				GCC_PREFIX_HEADER = "PBBReaderForMac/PBB-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -2172,8 +2162,6 @@
 					"\"$PODS_CONFIGURATION_BUILD_DIR/EDStarRating/EDStarRating.framework/Headers\"",
 					"-iquote",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/FMDB-OSX10.11/FMDB.framework/Headers\"",
-					"-iquote",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/SnapKit/SnapKit.framework/Headers\"",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -2183,8 +2171,6 @@
 					"\"EDStarRating\"",
 					"-framework",
 					"\"FMDB\"",
-					"-framework",
-					"\"SnapKit\"",
 				);
 				PODS_BUILD_DIR = $BUILD_DIR;
 				PODS_CONFIGURATION_BUILD_DIR = "$PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";

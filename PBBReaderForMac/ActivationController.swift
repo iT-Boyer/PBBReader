@@ -274,19 +274,19 @@ class ActivationController: NSViewController {
         }
         
         if (trimSpace(qqField.stringValue)=="" && definechecked&1 != 0) {
-            qqField.layer?.borderColor = NSColor.red().cgColor
+            qqField.layer?.borderColor = NSColor.red.cgColor
             pycFileHelper?.setAlertView("Q Q号不能为空！")
             return;
         }
         
         if (trimSpace(phoneField.stringValue) == "" && definechecked&2 != 0) {
-            phoneField.layer?.borderColor = NSColor.red().cgColor
+            phoneField.layer?.borderColor = NSColor.red.cgColor
             pycFileHelper?.setAlertView("手机号不能为空！")
             return;
         }
         
         if (trimSpace(emailField.stringValue) == ""&&definechecked&4 != 0) {
-            emailField.layer?.borderColor = NSColor.red().cgColor
+            emailField.layer?.borderColor = NSColor.red.cgColor
             pycFileHelper?.setAlertView("邮箱不能为空！")
             return;
         }
@@ -304,14 +304,14 @@ class ActivationController: NSViewController {
             
             
             if (trimSpace(sel1) == "") {
-                self1View.layer?.borderColor = NSColor.red().cgColor
+                self1View.layer?.borderColor = NSColor.red.cgColor
                 pycFileHelper?.setAlertView("\(self1)不能为空！")
                 return;
             }
             
             let fieldlen = trimSpace(sel1).lengthOfBytes(using: String.Encoding.utf8)
             if (fieldlen>24) {
-                self1View.layer?.borderColor = NSColor.red().cgColor
+                self1View.layer?.borderColor = NSColor.red.cgColor
                 pycFileHelper?.setAlertView("\(self1)长度最多24个字符！")
                 return;
             }
@@ -319,21 +319,21 @@ class ActivationController: NSViewController {
             if (selffieldnum == 2) {
                 
                 if (trimSpace(sel2) == "") {
-                    self2View.layer?.borderColor = NSColor.red().cgColor
+                    self2View.layer?.borderColor = NSColor.red.cgColor
                     pycFileHelper?.setAlertView("\(self2)不能为空！")
                     return;
                 }
                 
                 let fieldlen = trimSpace(sel2).lengthOfBytes(using: String.Encoding.utf8)
                 if (fieldlen>24) {
-                    self2View.layer?.borderColor = NSColor.red().cgColor
+                    self2View.layer?.borderColor = NSColor.red.cgColor
                     pycFileHelper?.setAlertView("\(self2)长度最多24个字符！")
                     return;
                 }
             }
             
         }
-        self.dismiss(true)
+        self.dismiss(true as AnyObject?)
         let userName = userDao.shareduser().getLogName()
         let fileUrl = ReceiveFileDao.shared().selectReceiveFileURL(byFileId: fileId, logName: userName)
         pycFileHelper?.phoneNo = ""
@@ -354,14 +354,24 @@ class ActivationController: NSViewController {
 //        self.performSegueWithIdentifier("pushApplyInfo", sender: self)// 跳转信息确认
     }
     
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: AnyObject?) -> Bool {
-        return false
+    
+//    override func shouldPerformSegue(withIdentifier: String, sender: AnyObject?) -> Bool {
+//        return false
+//    }
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+         return false
     }
-    override func prepare(for segue: NSStoryboardSegue, sender: AnyObject?) {
-        //
+    
+//    override func prepare(for segue: NSStoryboardSegue, sender: AnyObject?) {
+//        //
+//        
+//    }
+    
+    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
+        
         if (segue.identifier == "pushApplyInfo") {
             
-             let applyInfo = segue.destinationController as! ApplyInfoViewController
+            let applyInfo = segue.destinationController as! ApplyInfoViewController
             
             applyInfo.qq = trimSpace(qqField.stringValue)
             applyInfo.phone = trimSpace(phoneField.stringValue)//_phoneField.text;
@@ -382,7 +392,8 @@ class ActivationController: NSViewController {
         }
     }
     
-    override func dismiss(_ sender: AnyObject?) {
+    
+    override func dismiss(_ sender: Any?) {
         super.dismiss(sender)
         if !(sender is Bool){
             NotificationCenter.default.post(name: Notification.Name(rawValue: "CancleClosePlayerWindows"), object: nil, userInfo: ["pycFileID":fileId])

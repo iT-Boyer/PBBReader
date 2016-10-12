@@ -93,8 +93,8 @@ extension NSTextField
             self.alignment = NSTextAlignment(rawValue:2)!
 //            (self as NSControl).font = NSFont.systemFontOfSize(CGFloat(20))
             self.font = NSFont.systemFont(ofSize: CGFloat(20))
-            self.textColor = NSColor.white()
-            self.backgroundColor = NSColor.gray()
+            self.textColor = NSColor.white
+            self.backgroundColor = NSColor.gray
             
             NSTextField.minutes = Int(Countdown / 60)
             NSTextField.seconds = Int(Countdown.truncatingRemainder(dividingBy: 60))
@@ -144,7 +144,7 @@ extension NSTextField
             if (NSTextField.seconds < 10)
             {
                 self.animator().alphaValue = 0.7
-                self.backgroundColor = NSColor.red()
+                self.backgroundColor = NSColor.red
                 if (NSTextField.seconds == 0)
                 {
                     //关闭播放器

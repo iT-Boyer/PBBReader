@@ -26,7 +26,7 @@ extension NSButton
 class CustomRotateButton: NSButton {
     
     
-    //方法一: 重写属性frame观察器，解决动画错位问题
+    //-------------方法一: 重写属性frame观察器，解决动画错位问题
     override var frame: NSRect{
         didSet{
             NSLog("yyyy\(oldValue)")
@@ -52,7 +52,7 @@ class CustomRotateButton: NSButton {
         UserDefaults.standard.set(true, forKey: "\(cellID)")
         UserDefaults.standard.synchronize()
         
-        //方法二: 观察者模式控制图标中心点位置
+        //-------------方法二: 观察者模式控制图标中心点位置
 //        addObserVerKVO()
 //        resetLayerPoint()
         
@@ -83,23 +83,23 @@ class CustomRotateButton: NSButton {
     }
     
     //添加KVO :http://www.jianshu.com/p/e036e53d240e
-    private var myContext = 0
+    fileprivate var myContext = 0
     func addObserVerKVO() {
         //
         addObserver(self, forKeyPath: "frame", options: .new, context: &myContext)
     }
     
-    override func observeValue(forKeyPath keyPath: String?, of object: AnyObject?, change: [NSKeyValueChangeKey : AnyObject]?, context: UnsafeMutablePointer<Void>?) {
-        //
-        if context == &myContext {
-            if let newValue = change?[NSKeyValueChangeKey.newKey] {
-                NSLog("Date changed: \(newValue)")
-                resetLayerPoint()
-            }
-        } else {
-            super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
-        }
-    }
+//    override func observeValue(forKeyPath keyPath: String?, of object: AnyObject?, change: [NSKeyValueChangeKey : AnyObject]?, context: UnsafeMutableRawPointer) {
+//        //
+//        if context == &myContext {
+//            if let newValue = change?[NSKeyValueChangeKey.newKey] {
+//                NSLog("Date changed: \(newValue)")
+//                resetLayerPoint()
+//            }
+//        } else {
+//            super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
+//        }
+//    }
     
     deinit {
         removeObserver(self, forKeyPath: "frame", context: &myContext)

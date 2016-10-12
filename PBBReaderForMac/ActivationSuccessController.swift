@@ -8,10 +8,8 @@
 
 import Cocoa
 
-class ActivationSuccessController: NSViewController {
-
-    
-    
+class ActivationSuccessController: NSViewController
+{
     @IBOutlet weak var ibShowInfoLabel: NSTextField!
     
     @IBOutlet weak var qqLabel: NSTextField!
@@ -41,8 +39,6 @@ class ActivationSuccessController: NSViewController {
     var needReapply = 0
     var applyId = 0
     var remark:String!
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,7 +76,7 @@ class ActivationSuccessController: NSViewController {
         if (needShowDiff == 0) {
             ibShowInfoLabel.textColor = kGreen
         }else{
-            ibShowInfoLabel.textColor = NSColor.orange()
+            ibShowInfoLabel.textColor = NSColor.orange
         }
         
         ibShowInfoLabel.stringValue = showInfo
@@ -95,7 +91,7 @@ class ActivationSuccessController: NSViewController {
         AppDelegateHelper.shared().getApplyFileInfo(byApplyId: applyId,fileID: fileId)
     }
     
-    override func dismiss(_ sender: AnyObject?) {
+    override func dismiss(_ sender: Any?) {
         super.dismiss(sender)
         if !(sender is Bool){
             NotificationCenter.default.post(name: Notification.Name(rawValue: "CancleClosePlayerWindows"), object: nil, userInfo: ["pycFileID":fileId])

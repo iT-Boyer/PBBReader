@@ -28,7 +28,7 @@ class AppDelegate: NSObject, NSApplicationDelegate{
             let InstallerPackage = updateInfo.object(forKey: "InstallerPackage")!
             let UpdateContent = updateInfo.object(forKey: "UpdateContent")!
             //或当前运行程序版本号
-            let currentVersionCode = Bundle.main.objectForInfoDictionaryKey("CFBundleVersion") as! NSString
+            let currentVersionCode = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as! NSString
             if version > currentVersionCode.doubleValue {
                 //提示下载更新安装包
                 let alert = NSAlert.init()
@@ -55,21 +55,31 @@ class AppDelegate: NSObject, NSApplicationDelegate{
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
         //
-        let filesArray = ReceiveFileDao.shared().selectReceiveFileAll(userDao.shareduser().getLogName())
+//        let filesArray = ReceiveFileDao.shared().selectReceiveFileAll(userDao.shareduser().getLogName())
+//        
+//        for outObj in (filesArray?.enumerated())!{
+//            
+//            //取消所有刷新状态
+//            if let outFile = (outObj as? OutFile)
+//            {
+//                
+//                let fileID = "\(outFile.fileid)"
+//                if UserDefaults.standard.bool(forKey: fileID)
+//                {
+//                    UserDefaults.standard.set(false, forKey: fileID)
+//                    UserDefaults.standard.synchronize()
+//                }
+//            }
+//        }
         
-        for outFile in (filesArray?.enumerated())!{
-            
-            //取消所有刷新状态
-            let fileID = "\((outFile as! OutFile).fileid)"
-            if UserDefaults.standard.bool(forKey: fileID){
-                UserDefaults.standard.set(false, forKey: fileID)
+        for key in UserDefaults.standard.attributeKeys {
+            //
+            if UserDefaults.standard.bool(forKey: key) {
+                //
+                UserDefaults.standard.set(false, forKey: key)
                 UserDefaults.standard.synchronize()
             }
-            
         }
-//        filesArray.enumerateObjects { (outFile, index, stop) in
-//            
-//        }
     }
 
     

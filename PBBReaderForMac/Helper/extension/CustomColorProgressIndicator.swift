@@ -22,7 +22,7 @@ class CustomColorProgressIndicator: NSProgressIndicator {
         self.wantsLayer = true
         
         // Clear background color
-        NSColor.clear().set()
+        NSColor.clear.set()
         NSRectFill(dirtyRect)
         
         // Draw progress line
