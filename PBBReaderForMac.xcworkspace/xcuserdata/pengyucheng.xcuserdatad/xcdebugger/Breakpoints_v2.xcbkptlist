@@ -16,7 +16,7 @@
             startingLineNumber = "4280"
             endingLineNumber = "4280"
             landmarkName = "-setValueOfSelfByNewFile:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -32,23 +32,7 @@
             startingLineNumber = "703"
             endingLineNumber = "703"
             landmarkName = "-handleEvent:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PBBReaderForMac/Helper/API/sqlite/db/ReceiveFileManager.m"
-            timestampString = "497774555.27268"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "-saveReceiveFile:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -58,13 +42,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PBBReaderForMac/AppDelegateHelper.m"
-            timestampString = "497780426.687904"
+            timestampString = "497963028.434963"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "722"
-            endingLineNumber = "722"
+            startingLineNumber = "729"
+            endingLineNumber = "729"
             landmarkName = "-PycFile:didFinishGetFileInfo:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -74,29 +58,125 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PBBReaderForMac/AppDelegateHelper.m"
-            timestampString = "497844623.174463"
+            timestampString = "497963028.434963"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1191"
-            endingLineNumber = "1191"
-            landmarkName = "-setKeyWindow:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PBBReaderForMac/AppDelegateHelper.m"
-            timestampString = "497844365.844935"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "904"
-            endingLineNumber = "904"
+            startingLineNumber = "911"
+            endingLineNumber = "911"
             landmarkName = "-getApplyFileInfoByApplyId:FileID:"
-            landmarkType = "5">
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PBBReaderForMac/AppDelegateHelper.m"
+            timestampString = "497963028.434963"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "203"
+            endingLineNumber = "203"
+            landmarkName = "-didFinishSeePycFileForUser"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PBBReaderForMac/Helper/API/RemoteSocket/other/PycFile.m"
+            timestampString = "497963014.313549"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2263"
+            endingLineNumber = "2263"
+            landmarkName = "-getFileInfoById:pbbFile:PycFile:fileType:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PBBReaderForMac/Helper/API/RemoteSocket/other/PycFile.m"
+            timestampString = "497963019.058221"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1431"
+            endingLineNumber = "1431"
+            landmarkName = "-seePycFile2:forUser:pbbFile:phoneNo:messageID:isOffLine:FileOpenedNum:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PBBReaderForMac/Helper/API/RemoteSocket/other/PycFile.m"
+            timestampString = "497963029.369647"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "4254"
+            endingLineNumber = "4254"
+            landmarkName = "-setValueOfSelfByNewFile:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PBBReaderForMac/Helper/API/RemoteSocket/other/PycFile.m"
+            timestampString = "497963151.44116"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1881"
+            endingLineNumber = "1881"
+            landmarkName = "-makeOpenFile"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PBBReaderForMac/Helper/API/RemoteSocket/other/PycFile.m"
+            timestampString = "497963216.08824"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2937"
+            endingLineNumber = "2937"
+            landmarkName = "-PycSocket:didFinishSend:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PBBReaderForMac/Helper/API/RemoteSocket/other/PycFile.m"
+            timestampString = "497963279.74316"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1688"
+            endingLineNumber = "1688"
+            landmarkName = "-moveFileAndDecodeFromAndBeginpos:partOfContent:decodeSize:toDestination:beginpos:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

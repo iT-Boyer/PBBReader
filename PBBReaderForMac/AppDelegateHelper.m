@@ -130,6 +130,7 @@ singleton_implementation(AppDelegateHelper);
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         BOOL isOffLine = FALSE;
         _fileManager.receiveFile = outFile;
+        returnValue = 0;
         NSString *result =[_fileManager seePycFile2:filePath
                                         forUser:logname
                                         pbbFile:openURL
@@ -149,7 +150,7 @@ singleton_implementation(AppDelegateHelper);
             }
             if (![result isEqualToString:@"0"]) {
                 //              applyNum=0;
-                
+                returnValue = result.intValue;
                 if (custormActivityView.advertime<3) {
                     ////判断，广告加载完成后，再延迟3秒钟
                     [self performSelector:@selector(didFinishSeePycFileForUser) withObject:nil afterDelay:3.0f];
@@ -194,10 +195,15 @@ singleton_implementation(AppDelegateHelper);
         [self setAlertView:@"条件到期，无权阅读!"];
 //        return;
     }
-    
-    if (![self fileIsTypeOfVideo:[[seePycFile.fileName pathExtension] lowercaseString]]){
+    if (returnValue == 6) {
+        //
+        [self setAlertView:@"该文件不支持离线阅读！"];
+        return;
+    }
+    if (![self fileIsTypeOfVideo:[seePycFile.fileExtentionWithOutDot lowercaseString]])
+    {
         [self setAlertView:[NSString stringWithFormat:@"不支持该(%@)格式文件!",[seePycFile.fileName pathExtension]]];
-//        return;
+        return;
     }
     
     
@@ -533,6 +539,7 @@ singleton_implementation(AppDelegateHelper);
 
 -(void)setAlertView:(NSString *)msg
 {
+    [self setKeyWindow:true];
     if (!alertShow) {
         alertShow = [[NSAlert alloc] init];
         [alertShow addButtonWithTitle:@"确定"];
@@ -1169,7 +1176,7 @@ singleton_implementation(AppDelegateHelper);
 - (void)show{
     isLoading = YES;
     //    keyWindow = [[NSApplication sharedApplication] keyWindow];
-//    [self setKeyWindow:true];
+    [self setKeyWindow:false];
     if(!hud){
         hud = [MBProgressHUD showHUDAddedTo:keyWindow.contentView animated:YES];
         hud.removeFromSuperViewOnHide = YES;

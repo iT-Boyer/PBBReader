@@ -187,7 +187,11 @@ class ReceiveViewController: NSViewController{
             if isInset
             {
                 receiveFile = ReceiveFileDao.shared().fetchReceiveFileCell(byFileId: fileID, logName: loginName)
-                insertNewRow(receiveFile)
+                if(receiveFile != nil)
+                {
+                    insertNewRow(receiveFile)
+                }
+                
             }
         }
     }
@@ -198,6 +202,11 @@ extension ReceiveViewController
 {
     func initThisView()
     {
+        if receiveFile == nil
+        {
+            rootView.isHidden = true
+            return
+        }
         rootView.isHidden = false
         readBtn.isEnabled = true
         //refresh:YES 刷新
@@ -214,16 +223,16 @@ extension ReceiveViewController
             ibSeriesLabel.isHidden = false
             makeTimeToTitleConstraint.constant = 41
 //            ibSeriesNameLabel.stringValue = seriesName
-            ibSeriesLabel.stringValue = "所属系列：\(seriesName)"
+            ibSeriesLabel.stringValue = "所属系列：\(seriesName!)"
         }
         
         makerLabel.stringValue = "作者对你说："
         if (receiveFile.fileOwnerNick != "" && receiveFile.fileOwnerNick != nil)
         {
-            makerLabel.stringValue = "作者 \(receiveFile.fileOwnerNick) 对你说："
+            makerLabel.stringValue = "作者 \(receiveFile.fileOwnerNick!) 对你说："
         }
         
-//        ibMakeTime.stringValue = "制作时间：\(receiveFile.sendtime.dateString())"
+        ibMakeTime.stringValue = "制作时间：\((receiveFile.sendtime as NSDate).dateString()!)"
         titleLabel.stringValue = receiveFile.filename
         
         if let qq = receiveFile.fileQQ
@@ -345,7 +354,7 @@ extension ReceiveViewController
             lastDayProgressView.doubleValue = (Double(receiveFile.lastday) * 1.0) / Double(receiveFile.allday)
             
             if let starttime = receiveFile.starttime,let endtime = receiveFile.endtime{
-                canTimeDateLabel.stringValue = "从\((starttime as NSDate).dateStringByDay())到\((endtime as NSDate).dateStringByDay())"
+                canTimeDateLabel.stringValue = "从\((starttime as NSDate).dateStringByDay()!)到\((endtime as NSDate).dateStringByDay()!)"
             }
         }
         
@@ -849,7 +858,6 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
         self.ReceiveTableView.endUpdates()
         //显示下一个文件详情
         self.selectRowStartingAtRow(selectedIndexes.first! - 1)
-        self.initThisView()
     }
     
     //右击刷新功能
@@ -945,6 +953,14 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
                 theRow -= 1
             }
         }
+        //当数组中是空
+        if receiveArray.count <= 0
+        {
+            receiveFile = nil
+            
+        }
+        self.initThisView()
+        
     }
     
     // We want to make "group rows" for the folders
