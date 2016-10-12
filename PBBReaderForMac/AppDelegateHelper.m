@@ -202,7 +202,7 @@ singleton_implementation(AppDelegateHelper);
     }
     if (![self fileIsTypeOfVideo:[seePycFile.fileExtentionWithOutDot lowercaseString]])
     {
-        [self setAlertView:[NSString stringWithFormat:@"不支持该(%@)格式文件!",[seePycFile.fileName pathExtension]]];
+        [self setAlertView:[NSString stringWithFormat:@"不支持该(%@)格式文件!",seePycFile.fileExtentionWithOutDot]];
         return;
     }
     
