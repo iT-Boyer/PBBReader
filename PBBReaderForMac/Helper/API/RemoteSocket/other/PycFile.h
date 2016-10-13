@@ -71,6 +71,7 @@
 @end
 
 @interface PycFile : NSObject<PycSocketDelegate>
+//当刷新和查看同时进行时，不能使用单例模式
 //singleton_interface(PycFile)
 
 @property (nonatomic, weak) id<PycFileDelegate> delegate;
