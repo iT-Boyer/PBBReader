@@ -69,6 +69,7 @@ extension NSTextField
     
     func fireTimer(_ Countdown:Double)->()->()
     {
+        sizeToFit()
         //倒计时
         var timer:Timer!
         

@@ -38,13 +38,13 @@ class ApplyInfoViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
-        qqField.stringValue = qq
-        phoneField.stringValue = phone
-        emailField.stringValue = email
-        field1NameLabel.stringValue = field1name
-        field2NameLabel.stringValue = field2name
-        field1ValueField.stringValue = field1Str
-        field2ValueField.stringValue = field2Str
+        qqField.stringValue = qq!
+        phoneField.stringValue = phone!
+        emailField.stringValue = email!
+        field1NameLabel.stringValue = field1name!
+        field2NameLabel.stringValue = field2name!
+        field1ValueField.stringValue = field1Str!
+        field2ValueField.stringValue = field2Str!
     }
     @IBAction func applyAction(_ sender: AnyObject) {
         

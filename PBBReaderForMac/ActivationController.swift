@@ -86,17 +86,17 @@ class ActivationController: NSViewController {
         super.viewDidLoad()
         // Do view setup here.
         if (needReApply != 0) {
-            qqField.stringValue = qq
-            emailField.stringValue = email
-            phoneField.stringValue = phone
-            self1Field.stringValue = self1
-            self2Field.stringValue = self2
-            self1label.stringValue = "\(field1name):"
-            self2label.stringValue = "\(field2name):"
+            qqField.stringValue = qq!
+            emailField.stringValue = email!
+            phoneField.stringValue = phone!
+            self1Field.stringValue = self1!
+            self2Field.stringValue = self2!
+            self1label.stringValue = "\(field1name!):"
+            self2label.stringValue = "\(field2name!):"
         }else{
             //label
-            self1label.stringValue = self1
-            self2label.stringValue = self2
+            self1label.stringValue = self1!
+            self2label.stringValue = self2!
         }
       
         initWithWidgetLayout()

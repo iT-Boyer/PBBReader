@@ -55,31 +55,21 @@ class AppDelegate: NSObject, NSApplicationDelegate{
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
         //
-//        let filesArray = ReceiveFileDao.shared().selectReceiveFileAll(userDao.shareduser().getLogName())
-//        
-//        for outObj in (filesArray?.enumerated())!{
-//            
-//            //取消所有刷新状态
-//            if let outFile = (outObj as? OutFile)
-//            {
-//                
-//                let fileID = "\(outFile.fileid)"
-//                if UserDefaults.standard.bool(forKey: fileID)
-//                {
-//                    UserDefaults.standard.set(false, forKey: fileID)
-//                    UserDefaults.standard.synchronize()
-//                }
-//            }
-//        }
-        
-        for key in UserDefaults.standard.attributeKeys {
+        let filesArray = ReceiveFileDao.shared().selectReceiveFileAll(userDao.shareduser().getLogName())
+//        (obj, idx, stop) in
+        filesArray?.enumerateObjects({ (outObj, idx, stop) in
             //
-            if UserDefaults.standard.bool(forKey: key) {
-                //
-                UserDefaults.standard.set(false, forKey: key)
-                UserDefaults.standard.synchronize()
+            //取消所有刷新状态
+            if let outFile = (outObj as? OutFile)
+            {
+                let fileID = "\(outFile.fileid)"
+                if UserDefaults.standard.bool(forKey: fileID)
+                {
+                    UserDefaults.standard.set(false, forKey: fileID)
+                    UserDefaults.standard.synchronize()
+                }
             }
-        }
+        })
     }
 
     

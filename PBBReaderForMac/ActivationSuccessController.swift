@@ -43,24 +43,24 @@ class ActivationSuccessController: NSViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
-        qqLabel.stringValue =  qq
-        phoneLabel.stringValue = phone
-        emailLabel.stringValue = email
+        qqLabel.stringValue =  qq!
+        phoneLabel.stringValue = phone!
+        emailLabel.stringValue = email!
         //    BOOL uu = [qq isEqualToString:""]
         
-        if (ToolString.isBlankString(qq)) {
+        if (ToolString.isBlankString(qq!)) {
             qqLabel.stringValue =  "无"
             qq = "无"
         }
-        if (ToolString.isBlankString(phone)) {
+        if (ToolString.isBlankString(phone!)) {
             phoneLabel.stringValue = "无"
             phone = "无"
         }
-        if (ToolString.isBlankString(email)) {
+        if (ToolString.isBlankString(email!)) {
             emailLabel.stringValue = "无"
             email = "无"
         }
-        if (ToolString.isBlankString(remark)) {
+        if (ToolString.isBlankString(remark!)) {
             remark = ""
         }
         
@@ -79,11 +79,11 @@ class ActivationSuccessController: NSViewController
             ibShowInfoLabel.textColor = NSColor.orange
         }
         
-        ibShowInfoLabel.stringValue = showInfo
+        ibShowInfoLabel.stringValue = showInfo!
         
         //作者
-        ibMakerLabel.stringValue = makerNick
-        ibRemarkLabel.stringValue = remark
+        ibMakerLabel.stringValue = makerNick!
+        ibRemarkLabel.stringValue = remark!
     }
     
     @IBAction func ibaRetoActivation(_ sender: AnyObject) {
