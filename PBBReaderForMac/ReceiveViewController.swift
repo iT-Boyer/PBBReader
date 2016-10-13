@@ -620,14 +620,17 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
     //单击单元格，显示详情信息
     func tableViewSelectionDidChange(_ notification: Notification) {
         
-        if let receiveFile = selectedFileList(){
+        if let receiveFile = selectedFileList()
+        {
             self.receiveFile = ReceiveFileDao.shared().fetchReceiveFileCell(byFileId: receiveFile.fileid, logName: loginName)
             
+            if self.receiveFile != nil
+            {
+                //改变选中状态
+                ChangeCellBySelectedStatus()
+            }
             //刷新详情
             initThisView()
-            
-            //改变选中状态
-            ChangeCellBySelectedStatus()
         }
     }
     

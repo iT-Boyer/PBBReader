@@ -95,14 +95,20 @@ singleton_implementation(AppDelegateHelper);
     logname = [[userDao shareduserDao] getLogName];
     // 判断已接受数据库是否存在
     isReceiveFileExist = [[ReceiveFileDao sharedReceiveFileDao] findFileById:fileID forLogName:logname];
-    if (isReceiveFileExist) {
+    if (isReceiveFileExist)
+    {
         //在接收列表存在
         outFile = [[ReceiveFileDao sharedReceiveFileDao] fetchReceiveFileCellByFileId:fileID LogName:logname];
         openedNum = outFile.readnum;
         
-        if (outFile.fileMakeType == 0) {
+        if (outFile.fileMakeType == 0)
+        {
             OutLine = YES;
         }
+    }
+    else
+    {
+        outFile = nil;
     }
 
     //custormActivityView = (AdvertisingView *)[[NSWindowController alloc] initWithWindowNibName:@"AdvertisingView"];

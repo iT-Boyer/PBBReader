@@ -131,7 +131,7 @@ class BindingPhoneViewController: NSViewController {
      */
     func changeLabelTime() {
         //
-        showMessageLabel.stringValue = "\(remainedTime)秒后可重新获取验证码"
+        showMessageLabel.stringValue = "\(remainedTime!)秒后可重新获取验证码"
         remainedTime = remainedTime - 1
         
         if (remainedTime == 0) {
