@@ -369,7 +369,7 @@ extension ReceiveViewController
             receiveFile.firstOpenTime = ReceiveFileDao.shared().selectReceiveFileFistOpenTime(byFileId: receiveFile.fileid)
             
             //首次阅读
-            if (receiveFile.firstOpenTime == "" || receiveFile.firstOpenTime == nil) {
+            if (receiveFile.firstOpenTime == nil || receiveFile.firstOpenTime == "") {
                 onceTimeNumLabel.isHidden = true
                 onceTimeLabel.isHidden = true
                 ibOnceLong.isHidden = true
@@ -797,15 +797,16 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
     func indexesToProcessForContextMenu() -> IndexSet {
         // If the clicked row was in the selectedIndexes, then we process all selectedIndexes. Otherwise, we process just the clickedRow
         var selectedIndexes = ReceiveTableView.selectedRowIndexes
-        if (ReceiveTableView.clickedRow != -1 && !selectedIndexes.contains(ReceiveTableView.clickedRow)) {
+        if (ReceiveTableView.clickedRow != -1 && !selectedIndexes.contains(ReceiveTableView.clickedRow))
+        {
             //
             selectedIndexes = IndexSet.init(integer:ReceiveTableView.clickedRow)
         }
 //        selectedIndexes.enumer
 //        http://stackoverflow.com/questions/39638538/swift-3-0-value-of-type-indexset-has-no-member-enumerateindexesusingblock
 //        selectedIndexes.enumerated()
-        for (index, _) in selectedIndexes.enumerated() {
-            guard let cellView = self.ReceiveTableView.view(atColumn: 0, row: index, makeIfNecessary: false) as? CustomTableCellView
+        for (_, row) in selectedIndexes.enumerated() {
+            guard let cellView = self.ReceiveTableView.view(atColumn: 0, row: row, makeIfNecessary: false) as? CustomTableCellView
                 else{
                     break
             }
@@ -819,7 +820,7 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
     //右击菜单在Finder中显示功能
     @IBAction func mnuRevealInFinderSelected(_ sender: AnyObject) {
         let selectedIndexes = indexesToProcessForContextMenu()
-        for (row, _) in selectedIndexes.enumerated() {
+        for (_, row) in selectedIndexes.enumerated() {
             //
             let ReceiveColumn = self.receiveArray[row] as! OutFile
             NSWorkspace.shared().selectFile(ReceiveColumn.fileurl, inFileViewerRootedAtPath: "")
@@ -830,7 +831,11 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
     @IBAction func mnuRemoveRowSelected(_ sender: AnyObject) {
         
         let selectedIndexes = indexesToProcessForContextMenu()
-        for (row, _) in selectedIndexes.enumerated() {
+        if selectedIndexes.first == nil {
+            //
+            return
+        }
+        for (_, row) in selectedIndexes.enumerated() {
             //
             let ReceiveColumn = self.receiveArray[row] as! OutFile
             ReceiveFileDao.shared().deleteReceiveFile(ReceiveColumn.fileid, logName: self.loginName)

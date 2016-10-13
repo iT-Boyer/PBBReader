@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PBBReaderForMac/AppDelegateHelper.m"
-            timestampString = "498020533.787312"
+            timestampString = "498037131.623337"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "735"
-            endingLineNumber = "735"
+            startingLineNumber = "737"
+            endingLineNumber = "737"
             landmarkName = "-PycFile:didFinishGetFileInfo:"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PBBReaderForMac/AppDelegateHelper.m"
-            timestampString = "498020533.787312"
+            timestampString = "498037131.623337"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "917"
-            endingLineNumber = "917"
+            startingLineNumber = "919"
+            endingLineNumber = "919"
             landmarkName = "-getApplyFileInfoByApplyId:FileID:"
             landmarkType = "7">
          </BreakpointContent>
@@ -122,22 +122,6 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PBBReaderForMac/Helper/API/RemoteSocket/other/PycFile.m"
-            timestampString = "497963151.44116"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1881"
-            endingLineNumber = "1881"
-            landmarkName = "-makeOpenFile"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PBBReaderForMac/Helper/API/RemoteSocket/other/PycFile.m"
             timestampString = "497963279.74316"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -154,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PBBReaderForMac/ReceiveViewController.swift"
-            timestampString = "498019237.249553"
+            timestampString = "498033721.83446"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "960"
-            endingLineNumber = "960"
+            startingLineNumber = "965"
+            endingLineNumber = "965"
             landmarkName = "selectRowStartingAtRow(_:)"
             landmarkType = "7">
          </BreakpointContent>

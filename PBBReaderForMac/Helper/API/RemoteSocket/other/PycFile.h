@@ -71,7 +71,7 @@
 @end
 
 @interface PycFile : NSObject<PycSocketDelegate>
-singleton_interface(PycFile)
+//singleton_interface(PycFile)
 
 @property (nonatomic, weak) id<PycFileDelegate> delegate;
 @property(nonatomic, strong) PycSocket * pycsocket;

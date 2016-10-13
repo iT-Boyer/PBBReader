@@ -44,7 +44,7 @@
     
     
 }
-singleton_implementation(PycFile)
+//singleton_implementation(PycFile)
 
 @synthesize fileRefreshInfo;
 - (id)init

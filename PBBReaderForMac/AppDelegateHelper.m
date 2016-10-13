@@ -680,13 +680,15 @@ singleton_implementation(AppDelegateHelper);
 #pragma mark - 刷新文件详情
 -(BOOL)getFileInfoById:(NSInteger)theFileId pbbFile:(NSString *)pbbFileName PycFile:(NSString *)pycFileName fileType:(NSInteger)theFileType
 {
-    if (!_fileManager) {
-        //
-        _fileManager = [[PycFile alloc] init];
-        _fileManager.delegate = self;
-    }
-    
-    BOOL result = [_fileManager getFileInfoById:theFileId pbbFile:pbbFileName PycFile:pycFileName fileType:1];
+//    if (!_fileManager) {
+//        //
+//        _fileManager = [[PycFile alloc] init];
+//        _fileManager.delegate = self;
+//    }
+    //
+    PycFile *fileM = [[PycFile alloc] init];
+    fileM.delegate = self;
+    BOOL result = [fileM getFileInfoById:theFileId pbbFile:pbbFileName PycFile:pycFileName fileType:1];
     if (!result)
     {
         NSAlert *alertV = [NSAlert new];
