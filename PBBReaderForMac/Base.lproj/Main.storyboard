@@ -561,7 +561,7 @@ CA
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                         </textField>
-                                                        <progressIndicator wantsLayer="YES" maxValue="5" doubleValue="3" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="ZR0-dO-DmL" customClass="CustomColorProgressIndicator" customModule="PBBReader" customModuleProvider="target">
+                                                        <progressIndicator wantsLayer="YES" maxValue="1" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="ZR0-dO-DmL" customClass="CustomColorProgressIndicator" customModule="PBBReader" customModuleProvider="target">
                                                             <rect key="frame" x="91" y="173" width="124" height="4"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="2" id="PvW-Wo-P0p"/>

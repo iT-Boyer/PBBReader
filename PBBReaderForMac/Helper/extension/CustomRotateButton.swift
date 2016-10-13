@@ -29,7 +29,7 @@ class CustomRotateButton: NSButton {
     //-------------方法一: 重写属性frame观察器，解决动画错位问题
     override var frame: NSRect{
         didSet{
-            NSLog("yyyy\(oldValue)")
+//            NSLog("yyyy\(oldValue)")
             if frame != oldValue
             {
                 resetLayerPoint()
