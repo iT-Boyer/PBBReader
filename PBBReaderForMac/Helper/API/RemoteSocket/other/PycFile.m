@@ -1,4 +1,4 @@
-she 设置
+
 
 //
 //  PycFile.m
@@ -356,7 +356,7 @@ she 设置
     }
     PYCFILEEXT *fileExtHeader = (PYCFILEEXT *)[dataExt bytes];
     PycCode *coder = [[PycCode alloc] init];
-    [coder decodeFileExtension:fileExtHeader];
+    [coder decodeFileExtension:fileExtHeader];git
     if (fileExtHeader->uTag != PycTag0 && fileExtHeader->uTag != PycTag1) {
         //bReturn=-1;
         return bReturn;
