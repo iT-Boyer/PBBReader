@@ -668,17 +668,16 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
         
         // 判断本地文件ID是否和数据库中的id一致，否则更新状态
         //设置单元格字体样式
-        if FileManager.default.fileExists(atPath: receiveFile.fileurl)
+        if FileManager.default.fileExists(atPath: receiveFile.fileurl!)
         {
             ibRefreshFileButton.isEnabled = true
             
-            let fileID = PycFile().getAttributePycFileId(receiveFile.fileurl)
+            let fileID = PycFile().getAttributePycFileId(receiveFile.fileurl!)
             if fileID != Int32(receiveFile.fileid)
             {
-                //
-                //
                 readBtn.image = NSImage.init(named: "send_read_no")
                 readBtn.isEnabled = false
+                ibRefreshFileButton.isEnabled = false
                 cellView.textField?.textColor = NSColor.red
                 
                 //提示本地文件错误
