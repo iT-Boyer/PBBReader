@@ -350,13 +350,9 @@
     */
    //hsg自由传播没有结构体，无法获取fileID
     NSData *dataExt = [handle readDataOfLength:sizeof(PYCFILEEXT)];
-    if(dataExt == nil)
-    {
-        return bReturn;
-    }
     PYCFILEEXT *fileExtHeader = (PYCFILEEXT *)[dataExt bytes];
     PycCode *coder = [[PycCode alloc] init];
-    [coder decodeFileExtension:fileExtHeader];git
+    [coder decodeFileExtension:fileExtHeader];
     if (fileExtHeader->uTag != PycTag0 && fileExtHeader->uTag != PycTag1) {
         //bReturn=-1;
         return bReturn;
