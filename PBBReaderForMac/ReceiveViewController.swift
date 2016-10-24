@@ -687,8 +687,13 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
                 style.margin.top = 0
                 style.backgroundColor = NSColor.white
                 style.textColor = NSColor.black
+                var message = "信息与本地文件不符，建议删除该条无效信息！"
+                if(fileID==3)
+                {
+                    message = "应用开启沙盒保护机制，无权限阅读该目录文件，请移动到下载目录重新查看！"
+                }
                 // Show our toast.
-                rootView.showToastWithText("信息与本地文件不符，建议删除该条无效信息！", usingStyle: style)
+                rootView.showToastWithText(message, usingStyle: style)
             }
         }
         else

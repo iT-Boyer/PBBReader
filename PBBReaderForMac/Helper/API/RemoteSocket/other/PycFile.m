@@ -341,6 +341,11 @@
     }
     
     NSFileHandle *handle = [NSFileHandle fileHandleForReadingAtPath:filename];
+    if (handle == nil)
+    {
+        //3:应用开启沙盒保护机制，无权限阅读该目录文件，请移动到下载目录重新查看！
+        return 3;
+    }
     [handle seekToFileOffset:fileheadoffset];
   /*  NSData *data = [handle readDataOfLength:sizeof(PYCFILEHEADER)];
     NSLog(@"read len %d %s",[data length], [data bytes]);*/

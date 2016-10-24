@@ -83,8 +83,15 @@ singleton_implementation(AppDelegateHelper);
     _fileManager.delegate = self;
     filePath = openURL;
     fileID = [_fileManager getAttributePycFileId:filePath];
-    if (fileID==0) {
+    if (fileID==0)
+    {
         [self setAlertView:@"读取文件失败。可能错误原因：文件下载不完整，请重新下载！"];
+        return YES;
+        
+    }
+    else if(fileID==3)
+    {
+        [self setAlertView:@"应用开启沙盒保护机制，无权限阅读该目录文件，请移动到下载目录重新查看！"];
         return YES;
     }
 

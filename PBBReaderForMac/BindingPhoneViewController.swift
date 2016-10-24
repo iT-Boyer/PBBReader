@@ -106,7 +106,10 @@ class BindingPhoneViewController: NSViewController {
      */
     func getCodeStateYes() {
         //
-        timer.invalidate()   // 停止时间刷新计时器
+        if timer != nil
+        {
+            timer.invalidate()   // 停止时间刷新计时器
+        }
         showMessageLabel.stringValue = "\(60)秒后可重新获取验证码"
         getMessageBtn.isEnabled = true // 获取验证码按钮不可用
     }

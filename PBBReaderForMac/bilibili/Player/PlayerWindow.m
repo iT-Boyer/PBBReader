@@ -87,6 +87,7 @@
     [self setFrameOrigin:newOrigin];
 }
 
+//双击全屏
 - (void)mouseUp:(NSEvent *)event
 {
     NSInteger clickCount = [event clickCount];
@@ -158,8 +159,8 @@
 
 - (void)windowDidExitFullScreen:(NSNotification *)notification{
     enteringFullScreen = NO;
-     //控制条上的全屏返回时，画面消失
-    [self makeKeyAndOrderFront:self];
+     //控制条上的全屏返回时，画面消失：导致全屏退出后，出现白屏现象
+//    [self makeKeyAndOrderFront:self];
 }
 
 - (void)resizePlayerControlView:(NSRect)old new:(NSRect)new{
@@ -571,7 +572,8 @@ CFStringRef stringByKeyCode(CGKeyCode keyCode)
 - (BOOL)windowShouldClose:(id)sender{
     NSLog(@"[PlayerWindow] Closing Window");
 
-//    if([browser tabCount] > 0){
+//    if([browser tabCount] > 0)
+//    {
 //        [self.lastWindow makeKeyAndOrderFront:nil];
 //    }
     return YES;
@@ -585,7 +587,6 @@ CFStringRef stringByKeyCode(CGKeyCode keyCode)
 
 - (void)close{
     [super close];
-    
     //从Docker上重新打开主页
     [[[NSApplication sharedApplication]delegate] performSelector:@selector(applicationShouldHandleReopen:hasVisibleWindows:) withObject:[NSApplication sharedApplication] withObject:[NSNumber numberWithInt:0]];
     
