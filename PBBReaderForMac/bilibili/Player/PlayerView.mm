@@ -236,21 +236,21 @@ getInfo:
         
         NSString *firstVideo = URL;
         if([self.player getAttr:@"commentFile"]){
-            NSDictionary *VideoInfoJson = [self getVideoInfo:firstVideo];
+//            NSDictionary *VideoInfoJson = [self getVideoInfo:firstVideo];
             
             NSLog(@"[PlayerView] Read video info completed");
             
-            NSNumber *width = [VideoInfoJson objectForKey:@"width"];
-            NSNumber *height = [VideoInfoJson objectForKey:@"height"];
+//            NSNumber *width = [VideoInfoJson objectForKey:@"width"];
+//            NSNumber *height = [VideoInfoJson objectForKey:@"height"];
             
-            if([height intValue] < 100 || [width intValue] < 100){
+//            if([height intValue] < 100 || [width intValue] < 100){
                 //goto getInfo;
                 [self.player setAttr:@"vheight" data:[NSNumber numberWithInt:500]];
                 [self.player setAttr:@"vwidth" data:[NSNumber numberWithInt:500]];
-            }
+//            }
             
-            [self.player setAttr:@"vheight" data:width];
-            [self.player setAttr:@"vwidth" data:height];
+//            [self.player setAttr:@"vheight" data:width];
+//            [self.player setAttr:@"vwidth" data:height];
         }
         
         NSString *fvHost = [[NSURL URLWithString:firstVideo] host];
