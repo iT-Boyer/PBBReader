@@ -567,6 +567,7 @@
 		14C75DCC1D6AE9C6009CBE09 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		14C9B6A41D8E859800A0C6B9 /* FSCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCustomCell.h; sourceTree = "<group>"; };
 		14C9B6A51D8E859800A0C6B9 /* FSCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCustomCell.m; sourceTree = "<group>"; };
+		14E14B0D1DC0B34F00417640 /* Mac开发:发布证书合集.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mac开发:发布证书合集.p12"; sourceTree = "<group>"; };
 		14EA57D41D7E62790026602B /* PBBReaderForOSX.pkgproj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = PBBReaderForOSX.pkgproj; sourceTree = "<group>"; };
 		14EA57D81D7E723E0026602B /* importSVN.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = importSVN.sh; sourceTree = "<group>"; };
 		14EA57D91D7E723E0026602B /* makedmg.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = makedmg.sh; sourceTree = "<group>"; };
@@ -1246,6 +1247,7 @@
 		14EA57C91D7E62220026602B /* Distribution */ = {
 			isa = PBXGroup;
 			children = (
+				14E14B0D1DC0B34F00417640 /* Mac开发:发布证书合集.p12 */,
 				14EA57D61D7E723E0026602B /* Packages */,
 				14EA57D41D7E62790026602B /* PBBReaderForOSX.pkgproj */,
 			);
