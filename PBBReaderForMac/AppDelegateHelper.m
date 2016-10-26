@@ -29,6 +29,7 @@
 @implementation AppDelegateHelper
 {
     PycFile *_fileManager;
+    PycFile *fileM;
     int fileID;
     NSString *filePath;
     BOOL isReceiveFileExist;
@@ -693,7 +694,7 @@ singleton_implementation(AppDelegateHelper);
 //        _fileManager.delegate = self;
 //    }
     //
-    PycFile *fileM = [[PycFile alloc] init];
+    fileM = [PycFile new];
     fileM.delegate = self;
     BOOL result = [fileM getFileInfoById:theFileId pbbFile:pbbFileName PycFile:pycFileName fileType:1];
     if (!result)

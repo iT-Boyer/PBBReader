@@ -76,6 +76,7 @@ open class Toasty {
         messageLabel.backgroundColor = NSColor.clear
         messageLabel.textColor     = style.textColor
         messageLabel.alignment     = NSTextAlignment(rawValue:2)! //居中
+        messageLabel.isEditable    = false
         
         // Add views.
         messageLabel.translatesAutoresizingMaskIntoConstraints = false
