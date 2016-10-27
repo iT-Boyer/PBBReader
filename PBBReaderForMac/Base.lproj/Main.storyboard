@@ -1543,15 +1543,15 @@ CA
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tjH-Zb-v1w">
-                                <rect key="frame" x="18" y="367" width="28" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="QQ:" id="lcb-mc-gdA">
+                                <rect key="frame" x="18" y="367" width="44" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="QQ：" id="lcb-mc-gdA">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mwq-hC-EzF">
-                                <rect key="frame" x="50" y="367" width="72" height="17"/>
+                                <rect key="frame" x="66" y="367" width="72" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="112323232" id="rA1-8Z-vrP">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -1560,7 +1560,7 @@ CA
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cBE-Bx-GUH">
                                 <rect key="frame" x="18" y="342" width="44" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="手机：" id="Atp-yJ-jH6">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="手机：" id="Atp-yJ-jH6">
                                     <font key="font" size="13" name=".PingFangSC-Regular"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -1658,6 +1658,7 @@ CA
                             <constraint firstItem="tjH-Zb-v1w" firstAttribute="leading" secondItem="0iJ-Le-hT3" secondAttribute="leading" id="85g-TJ-LPH"/>
                             <constraint firstItem="MTE-er-gEv" firstAttribute="centerY" secondItem="tac-B8-Jp8" secondAttribute="centerY" id="86s-Co-JiQ"/>
                             <constraint firstItem="MQN-Wm-AKr" firstAttribute="leading" secondItem="cBE-Bx-GUH" secondAttribute="leading" id="8Bg-Du-6qE"/>
+                            <constraint firstItem="tjH-Zb-v1w" firstAttribute="trailing" secondItem="cBE-Bx-GUH" secondAttribute="trailing" id="9LL-Sm-QR8"/>
                             <constraint firstItem="aqC-s9-ZCx" firstAttribute="top" secondItem="V3l-Qe-GHU" secondAttribute="bottom" constant="8" id="Fju-u5-0Xl"/>
                             <constraint firstItem="HWh-4X-21h" firstAttribute="leading" secondItem="cBE-Bx-GUH" secondAttribute="trailing" constant="5" id="G8q-dh-9lz"/>
                             <constraint firstItem="0iJ-Le-hT3" firstAttribute="top" secondItem="ETz-w0-yOC" secondAttribute="top" constant="60" id="GEo-NR-TxK"/>

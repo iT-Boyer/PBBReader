@@ -679,8 +679,8 @@ getInfo:
             if(endFile){
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [LoadingView setHidden:NO];
-                    [self.textTip setStringValue:NSLocalizedString(@"播放完成，关闭窗口继续", nil)];
-                    [self runAutoSwitch];
+//                    [self.textTip setStringValue:NSLocalizedString(@"播放完成，关闭窗口继续", nil)];
+//                    [self runAutoSwitch];
                     [self.view.window performClose:self];
                 });
             }

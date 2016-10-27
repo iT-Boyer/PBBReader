@@ -305,14 +305,14 @@ class ActivationController: NSViewController {
             
             if (trimSpace(sel1) == "") {
                 self1View.layer?.borderColor = NSColor.red.cgColor
-                pycFileHelper?.setAlertView("\(self1)不能为空！")
+                pycFileHelper?.setAlertView("\(self1!)不能为空！")
                 return;
             }
             
             let fieldlen = trimSpace(sel1).lengthOfBytes(using: String.Encoding.utf8)
             if (fieldlen>24) {
                 self1View.layer?.borderColor = NSColor.red.cgColor
-                pycFileHelper?.setAlertView("\(self1)长度最多24个字符！")
+                pycFileHelper?.setAlertView("\(self1!)长度最多24个字符！")
                 return;
             }
             
@@ -320,14 +320,14 @@ class ActivationController: NSViewController {
                 
                 if (trimSpace(sel2) == "") {
                     self2View.layer?.borderColor = NSColor.red.cgColor
-                    pycFileHelper?.setAlertView("\(self2)不能为空！")
+                    pycFileHelper?.setAlertView("\(self2!)不能为空！")
                     return;
                 }
                 
                 let fieldlen = trimSpace(sel2).lengthOfBytes(using: String.Encoding.utf8)
                 if (fieldlen>24) {
                     self2View.layer?.borderColor = NSColor.red.cgColor
-                    pycFileHelper?.setAlertView("\(self2)长度最多24个字符！")
+                    pycFileHelper?.setAlertView("\(self2!)长度最多24个字符！")
                     return;
                 }
             }
@@ -339,7 +339,7 @@ class ActivationController: NSViewController {
         pycFileHelper?.phoneNo = ""
         pycFileHelper?.messageID = ""
         pycFileHelper?.needReapply = needReApply
-        pycFileHelper?.applyFile(byFidAndOrderId: fileId,
+        _ = pycFileHelper?.applyFile(byFidAndOrderId: fileId,
                                                orderId: orderId,
                                                applyId: applyId,
                                                qq: qqField.stringValue,

@@ -105,10 +105,17 @@ class ReceiveViewController: NSViewController{
     //浏览按钮
     @IBAction func ibaBrowseFinder(_ sender: AnyObject) {
         let panel = NSOpenPanel()
+        
         panel.message = ""
         panel.prompt = "打开"
         panel.canChooseDirectories = true
+        //文件可选
         panel.canChooseFiles = true
+        //文件可以多选
+        panel.allowsMultipleSelection = false
+        //可选文件类型
+        panel.allowedFileTypes = ["pbb"]
+        
         var path_all = ""
         let result = panel.runModal()
         if result == NSFileHandlingPanelOKButton {
