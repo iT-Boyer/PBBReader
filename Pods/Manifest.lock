@@ -1,0 +1,22 @@
+PODS:
+  - CocoaAsyncSocket (7.5.0):
+    - CocoaAsyncSocket/GCD (= 7.5.0)
+  - CocoaAsyncSocket/GCD (7.5.0)
+  - EDStarRating (1.1)
+  - FMDB (2.6.2):
+    - FMDB/standard (= 2.6.2)
+  - FMDB/standard (2.6.2)
+
+DEPENDENCIES:
+  - CocoaAsyncSocket
+  - EDStarRating
+  - FMDB
+
+SPEC CHECKSUMS:
+  CocoaAsyncSocket: 3baeb1ddd969f81cf9fca81053ae49ef2d1cbbfa
+  EDStarRating: a41a6440a945020745d0e9ff8ada7d1afa952114
+  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+
+PODFILE CHECKSUM: 5126e539c2838c37e7662d1bd06e8a306443810d
+
+COCOAPODS: 1.0.0

@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "993772488E2C7091A87ADF1800F1BCE4715B2B34",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "993772488E2C7091A87ADF1800F1BCE4715B2B34" : 0,
+    "299D7FFF1C0D99DAE706BBD8E703A6D0E5840D2E" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "961C0DAF-ABE2-4ADF-94B1-38BFD11C84EE",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "993772488E2C7091A87ADF1800F1BCE4715B2B34" : "PBBReaderForOSX\/",
+    "299D7FFF1C0D99DAE706BBD8E703A6D0E5840D2E" : "..\/git\/SISpeciesNotes"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "ScaryBugsMac",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ScaryBugsMac.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/git.oschina.net\/huosan\/SISpeciesNots.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "299D7FFF1C0D99DAE706BBD8E703A6D0E5840D2E"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/git.oschina.net\/huosan\/PBBReader.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "993772488E2C7091A87ADF1800F1BCE4715B2B34"
+    }
+  ]
+}
