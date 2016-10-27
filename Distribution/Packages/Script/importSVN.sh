@@ -46,9 +46,6 @@ echo "import "${ImportSVN}" https:\/\/192.168.85.64/svn/安装包/MAC -m "${Prod
 export LC_CTYPE="zh_CN.UTF-8" #设置当前系统的 locale,支持中文路径
 #svn import "${ImportSVN}" https:\/\/192.168.85.64/svn/安装包/MAC -m "${ProductName}"
 
-
-
-
 ------------------------------
 #clone源码
 git svn clone https://huoshuguang@192.168.85.6/svn/PBBReader_Mac -T trunk -b branches -t tags PBBReaderRepo
