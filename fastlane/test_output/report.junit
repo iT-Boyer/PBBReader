@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<testsuites tests='2' failures='0'>
-  <testsuite name='PBBReaderTests.PBBReaderTests' tests='2' failures='0'>
-    <testcase classname='PBBReaderTests.PBBReaderTests' name='testExample' time='0.000'/>
-    <testcase classname='PBBReaderTests.PBBReaderTests' name='testPerformanceExample' time='1.344'/>
-  </testsuite>
-</testsuites>
