@@ -121,12 +121,10 @@ class ReceiveViewController: NSViewController{
         if result == NSFileHandlingPanelOKButton {
             //
             path_all = (panel.url?.path)!
-            print("文件路径：\(path_all)")
             appHelper?.phoneNo = ""
             appHelper?.messageID = ""
             appHelper?.loadVideo(withLocalFiles: {path_all}())
         }
-        
     }
     
     //删除该文件

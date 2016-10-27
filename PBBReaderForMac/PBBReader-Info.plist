@@ -23,6 +23,8 @@
 			<array>
 				<string>pyc.cn.com.PBBReaderForOSX</string>
 			</array>
+			<key>LSTypeIsPackage</key>
+			<integer>1</integer>
 			<key>NSDocumentClass</key>
 			<string>NSDocument</string>
 		</dict>
@@ -42,14 +44,14 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0.0</string>
 	<key>CFBundleSignature</key>
-	<string>????</string>
+	<string>CSTK</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLIconFile</key>
-			<string></string>
+			<string>ladybug.jpg</string>
 			<key>CFBundleURLName</key>
 			<string>pyc.cn.com.PBBReaderForOSX</string>
 			<key>CFBundleURLSchemes</key>
@@ -59,7 +61,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>83</string>
+	<string>3</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.education</string>
 	<key>LSMinimumSystemVersion</key>
@@ -85,7 +87,7 @@
 			<key>UTTypeDescription</key>
 			<string>PBBReader</string>
 			<key>UTTypeIconFile</key>
-			<string>114.png</string>
+			<string>114</string>
 			<key>UTTypeIdentifier</key>
 			<string>pyc.cn.com.PBBReaderForOSX</string>
 			<key>UTTypeTagSpecification</key>

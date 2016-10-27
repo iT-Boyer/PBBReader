@@ -156,7 +156,6 @@
 		143E38A91D3F1809004B0A4D /* libz.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E3D1D2A187200838B88 /* libz.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		143EA9671D50368700457717 /* BindingPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B0CF731D34C715004D22B5 /* BindingPhoneViewController.swift */; };
 		1447A22D1D87A2D600057039 /* CustomRotateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1447A22C1D87A2D500057039 /* CustomRotateButton.swift */; };
-		144AD8931D3F855600765907 /* OpenPBBDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144AD8921D3F855500765907 /* OpenPBBDocument.swift */; };
 		1464019A1DACE04300305B12 /* indexSet+block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146401991DACE04300305B12 /* indexSet+block.swift */; };
 		146872391D9A596200460B8E /* PBBReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146872381D9A596200460B8E /* PBBReaderTests.swift */; };
 		146C08D11D7FF56A00AB3153 /* CustomTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146C08D01D7FF56A00AB3153 /* CustomTableCellView.swift */; };
@@ -276,7 +275,6 @@
 		14430C291D012D1D00A5394D /* LookMedia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LookMedia.h; path = API/LookMedia.h; sourceTree = "<group>"; };
 		14430C2A1D012D1D00A5394D /* LookMedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LookMedia.m; path = API/LookMedia.m; sourceTree = "<group>"; };
 		1447A22C1D87A2D500057039 /* CustomRotateButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomRotateButton.swift; sourceTree = "<group>"; };
-		144AD8921D3F855500765907 /* OpenPBBDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenPBBDocument.swift; sourceTree = "<group>"; };
 		146401991DACE04300305B12 /* indexSet+block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "indexSet+block.swift"; sourceTree = "<group>"; };
 		14642DBD1DB4C251004D9E9F /* PBBReader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PBBReader.entitlements; sourceTree = "<group>"; };
 		146872361D9A596100460B8E /* PBBReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PBBReaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -695,7 +693,6 @@
 				14B0CF771D34F394004D22B5 /* ActivationController.swift */,
 				1494D6081D36305900842CD1 /* ApplyInfoViewController.swift */,
 				14B0CF791D34F3AE004D22B5 /* ActivationSuccessController.swift */,
-				144AD8921D3F855500765907 /* OpenPBBDocument.swift */,
 				1437DD6F1CF2A75F001BD2D2 /* Assets.xcassets */,
 				1437DD711CF2A75F001BD2D2 /* Main.storyboard */,
 				14B9EE5E1D79744400EC8986 /* PBBReader-Info.plist */,
@@ -1877,7 +1874,6 @@
 				143E381F1D3F1809004B0A4D /* SandboxFile.m in Sources */,
 				143E38201D3F1809004B0A4D /* PycSocket.m in Sources */,
 				14815AE71D49D7E200922A62 /* Label+shadeAnimation.swift in Sources */,
-				144AD8931D3F855600765907 /* OpenPBBDocument.swift in Sources */,
 				143E38211D3F1809004B0A4D /* PycUserRemote.m in Sources */,
 				143E38221D3F1809004B0A4D /* readme.md in Sources */,
 				143E38231D3F1809004B0A4D /* DataFactory.m in Sources */,
@@ -2078,8 +2074,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer: FENG YANG (8TPYWBWBMY)";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer: FENG YANG (8TPYWBWBMY)";
+				CODE_SIGN_IDENTITY = "Developer ID Application: Beijing PYC Software Co., Ltd. (FA78T6VRG8)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application: Beijing PYC Software Co., Ltd. (FA78T6VRG8)";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = FA78T6VRG8;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -2126,8 +2122,8 @@
 				PODS_ROOT = "${SRCROOT}/Pods";
 				PRODUCT_BUNDLE_IDENTIFIER = pyc.cn.com.PBBReaderForOSX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f471adc1-ca9d-4f95-9504-674929268cd9";
-				PROVISIONING_PROFILE_SPECIFIER = Dev;
+				PROVISIONING_PROFILE = "4d16a757-9895-4203-bfc0-0a92571e29c0";
+				PROVISIONING_PROFILE_SPECIFIER = DirectDistribution;
 				SWIFT_OBJC_BRIDGING_HEADER = "PBBReaderForMac/PBBReaderForMac-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
