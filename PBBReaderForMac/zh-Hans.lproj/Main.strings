@@ -1,0 +1,324 @@
+
+/* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "0bl-lO-boV"; */
+"0bl-lO-boV.title" = "Label";
+
+/* Class = "NSMenuItem"; title = "PBBReader"; ObjectID = "1Xt-HY-uBw"; */
+"1Xt-HY-uBw.title" = "PBBReader";
+
+/* Class = "NSTextFieldCell"; title = "1212333444"; ObjectID = "2ev-K7-gwX"; */
+"2ev-K7-gwX.title" = "1212333444";
+
+/* Class = "NSViewController"; title = "PBB Reader 首页"; ObjectID = "3OW-Ec-nEc"; */
+"3OW-Ec-nEc.title" = "PBB Reader 首页";
+
+/* Class = "NSWindow"; title = "实时弹幕"; ObjectID = "3RY-Wf-cZT"; */
+"3RY-Wf-cZT.title" = "实时弹幕";
+
+/* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "3b6-wx-G8w"; */
+"3b6-wx-G8w.title" = "Label";
+
+/* Class = "NSMenuItem"; title = "退出"; ObjectID = "4sb-4s-VLi"; */
+"4sb-4s-VLi.title" = "退出";
+
+/* Class = "NSMenuItem"; title = "删除"; ObjectID = "4zO-8C-hKA"; */
+"4zO-8C-hKA.title" = "删除";
+
+/* Class = "NSMenuItem"; title = "编辑"; ObjectID = "5QF-Oa-p0T"; */
+"5QF-Oa-p0T.title" = "编辑";
+
+/* Class = "NSTextFieldCell"; title = "Name"; ObjectID = "5hN-fo-0nH"; */
+"5hN-fo-0nH.title" = "Name";
+
+/* Class = "NSMenuItem"; title = "关于"; ObjectID = "5kV-Vb-QxS"; */
+"5kV-Vb-QxS.title" = "关于";
+
+/* Class = "NSTextFieldCell"; title = "手机："; ObjectID = "5vl-gY-c7d"; */
+"5vl-gY-c7d.title" = "手机：";
+
+/* Class = "NSMenuItem"; title = "刷新"; ObjectID = "7du-Hg-ekV"; */
+"7du-Hg-ekV.title" = "刷新";
+
+/* Class = "NSTextFieldCell"; title = "剩余5天，共11333天"; ObjectID = "85o-7j-9Ot"; */
+"85o-7j-9Ot.title" = "剩余5天，共11333天";
+
+/* Class = "NSTextFieldCell"; title = "制作时间：2016.4.5"; ObjectID = "ATN-aH-ETJ"; */
+"ATN-aH-ETJ.title" = "制作时间：2016.4.5";
+
+/* Class = "NSMenu"; title = "Main Menu"; ObjectID = "AYu-sK-qS6"; */
+"AYu-sK-qS6.title" = "Main Menu";
+
+/* Class = "NSTextFieldCell"; title = "冥王星系列"; ObjectID = "AbR-Yt-zcK"; */
+"AbR-Yt-zcK.title" = "冥王星系列";
+
+/* Class = "NSTextFieldCell"; title = "手机："; ObjectID = "Atp-yJ-jH6"; */
+"Atp-yJ-jH6.title" = "手机：";
+
+/* Class = "NSMenuItem"; title = "在Finder中显示"; ObjectID = "B9D-vJ-lbe"; */
+"B9D-vJ-lbe.title" = "在Finder中显示";
+
+/* Class = "NSMenuItem"; title = "偏好设置…"; ObjectID = "BOF-NM-1cW"; */
+"BOF-NM-1cW.title" = "偏好设置…";
+
+/* Class = "NSTextFieldCell"; title = "水印"; ObjectID = "Bmk-UZ-t9B"; */
+"Bmk-UZ-t9B.title" = "水印";
+
+/* Class = "NSButtonCell"; title = "获取验证码"; ObjectID = "CSc-Ux-z5B"; */
+"CSc-Ux-z5B.title" = "获取验证码";
+
+/* Class = "NSTextFieldCell"; title = "12834994"; ObjectID = "Daj-ZJ-VyD"; */
+"Daj-ZJ-VyD.title" = "12834994";
+
+/* Class = "NSTextFieldCell"; title = "232323232"; ObjectID = "Dgx-m8-i5l"; */
+"Dgx-m8-i5l.title" = "232323232";
+
+/* Class = "NSTextFieldCell"; title = "1297749900"; ObjectID = "E8V-FK-Q2s"; */
+"E8V-FK-Q2s.title" = "1297749900";
+
+/* Class = "NSTextFieldCell"; title = "正在为您激活，请稍后再次阅读，如果还不能阅读"; ObjectID = "Eu9-yS-Vif"; */
+"Eu9-yS-Vif.title" = "正在为您激活，请稍后再次阅读，如果还不能阅读";
+
+/* Class = "NSMenu"; title = "帮助"; ObjectID = "F2S-fz-NVQ"; */
+"F2S-fz-NVQ.title" = "帮助";
+
+/* Class = "NSTextFieldCell"; title = "手机："; ObjectID = "F8L-Uj-xh9"; */
+"F8L-Uj-xh9.title" = "手机：";
+
+/* Class = "NSMenuItem"; title = "帮助"; ObjectID = "FKE-Sm-Kum"; */
+"FKE-Sm-Kum.title" = "帮助";
+
+/* Class = "NSTextFieldCell"; title = "11111.pbb"; ObjectID = "Fc3-sF-nbB"; */
+"Fc3-sF-nbB.title" = "11111.pbb";
+
+/* Class = "NSTextFieldCell"; title = "能看多久："; ObjectID = "GrZ-qP-nPd"; */
+"GrZ-qP-nPd.title" = "能看多久：";
+
+/* Class = "NSMenuItem"; title = "视图"; ObjectID = "H8h-7b-M4v"; */
+"H8h-7b-M4v.title" = "视图";
+
+/* Class = "NSTextFieldCell"; title = "邮件："; ObjectID = "HX8-9J-MAA"; */
+"HX8-9J-MAA.title" = "邮件：";
+
+/* Class = "NSMenu"; title = "视图"; ObjectID = "HyV-fh-RgO"; */
+"HyV-fh-RgO.title" = "视图";
+
+/* Class = "NSButtonCell"; title = "申请"; ObjectID = "I14-OR-PGM"; */
+"I14-OR-PGM.title" = "申请";
+
+/* Class = "NSTextFieldCell"; title = "每次能看："; ObjectID = "IK0-5h-ZGP"; */
+"IK0-5h-ZGP.title" = "每次能看：";
+
+/* Class = "NSWindow"; title = "PBB Reader 阅读器"; ObjectID = "IQv-IB-iLA"; */
+"IQv-IB-iLA.title" = "PBB Reader";
+
+/* Class = "NSButtonCell"; title = "关闭弹幕渲染"; ObjectID = "KnA-QU-KbQ"; */
+"KnA-QU-KbQ.title" = "关闭弹幕渲染";
+
+/* Class = "NSMenuItem"; title = "剪切"; ObjectID = "LTP-1y-uUI"; */
+"LTP-1y-uUI.title" = "剪切";
+
+/* Class = "NSTextFieldCell"; placeholderString = "请输入11位手机号"; ObjectID = "OCe-CS-eja"; */
+"OCe-CS-eja.placeholderString" = "请输入11位手机号";
+
+/* Class = "NSTextFieldCell"; title = "作者说："; ObjectID = "ORn-NB-gWj"; */
+"ORn-NB-gWj.title" = "作者说：";
+
+/* Class = "NSMenuItem"; title = "最小化"; ObjectID = "OY7-WF-poV"; */
+"OY7-WF-poV.title" = "最小化";
+
+/* Class = "NSWindow"; title = "PBB Reader 播放器"; ObjectID = "Oc1-Jb-U2t"; */
+"Oc1-Jb-U2t.title" = "PBB Reader 播放器";
+
+/* Class = "NSMenuItem"; title = "隐藏"; ObjectID = "Olw-nP-bQN"; */
+"Olw-nP-bQN.title" = "隐藏";
+
+/* Class = "NSTextFieldCell"; title = "剩余5次，共11333次"; ObjectID = "PsH-aq-nQz"; */
+"PsH-aq-nQz.title" = "剩余5次，共11333次";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "Pv3-KM-U4r"; */
+"Pv3-KM-U4r.title" = "Text Cell";
+
+/* Class = "NSTextFieldCell"; title = "邮箱："; ObjectID = "Pzr-DP-k0L"; */
+"Pzr-DP-k0L.title" = "邮箱：";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "Q07-h0-RTZ"; */
+"Q07-h0-RTZ.title" = "Table View Cell";
+
+/* Class = "NSButtonCell"; title = "Change Picture"; ObjectID = "Qd8-k4-8zU"; */
+"Qd8-k4-8zU.title" = "Change Picture";
+
+/* Class = "NSTextFieldCell"; title = "邮箱："; ObjectID = "Qkv-Mo-qyH"; */
+"Qkv-Mo-qyH.title" = "邮箱：";
+
+/* Class = "NSMenuItem"; title = "缩放"; ObjectID = "R4o-n2-Eq4"; */
+"R4o-n2-Eq4.title" = "缩放";
+
+/* Class = "NSMenuItem"; title = "全选"; ObjectID = "Ruw-6m-B2m"; */
+"Ruw-6m-B2m.title" = "全选";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "TJx-Kf-818"; */
+"TJx-Kf-818.title" = "Text Cell";
+
+/* Class = "NSMenu"; title = "窗口"; ObjectID = "Td7-aD-5lo"; */
+"Td7-aD-5lo.title" = "窗口";
+
+/* Class = "NSTextFieldCell"; title = "60秒后可重新获取验证码"; ObjectID = "Tke-sl-jLw"; */
+"Tke-sl-jLw.title" = "60秒后可重新获取验证码";
+
+/* Class = "NSButtonCell"; title = "申请"; ObjectID = "U3p-fE-RtC"; */
+"U3p-fE-RtC.title" = "申请";
+
+/* Class = "NSMenuItem"; title = "隐藏其他"; ObjectID = "Vdr-fp-XzO"; */
+"Vdr-fp-XzO.title" = "隐藏其他";
+
+/* Class = "NSViewController"; title = "申请结果"; ObjectID = "Vg1-Cs-IcE"; */
+"Vg1-Cs-IcE.title" = "申请结果";
+
+/* Class = "NSMenu"; title = "编辑"; ObjectID = "W48-6f-4Dl"; */
+"W48-6f-4Dl.title" = "编辑";
+
+/* Class = "NSTextFieldCell"; title = "14.6.5- 12.4.5"; ObjectID = "Wgu-da-D7m"; */
+"Wgu-da-D7m.title" = "14.6.5- 12.4.5";
+
+/* Class = "NSTextFieldCell"; title = "自定义1："; ObjectID = "XLC-ib-1li"; */
+"XLC-ib-1li.title" = "自定义1：";
+
+/* Class = "NSTextFieldCell"; title = "不限制"; ObjectID = "Y1t-pf-xBV"; */
+"Y1t-pf-xBV.title" = "不限制";
+
+/* Class = "NSTextFieldCell"; title = "QQ："; ObjectID = "YAy-Rn-3E1"; */
+"YAy-Rn-3E1.title" = "QQ：";
+
+/* Class = "NSTextFieldCell"; title = "ddddddddddd"; ObjectID = "YgK-GH-4Nk"; */
+"YgK-GH-4Nk.title" = "ddddddddddd";
+
+/* Class = "NSTextFieldCell"; title = "卖家"; ObjectID = "YsJ-e0-OUx"; */
+"YsJ-e0-OUx.title" = "卖家";
+
+/* Class = "NSTextFieldCell"; title = "我已禁止该文件阅读"; ObjectID = "Zte-Xj-7RF"; */
+"Zte-Xj-7RF.title" = "我已禁止该文件阅读";
+
+/* Class = "NSMenuItem"; title = "窗口"; ObjectID = "aUF-d1-5bR"; */
+"aUF-d1-5bR.title" = "窗口";
+
+/* Class = "NSTextFieldCell"; title = "手机："; ObjectID = "aii-MB-pdv"; */
+"aii-MB-pdv.title" = "手机：";
+
+/* Class = "NSTextFieldCell"; title = "文件名："; ObjectID = "bRF-Rd-EYw"; */
+"bRF-Rd-EYw.title" = "文件名：";
+
+/* Class = "NSTextFieldCell"; title = "能看几次："; ObjectID = "c4y-KL-6Iv"; */
+"c4y-KL-6Iv.title" = "能看几次：";
+
+/* Class = "NSTextFieldCell"; placeholderString = "填写验证码"; ObjectID = "cXY-88-08a"; */
+"cXY-88-08a.placeholderString" = "填写验证码";
+
+/* Class = "NSTextFieldCell"; title = "dddd@qq.com"; ObjectID = "cex-Sa-Cnm"; */
+"cex-Sa-Cnm.title" = "dddd@qq.com";
+
+/* Class = "NSTextFieldCell"; title = "Rating"; ObjectID = "d4b-zR-wGB"; */
+"d4b-zR-wGB.title" = "Rating";
+
+/* Class = "NSTextFieldCell"; title = "阅读该文件前，请先验证手机"; ObjectID = "dCs-wM-kqI"; */
+"dCs-wM-kqI.title" = "阅读该文件前，请先验证手机";
+
+/* Class = "NSMenuItem"; title = "复制"; ObjectID = "dSR-1P-dKr"; */
+"dSR-1P-dKr.title" = "复制";
+
+/* Class = "NSTextFieldCell"; title = "9938u48934h34343"; ObjectID = "esk-IG-vtX"; */
+"esk-IG-vtX.title" = "9938u48934h34343";
+
+/* Class = "NSTextFieldCell"; title = "QQ："; ObjectID = "fNU-v0-dYV"; */
+"fNU-v0-dYV.title" = "QQ：";
+
+/* Class = "NSTextFieldCell"; title = "身份证号："; ObjectID = "g52-Nj-6fy"; */
+"g52-Nj-6fy.title" = "身份证号：";
+
+/* Class = "NSButtonCell"; title = "重新申请"; ObjectID = "gO4-3j-tYZ"; */
+"gO4-3j-tYZ.title" = "重新申请";
+
+/* Class = "NSMenuItem"; title = "刷新"; ObjectID = "gRi-DW-OMB"; */
+"gRi-DW-OMB.title" = "刷新";
+
+/* Class = "NSMenuItem"; title = "关闭"; ObjectID = "gb8-Jz-Qr8"; */
+"gb8-Jz-Qr8.title" = "关闭";
+
+/* Class = "NSTextFieldCell"; title = "邮政编码："; ObjectID = "h5e-Zp-tpA"; */
+"h5e-Zp-tpA.title" = "邮政编码：";
+
+/* Class = "NSTextFieldCell"; title = "说："; ObjectID = "hHX-wB-veQ"; */
+"hHX-wB-veQ.title" = "说：";
+
+/* Class = "NSTextFieldCell"; title = "PBB Reader"; ObjectID = "hKe-h4-gkH"; */
+"hKe-h4-gkH.title" = "PBB Reader";
+
+/* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "laH-s0-eOT"; */
+"laH-s0-eOT.title" = "Label";
+
+/* Class = "NSTextFieldCell"; title = "QQ:"; ObjectID = "lcb-mc-gdA"; */
+"lcb-mc-gdA.title" = "QQ:";
+
+/* Class = "NSTextFieldCell"; title = "ddhdd@qq.com"; ObjectID = "m8n-hH-ztW"; */
+"m8n-hH-ztW.title" = "ddhdd@qq.com";
+
+/* Class = "NSTextFieldCell"; title = "所属系列："; ObjectID = "mDg-Xl-DXF"; */
+"mDg-Xl-DXF.title" = "所属系列：";
+
+/* Class = "NSViewController"; title = "绑定手机"; ObjectID = "nvI-v2-tSb"; */
+"nvI-v2-tSb.title" = "绑定手机";
+
+/* Class = "NSViewController"; title = "申请页面"; ObjectID = "oTm-0h-HP8"; */
+"oTm-0h-HP8.title" = "申请页面";
+
+/* Class = "NSMenuItem"; title = "删除"; ObjectID = "pa3-QI-u2k"; */
+"pa3-QI-u2k.title" = "删除";
+
+/* Class = "NSTextFieldCell"; title = "112323232"; ObjectID = "rA1-8Z-vrP"; */
+"rA1-8Z-vrP.title" = "112323232";
+
+/* Class = "NSTextFieldCell"; title = "1238736"; ObjectID = "rh7-JV-d1J"; */
+"rh7-JV-d1J.title" = "1238736";
+
+/* Class = "NSButtonCell"; title = "浏览..."; ObjectID = "tg3-dJ-IXJ"; */
+"tg3-dJ-IXJ.title" = "浏览本地PBB文件...";
+
+/* Class = "NSTextFieldCell"; title = "邮箱："; ObjectID = "ti2-5E-YGn"; */
+"ti2-5E-YGn.title" = "邮箱：";
+
+/* Class = "NSMenu"; title = "PBBReader"; ObjectID = "uQy-DD-JDr"; */
+"uQy-DD-JDr.title" = "PBBReader";
+
+/* Class = "NSButtonCell"; title = "取消"; ObjectID = "uX2-2e-rRV"; */
+"uX2-2e-rRV.title" = "取消";
+
+/* Class = "NSTextFieldCell"; title = "1232455454599@qq.com"; ObjectID = "unM-dv-elG"; */
+"unM-dv-elG.title" = "1232455454599@qq.com";
+
+/* Class = "NSViewController"; title = "申请信息"; ObjectID = "w1g-fK-lFK"; */
+"w1g-fK-lFK.title" = "申请信息";
+
+/* Class = "NSMenuItem"; title = "帮助"; ObjectID = "wpr-3q-Mcd"; */
+"wpr-3q-Mcd.title" = "帮助";
+
+/* Class = "NSTextFieldCell"; title = "自定义2:"; ObjectID = "x95-x2-acD"; */
+"x95-x2-acD.title" = "自定义2:";
+
+/* Class = "NSButtonCell"; title = "我知道了"; ObjectID = "xGK-IY-iy0"; */
+"xGK-IY-iy0.title" = "我知道了";
+
+/* Class = "NSMenuItem"; title = "粘帖"; ObjectID = "xgw-JQ-gMx"; */
+"xgw-JQ-gMx.title" = "粘帖";
+
+/* Class = "NSTextFieldCell"; title = "备注：Since Git 2.0, Git defaults to the more conservative 'simple' behavior, which only pushes the current branch to the corresponding remote branch that 'git pull' uses to update the current branch."; ObjectID = "y1w-NB-TOh"; */
+"y1w-NB-TOh.title" = "备注：Since Git 2.0, Git defaults to the more conservative 'simple' behavior, which only pushes the current branch to the corresponding remote branch that 'git pull' uses to update the current branch.";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "yK8-6g-Ls2"; */
+"yK8-6g-Ls2.title" = "Table View Cell";
+
+/* Class = "NSButtonCell"; title = "提交"; ObjectID = "yUc-42-9pY"; */
+"yUc-42-9pY.title" = "提交";
+
+/* Class = "NSTextFieldCell"; title = "QQ:"; ObjectID = "zks-Hi-CBr"; */
+"zks-Hi-CBr.title" = "QQ:";
+
+/* Class = "NSButtonCell"; title = "取消"; ObjectID = "zqw-PA-GEI"; */
+"zqw-PA-GEI.title" = "取消";
