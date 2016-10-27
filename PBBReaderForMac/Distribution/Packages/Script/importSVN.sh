@@ -49,8 +49,9 @@ export LC_CTYPE="zh_CN.UTF-8" #设置当前系统的 locale,支持中文路径
 
 
 
+------------------------------
 #clone源码
-git svn clone https://192.168.85.64/svn/PBBforIOS/PBBReaderForOSX
+git svn clone https://huoshuguang@192.168.85.6/svn/PBBReader_Mac/trunk/PBBReaderForMac
 #提交更新
 git svn dcommit
 #变基：从服务器拉取本地还没有的改动，并将你所有的工作变基到服务器的内容之上
@@ -68,3 +69,5 @@ git diff --staged
 git diff --cached
 #强制覆盖服务器端上的分支
 git push -u origin master -f
+
+git remote add PBBReader https://git.oschina.net/huosan/PBBReader.git
