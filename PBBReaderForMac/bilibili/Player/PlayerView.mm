@@ -20,7 +20,7 @@
 #import "PlayPosition.h"
 
 #import "AppDelegateHelper.h"
-#import "PBBReader-Swift.h"
+#import "PBBReaderForOSX-Swift.h"
 
 #import "../CommentConvert/danmaku2ass.hpp"
 

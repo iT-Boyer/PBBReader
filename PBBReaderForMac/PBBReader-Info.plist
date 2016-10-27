@@ -49,7 +49,7 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLIconFile</key>
-			<string>114</string>
+			<string></string>
 			<key>CFBundleURLName</key>
 			<string>pyc.cn.com.PBBReaderForOSX</string>
 			<key>CFBundleURLSchemes</key>
@@ -59,7 +59,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>62</string>
+	<string>83</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.education</string>
 	<key>LSMinimumSystemVersion</key>
@@ -75,36 +75,6 @@
 	<string>Main</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
-	<key>UTExportedTypeDeclarations</key>
-	<array>
-		<dict>
-			<key>UTTypeDescription</key>
-			<string>PBBReader</string>
-			<key>UTTypeIconFile</key>
-			<string>114</string>
-			<key>UTTypeIdentifier</key>
-			<string>pyc.cn.com.PBBReaderForOSX</string>
-			<key>UTTypeTagSpecification</key>
-			<dict>
-				<key>com.apple.nspboard-type</key>
-				<array>
-					<string>pbb</string>
-				</array>
-				<key>com.apple.ostype</key>
-				<array>
-					<string>pbb</string>
-				</array>
-				<key>public.filename-extension</key>
-				<array>
-					<string>pbb</string>
-				</array>
-				<key>public.mime-type</key>
-				<array>
-					<string>pbb</string>
-				</array>
-			</dict>
-		</dict>
-	</array>
 	<key>UTImportedTypeDeclarations</key>
 	<array>
 		<dict>
@@ -123,81 +93,6 @@
 				<key>public.filename-extension</key>
 				<array>
 					<string>pbb</string>
-					<string>*</string>
-					<string>3GP</string>
-					<string>3IV</string>
-					<string>3gp</string>
-					<string>3iv</string>
-					<string>ASF</string>
-					<string>AVI</string>
-					<string>CPK</string>
-					<string>DAT</string>
-					<string>DIVX</string>
-					<string>DV</string>
-					<string>FLAC</string>
-					<string>FLI</string>
-					<string>FLV</string>
-					<string>H264</string>
-					<string>I263</string>
-					<string>M2TS</string>
-					<string>M4V</string>
-					<string>MKV</string>
-					<string>MOV</string>
-					<string>MP2</string>
-					<string>MP4</string>
-					<string>MPEG</string>
-					<string>MPG</string>
-					<string>MPG2</string>
-					<string>MPG4</string>
-					<string>NSV</string>
-					<string>NUT</string>
-					<string>NUV</string>
-					<string>OGG</string>
-					<string>OGM</string>
-					<string>QT</string>
-					<string>RM</string>
-					<string>RMVB</string>
-					<string>VCD</string>
-					<string>VFW</string>
-					<string>VOB</string>
-					<string>WEBM</string>
-					<string>WMV</string>
-					<string>MK3D</string>
-					<string>asf</string>
-					<string>avi</string>
-					<string>cpk</string>
-					<string>dat</string>
-					<string>divx</string>
-					<string>dv</string>
-					<string>flac</string>
-					<string>fli</string>
-					<string>flv</string>
-					<string>h264</string>
-					<string>i263</string>
-					<string>m2ts</string>
-					<string>m4v</string>
-					<string>mkv</string>
-					<string>mov</string>
-					<string>mp2</string>
-					<string>mp4</string>
-					<string>mpeg</string>
-					<string>mpg</string>
-					<string>mpg2</string>
-					<string>mpg4</string>
-					<string>nsv</string>
-					<string>nut</string>
-					<string>nuv</string>
-					<string>ogg</string>
-					<string>ogm</string>
-					<string>qt</string>
-					<string>rm</string>
-					<string>rmvb</string>
-					<string>vcd</string>
-					<string>vfw</string>
-					<string>vob</string>
-					<string>webm</string>
-					<string>wmv</string>
-					<string>mk3d</string>
 				</array>
 			</dict>
 		</dict>

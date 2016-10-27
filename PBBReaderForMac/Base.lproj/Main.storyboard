@@ -134,7 +134,7 @@ CA
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="PBBReader" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="PBBReaderForOSX" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-273" y="48"/>
@@ -142,7 +142,7 @@ CA
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController showSeguePresentationStyle="single" id="B8D-0N-5wS" customClass="CustomWindowController" customModule="PBBReader" customModuleProvider="target" sceneMemberID="viewController">
+                <windowController showSeguePresentationStyle="single" id="B8D-0N-5wS" customClass="CustomWindowController" customModule="PBBReaderForOSX" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" identifier="MainWindow" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES" unifiedTitleAndToolbar="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -157,14 +157,14 @@ CA
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <customObject id="Tlq-7l-5LO" customClass="OpenPBBDocument" customModule="PBBReader" customModuleProvider="target"/>
+                <customObject id="Tlq-7l-5LO" customClass="OpenPBBDocument" customModule="PBBReaderForOSX" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="-237" y="403"/>
         </scene>
         <!--PBB Reader 首页-->
         <scene sceneID="2Na-B8-7mL">
             <objects>
-                <viewController title="PBB Reader 首页" storyboardIdentifier="ReceiveViewController" id="3OW-Ec-nEc" customClass="ReceiveViewController" customModule="PBBReader" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="PBB Reader 首页" storyboardIdentifier="ReceiveViewController" id="3OW-Ec-nEc" customClass="ReceiveViewController" customModule="PBBReaderForOSX" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="zBH-0g-xG1">
                         <rect key="frame" x="0.0" y="0.0" width="756" height="571"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -193,7 +193,7 @@ CA
                                         <rect key="frame" x="0.0" y="0.0" width="220" height="529"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <subviews>
-                                            <customView horizontalHuggingPriority="249" verticalHuggingPriority="249" id="vHS-NP-Zqw" userLabel="浏览..." customClass="CustomView" customModule="PBBReader" customModuleProvider="target">
+                                            <customView horizontalHuggingPriority="249" verticalHuggingPriority="249" id="vHS-NP-Zqw" userLabel="浏览..." customClass="CustomView" customModule="PBBReaderForOSX" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="220" height="42"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
@@ -254,7 +254,7 @@ CA
                                                                             <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="key"/>
                                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                             <prototypeCellViews>
-                                                                                <tableCellView identifier="ReceiveColumn" focusRingType="exterior" id="Q1U-uF-fvd" userLabel="优先使用第一个cell" customClass="CustomTableCellView" customModule="PBBReader" customModuleProvider="target">
+                                                                                <tableCellView identifier="ReceiveColumn" focusRingType="exterior" id="Q1U-uF-fvd" userLabel="优先使用第一个cell" customClass="CustomTableCellView" customModule="PBBReaderForOSX" customModuleProvider="target">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="220" height="30"/>
                                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                     <subviews>
@@ -291,7 +291,7 @@ CA
                                                                                         <outlet property="textField" destination="876-Em-s9i" id="LtB-9C-fWm"/>
                                                                                     </connections>
                                                                                 </tableCellView>
-                                                                                <customView identifier="NSTableViewRowViewKey" id="lin-za-v9C" userLabel="选中高亮时,绘制cell样式" customClass="CellhighlightColorTableView" customModule="PBBReader" customModuleProvider="target">
+                                                                                <customView identifier="NSTableViewRowViewKey" id="lin-za-v9C" userLabel="选中高亮时,绘制cell样式" customClass="CellhighlightColorTableView" customModule="PBBReaderForOSX" customModuleProvider="target">
                                                                                     <rect key="frame" x="0.0" y="30" width="220" height="40"/>
                                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                                     <subviews>
@@ -312,7 +312,7 @@ CA
                                                                                         <outlet property="ibaLeftLineImageView" destination="IvN-kW-MYH" id="vVn-tp-b05"/>
                                                                                     </connections>
                                                                                 </customView>
-                                                                                <tableCellView id="zKK-K7-7et" userLabel="拖动到顶部位置可以替换第一个cell" customClass="CustomTableCellView" customModule="PBBReader" customModuleProvider="target">
+                                                                                <tableCellView id="zKK-K7-7et" userLabel="拖动到顶部位置可以替换第一个cell" customClass="CustomTableCellView" customModule="PBBReaderForOSX" customModuleProvider="target">
                                                                                     <rect key="frame" x="0.0" y="70" width="220" height="40"/>
                                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                     <subviews>
@@ -561,7 +561,7 @@ CA
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                         </textField>
-                                                        <progressIndicator wantsLayer="YES" maxValue="1" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="ZR0-dO-DmL" customClass="CustomColorProgressIndicator" customModule="PBBReader" customModuleProvider="target">
+                                                        <progressIndicator wantsLayer="YES" maxValue="1" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="ZR0-dO-DmL" customClass="CustomColorProgressIndicator" customModule="PBBReaderForOSX" customModuleProvider="target">
                                                             <rect key="frame" x="91" y="173" width="124" height="4"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="2" id="PvW-Wo-P0p"/>
@@ -583,7 +583,7 @@ CA
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                         </textField>
-                                                        <progressIndicator wantsLayer="YES" maxValue="1" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="ZYq-H1-S2i" customClass="CustomColorProgressIndicator" customModule="PBBReader" customModuleProvider="target">
+                                                        <progressIndicator wantsLayer="YES" maxValue="1" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="ZYq-H1-S2i" customClass="CustomColorProgressIndicator" customModule="PBBReaderForOSX" customModuleProvider="target">
                                                             <rect key="frame" x="90" y="127" width="124" height="4"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="2" id="eiF-Xd-JQX"/>
@@ -657,7 +657,7 @@ CA
                                                                 <constraint firstAttribute="height" constant="21" id="uAj-9K-NvJ"/>
                                                             </constraints>
                                                         </customView>
-                                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QN2-0m-NQi" customClass="CustomRotateButton" customModule="PBBReader" customModuleProvider="target">
+                                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QN2-0m-NQi" customClass="CustomRotateButton" customModule="PBBReaderForOSX" customModuleProvider="target">
                                                             <rect key="frame" x="474" y="491" width="50" height="32"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="50" id="ROT-UR-bHo"/>
@@ -845,7 +845,7 @@ CA
         <!--绑定手机-->
         <scene sceneID="ZRW-Hn-TZE">
             <objects>
-                <viewController title="绑定手机" storyboardIdentifier="BindingPhoneViewController" id="nvI-v2-tSb" customClass="BindingPhoneViewController" customModule="PBBReader" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="绑定手机" storyboardIdentifier="BindingPhoneViewController" id="nvI-v2-tSb" customClass="BindingPhoneViewController" customModule="PBBReaderForOSX" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="Yx6-LA-Qz7">
                         <rect key="frame" x="0.0" y="0.0" width="710" height="338"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1142,7 +1142,7 @@ CA
         <!--申请页面-->
         <scene sceneID="MgF-60-Lcx">
             <objects>
-                <viewController title="申请页面" storyboardIdentifier="ActivationController" id="oTm-0h-HP8" customClass="ActivationController" customModule="PBBReader" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="申请页面" storyboardIdentifier="ActivationController" id="oTm-0h-HP8" customClass="ActivationController" customModule="PBBReaderForOSX" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="bw0-Hz-rxj">
                         <rect key="frame" x="0.0" y="0.0" width="711" height="493"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1404,7 +1404,7 @@ CA
         <!--申请信息-->
         <scene sceneID="3fk-VP-cH5">
             <objects>
-                <viewController title="申请信息" storyboardIdentifier="ApplyInfoViewController" id="w1g-fK-lFK" customClass="ApplyInfoViewController" customModule="PBBReader" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="申请信息" storyboardIdentifier="ApplyInfoViewController" id="w1g-fK-lFK" customClass="ApplyInfoViewController" customModule="PBBReaderForOSX" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="usn-nm-GEk">
                         <rect key="frame" x="0.0" y="0.0" width="603" height="490"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1529,7 +1529,7 @@ CA
         <!--申请结果-->
         <scene sceneID="uSJ-zV-rZi">
             <objects>
-                <viewController title="申请结果" storyboardIdentifier="ActivationSuccessController" id="Vg1-Cs-IcE" customClass="ActivationSuccessController" customModule="PBBReader" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="申请结果" storyboardIdentifier="ActivationSuccessController" id="Vg1-Cs-IcE" customClass="ActivationSuccessController" customModule="PBBReaderForOSX" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="ETz-w0-yOC">
                         <rect key="frame" x="0.0" y="0.0" width="755" height="520"/>
                         <autoresizingMask key="autoresizingMask"/>

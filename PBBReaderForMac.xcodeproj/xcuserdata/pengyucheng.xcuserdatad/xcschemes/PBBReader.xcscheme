@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "143E37F71D3F1809004B0A4D"
-               BuildableName = "PBBReader.app"
-               BlueprintName = "PBBReader"
+               BuildableName = "PBBReaderForOSX.app"
+               BlueprintName = "PBBReaderForOSX"
                ReferencedContainer = "container:PBBReaderForMac.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -43,8 +43,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "143E37F71D3F1809004B0A4D"
-            BuildableName = "PBBReader.app"
-            BlueprintName = "PBBReader"
+            BuildableName = "PBBReaderForOSX.app"
+            BlueprintName = "PBBReaderForOSX"
             ReferencedContainer = "container:PBBReaderForMac.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -66,8 +66,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "143E37F71D3F1809004B0A4D"
-            BuildableName = "PBBReader.app"
-            BlueprintName = "PBBReader"
+            BuildableName = "PBBReaderForOSX.app"
+            BlueprintName = "PBBReaderForOSX"
             ReferencedContainer = "container:PBBReaderForMac.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -85,8 +85,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "143E37F71D3F1809004B0A4D"
-            BuildableName = "PBBReader.app"
-            BlueprintName = "PBBReader"
+            BuildableName = "PBBReaderForOSX.app"
+            BlueprintName = "PBBReaderForOSX"
             ReferencedContainer = "container:PBBReaderForMac.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
