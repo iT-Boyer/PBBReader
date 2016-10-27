@@ -58,7 +58,7 @@ git pull PBBReader master
 #合并后，向SVN仓库提交更新
 git svn dcommit
 #变基：从服务器拉取本地还没有的改动，并将你所有的工作变基到服务器的内容之上
-git svn rebase
+git svn rebase  #.DS_Store导致空分支问题：* (no branch, rebasing master)  解决：SVN要添加忽略.DS_Store设置
 
 #拉取最新
 git svn fetch
