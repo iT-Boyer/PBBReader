@@ -7,12 +7,13 @@ import Foundation
 
 //var str2 = try! NSString.init(contentsOfFile: [#FileReference(fileReferenceLiteral: "updateinfo.txt")#], encoding: NSUTF8StringEncoding)
 
-if let updateInfo = try? String(contentsOfURL: [#FileReference(fileReferenceLiteral: "updateinfo.txt")#]){
+if let updateInfo = try? String(contentsOfURL: #fileLiteral(resourceName: "updateinfo.txt")){
     
         print(updateInfo)
 }
 
-if let info = NSDictionary.init(contentsOfURL: [#FileReference(fileReferenceLiteral: "updateinfo.plist")#]){
+if let info = NSDictionary.init(contentsOfURL:#fileLiteral(resourceName: "updateinfo.plist") )
+{
     print(info.allKeys)
     print(info.allValues)
     let str = info.objectForKey("CFBundleShortVersionString")!

@@ -1236,14 +1236,14 @@ singleton_implementation(AppDelegateHelper);
             {
                 [keyWindow setStyleMask:[window styleMask] & ~ NSClosableWindowMask];
             }
-            break;
+//            break;
         }
         
         if ([window.identifier isEqualToString:@"MainWindow"])
         {
             //详情页面窗口
             keyWindow = window;
-            continue;
+//            continue;
         }
     }
 }
