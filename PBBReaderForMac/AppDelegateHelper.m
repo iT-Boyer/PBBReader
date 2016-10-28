@@ -554,6 +554,7 @@ singleton_implementation(AppDelegateHelper);
 -(void)setAlertView:(NSString *)msg
 {
     [self setKeyWindow:true];
+    NSLog(@"提示框口keyWindow：%@",keyWindow);
     if (!alertShow) {
         alertShow = [[NSAlert alloc] init];
         [alertShow addButtonWithTitle:@"确定"];
@@ -564,11 +565,12 @@ singleton_implementation(AppDelegateHelper);
     [alertShow setMessageText:msg];
     //        [alert setInformativeText:@"Deleted records cannot be restored."];
     [alertShow setAlertStyle:NSWarningAlertStyle];
-    if ([alertShow runModal] == NSAlertFirstButtonReturn || [alertShow runModal] == NSAlertSecondButtonReturn) {
-        
+    if ([alertShow runModal] == NSAlertFirstButtonReturn || [alertShow runModal] == NSAlertSecondButtonReturn)
+    {
         //当提示框在播放器页面时，通知关闭播放器窗口
         NSDictionary  *dic = [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:fileID] forKey:@"pycFileID"];
-        if([keyWindow isKindOfClass:[PlayerWindow class]]){
+        if([keyWindow isKindOfClass:[PlayerWindow class]])
+        {
             [[NSNotificationCenter defaultCenter] postNotificationName:@"CancleClosePlayerWindows" object:self userInfo:dic];
         }
     }
@@ -1131,6 +1133,7 @@ singleton_implementation(AppDelegateHelper);
     
     [[ReceiveFileDao sharedReceiveFileDao]updateReceiveFileApplyOpen:0 FileId:pycfileObject.fileID];
     [self setKeyWindow:true];
+    NSLog(@"申请结果keyWindow：%@",keyWindow);
     [keyWindow.contentViewController presentViewControllerAsSheet:activationSucVc];
 }
 
@@ -1178,6 +1181,7 @@ singleton_implementation(AppDelegateHelper);
     [[ReceiveFileDao sharedReceiveFileDao]updateReceiveFileApplyOpen:0 FileId:fileID];
     
     [self setKeyWindow:true];
+    NSLog(@"申请激活keyWindow：%@",keyWindow);
     [keyWindow.contentViewController presentViewControllerAsSheet:activationVc];
 }
 
@@ -1204,11 +1208,23 @@ singleton_implementation(AppDelegateHelper);
     }
 }
 
--(void)setKeyWindow:(BOOL)isCanClose{
+-(void)setKeyWindow:(BOOL)isCanClose
+{
     NSArray *windows = [[NSApplication sharedApplication] windows];
-    for (NSWindow *window in windows) {
+    
+    for (NSWindow *window in windows)
+    {
         //
-        if ([window isKindOfClass:[PlayerWindow class]]) {
+//        if ([window isKindOfClass:[NSPanel class]])
+//        {
+////            keyWindow = (NSWindow *) [windows lastObject];
+//            [window makeKeyAndOrderFront:self];
+//            [window setLevel:NSPopUpMenuWindowLevel];
+//            break;
+//        }
+//        else
+        if ([window isKindOfClass:[PlayerWindow class]])
+        {
             //播放器窗口
             keyWindow = (PlayerWindow *)window;
             if (isCanClose)
@@ -1220,11 +1236,14 @@ singleton_implementation(AppDelegateHelper);
             {
                 [keyWindow setStyleMask:[window styleMask] & ~ NSClosableWindowMask];
             }
+            break;
         }
         
-        if ([window.identifier isEqualToString:@"MainWindow"]) {
+        if ([window.identifier isEqualToString:@"MainWindow"])
+        {
             //详情页面窗口
             keyWindow = window;
+            continue;
         }
     }
 }

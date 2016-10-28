@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import Toasty
 
 class ActivationController: NSViewController {
     
@@ -262,12 +263,21 @@ class ActivationController: NSViewController {
     func trimSpace(_ inputStr:String) -> String {
         return inputStr.replacingOccurrences(of: " ", with: "")
     }
-    @IBAction func nextStepAction(_ sender: AnyObject) {
+    @IBAction func nextStepAction(_ sender: AnyObject)
+    {
+        // Make a copy of default style.
+        var style = Toasty.defaultStyle
         
+        // Navigation bar is translucent so the view starts from under the bars. Set margin accordingly.
+        style.margin.bottom = 0
+        style.backgroundColor = NSColor.clear
+        style.textColor = NSColor.black
+
         if (selffieldnum == 0 && selffieldnum == 0 && definechecked == 0 ) {
             
-            if (trimSpace(qqField.stringValue) == "" && trimSpace(phoneField.stringValue) == "") {
-                pycFileHelper?.setAlertView("QQ、手机至少填写一项！")
+            if (trimSpace(qqField.stringValue) == "" && trimSpace(phoneField.stringValue) == "")
+            {
+                view.showToastWithText("QQ、手机至少填写一项！", usingStyle: style)
                 return;
             }
             
@@ -275,19 +285,19 @@ class ActivationController: NSViewController {
         
         if (trimSpace(qqField.stringValue)=="" && definechecked&1 != 0) {
             qqField.layer?.borderColor = NSColor.red.cgColor
-            pycFileHelper?.setAlertView("Q Q号不能为空！")
+            view.showToastWithText("QQ Q号不能为空！", usingStyle: style)
             return;
         }
         
         if (trimSpace(phoneField.stringValue) == "" && definechecked&2 != 0) {
             phoneField.layer?.borderColor = NSColor.red.cgColor
-            pycFileHelper?.setAlertView("手机号不能为空！")
+            view.showToastWithText("手机号不能为空！", usingStyle: style)
             return;
         }
         
         if (trimSpace(emailField.stringValue) == ""&&definechecked&4 != 0) {
             emailField.layer?.borderColor = NSColor.red.cgColor
-            pycFileHelper?.setAlertView("邮箱不能为空！")
+            view.showToastWithText("邮箱不能为空！", usingStyle: style)
             return;
         }
         
@@ -305,14 +315,14 @@ class ActivationController: NSViewController {
             
             if (trimSpace(sel1) == "") {
                 self1View.layer?.borderColor = NSColor.red.cgColor
-                pycFileHelper?.setAlertView("\(self1!)不能为空！")
+                view.showToastWithText("\(self1!)不能为空！", usingStyle: style)
                 return;
             }
             
             let fieldlen = trimSpace(sel1).lengthOfBytes(using: String.Encoding.utf8)
             if (fieldlen>24) {
                 self1View.layer?.borderColor = NSColor.red.cgColor
-                pycFileHelper?.setAlertView("\(self1!)长度最多24个字符！")
+                view.showToastWithText("\(self1!)长度最多24个字符！", usingStyle: style)
                 return;
             }
             
@@ -320,14 +330,14 @@ class ActivationController: NSViewController {
                 
                 if (trimSpace(sel2) == "") {
                     self2View.layer?.borderColor = NSColor.red.cgColor
-                    pycFileHelper?.setAlertView("\(self2!)不能为空！")
+                    view.showToastWithText("\(self2!)不能为空！", usingStyle: style)
                     return;
                 }
                 
                 let fieldlen = trimSpace(sel2).lengthOfBytes(using: String.Encoding.utf8)
                 if (fieldlen>24) {
                     self2View.layer?.borderColor = NSColor.red.cgColor
-                    pycFileHelper?.setAlertView("\(self2!)长度最多24个字符！")
+                    view.showToastWithText("\(self2!)长度最多24个字符！", usingStyle: style)
                     return;
                 }
             }
