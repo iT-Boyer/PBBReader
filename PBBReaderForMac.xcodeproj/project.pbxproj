@@ -195,8 +195,195 @@
 		14BF31811D780AB1000EFF66 /* CustomBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BF31801D780AB1000EFF66 /* CustomBox.swift */; };
 		14C9B6A61D8E859800A0C6B9 /* FSCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C9B6A51D8E859800A0C6B9 /* FSCustomCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		14EA57EA1D7EBEAA0026602B /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EA57E91D7EBEA90026602B /* CustomView.swift */; };
+		309062B641A4EB627C513884 /* Pods_PBBReaderForOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0090F6BCE53F529B6F20CE05 /* Pods_PBBReaderForOSX.framework */; };
 		846754711D84604F006D8722 /* Button+RotateRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146C08D21D82A81400AB3153 /* Button+RotateRefresh.swift */; };
-		A7FCF66363745C0CAFC4371C /* Pods_PBBReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9556540B6FE647FA50015D1C /* Pods_PBBReader.framework */; };
+		84AEDA461DC5FF02001E8116 /* Toasty.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14A5058E1DAA2656008BF666 /* Toasty.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		84AEDA4B1DC5FF02001E8116 /* PycReceiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A68681CFEC9AD00BC66A1 /* PycReceiveModel.swift */; };
+		84AEDA4C1DC5FF02001E8116 /* SecretDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FCC1CFD844E001BCE84 /* SecretDao.m */; };
+		84AEDA4D1DC5FF02001E8116 /* BarrageWalkImageSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B121D4AF55A00922A62 /* BarrageWalkImageSprite.m */; };
+		84AEDA4E1DC5FF02001E8116 /* NSImage+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EE618D1CF816E50051FD1A /* NSImage+Extras.m */; };
+		84AEDA4F1DC5FF02001E8116 /* userDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FD21CFD844E001BCE84 /* userDao.m */; };
+		84AEDA501DC5FF02001E8116 /* NSView+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B1E1D4AF55A00922A62 /* NSView+UIView.m */; };
+		84AEDA511DC5FF02001E8116 /* BaseDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FD71CFD844E001BCE84 /* BaseDao.m */; };
+		84AEDA521DC5FF02001E8116 /* DateTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FC31CFD8396001BCE84 /* DateTool.m */; };
+		84AEDA531DC5FF02001E8116 /* PycFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F861CFD7823001BCE84 /* PycFolder.m */; };
+		84AEDA541DC5FF02001E8116 /* SeriesDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FD01CFD844E001BCE84 /* SeriesDao.m */; };
+		84AEDA551DC5FF02001E8116 /* BarrageDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815AFC1D4AF55A00922A62 /* BarrageDispatcher.m */; };
+		84AEDA561DC5FF02001E8116 /* ScaryBugDoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1437DD9D1CF2AE72001BD2D2 /* ScaryBugDoc.swift */; };
+		84AEDA571DC5FF02001E8116 /* BarrageFloatTextSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B0B1D4AF55A00922A62 /* BarrageFloatTextSprite.m */; };
+		84AEDA581DC5FF02001E8116 /* CustomWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1422A89D1D757FD40057E9D4 /* CustomWindowController.swift */; };
+		84AEDA591DC5FF02001E8116 /* SendFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FDF1CFD844E001BCE84 /* SendFileManager.m */; };
+		84AEDA5A1DC5FF02001E8116 /* CustomBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BF31801D780AB1000EFF66 /* CustomBox.swift */; };
+		84AEDA5B1DC5FF02001E8116 /* VerificationCodeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FF01CFD844E001BCE84 /* VerificationCodeModel.m */; };
+		84AEDA5C1DC5FF02001E8116 /* DB.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FD91CFD844E001BCE84 /* DB.m */; };
+		84AEDA5D1DC5FF02001E8116 /* BarrageSpriteFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B001D4AF55A00922A62 /* BarrageSpriteFactory.m */; };
+		84AEDA5E1DC5FF02001E8116 /* ArticleDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FC81CFD844E001BCE84 /* ArticleDao.m */; };
+		84AEDA5F1DC5FF02001E8116 /* LookMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 14430C2A1D012D1D00A5394D /* LookMedia.m */; };
+		84AEDA601DC5FF02001E8116 /* PycFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 143A68601CFEB64300BC66A1 /* PycFile.m */; };
+		84AEDA611DC5FF02001E8116 /* ReceiveFileDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FCA1CFD844E001BCE84 /* ReceiveFileDao.m */; };
+		84AEDA621DC5FF02001E8116 /* LiveChat.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B4C1D4B0D0600922A62 /* LiveChat.m */; };
+		84AEDA631DC5FF02001E8116 /* BarrageFloatSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B091D4AF55A00922A62 /* BarrageFloatSprite.m */; };
+		84AEDA641DC5FF02001E8116 /* ScaryBugData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1437DD9B1CF2AD92001BD2D2 /* ScaryBugData.swift */; };
+		84AEDA651DC5FF02001E8116 /* BarrageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B041D4AF55A00922A62 /* BarrageLoader.m */; };
+		84AEDA661DC5FF02001E8116 /* OutFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FE81CFD844E001BCE84 /* OutFile.m */; };
+		84AEDA671DC5FF02001E8116 /* utility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F9F1CFD7823001BCE84 /* utility.cpp */; };
+		84AEDA681DC5FF02001E8116 /* BarrageDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815AFA1D4AF55A00922A62 /* BarrageDescriptor.m */; };
+		84AEDA691DC5FF02001E8116 /* SendFileDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FCE1CFD844E001BCE84 /* SendFileDao.m */; };
+		84AEDA6A1DC5FF02001E8116 /* Socket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14815B4D1D4B0D0600922A62 /* Socket.cpp */; };
+		84AEDA6B1DC5FF02001E8116 /* BarrageWalkSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B141D4AF55A00922A62 /* BarrageWalkSprite.m */; };
+		84AEDA6C1DC5FF02001E8116 /* SecretModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FEA1CFD844E001BCE84 /* SecretModel.m */; };
+		84AEDA6D1DC5FF02001E8116 /* SMS4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F7E1CFD7823001BCE84 /* SMS4.cpp */; };
+		84AEDA6E1DC5FF02001E8116 /* VerificationCodeDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FD41CFD844E001BCE84 /* VerificationCodeDao.m */; };
+		84AEDA6F1DC5FF02001E8116 /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B260091CFD8AA3001BCE84 /* OpenUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		84AEDA701DC5FF02001E8116 /* BindingPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B0CF731D34C715004D22B5 /* BindingPhoneViewController.swift */; };
+		84AEDA711DC5FF02001E8116 /* HttpDes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F9B1CFD7823001BCE84 /* HttpDes.cpp */; };
+		84AEDA721DC5FF02001E8116 /* NSString+More.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FBF1CFD834C001BCE84 /* NSString+More.m */; };
+		84AEDA731DC5FF02001E8116 /* readMe.md in Sources */ = {isa = PBXBuildFile; fileRef = 142EC3AA1D2D0B1A00B88F96 /* readMe.md */; };
+		84AEDA741DC5FF02001E8116 /* NewPycUserRemote.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F951CFD7823001BCE84 /* NewPycUserRemote.m */; };
+		84AEDA751DC5FF02001E8116 /* BilibiliSocketClient.mm in Sources */ = {isa = PBXBuildFile; fileRef = 14815B4A1D4B0D0600922A62 /* BilibiliSocketClient.mm */; };
+		84AEDA761DC5FF02001E8116 /* NSTextField+Attribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 14105B8C1D339912004CB1C2 /* NSTextField+Attribute.m */; };
+		84AEDA771DC5FF02001E8116 /* MyProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FE61CFD844E001BCE84 /* MyProduct.m */; };
+		84AEDA781DC5FF02001E8116 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B2600C1CFD8AED001BCE84 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		84AEDA791DC5FF02001E8116 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1437DD6B1CF2A75F001BD2D2 /* AppDelegate.swift */; };
+		84AEDA7A1DC5FF02001E8116 /* RefreshDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F8B1CFD7823001BCE84 /* RefreshDataModel.m */; };
+		84AEDA7B1DC5FF02001E8116 /* BarrageSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B0D1D4AF55A00922A62 /* BarrageSprite.m */; };
+		84AEDA7C1DC5FF02001E8116 /* NSValue+iOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B1C1D4AF55A00922A62 /* NSValue+iOS.m */; };
+		84AEDA7D1DC5FF02001E8116 /* SandboxFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B260061CFD86A8001BCE84 /* SandboxFile.m */; };
+		84AEDA7E1DC5FF02001E8116 /* PycSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F921CFD7823001BCE84 /* PycSocket.m */; };
+		84AEDA7F1DC5FF02001E8116 /* Label+shadeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14815AE61D49D7E100922A62 /* Label+shadeAnimation.swift */; };
+		84AEDA801DC5FF02001E8116 /* PycUserRemote.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F971CFD7823001BCE84 /* PycUserRemote.m */; };
+		84AEDA811DC5FF02001E8116 /* readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 1437DD9F1CF2AF7C001BD2D2 /* readme.md */; };
+		84AEDA821DC5FF02001E8116 /* DataFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FE41CFD844E001BCE84 /* DataFactory.m */; };
+		84AEDA831DC5FF02001E8116 /* PycPrivateFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F881CFD7823001BCE84 /* PycPrivateFile.m */; };
+		84AEDA841DC5FF02001E8116 /* BarrageFloatImageSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B071D4AF55A00922A62 /* BarrageFloatImageSprite.m */; };
+		84AEDA851DC5FF02001E8116 /* AppDelegateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 148AB4741CFFD24E00CAF9BA /* AppDelegateHelper.m */; };
+		84AEDA861DC5FF02001E8116 /* PycCode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F7B1CFD7823001BCE84 /* PycCode.mm */; };
+		84AEDA871DC5FF02001E8116 /* PycCodeUrl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F9E1CFD7823001BCE84 /* PycCodeUrl.mm */; };
+		84AEDA881DC5FF02001E8116 /* PycFileOperateCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F841CFD7823001BCE84 /* PycFileOperateCommon.m */; };
+		84AEDA891DC5FF02001E8116 /* Des.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F991CFD7823001BCE84 /* Des.cpp */; };
+		84AEDA8A1DC5FF02001E8116 /* ToolString.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FB41CFD815A001BCE84 /* ToolString.m */; };
+		84AEDA8B1DC5FF02001E8116 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FEE1CFD844E001BCE84 /* UserModel.m */; };
+		84AEDA8C1DC5FF02001E8116 /* ActivationSuccessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B0CF791D34F3AE004D22B5 /* ActivationSuccessController.swift */; };
+		84AEDA8D1DC5FF02001E8116 /* SeriesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FEC1CFD844E001BCE84 /* SeriesModel.m */; };
+		84AEDA8E1DC5FF02001E8116 /* AdvertisingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 148AB47E1CFFD78600CAF9BA /* AdvertisingView.m */; };
+		84AEDA8F1DC5FF02001E8116 /* SM3.c in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F7C1CFD7823001BCE84 /* SM3.c */; };
+		84AEDA901DC5FF02001E8116 /* BarrageWalkTextSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B161D4AF55A00922A62 /* BarrageWalkTextSprite.m */; };
+		84AEDA911DC5FF02001E8116 /* LKDaoBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FDB1CFD844E001BCE84 /* LKDaoBase.m */; };
+		84AEDA921DC5FF02001E8116 /* Array+RemoveObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EE618B1CF816E50051FD1A /* Array+RemoveObject.swift */; };
+		84AEDA931DC5FF02001E8116 /* NSDate+TimeInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FBB1CFD8335001BCE84 /* NSDate+TimeInterval.m */; };
+		84AEDA941DC5FF02001E8116 /* ArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FE21CFD844E001BCE84 /* ArticleModel.m */; };
+		84AEDA951DC5FF02001E8116 /* BarrageRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815AFE1D4AF55A00922A62 /* BarrageRenderer.m */; };
+		84AEDA961DC5FF02001E8116 /* ReceiveFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FDD1CFD844E001BCE84 /* ReceiveFileManager.m */; };
+		84AEDA971DC5FF02001E8116 /* NHDisplayLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B181D4AF55A00922A62 /* NHDisplayLink.m */; };
+		84AEDA981DC5FF02001E8116 /* AdvertisingImgCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 148AB47C1CFFD78600CAF9BA /* AdvertisingImgCache.m */; };
+		84AEDA991DC5FF02001E8116 /* ReceiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14105B811D337FD1004CB1C2 /* ReceiveViewController.swift */; };
+		84AEDA9A1DC5FF02001E8116 /* NSDate+String.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FB91CFD8335001BCE84 /* NSDate+String.m */; };
+		84AEDA9B1DC5FF02001E8116 /* BGHUDSliderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F5D1D2A187300838B88 /* BGHUDSliderCell.m */; };
+		84AEDA9C1DC5FF02001E8116 /* BGThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F611D2A187300838B88 /* BGThemeManager.m */; };
+		84AEDA9D1DC5FF02001E8116 /* CustomRotateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1447A22C1D87A2D500057039 /* CustomRotateButton.swift */; };
+		84AEDA9E1DC5FF02001E8116 /* BGTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F5F1D2A187300838B88 /* BGTheme.m */; };
+		84AEDA9F1DC5FF02001E8116 /* ActivationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B0CF771D34F394004D22B5 /* ActivationController.swift */; };
+		84AEDAA01DC5FF02001E8116 /* ControlsWithVibracy.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F631D2A187300838B88 /* ControlsWithVibracy.m */; };
+		84AEDAA11DC5FF02001E8116 /* BarrageCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815AF61D4AF55A00922A62 /* BarrageCanvas.m */; };
+		84AEDAA21DC5FF02001E8116 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F591D2A187300838B88 /* MBProgressHUD.m */; };
+		84AEDAA31DC5FF02001E8116 /* Button+RotateRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146C08D21D82A81400AB3153 /* Button+RotateRefresh.swift */; };
+		84AEDAA41DC5FF02001E8116 /* CustomTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146C08D01D7FF56A00AB3153 /* CustomTableCellView.swift */; };
+		84AEDAA51DC5FF02001E8116 /* NSString+LcsDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3FAA1D2A187300838B88 /* NSString+LcsDiff.m */; };
+		84AEDAA61DC5FF02001E8116 /* FSCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C9B6A51D8E859800A0C6B9 /* FSCustomCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		84AEDAA71DC5FF02001E8116 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F921D2A187300838B88 /* Player.m */; };
+		84AEDAA81DC5FF02001E8116 /* PlayerView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F9A1D2A187300838B88 /* PlayerView.mm */; };
+		84AEDAA91DC5FF02001E8116 /* PlayerWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F9C1D2A187300838B88 /* PlayerWindow.m */; };
+		84AEDAAA1DC5FF02001E8116 /* PlayerLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F961D2A187300838B88 /* PlayerLoader.m */; };
+		84AEDAAB1DC5FF02001E8116 /* BarrageSpriteUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B101D4AF55A00922A62 /* BarrageSpriteUtility.m */; };
+		84AEDAAC1DC5FF02001E8116 /* NSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B1A1D4AF55A00922A62 /* NSLabel.m */; };
+		84AEDAAD1DC5FF02001E8116 /* PlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F981D2A187300838B88 /* PlayerManager.m */; };
+		84AEDAAE1DC5FF02001E8116 /* PlayLocalFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3FA11D2A187300838B88 /* PlayLocalFile.m */; };
+		84AEDAAF1DC5FF02001E8116 /* PlayerEventProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F941D2A187300838B88 /* PlayerEventProxy.m */; };
+		84AEDAB01DC5FF02001E8116 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EA57E91D7EBEA90026602B /* CustomView.swift */; };
+		84AEDAB11DC5FF02001E8116 /* PlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F651D2A187300838B88 /* PlayerControlView.m */; };
+		84AEDAB21DC5FF02001E8116 /* PostComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3FA31D2A187300838B88 /* PostComment.m */; };
+		84AEDAB31DC5FF02001E8116 /* SimpleVideoFormatParser.mm in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3FA71D2A187300838B88 /* SimpleVideoFormatParser.mm */; };
+		84AEDAB41DC5FF02001E8116 /* CellhighlightColorTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BF31791D77C9DE000EFF66 /* CellhighlightColorTableView.swift */; };
+		84AEDAB51DC5FF02001E8116 /* CustomColorProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14389CA01D9CB4A100EAC29C /* CustomColorProgressIndicator.swift */; };
+		84AEDAB61DC5FF02001E8116 /* indexSet+block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146401991DACE04300305B12 /* indexSet+block.swift */; };
+		84AEDAB71DC5FF02001E8116 /* SubtitleProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3FB21D2A187300838B88 /* SubtitleProvider.m */; };
+		84AEDAB81DC5FF02001E8116 /* SubtitleHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3FB01D2A187300838B88 /* SubtitleHelper.m */; };
+		84AEDAB91DC5FF02001E8116 /* TimeSliderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F671D2A187300838B88 /* TimeSliderCell.m */; };
+		84AEDABA1DC5FF02001E8116 /* PlayPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815AF11D49FCBC00922A62 /* PlayPosition.m */; };
+		84AEDABB1DC5FF02001E8116 /* SP_Local.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3FAE1D2A187300838B88 /* SP_Local.m */; };
+		84AEDABC1DC5FF02001E8116 /* VideoAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3FB51D2A187300838B88 /* VideoAddress.m */; };
+		84AEDABD1DC5FF02001E8116 /* ApplyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1494D6081D36305900842CD1 /* ApplyInfoViewController.swift */; };
+		84AEDABE1DC5FF02001E8116 /* VP_Local.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3FBB1D2A187300838B88 /* VP_Local.m */; };
+		84AEDABF1DC5FF02001E8116 /* VideoProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3FB71D2A187300838B88 /* VideoProvider.m */; };
+		84AEDAC01DC5FF02001E8116 /* BarrageClock.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815AF81D4AF55A00922A62 /* BarrageClock.m */; };
+		84AEDAC21DC5FF02001E8116 /* Toasty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A5058E1DAA2656008BF666 /* Toasty.framework */; };
+		84AEDAC31DC5FF02001E8116 /* libmpv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AA3E3A1D2A187200838B88 /* libmpv.dylib */; };
+		84AEDAC41DC5FF02001E8116 /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AA3E3D1D2A187200838B88 /* libz.1.dylib */; };
+		84AEDAC51DC5FF02001E8116 /* Pods_PBBReaderForOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0090F6BCE53F529B6F20CE05 /* Pods_PBBReaderForOSX.framework */; };
+		84AEDAC71DC5FF02001E8116 /* exitfillscreen_lr.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F771D2A187300838B88 /* exitfillscreen_lr.pdf */; };
+		84AEDAC81DC5FF02001E8116 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F8E1D2A187300838B88 /* search.png */; };
+		84AEDAC91DC5FF02001E8116 /* primary_first_sub_category.txt in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE0C1D09367800CE84F4 /* primary_first_sub_category.txt */; };
+		84AEDACA1DC5FF02001E8116 /* vol_high.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F881D2A187300838B88 /* vol_high.pdf */; };
+		84AEDACB1DC5FF02001E8116 /* enterfullscreen.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F761D2A187300838B88 /* enterfullscreen.pdf */; };
+		84AEDACC1DC5FF02001E8116 /* secondary_first_sub_category.txt in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE0F1D09367800CE84F4 /* secondary_first_sub_category.txt */; };
+		84AEDACD1DC5FF02001E8116 /* release_notes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE091D09367800CE84F4 /* release_notes.txt */; };
+		84AEDACE1DC5FF02001E8116 /* reload.png in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F8C1D2A187300838B88 /* reload.png */; };
+		84AEDACF1DC5FF02001E8116 /* 114.png in Resources */ = {isa = PBXBuildFile; fileRef = 840AA6901CFCA2EA00819203 /* 114.png */; };
+		84AEDAD01DC5FF02001E8116 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1437DD6F1CF2A75F001BD2D2 /* Assets.xcassets */; };
+		84AEDAD11DC5FF02001E8116 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE121D09367800CE84F4 /* README.txt */; };
+		84AEDAD21DC5FF02001E8116 /* secondary_second_sub_category.txt in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE101D09367800CE84F4 /* secondary_second_sub_category.txt */; };
+		84AEDAD31DC5FF02001E8116 /* credits.txt in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F751D2A187300838B88 /* credits.txt */; };
+		84AEDAD41DC5FF02001E8116 /* titlebar-middle.png in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F841D2A187300838B88 /* titlebar-middle.png */; };
+		84AEDAD51DC5FF02001E8116 /* vol_no.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F8B1D2A187300838B88 /* vol_no.pdf */; };
+		84AEDAD61DC5FF02001E8116 /* PBBReader-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14B9EE5E1D79744400EC8986 /* PBBReader-Info.plist */; };
+		84AEDAD71DC5FF02001E8116 /* AdvertisingViewOSX.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14430C1D1D01214000A5394D /* AdvertisingViewOSX.xib */; };
+		84AEDAD81DC5FF02001E8116 /* b_play.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F741D2A187300838B88 /* b_play.pdf */; };
+		84AEDAD91DC5FF02001E8116 /* webpage.png in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F901D2A187300838B88 /* webpage.png */; };
+		84AEDADA1DC5FF02001E8116 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1437DD711CF2A75F001BD2D2 /* Main.storyboard */; };
+		84AEDADB1DC5FF02001E8116 /* reloadp.png in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F8D1D2A187300838B88 /* reloadp.png */; };
+		84AEDADC1DC5FF02001E8116 /* advitising.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 148AB47F1CFFD78600CAF9BA /* advitising.jpg */; };
+		84AEDADD1DC5FF02001E8116 /* secondary_category.txt in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE0E1D09367800CE84F4 /* secondary_category.txt */; };
+		84AEDADE1DC5FF02001E8116 /* PlayerControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3FA41D2A187300838B88 /* PlayerControl.xib */; };
+		84AEDADF1DC5FF02001E8116 /* pause.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F7F1D2A187300838B88 /* pause.pdf */; };
+		84AEDAE01DC5FF02001E8116 /* marketing_url.txt in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE061D09367800CE84F4 /* marketing_url.txt */; };
+		84AEDAE11DC5FF02001E8116 /* vol_mid.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F8A1D2A187300838B88 /* vol_mid.pdf */; };
+		84AEDAE21DC5FF02001E8116 /* mute.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F7D1D2A187300838B88 /* mute.pdf */; };
+		84AEDAE31DC5FF02001E8116 /* backwards.png in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F691D2A187300838B88 /* backwards.png */; };
+		84AEDAE41DC5FF02001E8116 /* prev-episode.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F801D2A187300838B88 /* prev-episode.pdf */; };
+		84AEDAE51DC5FF02001E8116 /* name.txt in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE071D09367800CE84F4 /* name.txt */; };
+		84AEDAE61DC5FF02001E8116 /* privacy_url.txt in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE081D09367800CE84F4 /* privacy_url.txt */; };
+		84AEDAE71DC5FF02001E8116 /* titlebar-corner-left.png in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F821D2A187300838B88 /* titlebar-corner-left.png */; };
+		84AEDAE81DC5FF02001E8116 /* fold.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F7C1D2A187300838B88 /* fold.pdf */; };
+		84AEDAE91DC5FF02001E8116 /* description.txt in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE041D09367800CE84F4 /* description.txt */; };
+		84AEDAEA1DC5FF02001E8116 /* PlayerLoader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3FA51D2A187300838B88 /* PlayerLoader.xib */; };
+		84AEDAEB1DC5FF02001E8116 /* next-episode.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F7E1D2A187300838B88 /* next-episode.pdf */; };
+		84AEDAEC1DC5FF02001E8116 /* primary_category.txt in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE0B1D09367800CE84F4 /* primary_category.txt */; };
+		84AEDAED1DC5FF02001E8116 /* titlebar-corner-right.png in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F831D2A187300838B88 /* titlebar-corner-right.png */; };
+		84AEDAEE1DC5FF02001E8116 /* primary_second_sub_category.txt in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE0D1D09367800CE84F4 /* primary_second_sub_category.txt */; };
+		84AEDAEF1DC5FF02001E8116 /* exitfullscreen.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F791D2A187300838B88 /* exitfullscreen.pdf */; };
+		84AEDAF01DC5FF02001E8116 /* support_url.txt in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE0A1D09367800CE84F4 /* support_url.txt */; };
+		84AEDAF11DC5FF02001E8116 /* exitfillscreen_ub.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F781D2A187300838B88 /* exitfillscreen_ub.pdf */; };
+		84AEDAF21DC5FF02001E8116 /* menubutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F6F1D2A187300838B88 /* menubutton.png */; };
+		84AEDAF31DC5FF02001E8116 /* copyright.txt in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE021D09367800CE84F4 /* copyright.txt */; };
+		84AEDAF41DC5FF02001E8116 /* fillscreen_ub.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F7B1D2A187300838B88 /* fillscreen_ub.pdf */; };
+		84AEDAF51DC5FF02001E8116 /* keywords.txt in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE051D09367800CE84F4 /* keywords.txt */; };
+		84AEDAF61DC5FF02001E8116 /* resizeindicator.png in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F811D2A187300838B88 /* resizeindicator.png */; };
+		84AEDAF71DC5FF02001E8116 /* water.xml in Resources */ = {isa = PBXBuildFile; fileRef = 14815B521D4B131A00922A62 /* water.xml */; };
+		84AEDAF81DC5FF02001E8116 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F721D2A187300838B88 /* play.png */; };
+		84AEDAF91DC5FF02001E8116 /* unfold.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F871D2A187300838B88 /* unfold.pdf */; };
+		84AEDAFA1DC5FF02001E8116 /* vol_low.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F891D2A187300838B88 /* vol_low.pdf */; };
+		84AEDAFB1DC5FF02001E8116 /* fillscreen_lr.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F7A1D2A187300838B88 /* fillscreen_lr.pdf */; };
+		84AEDAFC1DC5FF02001E8116 /* copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F6A1D2A187300838B88 /* copy.png */; };
+		84AEDAFD1DC5FF02001E8116 /* credits.txt in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F6B1D2A187300838B88 /* credits.txt */; };
+		84AEDB011DC5FF02001E8116 /* libavcodec.57.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E351D2A187200838B88 /* libavcodec.57.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		84AEDB021DC5FF02001E8116 /* libavdevice.57.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E361D2A187200838B88 /* libavdevice.57.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		84AEDB031DC5FF02001E8116 /* libavfilter.6.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E371D2A187200838B88 /* libavfilter.6.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		84AEDB041DC5FF02001E8116 /* libavformat.57.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E381D2A187200838B88 /* libavformat.57.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		84AEDB051DC5FF02001E8116 /* libavutil.55.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E391D2A187200838B88 /* libavutil.55.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		84AEDB061DC5FF02001E8116 /* libmpv.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E3A1D2A187200838B88 /* libmpv.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		84AEDB071DC5FF02001E8116 /* libswresample.2.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E3B1D2A187200838B88 /* libswresample.2.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		84AEDB081DC5FF02001E8116 /* libswscale.4.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E3C1D2A187200838B88 /* libswscale.4.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		84AEDB091DC5FF02001E8116 /* libz.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E3D1D2A187200838B88 /* libz.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -208,6 +395,13 @@
 			remoteInfo = PBBReader;
 		};
 		14A505931DAA2656008BF666 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1437DD601CF2A75E001BD2D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 14A5058D1DAA2656008BF666;
+			remoteInfo = Toasty;
+		};
+		84AEDA411DC5FF02001E8116 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1437DD601CF2A75E001BD2D2 /* Project object */;
 			proxyType = 1;
@@ -246,9 +440,39 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		84AEDA451DC5FF02001E8116 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				84AEDA461DC5FF02001E8116 /* Toasty.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84AEDB001DC5FF02001E8116 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = lib;
+			dstSubfolderSpec = 6;
+			files = (
+				84AEDB011DC5FF02001E8116 /* libavcodec.57.dylib in CopyFiles */,
+				84AEDB021DC5FF02001E8116 /* libavdevice.57.dylib in CopyFiles */,
+				84AEDB031DC5FF02001E8116 /* libavfilter.6.dylib in CopyFiles */,
+				84AEDB041DC5FF02001E8116 /* libavformat.57.dylib in CopyFiles */,
+				84AEDB051DC5FF02001E8116 /* libavutil.55.dylib in CopyFiles */,
+				84AEDB061DC5FF02001E8116 /* libmpv.dylib in CopyFiles */,
+				84AEDB071DC5FF02001E8116 /* libswresample.2.dylib in CopyFiles */,
+				84AEDB081DC5FF02001E8116 /* libswscale.4.dylib in CopyFiles */,
+				84AEDB091DC5FF02001E8116 /* libz.1.dylib in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0090F6BCE53F529B6F20CE05 /* Pods_PBBReaderForOSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PBBReaderForOSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		14105B811D337FD1004CB1C2 /* ReceiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiveViewController.swift; sourceTree = "<group>"; };
 		14105B8B1D339912004CB1C2 /* NSTextField+Attribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTextField+Attribute.h"; sourceTree = "<group>"; };
 		14105B8C1D339912004CB1C2 /* NSTextField+Attribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTextField+Attribute.m"; sourceTree = "<group>"; };
@@ -602,6 +826,8 @@
 		843CAE121D09367800CE84F4 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		84548C881D772AF600715F4B /* SelectedRowHighlightCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectedRowHighlightCell.h; sourceTree = "<group>"; };
 		84548C891D772AF600715F4B /* SelectedRowHighlightCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectedRowHighlightCell.m; sourceTree = "<group>"; };
+		84AEDB141DC5FF02001E8116 /* PBBReaderForOSXRelese.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PBBReaderForOSXRelese.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84AEDB151DC5FF03001E8116 /* PBBReaderForOSX copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "PBBReaderForOSX copy-Info.plist"; path = "/Users/admin/Downloads/GitRepos/Octopress/PBBReader/PBBReaderForOSX copy-Info.plist"; sourceTree = "<absolute>"; };
 		84CB248E1D0349AB0088112B /* FMResultSet_备份.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FMResultSet_备份.h"; sourceTree = "<group>"; };
 		84CB248F1D0349AB0088112B /* FMResultSet_备份.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FMResultSet_备份.m"; sourceTree = "<group>"; };
 		84E5CB1F1D032FFD003430F2 /* OutFileModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OutFileModel.swift; path = Model/OutFileModel.swift; sourceTree = "<group>"; };
@@ -621,7 +847,7 @@
 				14A505951DAA2656008BF666 /* Toasty.framework in Frameworks */,
 				14815B451D4B08AF00922A62 /* libmpv.dylib in Frameworks */,
 				14815B461D4B08AF00922A62 /* libz.1.dylib in Frameworks */,
-				A7FCF66363745C0CAFC4371C /* Pods_PBBReader.framework in Frameworks */,
+				309062B641A4EB627C513884 /* Pods_PBBReaderForOSX.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,6 +862,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84AEDAC11DC5FF02001E8116 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84AEDAC21DC5FF02001E8116 /* Toasty.framework in Frameworks */,
+				84AEDAC31DC5FF02001E8116 /* libmpv.dylib in Frameworks */,
+				84AEDAC41DC5FF02001E8116 /* libz.1.dylib in Frameworks */,
+				84AEDAC51DC5FF02001E8116 /* Pods_PBBReaderForOSX.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,6 +903,7 @@
 				1437DD691CF2A75F001BD2D2 /* Products */,
 				E015C5766FC51DAFA87206A5 /* Pods */,
 				41FC969B23ABC5E9052852E0 /* Frameworks */,
+				84AEDB151DC5FF03001E8116 /* PBBReaderForOSX copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -675,6 +913,7 @@
 				143E38AD1D3F1809004B0A4D /* PBBReaderForOSX.app */,
 				146872361D9A596100460B8E /* PBBReaderTests.xctest */,
 				14A5058E1DAA2656008BF666 /* Toasty.framework */,
+				84AEDB141DC5FF02001E8116 /* PBBReaderForOSXRelese.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1327,6 +1566,7 @@
 				A4D0BD2208F52548EEDFE8F4 /* Pods_PBBReaderForMac_PBBReaderForMacTests.framework */,
 				CEB66EDC7B50BDB6E0056988 /* Pods_PBBReaderForMacTests.framework */,
 				9556540B6FE647FA50015D1C /* Pods_PBBReader.framework */,
+				0090F6BCE53F529B6F20CE05 /* Pods_PBBReaderForOSX.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1426,10 +1666,7 @@
 				143E38A01D3F1809004B0A4D /* CopyFiles */,
 				6FF822FB36820B453C9B8EDD /* 📦 Embed Pods Frameworks */,
 				BCDAB9E20263CFF328C04908 /* 📦 Copy Pods Resources */,
-				14815B361D4AFF0F00922A62 /* libmpv包文件执行install_name_tool */,
-				14815B371D4B02CD00922A62 /* 单个文件执行install_name_tool */,
-				14A420411D582EE3009B9DF3 /* import svn */,
-				14EA57C71D7D6C9A0026602B /* 启动Package */,
+				84AEDA3E1DC5F571001E8116 /* Run Fabric */,
 			);
 			buildRules = (
 			);
@@ -1477,6 +1714,41 @@
 			productReference = 14A5058E1DAA2656008BF666 /* Toasty.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		84AEDA3F1DC5FF02001E8116 /* PBBReaderForOSXRelese */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84AEDB111DC5FF02001E8116 /* Build configuration list for PBXNativeTarget "PBBReaderForOSXRelese" */;
+			buildPhases = (
+				84AEDA421DC5FF02001E8116 /* 📦 Check Pods Manifest.lock */,
+				84AEDA431DC5FF02001E8116 /* [CP] Check Pods Manifest.lock */,
+				84AEDA441DC5FF02001E8116 /* 自动递增build版本号 */,
+				84AEDA451DC5FF02001E8116 /* Embed Frameworks */,
+				84AEDA471DC5FF02001E8116 /* [CP] Check Pods Manifest.lock */,
+				84AEDA481DC5FF02001E8116 /* [CP] Check Pods Manifest.lock */,
+				84AEDA491DC5FF02001E8116 /* [CP] Check Pods Manifest.lock */,
+				84AEDA4A1DC5FF02001E8116 /* Sources */,
+				84AEDAC11DC5FF02001E8116 /* Frameworks */,
+				84AEDAC61DC5FF02001E8116 /* Resources */,
+				84AEDAFE1DC5FF02001E8116 /* [CP] Embed Pods Frameworks */,
+				84AEDAFF1DC5FF02001E8116 /* [CP] Copy Pods Resources */,
+				84AEDB001DC5FF02001E8116 /* CopyFiles */,
+				84AEDB0A1DC5FF02001E8116 /* 📦 Embed Pods Frameworks */,
+				84AEDB0B1DC5FF02001E8116 /* 📦 Copy Pods Resources */,
+				84AEDB0C1DC5FF02001E8116 /* Run Fabric */,
+				84AEDB0D1DC5FF02001E8116 /* libmpv包文件执行install_name_tool */,
+				84AEDB0E1DC5FF02001E8116 /* 单个文件执行install_name_tool */,
+				84AEDB0F1DC5FF02001E8116 /* import svn */,
+				84AEDB101DC5FF02001E8116 /* 启动Package */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84AEDA401DC5FF02001E8116 /* PBXTargetDependency */,
+			);
+			name = PBBReaderForOSXRelese;
+			productName = PBBReaderForMac;
+			productReference = 84AEDB141DC5FF02001E8116 /* PBBReaderForOSXRelese.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1506,6 +1778,9 @@
 						CreatedOnToolsVersion = 7.3.1;
 						LastSwiftMigration = 0800;
 					};
+					84AEDA3F1DC5FF02001E8116 = {
+						DevelopmentTeam = FA78T6VRG8;
+					};
 				};
 			};
 			buildConfigurationList = 1437DD631CF2A75E001BD2D2 /* Build configuration list for PBXProject "PBBReaderForMac" */;
@@ -1524,6 +1799,7 @@
 				143E37F71D3F1809004B0A4D /* PBBReaderForOSX */,
 				146872351D9A596100460B8E /* PBBReaderTests */,
 				14A5058D1DAA2656008BF666 /* Toasty */,
+				84AEDA3F1DC5FF02001E8116 /* PBBReaderForOSXRelese */,
 			);
 		};
 /* End PBXProject section */
@@ -1605,6 +1881,68 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		84AEDAC61DC5FF02001E8116 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84AEDAC71DC5FF02001E8116 /* exitfillscreen_lr.pdf in Resources */,
+				84AEDAC81DC5FF02001E8116 /* search.png in Resources */,
+				84AEDAC91DC5FF02001E8116 /* primary_first_sub_category.txt in Resources */,
+				84AEDACA1DC5FF02001E8116 /* vol_high.pdf in Resources */,
+				84AEDACB1DC5FF02001E8116 /* enterfullscreen.pdf in Resources */,
+				84AEDACC1DC5FF02001E8116 /* secondary_first_sub_category.txt in Resources */,
+				84AEDACD1DC5FF02001E8116 /* release_notes.txt in Resources */,
+				84AEDACE1DC5FF02001E8116 /* reload.png in Resources */,
+				84AEDACF1DC5FF02001E8116 /* 114.png in Resources */,
+				84AEDAD01DC5FF02001E8116 /* Assets.xcassets in Resources */,
+				84AEDAD11DC5FF02001E8116 /* README.txt in Resources */,
+				84AEDAD21DC5FF02001E8116 /* secondary_second_sub_category.txt in Resources */,
+				84AEDAD31DC5FF02001E8116 /* credits.txt in Resources */,
+				84AEDAD41DC5FF02001E8116 /* titlebar-middle.png in Resources */,
+				84AEDAD51DC5FF02001E8116 /* vol_no.pdf in Resources */,
+				84AEDAD61DC5FF02001E8116 /* PBBReader-Info.plist in Resources */,
+				84AEDAD71DC5FF02001E8116 /* AdvertisingViewOSX.xib in Resources */,
+				84AEDAD81DC5FF02001E8116 /* b_play.pdf in Resources */,
+				84AEDAD91DC5FF02001E8116 /* webpage.png in Resources */,
+				84AEDADA1DC5FF02001E8116 /* Main.storyboard in Resources */,
+				84AEDADB1DC5FF02001E8116 /* reloadp.png in Resources */,
+				84AEDADC1DC5FF02001E8116 /* advitising.jpg in Resources */,
+				84AEDADD1DC5FF02001E8116 /* secondary_category.txt in Resources */,
+				84AEDADE1DC5FF02001E8116 /* PlayerControl.xib in Resources */,
+				84AEDADF1DC5FF02001E8116 /* pause.pdf in Resources */,
+				84AEDAE01DC5FF02001E8116 /* marketing_url.txt in Resources */,
+				84AEDAE11DC5FF02001E8116 /* vol_mid.pdf in Resources */,
+				84AEDAE21DC5FF02001E8116 /* mute.pdf in Resources */,
+				84AEDAE31DC5FF02001E8116 /* backwards.png in Resources */,
+				84AEDAE41DC5FF02001E8116 /* prev-episode.pdf in Resources */,
+				84AEDAE51DC5FF02001E8116 /* name.txt in Resources */,
+				84AEDAE61DC5FF02001E8116 /* privacy_url.txt in Resources */,
+				84AEDAE71DC5FF02001E8116 /* titlebar-corner-left.png in Resources */,
+				84AEDAE81DC5FF02001E8116 /* fold.pdf in Resources */,
+				84AEDAE91DC5FF02001E8116 /* description.txt in Resources */,
+				84AEDAEA1DC5FF02001E8116 /* PlayerLoader.xib in Resources */,
+				84AEDAEB1DC5FF02001E8116 /* next-episode.pdf in Resources */,
+				84AEDAEC1DC5FF02001E8116 /* primary_category.txt in Resources */,
+				84AEDAED1DC5FF02001E8116 /* titlebar-corner-right.png in Resources */,
+				84AEDAEE1DC5FF02001E8116 /* primary_second_sub_category.txt in Resources */,
+				84AEDAEF1DC5FF02001E8116 /* exitfullscreen.pdf in Resources */,
+				84AEDAF01DC5FF02001E8116 /* support_url.txt in Resources */,
+				84AEDAF11DC5FF02001E8116 /* exitfillscreen_ub.pdf in Resources */,
+				84AEDAF21DC5FF02001E8116 /* menubutton.png in Resources */,
+				84AEDAF31DC5FF02001E8116 /* copyright.txt in Resources */,
+				84AEDAF41DC5FF02001E8116 /* fillscreen_ub.pdf in Resources */,
+				84AEDAF51DC5FF02001E8116 /* keywords.txt in Resources */,
+				84AEDAF61DC5FF02001E8116 /* resizeindicator.png in Resources */,
+				84AEDAF71DC5FF02001E8116 /* water.xml in Resources */,
+				84AEDAF81DC5FF02001E8116 /* play.png in Resources */,
+				84AEDAF91DC5FF02001E8116 /* unfold.pdf in Resources */,
+				84AEDAFA1DC5FF02001E8116 /* vol_low.pdf in Resources */,
+				84AEDAFB1DC5FF02001E8116 /* fillscreen_lr.pdf in Resources */,
+				84AEDAFC1DC5FF02001E8116 /* copy.png in Resources */,
+				84AEDAFD1DC5FF02001E8116 /* credits.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -1665,7 +2003,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PBBReader/Pods-PBBReader-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PBBReader/Pods-PBBReaderForOSX-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		143E389D1D3F1809004B0A4D /* [CP] Copy Pods Resources */ = {
@@ -1680,37 +2018,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PBBReader/Pods-PBBReader-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PBBReader/Pods-PBBReaderForOSX-resources.sh\"\n";
 			showEnvVarsInLog = 0;
-		};
-		14815B361D4AFF0F00922A62 /* libmpv包文件执行install_name_tool */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "libmpv包文件执行install_name_tool";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "#mkdir \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/dylib\"\n#cp -f /your/path/to/xcode_project_name/dylib/*.dylib \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/dylib/\"\n#!bin/sh\necho \"--------$(pwd)----------------\"\ncur_dir=\"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/lib\"\ncd ${cur_dir}\necho \"--进入$(pwd)--\"\n#for dirlist in $(ls ${cur_dir})\n#do\n#查看它们的 rpath\n#otool -L ${dirlist}\n#echo \"执行：install_name_tool -change /usr/local/lib/${dirlist} @executable_path/lib/${dirlist} $TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\n#install_name_tool -change /usr/local/lib/${dirlist} @executable_path/lib/${dirlist} \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\n#echo \"执行：install_name_tool -id \\\"@executable_path/lib/${dirlist}\\\" ${dirlist}\"\n#install_name_tool -id \"@executable_path/lib/${dirlist}\" ${dirlist}\n#done\n";
-			showEnvVarsInLog = 0;
-		};
-		14815B371D4B02CD00922A62 /* 单个文件执行install_name_tool */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "单个文件执行install_name_tool";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "echo \"--------$(pwd)----------------\"\ncur_dir=\"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/lib\"\ncd ${cur_dir}\necho \"--进入$(pwd)--\"\nlib=\"libmediainfo.0.dylib\"\n# -f 参数判断 $file 是否存在\nif [ -f \"$lib\" ]; then\notool -L ${lib}\ninstall_name_tool -id \"@executable_path/lib/${lib}\" ${lib}\notool -L ${lib}\nfi";
 		};
 		14A4203D1D549CD7009B9DF3 /* 自动递增build版本号 */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1726,7 +2035,227 @@
 			shellPath = /bin/sh;
 			shellScript = "#递增build版本号，重命名app带版本号的文件名称\n#递增版本号\n#方法一：获取上一版本号并递增\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\necho $buildNumber\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"\n\n#方法二：直接修改指定版本号\n#pwd\n#PLIST_FILE_PATH=${PROJECT_DIR}/'PBBReader-Info.plist'\n#buildVersion=13\n#ImportSVN=\"importSVN\"\n\n#echo $PLIST_FILE_PATH\n#echo \"/<key>CFBundleVersion<\\/key>/{ n; s/\\(<string>\\).*\\(<\\/string>\\)/\\1${buildVersion}\\2/;}\" ${PLIST_FILE_PATH}\n\n#sed -i '' \"/<key>CFBundleVersion<\\/key>/{ n; s/\\(<string>\\).*\\(<\\/string>\\)/\\1${buildVersion}\\2/;}\" ${PLIST_FILE_PATH}\n\n";
 		};
-		14A420411D582EE3009B9DF3 /* import svn */ = {
+		6FF822FB36820B453C9B8EDD /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PBBReaderForOSX/Pods-PBBReaderForOSX-frameworks.sh\"\n";
+		};
+		84AEDA3E1DC5F571001E8116 /* Run Fabric */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Fabric";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 4dde99d6e086d2458bb2353eac6b0729d4cde080 427cd0390e044853bf510724f47461a253a7674134d68b01840394f6e1b7313d";
+		};
+		84AEDA421DC5FF02001E8116 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		84AEDA431DC5FF02001E8116 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		84AEDA441DC5FF02001E8116 /* 自动递增build版本号 */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "自动递增build版本号";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#递增build版本号，重命名app带版本号的文件名称\n#递增版本号\n#方法一：获取上一版本号并递增\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\necho $buildNumber\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"\n\n#方法二：直接修改指定版本号\n#pwd\n#PLIST_FILE_PATH=${PROJECT_DIR}/'PBBReader-Info.plist'\n#buildVersion=13\n#ImportSVN=\"importSVN\"\n\n#echo $PLIST_FILE_PATH\n#echo \"/<key>CFBundleVersion<\\/key>/{ n; s/\\(<string>\\).*\\(<\\/string>\\)/\\1${buildVersion}\\2/;}\" ${PLIST_FILE_PATH}\n\n#sed -i '' \"/<key>CFBundleVersion<\\/key>/{ n; s/\\(<string>\\).*\\(<\\/string>\\)/\\1${buildVersion}\\2/;}\" ${PLIST_FILE_PATH}\n\n";
+		};
+		84AEDA471DC5FF02001E8116 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		84AEDA481DC5FF02001E8116 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		84AEDA491DC5FF02001E8116 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		84AEDAFE1DC5FF02001E8116 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PBBReader/Pods-PBBReaderForOSX-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84AEDAFF1DC5FF02001E8116 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PBBReader/Pods-PBBReaderForOSX-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84AEDB0A1DC5FF02001E8116 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PBBReaderForOSX/Pods-PBBReaderForOSX-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84AEDB0B1DC5FF02001E8116 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PBBReaderForOSX/Pods-PBBReaderForOSX-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84AEDB0C1DC5FF02001E8116 /* Run Fabric */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Fabric";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 4dde99d6e086d2458bb2353eac6b0729d4cde080 427cd0390e044853bf510724f47461a253a7674134d68b01840394f6e1b7313d";
+		};
+		84AEDB0D1DC5FF02001E8116 /* libmpv包文件执行install_name_tool */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "libmpv包文件执行install_name_tool";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#mkdir \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/dylib\"\n#cp -f /your/path/to/xcode_project_name/dylib/*.dylib \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/dylib/\"\n#!bin/sh\necho \"--------$(pwd)----------------\"\ncur_dir=\"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/lib\"\ncd ${cur_dir}\necho \"--进入$(pwd)--\"\n#for dirlist in $(ls ${cur_dir})\n#do\n#查看它们的 rpath\n#otool -L ${dirlist}\n#echo \"执行：install_name_tool -change /usr/local/lib/${dirlist} @executable_path/lib/${dirlist} $TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\n#install_name_tool -change /usr/local/lib/${dirlist} @executable_path/lib/${dirlist} \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\n#echo \"执行：install_name_tool -id \\\"@executable_path/lib/${dirlist}\\\" ${dirlist}\"\n#install_name_tool -id \"@executable_path/lib/${dirlist}\" ${dirlist}\n#done\n";
+			showEnvVarsInLog = 0;
+		};
+		84AEDB0E1DC5FF02001E8116 /* 单个文件执行install_name_tool */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "单个文件执行install_name_tool";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo \"--------$(pwd)----------------\"\ncur_dir=\"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/lib\"\ncd ${cur_dir}\necho \"--进入$(pwd)--\"\nlib=\"libmediainfo.0.dylib\"\n# -f 参数判断 $file 是否存在\nif [ -f \"$lib\" ]; then\n#otool -L ${lib}\n#install_name_tool -id \"@executable_path/lib/${lib}\" ${lib}\n#otool -L ${lib}\nfi";
+		};
+		84AEDB0F1DC5FF02001E8116 /* import svn */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 8;
 			files = (
@@ -1740,7 +2269,7 @@
 			shellPath = /bin/sh;
 			shellScript = "#SHELL_PATH=$PROJECT_DIR/$PRODUCT_NAME/Helper/ShellScript/importSVN.sh\n#chmod +x ${SHELL_PATH}\n#sh ${SHELL_PATH}\n\n###############获取版本号,bundleID\n#获取版本号\n#方式一\n#bundleBuildVersion=\"`/usr/libexec/PlistBuddy -c \\\"Print CFBundleVersion\\\" $INFOPLIST_FILE`\"\n#echo $bundleBuildVersion\n#方法二CFBundleShortVersionString\n#http://stackoverflow.com/questions/6851660/version-vs-build-in-xcode\nversionNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"$INFOPLIST_FILE\")\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\n#\n#新建导入目录\nProductName=\"$PRODUCT_NAME.$versionNumber.${buildNumber}\"\nProductPath=\"$TARGET_BUILD_DIR/$PRODUCT_NAME.app\"\nImportSVN=\"Distribution/ImportSVN\"\n#上传时，先删除SVN目录\nrm -rf ${ImportSVN}\npwd\nif [ -d \"$ImportSVN\" ]; then\n    echo 'svn目录已存在'\nelse\n    echo '新建svn目录'\n    mkdir $ImportSVN\nfi\necho \"cp -rf $ProductPath ${ImportSVN}/$ProductName.app\"\n#压缩\n#拷贝\ncp -rf $ProductPath ${ImportSVN}/$ProductName.app\n\ncd $ImportSVN\n#压缩后删除源文件\necho \"压缩后删除源文件\"\n#保留源文件\nzip -r \"$ProductName.app.zip\" ./*\n#删除\n#zip -rm \"$ProductName.app.zip\" ./*\n#*/\n#重命名\nmv $ProductName.app PBBReaderForOSX.app\n#导入svn库中\necho \"导入svn库中...\"\ncd ../\nexport LC_CTYPE=\"zh_CN.UTF-8\" #设置当前系统的 locale,支持中文路径\n# \"${ImportSVN}\":导入的目标目录 -m:日志\n#svn import \"${ImportSVN}\" https:\\/\\/192.168.85.64/svn/安装包/MAC -m \"${ProductName}\"\n";
 		};
-		14EA57C71D7D6C9A0026602B /* 启动Package */ = {
+		84AEDB101DC5FF02001E8116 /* 启动Package */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 8;
 			files = (
@@ -1753,21 +2282,6 @@
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "#下载\nPerfect=\"/Applications/Packages.app\"\n# -d: 判断目录是否存在  -f: 判断文件是否存在\nif [ -d \"$Perfect\" ]; then\n    echo 'Packages.app已安装'\nelse\n    echo '下载Packages.dmg程序...'\n    curl -o Packages.dmg http://s.sudre.free.fr/Software/files/Packages.dmg\n    #安装Packages.app\n    open /Applications/Packages.dmg\nfi\n#打开程序\n#open $PROJECT_DIR/Distribution/PBBReaderForOSX.pkgproj";
-		};
-		6FF822FB36820B453C9B8EDD /* 📦 Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PBBReader/Pods-PBBReader-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 		A7CEB6B6091EACAA3501D251 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1796,8 +2310,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PBBReader/Pods-PBBReader-resources.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PBBReaderForOSX/Pods-PBBReaderForOSX-resources.sh\"\n";
 		};
 		E8F8A211AFB888C78DEE3106 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1958,6 +2471,131 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		84AEDA4A1DC5FF02001E8116 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84AEDA4B1DC5FF02001E8116 /* PycReceiveModel.swift in Sources */,
+				84AEDA4C1DC5FF02001E8116 /* SecretDao.m in Sources */,
+				84AEDA4D1DC5FF02001E8116 /* BarrageWalkImageSprite.m in Sources */,
+				84AEDA4E1DC5FF02001E8116 /* NSImage+Extras.m in Sources */,
+				84AEDA4F1DC5FF02001E8116 /* userDao.m in Sources */,
+				84AEDA501DC5FF02001E8116 /* NSView+UIView.m in Sources */,
+				84AEDA511DC5FF02001E8116 /* BaseDao.m in Sources */,
+				84AEDA521DC5FF02001E8116 /* DateTool.m in Sources */,
+				84AEDA531DC5FF02001E8116 /* PycFolder.m in Sources */,
+				84AEDA541DC5FF02001E8116 /* SeriesDao.m in Sources */,
+				84AEDA551DC5FF02001E8116 /* BarrageDispatcher.m in Sources */,
+				84AEDA561DC5FF02001E8116 /* ScaryBugDoc.swift in Sources */,
+				84AEDA571DC5FF02001E8116 /* BarrageFloatTextSprite.m in Sources */,
+				84AEDA581DC5FF02001E8116 /* CustomWindowController.swift in Sources */,
+				84AEDA591DC5FF02001E8116 /* SendFileManager.m in Sources */,
+				84AEDA5A1DC5FF02001E8116 /* CustomBox.swift in Sources */,
+				84AEDA5B1DC5FF02001E8116 /* VerificationCodeModel.m in Sources */,
+				84AEDA5C1DC5FF02001E8116 /* DB.m in Sources */,
+				84AEDA5D1DC5FF02001E8116 /* BarrageSpriteFactory.m in Sources */,
+				84AEDA5E1DC5FF02001E8116 /* ArticleDao.m in Sources */,
+				84AEDA5F1DC5FF02001E8116 /* LookMedia.m in Sources */,
+				84AEDA601DC5FF02001E8116 /* PycFile.m in Sources */,
+				84AEDA611DC5FF02001E8116 /* ReceiveFileDao.m in Sources */,
+				84AEDA621DC5FF02001E8116 /* LiveChat.m in Sources */,
+				84AEDA631DC5FF02001E8116 /* BarrageFloatSprite.m in Sources */,
+				84AEDA641DC5FF02001E8116 /* ScaryBugData.swift in Sources */,
+				84AEDA651DC5FF02001E8116 /* BarrageLoader.m in Sources */,
+				84AEDA661DC5FF02001E8116 /* OutFile.m in Sources */,
+				84AEDA671DC5FF02001E8116 /* utility.cpp in Sources */,
+				84AEDA681DC5FF02001E8116 /* BarrageDescriptor.m in Sources */,
+				84AEDA691DC5FF02001E8116 /* SendFileDao.m in Sources */,
+				84AEDA6A1DC5FF02001E8116 /* Socket.cpp in Sources */,
+				84AEDA6B1DC5FF02001E8116 /* BarrageWalkSprite.m in Sources */,
+				84AEDA6C1DC5FF02001E8116 /* SecretModel.m in Sources */,
+				84AEDA6D1DC5FF02001E8116 /* SMS4.cpp in Sources */,
+				84AEDA6E1DC5FF02001E8116 /* VerificationCodeDao.m in Sources */,
+				84AEDA6F1DC5FF02001E8116 /* OpenUDID.m in Sources */,
+				84AEDA701DC5FF02001E8116 /* BindingPhoneViewController.swift in Sources */,
+				84AEDA711DC5FF02001E8116 /* HttpDes.cpp in Sources */,
+				84AEDA721DC5FF02001E8116 /* NSString+More.m in Sources */,
+				84AEDA731DC5FF02001E8116 /* readMe.md in Sources */,
+				84AEDA741DC5FF02001E8116 /* NewPycUserRemote.m in Sources */,
+				84AEDA751DC5FF02001E8116 /* BilibiliSocketClient.mm in Sources */,
+				84AEDA761DC5FF02001E8116 /* NSTextField+Attribute.m in Sources */,
+				84AEDA771DC5FF02001E8116 /* MyProduct.m in Sources */,
+				84AEDA781DC5FF02001E8116 /* Reachability.m in Sources */,
+				84AEDA791DC5FF02001E8116 /* AppDelegate.swift in Sources */,
+				84AEDA7A1DC5FF02001E8116 /* RefreshDataModel.m in Sources */,
+				84AEDA7B1DC5FF02001E8116 /* BarrageSprite.m in Sources */,
+				84AEDA7C1DC5FF02001E8116 /* NSValue+iOS.m in Sources */,
+				84AEDA7D1DC5FF02001E8116 /* SandboxFile.m in Sources */,
+				84AEDA7E1DC5FF02001E8116 /* PycSocket.m in Sources */,
+				84AEDA7F1DC5FF02001E8116 /* Label+shadeAnimation.swift in Sources */,
+				84AEDA801DC5FF02001E8116 /* PycUserRemote.m in Sources */,
+				84AEDA811DC5FF02001E8116 /* readme.md in Sources */,
+				84AEDA821DC5FF02001E8116 /* DataFactory.m in Sources */,
+				84AEDA831DC5FF02001E8116 /* PycPrivateFile.m in Sources */,
+				84AEDA841DC5FF02001E8116 /* BarrageFloatImageSprite.m in Sources */,
+				84AEDA851DC5FF02001E8116 /* AppDelegateHelper.m in Sources */,
+				84AEDA861DC5FF02001E8116 /* PycCode.mm in Sources */,
+				84AEDA871DC5FF02001E8116 /* PycCodeUrl.mm in Sources */,
+				84AEDA881DC5FF02001E8116 /* PycFileOperateCommon.m in Sources */,
+				84AEDA891DC5FF02001E8116 /* Des.cpp in Sources */,
+				84AEDA8A1DC5FF02001E8116 /* ToolString.m in Sources */,
+				84AEDA8B1DC5FF02001E8116 /* UserModel.m in Sources */,
+				84AEDA8C1DC5FF02001E8116 /* ActivationSuccessController.swift in Sources */,
+				84AEDA8D1DC5FF02001E8116 /* SeriesModel.m in Sources */,
+				84AEDA8E1DC5FF02001E8116 /* AdvertisingView.m in Sources */,
+				84AEDA8F1DC5FF02001E8116 /* SM3.c in Sources */,
+				84AEDA901DC5FF02001E8116 /* BarrageWalkTextSprite.m in Sources */,
+				84AEDA911DC5FF02001E8116 /* LKDaoBase.m in Sources */,
+				84AEDA921DC5FF02001E8116 /* Array+RemoveObject.swift in Sources */,
+				84AEDA931DC5FF02001E8116 /* NSDate+TimeInterval.m in Sources */,
+				84AEDA941DC5FF02001E8116 /* ArticleModel.m in Sources */,
+				84AEDA951DC5FF02001E8116 /* BarrageRenderer.m in Sources */,
+				84AEDA961DC5FF02001E8116 /* ReceiveFileManager.m in Sources */,
+				84AEDA971DC5FF02001E8116 /* NHDisplayLink.m in Sources */,
+				84AEDA981DC5FF02001E8116 /* AdvertisingImgCache.m in Sources */,
+				84AEDA991DC5FF02001E8116 /* ReceiveViewController.swift in Sources */,
+				84AEDA9A1DC5FF02001E8116 /* NSDate+String.m in Sources */,
+				84AEDA9B1DC5FF02001E8116 /* BGHUDSliderCell.m in Sources */,
+				84AEDA9C1DC5FF02001E8116 /* BGThemeManager.m in Sources */,
+				84AEDA9D1DC5FF02001E8116 /* CustomRotateButton.swift in Sources */,
+				84AEDA9E1DC5FF02001E8116 /* BGTheme.m in Sources */,
+				84AEDA9F1DC5FF02001E8116 /* ActivationController.swift in Sources */,
+				84AEDAA01DC5FF02001E8116 /* ControlsWithVibracy.m in Sources */,
+				84AEDAA11DC5FF02001E8116 /* BarrageCanvas.m in Sources */,
+				84AEDAA21DC5FF02001E8116 /* MBProgressHUD.m in Sources */,
+				84AEDAA31DC5FF02001E8116 /* Button+RotateRefresh.swift in Sources */,
+				84AEDAA41DC5FF02001E8116 /* CustomTableCellView.swift in Sources */,
+				84AEDAA51DC5FF02001E8116 /* NSString+LcsDiff.m in Sources */,
+				84AEDAA61DC5FF02001E8116 /* FSCustomCell.m in Sources */,
+				84AEDAA71DC5FF02001E8116 /* Player.m in Sources */,
+				84AEDAA81DC5FF02001E8116 /* PlayerView.mm in Sources */,
+				84AEDAA91DC5FF02001E8116 /* PlayerWindow.m in Sources */,
+				84AEDAAA1DC5FF02001E8116 /* PlayerLoader.m in Sources */,
+				84AEDAAB1DC5FF02001E8116 /* BarrageSpriteUtility.m in Sources */,
+				84AEDAAC1DC5FF02001E8116 /* NSLabel.m in Sources */,
+				84AEDAAD1DC5FF02001E8116 /* PlayerManager.m in Sources */,
+				84AEDAAE1DC5FF02001E8116 /* PlayLocalFile.m in Sources */,
+				84AEDAAF1DC5FF02001E8116 /* PlayerEventProxy.m in Sources */,
+				84AEDAB01DC5FF02001E8116 /* CustomView.swift in Sources */,
+				84AEDAB11DC5FF02001E8116 /* PlayerControlView.m in Sources */,
+				84AEDAB21DC5FF02001E8116 /* PostComment.m in Sources */,
+				84AEDAB31DC5FF02001E8116 /* SimpleVideoFormatParser.mm in Sources */,
+				84AEDAB41DC5FF02001E8116 /* CellhighlightColorTableView.swift in Sources */,
+				84AEDAB51DC5FF02001E8116 /* CustomColorProgressIndicator.swift in Sources */,
+				84AEDAB61DC5FF02001E8116 /* indexSet+block.swift in Sources */,
+				84AEDAB71DC5FF02001E8116 /* SubtitleProvider.m in Sources */,
+				84AEDAB81DC5FF02001E8116 /* SubtitleHelper.m in Sources */,
+				84AEDAB91DC5FF02001E8116 /* TimeSliderCell.m in Sources */,
+				84AEDABA1DC5FF02001E8116 /* PlayPosition.m in Sources */,
+				84AEDABB1DC5FF02001E8116 /* SP_Local.m in Sources */,
+				84AEDABC1DC5FF02001E8116 /* VideoAddress.m in Sources */,
+				84AEDABD1DC5FF02001E8116 /* ApplyInfoViewController.swift in Sources */,
+				84AEDABE1DC5FF02001E8116 /* VP_Local.m in Sources */,
+				84AEDABF1DC5FF02001E8116 /* VideoProvider.m in Sources */,
+				84AEDAC01DC5FF02001E8116 /* BarrageClock.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1970,6 +2608,11 @@
 			isa = PBXTargetDependency;
 			target = 14A5058D1DAA2656008BF666 /* Toasty */;
 			targetProxy = 14A505931DAA2656008BF666 /* PBXContainerItemProxy */;
+		};
+		84AEDA401DC5FF02001E8116 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 14A5058D1DAA2656008BF666 /* Toasty */;
+			targetProxy = 84AEDA411DC5FF02001E8116 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -2276,6 +2919,131 @@
 			};
 			name = Release;
 		};
+		84AEDB121DC5FF02001E8116 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 840E59747B1AC9B86534C15B /* Pods-PBBReader.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application: Beijing PYC Software Co., Ltd. (FA78T6VRG8)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application: Beijing PYC Software Co., Ltd. (FA78T6VRG8)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = FA78T6VRG8;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/CocoaAsyncSocket\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/EDStarRating\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/FMDB\"",
+				);
+				GCC_PREFIX_HEADER = "PBBReaderForMac/PBB-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"DEVELOPMENT=0",
+				);
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/PBBReaderForMac/bilibili/libmpv";
+				INFOPLIST_FILE = "PBBReaderForOSX copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) '@executable_path/../Frameworks' '@loader_path/Frameworks'";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PBBReaderForMac/bilibili/libmpv",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-iquote",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/CocoaAsyncSocket/CocoaAsyncSocket.framework/Headers\"",
+					"-iquote",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/EDStarRating/EDStarRating.framework/Headers\"",
+					"-iquote",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/FMDB/FMDB.framework/Headers\"",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"CocoaAsyncSocket\"",
+					"-framework",
+					"\"EDStarRating\"",
+					"-framework",
+					"\"FMDB\"",
+				);
+				PODS_BUILD_DIR = $BUILD_DIR;
+				PODS_CONFIGURATION_BUILD_DIR = "$PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				PODS_ROOT = "${SRCROOT}/Pods";
+				PRODUCT_BUNDLE_IDENTIFIER = pyc.cn.com.PBBReaderForOSX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "4d16a757-9895-4203-bfc0-0a92571e29c0";
+				PROVISIONING_PROFILE_SPECIFIER = DirectDistribution;
+				SWIFT_OBJC_BRIDGING_HEADER = "PBBReaderForMac/PBBReaderForMac-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				USER_HEADER_SEARCH_PATHS = "\"${PODS_ROOT}/FMDB/src/fmdb\"";
+			};
+			name = Debug;
+		};
+		84AEDB131DC5FF02001E8116 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7576768BC3063E8354CC32D /* Pods-PBBReader.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer: FENG YANG (8TPYWBWBMY)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer: FENG YANG (8TPYWBWBMY)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = FA78T6VRG8;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/CocoaAsyncSocket\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/EDStarRating\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/FMDB\"",
+				);
+				GCC_PREFIX_HEADER = "PBBReaderForMac/PBB-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"DEVELOPMENT=0",
+				);
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/PBBReaderForMac/bilibili/libmpv";
+				INFOPLIST_FILE = "PBBReaderForOSX copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) '@executable_path/../Frameworks' '@loader_path/Frameworks'";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PBBReaderForMac/bilibili/libmpv",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-iquote",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/CocoaAsyncSocket/CocoaAsyncSocket.framework/Headers\"",
+					"-iquote",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/EDStarRating/EDStarRating.framework/Headers\"",
+					"-iquote",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/FMDB-OSX10.11/FMDB.framework/Headers\"",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"CocoaAsyncSocket\"",
+					"-framework",
+					"\"EDStarRating\"",
+					"-framework",
+					"\"FMDB\"",
+				);
+				PODS_BUILD_DIR = $BUILD_DIR;
+				PODS_CONFIGURATION_BUILD_DIR = "$PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				PODS_ROOT = "${SRCROOT}/Pods";
+				PRODUCT_BUNDLE_IDENTIFIER = pyc.cn.com.PBBReaderForOSX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "f471adc1-ca9d-4f95-9504-674929268cd9";
+				PROVISIONING_PROFILE_SPECIFIER = Dev;
+				SWIFT_OBJC_BRIDGING_HEADER = "PBBReaderForMac/PBBReaderForMac-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+				USER_HEADER_SEARCH_PATHS = "\"${PODS_ROOT}/FMDB/src/fmdb\"";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -2311,6 +3079,15 @@
 			buildConfigurations = (
 				14A505981DAA2657008BF666 /* Debug */,
 				14A505991DAA2657008BF666 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84AEDB111DC5FF02001E8116 /* Build configuration list for PBXNativeTarget "PBBReaderForOSXRelese" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84AEDB121DC5FF02001E8116 /* Debug */,
+				84AEDB131DC5FF02001E8116 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

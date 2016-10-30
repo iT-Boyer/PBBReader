@@ -7,10 +7,13 @@
 //
 
 import Cocoa
+//import Fabric
+//import Crashlytics
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate{
 
+//    Fabric.with([Crashlytics.self])
     //必须声明为全局属性，否则在声明PycFile调用delegate时，delegate = nil
     //还出现第一次启动执行两次openFiles方法
     let appHelper = AppDelegateHelper()
