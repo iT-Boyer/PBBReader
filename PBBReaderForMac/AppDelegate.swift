@@ -7,19 +7,22 @@
 //
 
 import Cocoa
-//import Fabric
-//import Crashlytics
+import Fabric
+import Crashlytics
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate{
 
-//    Fabric.with([Crashlytics.self])
+//
+    
     //必须声明为全局属性，否则在声明PycFile调用delegate时，delegate = nil
     //还出现第一次启动执行两次openFiles方法
     let appHelper = AppDelegateHelper()
-    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
+        //
+        Fabric.with([Crashlytics.self])
+        
         //监测升级
         let infoFileURL = URL.init(string: "http://www.pyc.com.cn/appupdate/pbbreader_mac/updateinfo.plist")
         
