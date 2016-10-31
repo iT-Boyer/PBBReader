@@ -383,6 +383,7 @@
 		84AEDB071DC5FF02001E8116 /* libswresample.2.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E3B1D2A187200838B88 /* libswresample.2.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		84AEDB081DC5FF02001E8116 /* libswscale.4.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E3C1D2A187200838B88 /* libswscale.4.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		84AEDB091DC5FF02001E8116 /* libz.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E3D1D2A187200838B88 /* libz.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		84CD4F211DC7901900EE0BEB /* Fastfile_Fabric in Resources */ = {isa = PBXBuildFile; fileRef = 84CD4F201DC7901900EE0BEB /* Fastfile_Fabric */; };
 		C28A330DA704F31D5D1B3310 /* Pods_PBBReaderForOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0090F6BCE53F529B6F20CE05 /* Pods_PBBReaderForOSX.framework */; };
 /* End PBXBuildFile section */
 
@@ -826,6 +827,7 @@
 		84AEDB151DC5FF03001E8116 /* PBBReaderForOSX copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "PBBReaderForOSX copy-Info.plist"; path = "/Users/admin/Downloads/GitRepos/Octopress/PBBReader/PBBReaderForOSX copy-Info.plist"; sourceTree = "<absolute>"; };
 		84CB248E1D0349AB0088112B /* FMResultSet_备份.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FMResultSet_备份.h"; sourceTree = "<group>"; };
 		84CB248F1D0349AB0088112B /* FMResultSet_备份.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FMResultSet_备份.m"; sourceTree = "<group>"; };
+		84CD4F201DC7901900EE0BEB /* Fastfile_Fabric */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = Fastfile_Fabric; sourceTree = "<group>"; };
 		84E5CB1F1D032FFD003430F2 /* OutFileModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OutFileModel.swift; path = Model/OutFileModel.swift; sourceTree = "<group>"; };
 		89AA25325F70EFE6512ED0BF /* Pods-PBBReaderForOSX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PBBReaderForOSX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PBBReaderForOSX/Pods-PBBReaderForOSX.debug.xcconfig"; sourceTree = "<group>"; };
 		B9EE037AB7ADE0116FD0F3F0 /* Pods-PBBReaderForOSX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PBBReaderForOSX.release.xcconfig"; path = "Pods/Target Support Files/Pods-PBBReaderForOSX/Pods-PBBReaderForOSX.release.xcconfig"; sourceTree = "<group>"; };
@@ -1565,6 +1567,7 @@
 				843CADFE1D09367800CE84F4 /* Appfile */,
 				843CADFF1D09367800CE84F4 /* Deliverfile */,
 				843CAE001D09367800CE84F4 /* Fastfile */,
+				84CD4F201DC7901900EE0BEB /* Fastfile_Fabric */,
 				843CAE011D09367800CE84F4 /* metadata */,
 				843CAE111D09367800CE84F4 /* screenshots */,
 			);
@@ -1833,6 +1836,7 @@
 				143E388A1D3F1809004B0A4D /* exitfullscreen.pdf in Resources */,
 				143E388D1D3F1809004B0A4D /* support_url.txt in Resources */,
 				143E388E1D3F1809004B0A4D /* exitfillscreen_ub.pdf in Resources */,
+				84CD4F211DC7901900EE0BEB /* Fastfile_Fabric in Resources */,
 				143E388F1D3F1809004B0A4D /* menubutton.png in Resources */,
 				143E38901D3F1809004B0A4D /* copyright.txt in Resources */,
 				143E38911D3F1809004B0A4D /* fillscreen_ub.pdf in Resources */,
