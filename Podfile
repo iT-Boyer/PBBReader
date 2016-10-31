@@ -11,6 +11,7 @@ target 'PBBReaderForOSX' do
     pod 'Crashlytics'
     
 end
+#pod update 'Crashlytics' #单独更新某一个依赖
 
 #Found an unexpected Mach-O header code: 0x72613c21:http://stackoverflow.com/questions/33076819/found-an-unexpected-mach-o-header-code-0x72613c21-in-xcode-7
 #  post_install do |installer|
