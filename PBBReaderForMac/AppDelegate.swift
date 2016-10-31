@@ -20,7 +20,12 @@ class AppDelegate: NSObject, NSApplicationDelegate{
     let appHelper = AppDelegateHelper()
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
-        //
+        //问题；NSApplicationCrashOnExceptions is not set. This will result in poor top-level uncaught exception reporting
+        //https://twittercommunity.com/t/fabric-failed-to-download-settings-unknown-host/75443
+        
+        //macOS Support:https://docs.fabric.io/apple/crashlytics/os-x.html#macos-support
+//        [[NSUserDefaults standardUserDefaults] registerDefaults:@{ @"NSApplicationCrashOnExceptions": @YES }];
+        UserDefaults.standard.register(defaults: ["NSApplicationCrashOnExceptions" : true])
         Fabric.with([Crashlytics.self])
         
         //监测升级
