@@ -113,7 +113,6 @@ class ReceiveViewController: NSViewController{
 
     //浏览按钮
     @IBAction func ibaBrowseFinder(_ sender: AnyObject) {
-        
 //        Crashlytics.sharedInstance().crash()
         
         let panel = NSOpenPanel()

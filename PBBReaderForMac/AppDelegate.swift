@@ -28,7 +28,6 @@ class AppDelegate: NSObject, NSApplicationDelegate{
         UserDefaults.standard.register(defaults: ["NSApplicationCrashOnExceptions" : true])
         //及时写入
         UserDefaults.standard.synchronize()
-        
         Fabric.with([Crashlytics.self])
         
         //监测升级
