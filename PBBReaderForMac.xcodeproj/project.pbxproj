@@ -495,7 +495,7 @@
 		143A68601CFEB64300BC66A1 /* PycFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PycFile.m; sourceTree = "<group>"; };
 		143A68661CFEC71600BC66A1 /* PycSocketClientManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PycSocketClientManager.swift; sourceTree = "<group>"; };
 		143A68681CFEC9AD00BC66A1 /* PycReceiveModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PycReceiveModel.swift; sourceTree = "<group>"; };
-		143E38AD1D3F1809004B0A4D /* PBBReaderForOSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PBBReaderForOSX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		143E38AD1D3F1809004B0A4D /* PBBReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PBBReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14430C1D1D01214000A5394D /* AdvertisingViewOSX.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdvertisingViewOSX.xib; sourceTree = "<group>"; };
 		14430C291D012D1D00A5394D /* LookMedia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LookMedia.h; path = API/LookMedia.h; sourceTree = "<group>"; };
 		14430C2A1D012D1D00A5394D /* LookMedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LookMedia.m; path = API/LookMedia.m; sourceTree = "<group>"; };
@@ -904,7 +904,7 @@
 		1437DD691CF2A75F001BD2D2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				143E38AD1D3F1809004B0A4D /* PBBReaderForOSX.app */,
+				143E38AD1D3F1809004B0A4D /* PBBReader.app */,
 				146872361D9A596100460B8E /* PBBReaderTests.xctest */,
 				14A5058E1DAA2656008BF666 /* Toasty.framework */,
 				84AEDB141DC5FF02001E8116 /* PBBReaderForOSXRelese.app */,
@@ -1634,9 +1634,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		143E37F71D3F1809004B0A4D /* PBBReaderForOSX */ = {
+		143E37F71D3F1809004B0A4D /* PBBReader */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 143E38AA1D3F1809004B0A4D /* Build configuration list for PBXNativeTarget "PBBReaderForOSX" */;
+			buildConfigurationList = 143E38AA1D3F1809004B0A4D /* Build configuration list for PBXNativeTarget "PBBReader" */;
 			buildPhases = (
 				E8F8A211AFB888C78DEE3106 /* 📦 Check Pods Manifest.lock */,
 				0DECE3213ECDCD8C67DD6428 /* [CP] Check Pods Manifest.lock */,
@@ -1660,9 +1660,9 @@
 			dependencies = (
 				14A505941DAA2656008BF666 /* PBXTargetDependency */,
 			);
-			name = PBBReaderForOSX;
+			name = PBBReader;
 			productName = PBBReaderForMac;
-			productReference = 143E38AD1D3F1809004B0A4D /* PBBReaderForOSX.app */;
+			productReference = 143E38AD1D3F1809004B0A4D /* PBBReader.app */;
 			productType = "com.apple.product-type.application";
 		};
 		146872351D9A596100460B8E /* PBBReaderTests */ = {
@@ -1780,7 +1780,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				143E37F71D3F1809004B0A4D /* PBBReaderForOSX */,
+				143E37F71D3F1809004B0A4D /* PBBReader */,
 				146872351D9A596100460B8E /* PBBReaderTests */,
 				14A5058D1DAA2656008BF666 /* Toasty */,
 				84AEDA3F1DC5FF02001E8116 /* PBBReaderForOSXRelese */,
@@ -2541,7 +2541,7 @@
 /* Begin PBXTargetDependency section */
 		1468723C1D9A596200460B8E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 143E37F71D3F1809004B0A4D /* PBBReaderForOSX */;
+			target = 143E37F71D3F1809004B0A4D /* PBBReader */;
 			targetProxy = 1468723B1D9A596200460B8E /* PBXContainerItemProxy */;
 		};
 		14A505941DAA2656008BF666 /* PBXTargetDependency */ = {
@@ -2994,7 +2994,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		143E38AA1D3F1809004B0A4D /* Build configuration list for PBXNativeTarget "PBBReaderForOSX" */ = {
+		143E38AA1D3F1809004B0A4D /* Build configuration list for PBXNativeTarget "PBBReader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				143E38AB1D3F1809004B0A4D /* Debug */,

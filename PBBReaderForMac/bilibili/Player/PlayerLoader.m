@@ -191,6 +191,7 @@
         hud = [MBProgressHUD showHUDAddedTo:self.window.contentView animated:YES];
         hud.removeFromSuperViewOnHide = YES;
         hud.mode = MBProgressHUDModeIndeterminate;
+        hud.color = [NSColor greenColor];
         [self.window setLevel:NSPopUpMenuWindowLevel];
         [self.window makeKeyAndOrderFront:self];
         [[self.window contentView] setHidden:NO];

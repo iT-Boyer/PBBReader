@@ -13,14 +13,14 @@ class subNSTableCell: NSCell {
     }
     
     //
-    override func highlightColorWithFrame(cellFrame: NSRect, inView controlView: NSView) -> NSColor {
-        //
-        var newRect = NSMakeRect(cellFrame.origin.x - 1, cellFrame.origin.y, cellFrame.size.width + 5, cellFrame.size.height)
-        if ((cellBKColor) != nil)
-        {
-            cellBKColor.set()
-            NSRectFill(newRect)
-        }
-        return NSColor.blueColor()
-    }
+//    override func highlightColorWithFrame(cellFrame: NSRect, inView controlView: NSView) -> NSColor {
+//        //
+//        var newRect = NSMakeRect(cellFrame.origin.x - 1, cellFrame.origin.y, cellFrame.size.width + 5, cellFrame.size.height)
+//        if ((cellBKColor) != nil)
+//        {
+//            cellBKColor.set()
+//            NSRectFill(newRect)
+//        }
+//        return NSColor.blueColor()
+//    }
 }

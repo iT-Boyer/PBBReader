@@ -12,17 +12,25 @@ import Cocoa
 class CustomView: NSView {
 
     @IBInspectable var backgroundColor:NSColor!
+    @IBInspectable var backgroundImage:NSImage!
     
     override func awakeFromNib() {
         
         wantsLayer = true
-        layer?.backgroundColor = backgroundColor.cgColor
-        
+        if backgroundImage != nil
+        {
+            let bannerColor = NSColor.init(patternImage: backgroundImage)
+            layer?.backgroundColor = bannerColor.cgColor
+        }
+        else if backgroundColor != nil
+        {
+            layer?.backgroundColor = backgroundColor.cgColor
+        }
+//
     }
     
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
-
         // Drawing code here.
     }
     

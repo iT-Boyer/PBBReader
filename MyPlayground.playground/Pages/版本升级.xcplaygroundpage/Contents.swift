@@ -2,7 +2,6 @@
 
 import Foundation
 
-
 //var str1 = try! NSString.init(contentsOfURL: NSURL.init(string: "http://www.pyc.com.cn/appupdate/updateinfo.txt")!, encoding: NSUTF8StringEncoding)
 
 //var str2 = try! NSString.init(contentsOfFile: [#FileReference(fileReferenceLiteral: "updateinfo.txt")#], encoding: NSUTF8StringEncoding)

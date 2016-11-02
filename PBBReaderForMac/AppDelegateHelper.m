@@ -20,7 +20,7 @@
 #if DEVELOPMENT
 #import "PBBReaderForMac-Swift.h"
 #else
-#import "PBBReaderForOSX-Swift.h"
+#import "PBBReader-Swift.h"
 #endif
 
 #import "MBProgressHUD.h"

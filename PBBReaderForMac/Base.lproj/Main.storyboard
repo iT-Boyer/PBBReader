@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -134,7 +134,7 @@ CA
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="PBBReaderForOSX" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="PBBReader" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-273" y="48"/>
@@ -142,7 +142,7 @@ CA
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController showSeguePresentationStyle="single" id="B8D-0N-5wS" customClass="CustomWindowController" customModule="PBBReaderForOSX" customModuleProvider="target" sceneMemberID="viewController">
+                <windowController showSeguePresentationStyle="single" id="B8D-0N-5wS" customClass="CustomWindowController" customModule="PBBReader" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" identifier="MainWindow" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES" unifiedTitleAndToolbar="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -157,19 +157,19 @@ CA
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <customObject id="Tlq-7l-5LO" customClass="OpenPBBDocument" customModule="PBBReaderForOSX" customModuleProvider="target"/>
+                <customObject id="Tlq-7l-5LO" customClass="OpenPBBDocument" customModule="PBBReader" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="-237" y="403"/>
         </scene>
         <!--PBB Reader 首页-->
         <scene sceneID="2Na-B8-7mL">
             <objects>
-                <viewController title="PBB Reader 首页" storyboardIdentifier="ReceiveViewController" id="3OW-Ec-nEc" customClass="ReceiveViewController" customModule="PBBReaderForOSX" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="PBB Reader 首页" storyboardIdentifier="ReceiveViewController" id="3OW-Ec-nEc" customClass="ReceiveViewController" customModule="PBBReader" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="zBH-0g-xG1">
                         <rect key="frame" x="0.0" y="0.0" width="756" height="571"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <box wantsLayer="YES" verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="cGl-Aw-Uai" customClass="CustomBox">
+                            <box wantsLayer="YES" verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="cGl-Aw-Uai">
                                 <rect key="frame" x="0.0" y="527" width="756" height="6"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="C72-wg-38d"/>
@@ -177,14 +177,6 @@ CA
                                 <shadow key="shadow">
                                     <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </shadow>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="theFillColor">
-                                        <color key="value" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="theBorderColor">
-                                        <color key="value" red="0.0" green="0.91135438550000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </box>
                             <splitView dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="keM-Wm-Pdf">
                                 <rect key="frame" x="0.0" y="0.0" width="756" height="529"/>
@@ -193,11 +185,11 @@ CA
                                         <rect key="frame" x="0.0" y="0.0" width="220" height="529"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <subviews>
-                                            <customView horizontalHuggingPriority="249" verticalHuggingPriority="249" id="vHS-NP-Zqw" userLabel="浏览..." customClass="CustomView" customModule="PBBReaderForOSX" customModuleProvider="target">
+                                            <customView horizontalHuggingPriority="249" verticalHuggingPriority="249" id="vHS-NP-Zqw" userLabel="浏览..." customClass="CustomView" customModule="PBBReader" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="220" height="42"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
-                                                    <button wantsLayer="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YhT-cF-n5W">
+                                                    <button toolTip="浏览本地的.pbb文件" wantsLayer="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YhT-cF-n5W">
                                                         <rect key="frame" x="8" y="6" width="204" height="30"/>
                                                         <shadow key="shadow">
                                                             <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -228,7 +220,7 @@ CA
                                                 <rect key="frame" x="0.0" y="43" width="220" height="486"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
-                                                    <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="40" horizontalPageScroll="10" verticalLineScroll="40" verticalPageScroll="10" hasHorizontalScroller="NO" horizontalScrollElasticity="none" verticalScrollElasticity="none" scrollerKnobStyle="light" translatesAutoresizingMaskIntoConstraints="NO" id="fEd-sd-PMh">
+                                                    <scrollView toolTip="浏览的历史记录" borderType="none" autohidesScrollers="YES" horizontalLineScroll="40" horizontalPageScroll="10" verticalLineScroll="40" verticalPageScroll="10" hasHorizontalScroller="NO" horizontalScrollElasticity="none" verticalScrollElasticity="none" scrollerKnobStyle="light" translatesAutoresizingMaskIntoConstraints="NO" id="fEd-sd-PMh">
                                                         <rect key="frame" x="0.0" y="0.0" width="220" height="486"/>
                                                         <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="aFh-iY-Jsf">
                                                             <rect key="frame" x="0.0" y="0.0" width="220" height="486"/>
@@ -237,8 +229,8 @@ CA
                                                                 <tableView verticalHuggingPriority="750" columnAutoresizingStyle="firstColumnOnly" columnSelection="YES" emptySelection="NO" autosaveColumns="NO" rowHeight="40" viewBased="YES" id="DGV-oq-2Kh">
                                                                     <rect key="frame" x="0.0" y="0.0" width="220" height="486"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
-                                                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                                    <color key="gridColor" red="0.86274509799999999" green="0.87843137250000003" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                                                     <tableColumns>
                                                                         <tableColumn identifier="ReceiveColumn" width="220" minWidth="40" maxWidth="1000" id="zPf-lN-Jnv">
                                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
@@ -254,7 +246,7 @@ CA
                                                                             <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="key"/>
                                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                             <prototypeCellViews>
-                                                                                <tableCellView identifier="ReceiveColumn" focusRingType="exterior" id="Q1U-uF-fvd" userLabel="优先使用第一个cell" customClass="CustomTableCellView" customModule="PBBReaderForOSX" customModuleProvider="target">
+                                                                                <tableCellView identifier="ReceiveColumn" focusRingType="exterior" id="Q1U-uF-fvd" userLabel="优先使用第一个cell" customClass="CustomTableCellView" customModule="PBBReader" customModuleProvider="target">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="220" height="30"/>
                                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                     <subviews>
@@ -291,7 +283,7 @@ CA
                                                                                         <outlet property="textField" destination="876-Em-s9i" id="LtB-9C-fWm"/>
                                                                                     </connections>
                                                                                 </tableCellView>
-                                                                                <customView identifier="NSTableViewRowViewKey" id="lin-za-v9C" userLabel="选中高亮时,绘制cell样式" customClass="CellhighlightColorTableView" customModule="PBBReaderForOSX" customModuleProvider="target">
+                                                                                <customView identifier="NSTableViewRowViewKey" id="lin-za-v9C" userLabel="选中高亮时,绘制cell样式" customClass="CellhighlightColorTableView" customModule="PBBReader" customModuleProvider="target">
                                                                                     <rect key="frame" x="0.0" y="30" width="220" height="40"/>
                                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                                     <subviews>
@@ -312,7 +304,7 @@ CA
                                                                                         <outlet property="ibaLeftLineImageView" destination="IvN-kW-MYH" id="vVn-tp-b05"/>
                                                                                     </connections>
                                                                                 </customView>
-                                                                                <tableCellView id="zKK-K7-7et" userLabel="拖动到顶部位置可以替换第一个cell" customClass="CustomTableCellView" customModule="PBBReaderForOSX" customModuleProvider="target">
+                                                                                <tableCellView id="zKK-K7-7et" userLabel="拖动到顶部位置可以替换第一个cell" customClass="CustomTableCellView" customModule="PBBReader" customModuleProvider="target">
                                                                                     <rect key="frame" x="0.0" y="70" width="220" height="40"/>
                                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                     <subviews>
@@ -561,7 +553,7 @@ CA
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                         </textField>
-                                                        <progressIndicator wantsLayer="YES" maxValue="1" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="ZR0-dO-DmL" customClass="CustomColorProgressIndicator" customModule="PBBReaderForOSX" customModuleProvider="target">
+                                                        <progressIndicator wantsLayer="YES" maxValue="1" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="ZR0-dO-DmL" customClass="CustomColorProgressIndicator" customModule="PBBReader" customModuleProvider="target">
                                                             <rect key="frame" x="91" y="173" width="124" height="4"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="2" id="PvW-Wo-P0p"/>
@@ -583,7 +575,7 @@ CA
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                         </textField>
-                                                        <progressIndicator wantsLayer="YES" maxValue="1" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="ZYq-H1-S2i" customClass="CustomColorProgressIndicator" customModule="PBBReaderForOSX" customModuleProvider="target">
+                                                        <progressIndicator wantsLayer="YES" maxValue="1" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="ZYq-H1-S2i" customClass="CustomColorProgressIndicator" customModule="PBBReader" customModuleProvider="target">
                                                             <rect key="frame" x="90" y="127" width="124" height="4"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="2" id="eiF-Xd-JQX"/>
@@ -657,7 +649,7 @@ CA
                                                                 <constraint firstAttribute="height" constant="21" id="uAj-9K-NvJ"/>
                                                             </constraints>
                                                         </customView>
-                                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QN2-0m-NQi" customClass="CustomRotateButton" customModule="PBBReaderForOSX" customModuleProvider="target">
+                                                        <button toolTip="刷新这页面" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QN2-0m-NQi" customClass="CustomRotateButton" customModule="PBBReader" customModuleProvider="target">
                                                             <rect key="frame" x="474" y="491" width="50" height="32"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="50" id="ROT-UR-bHo"/>
@@ -670,7 +662,7 @@ CA
                                                                 <action selector="ibaRefreshFileData:" target="3OW-Ec-nEc" id="d0w-Na-V1u"/>
                                                             </connections>
                                                         </button>
-                                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dNA-4v-KX3" userLabel="deleteButton">
+                                                        <button toolTip="删除这条记录" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dNA-4v-KX3" userLabel="deleteButton">
                                                             <rect key="frame" x="424" y="491" width="50" height="32"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="50" id="vwD-As-daz"/>
@@ -845,7 +837,7 @@ CA
         <!--绑定手机-->
         <scene sceneID="ZRW-Hn-TZE">
             <objects>
-                <viewController title="绑定手机" storyboardIdentifier="BindingPhoneViewController" id="nvI-v2-tSb" customClass="BindingPhoneViewController" customModule="PBBReaderForOSX" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="绑定手机" storyboardIdentifier="BindingPhoneViewController" id="nvI-v2-tSb" customClass="BindingPhoneViewController" customModule="PBBReader" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="Yx6-LA-Qz7">
                         <rect key="frame" x="0.0" y="0.0" width="710" height="338"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1142,7 +1134,7 @@ CA
         <!--申请页面-->
         <scene sceneID="MgF-60-Lcx">
             <objects>
-                <viewController title="申请页面" storyboardIdentifier="ActivationController" id="oTm-0h-HP8" customClass="ActivationController" customModule="PBBReaderForOSX" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="申请页面" storyboardIdentifier="ActivationController" id="oTm-0h-HP8" customClass="ActivationController" customModule="PBBReader" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="bw0-Hz-rxj">
                         <rect key="frame" x="0.0" y="0.0" width="711" height="493"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1161,7 +1153,7 @@ CA
                                     <constraint firstAttribute="width" constant="652" id="M44-ui-D0s"/>
                                     <constraint firstAttribute="height" constant="33" id="ujX-S2-9At"/>
                                 </constraints>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="NgO-pX-2A1">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="请输入您的QQ" drawsBackground="YES" id="NgO-pX-2A1">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1177,7 +1169,7 @@ CA
                             </textField>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dmb-Gz-UQt">
                                 <rect key="frame" x="30" y="327" width="652" height="33"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="vbJ-dQ-A3B">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="请输入您的手机" drawsBackground="YES" id="vbJ-dQ-A3B">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1193,7 +1185,7 @@ CA
                             </textField>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nfS-uh-eok">
                                 <rect key="frame" x="30" y="254" width="652" height="33"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="wfh-nW-P8L">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="请输入您的邮箱" drawsBackground="YES" id="wfh-nW-P8L">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1404,7 +1396,7 @@ CA
         <!--申请信息-->
         <scene sceneID="3fk-VP-cH5">
             <objects>
-                <viewController title="申请信息" storyboardIdentifier="ApplyInfoViewController" id="w1g-fK-lFK" customClass="ApplyInfoViewController" customModule="PBBReaderForOSX" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="申请信息" storyboardIdentifier="ApplyInfoViewController" id="w1g-fK-lFK" customClass="ApplyInfoViewController" customModule="PBBReader" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="usn-nm-GEk">
                         <rect key="frame" x="0.0" y="0.0" width="603" height="490"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1529,7 +1521,7 @@ CA
         <!--申请结果-->
         <scene sceneID="uSJ-zV-rZi">
             <objects>
-                <viewController title="申请结果" storyboardIdentifier="ActivationSuccessController" id="Vg1-Cs-IcE" customClass="ActivationSuccessController" customModule="PBBReaderForOSX" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="申请结果" storyboardIdentifier="ActivationSuccessController" id="Vg1-Cs-IcE" customClass="ActivationSuccessController" customModule="PBBReader" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="ETz-w0-yOC">
                         <rect key="frame" x="0.0" y="0.0" width="755" height="520"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1725,14 +1717,14 @@ CA
                                     </textField>
                                 </subviews>
                             </customView>
-                            <customView canDrawConcurrently="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5C1-Zb-9nT" userLabel="LoadingView">
+                            <customView canDrawConcurrently="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5C1-Zb-9nT" userLabel="LoadingView" customClass="CustomView" customModule="PBBReader" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="432" height="265"/>
                                 <subviews>
-                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YbR-uU-Cub">
+                                    <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YbR-uU-Cub">
                                         <rect key="frame" x="159" y="76" width="114" height="114"/>
                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="114" id="16C-Za-sOy"/>
                                     </imageView>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1Dh-2g-yUQ">
+                                    <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1Dh-2g-yUQ">
                                         <rect key="frame" x="175" y="51" width="81" height="17"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="PBB Reader" id="hKe-h4-gkH">
                                             <font key="font" size="13" name="STHeitiSC-Light"/>
@@ -1747,6 +1739,12 @@ CA
                                     <constraint firstItem="YbR-uU-Cub" firstAttribute="centerY" secondItem="5C1-Zb-9nT" secondAttribute="centerY" id="X6d-RC-ZgF"/>
                                     <constraint firstItem="YbR-uU-Cub" firstAttribute="centerX" secondItem="5C1-Zb-9nT" secondAttribute="centerX" id="xfo-no-PiS"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="backgroundImage" value="shuiyin"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                                        <color key="value" red="0.93717586994171143" green="0.93730717897415161" blue="0.9371345043182373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </customView>
                         </subviews>
                         <constraints>
@@ -1877,6 +1875,7 @@ CA
         <image name="liulan" width="11" height="31"/>
         <image name="refresh" width="16" height="20"/>
         <image name="send_read" width="144" height="66"/>
+        <image name="shuiyin" width="108" height="50"/>
         <image name="wolfSpider" width="76.800003051757812" height="76.800003051757812"/>
     </resources>
 </document>

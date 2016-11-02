@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
+		<key>PBBReaderForOSXRelese.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
 		<key>Toasty.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -28,6 +33,11 @@
 			<true/>
 		</dict>
 		<key>14A5058D1DAA2656008BF666</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>84AEDA3F1DC5FF02001E8116</key>
 		<dict>
 			<key>primary</key>
 			<true/>

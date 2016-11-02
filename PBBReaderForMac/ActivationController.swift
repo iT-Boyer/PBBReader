@@ -86,18 +86,32 @@ class ActivationController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
-        if (needReApply != 0) {
+        if (needReApply != 0)
+        {
             qqField.stringValue = qq!
             emailField.stringValue = email!
             phoneField.stringValue = phone!
             self1Field.stringValue = self1!
             self2Field.stringValue = self2!
+            //lebel名的值为textFiled值
             self1label.stringValue = "\(field1name!):"
             self2label.stringValue = "\(field2name!):"
-        }else{
+        }
+        else
+        {
             //label
             self1label.stringValue = self1!
             self2label.stringValue = self2!
+            
+            if (!field1needprotect)
+            {
+                self1Field.stringValue = "请输入您的\(self1!)"
+            }
+            
+            if (field2needprotect)
+            {
+                self2Field.stringValue = "请输入您的\(self2!)"
+            }
         }
       
         initWithWidgetLayout()
@@ -146,7 +160,6 @@ class ActivationController: NSViewController {
         if (isShowQQ) {
             //默认以相邻控件的约束为主
             num = num + 1
-            
         }else{
             y = y + 1
             qqAsterisk.isHidden = true

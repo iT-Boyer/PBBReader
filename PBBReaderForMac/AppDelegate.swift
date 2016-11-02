@@ -26,6 +26,9 @@ class AppDelegate: NSObject, NSApplicationDelegate{
         //macOS Support:https://docs.fabric.io/apple/crashlytics/os-x.html#macos-support
 //        [[NSUserDefaults standardUserDefaults] registerDefaults:@{ @"NSApplicationCrashOnExceptions": @YES }];
         UserDefaults.standard.register(defaults: ["NSApplicationCrashOnExceptions" : true])
+        //及时写入
+        UserDefaults.standard.synchronize()
+        
         Fabric.with([Crashlytics.self])
         
         //监测升级

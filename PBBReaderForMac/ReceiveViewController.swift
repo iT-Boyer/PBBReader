@@ -63,7 +63,7 @@ class ReceiveViewController: NSViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        CLSLogv("Log awesomeness %d %d %@", getVaList([1, 2, "three"]))
         // Do view setup here.
         loginName = userDao.shareduser().getLogName()
         receiveArray = ReceiveFileDao.shared().selectReceiveFileAll(loginName)
@@ -90,12 +90,19 @@ class ReceiveViewController: NSViewController{
     
     override func viewDidAppear()
     {
+        let KDataBasePath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+        if !FileManager.default.fileExists(atPath: KDataBasePath.appending("PBB.db"))
+        {
+            refreshReceiveTableView(1 as AnyObject)
+        }
         
+        ReceiveTableView.backgroundColor = NSColor.init(patternImage: NSImage(named:"tablebackground")!)
     }
     
     //阅读按钮
     @IBAction func readBtn(_ sender: AnyObject) {
-        if !FileManager.default.fileExists(atPath: receiveFile.fileurl) {
+        if !FileManager.default.fileExists(atPath: receiveFile.fileurl)
+        {
             return
         }
         appHelper?.phoneNo = ""
@@ -107,7 +114,7 @@ class ReceiveViewController: NSViewController{
     //浏览按钮
     @IBAction func ibaBrowseFinder(_ sender: AnyObject) {
         
-        Crashlytics.sharedInstance().crash()
+//        Crashlytics.sharedInstance().crash()
         
         let panel = NSOpenPanel()
         
