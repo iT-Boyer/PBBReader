@@ -2,21 +2,28 @@ PODS:
   - CocoaAsyncSocket (7.5.0):
     - CocoaAsyncSocket/GCD (= 7.5.0)
   - CocoaAsyncSocket/GCD (7.5.0)
+  - Crashlytics (3.8.0):
+    - Fabric (~> 1.6.3)
   - EDStarRating (1.1)
+  - Fabric (1.6.8)
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
 
 DEPENDENCIES:
   - CocoaAsyncSocket
+  - Crashlytics
   - EDStarRating
+  - Fabric
   - FMDB
 
 SPEC CHECKSUMS:
   CocoaAsyncSocket: 3baeb1ddd969f81cf9fca81053ae49ef2d1cbbfa
+  Crashlytics: 8601d9c74a4c4d28f3e7f408bf4c0e490c70e8b4
   EDStarRating: a41a6440a945020745d0e9ff8ada7d1afa952114
+  Fabric: 5755268d0171435ab167e3d0878a28a777deaf10
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
 
-PODFILE CHECKSUM: 5126e539c2838c37e7662d1bd06e8a306443810d
+PODFILE CHECKSUM: d7e8c8e778b76e1befbe62af48b3b3f61d19e3cf
 
 COCOAPODS: 1.0.0
