@@ -15,7 +15,7 @@ extension NSButton
     
     var angle:CGFloat{
         get{
-            tag = tag + 10
+            tag = tag - 10
             return CGFloat(tag)
         }
     }

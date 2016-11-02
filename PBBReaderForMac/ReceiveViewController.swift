@@ -69,8 +69,12 @@ class ReceiveViewController: NSViewController{
         receiveArray = ReceiveFileDao.shared().selectReceiveFileAll(loginName)
         //设置浏览按钮字体颜色
         let attributedString = NSMutableAttributedString.init(attributedString: ibOpenInLocalFileButtion.attributedTitle)
-        attributedString.addAttribute(NSForegroundColorAttributeName, value: NSColor.white, range: NSRange.init(location: 0, length: 12))
+        attributedString.addAttribute(NSForegroundColorAttributeName, value: NSColor.white, range: NSRange.init(location: 0, length: ibOpenInLocalFileButtion.title.utf16.count))
         ibOpenInLocalFileButtion.attributedTitle = attributedString
+        //阅读按钮设置字体颜色
+        let readtext = NSMutableAttributedString.init(attributedString:readBtn.attributedTitle)
+        readtext.addAttribute(NSForegroundColorAttributeName, value: NSColor.white, range: NSRange(location:0,length:readBtn.title.utf16.count))
+        readBtn.attributedTitle = readtext
         
         NotificationCenter.default.addObserver(self, selector: #selector(ReceiveViewController.openInPBBFile(_:)), name: NSNotification.Name("RefreshOpenInFile"), object: nil)
         
@@ -537,7 +541,7 @@ extension ReceiveViewController
             
             if(b_CanOpen)//能读
             {
-                readBtn.image = NSImage.init(named: "send_read")
+                readBtn.image = NSImage.init(named: "send_recover1")
             }else{
                 readBtn.image = NSImage.init(named: "send_read_active")
             }
@@ -558,13 +562,13 @@ extension ReceiveViewController
                 
                 str = "send_icon_already_Detail";
                 readBtn.isEnabled = true
-                readBtn.image = NSImage.init(named: "send_read")
+                readBtn.image = NSImage.init(named: "send_recover1")
                 
             } else if (receiveFile.open == 0) {
                 
                 str = "send_icon_Detail";
                 readBtn.isEnabled = true
-                readBtn.image = NSImage.init(named: "send_read")
+                readBtn.image = NSImage.init(named: "send_recover1")
                 
             }
             if (receiveFile.forbid == 1) {
@@ -588,7 +592,8 @@ extension ReceiveViewController
             readBtn.image = NSImage.init(named: "send_read_no")
             readBtn.isEnabled = false
         }
-        
+    
+        readBtn.isEnabled = true
         //刷新按钮根据阅读按钮状态保持一直
 //        ibRefreshFileButton.enabled = readBtn.enabled
     }
