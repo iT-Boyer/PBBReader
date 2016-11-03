@@ -30,6 +30,7 @@ class ActivationController: NSViewController {
     @IBOutlet weak var qqAsterisk: NSTextField!
     @IBOutlet weak var emailAsterisk: NSTextField!
     @IBOutlet weak var phoneAsterisk: NSTextField!
+    @IBOutlet weak var ibApplyButton: NSButton!
     
     //contraint
     //phone
@@ -85,6 +86,8 @@ class ActivationController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ibApplyButton.updateTitleAttribute(ibApplyButton.title, textColor: NSColor.white)
         // Do view setup here.
         if (needReApply != 0)
         {

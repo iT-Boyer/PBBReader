@@ -42,6 +42,7 @@ class ActivationSuccessController: NSViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ibRetoActivation.updateTitleAttribute(ibRetoActivation.title, textColor: NSColor.white)
         // Do view setup here.
         qqLabel.stringValue =  qq!
         phoneLabel.stringValue = phone!

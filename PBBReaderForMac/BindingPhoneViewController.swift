@@ -33,7 +33,8 @@ class BindingPhoneViewController: NSViewController {
         super.viewDidLoad()
         // Do view setup here.
         codeModel = VerificationCodeModel()
-        
+        getMessageBtn.updateTitleAttribute(getMessageBtn.title, textColor: NSColor.white)
+        submitBtn.updateTitleAttribute(submitBtn.title, textColor: NSColor.white)
 
     }
     

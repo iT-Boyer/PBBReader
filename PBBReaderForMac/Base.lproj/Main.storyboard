@@ -194,9 +194,9 @@ CA
                                                         <shadow key="shadow">
                                                             <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                         </shadow>
-                                                        <buttonCell key="cell" type="squareTextured" title="浏览本地PBB文件..." bezelStyle="texturedSquare" image="liulan" imagePosition="overlaps" alignment="center" alternateImage="liulan" scrollable="YES" lineBreakMode="clipping" imageScaling="axesIndependently" inset="2" id="tg3-dJ-IXJ">
+                                                        <buttonCell key="cell" type="squareTextured" title="浏览本地PBB文件..." bezelStyle="texturedSquare" image="liulan3" imagePosition="overlaps" alignment="center" alternateImage="liulan3" scrollable="YES" lineBreakMode="clipping" imageScaling="axesIndependently" inset="2" id="tg3-dJ-IXJ">
                                                             <behavior key="behavior" lightByContents="YES"/>
-                                                            <font key="font" size="13" name="MicrosoftYaHei"/>
+                                                            <font key="font" metaFont="system"/>
                                                         </buttonCell>
                                                         <connections>
                                                             <action selector="ibaBrowseFinder:" target="3OW-Ec-nEc" id="w3A-cc-Odo"/>
@@ -847,7 +847,7 @@ CA
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TDP-M9-SKC">
-                                <rect key="frame" x="20" y="294" width="460" height="28"/>
+                                <rect key="frame" x="20" y="286" width="460" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="7BD-FF-oR8"/>
                                 </constraints>
@@ -858,7 +858,7 @@ CA
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5Vb-TV-Xmr">
-                                <rect key="frame" x="20" y="246" width="115" height="28"/>
+                                <rect key="frame" x="20" y="238" width="115" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="115" id="3vF-vJ-ORH"/>
                                 </constraints>
@@ -869,7 +869,7 @@ CA
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="U5F-3U-LUw">
-                                <rect key="frame" x="143" y="248" width="90" height="25"/>
+                                <rect key="frame" x="143" y="240" width="90" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="Ywg-4x-xbb"/>
                                     <constraint firstAttribute="width" constant="90" id="ZYk-Du-AgG"/>
@@ -899,7 +899,7 @@ CA
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OoW-V6-emd">
-                                <rect key="frame" x="251" y="250" width="139" height="20"/>
+                                <rect key="frame" x="251" y="242" width="139" height="20"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="60秒后可重新获取验证码" id="Tke-sl-jLw">
                                     <font key="font" size="12" name="MicrosoftYaHei"/>
                                     <color key="textColor" red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -907,8 +907,8 @@ CA
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VI1-dr-k5G">
-                                <rect key="frame" x="300" y="18" width="80" height="28"/>
-                                <buttonCell key="cell" type="squareTextured" title="取消" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="uX2-2e-rRV">
+                                <rect key="frame" x="300" y="20" width="80" height="25"/>
+                                <buttonCell key="cell" type="squareTextured" title="取消" bezelStyle="texturedSquare" image="cancel" imagePosition="overlaps" alignment="center" alternateImage="cancel" imageScaling="axesIndependently" inset="2" id="uX2-2e-rRV">
                                     <behavior key="behavior" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -936,7 +936,7 @@ CA
                             <constraint firstItem="U5F-3U-LUw" firstAttribute="leading" secondItem="5Vb-TV-Xmr" secondAttribute="trailing" constant="8" id="8Re-4y-8c6"/>
                             <constraint firstItem="n06-eU-hiE" firstAttribute="centerX" secondItem="Yx6-LA-Qz7" secondAttribute="centerX" id="Bp5-77-2WI"/>
                             <constraint firstAttribute="bottom" secondItem="qId-fq-XUo" secondAttribute="bottom" constant="20" id="CNB-0a-rVg"/>
-                            <constraint firstItem="TDP-M9-SKC" firstAttribute="top" secondItem="uqM-Eu-HH3" secondAttribute="bottom" constant="2" id="FEp-49-Wt2"/>
+                            <constraint firstItem="TDP-M9-SKC" firstAttribute="top" secondItem="uqM-Eu-HH3" secondAttribute="bottom" constant="10" id="FEp-49-Wt2"/>
                             <constraint firstItem="5Vb-TV-Xmr" firstAttribute="leading" secondItem="uqM-Eu-HH3" secondAttribute="leading" id="Kcq-to-RH1"/>
                             <constraint firstItem="uqM-Eu-HH3" firstAttribute="top" secondItem="n06-eU-hiE" secondAttribute="bottom" constant="17" id="L7c-G8-l9e"/>
                             <constraint firstItem="n06-eU-hiE" firstAttribute="top" secondItem="Yx6-LA-Qz7" secondAttribute="top" constant="20" id="LcC-NU-kt4"/>
@@ -1341,11 +1341,11 @@ CA
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hXl-rb-24r">
-                                <rect key="frame" x="300" y="18" width="80" height="28"/>
+                                <rect key="frame" x="300" y="20" width="80" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="kvX-Cn-VAb"/>
                                 </constraints>
-                                <buttonCell key="cell" type="squareTextured" title="取消" bezelStyle="texturedSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zqw-PA-GEI">
+                                <buttonCell key="cell" type="squareTextured" title="取消" bezelStyle="texturedSquare" image="cancel" imagePosition="overlaps" alignment="center" alternateImage="cancel" imageScaling="axesIndependently" inset="2" id="zqw-PA-GEI">
                                     <behavior key="behavior" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -1407,6 +1407,7 @@ CA
                     <connections>
                         <outlet property="emailAsterisk" destination="Dxa-uI-HxK" id="W41-O5-Ha9"/>
                         <outlet property="emailField" destination="nfS-uh-eok" id="21S-ty-PCE"/>
+                        <outlet property="ibApplyButton" destination="YoV-x0-Hh9" id="yJt-WK-tsb"/>
                         <outlet property="ibEmailToQQVertical" destination="0EX-mF-O0j" id="xHt-HC-wfc"/>
                         <outlet property="ibEmailToViewVertical" destination="Vdm-z2-vRQ" id="x9y-GW-Fmz"/>
                         <outlet property="ibPhoneToViewVertical" destination="B7A-j8-2il" id="dsI-9e-CAc"/>
@@ -1601,8 +1602,8 @@ CA
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dpD-gf-k6U">
-                                <rect key="frame" x="300" y="18" width="80" height="28"/>
-                                <buttonCell key="cell" type="squareTextured" title="知道了" bezelStyle="texturedSquare" alignment="center" borderStyle="border" imageScaling="axesIndependently" inset="2" id="xGK-IY-iy0">
+                                <rect key="frame" x="300" y="20" width="80" height="25"/>
+                                <buttonCell key="cell" type="squareTextured" title="知道了" bezelStyle="texturedSquare" image="cancel" imagePosition="overlaps" alignment="center" alternateImage="cancel" imageScaling="axesIndependently" inset="2" id="xGK-IY-iy0">
                                     <behavior key="behavior" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -1917,11 +1918,13 @@ CA
         <image name="NSActionTemplate" width="14" height="14"/>
         <image name="NSAddTemplate" width="11" height="11"/>
         <image name="NSRemoveTemplate" width="11" height="11"/>
+        <image name="cancel" width="216" height="31"/>
         <image name="delete" width="16" height="20"/>
         <image name="dialog_bg" width="440" height="210"/>
         <image name="leftLine" width="6" height="28"/>
-        <image name="liulan" width="11" height="31"/>
-        <image name="playerbackgroundImage" width="112" height="51"/>
+        <image name="liulan" width="38" height="28"/>
+        <image name="liulan3" width="216" height="31"/>
+        <image name="playerbackgroundImage" width="112" height="50"/>
         <image name="refresh" width="16" height="20"/>
         <image name="shuru" width="479" height="126"/>
         <image name="wolfSpider" width="76.800003051757812" height="76.800003051757812"/>

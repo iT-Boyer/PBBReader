@@ -66,9 +66,11 @@ class ReceiveViewController: NSViewController{
         CLSLogv("Log awesomeness %d %d %@", getVaList([1, 2, "three"]))
         // Do view setup here.
         loginName = userDao.shareduser().getLogName()
+        
         receiveArray = ReceiveFileDao.shared().selectReceiveFileAll(loginName)
         //设置浏览按钮字体颜色
         ibOpenInLocalFileButtion.updateTitleAttribute(ibOpenInLocalFileButtion.title,textColor: NSColor.white)
+        
         //阅读按钮设置字体颜色
         readBtn.updateTitleAttribute(readBtn.title, textColor: NSColor.white)
         
@@ -139,8 +141,17 @@ class ReceiveViewController: NSViewController{
     }
     
     //删除该文件
-    @IBAction func ibaDeleteFileData(_ sender: AnyObject) {
-        mnuRemoveRowSelected(sender)
+    @IBAction func ibaDeleteFileData(_ sender: AnyObject)
+    {
+        let alertView = NSAlert()
+        alertView.addButton(withTitle: "删除")
+        alertView.addButton(withTitle: "再想想")
+        alertView.messageText = "确定要删除这条重要记录吗？"
+        alertView.alertStyle = .warning
+        if alertView.runModal() == NSAlertFirstButtonReturn
+        {
+            mnuRemoveRowSelected(sender)
+        }
     }
     
     //刷新该文件

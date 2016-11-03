@@ -825,7 +825,6 @@
 		84548C881D772AF600715F4B /* SelectedRowHighlightCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectedRowHighlightCell.h; sourceTree = "<group>"; };
 		84548C891D772AF600715F4B /* SelectedRowHighlightCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectedRowHighlightCell.m; sourceTree = "<group>"; };
 		84AEDB141DC5FF02001E8116 /* PBBReaderForOSXRelese.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PBBReaderForOSXRelese.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		84AEDB151DC5FF03001E8116 /* PBBReaderForOSX copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "PBBReaderForOSX copy-Info.plist"; path = "/Users/admin/Downloads/GitRepos/Octopress/PBBReader/PBBReaderForOSX copy-Info.plist"; sourceTree = "<absolute>"; };
 		84CB248E1D0349AB0088112B /* FMResultSet_备份.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FMResultSet_备份.h"; sourceTree = "<group>"; };
 		84CB248F1D0349AB0088112B /* FMResultSet_备份.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FMResultSet_备份.m"; sourceTree = "<group>"; };
 		84CD4F201DC7901900EE0BEB /* Fastfile_Fabric */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = Fastfile_Fabric; sourceTree = "<group>"; };
@@ -898,7 +897,6 @@
 				1437DD691CF2A75F001BD2D2 /* Products */,
 				E015C5766FC51DAFA87206A5 /* Pods */,
 				41FC969B23ABC5E9052852E0 /* Frameworks */,
-				84AEDB151DC5FF03001E8116 /* PBBReaderForOSX copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
