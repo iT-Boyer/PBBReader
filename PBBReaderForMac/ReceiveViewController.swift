@@ -541,7 +541,7 @@ extension ReceiveViewController
             
             if(b_CanOpen)//能读
             {
-                readBtn.image = NSImage.init(named: "send_recover1")
+                readBtn.image = NSImage.init(named: "liulan")
             }else{
                 readBtn.image = NSImage.init(named: "send_read_active")
             }
@@ -549,8 +549,8 @@ extension ReceiveViewController
         }else{
             //自由传播刷新界面
             var str = ""
-            if (receiveFile.open == 2) {
-                
+            if (receiveFile.open == 2)
+            {
                 str = "send_icon_stop_Detail";
                 if (receiveFile.readnum > 0) {
                     str = "send_after_file_Detail";
@@ -558,17 +558,19 @@ extension ReceiveViewController
                 readBtn.isEnabled = false
                 readBtn.image = NSImage.init(named: "send_read_no")
                 
-            } else if (receiveFile.open == 1) {
+            }
+            else if (receiveFile.open == 1)
+            {
                 
                 str = "send_icon_already_Detail";
                 readBtn.isEnabled = true
-                readBtn.image = NSImage.init(named: "send_recover1")
+                readBtn.image = NSImage.init(named: "liulan")
                 
             } else if (receiveFile.open == 0) {
                 
                 str = "send_icon_Detail";
                 readBtn.isEnabled = true
-                readBtn.image = NSImage.init(named: "send_recover1")
+                readBtn.image = NSImage.init(named: "liulan")
                 
             }
             if (receiveFile.forbid == 1) {
