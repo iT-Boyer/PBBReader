@@ -1,6 +1,20 @@
 {
   "images" : [
     {
+      "resizing" : {
+        "mode" : "9-part",
+        "center" : {
+          "mode" : "tile",
+          "width" : 1,
+          "height" : 1
+        },
+        "cap-insets" : {
+          "bottom" : 15,
+          "top" : 15,
+          "right" : 5,
+          "left" : 5
+        }
+      },
       "idiom" : "universal",
       "filename" : "1.png",
       "scale" : "1x"

@@ -1175,7 +1175,7 @@ CA
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dmX-Zo-Fwg">
-                                <rect key="frame" x="18" y="332" width="39" height="21"/>
+                                <rect key="frame" x="18" y="335" width="39" height="21"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="QQ：" id="fNU-v0-dYV">
                                     <font key="font" size="13" name="MicrosoftYaHei"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -1195,7 +1195,7 @@ CA
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yyJ-qJ-jr1">
-                                <rect key="frame" x="18" y="274" width="43" height="21"/>
+                                <rect key="frame" x="18" y="277" width="43" height="21"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="手机：" id="F8L-Uj-xh9">
                                     <font key="font" size="13" name="MicrosoftYaHei"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -1211,7 +1211,7 @@ CA
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Dxa-uI-HxK">
-                                <rect key="frame" x="18" y="216" width="43" height="21"/>
+                                <rect key="frame" x="18" y="219" width="43" height="21"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="邮箱：" id="ti2-5E-YGn">
                                     <font key="font" size="13" name="MicrosoftYaHei"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -1227,7 +1227,7 @@ CA
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2pH-dE-mUZ">
-                                <rect key="frame" x="18" y="158" width="69" height="21"/>
+                                <rect key="frame" x="18" y="161" width="69" height="21"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="邮政编码：" id="h5e-Zp-tpA">
                                     <font key="font" size="13" name="MicrosoftYaHei"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -1311,7 +1311,7 @@ CA
                                 </constraints>
                             </customView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Uaa-Eu-DI8">
-                                <rect key="frame" x="18" y="100" width="69" height="21"/>
+                                <rect key="frame" x="18" y="103" width="69" height="21"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="身份证号：" id="g52-Nj-6fy">
                                     <font key="font" size="13" name="MicrosoftYaHei"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -1319,9 +1319,9 @@ CA
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cW2-He-paq">
-                                <rect key="frame" x="198" y="362" width="104" height="18"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="请输入相关信息" id="YKP-yA-MAw">
-                                    <font key="font" metaFont="systemBold" size="14"/>
+                                <rect key="frame" x="155" y="362" width="190" height="18"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="请输入相关信息以激活该文件" id="YKP-yA-MAw">
+                                    <font key="font" size="14" name=".PingFangSC-Medium"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -1358,15 +1358,15 @@ CA
                             <constraint firstItem="nfS-uh-eok" firstAttribute="top" secondItem="QCy-zv-GXu" secondAttribute="bottom" priority="720" constant="30" id="0EX-mF-O0j"/>
                             <constraint firstItem="xwo-8U-rrB" firstAttribute="width" secondItem="QCy-zv-GXu" secondAttribute="width" id="0OB-1B-vug"/>
                             <constraint firstItem="dmb-Gz-UQt" firstAttribute="centerX" secondItem="bw0-Hz-rxj" secondAttribute="centerX" id="0dW-X9-u60"/>
-                            <constraint firstItem="kNV-ug-9IT" firstAttribute="top" secondItem="Uaa-Eu-DI8" secondAttribute="bottom" constant="2" id="4re-vh-i6y"/>
+                            <constraint firstItem="kNV-ug-9IT" firstAttribute="top" secondItem="Uaa-Eu-DI8" secondAttribute="bottom" constant="5" id="4re-vh-i6y"/>
                             <constraint firstItem="kNV-ug-9IT" firstAttribute="centerX" secondItem="QCy-zv-GXu" secondAttribute="centerX" id="8tw-dB-Py4"/>
                             <constraint firstItem="dmb-Gz-UQt" firstAttribute="leading" secondItem="yyJ-qJ-jr1" secondAttribute="leading" id="9K6-xW-YKj"/>
                             <constraint firstItem="YoV-x0-Hh9" firstAttribute="leading" secondItem="hXl-rb-24r" secondAttribute="trailing" constant="20" id="9Nj-zb-4vj"/>
                             <constraint firstItem="dmb-Gz-UQt" firstAttribute="top" secondItem="bw0-Hz-rxj" secondAttribute="top" priority="720" constant="70" id="B7A-j8-2il"/>
-                            <constraint firstItem="nfS-uh-eok" firstAttribute="top" secondItem="Dxa-uI-HxK" secondAttribute="bottom" constant="2" id="DBz-Dg-B7u"/>
-                            <constraint firstItem="QCy-zv-GXu" firstAttribute="top" secondItem="dmX-Zo-Fwg" secondAttribute="bottom" constant="2" id="EpB-7L-h7D"/>
+                            <constraint firstItem="nfS-uh-eok" firstAttribute="top" secondItem="Dxa-uI-HxK" secondAttribute="bottom" constant="5" id="DBz-Dg-B7u"/>
+                            <constraint firstItem="QCy-zv-GXu" firstAttribute="top" secondItem="dmX-Zo-Fwg" secondAttribute="bottom" constant="5" id="EpB-7L-h7D"/>
                             <constraint firstItem="xwo-8U-rrB" firstAttribute="top" secondItem="nfS-uh-eok" secondAttribute="bottom" priority="721" constant="30" id="Jhl-OY-OxB"/>
-                            <constraint firstItem="dmb-Gz-UQt" firstAttribute="top" secondItem="yyJ-qJ-jr1" secondAttribute="bottom" constant="2" id="Nj2-Y3-a4p"/>
+                            <constraint firstItem="dmb-Gz-UQt" firstAttribute="top" secondItem="yyJ-qJ-jr1" secondAttribute="bottom" constant="5" id="Nj2-Y3-a4p"/>
                             <constraint firstItem="kNV-ug-9IT" firstAttribute="top" secondItem="QCy-zv-GXu" secondAttribute="bottom" priority="720" constant="30" id="QGq-wz-nrW"/>
                             <constraint firstItem="kNV-ug-9IT" firstAttribute="top" secondItem="bw0-Hz-rxj" secondAttribute="top" priority="720" constant="70" id="QZi-eY-l96"/>
                             <constraint firstItem="nfS-uh-eok" firstAttribute="centerX" secondItem="QCy-zv-GXu" secondAttribute="centerX" id="ReK-JQ-RW3"/>
@@ -1384,7 +1384,7 @@ CA
                             <constraint firstItem="nfS-uh-eok" firstAttribute="height" secondItem="QCy-zv-GXu" secondAttribute="height" id="ZuZ-1i-W6i"/>
                             <constraint firstItem="kNV-ug-9IT" firstAttribute="top" secondItem="nfS-uh-eok" secondAttribute="bottom" priority="720" constant="30" id="aIz-O9-6LY"/>
                             <constraint firstItem="2pH-dE-mUZ" firstAttribute="leading" secondItem="xwo-8U-rrB" secondAttribute="leading" id="aqF-Ce-xcV"/>
-                            <constraint firstItem="xwo-8U-rrB" firstAttribute="top" secondItem="2pH-dE-mUZ" secondAttribute="bottom" constant="2" id="bX7-bU-ra7"/>
+                            <constraint firstItem="xwo-8U-rrB" firstAttribute="top" secondItem="2pH-dE-mUZ" secondAttribute="bottom" constant="5" id="bX7-bU-ra7"/>
                             <constraint firstItem="nfS-uh-eok" firstAttribute="top" secondItem="dmb-Gz-UQt" secondAttribute="bottom" priority="721" constant="30" id="bm5-P6-vIe"/>
                             <constraint firstItem="dmb-Gz-UQt" firstAttribute="width" secondItem="QCy-zv-GXu" secondAttribute="width" id="c0Y-16-fcR"/>
                             <constraint firstItem="kNV-ug-9IT" firstAttribute="width" secondItem="QCy-zv-GXu" secondAttribute="width" id="cEB-0z-UvZ"/>
@@ -1578,7 +1578,7 @@ CA
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fAF-VP-gHF">
-                                <rect key="frame" x="18" y="278" width="30" height="21"/>
+                                <rect key="frame" x="18" y="288" width="30" height="21"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="卖家" id="YsJ-e0-OUx">
                                     <font key="font" size="13" name="MicrosoftYaHei"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -1586,7 +1586,7 @@ CA
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tac-B8-Jp8">
-                                <rect key="frame" x="48" y="278" width="37" height="21"/>
+                                <rect key="frame" x="48" y="288" width="37" height="21"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="3b6-wx-G8w">
                                     <font key="font" size="13" name="MicrosoftYaHei"/>
                                     <color key="textColor" red="0.0" green="0.33725490200000002" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1612,7 +1612,7 @@ CA
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MTE-er-gEv">
-                                <rect key="frame" x="84" y="280" width="31" height="17"/>
+                                <rect key="frame" x="84" y="290" width="31" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="说：" id="hHX-wB-veQ">
                                     <font key="font" size="13" name=".PingFangSC-Regular"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -1620,7 +1620,7 @@ CA
                                 </textFieldCell>
                             </textField>
                             <customView canDrawConcurrently="YES" appearanceType="aqua" translatesAutoresizingMaskIntoConstraints="NO" id="rdI-66-sVN">
-                                <rect key="frame" x="20" y="124" width="440" height="141"/>
+                                <rect key="frame" x="20" y="134" width="440" height="141"/>
                                 <subviews>
                                     <imageView focusRingType="exterior" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tPV-n3-dXu">
                                         <rect key="frame" x="0.0" y="1" width="440" height="140"/>
@@ -1745,7 +1745,7 @@ CA
                             <constraint firstItem="dpD-gf-k6U" firstAttribute="height" secondItem="aqC-s9-ZCx" secondAttribute="height" id="dlg-2l-rZs"/>
                             <constraint firstItem="0iJ-Le-hT3" firstAttribute="leading" secondItem="ETz-w0-yOC" secondAttribute="leading" constant="20" id="hks-tV-Dt7"/>
                             <constraint firstAttribute="trailing" secondItem="aqC-s9-ZCx" secondAttribute="trailing" constant="20" id="jjN-p4-Xdx"/>
-                            <constraint firstItem="fAF-VP-gHF" firstAttribute="top" secondItem="0iJ-Le-hT3" secondAttribute="bottom" constant="20" id="mQC-EQ-mJ0"/>
+                            <constraint firstItem="fAF-VP-gHF" firstAttribute="top" secondItem="0iJ-Le-hT3" secondAttribute="bottom" constant="10" id="mQC-EQ-mJ0"/>
                             <constraint firstAttribute="trailing" secondItem="0iJ-Le-hT3" secondAttribute="trailing" constant="20" id="pnv-fH-csI"/>
                             <constraint firstItem="dpD-gf-k6U" firstAttribute="bottom" secondItem="aqC-s9-ZCx" secondAttribute="bottom" id="q9P-KQ-2Wv"/>
                             <constraint firstItem="EbS-Ja-y0i" firstAttribute="top" secondItem="ETz-w0-yOC" secondAttribute="top" constant="20" id="xu5-Wo-Y1V"/>
@@ -1918,7 +1918,7 @@ CA
         <image name="NSActionTemplate" width="14" height="14"/>
         <image name="NSAddTemplate" width="11" height="11"/>
         <image name="NSRemoveTemplate" width="11" height="11"/>
-        <image name="cancel" width="216" height="31"/>
+        <image name="cancel" width="11" height="31"/>
         <image name="delete" width="16" height="20"/>
         <image name="dialog_bg" width="440" height="210"/>
         <image name="leftLine" width="6" height="28"/>
