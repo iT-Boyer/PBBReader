@@ -10,6 +10,7 @@
 #import "ReceiveFileDao.h"
 #import "ToolString.h"
 #import <Cocoa/Cocoa.h>
+#import "MBProgressHUD.h"
 #define THERMOMETER_FRAME (20, 5, 25, 5);
 @implementation AdvertisingView
 /*
@@ -77,6 +78,7 @@
     [self setEdge:keyView view:self attr:NSLayoutAttributeLeft constant:0];
     [self setEdge:keyView view:self attr:NSLayoutAttributeRight constant:0];
     
+    [MBProgressHUD showHUDAddedTo:self animated:YES];
     _adverTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerwithTimesNums1:) userInfo:nil repeats:YES];
     [[NSRunLoop currentRunLoop] addTimer:_adverTimer forMode:NSRunLoopCommonModes];
     
@@ -95,7 +97,7 @@
     if (!_imgCache) {
         _imgCache = [[AdvertisingImgCache alloc] init];
     }
-    [_ibIndicator startAnimation:self];
+//    [_ibIndicator startAnimation:self];
 //    _ibIndicator.layer.backgroundColor = [[NSColor greenColor] CGColor];
     [_imgCache AdvertisingForTerm:UidOrImgUrl completionBlock:^(NSString *imgPath, NSInteger uid,NSError *error) {
         

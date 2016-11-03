@@ -16,7 +16,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="kjx-eN-kVs"/>
                 </imageView>
-                <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="brp-tI-6J1" customClass="CustomColorProgressIndicator" customModule="PBBReader" customModuleProvider="target">
+                <progressIndicator hidden="YES" wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="brp-tI-6J1">
                     <rect key="frame" x="224" y="120" width="32" height="32"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="progressColor">

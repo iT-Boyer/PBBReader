@@ -22,7 +22,7 @@
 									<key>GID</key>
 									<integer>80</integer>
 									<key>PATH</key>
-									<string>ImportSVN/PBBReaderForOSX.app</string>
+									<string>PBBReader.app</string>
 									<key>PATH_TYPE</key>
 									<integer>1</integer>
 									<key>PERMISSIONS</key>
@@ -481,9 +481,9 @@
 			ZW50LVN0eWxlLVR5cGUiIGNvbnRlbnQ9InRleHQvY3NzIj4KPHRp
 			dGxlPjwvdGl0bGU+CjxtZXRhIG5hbWU9IkdlbmVyYXRvciIgY29u
 			dGVudD0iQ29jb2EgSFRNTCBXcml0ZXIiPgo8bWV0YSBuYW1lPSJD
-			b2NvYVZlcnNpb24iIGNvbnRlbnQ9IjE0MDQuNDciPgo8c3R5bGUg
-			dHlwZT0idGV4dC9jc3MiPgo8L3N0eWxlPgo8L2hlYWQ+Cjxib2R5
-			Pgo8L2JvZHk+CjwvaHRtbD4K
+			b2NvYVZlcnNpb24iIGNvbnRlbnQ9IjE1MDQuNiI+CjxzdHlsZSB0
+			eXBlPSJ0ZXh0L2NzcyI+Cjwvc3R5bGU+CjwvaGVhZD4KPGJvZHk+
+			CjwvYm9keT4KPC9odG1sPgo=
 			</data>
 		</dict>
 		<key>PROJECT_PRESENTATION</key>
@@ -669,7 +669,7 @@
 			<key>BUILD_PATH</key>
 			<dict>
 				<key>PATH</key>
-				<string>ImportSVN</string>
+				<string>.</string>
 				<key>PATH_TYPE</key>
 				<integer>1</integer>
 			</dict>
@@ -842,7 +842,7 @@
 				</dict>
 			</array>
 			<key>NAME</key>
-			<string>PBBReaderForOSX</string>
+			<string>PBBReader</string>
 		</dict>
 	</dict>
 	<key>TYPE</key>
