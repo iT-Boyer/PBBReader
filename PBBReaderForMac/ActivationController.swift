@@ -99,19 +99,21 @@ class ActivationController: NSViewController {
         }
         else
         {
-            //label
-            self1label.stringValue = self1!
-            self2label.stringValue = self2!
-            
             if (!field1needprotect)
             {
-                self1Field.stringValue = "请输入您的\(self1!)"
+                self1Field.placeholderString = "请输入您的\(self1!)"
             }
             
             if (field2needprotect)
             {
-                self2Field.stringValue = "请输入您的\(self2!)"
+                self2Field.placeholderString = "请输入您的\(self2!)"
             }
+            
+            //label
+            self1label.stringValue = self1!
+            self2label.stringValue = self2!
+            
+            
         }
       
         initWithWidgetLayout()

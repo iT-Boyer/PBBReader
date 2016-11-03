@@ -68,13 +68,9 @@ class ReceiveViewController: NSViewController{
         loginName = userDao.shareduser().getLogName()
         receiveArray = ReceiveFileDao.shared().selectReceiveFileAll(loginName)
         //设置浏览按钮字体颜色
-        let attributedString = NSMutableAttributedString.init(attributedString: ibOpenInLocalFileButtion.attributedTitle)
-        attributedString.addAttribute(NSForegroundColorAttributeName, value: NSColor.white, range: NSRange.init(location: 0, length: ibOpenInLocalFileButtion.title.utf16.count))
-        ibOpenInLocalFileButtion.attributedTitle = attributedString
+        ibOpenInLocalFileButtion.updateTitleAttribute(ibOpenInLocalFileButtion.title,textColor: NSColor.white)
         //阅读按钮设置字体颜色
-        let readtext = NSMutableAttributedString.init(attributedString:readBtn.attributedTitle)
-        readtext.addAttribute(NSForegroundColorAttributeName, value: NSColor.white, range: NSRange(location:0,length:readBtn.title.utf16.count))
-        readBtn.attributedTitle = readtext
+        readBtn.updateTitleAttribute(readBtn.title, textColor: NSColor.white)
         
         NotificationCenter.default.addObserver(self, selector: #selector(ReceiveViewController.openInPBBFile(_:)), name: NSNotification.Name("RefreshOpenInFile"), object: nil)
         
@@ -523,27 +519,29 @@ extension ReceiveViewController
             {
                 if (b_CanOpen)
                 {
-                    str = "send_icon_Detail";
+//                    str = "send_icon_Detail";
                     if (receiveFile.readnum > 0) {
-                        str = "send_icon_already_Detail"
+//                        str = "send_icon_already_Detail"
                     }
                 }else{
                     
                     if (receiveFile.readnum > 0) {
-                        str = "send_after_file_Detail"
+//                        str = "send_after_file_Detail"
                     }else {
-                        str = "send_icon_stop_Detail"
+//                        str = "send_icon_stop_Detail"
                     }
                 }
             }else{
-                str = "send_icon_stop_Detail"
+//                str = "send_icon_stop_Detail"
             }
             
             if(b_CanOpen)//能读
             {
-                readBtn.image = NSImage.init(named: "liulan")
+                readBtn.isEnabled = true
+                readBtn.updateTitleAttribute("阅读", textColor: NSColor.white)
             }else{
-                readBtn.image = NSImage.init(named: "send_read_active")
+                readBtn.isEnabled = true
+                readBtn.updateTitleAttribute("申请激活", textColor: NSColor.white)
             }
             
         }else{
@@ -551,26 +549,24 @@ extension ReceiveViewController
             var str = ""
             if (receiveFile.open == 2)
             {
-                str = "send_icon_stop_Detail";
+//                str = "send_icon_stop_Detail";
                 if (receiveFile.readnum > 0) {
-                    str = "send_after_file_Detail";
+//                    str = "send_after_file_Detail";
                 }
                 readBtn.isEnabled = false
-                readBtn.image = NSImage.init(named: "send_read_no")
-                
             }
             else if (receiveFile.open == 1)
             {
                 
-                str = "send_icon_already_Detail";
+//                str = "send_icon_already_Detail";
                 readBtn.isEnabled = true
-                readBtn.image = NSImage.init(named: "liulan")
+                readBtn.updateTitleAttribute("阅读", textColor: NSColor.white)
                 
             } else if (receiveFile.open == 0) {
                 
-                str = "send_icon_Detail";
+//                str = "send_icon_Detail";
                 readBtn.isEnabled = true
-                readBtn.image = NSImage.init(named: "liulan")
+               readBtn.updateTitleAttribute("阅读", textColor: NSColor.white)
                 
             }
             if (receiveFile.forbid == 1) {
@@ -591,11 +587,8 @@ extension ReceiveViewController
         if !FileManager.default.fileExists(atPath: receiveFile.fileurl)
             || !(appHelper?.fileIsType(ofVideo: receiveFile.filetype))!
         {
-            readBtn.image = NSImage.init(named: "send_read_no")
             readBtn.isEnabled = false
         }
-    
-        readBtn.isEnabled = true
         //刷新按钮根据阅读按钮状态保持一直
 //        ibRefreshFileButton.enabled = readBtn.enabled
     }
@@ -698,7 +691,6 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
             let fileID = PycFile().getAttributePycFileId(receiveFile.fileurl!)
             if fileID != Int32(receiveFile.fileid)
             {
-                readBtn.image = NSImage.init(named: "send_read_no")
                 readBtn.isEnabled = false
                 ibRefreshFileButton.isEnabled = false
                 cellView.textField?.textColor = NSColor.red
@@ -1028,5 +1020,17 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
         ReceiveTableView.endUpdates()
         //更新详情页面
         ReceiveTableView.selectRowIndexes(IndexSet.init(integer: index), byExtendingSelection: false)
+    }
+}
+
+extension NSButton
+{
+    //改变按钮的字体颜色
+    func updateTitleAttribute(_ text:String ,textColor color:NSColor)
+    {
+        title = text
+        let updatetext = NSMutableAttributedString.init(attributedString:attributedTitle)
+        updatetext.addAttribute(NSForegroundColorAttributeName, value: color, range: NSRange(location:0,length:text.utf16.count))
+        attributedTitle = updatetext
     }
 }

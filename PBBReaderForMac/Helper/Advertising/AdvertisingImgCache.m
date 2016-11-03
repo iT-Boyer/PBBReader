@@ -20,7 +20,7 @@
     
     dispatch_async(queue, ^{
         
-         NSString *fileDir = [SandboxFile CreateList:[SandboxFile GetDocumentPath] ListName:@"advert"];
+         NSString *fileDir = [SandboxFile CreateList:[SandboxFile GetDocumentPath] ListName:@".PBBReader/advert"];
         
         
         if ([UidOrImgURL hasPrefix:@"http"]) {

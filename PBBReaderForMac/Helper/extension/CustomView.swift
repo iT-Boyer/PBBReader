@@ -21,6 +21,8 @@ class CustomView: NSView {
         {
             let bannerColor = NSColor.init(patternImage: backgroundImage)
             layer?.backgroundColor = bannerColor.cgColor
+            //偏转30度
+            boundsRotation = 30
         }
         else if backgroundColor != nil
         {

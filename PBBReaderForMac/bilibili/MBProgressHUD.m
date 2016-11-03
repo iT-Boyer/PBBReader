@@ -819,7 +819,7 @@ static const CGFloat kDetailsLabelFontSize = 12.0f;
 #else   // !(TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE)
         self.indicator = MB_AUTORELEASE([[YRKSpinningProgressIndicator alloc] initWithFrame:NSMakeRect(20, 20, self.spinsize, self.spinsize)]);
         // [(YRKSpinningProgressIndicator *)self.indicator setStyle:NSProgressIndicatorSpinningStyle];
-        [(YRKSpinningProgressIndicator *)self.indicator setColor:[NSColor whiteColor]];
+        [(YRKSpinningProgressIndicator *)self.indicator setColor:[NSColor colorWithRed:37.0 / 255.0 green:170.0 / 255 blue:70.0 / 255 alpha:1.0]];
         [(YRKSpinningProgressIndicator *)self.indicator setUsesThreadedAnimation:NO];
         [(YRKSpinningProgressIndicator *)self.indicator startAnimation:self];
 #endif  // (TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE)

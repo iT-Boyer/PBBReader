@@ -96,6 +96,7 @@
         _imgCache = [[AdvertisingImgCache alloc] init];
     }
     [_ibIndicator startAnimation:self];
+//    _ibIndicator.layer.backgroundColor = [[NSColor greenColor] CGColor];
     [_imgCache AdvertisingForTerm:UidOrImgUrl completionBlock:^(NSString *imgPath, NSInteger uid,NSError *error) {
         
 //        NSURLRequest *requestObj = [NSURLRequest requestWithURL:[NSURL URLWithString:imgPath]];

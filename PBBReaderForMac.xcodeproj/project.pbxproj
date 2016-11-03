@@ -197,7 +197,6 @@
 		14C9B6A61D8E859800A0C6B9 /* FSCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C9B6A51D8E859800A0C6B9 /* FSCustomCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		14EA57EA1D7EBEAA0026602B /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EA57E91D7EBEA90026602B /* CustomView.swift */; };
 		309062B641A4EB627C513884 /* Pods_PBBReaderForOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0090F6BCE53F529B6F20CE05 /* Pods_PBBReaderForOSX.framework */; };
-		846754711D84604F006D8722 /* Button+RotateRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146C08D21D82A81400AB3153 /* Button+RotateRefresh.swift */; };
 		84AEDA461DC5FF02001E8116 /* Toasty.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14A5058E1DAA2656008BF666 /* Toasty.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		84AEDA4B1DC5FF02001E8116 /* PycReceiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A68681CFEC9AD00BC66A1 /* PycReceiveModel.swift */; };
 		84AEDA4C1DC5FF02001E8116 /* SecretDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FCC1CFD844E001BCE84 /* SecretDao.m */; };
@@ -287,7 +286,6 @@
 		84AEDAA01DC5FF02001E8116 /* ControlsWithVibracy.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F631D2A187300838B88 /* ControlsWithVibracy.m */; };
 		84AEDAA11DC5FF02001E8116 /* BarrageCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815AF61D4AF55A00922A62 /* BarrageCanvas.m */; };
 		84AEDAA21DC5FF02001E8116 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F591D2A187300838B88 /* MBProgressHUD.m */; };
-		84AEDAA31DC5FF02001E8116 /* Button+RotateRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146C08D21D82A81400AB3153 /* Button+RotateRefresh.swift */; };
 		84AEDAA41DC5FF02001E8116 /* CustomTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146C08D01D7FF56A00AB3153 /* CustomTableCellView.swift */; };
 		84AEDAA51DC5FF02001E8116 /* NSString+LcsDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3FAA1D2A187300838B88 /* NSString+LcsDiff.m */; };
 		84AEDAA61DC5FF02001E8116 /* FSCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C9B6A51D8E859800A0C6B9 /* FSCustomCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -2366,7 +2364,6 @@
 				143E383D1D3F1809004B0A4D /* ControlsWithVibracy.m in Sources */,
 				14815B1F1D4AF55A00922A62 /* BarrageCanvas.m in Sources */,
 				143E383E1D3F1809004B0A4D /* MBProgressHUD.m in Sources */,
-				846754711D84604F006D8722 /* Button+RotateRefresh.swift in Sources */,
 				146C08D11D7FF56A00AB3153 /* CustomTableCellView.swift in Sources */,
 				143E383F1D3F1809004B0A4D /* NSString+LcsDiff.m in Sources */,
 				14C9B6A61D8E859800A0C6B9 /* FSCustomCell.m in Sources */,
@@ -2507,7 +2504,6 @@
 				84AEDAA01DC5FF02001E8116 /* ControlsWithVibracy.m in Sources */,
 				84AEDAA11DC5FF02001E8116 /* BarrageCanvas.m in Sources */,
 				84AEDAA21DC5FF02001E8116 /* MBProgressHUD.m in Sources */,
-				84AEDAA31DC5FF02001E8116 /* Button+RotateRefresh.swift in Sources */,
 				84AEDAA41DC5FF02001E8116 /* CustomTableCellView.swift in Sources */,
 				84AEDAA51DC5FF02001E8116 /* NSString+LcsDiff.m in Sources */,
 				84AEDAA61DC5FF02001E8116 /* FSCustomCell.m in Sources */,
