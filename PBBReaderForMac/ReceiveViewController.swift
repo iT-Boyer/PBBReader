@@ -63,18 +63,17 @@ class ReceiveViewController: NSViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        CLSLogv("Log awesomeness %d %d %@", getVaList([1, 2, "three"]))
         // Do view setup here.
         loginName = userDao.shareduser().getLogName()
         
         receiveArray = ReceiveFileDao.shared().selectReceiveFileAll(loginName)
         //设置浏览按钮字体颜色
         ibOpenInLocalFileButtion.updateTitleAttribute(ibOpenInLocalFileButtion.title,textColor: NSColor.white)
-        
-        //阅读按钮设置字体颜色
         readBtn.updateTitleAttribute(readBtn.title, textColor: NSColor.white)
         
         NotificationCenter.default.addObserver(self, selector: #selector(ReceiveViewController.openInPBBFile(_:)), name: NSNotification.Name("RefreshOpenInFile"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(ReceiveViewController.createPlayer(_:)), name: NSNotification.Name("TYPlayerCreatedFailed"), object: nil)
         
         ReceiveTableView.setDraggingSourceOperationMask(.every, forLocal: false)
      
@@ -90,6 +89,23 @@ class ReceiveViewController: NSViewController{
 //        refreshReceiveTableView(1)
     }
     
+    func createPlayer(_ notification:Notification)
+    {
+        let info = (notification as NSNotification).userInfo!["TYPlayerCreated"] as! String
+        showAlertMessage(info)
+    }
+    
+    func showAlertMessage(_ message:String)
+    {
+        // Make a copy of default style.
+        var style = Toasty.defaultStyle
+        // Navigation bar is translucent so the view starts from under the bars. Set margin accordingly.
+        style.margin.top = 0
+        style.backgroundColor = NSColor.white
+        style.textColor = NSColor.black
+        // Show our toast.
+        rootView.showToastWithText(message, usingStyle: style)
+    }
     override func viewDidAppear()
     {
         let KDataBasePath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
@@ -115,10 +131,11 @@ class ReceiveViewController: NSViewController{
 
     //浏览按钮
     @IBAction func ibaBrowseFinder(_ sender: AnyObject) {
-//        Crashlytics.sharedInstance().crash()
-        
+        CLSLogv("Log awesomeness %d %d %@", getVaList([1, 2, "three"]))
+        Crashlytics.sharedInstance().crash()
+//        Crashlytics.sharedInstance().throwException()
+
         let panel = NSOpenPanel()
-        
         panel.message = ""
         panel.prompt = "打开"
         panel.canChooseDirectories = true
@@ -180,15 +197,7 @@ class ReceiveViewController: NSViewController{
         UserDefaults.standard.set(false, forKey: "\(fileID)")
         UserDefaults.standard.synchronize()
         
-        // Make a copy of default style.
-        var style = Toasty.defaultStyle
-        
-        // Navigation bar is translucent so the view starts from under the bars. Set margin accordingly.
-        style.margin.top = 0
-        style.backgroundColor = NSColor.white
-        style.textColor = NSColor.black
-        // Show our toast.
-        rootView.showToastWithText("加载完成！", usingStyle: style)
+        showAlertMessage("加载完成！")
         
         if receiveFile != nil && receiveFile.fileid == fileID
         {
@@ -236,6 +245,7 @@ extension ReceiveViewController
         }
         rootView.isHidden = false
         readBtn.isEnabled = true
+        readBtn.isHidden = false
         //refresh:YES 刷新
         let seriesName = SeriesDao.shared().fetchSeriesName(fromSeriesId: receiveFile.seriesID)
         if ((seriesName! as NSString).length == 0 || seriesName == "未分组文件")
@@ -549,34 +559,37 @@ extension ReceiveViewController
             if(b_CanOpen)//能读
             {
                 readBtn.isEnabled = true
+                readBtn.isHidden = false
                 readBtn.updateTitleAttribute("阅读", textColor: NSColor.white)
             }else{
                 readBtn.isEnabled = true
+                readBtn.isHidden = false
                 readBtn.updateTitleAttribute("申请激活", textColor: NSColor.white)
             }
             
         }else{
             //自由传播刷新界面
-            var str = ""
             if (receiveFile.open == 2)
             {
 //                str = "send_icon_stop_Detail";
                 if (receiveFile.readnum > 0) {
 //                    str = "send_after_file_Detail";
                 }
-                readBtn.isEnabled = false
+                readBtn.isHidden = true
             }
             else if (receiveFile.open == 1)
             {
                 
 //                str = "send_icon_already_Detail";
                 readBtn.isEnabled = true
+                readBtn.isHidden = false
                 readBtn.updateTitleAttribute("阅读", textColor: NSColor.white)
                 
             } else if (receiveFile.open == 0) {
                 
 //                str = "send_icon_Detail";
                 readBtn.isEnabled = true
+                readBtn.isHidden = false
                readBtn.updateTitleAttribute("阅读", textColor: NSColor.white)
                 
             }
@@ -599,6 +612,7 @@ extension ReceiveViewController
             || !(appHelper?.fileIsType(ofVideo: receiveFile.filetype))!
         {
             readBtn.isEnabled = false
+            readBtn.isHidden = true
         }
         //刷新按钮根据阅读按钮状态保持一直
 //        ibRefreshFileButton.enabled = readBtn.enabled
@@ -703,23 +717,17 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
             if fileID != Int32(receiveFile.fileid)
             {
                 readBtn.isEnabled = false
+                readBtn.isHidden = true
                 ibRefreshFileButton.isEnabled = false
                 cellView.textField?.textColor = NSColor.red
                 
                 //提示本地文件错误
-                // Make a copy of default style.
-                var style = Toasty.defaultStyle
-                // Navigation bar is translucent so the view starts from under the bars. Set margin accordingly.
-                style.margin.top = 0
-                style.backgroundColor = NSColor.white
-                style.textColor = NSColor.black
                 var message = "信息与本地文件不符，建议删除该条无效信息！"
                 if(fileID==3)
                 {
                     message = "应用开启沙盒保护机制，无权限阅读该目录文件，请移动到下载目录重新查看！"
                 }
-                // Show our toast.
-                rootView.showToastWithText(message, usingStyle: style)
+                showAlertMessage(message)
             }
         }
         else

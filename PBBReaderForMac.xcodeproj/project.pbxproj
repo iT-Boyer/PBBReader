@@ -2008,7 +2008,7 @@
 		};
 		14A4203D1D549CD7009B9DF3 /* 自动递增build版本号 */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputPaths = (
@@ -2016,7 +2016,7 @@
 			name = "自动递增build版本号";
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "#递增build版本号，重命名app带版本号的文件名称\n#递增版本号\n#方法一：获取上一版本号并递增\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\necho $buildNumber\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"\n\n#方法二：直接修改指定版本号\n#pwd\n#PLIST_FILE_PATH=${PROJECT_DIR}/'PBBReader-Info.plist'\n#buildVersion=13\n#ImportSVN=\"importSVN\"\n\n#echo $PLIST_FILE_PATH\n#echo \"/<key>CFBundleVersion<\\/key>/{ n; s/\\(<string>\\).*\\(<\\/string>\\)/\\1${buildVersion}\\2/;}\" ${PLIST_FILE_PATH}\n\n#sed -i '' \"/<key>CFBundleVersion<\\/key>/{ n; s/\\(<string>\\).*\\(<\\/string>\\)/\\1${buildVersion}\\2/;}\" ${PLIST_FILE_PATH}\n\n";
 		};
@@ -2207,7 +2207,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = "#SHELL_PATH=$PROJECT_DIR/$PRODUCT_NAME/Helper/ShellScript/importSVN.sh\n#chmod +x ${SHELL_PATH}\n#sh ${SHELL_PATH}\n\n###############获取版本号,bundleID\n#获取版本号\n#方式一\n#bundleBuildVersion=\"`/usr/libexec/PlistBuddy -c \\\"Print CFBundleVersion\\\" $INFOPLIST_FILE`\"\n#echo $bundleBuildVersion\n#方法二CFBundleShortVersionString\n#http://stackoverflow.com/questions/6851660/version-vs-build-in-xcode\nversionNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"$INFOPLIST_FILE\")\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\n#\n#新建导入目录\nProductName=\"$PRODUCT_NAME.$versionNumber.${buildNumber}\"\nProductPath=\"$TARGET_BUILD_DIR/$PRODUCT_NAME.app\"\nImportSVN=\"Distribution/ImportSVN\"\n#上传时，先删除SVN目录\nrm -rf ${ImportSVN}\npwd\nif [ -d \"$ImportSVN\" ]; then\n    echo 'svn目录已存在'\nelse\n    echo '新建svn目录'\n    mkdir $ImportSVN\nfi\necho \"cp -rf $ProductPath ${ImportSVN}/$ProductName.app\"\n#压缩\n#拷贝\ncp -rf $ProductPath ${ImportSVN}/$ProductName.app\n\ncd $ImportSVN\n#压缩后删除源文件\necho \"压缩后删除源文件\"\n#保留源文件\nzip -r \"$ProductName.app.zip\" ./*\n#删除\n#zip -rm \"$ProductName.app.zip\" ./*\n#*/\n#重命名\nmv $ProductName.app PBBReaderForOSX.app\n#导入svn库中\necho \"导入svn库中...\"\ncd ../\nexport LC_CTYPE=\"zh_CN.UTF-8\" #设置当前系统的 locale,支持中文路径\n# \"${ImportSVN}\":导入的目标目录 -m:日志\n#svn import \"${ImportSVN}\" https:\\/\\/192.168.85.64/svn/安装包/MAC -m \"${ProductName}\"\n";
+			shellScript = "#SHELL_PATH=$PROJECT_DIR/$PRODUCT_NAME/Helper/ShellScript/importSVN.sh\n#chmod +x ${SHELL_PATH}\n#sh ${SHELL_PATH}\n\n###############获取版本号,bundleID\n#获取版本号\n#方式一\n#bundleBuildVersion=\"`/usr/libexec/PlistBuddy -c \\\"Print CFBundleVersion\\\" $INFOPLIST_FILE`\"\n#echo $bundleBuildVersion\n#方法二CFBundleShortVersionString\n#http://stackoverflow.com/questions/6851660/version-vs-build-in-xcode\nversionNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"$INFOPLIST_FILE\")\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\n#\n#新建导入目录\nProductName=\"$PRODUCT_NAME.$versionNumber.${buildNumber}\"\nProductPath=\"$TARGET_BUILD_DIR/$PRODUCT_NAME.app\"\nImportSVN=\"Distribution/ImportSVN\"\n#上传时，先删除SVN目录\nrm -rf ${ImportSVN}\npwd\nif [ -d \"$ImportSVN\" ]; then\n    echo 'svn目录已存在'\nelse\n    echo '新建svn目录'\n    mkdir $ImportSVN\nfi\necho \"cp -rf $ProductPath ${ImportSVN}/$ProductName.app\"\n#压缩\n#拷贝\ncp -rf $ProductPath ${ImportSVN}/$ProductName.app\n\ncd $ImportSVN\n#压缩后删除源文件\necho \"压缩后删除源文件\"\n#保留源文件\nzip -r \"$ProductName.app.zip\" ./*\n#删除\n#zip -rm \"$ProductName.app.zip\" ./*\n#*/\n#重命名\nmv $ProductName.app PBBReaderForOSX.app\n#导入svn库中\necho \"导入svn库中...\"\ncd ../\nexport LC_CTYPE=\"zh_CN.UTF-8\" #设置当前系统的 locale,支持中文路径\n# \"${ImportSVN}\":导入的目标目录 -m:日志\n#svn import \"${ImportSVN}\" https:\\/\\/192.168.85.64/svn/安装包/MAC -m \"${ProductName}\"\n#svn export \"https://192.168.85.64/svn/安装包/MAC/PBBReaderForOSX1.0.0.15.pkg\"";
 		};
 		84AEDB101DC5FF02001E8116 /* 启动Package */ = {
 			isa = PBXShellScriptBuildPhase;

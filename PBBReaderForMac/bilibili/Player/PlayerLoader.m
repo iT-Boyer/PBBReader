@@ -152,11 +152,16 @@
     if ([[players allKeys] count] >= 1) {
         //
         [self showError:@"提示" :@"仅支持单个视频播放!"];
+        //当提示框在播放器页面时，通知关闭播放器窗口
+        NSDictionary  *dic = [NSDictionary dictionaryWithObject:@"正在播放视频，请先关闭播放器再查看!" forKey:@"TYPlayerCreated"];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"TYPlayerCreatedFailed" object:self userInfo:dic];
         return;
     }
     Player *p = [[PlayerManager sharedInstance] createPlayer:playerId withVideo:video attrs:attrs];
     if(!p){
         [self showError:@"错误" :@"播放器创建失败"];
+        NSDictionary  *dic = [NSDictionary dictionaryWithObject:@"播放器创建失败！" forKey:@"TYPlayerCreated"];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"TYPlayerCreatedFailed" object:self userInfo:dic];
         return;
     }
     

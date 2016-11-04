@@ -20,16 +20,6 @@ class AppDelegate: NSObject, NSApplicationDelegate{
     let appHelper = AppDelegateHelper()
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
-        //问题；NSApplicationCrashOnExceptions is not set. This will result in poor top-level uncaught exception reporting
-        //https://twittercommunity.com/t/fabric-failed-to-download-settings-unknown-host/75443
-        
-        //macOS Support:https://docs.fabric.io/apple/crashlytics/os-x.html#macos-support
-//        [[NSUserDefaults standardUserDefaults] registerDefaults:@{ @"NSApplicationCrashOnExceptions": @YES }];
-        UserDefaults.standard.register(defaults: ["NSApplicationCrashOnExceptions" : true])
-        //及时写入
-        UserDefaults.standard.synchronize()
-        Fabric.with([Crashlytics.self])
-        
         //监测升级
         let infoFileURL = URL.init(string: "http://www.pyc.com.cn/appupdate/pbbreader_mac/updateinfo.plist")
         
@@ -63,6 +53,15 @@ class AppDelegate: NSObject, NSApplicationDelegate{
 //                }
             }
         }
+        
+        //问题；NSApplicationCrashOnExceptions is not set. This will result in poor top-level uncaught exception reporting
+        //https://twittercommunity.com/t/fabric-failed-to-download-settings-unknown-host/75443
+        //macOS Support:https://docs.fabric.io/apple/crashlytics/os-x.html#macos-support
+        //[[NSUserDefaults standardUserDefaults] registerDefaults:@{ @"NSApplicationCrashOnExceptions": @YES }];
+        UserDefaults.standard.register(defaults: ["NSApplicationCrashOnExceptions" : true])
+        //及时写入
+        UserDefaults.standard.synchronize()
+        Fabric.with([Crashlytics.self])
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
