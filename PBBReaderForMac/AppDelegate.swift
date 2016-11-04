@@ -10,6 +10,9 @@ import Cocoa
 import Fabric
 import Crashlytics
 
+//全局变量
+ let KDataBasePath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate{
 
@@ -45,6 +48,11 @@ class AppDelegate: NSObject, NSApplicationDelegate{
 //                    ReceiveFileDao.sharedReceiveFileDao().updateTable()
 //                    ReceiveFileDao.sharedReceiveFileDao().updateReceiveFileForVersionPBB()
 //                    userDao.shareduserDao().updateTable()
+                    if FileManager.default.fileExists(atPath: KDataBasePath.appending("PBB.db")) && !FileManager.default.fileExists(atPath: KDataBasePath.appending(".PBB.db"))
+                    {
+                       try! FileManager.default.copyItem(atPath: KDataBasePath.appending("PBB.db"), toPath: KDataBasePath.appending(".PBB.db"))
+                        
+                    }
                 }
 //                if alert.runModal() == NSAlertSecondButtonReturn
 //                {
