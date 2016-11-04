@@ -1638,6 +1638,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 143E38AA1D3F1809004B0A4D /* Build configuration list for PBXNativeTarget "PBBReader" */;
 			buildPhases = (
+				84AEDA3E1DC5F571001E8116 /* Run Fabric */,
 				E8F8A211AFB888C78DEE3106 /* 📦 Check Pods Manifest.lock */,
 				0DECE3213ECDCD8C67DD6428 /* [CP] Check Pods Manifest.lock */,
 				14A4203D1D549CD7009B9DF3 /* 自动递增build版本号 */,
@@ -1653,7 +1654,6 @@
 				143E38A01D3F1809004B0A4D /* CopyFiles */,
 				6FF822FB36820B453C9B8EDD /* 📦 Embed Pods Frameworks */,
 				BCDAB9E20263CFF328C04908 /* 📦 Copy Pods Resources */,
-				84AEDA3E1DC5F571001E8116 /* Run Fabric */,
 			);
 			buildRules = (
 			);
