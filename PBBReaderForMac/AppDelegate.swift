@@ -10,6 +10,9 @@ import Cocoa
 import Fabric
 import Crashlytics
 
+//全局变量
+ let KDataBasePath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate{
 
@@ -45,6 +48,11 @@ class AppDelegate: NSObject, NSApplicationDelegate{
 //                    ReceiveFileDao.sharedReceiveFileDao().updateTable()
 //                    ReceiveFileDao.sharedReceiveFileDao().updateReceiveFileForVersionPBB()
 //                    userDao.shareduserDao().updateTable()
+                    if FileManager.default.fileExists(atPath: KDataBasePath.appending("PBB.db")) && !FileManager.default.fileExists(atPath: KDataBasePath.appending(".PBB.db"))
+                    {
+                       try! FileManager.default.copyItem(atPath: KDataBasePath.appending("PBB.db"), toPath: KDataBasePath.appending(".PBB.db"))
+                        
+                    }
                 }
 //                if alert.runModal() == NSAlertSecondButtonReturn
 //                {
@@ -62,8 +70,19 @@ class AppDelegate: NSObject, NSApplicationDelegate{
         //及时写入
         UserDefaults.standard.synchronize()
         Fabric.with([Crashlytics.self])
+        //TODO: Move this to where you establish a user session
+        self.logUser()
     }
 
+    //Log user information when your app crashes
+    func logUser()
+    {
+        //TODO: Use the current user`s information
+        //you can call any combination of these three methods
+        Crashlytics.sharedInstance().setUserName("boyers")
+        Crashlytics.sharedInstance().setUserEmail("724987481@qq.com")
+        Crashlytics.sharedInstance().setUserIdentifier("724987481")
+    }
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
         //

@@ -88,37 +88,21 @@ class ReceiveViewController: NSViewController{
         perform(#selector(ReceiveViewController.refreshReceiveTableView(_:)), with:nil, afterDelay: 0.5)
 //        refreshReceiveTableView(1)
     }
-    
-    func createPlayer(_ notification:Notification)
-    {
-        let info = (notification as NSNotification).userInfo!["TYPlayerCreated"] as! String
-        showAlertMessage(info)
-    }
-    
-    func showAlertMessage(_ message:String)
-    {
-        // Make a copy of default style.
-        var style = Toasty.defaultStyle
-        // Navigation bar is translucent so the view starts from under the bars. Set margin accordingly.
-        style.margin.top = 0
-        style.backgroundColor = NSColor.white
-        style.textColor = NSColor.black
-        // Show our toast.
-        rootView.showToastWithText(message, usingStyle: style)
-    }
+
     override func viewDidAppear()
     {
-        let KDataBasePath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
-        if !FileManager.default.fileExists(atPath: KDataBasePath.appending("PBB.db"))
+        if !FileManager.default.fileExists(atPath: KDataBasePath.appending(".PBB.db"))
         {
             refreshReceiveTableView(1 as AnyObject)
         }
         
+        //背景色消失问题，使用图片平铺，现象还在
         ReceiveTableView.backgroundColor = NSColor.init(patternImage: NSImage(named:"tablebackground")!)
     }
     
     //阅读按钮
-    @IBAction func readBtn(_ sender: AnyObject) {
+    @IBAction func readBtn(_ sender: AnyObject)
+    {
         if !FileManager.default.fileExists(atPath: receiveFile.fileurl)
         {
             return
@@ -230,6 +214,25 @@ class ReceiveViewController: NSViewController{
                 
             }
         }
+    }
+    
+    //仅支持版本播放器的提示
+    func createPlayer(_ notification:Notification)
+    {
+        let info = (notification as NSNotification).userInfo!["TYPlayerCreated"] as! String
+        showAlertMessage(info)
+    }
+    
+    func showAlertMessage(_ message:String)
+    {
+        // Make a copy of default style.
+        var style = Toasty.defaultStyle
+        // Navigation bar is translucent so the view starts from under the bars. Set margin accordingly.
+        style.margin.top = 0
+        style.backgroundColor = NSColor.white
+        style.textColor = NSColor.black
+        // Show our toast.
+        rootView.showToastWithText(message, usingStyle: style)
     }
 }
 
