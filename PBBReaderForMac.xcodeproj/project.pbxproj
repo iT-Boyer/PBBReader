@@ -196,7 +196,6 @@
 		14BF31811D780AB1000EFF66 /* CustomBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BF31801D780AB1000EFF66 /* CustomBox.swift */; };
 		14C9B6A61D8E859800A0C6B9 /* FSCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C9B6A51D8E859800A0C6B9 /* FSCustomCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		14EA57EA1D7EBEAA0026602B /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EA57E91D7EBEA90026602B /* CustomView.swift */; };
-		309062B641A4EB627C513884 /* Pods_PBBReaderForOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0090F6BCE53F529B6F20CE05 /* Pods_PBBReaderForOSX.framework */; };
 		84AEDA461DC5FF02001E8116 /* Toasty.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14A5058E1DAA2656008BF666 /* Toasty.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		84AEDA4B1DC5FF02001E8116 /* PycReceiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A68681CFEC9AD00BC66A1 /* PycReceiveModel.swift */; };
 		84AEDA4C1DC5FF02001E8116 /* SecretDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FCC1CFD844E001BCE84 /* SecretDao.m */; };
@@ -383,7 +382,6 @@
 		84AEDB081DC5FF02001E8116 /* libswscale.4.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E3C1D2A187200838B88 /* libswscale.4.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		84AEDB091DC5FF02001E8116 /* libz.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E3D1D2A187200838B88 /* libz.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		84CD4F211DC7901900EE0BEB /* Fastfile_Fabric in Resources */ = {isa = PBXBuildFile; fileRef = 84CD4F201DC7901900EE0BEB /* Fastfile_Fabric */; };
-		C28A330DA704F31D5D1B3310 /* Pods_PBBReaderForOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0090F6BCE53F529B6F20CE05 /* Pods_PBBReaderForOSX.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -840,8 +838,6 @@
 				14A505951DAA2656008BF666 /* Toasty.framework in Frameworks */,
 				14815B451D4B08AF00922A62 /* libmpv.dylib in Frameworks */,
 				14815B461D4B08AF00922A62 /* libz.1.dylib in Frameworks */,
-				309062B641A4EB627C513884 /* Pods_PBBReaderForOSX.framework in Frameworks */,
-				C28A330DA704F31D5D1B3310 /* Pods_PBBReaderForOSX.framework in Frameworks */,
 				03E75CB73D882FA8AE840814 /* Pods_PBBReader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1638,8 +1634,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 143E38AA1D3F1809004B0A4D /* Build configuration list for PBXNativeTarget "PBBReader" */;
 			buildPhases = (
-				84AEDA3E1DC5F571001E8116 /* Run Fabric */,
 				E8F8A211AFB888C78DEE3106 /* 📦 Check Pods Manifest.lock */,
+				84AEDA3E1DC5F571001E8116 /* Run Fabric */,
 				0DECE3213ECDCD8C67DD6428 /* [CP] Check Pods Manifest.lock */,
 				14A4203D1D549CD7009B9DF3 /* 自动递增build版本号 */,
 				14A5059A1DAA2657008BF666 /* Embed Frameworks */,
