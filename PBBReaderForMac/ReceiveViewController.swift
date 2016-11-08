@@ -116,7 +116,7 @@ class ReceiveViewController: NSViewController{
     //浏览按钮
     @IBAction func ibaBrowseFinder(_ sender: AnyObject) {
         CLSLogv("Log awesomeness %d %d %@", getVaList([1, 2, "three"]))
-        Crashlytics.sharedInstance().crash()
+//        Crashlytics.sharedInstance().crash()
 //        Crashlytics.sharedInstance().throwException()
 
         let panel = NSOpenPanel()
