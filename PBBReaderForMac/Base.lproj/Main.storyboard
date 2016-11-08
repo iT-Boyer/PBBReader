@@ -1170,7 +1170,7 @@ CA
         <scene sceneID="MgF-60-Lcx">
             <objects>
                 <viewController title="申请页面" storyboardIdentifier="ActivationController" id="oTm-0h-HP8" customClass="ActivationController" customModule="PBBReader" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="bw0-Hz-rxj">
+                    <view key="view" autoresizesSubviews="NO" id="bw0-Hz-rxj">
                         <rect key="frame" x="0.0" y="0.0" width="500" height="400"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -1564,10 +1564,10 @@ CA
         <!--申请结果-->
         <scene sceneID="uSJ-zV-rZi">
             <objects>
-                <viewController title="申请结果" storyboardIdentifier="ActivationSuccessController" id="Vg1-Cs-IcE" customClass="ActivationSuccessController" customModule="PBBReader" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="ETz-w0-yOC">
+                <viewController title="申请结果" storyboardIdentifier="ActivationSuccessController" showSeguePresentationStyle="single" id="Vg1-Cs-IcE" customClass="ActivationSuccessController" customModule="PBBReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" autoresizesSubviews="NO" id="ETz-w0-yOC">
                         <rect key="frame" x="0.0" y="0.0" width="500" height="400"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0iJ-Le-hT3">
                                 <rect key="frame" x="18" y="319" width="464" height="21"/>
@@ -1823,11 +1823,11 @@ CA
         <!--Miedia Player Window Controller-->
         <scene sceneID="FoM-kS-Mrc">
             <objects>
-                <windowController storyboardIdentifier="playerWindow" id="M1q-z2-1fI" userLabel="Miedia Player Window Controller" sceneMemberID="viewController">
+                <windowController storyboardIdentifier="playerWindow" showSeguePresentationStyle="single" id="M1q-z2-1fI" userLabel="Miedia Player Window Controller" sceneMemberID="viewController">
                     <window key="window" title="PBB Reader 播放器" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="utilityWindow" frameAutosaveName="" id="Oc1-Jb-U2t" customClass="PlayerWindow">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
-                        <rect key="contentRect" x="0.0" y="863" width="300" height="200"/>
+                        <rect key="contentRect" x="856" y="501" width="300" height="200"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
                     </window>
                     <connections>
