@@ -119,27 +119,36 @@ singleton_implementation(AppDelegateHelper);
         outFile = nil;
     }
 
-    //custormActivityView = (AdvertisingView *)[[NSWindowController alloc] initWithWindowNibName:@"AdvertisingView"];
-    //加载广告
-    if(!custormActivityView){
-        [self setKeyWindow:false];
-        if (keyWindow) {
-            NSArray *array;
-            NSNib *nib = [[NSNib alloc] initWithNibNamed:@"AdvertisingViewOSX" bundle:nil];
-            [nib instantiateWithOwner:self topLevelObjects:&array];
-            for (int i = 0; i < array.count; i++) {
-                //
-                id obj = array[i];
-                if ([obj isKindOfClass:[AdvertisingView class]]) {
-                    custormActivityView = (AdvertisingView *)array[i];
-                    [custormActivityView startLoadingWindow:keyWindow fileID:fileID isOutLine:OutLine];
+    if (_isShowAvert)
+    {
+        //当手机号申请激活后，不显示广告
+        [self show];
+    }
+    else
+    {
+        //custormActivityView = (AdvertisingView *)[[NSWindowController alloc] initWithWindowNibName:@"AdvertisingView"];
+        //加载广告
+        if(!custormActivityView){
+            [self setKeyWindow:false];
+            if (keyWindow) {
+                NSArray *array;
+                NSNib *nib = [[NSNib alloc] initWithNibNamed:@"AdvertisingViewOSX" bundle:nil];
+                [nib instantiateWithOwner:self topLevelObjects:&array];
+                for (int i = 0; i < array.count; i++) {
+                    //
+                    id obj = array[i];
+                    if ([obj isKindOfClass:[AdvertisingView class]]) {
+                        custormActivityView = (AdvertisingView *)array[i];
+                        [custormActivityView startLoadingWindow:keyWindow fileID:fileID isOutLine:OutLine];
+                    }
                 }
             }
+        }else{
+            [self setKeyWindow:false];
+            [custormActivityView startLoadingWindow:keyWindow fileID:fileID isOutLine:OutLine];
         }
-    }else{
-        [self setKeyWindow:false];
-        [custormActivityView startLoadingWindow:keyWindow fileID:fileID isOutLine:OutLine];
     }
+    
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         BOOL isOffLine = FALSE;
@@ -181,6 +190,7 @@ singleton_implementation(AppDelegateHelper);
 #pragma mark 查看文件
 - (void)PycFile:(PycFile *)fileObject didFinishSeePycFileForUser:(MAKEPYCRECEIVE *)receiveData
 {
+    _isShowAvert = false;
     seePycFile = fileObject;
     returnValue = receiveData->returnValue;
     

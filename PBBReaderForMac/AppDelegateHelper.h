@@ -18,6 +18,7 @@ singleton_interface(AppDelegateHelper);
 @property(nonatomic,assign)NSInteger openedNum;
 //重新申请查看
 @property(nonatomic,assign)NSInteger needReapply;
+@property(nonatomic,assign)BOOL isShowAvert;
 
 //将网路访问嵌入播放器中
 -(void)loadVideoWithLocalFiles:(NSString *)openFilePath;

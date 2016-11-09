@@ -53,8 +53,10 @@ class BindingPhoneViewController: NSViewController {
         if (result != nil) {
             // 获取验证码成功后 调整界面
 //            NotificationCenter.default.addObserver(self, selector: #selector(BindingPhoneViewController.getCodeFinish), name: ("getCodeFinish" as NSNotification.Name), object: nil)
-            
-            NotificationCenter.default.addObserver(self, selector: #selector(BindingPhoneViewController.getCodeFinish), name: NSNotification.Name("getCodeFinish"), object: nil)
+            //点击获取验证码立即开始倒计时
+            getCodeFinish()
+            //服务器端发送验证码之后，才开始倒计时
+//            NotificationCenter.default.addObserver(self, selector: #selector(BindingPhoneViewController.getCodeFinish), name: NSNotification.Name("getCodeFinish"), object: nil)
             
         }else
         {
@@ -90,6 +92,7 @@ class BindingPhoneViewController: NSViewController {
                 pycFileHelper?.phoneNo = messageTF.stringValue
                 pycFileHelper?.messageID = messageId
                 pycFileHelper?.openedNum = 0
+                pycFileHelper?.isShowAvert = true
                 pycFileHelper?.openURLOfPycFile(byLaunchedApp: filePath)// 查看文件
             }else{
                 //完善个人信息，绑定手机号
