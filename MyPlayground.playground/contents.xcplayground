@@ -3,5 +3,7 @@
     <pages>
         <page name='单元格高亮色'/>
         <page name='版本升级'/>
+        <page name='FileManager使用'/>
+        <page name='单元测试'/>
     </pages>
 </playground>
