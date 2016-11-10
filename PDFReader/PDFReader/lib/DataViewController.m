@@ -93,9 +93,9 @@
 -(void)viewDidLayoutSubviews {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         NSLog(@"%s",__PRETTY_FUNCTION__);
-        if (IS_LANDSCAPE) {
+//        if (IS_LANDSCAPE) {
             [self restoreScale];
-        }
+//        }
         
     }
     

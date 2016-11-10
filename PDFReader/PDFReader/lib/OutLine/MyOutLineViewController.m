@@ -9,7 +9,7 @@
 #import "MyOutLineViewController.h"
 #import "VoyeurNode.h"
 
-#import "Toast+UIView.h"
+//#import "Toast+UIView.h"
 
 @interface MyOutLineViewController ()
 
@@ -104,7 +104,7 @@
                 
                 [delegate myOutlineViewController:self didRequestPage:pageNumber];
         }else{
-            [[[UIApplication sharedApplication] keyWindow] makeToast:@"该文档不支持目录跳转！" duration:1 position:@"center"];
+//            [[[UIApplication sharedApplication] keyWindow] makeToast:@"该文档不支持目录跳转！" duration:1 position:@"center"];
         }
     }
 }
@@ -187,7 +187,7 @@
         if(pageNumber != 0) {
             [delegate myOutlineViewController:self didRequestPage:pageNumber];
         }else{
-            [[[UIApplication sharedApplication] keyWindow] makeToast:@"该文档不支持目录跳转！" duration:1 position:@"center"];
+//            [[[UIApplication sharedApplication] keyWindow] makeToast:@"该文档不支持目录跳转！" duration:1 position:@"center"];
         }
 	}
     

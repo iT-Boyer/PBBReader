@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "FontFile.h"
-
+#import <CoreGraphics/CoreGraphics.h>
 
 
 /* Flags as defined in PDF 1.7 */

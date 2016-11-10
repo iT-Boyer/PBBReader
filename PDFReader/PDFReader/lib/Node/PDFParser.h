@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "PDFReader-swift.h"
 @interface PDFParser : NSObject
 
 

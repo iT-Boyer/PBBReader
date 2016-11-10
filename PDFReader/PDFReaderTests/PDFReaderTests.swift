@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import PDFReader
+//@testable import PDFReader
 
 class PDFReaderTests: XCTestCase {
     

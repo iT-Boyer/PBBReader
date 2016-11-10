@@ -7,7 +7,6 @@
 //
 
 #import "FileViewController.h"
-#import "AppDelegate.h"
 #import "ModelController.h"
 #import "DataViewController.h"
 #import "MyOutLineViewController.h"
@@ -105,17 +104,17 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     self.pdfView.gestureRecognizers = self.pageViewController.gestureRecognizers;
 	// Do any additional setup after loading the view.
     
-    _loginName = [[userDao shareduserDao] getLogName];
+//    _loginName = [[userDao shareduserDao] getLogName];
     
     // 限制剩余时间操作
         _nums = _limitTime;
         if (_nums!=0) {
             _ibTimeView.hidden = NO;
             // 设置时间提醒标签
-            CGFloat width = kScreenWidth;
-            if (IS_LANDSCAPE) {
-                width = kScreenHeight;
-            }
+//            CGFloat width = kScreenWidth;
+//            if (IS_LANDSCAPE) {
+//                width = kScreenHeight;
+//            }
             
             _x = _nums / 60;
             _y = _nums % 60;
@@ -183,7 +182,7 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     [[NSUserDefaults standardUserDefaults] setInteger:[self pageNum] forKey:FPK_READHISTORY_PAGENUM(_receviveFileId)];
     
     [_myTimer invalidate];
-    [self.navigationController pushViewController:detailView animated:YES];
+//    [self.navigationController pushViewController:detailView animated:YES];
 
 }
 

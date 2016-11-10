@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-
+#import <CoreGraphics/CoreGraphics.h>
 extern NSValue *rangeValue(unsigned int from, unsigned int to);
 
 @interface Operator : NSObject
