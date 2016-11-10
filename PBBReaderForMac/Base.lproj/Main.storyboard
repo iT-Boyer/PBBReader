@@ -1825,7 +1825,7 @@ CA
             <objects>
                 <windowController storyboardIdentifier="playerWindow" showSeguePresentationStyle="single" id="M1q-z2-1fI" userLabel="Miedia Player Window Controller" sceneMemberID="viewController">
                     <window key="window" title="PBB Reader 播放器" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="utilityWindow" frameAutosaveName="" id="Oc1-Jb-U2t" customClass="PlayerWindow">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
                         <rect key="contentRect" x="856" y="501" width="300" height="200"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>

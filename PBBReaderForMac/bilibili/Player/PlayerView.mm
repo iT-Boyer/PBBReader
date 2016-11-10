@@ -356,29 +356,29 @@ getInfo:
         windowTitle = [URL lastPathComponent];
     }
     
-    NSString *cmfile = [self.player getAttr:@"commentFile"];
-    NSString *subfile = [self.player getAttr:@"subtitleFile"];
-    
-    if(cmfile){ // If have comment file
-        NSString *converted_comment = [self convertComments:cmfile]; // Convert comment file to ass sub
-        if(converted_comment && subfile){ // If convert success and have sub file
-            [self addSubtitle:subfile withCommentFile:converted_comment]; // Append comment to sub file
-            subfile = converted_comment;
-        }else if(converted_comment){ // If convert success but not have sub file
-            subfile = converted_comment;
-        }else{
-           // windowTitle = [windowTitle stringByAppendingString:NSLocalizedString(@" - 弹幕转换失败", nil)];
-        }
-    }
-    
-    if(subfile){
-        [self setMPVOption: "sub-ass" : "yes"];
-        
-        int substatus = mpv_set_option_string(self.player.mpv, "sub-file", [subfile UTF8String]);
-        if(substatus < 0){
-            windowTitle = [windowTitle stringByAppendingString:NSLocalizedString(@" - 字幕载入失败", nil)];
-        }
-    }
+//    NSString *cmfile = [self.player getAttr:@"commentFile"];
+//    NSString *subfile = [self.player getAttr:@"subtitleFile"];
+//    
+//    if(cmfile){ // If have comment file
+//        NSString *converted_comment = [self convertComments:cmfile]; // Convert comment file to ass sub
+//        if(converted_comment && subfile){ // If convert success and have sub file
+//            [self addSubtitle:subfile withCommentFile:converted_comment]; // Append comment to sub file
+//            subfile = converted_comment;
+//        }else if(converted_comment){ // If convert success but not have sub file
+//            subfile = converted_comment;
+//        }else{
+//           // windowTitle = [windowTitle stringByAppendingString:NSLocalizedString(@" - 弹幕转换失败", nil)];
+//        }
+//    }
+//    
+//    if(subfile){
+//        [self setMPVOption: "sub-ass" : "yes"];
+//        
+//        int substatus = mpv_set_option_string(self.player.mpv, "sub-file", [subfile UTF8String]);
+//        if(substatus < 0){
+//            windowTitle = [windowTitle stringByAppendingString:NSLocalizedString(@" - 字幕载入失败", nil)];
+//        }
+//    }
     
     NSString *cid = [self.player getAttr:@"cid"];
     if(cid && [cid length]){

@@ -2676,7 +2676,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/PBBReaderForMac/bilibili/libmpv",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-iquote",
@@ -2740,7 +2740,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/PBBReaderForMac/bilibili/libmpv",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-iquote",
