@@ -10,4 +10,7 @@
    <FileRef
       location = "group:PBBReaderForMac.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:PDFReader/PDFReader.xcodeproj">
+   </FileRef>
 </Workspace>
