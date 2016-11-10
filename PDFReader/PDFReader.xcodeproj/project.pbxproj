@@ -190,16 +190,6 @@
 		14C2DBEF1DD42B7200113C2F /* FileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileViewController.h; sourceTree = "<group>"; };
 		14C2DBF01DD42B7200113C2F /* FileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileViewController.m; sourceTree = "<group>"; };
 		14C2DBF21DD42EC000113C2F /* Manual1.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Manual1.pdf; sourceTree = "<group>"; };
-		14C2DBF71DD43DB500113C2F /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
-		14C2DBF91DD43DCA00113C2F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		14C2DBFB1DD43EA100113C2F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		14C2DC001DD4407E00113C2F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		14C2DC021DD4408F00113C2F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		14C2DC041DD440A900113C2F /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
-		14C2DC061DD440B700113C2F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		14C2DC081DD440CA00113C2F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		14C2DC0A1DD440DB00113C2F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		14C2DC0C1DD440EE00113C2F /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
 		14C2DC0E1DD4464500113C2F /* PDFReader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDFReader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -530,16 +520,6 @@
 		14C2DBF61DD43DB400113C2F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				14C2DC0C1DD440EE00113C2F /* QuickLook.framework */,
-				14C2DC0A1DD440DB00113C2F /* Foundation.framework */,
-				14C2DC081DD440CA00113C2F /* UIKit.framework */,
-				14C2DC061DD440B700113C2F /* AVFoundation.framework */,
-				14C2DC041DD440A900113C2F /* MediaPlayer.framework */,
-				14C2DC021DD4408F00113C2F /* AudioToolbox.framework */,
-				14C2DC001DD4407E00113C2F /* Security.framework */,
-				14C2DBFB1DD43EA100113C2F /* CoreGraphics.framework */,
-				14C2DBF91DD43DCA00113C2F /* QuartzCore.framework */,
-				14C2DBF71DD43DB500113C2F /* CoreText.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1211,6 +1191,7 @@
 				14543EF61DD45B8C00352C4D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		14543EFC1DD45B8C00352C4D /* Build configuration list for PBXNativeTarget "ForPBBTests" */ = {
 			isa = XCConfigurationList;
@@ -1219,6 +1200,7 @@
 				14543EF81DD45B8C00352C4D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		14543EFD1DD45B8C00352C4D /* Build configuration list for PBXNativeTarget "ForPBBUITests" */ = {
 			isa = XCConfigurationList;
@@ -1227,6 +1209,7 @@
 				14543EFA1DD45B8C00352C4D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		14C2DB3C1DD42AEE00113C2F /* Build configuration list for PBXProject "PDFReader" */ = {
 			isa = XCConfigurationList;

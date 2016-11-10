@@ -19,11 +19,6 @@
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
-		<key>PDFReader.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>7</integer>
-		</dict>
 		<key>Toasty.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
