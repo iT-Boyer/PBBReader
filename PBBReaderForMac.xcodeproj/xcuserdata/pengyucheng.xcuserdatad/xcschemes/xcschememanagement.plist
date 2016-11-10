@@ -19,6 +19,11 @@
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
+		<key>PDFReader.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
 		<key>Toasty.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -28,6 +33,21 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>143E37F71D3F1809004B0A4D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>14543EA51DD45AB500352C4D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>14543EB31DD45AB600352C4D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>14543EBE1DD45AB600352C4D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

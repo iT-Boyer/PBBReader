@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jmM-gb-3bw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kkS-zX-If2">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -76,7 +75,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <inset key="imageEdgeInsets" minX="8" minY="10" maxX="63" maxY="10"/>
-                                        <state key="normal" title="不读了" image="back1.png">
+                                        <state key="normal" title="不读了" image="back1">
                                             <color key="titleColor" red="0.035741671920000002" green="0.27396285529999997" blue="0.12952840330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -89,23 +88,23 @@
                             </view>
                         </barButtonItem>
                         <view key="titleView" hidden="YES" contentMode="scaleToFill" id="42i-bk-PGw" userLabel="标题">
-                            <rect key="frame" x="183" y="-10" width="9" height="64"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <rect key="frame" x="183" y="0.0" width="9" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="654-RI-znI" userLabel="搜素">
-                                    <rect key="frame" x="671" y="14" width="35" height="35"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" image="search1.png">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="654-RI-znI" userLabel="搜素">
+                                    <rect key="frame" x="87" y="14" width="22" height="35"/>
+                                    <state key="normal">
                                         <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
-                                    <state key="selected" image="search2.png"/>
                                     <connections>
                                         <action selector="ibSearchBtn:" destination="jmM-gb-3bw" eventType="touchUpInside" id="R5u-2d-tGP"/>
                                     </connections>
                                 </button>
-                                <searchBar contentMode="redraw" fixedFrame="YES" placeholder="请输入关键词" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QbZ-Fn-x8F">
-                                    <rect key="frame" x="-16" y="10" width="760" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <searchBar hidden="YES" contentMode="redraw" placeholder="请输入关键词" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QbZ-Fn-x8F">
+                                    <rect key="frame" x="-183" y="0.0" width="375" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="375" id="lFe-8l-dCj"/>
+                                    </constraints>
                                     <color key="barTintColor" red="0.13956765830000001" green="0.61863863470000002" blue="0.2127898037" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <connections>
@@ -115,16 +114,26 @@
                             </subviews>
                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             <gestureRecognizers/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="654-RI-znI" secondAttribute="trailing" constant="-100" id="77T-cG-t7X"/>
+                                <constraint firstAttribute="bottom" secondItem="QbZ-Fn-x8F" secondAttribute="bottom" id="8eq-qZ-IOa"/>
+                                <constraint firstAttribute="bottom" secondItem="654-RI-znI" secondAttribute="bottom" constant="-5" id="KEM-z4-kOH"/>
+                                <constraint firstAttribute="trailing" secondItem="QbZ-Fn-x8F" secondAttribute="trailing" constant="-183" id="U0X-GW-2XL"/>
+                                <constraint firstItem="654-RI-znI" firstAttribute="top" secondItem="42i-bk-PGw" secondAttribute="top" constant="14" id="WH8-7d-2gy"/>
+                                <constraint firstItem="QbZ-Fn-x8F" firstAttribute="top" secondItem="42i-bk-PGw" secondAttribute="top" id="rjs-Gh-quw"/>
+                            </constraints>
                         </view>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="lNA-om-cfN">
                             <view key="customView" contentMode="scaleToFill" id="ejb-Cy-Me9">
                                 <rect key="frame" x="189" y="5" width="170" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PRT-Dy-XG6" userLabel="目录">
-                                        <rect key="frame" x="110" y="-1" width="35" height="35"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="contents.png">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PRT-Dy-XG6" userLabel="目录">
+                                        <rect key="frame" x="145" y="-1" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="35" id="vVB-Rg-V9d"/>
+                                        </constraints>
+                                        <state key="normal" image="contents">
                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <state key="selected" image="contents2.png"/>
@@ -134,6 +143,11 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="PRT-Dy-XG6" firstAttribute="centerY" secondItem="ejb-Cy-Me9" secondAttribute="centerY" id="mP8-rT-xch"/>
+                                    <constraint firstItem="PRT-Dy-XG6" firstAttribute="top" secondItem="ejb-Cy-Me9" secondAttribute="top" constant="-1" id="qSu-8h-whv"/>
+                                    <constraint firstAttribute="trailing" secondItem="PRT-Dy-XG6" secondAttribute="trailing" constant="-10" id="tSC-Qb-TWq"/>
+                                </constraints>
                             </view>
                         </barButtonItem>
                     </navigationItem>
@@ -149,7 +163,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tu0-4w-QHB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2002.34375" y="3643.9453125"/>
+            <point key="canvasLocation" x="2940" y="3643.6281859070468"/>
         </scene>
         <!--Data View Controller-->
         <scene sceneID="M2T-9x-M32">
@@ -210,14 +224,31 @@
                 </view>
                 <tapGestureRecognizer id="TIL-9O-KsM" userLabel="ibaBarBack"/>
             </objects>
-            <point key="canvasLocation" x="3549.21875" y="3795.1171875"/>
+            <point key="canvasLocation" x="4487.1999999999998" y="3794.7526236881563"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="R0O-kg-C40">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kkS-zX-If2" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="llC-zj-wlc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jmM-gb-3bw" kind="relationship" relationship="rootViewController" id="Otf-aW-2iL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9wO-o0-d2u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2000.8" y="3643.6281859070468"/>
         </scene>
     </scenes>
     <resources>
+        <image name="back1" width="12" height="20"/>
         <image name="back1.png" width="140" height="140"/>
-        <image name="contents.png" width="140" height="140"/>
+        <image name="contents" width="44" height="44"/>
         <image name="contents2.png" width="140" height="140"/>
-        <image name="search1.png" width="140" height="140"/>
-        <image name="search2.png" width="140" height="140"/>
     </resources>
 </document>
