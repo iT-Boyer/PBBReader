@@ -145,8 +145,7 @@ CA
                 <windowController showSeguePresentationStyle="single" id="B8D-0N-5wS" customClass="CustomWindowController" customModule="PBBReader" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" identifier="MainWindow" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES" unifiedTitleAndToolbar="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="454" y="262" width="800" height="550"/>
+                        <rect key="contentRect" x="454" y="500" width="800" height="550"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <value key="minSize" type="size" width="800" height="550"/>
                         <value key="minFullScreenContentSize" type="size" width="800" height="550"/>
@@ -1827,7 +1826,7 @@ CA
                     <window key="window" title="PBB Reader 播放器" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="Oc1-Jb-U2t" customClass="PlayerWindow">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="856" y="501" width="300" height="200"/>
+                        <rect key="contentRect" x="450" y="260" width="800" height="550"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
                         <value key="minSize" type="size" width="800" height="550"/>
                         <value key="minFullScreenContentSize" type="size" width="800" height="550"/>
