@@ -333,6 +333,27 @@ singleton_implementation(ReceiveFileManager)
     [_db close];
     return result;
 }
+
+//更新数据库路径
+-(BOOL)updateReceiveFileLocalPath:(NSInteger)fileId newPath:(NSString *)filePath
+{
+    
+    if ([filePath isEqualToString:@""]) {
+        return NO;
+    }
+    if (![_db open]) return NO;
+    NSString *sql = @"UPDATE t_receive SET fileUrl = ? WHERE fileId = ? ";
+    
+    filePath = [self base64encode:filePath];
+    
+    BOOL result = [_db executeUpdate:sql,filePath,[NSNumber numberWithInteger:fileId]];
+    if ([_db hadError]) {
+        NSLog(@"Err %d: %@", [_db lastErrorCode], [_db lastErrorMessage]);
+    }
+    [_db close];
+    return result;
+}
+
 -(BOOL)updateReceiveFileIsChangeTime:(NSInteger)fileId isChangeTime:(NSInteger)isChangeTime{
     if (![_db open]) return NO;
     NSString *sql = @"UPDATE t_receive SET isChangeTime = ? WHERE fileId = ? ";

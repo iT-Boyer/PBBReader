@@ -95,8 +95,8 @@ singleton_implementation(AppDelegateHelper);
         [self setAlertView:@"应用开启沙盒保护机制，无权限阅读该目录文件，请移动到下载目录重新查看！"];
         return YES;
     }
-
-    
+    //更新数据库中的本地路径
+    [[ReceiveFileDao sharedReceiveFileDao] updateReceiveFileLocalPath:fileID newPath:filePath];
     // 判断已接受数据库是否存在
     NSInteger openedNum = 0;
     BOOL OutLine = NO;

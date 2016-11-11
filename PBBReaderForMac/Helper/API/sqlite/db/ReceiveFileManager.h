@@ -32,6 +32,7 @@ singleton_interface(ReceiveFileManager)
 -(BOOL)updateReceiveFileTimeType:(NSInteger) timeType FileId:(NSInteger)fileId;
 -(BOOL)updateReceiveFileByFileId:(NSInteger)fileId remainDay:(NSInteger)remainday remainYear:(NSInteger)remainyear;
 -(BOOL)updateReceiveFileLastTime:(NSInteger)fileId lastSeeTime:(NSString *)lastSeeTime;
+-(BOOL)updateReceiveFileLocalPath:(NSInteger)fileId newPath:(NSString *)filePath;
 -(BOOL)updateReceiveFileIsChangeTime:(NSInteger)fileId isChangeTime:(NSInteger)isChangeTime;
 -(NSString *)selectReceiveFileFistOpenTimeByFileId:(NSInteger)fileId;
 -(OutFile *)fetchReceiveFileByFileId:(NSInteger)receiveFileId LogName:(NSString *)logname;

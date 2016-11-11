@@ -77,6 +77,12 @@ singleton_implementation(ReceiveFileDao)
 {
     return [[ReceiveFileManager sharedReceiveFileManager] updateReceiveFileApplyOpen:ApplyOpen FileId:fileId];
 }
+
+-(BOOL)updateReceiveFileLocalPath:(NSInteger)fileId newPath:(NSString *)filePath
+{
+    return [[ReceiveFileManager sharedReceiveFileManager] updateReceiveFileLocalPath:fileId newPath:filePath];
+}
+
 -(BOOL)tableExist
 {
     return [[ReceiveFileManager sharedReceiveFileManager] tableExist];

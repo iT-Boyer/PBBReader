@@ -176,6 +176,12 @@ class ReceiveViewController: NSViewController{
         
         let fileID = (notification as NSNotification).userInfo!["pycFileID"] as! Int
         
+        //当文件不完整／沙盒保护机制，无权限阅读该目录文件
+        if(fileID == 3 || fileID == 0)
+        {
+            return;
+        }
+        
         //停止刷新动画
         ibRefreshFileButton.layer?.removeAllAnimations()
         UserDefaults.standard.set(false, forKey: "\(fileID)")

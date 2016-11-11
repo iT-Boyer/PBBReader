@@ -50,6 +50,7 @@ singleton_interface(ReceiveFileDao)
 -(BOOL)updateReceiveFileFirstOpenTime:(NSString *)openTime FileId:(NSInteger)fileId;
 -(BOOL)updateReceiveFileTimeType:(NSInteger)timeType FileId:(NSInteger)fileId;
 -(BOOL)updateReceiveFileLastTime:(NSInteger)fileId lastSeeTime:(NSString *)lastSeeTime;
+-(BOOL)updateReceiveFileLocalPath:(NSInteger)fileId newPath:(NSString *)filePath;
 -(BOOL)updateReceiveFileIsChangeTime:(NSInteger)fileId isChangeTime:(NSInteger)isChangeTime;
 -(NSString *)selectReceiveFileFistOpenTimeByFileId:(NSInteger)fileId;
 -(BOOL)updateReceiveFileForVersionPBB;
