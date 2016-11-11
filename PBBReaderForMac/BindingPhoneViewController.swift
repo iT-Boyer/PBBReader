@@ -113,6 +113,7 @@ class BindingPhoneViewController: NSViewController {
         if timer != nil
         {
             timer.invalidate()   // 停止时间刷新计时器
+            timer = nil //解决第二次获取验证码，倒计时没有执行的问题
         }
         showMessageLabel.stringValue = "\(60)秒后可重新获取验证码"
         getMessageBtn.isEnabled = true // 获取验证码按钮不可用
@@ -129,7 +130,6 @@ class BindingPhoneViewController: NSViewController {
         if timer == nil {
             timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(BindingPhoneViewController.changeLabelTime), userInfo: nil, repeats: true)
         }
-        
     }
     
     /**

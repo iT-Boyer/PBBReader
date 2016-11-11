@@ -16,8 +16,6 @@ import Crashlytics
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate{
 
-//
-    
     //必须声明为全局属性，否则在声明PycFile调用delegate时，delegate = nil
     //还出现第一次启动执行两次openFiles方法
     let appHelper = AppDelegateHelper()
@@ -51,7 +49,6 @@ class AppDelegate: NSObject, NSApplicationDelegate{
                     if FileManager.default.fileExists(atPath: KDataBasePath.appending("PBB.db")) && !FileManager.default.fileExists(atPath: KDataBasePath.appending(".PBB.db"))
                     {
                        try! FileManager.default.copyItem(atPath: KDataBasePath.appending("PBB.db"), toPath: KDataBasePath.appending(".PBB.db"))
-                        
                     }
                 }
 //                if alert.runModal() == NSAlertSecondButtonReturn
@@ -114,7 +111,6 @@ class AppDelegate: NSObject, NSApplicationDelegate{
     }
 
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
-//       return true
         //dock点击图标显示主页面
         if let mainWindow:NSWindow? = sender.windows[0]
         {
