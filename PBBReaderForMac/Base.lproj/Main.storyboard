@@ -1824,11 +1824,14 @@ CA
         <scene sceneID="FoM-kS-Mrc">
             <objects>
                 <windowController storyboardIdentifier="playerWindow" showSeguePresentationStyle="single" id="M1q-z2-1fI" userLabel="Miedia Player Window Controller" sceneMemberID="viewController">
-                    <window key="window" title="PBB Reader 播放器" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="utilityWindow" frameAutosaveName="" id="Oc1-Jb-U2t" customClass="PlayerWindow">
+                    <window key="window" title="PBB Reader 播放器" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="Oc1-Jb-U2t" customClass="PlayerWindow">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-                        <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="856" y="501" width="300" height="200"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+                        <value key="minSize" type="size" width="800" height="550"/>
+                        <value key="minFullScreenContentSize" type="size" width="800" height="550"/>
+                        <value key="maxFullScreenContentSize" type="size" width="2000" height="550"/>
                     </window>
                     <connections>
                         <segue destination="9L2-rI-XWN" kind="relationship" relationship="window.shadowedContentViewController" id="9g4-Db-PZG"/>
