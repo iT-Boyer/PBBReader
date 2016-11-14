@@ -6,6 +6,21 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		146C1CF11DD984DC00041D59 /* MakeInstaller */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 146C1CF41DD984DD00041D59 /* Build configuration list for PBXAggregateTarget "MakeInstaller" */;
+			buildPhases = (
+				146C1CF51DD9878000041D59 /* makeInstaller */,
+			);
+			dependencies = (
+				146C1CFC1DD98ED500041D59 /* PBXTargetDependency */,
+			);
+			name = MakeInstaller;
+			productName = PackagesMakeInstaller;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		03E75CB73D882FA8AE840814 /* Pods_PBBReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A66CA53F5B73961FE573D22 /* Pods_PBBReader.framework */; };
 		1422A89E1D757FD40057E9D4 /* CustomWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1422A89D1D757FD40057E9D4 /* CustomWindowController.swift */; };
@@ -386,6 +401,13 @@
 
 /* Begin PBXContainerItemProxy section */
 		1468723B1D9A596200460B8E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1437DD601CF2A75E001BD2D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 143E37F71D3F1809004B0A4D;
+			remoteInfo = PBBReader;
+		};
+		146C1CFB1DD98ED500041D59 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1437DD601CF2A75E001BD2D2 /* Project object */;
 			proxyType = 1;
@@ -1492,8 +1514,8 @@
 			isa = PBXGroup;
 			children = (
 				14EA57D81D7E723E0026602B /* importSVN.sh */,
-				14EA57D91D7E723E0026602B /* makedmg.sh */,
 				14EA57DA1D7E723E0026602B /* PreInstall.sh */,
+				14EA57D91D7E723E0026602B /* makedmg.sh */,
 			);
 			path = Script;
 			sourceTree = "<group>";
@@ -1754,6 +1776,11 @@
 						LastSwiftMigration = 0800;
 						TestTargetID = 143E37F71D3F1809004B0A4D;
 					};
+					146C1CF11DD984DC00041D59 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = FA78T6VRG8;
+						ProvisioningStyle = Automatic;
+					};
 					14A5058D1DAA2656008BF666 = {
 						CreatedOnToolsVersion = 7.3.1;
 						LastSwiftMigration = 0800;
@@ -1780,6 +1807,7 @@
 				146872351D9A596100460B8E /* PBBReaderTests */,
 				14A5058D1DAA2656008BF666 /* Toasty */,
 				84AEDA3F1DC5FF02001E8116 /* PBBReaderForOSXRelese */,
+				146C1CF11DD984DC00041D59 /* MakeInstaller */,
 			);
 		};
 /* End PBXProject section */
@@ -2001,6 +2029,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PBBReader/Pods-PBBReader-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		146C1CF51DD9878000041D59 /* makeInstaller */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = makeInstaller;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "pwd\nSHELL_PATH=$PROJECT_DIR/Distribution/Packages/Script/PreInstall.sh\nchmod +x ${SHELL_PATH}\nsh ${SHELL_PATH}";
 		};
 		14A4203D1D549CD7009B9DF3 /* 自动递增build版本号 */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2538,6 +2580,11 @@
 			target = 143E37F71D3F1809004B0A4D /* PBBReader */;
 			targetProxy = 1468723B1D9A596200460B8E /* PBXContainerItemProxy */;
 		};
+		146C1CFC1DD98ED500041D59 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 143E37F71D3F1809004B0A4D /* PBBReader */;
+			targetProxy = 146C1CFB1DD98ED500041D59 /* PBXContainerItemProxy */;
+		};
 		14A505941DAA2656008BF666 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 14A5058D1DAA2656008BF666 /* Toasty */;
@@ -2804,6 +2851,24 @@
 			};
 			name = Release;
 		};
+		146C1CF21DD984DD00041D59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = FA78T6VRG8;
+				INFOPLIST_FILE = "PBBReaderForMac/PBBReader-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		146C1CF31DD984DD00041D59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = FA78T6VRG8;
+				INFOPLIST_FILE = "PBBReaderForMac/PBBReader-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		14A505981DAA2657008BF666 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -3013,6 +3078,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		146C1CF41DD984DD00041D59 /* Build configuration list for PBXAggregateTarget "MakeInstaller" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				146C1CF21DD984DD00041D59 /* Debug */,
+				146C1CF31DD984DD00041D59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		14A505971DAA2657008BF666 /* Build configuration list for PBXNativeTarget "Toasty" */ = {
 			isa = XCConfigurationList;

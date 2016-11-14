@@ -7,3 +7,48 @@
 #  Copyright © 2016年 recomend. All rights reserved.
 
 echo "------------------------1111111=============="
+pwd
+#拷贝
+ProductPath="$TARGET_BUILD_DIR/PBBReader.app"
+ImportSVN="Distribution/ImportSVN"
+#上传时，先删除SVN目录
+rm -rf ${ImportSVN}
+pwd
+if [ -d "$ImportSVN" ]; then
+echo 'svn目录已存在'
+else
+echo '新建svn目录'
+mkdir $ImportSVN
+fi
+echo "cp -rf $ProductPath ${ImportSVN}/PBBReader.app"
+cp -rf $ProductPath "${ImportSVN}/PBBReader.app"
+
+#开始制作安装文件
+packagesbuild -vF Distribution/ -t Distribution/ Distribution/PBBReaderForOSX.pkgproj
+
+#删除.app文件
+rm -rf "${ImportSVN}/PBBReader.app"
+
+#重命名导入SVN
+versionNumber=$(/usr/libexec/PlistBuddy -c "Print CFBundleShortVersionString" "$INFOPLIST_FILE")
+buildNumber=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" "$INFOPLIST_FILE")
+BundleName=$(/usr/libexec/PlistBuddy -c "Print CFBundleName" "$INFOPLIST_FILE")
+ProductName="$BundleName $versionNumber.${buildNumber}α"
+#重命名:注在命名文件时，存在空格时必须有反斜杠修饰，或使用双毛号括住文件名
+echo "mv ${ImportSVN}/PBBReader.pkg ${ImportSVN}/$ProductName.pkg"
+mv -i ${ImportSVN}/PBBReader.pkg "${ImportSVN}/$ProductName.pkg"
+
+#导入svn
+echo "import "${ImportSVN}" https:\/\/192.168.85.6/svn/Installation_Package/mac%20os -m "${ProductName}""
+export LC_CTYPE="zh_CN.UTF-8" #设置当前系统的 locale,支持中文路径
+svn import "${ImportSVN}" https://192.168.85.6/svn/Installation_Package/mac%20os -m "${ProductName}"
+
+
+#Showing All Messages
+#svn: E170013: Unable to connect to a repository at URL 'https://192.168.85.6/svn/Installation_Package/mac%20os'
+#svn: E230001: Server SSL certificate verification failed: certificate issued for a different hostname, issuer is not trusted
+#解决办法：
+#在终端运行该命令，会提示
+#(R)eject, accept (t)emporarily or accept (p)ermanently? p
+#选择 p 回车即可。
+

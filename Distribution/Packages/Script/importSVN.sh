@@ -37,12 +37,12 @@ cd $ImportSVN
 pwd
 echo "zip -r $ProductName.app.zip . -i ./*"
 #压缩后删除源文件
-zip -rm "$ProductName.app.zip" ./*
+zip -rm "$ProductName.app.zip" . -i  ./*
 #*/
 cd ../
 pwd
 
-echo "import "${ImportSVN}" https:\/\/192.168.85.64/svn/安装包/MAC -m "${ProductName}""
+echo "svn import "${ImportSVN}" https:\/\/192.168.85.64/svn/安装包/MAC -m "${ProductName}""
 export LC_CTYPE="zh_CN.UTF-8" #设置当前系统的 locale,支持中文路径
 #svn import "${ImportSVN}" https:\/\/192.168.85.64/svn/安装包/MAC -m "${ProductName}"
 
