@@ -23,10 +23,27 @@ fi
 echo "cp -rf $ProductPath ${ImportSVN}/PBBReader.app"
 cp -rf $ProductPath "${ImportSVN}/PBBReader.app"
 
+
+#下载安装
+Perfect="/Applications/Packages.app"
+# -d: 判断目录是否存在  -f: 判断文件是否存在
+if [ -d "$Perfect" ]; then
+echo 'Packages.app已安装'
+else
+echo '下载Packages.dmg程序...'
+curl -o Packages.dmg http://s.sudre.free.fr/Software/files/Packages.dmg
+#安装Packages.app
+MOUNTDIR=$(echo `hdiutil mount Packages.dmg | tail -1 \
+| awk '{$1=$2=""; print $0}'` | xargs -0 echo) \
+&& sudo installer -pkg "${MOUNTDIR}/"*.pkg -target /
+fi
+#打开程序
+#open $PROJECT_DIR/Distribution/PBBReaderForOSX.pkgproj
 #开始制作安装文件
 packagesbuild -vF Distribution/ -t Distribution/ Distribution/PBBReaderForOSX.pkgproj
 
 #删除.app文件
+rm -rf "Packages.dmg"
 rm -rf "${ImportSVN}/PBBReader.app"
 
 #重命名导入SVN

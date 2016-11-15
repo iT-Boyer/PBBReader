@@ -1514,8 +1514,8 @@
 			isa = PBXGroup;
 			children = (
 				14EA57D81D7E723E0026602B /* importSVN.sh */,
-				14EA57DA1D7E723E0026602B /* PreInstall.sh */,
 				14EA57D91D7E723E0026602B /* makedmg.sh */,
+				14EA57DA1D7E723E0026602B /* PreInstall.sh */,
 			);
 			path = Script;
 			sourceTree = "<group>";
