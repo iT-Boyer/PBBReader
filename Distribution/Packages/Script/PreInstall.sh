@@ -49,9 +49,9 @@ fi
 #开始制作安装文件
 packagesbuild -vF Distribution/ -t Distribution/ Distribution/PBBReaderForOSX.pkgproj
 
-#删除.app文件
-rm -rf "Packages.dmg"
-rm -rf "${ImportSVN}/${APPName}.app"
+#安装packages并生成pkg安装包之后删除.app文件
+#rm -rf "Packages.dmg"
+#rm -rf "${ImportSVN}/${APPName}.app"
 
 #重命名:注在命名文件时，存在空格时必须有反斜杠修饰，或使用双毛号括住文件名
 echo "mv ${ImportSVN}/${APPName}.pkg ${ImportSVN}/$ProductName.pkg"
