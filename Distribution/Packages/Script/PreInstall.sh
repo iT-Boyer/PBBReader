@@ -51,7 +51,11 @@ fi
 #打开程序
 #open $PROJECT_DIR/Distribution/PBBReaderForOSX.pkgproj
 #开始制作安装文件
-packagesbuild -vF $Distribution/ -t $Distribution/ $Distribution/PBBReaderForOSX.pkgproj
+if[ -d "${ImportSVN}/${APPName}.app"];then
+    packagesbuild -vF $Distribution/ -t $Distribution/ $Distribution/PBBReaderForOSX.pkgproj
+else
+ echo "app源文件不存在，无法制作pkg安装包"
+fi
 
 #安装packages并生成pkg安装包之后删除.app文件,目的是不让在上传SVN时，误上传文件
 rm -rf "${ImportSVN}/${APPName}.app"
