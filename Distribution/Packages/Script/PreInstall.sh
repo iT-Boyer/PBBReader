@@ -11,7 +11,8 @@ pwd
 #拷贝
 APPName="PBBReader"
 ProductPath="$TARGET_BUILD_DIR/${APPName}.app"
-ImportSVN="Distribution/ImportSVN"
+Distribution="$PROJECT_DIR/Distribution"
+ImportSVN="$Distribution/ImportSVN"
 #重命名导入SVN
 versionNumber=$(/usr/libexec/PlistBuddy -c "Print CFBundleShortVersionString" "$INFOPLIST_FILE")
 buildNumber=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" "$INFOPLIST_FILE")
@@ -44,11 +45,13 @@ MOUNTDIR=$(echo `hdiutil mount Packages.dmg | tail -1 \
 | awk '{$1=$2=""; print $0}'` | xargs -0 echo) \
 && sudo installer -pkg "${MOUNTDIR}/"*.pkg -target /
 rm -rf "Packages.dmg"
+#卸载操作： ${MOUNTDIR}值是/Volumes/Packages\ 1.1.3\ 1
+#sudo sh ${MOUNTDIR}/Extras/uninstall.sh
 fi
 #打开程序
 #open $PROJECT_DIR/Distribution/PBBReaderForOSX.pkgproj
 #开始制作安装文件
-packagesbuild -vF Distribution/ -t Distribution/ Distribution/PBBReaderForOSX.pkgproj
+packagesbuild -vF $Distribution/ -t $Distribution/ $Distribution/PBBReaderForOSX.pkgproj
 
 #安装packages并生成pkg安装包之后删除.app文件,目的是不让在上传SVN时，误上传文件
 rm -rf "${ImportSVN}/${APPName}.app"
