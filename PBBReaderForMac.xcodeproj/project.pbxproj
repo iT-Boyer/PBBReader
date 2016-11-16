@@ -11,8 +11,8 @@
 			isa = PBXAggregateTarget;
 			buildConfigurationList = 146C1CF41DD984DD00041D59 /* Build configuration list for PBXAggregateTarget "MakeInstaller" */;
 			buildPhases = (
-				146C1CF51DD9878000041D59 /* makeInstaller */,
 				146C1D111DDC1C7B00041D59 /* updateVersion */,
+				146C1CF51DD9878000041D59 /* makeInstaller */,
 			);
 			dependencies = (
 				146C1D191DDC61D400041D59 /* PBXTargetDependency */,
@@ -2037,7 +2037,7 @@
 		};
 		146C1CF51DD9878000041D59 /* makeInstaller */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -2045,7 +2045,7 @@
 			name = makeInstaller;
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "pwd\nSHELL_PATH=$PROJECT_DIR/Distribution/Packages/Script/PreInstall.sh\nchmod +x ${SHELL_PATH}\nsh ${SHELL_PATH}";
 		};
