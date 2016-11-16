@@ -43,15 +43,15 @@ curl -o Packages.dmg http://s.sudre.free.fr/Software/files/Packages.dmg
 MOUNTDIR=$(echo `hdiutil mount Packages.dmg | tail -1 \
 | awk '{$1=$2=""; print $0}'` | xargs -0 echo) \
 && sudo installer -pkg "${MOUNTDIR}/"*.pkg -target /
+rm -rf "Packages.dmg"
 fi
 #打开程序
 #open $PROJECT_DIR/Distribution/PBBReaderForOSX.pkgproj
 #开始制作安装文件
 packagesbuild -vF Distribution/ -t Distribution/ Distribution/PBBReaderForOSX.pkgproj
 
-#安装packages并生成pkg安装包之后删除.app文件
-#rm -rf "Packages.dmg"
-#rm -rf "${ImportSVN}/${APPName}.app"
+#安装packages并生成pkg安装包之后删除.app文件,目的是不让在上传SVN时，误上传文件
+rm -rf "${ImportSVN}/${APPName}.app"
 
 #重命名:注在命名文件时，存在空格时必须有反斜杠修饰，或使用双毛号括住文件名
 echo "mv ${ImportSVN}/${APPName}.pkg ${ImportSVN}/$ProductName.pkg"
@@ -61,7 +61,8 @@ mv -i ${ImportSVN}/${APPName}.pkg "${ImportSVN}/$ProductName.pkg"
 echo "import "${ImportSVN}" https:\/\/192.168.85.6/svn/Installation_Package/mac%20os -m "${ProductName}""
 export LC_CTYPE="zh_CN.UTF-8" #设置当前系统的 locale,支持中文路径
 svn import "${ImportSVN}" https://192.168.85.6/svn/Installation_Package/mac%20os -m "${ProductName}"
-
+#上传到SVN服务器之后，移除pkg
+rm -rf "${ImportSVN}/$ProductName.pkg"
 
 #Showing All Messages
 #svn: E170013: Unable to connect to a repository at URL 'https://192.168.85.6/svn/Installation_Package/mac%20os'
