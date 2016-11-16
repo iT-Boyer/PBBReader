@@ -598,7 +598,7 @@
 						<key>VALUE</key>
 						<dict>
 							<key>PATH</key>
-							<string>Packages/Text/Welcome.rtf</string>
+							<string>Packages/Text/Welcome.html</string>
 							<key>PATH_TYPE</key>
 							<integer>1</integer>
 						</dict>

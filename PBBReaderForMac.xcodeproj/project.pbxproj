@@ -15,6 +15,7 @@
 				146C1D111DDC1C7B00041D59 /* updateVersion */,
 			);
 			dependencies = (
+				146C1D191DDC61D400041D59 /* PBXTargetDependency */,
 			);
 			name = MakeInstaller;
 			productName = PackagesMakeInstaller;
@@ -401,6 +402,13 @@
 
 /* Begin PBXContainerItemProxy section */
 		1468723B1D9A596200460B8E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1437DD601CF2A75E001BD2D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 143E37F71D3F1809004B0A4D;
+			remoteInfo = PBBReader;
+		};
+		146C1D181DDC61D400041D59 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1437DD601CF2A75E001BD2D2 /* Project object */;
 			proxyType = 1;
@@ -2591,6 +2599,11 @@
 			target = 143E37F71D3F1809004B0A4D /* PBBReader */;
 			targetProxy = 1468723B1D9A596200460B8E /* PBXContainerItemProxy */;
 		};
+		146C1D191DDC61D400041D59 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 143E37F71D3F1809004B0A4D /* PBBReader */;
+			targetProxy = 146C1D181DDC61D400041D59 /* PBXContainerItemProxy */;
+		};
 		14A505941DAA2656008BF666 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 14A5058D1DAA2656008BF666 /* Toasty */;
@@ -3092,6 +3105,7 @@
 				146C1CF31DD984DD00041D59 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		14A505971DAA2657008BF666 /* Build configuration list for PBXNativeTarget "Toasty" */ = {
 			isa = XCConfigurationList;
