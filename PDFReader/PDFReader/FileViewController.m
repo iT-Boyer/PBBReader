@@ -82,6 +82,7 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     //    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone" bundle:nil];
     //获取阅读的历史记录
     NSInteger pageNum = [[NSUserDefaults standardUserDefaults] integerForKey:FPK_READHISTORY_PAGENUM(_receviveFileId)];
+    
     DataViewController *startingViewController = [self.modelController viewControllerAtIndex:pageNum storyboard:self.storyboard];
     NSArray *viewControllers = @[startingViewController];
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:NULL];
@@ -104,25 +105,6 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     self.pdfView.gestureRecognizers = self.pageViewController.gestureRecognizers;
 	// Do any additional setup after loading the view.
     
-//    _loginName = [[userDao shareduserDao] getLogName];
-    
-    // 限制剩余时间操作
-        _nums = _limitTime;
-        if (_nums!=0) {
-            _ibTimeView.hidden = NO;
-            // 设置时间提醒标签
-//            CGFloat width = kScreenWidth;
-//            if (IS_LANDSCAPE) {
-//                width = kScreenHeight;
-//            }
-            
-            _x = _nums / 60;
-            _y = _nums % 60;
-            _myTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerwithTimesNums) userInfo:nil repeats:YES];
-            [[NSRunLoop currentRunLoop] addTimer:_myTimer forMode:NSRunLoopCommonModes];
-        }
-    
-    
     //searchBar去除背景
     [[[[ _ibSearchBar.subviews objectAtIndex :0] subviews] objectAtIndex:0] removeFromSuperview];
     [_ibSearchBar setBackgroundColor:[UIColor clearColor]];
@@ -131,33 +113,8 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     
 }
 
-
-
-- (void)timerwithTimesNums
-{
-    if (_y<0) {
-        _x--;
-        _y = 60;
-    }
     
-    if (_x == 0) {
-        _ibTimeLabel.text = [NSString stringWithFormat:@"%ld秒",(long)_y--];
-        if (_y < 10) {
-            _ibTimeView.backgroundColor = [UIColor redColor];
-            _ibTimeView.alpha = 0.3;
-            if (_y < 0) {
-                [self dismissAlternateViewController];
-                [self back:nil];
-                [_myTimer invalidate];
-            }
-        }
-        
-    } else {
-        _ibTimeLabel.text = [NSString stringWithFormat:@"%ld分%ld秒",(long)_x,(long)_y--];
-    }
-    
-}
-
+//在更复杂的实现中，该模型控制器可以传递给视图控制器。
 - (ModelController *)modelController
 {
     // Return the model controller object, creating it if necessary.
@@ -169,38 +126,7 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     return _modelController;
 }
 
-- (IBAction)ibBarBack:(id)sender {
-    [self back:nil];
-}
-
-- (void)back:(UIBarButtonItem *)barItem{
-    
-    //删除明文文件
-//    NSFileManager *manager = [NSFileManager defaultManager];
-//    [manager removeItemAtPath:_filePath error:nil];
-    //不读时，记录当前页面
-    [[NSUserDefaults standardUserDefaults] setInteger:[self pageNum] forKey:FPK_READHISTORY_PAGENUM(_receviveFileId)];
-    
-    [_myTimer invalidate];
-//    [self.navigationController pushViewController:detailView animated:YES];
-
-}
-
--(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-    [super willAnimateRotationToInterfaceOrientation:toInterfaceOrientation duration:duration];
-    
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
-
 #pragma mark - UIPageViewController delegate methods
-
 /*
  - (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed
  {
@@ -251,8 +177,135 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     
     return UIPageViewControllerSpineLocationMid;
 }
+#pragma mark - 跳转动画实现
+-(void)dismissAlternateViewController {
+        
+        // This is just an utility method that will call the appropriate dismissal procedure depending
+        // on which alternate controller is visible to the user.
+        
+        switch(currentReusableView) {
+            
+            case FPKReusableViewNone:
+            break;
+            
+            case FPKReusableViewText:
+            
+            if(self.presentedViewController) {
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }
+            
+            currentReusableView = FPKReusableViewNone;
+            
+            break;
+            
+            case FPKReusableViewOutline:
+            case FPKReusableViewBookmarks:
+            
+            // Same procedure for both outline and bookmark.
+            
+            if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+            {
+                
+#ifdef __IPHONE_8_0
+                if(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1)
+                {
+                    if(self.presentedViewController) {
+                        [self dismissViewControllerAnimated:YES completion:nil];
+                    }
+                }
+                else
+#endif
+                {
+                    
+                    [_reusablePopover dismissPopoverAnimated:YES];
+                }
+                
+            } else {
+                
+                /* On iPad iOS 8 and iPhone whe have a presented view controller */
+                
+                if(self.presentedViewController) {
+                    [self dismissViewControllerAnimated:YES completion:nil];
+                }
+            }
+            currentReusableView = FPKReusableViewNone;
+            break;
+            
+            case FPKReusableViewSearch:
+            
+            if(currentSearchViewMode == FPKSearchViewModeFull) {
+                
+                //                [searchManager cancelSearch];
+                //                [self dismissSearchViewController:searchViewController];
+                currentReusableView = FPKReusableViewNone;
+                
+            } else if (currentSearchViewMode == FPKSearchViewModeMini) {
+                //                [searchManager cancelSearch];
+                //                [self dismissMiniSearchView];
+                currentReusableView = FPKReusableViewNone;
+            }
+            
+            // Cancel search and remove the controller.
+            
+            break;
+            default: break;
+        }
+    }
+    
+-(void)presentViewController:(UIViewController *)controller fromRect:(CGRect)rect sourceView:(UIView *)view contentSize:(CGSize)contentSize {
+    
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+#ifdef __IPHONE_8_0
+        if(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1) {
+            
+            controller.modalPresentationStyle = UIModalPresentationPopover;
+            
+            UIPopoverPresentationController * popoverPresentationController = controller.popoverPresentationController;
+            
+            popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionAny;
+            popoverPresentationController.sourceRect = rect;
+            popoverPresentationController.sourceView = view;
+            popoverPresentationController.delegate = self;
+            
+            [self presentViewController:controller animated:YES completion:nil];
+            
+        } else
+#endif
+        {
+            
+            [self prepareReusablePopoverControllerWithController:controller];
+            
+            [_reusablePopover setPopoverContentSize:contentSize animated:YES];
+            [_reusablePopover presentPopoverFromRect:rect inView:view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+        }
+        
+    } else {
+        
+        [self presentViewController:controller animated:YES completion:nil];
+    }
+}
+    
+-(UIPopoverController *)prepareReusablePopoverControllerWithController:(UIViewController *)controller {
+    
+    UIPopoverController * popoverController = nil;
+    
+    if(!_reusablePopover) {
+        
+        popoverController = [[UIPopoverController alloc]initWithContentViewController:controller];
+        popoverController.delegate = self;
+        self.reusablePopover = popoverController;
+        self.reusablePopover.delegate = self;
+        
+    } else {
+        
+        [_reusablePopover setContentViewController:controller animated:YES];
+    }
+    
+    return _reusablePopover;
+}
 
-
+#pragma mark - 功能键的实现相关协议
+#pragma mark 显示目录
 - (IBAction)ibaOutline:(UIButton *)sender {
     
     MyOutLineViewController *outlineVC = nil;
@@ -286,133 +339,7 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     }
 }
 
-
--(void)dismissAlternateViewController {
-    
-    // This is just an utility method that will call the appropriate dismissal procedure depending
-    // on which alternate controller is visible to the user.
-    
-    switch(currentReusableView) {
-            
-        case FPKReusableViewNone:
-            break;
-            
-        case FPKReusableViewText:
-            
-            if(self.presentedViewController) {
-                [self dismissViewControllerAnimated:YES completion:nil];
-            }
-            
-            currentReusableView = FPKReusableViewNone;
-            
-            break;
-            
-        case FPKReusableViewOutline:
-        case FPKReusableViewBookmarks:
-            
-            // Same procedure for both outline and bookmark.
-            
-            if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-            {
-                
-#ifdef __IPHONE_8_0
-                if(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1)
-                {
-                    if(self.presentedViewController) {
-                        [self dismissViewControllerAnimated:YES completion:nil];
-                    }
-                }
-                else
-#endif
-                {
-                    
-                    [_reusablePopover dismissPopoverAnimated:YES];
-                }
-                
-            } else {
-                
-                /* On iPad iOS 8 and iPhone whe have a presented view controller */
-                
-                if(self.presentedViewController) {
-                    [self dismissViewControllerAnimated:YES completion:nil];
-                }
-            }
-            currentReusableView = FPKReusableViewNone;
-            break;
-            
-        case FPKReusableViewSearch:
-            
-            if(currentSearchViewMode == FPKSearchViewModeFull) {
-                
-                //                [searchManager cancelSearch];
-                //                [self dismissSearchViewController:searchViewController];
-                currentReusableView = FPKReusableViewNone;
-                
-            } else if (currentSearchViewMode == FPKSearchViewModeMini) {
-                //                [searchManager cancelSearch];
-                //                [self dismissMiniSearchView];
-                currentReusableView = FPKReusableViewNone;
-            }
-            
-            // Cancel search and remove the controller.
-            
-            break;
-        default: break;
-    }
-}
-
--(void)presentViewController:(UIViewController *)controller fromRect:(CGRect)rect sourceView:(UIView *)view contentSize:(CGSize)contentSize {
-    
-    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-#ifdef __IPHONE_8_0
-        if(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1) {
-            
-            controller.modalPresentationStyle = UIModalPresentationPopover;
-            
-            UIPopoverPresentationController * popoverPresentationController = controller.popoverPresentationController;
-            
-            popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionAny;
-            popoverPresentationController.sourceRect = rect;
-            popoverPresentationController.sourceView = view;
-            popoverPresentationController.delegate = self;
-            
-            [self presentViewController:controller animated:YES completion:nil];
-            
-        } else
-#endif
-        {
-            
-            [self prepareReusablePopoverControllerWithController:controller];
-            
-            [_reusablePopover setPopoverContentSize:contentSize animated:YES];
-            [_reusablePopover presentPopoverFromRect:rect inView:view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-        }
-        
-    } else {
-        
-        [self presentViewController:controller animated:YES completion:nil];
-    }
-}
-
--(UIPopoverController *)prepareReusablePopoverControllerWithController:(UIViewController *)controller {
-    
-    UIPopoverController * popoverController = nil;
-    
-    if(!_reusablePopover) {
-        
-        popoverController = [[UIPopoverController alloc]initWithContentViewController:controller];
-        popoverController.delegate = self;
-        self.reusablePopover = popoverController;
-        self.reusablePopover.delegate = self;
-        
-    } else {
-        
-        [_reusablePopover setContentViewController:controller animated:YES];
-    }
-    
-    return _reusablePopover;
-}
-
+#pragma mark 隐藏目录
 -(void)dismissMyOutlineViewController:(MyOutlineViewController *)ovc
 {
     [self dismissAlternateViewController];
@@ -459,6 +386,27 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 
 
 #pragma mark UISearchBarDelegate
+//显示，隐藏搜索框
+- (IBAction)ibSearchBtn:(id)sender {
+    
+    if (_ibSearchBar.hidden) {
+        _ibSearchBar.hidden = NO;
+        _ibBackBtn.hidden = YES;
+        _ibOutLineBtn.hidden = YES;
+        _ibSearchBtn.hidden = YES;
+        
+        [self DoSearch:[_ibSearchBar text]];
+        [_ibSearchBar becomeFirstResponder];
+        
+    }else{
+        _ibSearchBar.hidden = YES;
+        _ibBackBtn.hidden = NO;
+        _ibOutLineBtn.hidden = NO;
+        _ibSearchBtn.hidden = NO;
+        [self DoSearch:@""];
+        [_ibSearchBar resignFirstResponder];
+    }
+}
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
     [self DoSearch:[searchBar text]];
@@ -498,10 +446,35 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     }
 }
 
--(NSString *)documentId
+#pragma mark BookmarkViewController, _Delegate and _Actions
+-(IBAction)ibaBookmarks:(UIButton *)bookmarksButton
 {
-    return _pdfDocument;
+    //	We create an instance of the BookmarkViewController and push it onto the stack as a model view controller, but
+    //	you can also push the controller with the navigation controller or use an UIActionSheet.
+    
+    BookmarkViewController *bookmarksVC = nil;
+    
+    if (currentReusableView == FPK_REUSABLE_VIEW_BOOKMARK) {
+        
+        [self dismissAlternateViewController];
+        
+    } else {
+        
+        currentReusableView = FPK_REUSABLE_VIEW_BOOKMARK;
+        
+        bookmarksVC = [[BookmarkViewController alloc] init];
+        [[NSBundle mainBundle] loadNibNamed:@"BookmarkView" owner:bookmarksVC options:nil];
+        bookmarksVC.delegate = self;
+        
+        CGSize popoverContentSize = CGSizeMake(372, 650);
+        
+        UIView * sourceView = self.view;
+        CGRect sourceRect = [self.view convertRect:bookmarksButton.bounds fromView:bookmarksButton];
+        
+        [self presentViewController:bookmarksVC fromRect:sourceRect sourceView:sourceView contentSize:popoverContentSize];
+    }
 }
+
 -(NSUInteger)pageNum
 {
     DataViewController *currentViewController = self.pageViewController.viewControllers[0];
@@ -509,17 +482,13 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     return indexOfCurrentViewController;
 }
 
-
-#pragma mark BookmarkViewController, _Delegate and _Actions
-
-
--(void)dismissBookmarkViewController:(BookmarkViewController *)bvc {
-    
+-(void)dismissBookmarkViewController:(BookmarkViewController *)bvc
+{
     [self dismissAlternateViewController];
 }
 
--(void)bookmarkViewController:(BookmarkViewController *)bvc didRequestPage:(NSUInteger)page{
-    
+-(void)bookmarkViewController:(BookmarkViewController *)bvc didRequestPage:(NSUInteger)page
+{
     if (UIInterfaceOrientationIsPortrait(ORIENTATION) || ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)) {
         self.pageViewController.doubleSided = NO;
         DataViewController *startingViewController = [self.modelController viewControllerAtIndex:page-1 storyboard:self.storyboard];
@@ -548,56 +517,40 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 
 }
 
--(IBAction) ibaBookmarks:(UIButton *)bookmarksButton
+-(NSString *)documentId
 {
-    
-    //
-    //	We create an instance of the BookmarkViewController and push it onto the stack as a model view controller, but
-    //	you can also push the controller with the navigation controller or use an UIActionSheet.
-    
-    BookmarkViewController *bookmarksVC = nil;
-    
-    if (currentReusableView == FPK_REUSABLE_VIEW_BOOKMARK) {
-        
-        [self dismissAlternateViewController];
-        
-    } else {
-        
-        currentReusableView = FPK_REUSABLE_VIEW_BOOKMARK;
-
-        bookmarksVC = [[BookmarkViewController alloc] init];
-        [[NSBundle mainBundle] loadNibNamed:@"BookmarkView" owner:bookmarksVC options:nil];
-        bookmarksVC.delegate = self;
-        
-        CGSize popoverContentSize = CGSizeMake(372, 650);
-        
-        UIView * sourceView = self.view;
-        CGRect sourceRect = [self.view convertRect:bookmarksButton.bounds fromView:bookmarksButton];
-        
-        [self presentViewController:bookmarksVC fromRect:sourceRect sourceView:sourceView contentSize:popoverContentSize];
-    }
-} 
-
-//显示，隐藏搜索框
-- (IBAction)ibSearchBtn:(id)sender {
-    
-    if (_ibSearchBar.hidden) {
-        _ibSearchBar.hidden = NO;
-        _ibBackBtn.hidden = YES;
-        _ibOutLineBtn.hidden = YES;
-        _ibSearchBtn.hidden = YES;
-
-        [self DoSearch:[_ibSearchBar text]];
-        [_ibSearchBar becomeFirstResponder];
-        
-    }else{
-        _ibSearchBar.hidden = YES;
-        _ibBackBtn.hidden = NO;
-        _ibOutLineBtn.hidden = NO;
-        _ibSearchBtn.hidden = NO;
-        [self DoSearch:@""];
-        [_ibSearchBar resignFirstResponder];
-    }
+    return _pdfDocument;
 }
+
+    
+    
+    
+- (IBAction)ibBarBack:(id)sender {
+    [self back:nil];
+}
+    
+- (void)back:(UIBarButtonItem *)barItem{
+    
+    //删除明文文件
+    //    NSFileManager *manager = [NSFileManager defaultManager];
+    //    [manager removeItemAtPath:_filePath error:nil];
+    //不读时，记录当前页面
+    [[NSUserDefaults standardUserDefaults] setInteger:[self pageNum] forKey:FPK_READHISTORY_PAGENUM(_receviveFileId)];
+    
+    [_myTimer invalidate];
+    //    [self.navigationController pushViewController:detailView animated:YES];
+    
+}
+    
+-(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    [super willAnimateRotationToInterfaceOrientation:toInterfaceOrientation duration:duration];
+    
+}
+    
+- (void)didReceiveMemoryWarning
+    {
+        [super didReceiveMemoryWarning];
+        // Dispose of any resources that can be recreated.
+    }
 
 @end

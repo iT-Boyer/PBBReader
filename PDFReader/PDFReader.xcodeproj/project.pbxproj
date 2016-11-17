@@ -269,6 +269,23 @@
 			path = ForPBBUITests;
 			sourceTree = "<group>";
 		};
+		146C1D1A1DDD4C9700041D59 /* ZoomingPDF */ = {
+			isa = PBXGroup;
+			children = (
+				14C2DB781DD42B4200113C2F /* DataViewController.h */,
+				14C2DB791DD42B4200113C2F /* DataViewController.m */,
+				14C2DB7A1DD42B4200113C2F /* ModelController.h */,
+				14C2DB7B1DD42B4200113C2F /* ModelController.m */,
+				14C2DB881DD42B4200113C2F /* PDFScrollView.h */,
+				14C2DB891DD42B4200113C2F /* PDFScrollView.m */,
+				14C2DB8C1DD42B4200113C2F /* RootViewController.h */,
+				14C2DB8D1DD42B4200113C2F /* RootViewController.m */,
+				14C2DBC81DD42B4200113C2F /* TiledPDFView.h */,
+				14C2DBC91DD42B4200113C2F /* TiledPDFView.m */,
+			);
+			name = ZoomingPDF;
+			sourceTree = "<group>";
+		};
 		14C2DB381DD42AEE00113C2F = {
 			isa = PBXGroup;
 			children = (
@@ -335,22 +352,13 @@
 		14C2DB721DD42B4200113C2F /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				146C1D1A1DDD4C9700041D59 /* ZoomingPDF */,
 				14C2DB731DD42B4200113C2F /* Bookmarks */,
-				14C2DB781DD42B4200113C2F /* DataViewController.h */,
-				14C2DB791DD42B4200113C2F /* DataViewController.m */,
-				14C2DB7A1DD42B4200113C2F /* ModelController.h */,
-				14C2DB7B1DD42B4200113C2F /* ModelController.m */,
 				14C2DB7C1DD42B4200113C2F /* Node */,
 				14C2DB831DD42B4200113C2F /* OutLine */,
-				14C2DB881DD42B4200113C2F /* PDFScrollView.h */,
-				14C2DB891DD42B4200113C2F /* PDFScrollView.m */,
 				14C2DB8A1DD42B4200113C2F /* PDFView.h */,
 				14C2DB8B1DD42B4200113C2F /* PDFView.m */,
-				14C2DB8C1DD42B4200113C2F /* RootViewController.h */,
-				14C2DB8D1DD42B4200113C2F /* RootViewController.m */,
 				14C2DB8E1DD42B4200113C2F /* TextSearch */,
-				14C2DBC81DD42B4200113C2F /* TiledPDFView.h */,
-				14C2DBC91DD42B4200113C2F /* TiledPDFView.m */,
 			);
 			path = lib;
 			sourceTree = "<group>";

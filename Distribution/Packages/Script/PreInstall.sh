@@ -53,7 +53,7 @@ fi
 #开始制作安装文件
 if [ -d "${ImportSVN}/${APPName}.app" ]; then
 echo "开始制作安装文件..."
-    packagesbuild -vF $Distribution/ -t $Distribution/ $Distribution/PBBReaderForOSX.pkgproj
+/usr/local/bin/packagesbuild -vF $Distribution/ -t $Distribution/ $Distribution/PBBReaderForOSX.pkgproj
 else
  echo "app源文件不存在，无法制作pkg安装包"
 fi
