@@ -29,6 +29,13 @@ class PDFDocumentViewController: NSViewController {
         outline = ibPDFView.document?.outlineRoot
     }
     
+    @IBAction func takeDestinationFromOutline(_ sender: Any) {
+        //TODO:未知对象
+        let destination = ((sender as AnyObject).item(atRow: ibPDFOutLineView.selectedRow) as! PDFOutline).destination
+        NSLog("选择目录跳转：\(destination)")
+        
+        ibPDFView.go(to: destination!)
+    }
 }
 
 extension PDFDocumentViewController:NSOutlineViewDelegate,NSOutlineViewDataSource
@@ -94,7 +101,7 @@ extension PDFDocumentViewController:NSOutlineViewDelegate,NSOutlineViewDataSourc
     func outlineView(_ outlineView: NSOutlineView, objectValueFor tableColumn: NSTableColumn?, byItem item: Any?) -> Any?
     {
         //目录名
-        NSLog("目录名:\((item as! PDFOutline).label!)")
+//        NSLog("目录名:\((item as! PDFOutline).label!)")
         return (item as! PDFOutline).label!
     }
     
@@ -111,14 +118,7 @@ extension PDFDocumentViewController:NSOutlineViewDelegate,NSOutlineViewDataSourc
     
     
     
-    // Displaying the page associated with an outline element
-    @IBAction func takeDestinationFromOutline(sender:Any)
-    {
-//        [[sender itemAtRow:[sender selectedRow]] destination]
-        //TODO:未知对象
-        let destination = ibPDFOutLineView.item(atRow: ibPDFOutLineView.selectedRow)
-//        ibPDFView.go(to: destination)
-    }
+
     
 //     Updating the outline when the page changes
 }
