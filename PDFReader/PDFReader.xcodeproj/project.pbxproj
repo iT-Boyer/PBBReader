@@ -7,12 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		14543ED61DD45B8B00352C4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14543ED51DD45B8B00352C4D /* AppDelegate.swift */; };
-		14543ED81DD45B8B00352C4D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14543ED71DD45B8B00352C4D /* ViewController.swift */; };
-		14543EDA1DD45B8B00352C4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14543ED91DD45B8B00352C4D /* Assets.xcassets */; };
-		14543EDD1DD45B8B00352C4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14543EDB1DD45B8B00352C4D /* Main.storyboard */; };
-		14543EE81DD45B8C00352C4D /* ForPBBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14543EE71DD45B8C00352C4D /* ForPBBTests.swift */; };
-		14543EF31DD45B8C00352C4D /* ForPBBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14543EF21DD45B8C00352C4D /* ForPBBUITests.swift */; };
+		148C919C1DDEE772000EEABB /* PDFDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148C919B1DDEE772000EEABB /* PDFDocumentViewController.swift */; };
+		148C919F1DDEEFB4000EEABB /* PDFReader-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 148C919E1DDEEFB4000EEABB /* PDFReader-Info.plist */; };
+		14B3D4FD1DDED4A600A63434 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14B3D4FC1DDED4A600A63434 /* Storyboard.storyboard */; };
 		14C2DB451DD42AEF00113C2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C2DB441DD42AEF00113C2F /* AppDelegate.swift */; };
 		14C2DB4A1DD42AEF00113C2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14C2DB481DD42AEF00113C2F /* Main.storyboard */; };
 		14C2DB4C1DD42AEF00113C2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14C2DB4B1DD42AEF00113C2F /* Assets.xcassets */; };
@@ -54,23 +51,12 @@
 		14C2DBEE1DD42B4200113C2F /* TiledPDFView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C2DBC91DD42B4200113C2F /* TiledPDFView.m */; };
 		14C2DBF11DD42B7200113C2F /* FileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C2DBF01DD42B7200113C2F /* FileViewController.m */; };
 		14C2DBF31DD42EC000113C2F /* Manual1.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 14C2DBF21DD42EC000113C2F /* Manual1.pdf */; };
+		14FAD6651DDEA71F00591904 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14C2DB4B1DD42AEF00113C2F /* Assets.xcassets */; };
+		14FAD6661DDEA71F00591904 /* Manual1.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 14C2DBF21DD42EC000113C2F /* Manual1.pdf */; };
+		14FAD6781DDEB20800591904 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FAD6771DDEB20800591904 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		14543EE41DD45B8B00352C4D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 14C2DB391DD42AEE00113C2F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 14543ED21DD45B8B00352C4D;
-			remoteInfo = ForPBB;
-		};
-		14543EEF1DD45B8C00352C4D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 14C2DB391DD42AEE00113C2F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 14543ED21DD45B8B00352C4D;
-			remoteInfo = ForPBB;
-		};
 		14C2DB561DD42AF000113C2F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 14C2DB391DD42AEE00113C2F /* Project object */;
@@ -88,18 +74,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		14543ED31DD45B8B00352C4D /* ForPBB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForPBB.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		14543ED51DD45B8B00352C4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		14543ED71DD45B8B00352C4D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		14543ED91DD45B8B00352C4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		14543EDC1DD45B8B00352C4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		14543EDE1DD45B8B00352C4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		14543EE31DD45B8B00352C4D /* ForPBBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ForPBBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		14543EE71DD45B8C00352C4D /* ForPBBTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForPBBTests.swift; sourceTree = "<group>"; };
-		14543EE91DD45B8C00352C4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		14543EEE1DD45B8C00352C4D /* ForPBBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ForPBBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		14543EF21DD45B8C00352C4D /* ForPBBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForPBBUITests.swift; sourceTree = "<group>"; };
-		14543EF41DD45B8C00352C4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		148C919B1DDEE772000EEABB /* PDFDocumentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PDFDocumentViewController.swift; path = osx/PDFDocumentViewController.swift; sourceTree = "<group>"; };
+		148C919E1DDEEFB4000EEABB /* PDFReader-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "PDFReader-Info.plist"; sourceTree = "<group>"; };
+		14B3D4FC1DDED4A600A63434 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Storyboard.storyboard; path = osx/Storyboard.storyboard; sourceTree = "<group>"; };
 		14C2DB411DD42AEE00113C2F /* PDFReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PDFReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14C2DB441DD42AEF00113C2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14C2DB461DD42AEF00113C2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -191,30 +168,13 @@
 		14C2DBF01DD42B7200113C2F /* FileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileViewController.m; sourceTree = "<group>"; };
 		14C2DBF21DD42EC000113C2F /* Manual1.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Manual1.pdf; sourceTree = "<group>"; };
 		14C2DC0E1DD4464500113C2F /* PDFReader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDFReader.pch; sourceTree = "<group>"; };
+		14FAD66D1DDEA71F00591904 /* PDFReaderForOSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PDFReaderForOSX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		14FAD6761DDEB20700591904 /* PDFReaderForOSX-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PDFReaderForOSX-Bridging-Header.h"; sourceTree = "<group>"; };
+		14FAD6771DDEB20800591904 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = osx/AppDelegate.swift; sourceTree = "<group>"; };
+		14FAD6791DDEB30D00591904 /* PDFView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PDFView.swift; path = osx/PDFView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		14543ED01DD45B8B00352C4D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		14543EE01DD45B8B00352C4D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		14543EEB1DD45B8C00352C4D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		14C2DB3E1DD42AEE00113C2F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -236,39 +196,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		14FAD6621DDEA71F00591904 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		14543ED41DD45B8B00352C4D /* ForPBB */ = {
-			isa = PBXGroup;
-			children = (
-				14543ED51DD45B8B00352C4D /* AppDelegate.swift */,
-				14543ED71DD45B8B00352C4D /* ViewController.swift */,
-				14543ED91DD45B8B00352C4D /* Assets.xcassets */,
-				14543EDB1DD45B8B00352C4D /* Main.storyboard */,
-				14543EDE1DD45B8B00352C4D /* Info.plist */,
-			);
-			path = ForPBB;
-			sourceTree = "<group>";
-		};
-		14543EE61DD45B8C00352C4D /* ForPBBTests */ = {
-			isa = PBXGroup;
-			children = (
-				14543EE71DD45B8C00352C4D /* ForPBBTests.swift */,
-				14543EE91DD45B8C00352C4D /* Info.plist */,
-			);
-			path = ForPBBTests;
-			sourceTree = "<group>";
-		};
-		14543EF11DD45B8C00352C4D /* ForPBBUITests */ = {
-			isa = PBXGroup;
-			children = (
-				14543EF21DD45B8C00352C4D /* ForPBBUITests.swift */,
-				14543EF41DD45B8C00352C4D /* Info.plist */,
-			);
-			path = ForPBBUITests;
-			sourceTree = "<group>";
-		};
 		146C1D1A1DDD4C9700041D59 /* ZoomingPDF */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,9 +229,6 @@
 				14C2DB431DD42AEF00113C2F /* PDFReader */,
 				14C2DB581DD42AF000113C2F /* PDFReaderTests */,
 				14C2DB631DD42AF000113C2F /* PDFReaderUITests */,
-				14543ED41DD45B8B00352C4D /* ForPBB */,
-				14543EE61DD45B8C00352C4D /* ForPBBTests */,
-				14543EF11DD45B8C00352C4D /* ForPBBUITests */,
 				14C2DB421DD42AEE00113C2F /* Products */,
 				14C2DBF61DD43DB400113C2F /* Frameworks */,
 			);
@@ -306,9 +240,7 @@
 				14C2DB411DD42AEE00113C2F /* PDFReader.app */,
 				14C2DB551DD42AF000113C2F /* PDFReaderTests.xctest */,
 				14C2DB601DD42AF000113C2F /* PDFReaderUITests.xctest */,
-				14543ED31DD45B8B00352C4D /* ForPBB.app */,
-				14543EE31DD45B8B00352C4D /* ForPBBTests.xctest */,
-				14543EEE1DD45B8C00352C4D /* ForPBBUITests.xctest */,
+				14FAD66D1DDEA71F00591904 /* PDFReaderForOSX.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -316,6 +248,7 @@
 		14C2DB431DD42AEF00113C2F /* PDFReader */ = {
 			isa = PBXGroup;
 			children = (
+				14FAD6751DDEB18700591904 /* osx */,
 				14C2DB721DD42B4200113C2F /* lib */,
 				14C2DBEF1DD42B7200113C2F /* FileViewController.h */,
 				14C2DBF01DD42B7200113C2F /* FileViewController.m */,
@@ -325,6 +258,7 @@
 				14C2DB4B1DD42AEF00113C2F /* Assets.xcassets */,
 				14C2DB4D1DD42AEF00113C2F /* LaunchScreen.storyboard */,
 				14C2DB501DD42AEF00113C2F /* Info.plist */,
+				148C919E1DDEEFB4000EEABB /* PDFReader-Info.plist */,
 				14C2DBF21DD42EC000113C2F /* Manual1.pdf */,
 				14C2DC0E1DD4464500113C2F /* PDFReader.pch */,
 			);
@@ -532,62 +466,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		14FAD6751DDEB18700591904 /* osx */ = {
+			isa = PBXGroup;
+			children = (
+				14FAD6771DDEB20800591904 /* AppDelegate.swift */,
+				14FAD6791DDEB30D00591904 /* PDFView.swift */,
+				148C919B1DDEE772000EEABB /* PDFDocumentViewController.swift */,
+				14FAD6761DDEB20700591904 /* PDFReaderForOSX-Bridging-Header.h */,
+				14B3D4FC1DDED4A600A63434 /* Storyboard.storyboard */,
+			);
+			name = osx;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		14543ED21DD45B8B00352C4D /* ForPBB */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 14543EFB1DD45B8C00352C4D /* Build configuration list for PBXNativeTarget "ForPBB" */;
-			buildPhases = (
-				14543ECF1DD45B8B00352C4D /* Sources */,
-				14543ED01DD45B8B00352C4D /* Frameworks */,
-				14543ED11DD45B8B00352C4D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = ForPBB;
-			productName = ForPBB;
-			productReference = 14543ED31DD45B8B00352C4D /* ForPBB.app */;
-			productType = "com.apple.product-type.application";
-		};
-		14543EE21DD45B8B00352C4D /* ForPBBTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 14543EFC1DD45B8C00352C4D /* Build configuration list for PBXNativeTarget "ForPBBTests" */;
-			buildPhases = (
-				14543EDF1DD45B8B00352C4D /* Sources */,
-				14543EE01DD45B8B00352C4D /* Frameworks */,
-				14543EE11DD45B8B00352C4D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				14543EE51DD45B8B00352C4D /* PBXTargetDependency */,
-			);
-			name = ForPBBTests;
-			productName = ForPBBTests;
-			productReference = 14543EE31DD45B8B00352C4D /* ForPBBTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		14543EED1DD45B8C00352C4D /* ForPBBUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 14543EFD1DD45B8C00352C4D /* Build configuration list for PBXNativeTarget "ForPBBUITests" */;
-			buildPhases = (
-				14543EEA1DD45B8C00352C4D /* Sources */,
-				14543EEB1DD45B8C00352C4D /* Frameworks */,
-				14543EEC1DD45B8C00352C4D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				14543EF01DD45B8C00352C4D /* PBXTargetDependency */,
-			);
-			name = ForPBBUITests;
-			productName = ForPBBUITests;
-			productReference = 14543EEE1DD45B8C00352C4D /* ForPBBUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 		14C2DB401DD42AEE00113C2F /* PDFReader */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14C2DB691DD42AF000113C2F /* Build configuration list for PBXNativeTarget "PDFReader" */;
@@ -641,6 +534,23 @@
 			productReference = 14C2DB601DD42AF000113C2F /* PDFReaderUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		14FAD63F1DDEA71F00591904 /* PDFReaderForOSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14FAD66A1DDEA71F00591904 /* Build configuration list for PBXNativeTarget "PDFReaderForOSX" */;
+			buildPhases = (
+				14FAD6401DDEA71F00591904 /* Sources */,
+				14FAD6621DDEA71F00591904 /* Frameworks */,
+				14FAD6631DDEA71F00591904 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PDFReaderForOSX;
+			productName = PDFReader;
+			productReference = 14FAD66D1DDEA71F00591904 /* PDFReaderForOSX.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -651,23 +561,6 @@
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = PBBReader;
 				TargetAttributes = {
-					14543ED21DD45B8B00352C4D = {
-						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = FA78T6VRG8;
-						ProvisioningStyle = Automatic;
-					};
-					14543EE21DD45B8B00352C4D = {
-						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = FA78T6VRG8;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 14543ED21DD45B8B00352C4D;
-					};
-					14543EED1DD45B8C00352C4D = {
-						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = FA78T6VRG8;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 14543ED21DD45B8B00352C4D;
-					};
 					14C2DB401DD42AEE00113C2F = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = FA78T6VRG8;
@@ -684,6 +577,10 @@
 						DevelopmentTeam = FA78T6VRG8;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 14C2DB401DD42AEE00113C2F;
+					};
+					14FAD63F1DDEA71F00591904 = {
+						DevelopmentTeam = FA78T6VRG8;
+						LastSwiftMigration = 0810;
 					};
 				};
 			};
@@ -703,37 +600,12 @@
 				14C2DB401DD42AEE00113C2F /* PDFReader */,
 				14C2DB541DD42AF000113C2F /* PDFReaderTests */,
 				14C2DB5F1DD42AF000113C2F /* PDFReaderUITests */,
-				14543ED21DD45B8B00352C4D /* ForPBB */,
-				14543EE21DD45B8B00352C4D /* ForPBBTests */,
-				14543EED1DD45B8C00352C4D /* ForPBBUITests */,
+				14FAD63F1DDEA71F00591904 /* PDFReaderForOSX */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		14543ED11DD45B8B00352C4D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				14543EDA1DD45B8B00352C4D /* Assets.xcassets in Resources */,
-				14543EDD1DD45B8B00352C4D /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		14543EE11DD45B8B00352C4D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		14543EEC1DD45B8C00352C4D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		14C2DB3F1DD42AEE00113C2F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -761,34 +633,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		14FAD6631DDEA71F00591904 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				148C919F1DDEEFB4000EEABB /* PDFReader-Info.plist in Resources */,
+				14FAD6651DDEA71F00591904 /* Assets.xcassets in Resources */,
+				14FAD6661DDEA71F00591904 /* Manual1.pdf in Resources */,
+				14B3D4FD1DDED4A600A63434 /* Storyboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		14543ECF1DD45B8B00352C4D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				14543ED81DD45B8B00352C4D /* ViewController.swift in Sources */,
-				14543ED61DD45B8B00352C4D /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		14543EDF1DD45B8B00352C4D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				14543EE81DD45B8C00352C4D /* ForPBBTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		14543EEA1DD45B8C00352C4D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				14543EF31DD45B8C00352C4D /* ForPBBUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		14C2DB3D1DD42AEE00113C2F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -845,19 +703,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		14FAD6401DDEA71F00591904 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14FAD6781DDEB20800591904 /* AppDelegate.swift in Sources */,
+				148C919C1DDEE772000EEABB /* PDFDocumentViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		14543EE51DD45B8B00352C4D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 14543ED21DD45B8B00352C4D /* ForPBB */;
-			targetProxy = 14543EE41DD45B8B00352C4D /* PBXContainerItemProxy */;
-		};
-		14543EF01DD45B8C00352C4D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 14543ED21DD45B8B00352C4D /* ForPBB */;
-			targetProxy = 14543EEF1DD45B8C00352C4D /* PBXContainerItemProxy */;
-		};
 		14C2DB571DD42AF000113C2F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 14C2DB401DD42AEE00113C2F /* PDFReader */;
@@ -871,14 +728,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		14543EDB1DD45B8B00352C4D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				14543EDC1DD45B8B00352C4D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		14C2DB481DD42AEF00113C2F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -898,114 +747,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		14543EF51DD45B8C00352C4D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = FA78T6VRG8;
-				INFOPLIST_FILE = ForPBB/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = pyc.com.cn.ForPBB;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SWIFT_VERSION = 3.0;
-			};
-			name = Debug;
-		};
-		14543EF61DD45B8C00352C4D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = FA78T6VRG8;
-				INFOPLIST_FILE = ForPBB/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = pyc.com.cn.ForPBB;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
-		14543EF71DD45B8C00352C4D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = FA78T6VRG8;
-				INFOPLIST_FILE = ForPBBTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = pyc.com.cn.ForPBBTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ForPBB.app/Contents/MacOS/ForPBB";
-			};
-			name = Debug;
-		};
-		14543EF81DD45B8C00352C4D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = FA78T6VRG8;
-				INFOPLIST_FILE = ForPBBTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = pyc.com.cn.ForPBBTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ForPBB.app/Contents/MacOS/ForPBB";
-			};
-			name = Release;
-		};
-		14543EF91DD45B8C00352C4D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = FA78T6VRG8;
-				INFOPLIST_FILE = ForPBBUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = pyc.com.cn.ForPBBUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = ForPBB;
-			};
-			name = Debug;
-		};
-		14543EFA1DD45B8C00352C4D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = FA78T6VRG8;
-				INFOPLIST_FILE = ForPBBUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = pyc.com.cn.ForPBBUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = ForPBB;
-			};
-			name = Release;
-		};
 		14C2DB671DD42AF000113C2F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1189,36 +930,50 @@
 			};
 			name = Release;
 		};
+		14FAD66B1DDEA71F00591904 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = FA78T6VRG8;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = "PDFReader/PDFReader-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) '@executable_path/../Frameworks' '@loader_path/Frameworks'";
+				PRODUCT_BUNDLE_IDENTIFIER = pyc.com.cn.PDFReader;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.12;
+				SUPPORTED_PLATFORMS = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "PDFReader/PDFReaderForOSX-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Debug;
+		};
+		14FAD66C1DDEA71F00591904 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = FA78T6VRG8;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = "PDFReader/PDFReader-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) '@executable_path/../Frameworks' '@loader_path/Frameworks'";
+				PRODUCT_BUNDLE_IDENTIFIER = pyc.com.cn.PDFReader;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.12;
+				SUPPORTED_PLATFORMS = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "PDFReader/PDFReaderForOSX-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		14543EFB1DD45B8C00352C4D /* Build configuration list for PBXNativeTarget "ForPBB" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				14543EF51DD45B8C00352C4D /* Debug */,
-				14543EF61DD45B8C00352C4D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		14543EFC1DD45B8C00352C4D /* Build configuration list for PBXNativeTarget "ForPBBTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				14543EF71DD45B8C00352C4D /* Debug */,
-				14543EF81DD45B8C00352C4D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		14543EFD1DD45B8C00352C4D /* Build configuration list for PBXNativeTarget "ForPBBUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				14543EF91DD45B8C00352C4D /* Debug */,
-				14543EFA1DD45B8C00352C4D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		14C2DB3C1DD42AEE00113C2F /* Build configuration list for PBXProject "PDFReader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1251,6 +1006,15 @@
 			buildConfigurations = (
 				14C2DB701DD42AF000113C2F /* Debug */,
 				14C2DB711DD42AF000113C2F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		14FAD66A1DDEA71F00591904 /* Build configuration list for PBXNativeTarget "PDFReaderForOSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14FAD66B1DDEA71F00591904 /* Debug */,
+				14FAD66C1DDEA71F00591904 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

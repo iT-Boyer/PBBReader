@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="Z0Y-mL-2au">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <plugIn identifier="com.apple.pdfkit.ibplugin" version="11542"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Window Controller-->
+        <scene sceneID="CYi-3h-VBV">
+            <objects>
+                <windowController id="Z0Y-mL-2au" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="hvB-Kr-WWx">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="294" y="313" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+                    </window>
+                    <connections>
+                        <segue destination="C24-xL-834" kind="relationship" relationship="window.shadowedContentViewController" id="pCq-GL-ThX"/>
+                    </connections>
+                </windowController>
+                <customObject id="acv-CH-AYp" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-402" y="-254"/>
+        </scene>
+        <!--Document View Controller-->
+        <scene sceneID="LYc-DV-fgd">
+            <objects>
+                <viewController id="C24-xL-834" customClass="PDFDocumentViewController" customModule="PDFReaderForOSX" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="VvE-ca-rKA">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <pdfView autoresizesSubviews="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBF-Z4-1Nb">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                            </pdfView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="QBF-Z4-1Nb" secondAttribute="bottom" id="JgK-Ez-k3v"/>
+                            <constraint firstItem="QBF-Z4-1Nb" firstAttribute="leading" secondItem="VvE-ca-rKA" secondAttribute="leading" id="Otv-aq-FJ7"/>
+                            <constraint firstAttribute="trailing" secondItem="QBF-Z4-1Nb" secondAttribute="trailing" id="Pep-uZ-KFs"/>
+                            <constraint firstItem="QBF-Z4-1Nb" firstAttribute="top" secondItem="VvE-ca-rKA" secondAttribute="top" id="de5-3m-S3G"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ibPDFView" destination="QBF-Z4-1Nb" id="xHl-FP-kZE"/>
+                    </connections>
+                </viewController>
+                <customObject id="7SV-re-ldL" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="257" y="-248"/>
+        </scene>
+    </scenes>
+</document>

@@ -52,7 +52,9 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     NSInteger _x;
     NSInteger _y;
 
-    NSUInteger currentReusableView;         // This flag is used to keep track of what alternate controller is displayed to the user
+    //这个标志被用来跟踪备用控制器显示给用户的是什么
+     // This flag is used to keep track of what alternate controller is displayed to the user
+    NSUInteger currentReusableView;
     NSUInteger currentSearchViewMode;
 }
 
@@ -70,7 +72,6 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     
     _pdfDocument = [[NSBundle mainBundle].resourcePath stringByAppendingPathComponent:@"Manual1.pdf"];
 //    _pdfDocument = [[NSBundle mainBundle] pathForResource:@"input_pdf" ofType:@"pdf"];
@@ -177,84 +178,85 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     
     return UIPageViewControllerSpineLocationMid;
 }
-#pragma mark - 跳转动画实现
--(void)dismissAlternateViewController {
+#pragma mark - 自定义目录和书签页面显示／隐藏的跳转效果
+#pragma mark 根据reusableView追踪器，检索当前需要关闭的页面，即执行：dismissViewControllerAnimated
+-(void)dismissAlternateViewController
+{
+    // This is just an utility method that will call the appropriate dismissal procedure depending
+    // on which alternate controller is visible to the user.
+    
+    switch(currentReusableView) {
         
-        // This is just an utility method that will call the appropriate dismissal procedure depending
-        // on which alternate controller is visible to the user.
-        
-        switch(currentReusableView) {
-            
-            case FPKReusableViewNone:
+        case FPKReusableViewNone:
             break;
-            
-            case FPKReusableViewText:
-            
+        
+        case FPKReusableViewText:
+        
             if(self.presentedViewController) {
                 [self dismissViewControllerAnimated:YES completion:nil];
             }
-            
             currentReusableView = FPKReusableViewNone;
             
             break;
+        
+        case FPKReusableViewOutline:
+        case FPKReusableViewBookmarks:
+        
+        // Same procedure for both outline and bookmark.
+        if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+        {
             
-            case FPKReusableViewOutline:
-            case FPKReusableViewBookmarks:
-            
-            // Same procedure for both outline and bookmark.
-            
-            if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-            {
-                
 #ifdef __IPHONE_8_0
-                if(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1)
-                {
-                    if(self.presentedViewController) {
-                        [self dismissViewControllerAnimated:YES completion:nil];
-                    }
-                }
-                else
-#endif
-                {
-                    
-                    [_reusablePopover dismissPopoverAnimated:YES];
-                }
-                
-            } else {
-                
-                /* On iPad iOS 8 and iPhone whe have a presented view controller */
-                
+            if(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1)
+            {
                 if(self.presentedViewController) {
                     [self dismissViewControllerAnimated:YES completion:nil];
                 }
             }
-            currentReusableView = FPKReusableViewNone;
-            break;
-            
-            case FPKReusableViewSearch:
-            
-            if(currentSearchViewMode == FPKSearchViewModeFull) {
+            else
+#endif
+            {
                 
-                //                [searchManager cancelSearch];
-                //                [self dismissSearchViewController:searchViewController];
-                currentReusableView = FPKReusableViewNone;
-                
-            } else if (currentSearchViewMode == FPKSearchViewModeMini) {
-                //                [searchManager cancelSearch];
-                //                [self dismissMiniSearchView];
-                currentReusableView = FPKReusableViewNone;
+                [_reusablePopover dismissPopoverAnimated:YES];
             }
             
-            // Cancel search and remove the controller.
+        } else {
             
-            break;
-            default: break;
+            /* On iPad iOS 8 and iPhone whe have a presented view controller */
+            
+            if(self.presentedViewController) {
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }
         }
+        currentReusableView = FPKReusableViewNone;
+        break;
+        
+        case FPKReusableViewSearch:
+        
+        if(currentSearchViewMode == FPKSearchViewModeFull) {
+            
+            //                [searchManager cancelSearch];
+            //                [self dismissSearchViewController:searchViewController];
+            currentReusableView = FPKReusableViewNone;
+            
+        } else if (currentSearchViewMode == FPKSearchViewModeMini) {
+            //                [searchManager cancelSearch];
+            //                [self dismissMiniSearchView];
+            currentReusableView = FPKReusableViewNone;
+        }
+        
+        // Cancel search and remove the controller.
+        
+        break;
+        default: break;
     }
-    
+}
+
+#pragma mark 定制 UIPopoverPresentationController
 -(void)presentViewController:(UIViewController *)controller fromRect:(CGRect)rect sourceView:(UIView *)view contentSize:(CGSize)contentSize {
     
     if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        //iPad以popoverPresentation方式显示
 #ifdef __IPHONE_8_0
         if(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1) {
             
@@ -274,13 +276,12 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
         {
             
             [self prepareReusablePopoverControllerWithController:controller];
-            
             [_reusablePopover setPopoverContentSize:contentSize animated:YES];
             [_reusablePopover presentPopoverFromRect:rect inView:view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
         }
         
     } else {
-        
+        //iPhone端直接显示
         [self presentViewController:controller animated:YES completion:nil];
     }
 }
@@ -524,7 +525,7 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 
     
     
-    
+#pragma mark - 其他
 - (IBAction)ibBarBack:(id)sender {
     [self back:nil];
 }
