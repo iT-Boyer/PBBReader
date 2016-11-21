@@ -65,7 +65,7 @@ class PDFDocumentViewController: NSViewController {
             searchResults = NSMutableArray.init(capacity: 10)
         }
         //Calls the PDFDocument method beginFindString:withOptions: with the desired search string.
-//        ibPDFView.document?.beginFind((sender as! NSTextField).stringValue, withOptions: NSFindPanelCaseInsensitiveSearch)
+        ibPDFView.document?.beginFind([(sender as! NSTextField).stringValue], withOptions: NSFindPanelCaseInsensitiveSearch)
         
     }
     
