@@ -25,12 +25,17 @@ class PDFDocumentViewController: NSViewController {
         //必须使用fileURL
         let pdfUrl = URL.init(fileURLWithPath: path!)
         let doc = PDFDocument.init(url:pdfUrl)!
+        
+        //在视图上显示PDF
         ibPDFView.document = doc
-        //outline即为数据源
+        //outline即NSOutlineView数据源
         outline = ibPDFView.document?.outlineRoot
         
         //当pdfview页面发生变化，会发送更新ouline目录的通知
-        NotificationCenter.default.addObserver(self, selector: #selector(PDFDocumentViewController.pageChanged(_:)), name: NSNotification.Name.PDFViewPageChanged, object: nil)
+        NotificationCenter.default.addObserver(self,
+                          selector: #selector(PDFDocumentViewController.pageChanged(_:)),
+                              name: NSNotification.Name.PDFViewPageChanged,
+                            object: nil)
         
         //支持搜索
         ibPDFView.document?.delegate = self
@@ -46,11 +51,6 @@ class PDFDocumentViewController: NSViewController {
     }
     
     
-    //    func funt() {
-    //        //
-    //        ibPDFView.document?.findString(<#T##string: String##String#>, from: <#T##PDFSelection?#>, withOptions: <#T##Int#>)
-    //    }
-    
     func doFind(sender:Any)
     {
         //Cancels any current searches.
@@ -64,8 +64,10 @@ class PDFDocumentViewController: NSViewController {
             //
             searchResults = NSMutableArray.init(capacity: 10)
         }
-        //Calls the PDFDocument method beginFindString:withOptions: with the desired search string.
-        ibPDFView.document?.beginFind([(sender as! NSTextField).stringValue], withOptions: NSFindPanelCaseInsensitiveSearch)
+        //Calls the PDFDocument method beginFindString:withOptions: with the desired search string.NSFindPanelCaseInsensitiveSearch
+        //MARK: 开始查询包含字符串的PDF中的内容
+        let textBysearh = (sender as! NSTextField).stringValue
+        ibPDFView.document?.beginFindString(textBysearh, withOptions: 0)
         
     }
     
@@ -83,8 +85,10 @@ class PDFDocumentViewController: NSViewController {
 
 }
 
+//MARK: - outline代理
 extension PDFDocumentViewController:NSOutlineViewDelegate,NSOutlineViewDataSource
 {
+    //return子目录个数
     func outlineView(_ outlineView: NSOutlineView, numberOfChildrenOfItem item: Any?) -> Int
     {
         if (item == nil)
@@ -101,6 +105,7 @@ extension PDFDocumentViewController:NSOutlineViewDelegate,NSOutlineViewDataSourc
         }
     }
     
+    //return 子目录中的某个目录
     func outlineView(_ outlineView: NSOutlineView, child index: Int, ofItem item: Any?) -> Any
     {
         //
@@ -121,7 +126,7 @@ extension PDFDocumentViewController:NSOutlineViewDelegate,NSOutlineViewDataSourc
         }
     }
     
-//    Delegate method for determining if an element has children
+    //MARK: return元素是否有子目录
     func outlineView(_ outlineView: NSOutlineView, isItemExpandable item: Any) -> Bool
     {
         if item == nil
@@ -142,7 +147,7 @@ extension PDFDocumentViewController:NSOutlineViewDelegate,NSOutlineViewDataSourc
         }
     }
     
-    //Delegate method for obtaining an element’s contents
+    //MARK: return 每个目录的内容
     func outlineView(_ outlineView: NSOutlineView, objectValueFor tableColumn: NSTableColumn?, byItem item: Any?) -> Any?
     {
         //目录名
@@ -150,6 +155,7 @@ extension PDFDocumentViewController:NSOutlineViewDelegate,NSOutlineViewDataSourc
         return (item as! PDFOutline).label!
     }
     
+    //MARK: 点击单元格的事件
     func outlineViewSelectionDidChange(_ notification: Notification)
     {
 //        ibPDFOutLineView.item(atRow: i) as! PDFOutline!
@@ -159,52 +165,51 @@ extension PDFDocumentViewController:NSOutlineViewDelegate,NSOutlineViewDataSourc
         ibPDFView.go(to: destination!)
     }
     
-//    scroll
-    
-    //NSNotification.Name.PDFViewPageChanged 
-    //Updating the outline when the page changes
+    //MARK: Updating the outline when the page changes :NSNotification.Name.PDFViewPageChanged
     func pageChanged(_ notification:Notification)
     {
-        var newPageIndex = 0
-        var numRows = 0
-        var newlySelectedRow = 0
         //1. Checks to see if a root outline exists. If not, then there is no outline to update, so simply return.
         if outline == nil {
             return
         }
-        //2. Obtains the index value for the current page.
-        //The PDFView method currentPage returns the PDFPage object, and the PDFDocument method indexForPage returns the actual index for that page. This index value is zero-based, so it doesn’t necessarily correspond to a page number.
-        newPageIndex = (ibPDFView.document?.index(for: ibPDFView.currentPage!))!
-        newlySelectedRow = -1
-        numRows = ibPDFOutLineView.numberOfRows
+        /*2. Obtains the index value for the current page.
+                1. The PDFView method currentPage returns the PDFPage object,
+                2. the PDFDocument method indexForPage returns the actual index for that page.
+                3. This index value is zero-based, so it doesn’t necessarily correspond to a page number.
+            */
+        var newPageIndex = (ibPDFView.document?.index(for: ibPDFView.currentPage!))!
+        var newlySelectedRow = -1
         //3. Iterate through each visible element in the outline, checking to see if one of the following occurs:
-        for i in 0...numRows {
+        for i in 0...ibPDFOutLineView.numberOfRows {
             //
             var outlineItem:PDFOutline!
             outlineItem = ibPDFOutLineView.item(atRow: i) as! PDFOutline!
             if outlineItem == nil {
                 //
-                break
+                continue
             }
+            //PDFOutline.destination.page获取对象，indexForPage方法：获取对象索引位置
             let destinnationPageIndex = ibPDFView.document?.index(for: (outlineItem.destination?.page)!)
+            //The index of an outline element matches the index of the new page.
             if destinnationPageIndex == newPageIndex
             {
-                //The index of an outline element matches the index of the new page. 
-                //If so, highlight this element (using the NSTableView method selectRow:byExtendingSelection).
+                //highlight this element (using the NSTableView method selectRow:byExtendingSelection).
                 newlySelectedRow = i
-                ibPDFOutLineView.selectRowIndexes(IndexSet.init(integer: newlySelectedRow), byExtendingSelection: false)
+                let indexSetBySelected = IndexSet.init(integer: newlySelectedRow)
+                ibPDFOutLineView.selectRowIndexes(indexSetBySelected,byExtendingSelection: false)
                 break
             }
             else if destinnationPageIndex! > newPageIndex
             {
-                //The index of the outline element is larger than the index of the page. If so, a match was not possible as the index corresponds to a hidden child of a visible element. In this case, use selectRow to highlight the parent outline element (the current row -1 ).
+                //当目录索引位置比当前页面索引大时，是因为子目录被隐藏，这时候可以高亮显示上级目录，上级目录索引为：currentrow -1
                 newlySelectedRow = i - 1
-                ibPDFOutLineView.selectRowIndexes(IndexSet.init(integer: newlySelectedRow), byExtendingSelection: false)
+                let indexSetBySelected = IndexSet.init(integer: newlySelectedRow)
+                ibPDFOutLineView.selectRowIndexes(indexSetBySelected, byExtendingSelection: false)
                 break
             }
         }
         if newlySelectedRow != -1 {
-            //4. Call the NSTableView method scrollRowToVisible to adjust the outline view (if necessary) to make the highlighted element visible.
+            //调整目录视图的焦点，让高亮的目录处于可见位置
             ibPDFOutLineView.scrollRowToVisible(newlySelectedRow)
         }
     }
