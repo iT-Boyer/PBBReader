@@ -203,6 +203,12 @@
 		14815B4F1D4B0D0600922A62 /* BilibiliSocketClient.mm in Sources */ = {isa = PBXBuildFile; fileRef = 14815B4A1D4B0D0600922A62 /* BilibiliSocketClient.mm */; };
 		14815B501D4B0D0600922A62 /* LiveChat.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B4C1D4B0D0600922A62 /* LiveChat.m */; };
 		14815B511D4B0D0600922A62 /* Socket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14815B4D1D4B0D0600922A62 /* Socket.cpp */; };
+		149D53AC1DE4270E00FC4F63 /* CommentBlockSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 149D53A11DE4270E00FC4F63 /* CommentBlockSettings.m */; };
+		149D53AD1DE4270E00FC4F63 /* KeywordBlockSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 149D53A31DE4270E00FC4F63 /* KeywordBlockSettings.m */; };
+		149D53AE1DE4270E00FC4F63 /* MPVSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 149D53A51DE4270E00FC4F63 /* MPVSettings.m */; };
+		149D53AF1DE4270E00FC4F63 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 149D53A71DE4270E00FC4F63 /* Settings.m */; };
+		149D53B01DE4270E00FC4F63 /* SmartBlockSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 149D53A91DE4270E00FC4F63 /* SmartBlockSettings.m */; };
+		149D53B11DE4270E00FC4F63 /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 149D53AB1DE4270E00FC4F63 /* Tools.m */; };
 		14A505911DAA2656008BF666 /* Toasty.h in Headers */ = {isa = PBXBuildFile; fileRef = 14A505901DAA2656008BF666 /* Toasty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		14A505951DAA2656008BF666 /* Toasty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A5058E1DAA2656008BF666 /* Toasty.framework */; };
 		14A505961DAA2656008BF666 /* Toasty.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14A5058E1DAA2656008BF666 /* Toasty.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -602,6 +608,18 @@
 		148AB47E1CFFD78600CAF9BA /* AdvertisingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvertisingView.m; sourceTree = "<group>"; };
 		148AB47F1CFFD78600CAF9BA /* advitising.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = advitising.jpg; sourceTree = "<group>"; };
 		1494D6081D36305900842CD1 /* ApplyInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyInfoViewController.swift; sourceTree = "<group>"; };
+		149D53A01DE4270E00FC4F63 /* CommentBlockSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentBlockSettings.h; sourceTree = "<group>"; };
+		149D53A11DE4270E00FC4F63 /* CommentBlockSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentBlockSettings.m; sourceTree = "<group>"; };
+		149D53A21DE4270E00FC4F63 /* KeywordBlockSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeywordBlockSettings.h; sourceTree = "<group>"; };
+		149D53A31DE4270E00FC4F63 /* KeywordBlockSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeywordBlockSettings.m; sourceTree = "<group>"; };
+		149D53A41DE4270E00FC4F63 /* MPVSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPVSettings.h; sourceTree = "<group>"; };
+		149D53A51DE4270E00FC4F63 /* MPVSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPVSettings.m; sourceTree = "<group>"; };
+		149D53A61DE4270E00FC4F63 /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
+		149D53A71DE4270E00FC4F63 /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
+		149D53A81DE4270E00FC4F63 /* SmartBlockSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmartBlockSettings.h; sourceTree = "<group>"; };
+		149D53A91DE4270E00FC4F63 /* SmartBlockSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmartBlockSettings.m; sourceTree = "<group>"; };
+		149D53AA1DE4270E00FC4F63 /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
+		149D53AB1DE4270E00FC4F63 /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
 		14A5058E1DAA2656008BF666 /* Toasty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Toasty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		14A505901DAA2656008BF666 /* Toasty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Toasty.h; sourceTree = "<group>"; };
 		14A505921DAA2656008BF666 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1110,6 +1128,25 @@
 			path = Advertising;
 			sourceTree = "<group>";
 		};
+		149D539F1DE4270E00FC4F63 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				149D53A01DE4270E00FC4F63 /* CommentBlockSettings.h */,
+				149D53A11DE4270E00FC4F63 /* CommentBlockSettings.m */,
+				149D53A21DE4270E00FC4F63 /* KeywordBlockSettings.h */,
+				149D53A31DE4270E00FC4F63 /* KeywordBlockSettings.m */,
+				149D53A41DE4270E00FC4F63 /* MPVSettings.h */,
+				149D53A51DE4270E00FC4F63 /* MPVSettings.m */,
+				149D53A61DE4270E00FC4F63 /* Settings.h */,
+				149D53A71DE4270E00FC4F63 /* Settings.m */,
+				149D53A81DE4270E00FC4F63 /* SmartBlockSettings.h */,
+				149D53A91DE4270E00FC4F63 /* SmartBlockSettings.m */,
+				149D53AA1DE4270E00FC4F63 /* Tools.h */,
+				149D53AB1DE4270E00FC4F63 /* Tools.m */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		14A5058F1DAA2656008BF666 /* Toasty */ = {
 			isa = PBXGroup;
 			children = (
@@ -1123,6 +1160,7 @@
 		14AA3DC91D2A187200838B88 /* bilibili */ = {
 			isa = PBXGroup;
 			children = (
+				149D539F1DE4270E00FC4F63 /* Settings */,
 				14815B481D4B0D0600922A62 /* LiveChat */,
 				14815B381D4B07BF00922A62 /* CommentConvert */,
 				14815AF31D4AF55900922A62 /* BarrageRenderer */,
@@ -2343,6 +2381,7 @@
 				143E38051D3F1809004B0A4D /* SeriesDao.m in Sources */,
 				14815B221D4AF55A00922A62 /* BarrageDispatcher.m in Sources */,
 				143E38061D3F1809004B0A4D /* ScaryBugDoc.swift in Sources */,
+				149D53AE1DE4270E00FC4F63 /* MPVSettings.m in Sources */,
 				14815B281D4AF55A00922A62 /* BarrageFloatTextSprite.m in Sources */,
 				1422A89E1D757FD40057E9D4 /* CustomWindowController.swift in Sources */,
 				143E38071D3F1809004B0A4D /* SendFileManager.m in Sources */,
@@ -2377,6 +2416,7 @@
 				143E381A1D3F1809004B0A4D /* NSTextField+Attribute.m in Sources */,
 				143E381B1D3F1809004B0A4D /* MyProduct.m in Sources */,
 				143E381C1D3F1809004B0A4D /* Reachability.m in Sources */,
+				149D53AF1DE4270E00FC4F63 /* Settings.m in Sources */,
 				143E381D1D3F1809004B0A4D /* AppDelegate.swift in Sources */,
 				143E381E1D3F1809004B0A4D /* RefreshDataModel.m in Sources */,
 				14815B291D4AF55A00922A62 /* BarrageSprite.m in Sources */,
@@ -2435,9 +2475,12 @@
 				143E38471D3F1809004B0A4D /* PlayerControlView.m in Sources */,
 				143E38481D3F1809004B0A4D /* PostComment.m in Sources */,
 				143E38491D3F1809004B0A4D /* SimpleVideoFormatParser.mm in Sources */,
+				149D53B01DE4270E00FC4F63 /* SmartBlockSettings.m in Sources */,
 				14BF317A1D77C9DE000EFF66 /* CellhighlightColorTableView.swift in Sources */,
+				149D53AD1DE4270E00FC4F63 /* KeywordBlockSettings.m in Sources */,
 				14389CA11D9CB4A100EAC29C /* CustomColorProgressIndicator.swift in Sources */,
 				1464019A1DACE04300305B12 /* indexSet+block.swift in Sources */,
+				149D53B11DE4270E00FC4F63 /* Tools.m in Sources */,
 				143E384A1D3F1809004B0A4D /* SubtitleProvider.m in Sources */,
 				143E384B1D3F1809004B0A4D /* SubtitleHelper.m in Sources */,
 				143E384C1D3F1809004B0A4D /* TimeSliderCell.m in Sources */,
@@ -2445,6 +2488,7 @@
 				143E384D1D3F1809004B0A4D /* SP_Local.m in Sources */,
 				143E384E1D3F1809004B0A4D /* VideoAddress.m in Sources */,
 				143E384F1D3F1809004B0A4D /* ApplyInfoViewController.swift in Sources */,
+				149D53AC1DE4270E00FC4F63 /* CommentBlockSettings.m in Sources */,
 				143E38501D3F1809004B0A4D /* VP_Local.m in Sources */,
 				143E38511D3F1809004B0A4D /* VideoProvider.m in Sources */,
 				14815B201D4AF55A00922A62 /* BarrageClock.m in Sources */,

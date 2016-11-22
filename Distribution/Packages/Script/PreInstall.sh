@@ -16,7 +16,7 @@ ImportSVN="$Distribution/ImportSVN"
 #重命名导入SVN
 versionNumber=$(/usr/libexec/PlistBuddy -c "Print CFBundleShortVersionString" "$INFOPLIST_FILE")
 buildNumber=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" "$INFOPLIST_FILE")
-BundleName=$(/usr/libexec/PlistBuddy -c "Print CFBundleName" "$INFOPLIST_FILE")
+BundleName=$(/usr/libexec/PlistBuddy -c "Print CFBundleExecutable" "$INFOPLIST_FILE")
 ProductName="$BundleName $versionNumber.${buildNumber}α"
 
 #上传时，先删除SVN目录
