@@ -30,7 +30,7 @@
 		</dict>
 	</array>
 	<key>CFBundleExecutable</key>
-	<string>PBBReader  for OS</string>
+	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIconFile</key>
 	<string></string>
 	<key>CFBundleIdentifier</key>
@@ -38,7 +38,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>PbbReader</string>
+	<string>PbbReader for OS</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
