@@ -216,7 +216,8 @@
 		14B9EE5F1D79744400EC8986 /* PBBReader-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14B9EE5E1D79744400EC8986 /* PBBReader-Info.plist */; };
 		14BF317A1D77C9DE000EFF66 /* CellhighlightColorTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BF31791D77C9DE000EFF66 /* CellhighlightColorTableView.swift */; };
 		14BF31811D780AB1000EFF66 /* CustomBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BF31801D780AB1000EFF66 /* CustomBox.swift */; };
-		14C9422A1DE59C420092E888 /* RequestAddLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C942271DE59C420092E888 /* RequestAddLog.m */; };
+		14C9423A1DE5D9A40092E888 /* RequestAddLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C942371DE5D9A40092E888 /* RequestAddLog.m */; };
+		14C9423B1DE5D9A40092E888 /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C942391DE5D9A40092E888 /* Test.m */; };
 		14C9B6A61D8E859800A0C6B9 /* FSCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C9B6A51D8E859800A0C6B9 /* FSCustomCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		14EA57EA1D7EBEAA0026602B /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EA57E91D7EBEA90026602B /* CustomView.swift */; };
 		84AEDA461DC5FF02001E8116 /* Toasty.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14A5058E1DAA2656008BF666 /* Toasty.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -830,9 +831,10 @@
 		14BF31791D77C9DE000EFF66 /* CellhighlightColorTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellhighlightColorTableView.swift; sourceTree = "<group>"; };
 		14BF31801D780AB1000EFF66 /* CustomBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBox.swift; sourceTree = "<group>"; };
 		14C75DCC1D6AE9C6009CBE09 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
-		14C942261DE59C420092E888 /* RequestAddLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RequestAddLog.h; path = "../../../../Desktop/iOS日志模块工具类/RequestAddLog.h"; sourceTree = "<group>"; };
-		14C942271DE59C420092E888 /* RequestAddLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RequestAddLog.m; path = "../../../../Desktop/iOS日志模块工具类/RequestAddLog.m"; sourceTree = "<group>"; };
-		14C9422C1DE5A3E80092E888 /* Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Test.m; path = "../../../../Desktop/iOS日志模块工具类/Test.m"; sourceTree = "<group>"; };
+		14C942361DE5D9A40092E888 /* RequestAddLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestAddLog.h; sourceTree = "<group>"; };
+		14C942371DE5D9A40092E888 /* RequestAddLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestAddLog.m; sourceTree = "<group>"; };
+		14C942381DE5D9A40092E888 /* Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
+		14C942391DE5D9A40092E888 /* Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
 		14C9B6A41D8E859800A0C6B9 /* FSCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCustomCell.h; sourceTree = "<group>"; };
 		14C9B6A51D8E859800A0C6B9 /* FSCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCustomCell.m; sourceTree = "<group>"; };
 		14E14B0D1DC0B34F00417640 /* Mac开发:发布证书合集.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mac开发:发布证书合集.p12"; sourceTree = "<group>"; };
@@ -1539,9 +1541,10 @@
 		14C942251DE59B9D0092E888 /* Log */ = {
 			isa = PBXGroup;
 			children = (
-				14C942261DE59C420092E888 /* RequestAddLog.h */,
-				14C942271DE59C420092E888 /* RequestAddLog.m */,
-				14C9422C1DE5A3E80092E888 /* Test.m */,
+				14C942361DE5D9A40092E888 /* RequestAddLog.h */,
+				14C942371DE5D9A40092E888 /* RequestAddLog.m */,
+				14C942381DE5D9A40092E888 /* Test.h */,
+				14C942391DE5D9A40092E888 /* Test.m */,
 			);
 			name = Log;
 			sourceTree = "<group>";
@@ -2454,7 +2457,7 @@
 				143E382C1D3F1809004B0A4D /* ActivationSuccessController.swift in Sources */,
 				143E382D1D3F1809004B0A4D /* SeriesModel.m in Sources */,
 				143E382E1D3F1809004B0A4D /* AdvertisingView.m in Sources */,
-				14C9422A1DE59C420092E888 /* RequestAddLog.m in Sources */,
+				14C9423A1DE5D9A40092E888 /* RequestAddLog.m in Sources */,
 				143E382F1D3F1809004B0A4D /* SM3.c in Sources */,
 				14815B2D1D4AF55A00922A62 /* BarrageWalkTextSprite.m in Sources */,
 				143E38301D3F1809004B0A4D /* LKDaoBase.m in Sources */,
@@ -2494,6 +2497,7 @@
 				149D53B01DE4270E00FC4F63 /* SmartBlockSettings.m in Sources */,
 				14BF317A1D77C9DE000EFF66 /* CellhighlightColorTableView.swift in Sources */,
 				149D53AD1DE4270E00FC4F63 /* KeywordBlockSettings.m in Sources */,
+				14C9423B1DE5D9A40092E888 /* Test.m in Sources */,
 				14389CA11D9CB4A100EAC29C /* CustomColorProgressIndicator.swift in Sources */,
 				1464019A1DACE04300305B12 /* indexSet+block.swift in Sources */,
 				149D53B11DE4270E00FC4F63 /* Tools.m in Sources */,
