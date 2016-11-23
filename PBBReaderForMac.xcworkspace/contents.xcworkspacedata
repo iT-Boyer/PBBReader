@@ -13,4 +13,7 @@
    <FileRef
       location = "group:PDFReader/PDFReader.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:PDFReader/PythonChecker/PythonChecker.xcodeproj">
+   </FileRef>
 </Workspace>

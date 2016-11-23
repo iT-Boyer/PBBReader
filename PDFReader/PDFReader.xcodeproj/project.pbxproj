@@ -71,6 +71,13 @@
 			remoteGlobalIDString = 14C2DB401DD42AEE00113C2F;
 			remoteInfo = PDFReader;
 		};
+		84B679151DE602DC00496634 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84B679111DE602DC00496634 /* PythonChecker.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 68E0477C14C61C940079F9E3;
+			remoteInfo = PythonChecker;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -172,6 +179,7 @@
 		14FAD6761DDEB20700591904 /* PDFReaderForOSX-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PDFReaderForOSX-Bridging-Header.h"; sourceTree = "<group>"; };
 		14FAD6771DDEB20800591904 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = osx/AppDelegate.swift; sourceTree = "<group>"; };
 		14FAD6791DDEB30D00591904 /* PDFView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PDFView.swift; path = osx/PDFView.swift; sourceTree = "<group>"; };
+		84B679111DE602DC00496634 /* PythonChecker.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PythonChecker.xcodeproj; path = PythonChecker/PythonChecker.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +234,7 @@
 		14C2DB381DD42AEE00113C2F = {
 			isa = PBXGroup;
 			children = (
+				84B679111DE602DC00496634 /* PythonChecker.xcodeproj */,
 				14C2DB431DD42AEF00113C2F /* PDFReader */,
 				14C2DB581DD42AF000113C2F /* PDFReaderTests */,
 				14C2DB631DD42AF000113C2F /* PDFReaderUITests */,
@@ -478,6 +487,14 @@
 			name = osx;
 			sourceTree = "<group>";
 		};
+		84B679121DE602DC00496634 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84B679161DE602DC00496634 /* PythonChecker */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -595,6 +612,12 @@
 			mainGroup = 14C2DB381DD42AEE00113C2F;
 			productRefGroup = 14C2DB421DD42AEE00113C2F /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 84B679121DE602DC00496634 /* Products */;
+					ProjectRef = 84B679111DE602DC00496634 /* PythonChecker.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				14C2DB401DD42AEE00113C2F /* PDFReader */,
@@ -604,6 +627,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		84B679161DE602DC00496634 /* PythonChecker */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = PythonChecker;
+			remoteRef = 84B679151DE602DC00496634 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		14C2DB3F1DD42AEE00113C2F /* Resources */ = {
