@@ -9,6 +9,7 @@ PODS:
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
+  - RNCryptor (5.0.1)
 
 DEPENDENCIES:
   - CocoaAsyncSocket
@@ -16,6 +17,7 @@ DEPENDENCIES:
   - EDStarRating
   - Fabric
   - FMDB
+  - RNCryptor (~> 5.0.1)
 
 SPEC CHECKSUMS:
   CocoaAsyncSocket: 3baeb1ddd969f81cf9fca81053ae49ef2d1cbbfa
@@ -23,7 +25,8 @@ SPEC CHECKSUMS:
   EDStarRating: a41a6440a945020745d0e9ff8ada7d1afa952114
   Fabric: 5755268d0171435ab167e3d0878a28a777deaf10
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  RNCryptor: 2e352a488779d1a9184ab629be22a7c5bc84acb5
 
-PODFILE CHECKSUM: c9f341f928ed2aff8a587a1ebae2416a50e9df33
+PODFILE CHECKSUM: af9c1080c7c15e7827e7fe044e13ad9c5105e70e
 
 COCOAPODS: 1.0.0

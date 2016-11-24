@@ -24,10 +24,14 @@ class PBBLogSDKTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        let url = "http://114.112.104.138:6001/HostMonitor/client/log/addLog"
+//        let url = "http://114.112.104.138:6001/HostMonitor/client/log/addLog"
+//        let model = PBBLogModel.init(.LogTypeFatal,
+//                                 APPName: .APPNameReader,
+//                                 description: "ddddd")
+        let url = "http://192.168.85.92:8099/HostMonitor/client/log/addLog"
         let model = PBBLogModel.init(.LogTypeFatal,
-                                 APPName: .APPNameReader,
-                                 description: "ddddd")
+                                     APPName: .APPNameReader,
+                                     description: "ddddd")
         let log = PBBLogAPI.shareInstance.upLoadLog(to: url, logModel: model)
     }
     

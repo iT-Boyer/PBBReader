@@ -7,11 +7,13 @@
 //
 
 #if os(OSX)
+#elseif os(iOS)
+    
+#endif
 import Cocoa
 import AppKit
-#elseif os(iOS)
+import RNCryptor
 
-#endif
 //枚举类
 public enum LogType:String
 {
@@ -53,6 +55,7 @@ public enum NetworkType:String
     case NetworkTypeWifi = "Wifi"
 }
 
+
 public class PBBLogModel: NSObject
 {
     var level = ""
@@ -65,22 +68,25 @@ public class PBBLogModel: NSObject
     var extension2 = ""
     var extension3 = ""
     
-    var application_name = ""
-    var account_name = ""
-    var account_password = ""
-
+    
+    fileprivate var sdk_version = "" //SDK版本
+    var system = ""
+    var imei = ""
+    var username = ""
+    var token = ""
     
     var login_type = ""
-    
+    var application_name = ""
+    var account_name = ""
+    var account_password = "80F008F8C906098FCE93A89B3DB2EF4E"
     var network_type:NetworkType!
-    var system:SystemType!
-    var imei = ""
+    
     fileprivate var op_version = ""   //操作系统版本
     fileprivate var equip_serial = "" //设备序列号
     fileprivate var equip_host = ""   //机主信息
     fileprivate var equip_model = ""  //设备型号
     fileprivate var device_info = ""  //设备参数
-    fileprivate var sdk_version = "" //SDK版本
+    
     
     /*
       public func EVLog<T>(object: T, filename: String = #file, line: Int = #line, funcname: String = #function) {    }
@@ -96,12 +102,24 @@ public class PBBLogModel: NSObject
     {
         //默认赋值
         self.level = level.rawValue
-        self.application_name = Bundle.main.object(forInfoDictionaryKey: "MakeInstallerName") as! String
+        self.application_name = APPName.rawValue //Bundle.main.object(forInfoDictionaryKey: "MakeInstallerName") as! String
 
         self.file_name = (filename as NSString).lastPathComponent
         self.lines = line
-        self.method_name = funcname
+        self.method_name = "login"//funcname
         self.desc = desc
+        
+        self.sdk_version = "10.1.1"
+        self.system = "iPhone" //SystemType.SystemTypeMac.rawValue
+        self.username = "pddd"
+        self.token = "ddfdfdfd"
+        
+        self.login_type = LoginType.LoginTypeAccount.rawValue
+        self.imei = "334532223554"
+        self.equip_host = "Amin's iPhone"
+        
+        self.account_password = PBBLogModel.aesEncryptPassword(password: self.account_password,
+                                                                secret: "80F008F8C906098FCE93A89B3DB2EF4E")
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/yyyy HH:mm:ss:SSS"
@@ -130,14 +148,20 @@ public class PBBLogModel: NSObject
         self.sdk_version = sdk_version!
     }
 
-    public func toData()->Data
+    public func toData()->Data?
     {
-        return try! JSONSerialization.data(withJSONObject: toDictionary(), options: .prettyPrinted)
+        var sendData:Data?
+        let targetDic = toDictionary()
+        if JSONSerialization.isValidJSONObject(targetDic)
+        {
+           sendData = try! JSONSerialization.data(withJSONObject: targetDic, options:.prettyPrinted)
+        }
+        return sendData
     }
     
     func toDictionary() -> Dictionary<String, Any>
     {
-        var targetDic:[String:Any?] = [:]
+        var targetDic:[String:Any] = [:]
         var propsCount:UInt32 = 0;
         let properties:UnsafeMutablePointer<objc_property_t?> = class_copyPropertyList(object_getClass(self), &propsCount)
         for i in 0..<propsCount {
@@ -145,21 +169,16 @@ public class PBBLogModel: NSObject
             let property:objc_property_t = properties[Int(i)]!
             //http://stackoverflow.com/questions/30895578/get-all-the-keys-for-a-class/30895965#30895965
             let propName =  NSString(cString: property_getName(property), encoding: String.Encoding.utf8.rawValue)
-            var value = self.value(forKey: propName as! String)
-            if value == nil
-            {
-                value = ""
-            }
-            else
+            if var value = self.value(forKey: propName as! String)
             {
                 value = getObjectInternal(value: value)
+                targetDic.updateValue(value, forKey: propName as! String)
             }
-            targetDic.updateValue(value, forKey: propName as! String)
         }
         return targetDic
     }
     
-    func getObjectInternal(value:Any?) -> Any?
+    func getObjectInternal(value:Any) -> Any
     {
         //
         if value is String || value is Int
@@ -170,6 +189,13 @@ public class PBBLogModel: NSObject
         return ""
     }
 
+    //aes加密
+    class func aesEncryptPassword(password:String,secret:String)->String
+    {
+        let data: Data = Data.init(base64Encoded: password, options: .ignoreUnknownCharacters)!
+        let ciphertext = RNCryptor.encrypt(data: data, withPassword: secret)
+        return String.init(data: ciphertext, encoding: .utf8)!
+    }
 }
 
 

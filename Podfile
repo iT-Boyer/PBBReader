@@ -9,8 +9,16 @@ target 'PBBReader' do
 
     pod 'Fabric'
     pod 'Crashlytics'
+
+    pod 'RNCryptor', '~> 5.0.1'  #https://github.com/RNCryptor/RNCryptor/releases/tag/RNCryptor-5.0.1
     
+    target 'PBBLogSDK' do
+        inherit! :search_paths
+        pod 'RNCryptor', '~> 5.0.1'
+    end
 end
+
+    
 #pod update 'Crashlytics' #单独更新某一个依赖
 
 #Found an unexpected Mach-O header code: 0x72613c21:http://stackoverflow.com/questions/33076819/found-an-unexpected-mach-o-header-code-0x72613c21-in-xcode-7
