@@ -1,5 +1,5 @@
 #ifdef __OBJC__
-#import <Cocoa/Cocoa.h>
+#import <UIKit/UIKit.h>
 #else
 #ifndef FOUNDATION_EXPORT
 #if defined(__cplusplus)
@@ -9,4 +9,9 @@
 #endif
 #endif
 #endif
+
+#import "RNCryptor.h"
+
+FOUNDATION_EXPORT double RNCryptorVersionNumber;
+FOUNDATION_EXPORT const unsigned char RNCryptorVersionString[];
 

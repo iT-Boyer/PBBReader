@@ -5,12 +5,16 @@
 //  Created by pengyucheng on 24/11/2016.
 //  Copyright © 2016 recomend. All rights reserved.
 //
-
+#if os(OSX)
+    import Cocoa
+    import AppKit
+#elseif os(iOS)
+    import UIKit
+#endif
 //let url = "http://114.112.104.138:6001/HostMonitor/client/log/addLog"
 let url = "http://192.168.85.92:8099/HostMonitor/client/log/addLog"
 class PBBLogClient
 {
-    
     //上传
     func upLoadLog(to URL:String = url,logData logModel:PBBLogModel)
     {
@@ -36,7 +40,7 @@ class PBBLogClient
                                                 NSLog("上传成功。\(dataFormatToString)。。\(error)")
                                                 if JSONSerialization.isValidJSONObject(receiveData)
                                                 {
-                                                    let data1 = try! JSONSerialization.data(withJSONObject: receiveData, options: .prettyPrinted)
+                                                    _ = try! JSONSerialization.data(withJSONObject: receiveData, options: .prettyPrinted)
                                                 }
                                             }
                                         })

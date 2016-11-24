@@ -9,7 +9,7 @@
 import Cocoa
 import Fabric
 import Crashlytics
-
+import PBBLogSDK
 //全局变量
  let KDataBasePath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
 
