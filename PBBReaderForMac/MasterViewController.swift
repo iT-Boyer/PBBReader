@@ -39,6 +39,7 @@ class MasterViewController: NSViewController,NSTableViewDelegate,NSTableViewData
         
     }
     
+    
     override func loadView() {
         //
         super.loadView()
@@ -62,9 +63,9 @@ class MasterViewController: NSViewController,NSTableViewDelegate,NSTableViewData
         return bugs.count
     }
 
-    func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
+    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         // Get a new ViewCell
-        let cellView = tableView.makeViewWithIdentifier((tableColumn?.identifier)!, owner: self) as! NSTableCellView
+        let cellView = tableView.make(withIdentifier: (tableColumn?.identifier)!, owner: self) as! NSTableCellView
         
         // Since this is a single-column table view, this would not be necessary.
         // But it's a good practice to do it in order by remember it when a table is multicolumn.
@@ -80,15 +81,15 @@ class MasterViewController: NSViewController,NSTableViewDelegate,NSTableViewData
     }
     
     //MARK: Delegate
-    func tableViewSelectionDidChange(notification: NSNotification) {
+    func tableViewSelectionDidChange(notification: Notification) {
         //
         if let bugDoc = selectedBugDoc(){
-            setDetailInfo(bugDoc)
+            setDetailInfo(bugDoc: bugDoc)
             // Enable/Disable buttons based on selection
-            ibAddBug.enabled = true
-            ibDeleteBug.enabled = true
-            ibChagePicture.enabled = true
-            bugTitleView.enabled = true
+            ibAddBug.isEnabled = true
+            ibDeleteBug.isEnabled = true
+            ibChagePicture.isEnabled = true
+            bugTitleView.isEnabled = true
         }
     }
     
@@ -140,10 +141,10 @@ class MasterViewController: NSViewController,NSTableViewDelegate,NSTableViewData
             selectedBug.data.title = bugTitleView.stringValue
             
             // 3. Update the cell
-            let index = (bugs as NSArray).indexOfObject(selectedBug)
+            let index = (bugs as NSArray).index(of: selectedBug)
             let indexSet = NSIndexSet.init(index: index)
             let columnIndexSet = NSIndexSet.init(index: 0)
-            bugsTableView.reloadDataForRowIndexes(indexSet, columnIndexes: columnIndexSet)
+            bugsTableView.reloadData(forRowIndexes: indexSet as IndexSet, columnIndexes: columnIndexSet as IndexSet)
         }
     }
     //MARK: add Button
@@ -156,10 +157,10 @@ class MasterViewController: NSViewController,NSTableViewDelegate,NSTableViewData
         bugs.append(bugDoc)
         let newRowIndex = bugs.count - 1
         // 3. Insert new row in the table view
-        bugsTableView.insertRowsAtIndexes(NSIndexSet.init(index: newRowIndex), withAnimation: .SlideRight)
+        bugsTableView.insertRows(at: NSIndexSet.init(index: newRowIndex) as IndexSet, withAnimation: .slideRight)
         
         // 4. Select the new bug and scroll to make sure it's visible
-        bugsTableView.selectRowIndexes(NSIndexSet.init(index: newRowIndex), byExtendingSelection: false)
+        bugsTableView.selectRowIndexes(NSIndexSet.init(index: newRowIndex) as IndexSet, byExtendingSelection: false)
         bugsTableView.scrollRowToVisible(newRowIndex)
     }
     //MARK: delete Button
@@ -176,10 +177,10 @@ class MasterViewController: NSViewController,NSTableViewDelegate,NSTableViewData
         }
         
         // 3. Remove the selected row from the table view.
-        bugsTableView.removeRowsAtIndexes(NSIndexSet.init(index: bugsTableView.selectedRow), withAnimation: .SlideRight)
+        bugsTableView.removeRows(at: NSIndexSet.init(index: bugsTableView.selectedRow) as IndexSet, withAnimation: .slideRight)
         
         // Clear detail info
-        setDetailInfo(nil)
+        setDetailInfo(bugDoc: nil)
         
     }
     
@@ -189,7 +190,7 @@ class MasterViewController: NSViewController,NSTableViewDelegate,NSTableViewData
         let pictureTaker = IKPictureTaker.pictureTaker()
         
         //launch the picture taker as a standalone window using this method
-        pictureTaker.beginPictureTakerSheetForWindow(self.view.window,
+        pictureTaker?.beginPictureTakerSheetForWindow(self.view.window,
                                                      withDelegate: self,
                                                      didEndSelector: #selector(MasterViewController.pictureTakerDidEnd(_:returnCode:contextInfo:)),
                                                      contextInfo: nil)
@@ -210,8 +211,8 @@ class MasterViewController: NSViewController,NSTableViewDelegate,NSTableViewData
             //更新cell缩略图
             if let selectedBug = selectedBugDoc(){
                 selectedBug.fullImage = image
-                selectedBug.thumbImage = image.imageByScalingAndCroppingForSize(CGSizeMake(44, 44))
-                let index = (bugs as NSArray).indexOfObject(selectedBug)
+                selectedBug.thumbImage = image.scalingAndCropping(for: CGSizeMake(44, 44))
+                let index = (bugs as NSArray).index(of: selectedBug)
                 let indexSet = NSIndexSet.init(index: index)
                 let columset = NSIndexSet.init(index: 0)
                 bugsTableView.reloadDataForRowIndexes(indexSet, columnIndexes: columset)

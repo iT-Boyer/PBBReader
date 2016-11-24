@@ -174,6 +174,10 @@
 		143EA9671D50368700457717 /* BindingPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B0CF731D34C715004D22B5 /* BindingPhoneViewController.swift */; };
 		1447A22D1D87A2D600057039 /* CustomRotateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1447A22C1D87A2D500057039 /* CustomRotateButton.swift */; };
 		1464019A1DACE04300305B12 /* indexSet+block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146401991DACE04300305B12 /* indexSet+block.swift */; };
+		1465589A1DE6A31E00BDB021 /* PBBLogAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A524A11DE6732600E4E0B9 /* PBBLogAPI.swift */; };
+		1465589B1DE6A32000BDB021 /* PBBLogClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148B6D621DE68DA9005B5DFB /* PBBLogClient.swift */; };
+		1465589C1DE6A32400BDB021 /* PBBLogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D6D2661DE5E03D00AC183D /* PBBLogModel.swift */; };
+		146558A01DE6A89E00BDB021 /* Viewcccc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1465589F1DE6A89E00BDB021 /* Viewcccc.swift */; };
 		146872391D9A596200460B8E /* PBBReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146872381D9A596200460B8E /* PBBReaderTests.swift */; };
 		146C08D11D7FF56A00AB3153 /* CustomTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146C08D01D7FF56A00AB3153 /* CustomTableCellView.swift */; };
 		146CF12D1D88F97D0021C6B4 /* water.xml in Resources */ = {isa = PBXBuildFile; fileRef = 14815B521D4B131A00922A62 /* water.xml */; };
@@ -203,6 +207,12 @@
 		14815B4F1D4B0D0600922A62 /* BilibiliSocketClient.mm in Sources */ = {isa = PBXBuildFile; fileRef = 14815B4A1D4B0D0600922A62 /* BilibiliSocketClient.mm */; };
 		14815B501D4B0D0600922A62 /* LiveChat.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B4C1D4B0D0600922A62 /* LiveChat.m */; };
 		14815B511D4B0D0600922A62 /* Socket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14815B4D1D4B0D0600922A62 /* Socket.cpp */; };
+		148B6D981DE69167005B5DFB /* PBBLogSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 148B6D8F1DE69166005B5DFB /* PBBLogSDK.framework */; };
+		148B6D9F1DE69167005B5DFB /* PBBLogSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148B6D9E1DE69167005B5DFB /* PBBLogSDKTests.swift */; };
+		148B6DA11DE69167005B5DFB /* PBBLogSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 148B6D911DE69166005B5DFB /* PBBLogSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		148B6DAC1DE69181005B5DFB /* PBBLogAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A524A11DE6732600E4E0B9 /* PBBLogAPI.swift */; };
+		148B6DAD1DE69184005B5DFB /* PBBLogClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148B6D621DE68DA9005B5DFB /* PBBLogClient.swift */; };
+		148B6DAE1DE69189005B5DFB /* PBBLogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D6D2661DE5E03D00AC183D /* PBBLogModel.swift */; };
 		149D53AC1DE4270E00FC4F63 /* CommentBlockSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 149D53A11DE4270E00FC4F63 /* CommentBlockSettings.m */; };
 		149D53AD1DE4270E00FC4F63 /* KeywordBlockSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 149D53A31DE4270E00FC4F63 /* KeywordBlockSettings.m */; };
 		149D53AE1DE4270E00FC4F63 /* MPVSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 149D53A51DE4270E00FC4F63 /* MPVSettings.m */; };
@@ -216,7 +226,6 @@
 		14B9EE5F1D79744400EC8986 /* PBBReader-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14B9EE5E1D79744400EC8986 /* PBBReader-Info.plist */; };
 		14BF317A1D77C9DE000EFF66 /* CellhighlightColorTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BF31791D77C9DE000EFF66 /* CellhighlightColorTableView.swift */; };
 		14BF31811D780AB1000EFF66 /* CustomBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BF31801D780AB1000EFF66 /* CustomBox.swift */; };
-		14C9423A1DE5D9A40092E888 /* RequestAddLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C942371DE5D9A40092E888 /* RequestAddLog.m */; };
 		14C9B6A61D8E859800A0C6B9 /* FSCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C9B6A51D8E859800A0C6B9 /* FSCustomCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		14EA57EA1D7EBEAA0026602B /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EA57E91D7EBEA90026602B /* CustomView.swift */; };
 		84AEDA461DC5FF02001E8116 /* Toasty.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14A5058E1DAA2656008BF666 /* Toasty.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -359,7 +368,6 @@
 		84AEDAD71DC5FF02001E8116 /* AdvertisingViewOSX.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14430C1D1D01214000A5394D /* AdvertisingViewOSX.xib */; };
 		84AEDAD81DC5FF02001E8116 /* b_play.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F741D2A187300838B88 /* b_play.pdf */; };
 		84AEDAD91DC5FF02001E8116 /* webpage.png in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F901D2A187300838B88 /* webpage.png */; };
-		84AEDADA1DC5FF02001E8116 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1437DD711CF2A75F001BD2D2 /* Main.storyboard */; };
 		84AEDADB1DC5FF02001E8116 /* reloadp.png in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F8D1D2A187300838B88 /* reloadp.png */; };
 		84AEDADC1DC5FF02001E8116 /* advitising.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 148AB47F1CFFD78600CAF9BA /* advitising.jpg */; };
 		84AEDADD1DC5FF02001E8116 /* secondary_category.txt in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE0E1D09367800CE84F4 /* secondary_category.txt */; };
@@ -405,9 +413,6 @@
 		84AEDB081DC5FF02001E8116 /* libswscale.4.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E3C1D2A187200838B88 /* libswscale.4.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		84AEDB091DC5FF02001E8116 /* libz.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E3D1D2A187200838B88 /* libz.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		84CD4F211DC7901900EE0BEB /* Fastfile_Fabric in Resources */ = {isa = PBXBuildFile; fileRef = 84CD4F201DC7901900EE0BEB /* Fastfile_Fabric */; };
-		84D6D2671DE5E03D00AC183D /* PBBLogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D6D2661DE5E03D00AC183D /* PBBLogModel.swift */; };
-		84D6D26D1DE5FE5D00AC183D /* Capapbilities.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84D6D26C1DE5FE5D00AC183D /* Capapbilities.mm */; };
-		84D6D2701DE6005900AC183D /* main_mm.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84D6D26F1DE6005900AC183D /* main_mm.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -419,6 +424,20 @@
 			remoteInfo = PBBReader;
 		};
 		146C1D181DDC61D400041D59 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1437DD601CF2A75E001BD2D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 143E37F71D3F1809004B0A4D;
+			remoteInfo = PBBReader;
+		};
+		148B6D991DE69167005B5DFB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1437DD601CF2A75E001BD2D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 148B6D8E1DE69166005B5DFB;
+			remoteInfo = PBBLogSDK;
+		};
+		148B6D9B1DE69167005B5DFB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1437DD601CF2A75E001BD2D2 /* Project object */;
 			proxyType = 1;
@@ -532,6 +551,7 @@
 		1447A22C1D87A2D500057039 /* CustomRotateButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomRotateButton.swift; sourceTree = "<group>"; };
 		146401991DACE04300305B12 /* indexSet+block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "indexSet+block.swift"; sourceTree = "<group>"; };
 		14642DBD1DB4C251004D9E9F /* PBBReader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PBBReader.entitlements; sourceTree = "<group>"; };
+		1465589F1DE6A89E00BDB021 /* Viewcccc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Viewcccc.swift; sourceTree = "<group>"; };
 		146872361D9A596100460B8E /* PBBReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PBBReaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		146872381D9A596200460B8E /* PBBReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBBReaderTests.swift; sourceTree = "<group>"; };
 		1468723A1D9A596200460B8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -611,6 +631,13 @@
 		148AB47D1CFFD78600CAF9BA /* AdvertisingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvertisingView.h; sourceTree = "<group>"; };
 		148AB47E1CFFD78600CAF9BA /* AdvertisingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvertisingView.m; sourceTree = "<group>"; };
 		148AB47F1CFFD78600CAF9BA /* advitising.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = advitising.jpg; sourceTree = "<group>"; };
+		148B6D621DE68DA9005B5DFB /* PBBLogClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PBBLogClient.swift; path = PBBLog/PBBLogClient.swift; sourceTree = "<group>"; };
+		148B6D8F1DE69166005B5DFB /* PBBLogSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PBBLogSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		148B6D911DE69166005B5DFB /* PBBLogSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PBBLogSDK.h; sourceTree = "<group>"; };
+		148B6D921DE69166005B5DFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		148B6D971DE69166005B5DFB /* PBBLogSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PBBLogSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		148B6D9E1DE69167005B5DFB /* PBBLogSDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBBLogSDKTests.swift; sourceTree = "<group>"; };
+		148B6DA01DE69167005B5DFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1494D6081D36305900842CD1 /* ApplyInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyInfoViewController.swift; sourceTree = "<group>"; };
 		149D53A01DE4270E00FC4F63 /* CommentBlockSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentBlockSettings.h; sourceTree = "<group>"; };
 		149D53A11DE4270E00FC4F63 /* CommentBlockSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentBlockSettings.m; sourceTree = "<group>"; };
@@ -628,6 +655,7 @@
 		14A505901DAA2656008BF666 /* Toasty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Toasty.h; sourceTree = "<group>"; };
 		14A505921DAA2656008BF666 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14A5059B1DAA269C008BF666 /* Toasty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toasty.swift; sourceTree = "<group>"; };
+		14A524A11DE6732600E4E0B9 /* PBBLogAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBBLogAPI.swift; sourceTree = "<group>"; };
 		14AA3E0F1D2A187200838B88 /* client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = client.h; sourceTree = "<group>"; };
 		14AA3E351D2A187200838B88 /* libavcodec.57.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libavcodec.57.dylib; sourceTree = "<group>"; };
 		14AA3E361D2A187200838B88 /* libavdevice.57.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libavdevice.57.dylib; sourceTree = "<group>"; };
@@ -905,6 +933,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		148B6D8B1DE69166005B5DFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		148B6D941DE69166005B5DFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				148B6D981DE69167005B5DFB /* PBBLogSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		14A5058A1DAA2656008BF666 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -946,6 +989,8 @@
 				1437DD6A1CF2A75F001BD2D2 /* PBBReaderForMac */,
 				146872371D9A596200460B8E /* PBBReaderTests */,
 				14A5058F1DAA2656008BF666 /* Toasty */,
+				148B6D901DE69166005B5DFB /* PBBLogSDK */,
+				148B6D9D1DE69167005B5DFB /* PBBLogSDKTests */,
 				1437DD691CF2A75F001BD2D2 /* Products */,
 				E015C5766FC51DAFA87206A5 /* Pods */,
 				41FC969B23ABC5E9052852E0 /* Frameworks */,
@@ -959,6 +1004,8 @@
 				146872361D9A596100460B8E /* PBBReaderTests.xctest */,
 				14A5058E1DAA2656008BF666 /* Toasty.framework */,
 				84AEDB141DC5FF02001E8116 /* PBBReaderForOSXRelese.app */,
+				148B6D8F1DE69166005B5DFB /* PBBLogSDK.framework */,
+				148B6D971DE69166005B5DFB /* PBBLogSDKTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -987,6 +1034,7 @@
 				14815B521D4B131A00922A62 /* water.xml */,
 				14B25FB61CFD824A001BCE84 /* PBB-Prefix.pch */,
 				147A617B1CF6A01900390F83 /* PBBReaderForMac-Bridging-Header.h */,
+				1465589F1DE6A89E00BDB021 /* Viewcccc.swift */,
 			);
 			path = PBBReaderForMac;
 			sourceTree = "<group>";
@@ -1141,6 +1189,33 @@
 				14430C1D1D01214000A5394D /* AdvertisingViewOSX.xib */,
 			);
 			path = Advertising;
+			sourceTree = "<group>";
+		};
+		148B6D641DE68DF8005B5DFB /* LogAPI */ = {
+			isa = PBXGroup;
+			children = (
+				14A524A11DE6732600E4E0B9 /* PBBLogAPI.swift */,
+				148B6D621DE68DA9005B5DFB /* PBBLogClient.swift */,
+			);
+			name = LogAPI;
+			sourceTree = "<group>";
+		};
+		148B6D901DE69166005B5DFB /* PBBLogSDK */ = {
+			isa = PBXGroup;
+			children = (
+				148B6D911DE69166005B5DFB /* PBBLogSDK.h */,
+				148B6D921DE69166005B5DFB /* Info.plist */,
+			);
+			path = PBBLogSDK;
+			sourceTree = "<group>";
+		};
+		148B6D9D1DE69167005B5DFB /* PBBLogSDKTests */ = {
+			isa = PBXGroup;
+			children = (
+				148B6D9E1DE69167005B5DFB /* PBBLogSDKTests.swift */,
+				148B6DA01DE69167005B5DFB /* Info.plist */,
+			);
+			path = PBBLogSDKTests;
 			sourceTree = "<group>";
 		};
 		149D539F1DE4270E00FC4F63 /* Settings */ = {
@@ -1359,6 +1434,7 @@
 		14B25F771CFD7823001BCE84 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				148B6D641DE68DF8005B5DFB /* LogAPI */,
 				14B25F781CFD7823001BCE84 /* RemoteSocket */,
 				14B25FC51CFD844E001BCE84 /* sqlite */,
 			);
@@ -1714,6 +1790,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		148B6D8C1DE69166005B5DFB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				148B6DA11DE69167005B5DFB /* PBBLogSDK.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		14A5058B1DAA2656008BF666 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -1772,6 +1856,43 @@
 			name = PBBReaderTests;
 			productName = PBBReaderTests;
 			productReference = 146872361D9A596100460B8E /* PBBReaderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		148B6D8E1DE69166005B5DFB /* PBBLogSDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 148B6DA61DE69167005B5DFB /* Build configuration list for PBXNativeTarget "PBBLogSDK" */;
+			buildPhases = (
+				148B6D8A1DE69166005B5DFB /* Sources */,
+				148B6D8B1DE69166005B5DFB /* Frameworks */,
+				148B6D8C1DE69166005B5DFB /* Headers */,
+				148B6D8D1DE69166005B5DFB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PBBLogSDK;
+			productName = PBBLogSDK;
+			productReference = 148B6D8F1DE69166005B5DFB /* PBBLogSDK.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		148B6D961DE69166005B5DFB /* PBBLogSDKTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 148B6DA91DE69167005B5DFB /* Build configuration list for PBXNativeTarget "PBBLogSDKTests" */;
+			buildPhases = (
+				148B6D931DE69166005B5DFB /* Sources */,
+				148B6D941DE69166005B5DFB /* Frameworks */,
+				148B6D951DE69166005B5DFB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				148B6D9A1DE69167005B5DFB /* PBXTargetDependency */,
+				148B6D9C1DE69167005B5DFB /* PBXTargetDependency */,
+			);
+			name = PBBLogSDKTests;
+			productName = PBBLogSDKTests;
+			productReference = 148B6D971DE69166005B5DFB /* PBBLogSDKTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		14A5058D1DAA2656008BF666 /* Toasty */ = {
@@ -1854,6 +1975,16 @@
 						DevelopmentTeam = FA78T6VRG8;
 						ProvisioningStyle = Automatic;
 					};
+					148B6D8E1DE69166005B5DFB = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
+					148B6D961DE69166005B5DFB = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = FA78T6VRG8;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 143E37F71D3F1809004B0A4D;
+					};
 					14A5058D1DAA2656008BF666 = {
 						CreatedOnToolsVersion = 7.3.1;
 						LastSwiftMigration = 0800;
@@ -1881,6 +2012,8 @@
 				14A5058D1DAA2656008BF666 /* Toasty */,
 				84AEDA3F1DC5FF02001E8116 /* PBBReaderForOSXRelese */,
 				146C1CF11DD984DC00041D59 /* MakeInstaller */,
+				148B6D8E1DE69166005B5DFB /* PBBLogSDK */,
+				148B6D961DE69166005B5DFB /* PBBLogSDKTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1956,6 +2089,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		148B6D8D1DE69166005B5DFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		148B6D951DE69166005B5DFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		14A5058C1DAA2656008BF666 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1986,7 +2133,6 @@
 				84AEDAD71DC5FF02001E8116 /* AdvertisingViewOSX.xib in Resources */,
 				84AEDAD81DC5FF02001E8116 /* b_play.pdf in Resources */,
 				84AEDAD91DC5FF02001E8116 /* webpage.png in Resources */,
-				84AEDADA1DC5FF02001E8116 /* Main.storyboard in Resources */,
 				84AEDADB1DC5FF02001E8116 /* reloadp.png in Resources */,
 				84AEDADC1DC5FF02001E8116 /* advitising.jpg in Resources */,
 				84AEDADD1DC5FF02001E8116 /* secondary_category.txt in Resources */,
@@ -2403,7 +2549,7 @@
 				143E37FD1D3F1809004B0A4D /* SecretDao.m in Sources */,
 				14815B2B1D4AF55A00922A62 /* BarrageWalkImageSprite.m in Sources */,
 				143E37FE1D3F1809004B0A4D /* NSImage+Extras.m in Sources */,
-				84D6D2671DE5E03D00AC183D /* PBBLogModel.swift in Sources */,
+				1465589B1DE6A32000BDB021 /* PBBLogClient.swift in Sources */,
 				143E38001D3F1809004B0A4D /* userDao.m in Sources */,
 				14815B311D4AF55A00922A62 /* NSView+UIView.m in Sources */,
 				143E38011D3F1809004B0A4D /* BaseDao.m in Sources */,
@@ -2415,9 +2561,11 @@
 				149D53AE1DE4270E00FC4F63 /* MPVSettings.m in Sources */,
 				14815B281D4AF55A00922A62 /* BarrageFloatTextSprite.m in Sources */,
 				1422A89E1D757FD40057E9D4 /* CustomWindowController.swift in Sources */,
+				146558A01DE6A89E00BDB021 /* Viewcccc.swift in Sources */,
 				143E38071D3F1809004B0A4D /* SendFileManager.m in Sources */,
 				14BF31811D780AB1000EFF66 /* CustomBox.swift in Sources */,
 				143E38081D3F1809004B0A4D /* VerificationCodeModel.m in Sources */,
+				1465589A1DE6A31E00BDB021 /* PBBLogAPI.swift in Sources */,
 				143E38091D3F1809004B0A4D /* DB.m in Sources */,
 				14815B241D4AF55A00922A62 /* BarrageSpriteFactory.m in Sources */,
 				143E380A1D3F1809004B0A4D /* ArticleDao.m in Sources */,
@@ -2470,7 +2618,6 @@
 				143E382C1D3F1809004B0A4D /* ActivationSuccessController.swift in Sources */,
 				143E382D1D3F1809004B0A4D /* SeriesModel.m in Sources */,
 				143E382E1D3F1809004B0A4D /* AdvertisingView.m in Sources */,
-				14C9423A1DE5D9A40092E888 /* RequestAddLog.m in Sources */,
 				143E382F1D3F1809004B0A4D /* SM3.c in Sources */,
 				14815B2D1D4AF55A00922A62 /* BarrageWalkTextSprite.m in Sources */,
 				143E38301D3F1809004B0A4D /* LKDaoBase.m in Sources */,
@@ -2483,7 +2630,6 @@
 				143E38351D3F1809004B0A4D /* AdvertisingImgCache.m in Sources */,
 				143E38361D3F1809004B0A4D /* ReceiveViewController.swift in Sources */,
 				143E38381D3F1809004B0A4D /* NSDate+String.m in Sources */,
-				84D6D26D1DE5FE5D00AC183D /* Capapbilities.mm in Sources */,
 				143E38391D3F1809004B0A4D /* BGHUDSliderCell.m in Sources */,
 				143E383A1D3F1809004B0A4D /* BGThemeManager.m in Sources */,
 				1447A22D1D87A2D600057039 /* CustomRotateButton.swift in Sources */,
@@ -2513,6 +2659,7 @@
 				149D53AD1DE4270E00FC4F63 /* KeywordBlockSettings.m in Sources */,
 				14389CA11D9CB4A100EAC29C /* CustomColorProgressIndicator.swift in Sources */,
 				1464019A1DACE04300305B12 /* indexSet+block.swift in Sources */,
+				1465589C1DE6A32400BDB021 /* PBBLogModel.swift in Sources */,
 				149D53B11DE4270E00FC4F63 /* Tools.m in Sources */,
 				143E384A1D3F1809004B0A4D /* SubtitleProvider.m in Sources */,
 				143E384B1D3F1809004B0A4D /* SubtitleHelper.m in Sources */,
@@ -2523,7 +2670,6 @@
 				143E384F1D3F1809004B0A4D /* ApplyInfoViewController.swift in Sources */,
 				149D53AC1DE4270E00FC4F63 /* CommentBlockSettings.m in Sources */,
 				143E38501D3F1809004B0A4D /* VP_Local.m in Sources */,
-				84D6D2701DE6005900AC183D /* main_mm.mm in Sources */,
 				143E38511D3F1809004B0A4D /* VideoProvider.m in Sources */,
 				14815B201D4AF55A00922A62 /* BarrageClock.m in Sources */,
 			);
@@ -2534,6 +2680,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				146872391D9A596200460B8E /* PBBReaderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		148B6D8A1DE69166005B5DFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				148B6DAD1DE69184005B5DFB /* PBBLogClient.swift in Sources */,
+				148B6DAC1DE69181005B5DFB /* PBBLogAPI.swift in Sources */,
+				148B6DAE1DE69189005B5DFB /* PBBLogModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		148B6D931DE69166005B5DFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				148B6D9F1DE69167005B5DFB /* PBBLogSDKTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2682,6 +2846,16 @@
 			target = 143E37F71D3F1809004B0A4D /* PBBReader */;
 			targetProxy = 146C1D181DDC61D400041D59 /* PBXContainerItemProxy */;
 		};
+		148B6D9A1DE69167005B5DFB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 148B6D8E1DE69166005B5DFB /* PBBLogSDK */;
+			targetProxy = 148B6D991DE69167005B5DFB /* PBXContainerItemProxy */;
+		};
+		148B6D9C1DE69167005B5DFB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 143E37F71D3F1809004B0A4D /* PBBReader */;
+			targetProxy = 148B6D9B1DE69167005B5DFB /* PBXContainerItemProxy */;
+		};
 		14A505941DAA2656008BF666 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 14A5058D1DAA2656008BF666 /* Toasty */;
@@ -2793,6 +2967,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1C40DC9F339715B6A2E7A3F6 /* Pods-PBBReader.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -2815,7 +2990,7 @@
 				);
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/PBBReaderForMac/bilibili/libmpv";
 				INFOPLIST_FILE = "PBBReaderForMac/PBBReader-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) ";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) '@executable_path/../Frameworks' '@loader_path/Frameworks'";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PBBReaderForMac/bilibili/libmpv",
@@ -2857,6 +3032,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E8D9B98EF7820D3CB0B60E24 /* Pods-PBBReader.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -2880,7 +3056,7 @@
 				);
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/PBBReaderForMac/bilibili/libmpv";
 				INFOPLIST_FILE = "PBBReaderForMac/PBBReader-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) ";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) '@executable_path/../Frameworks' '@loader_path/Frameworks'";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PBBReaderForMac/bilibili/libmpv",
@@ -2966,6 +3142,112 @@
 				DEVELOPMENT_TEAM = FA78T6VRG8;
 				INFOPLIST_FILE = "PBBReaderForMac/PBBReader-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		148B6DA71DE69167005B5DFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application: Beijing PYC Software Co., Ltd. (FA78T6VRG8)";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = PBBLogSDK/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = pyc.com.cn.PBBLogSDK;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		148B6DA81DE69167005B5DFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application: Beijing PYC Software Co., Ltd. (FA78T6VRG8)";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = PBBLogSDK/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = pyc.com.cn.PBBLogSDK;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		148B6DAA1DE69167005B5DFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = FA78T6VRG8;
+				INFOPLIST_FILE = PBBLogSDKTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = pyc.com.cn.PBBLogSDKTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PBBReader.app/Contents/MacOS/PBBReader";
+			};
+			name = Debug;
+		};
+		148B6DAB1DE69167005B5DFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = FA78T6VRG8;
+				INFOPLIST_FILE = PBBLogSDKTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = pyc.com.cn.PBBLogSDKTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PBBReader.app/Contents/MacOS/PBBReader";
 			};
 			name = Release;
 		};
@@ -3184,6 +3466,24 @@
 			buildConfigurations = (
 				146C1CF21DD984DD00041D59 /* Debug */,
 				146C1CF31DD984DD00041D59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		148B6DA61DE69167005B5DFB /* Build configuration list for PBXNativeTarget "PBBLogSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				148B6DA71DE69167005B5DFB /* Debug */,
+				148B6DA81DE69167005B5DFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		148B6DA91DE69167005B5DFB /* Build configuration list for PBXNativeTarget "PBBLogSDKTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				148B6DAA1DE69167005B5DFB /* Debug */,
+				148B6DAB1DE69167005B5DFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

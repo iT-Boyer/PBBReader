@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>9</integer>
 		</dict>
+		<key>PBBLogSDK.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>13</integer>
+		</dict>
 		<key>PBBReader.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -27,7 +32,7 @@
 		<key>Toasty.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>4</integer>
+			<integer>14</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -58,6 +63,26 @@
 			<true/>
 		</dict>
 		<key>146C1CF11DD984DC00041D59</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>148B6D691DE68F94005B5DFB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>148B6D711DE68F95005B5DFB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>148B6D8E1DE69166005B5DFB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>148B6D961DE69166005B5DFB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
