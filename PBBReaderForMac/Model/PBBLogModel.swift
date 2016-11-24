@@ -196,6 +196,12 @@ public class PBBLogModel: NSObject
         let ciphertext = RNCryptor.encrypt(data: data, withPassword: secret)
         return String.init(data: ciphertext, encoding: .utf8)!
     }
+    
+    //直接上传
+    public func sendTo(server serverUrl:String = url)
+    {
+        PBBLogClient().upLoadLog(to: serverUrl,logData: self)
+    }
 }
 
 

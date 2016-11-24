@@ -41,6 +41,8 @@ class AppDelegate: NSObject, NSApplicationDelegate{
                 alert.messageText = UpdateContent as! String
                 if alert.runModal() == NSAlertFirstButtonReturn {
                     //打开safari下载安装包
+                    PBBLogModel(.LogTypeInfo, APPName: .APPNameReaderMac, description: "用户下载包+1").sendTo()
+                    
                     NSWorkspace.shared().open(URL.init(string: InstallerPackage as! String)!)
                     //版本升级过程中，更新数据库
 //                    ReceiveFileDao.sharedReceiveFileDao().updateTable()
