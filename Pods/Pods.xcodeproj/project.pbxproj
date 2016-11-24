@@ -94,6 +94,7 @@
 		0E40178A65A052A959F01BD8B8C25985 /* EDStarRating-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EDStarRating-prefix.pch"; sourceTree = "<group>"; };
 		0FC7720C2B46A5D4214B0F15DB2AC240 /* RNCryptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RNCryptor.swift; sourceTree = "<group>"; };
 		11A6C20387999A6A1BDE41F5E9640253 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14DEDB2B1DE6FF2700011415 /* project.pbxproj */ = {isa = PBXFileReference; lastKnownFileType = text.pbxproject; name = project.pbxproj; path = ../PBBReaderForMac.xcodeproj/project.pbxproj; sourceTree = "<group>"; };
 		1D83AA663CD3BCEB30A5EA88EBF8CBAC /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		2196F7B3F75A21489B9677D9FF4C883B /* Pods-PBBReader-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PBBReader-dummy.m"; sourceTree = "<group>"; };
 		23A631C26FA3686AAF78A3EACE11D64F /* Crashlytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Crashlytics.h; path = OSX/Crashlytics.framework/Versions/A/Headers/Crashlytics.h; sourceTree = "<group>"; };
@@ -362,6 +363,7 @@
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
+				14DEDB2B1DE6FF2700011415 /* project.pbxproj */,
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				CD75D5B60FCA72FBF7F9C770460B2C26 /* Frameworks */,
 				DFE7AED2F27A4929D4D5985932F43250 /* Pods */,
