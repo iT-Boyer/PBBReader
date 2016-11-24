@@ -16,6 +16,11 @@ target 'PBBReader' do
         inherit! :search_paths
         pod 'RNCryptor', '~> 5.0.1'
     end
+    target 'PBBLogSDKForiOS' do
+        platform :ios, '10.0'
+        use_frameworks!
+        pod 'RNCryptor', '~> 5.0.1'
+    end
 end
 
     

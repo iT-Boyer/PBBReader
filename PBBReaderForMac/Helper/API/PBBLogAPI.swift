@@ -10,7 +10,11 @@
 //#elseif os(iOS)
 // import Cocoa
 //#endif
-
+#if os(OSX)
+    import AppKit
+#elseif os(iOS)
+    import UIKit
+#endif
 
 public class PBBLogAPI: NSObject
 {

@@ -8,6 +8,7 @@
 
 import Cocoa
 import AppKit
+import PBBLogSDK
 
 class Viewcccc: NSViewController {
 

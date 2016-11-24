@@ -7,12 +7,15 @@
 //
 
 #if os(OSX)
+    import Cocoa
+    import AppKit
+    import RNCryptor
 #elseif os(iOS)
-    
+    import UIKit
+    import RNCryptor
 #endif
-import Cocoa
-import AppKit
-import RNCryptor
+
+
 
 //枚举类
 public enum LogType:String
@@ -131,9 +134,16 @@ public class PBBLogModel: NSObject
 
         self.content = "\(executionTime) \(processName))[\(processIdentifier):\(threadId)] \(self.file_name)(\(line)) \(funcname):\r\t\(desc)\n"
     }
+    public func indit(level:LogType, APPName:APPName, description desc:String)
+    {
+        //
+        
+        
+    }
+   
     
     ///手动设置设备信息
-    func setDeviceForiOS(op_version:String?,
+    public func setDeviceForiOS(op_version:String?,
                          equip_serial:String?,
                          equip_host:String?,
                          equip_model:String?,
@@ -148,7 +158,7 @@ public class PBBLogModel: NSObject
         self.sdk_version = sdk_version!
     }
 
-    public func toData()->Data?
+    func toData()->Data?
     {
         var sendData:Data?
         let targetDic = toDictionary()
