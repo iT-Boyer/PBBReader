@@ -217,7 +217,6 @@
 		14BF317A1D77C9DE000EFF66 /* CellhighlightColorTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BF31791D77C9DE000EFF66 /* CellhighlightColorTableView.swift */; };
 		14BF31811D780AB1000EFF66 /* CustomBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BF31801D780AB1000EFF66 /* CustomBox.swift */; };
 		14C9423A1DE5D9A40092E888 /* RequestAddLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C942371DE5D9A40092E888 /* RequestAddLog.m */; };
-		14C9423B1DE5D9A40092E888 /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C942391DE5D9A40092E888 /* Test.m */; };
 		14C9B6A61D8E859800A0C6B9 /* FSCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C9B6A51D8E859800A0C6B9 /* FSCustomCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		14EA57EA1D7EBEAA0026602B /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EA57E91D7EBEA90026602B /* CustomView.swift */; };
 		84AEDA461DC5FF02001E8116 /* Toasty.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14A5058E1DAA2656008BF666 /* Toasty.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -406,6 +405,9 @@
 		84AEDB081DC5FF02001E8116 /* libswscale.4.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E3C1D2A187200838B88 /* libswscale.4.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		84AEDB091DC5FF02001E8116 /* libz.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E3D1D2A187200838B88 /* libz.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		84CD4F211DC7901900EE0BEB /* Fastfile_Fabric in Resources */ = {isa = PBXBuildFile; fileRef = 84CD4F201DC7901900EE0BEB /* Fastfile_Fabric */; };
+		84D6D2671DE5E03D00AC183D /* PBBLogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D6D2661DE5E03D00AC183D /* PBBLogModel.swift */; };
+		84D6D26D1DE5FE5D00AC183D /* Capapbilities.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84D6D26C1DE5FE5D00AC183D /* Capapbilities.mm */; };
+		84D6D2701DE6005900AC183D /* main_mm.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84D6D26F1DE6005900AC183D /* main_mm.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -875,6 +877,11 @@
 		84CB248E1D0349AB0088112B /* FMResultSet_备份.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FMResultSet_备份.h"; sourceTree = "<group>"; };
 		84CB248F1D0349AB0088112B /* FMResultSet_备份.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FMResultSet_备份.m"; sourceTree = "<group>"; };
 		84CD4F201DC7901900EE0BEB /* Fastfile_Fabric */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = Fastfile_Fabric; sourceTree = "<group>"; };
+		84D6D2651DE5DBBD00AC183D /* PBBReaderTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "PBBReaderTests-Bridging-Header.h"; path = "PBBReaderForMac/PBBReaderTests-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		84D6D2661DE5E03D00AC183D /* PBBLogModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PBBLogModel.swift; path = PBBReaderForMac/Model/PBBLogModel.swift; sourceTree = SOURCE_ROOT; };
+		84D6D26B1DE5FE5D00AC183D /* Capapbilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Capapbilities.h; sourceTree = "<group>"; };
+		84D6D26C1DE5FE5D00AC183D /* Capapbilities.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Capapbilities.mm; sourceTree = "<group>"; };
+		84D6D26F1DE6005900AC183D /* main_mm.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main_mm.mm; sourceTree = "<group>"; };
 		84E5CB1F1D032FFD003430F2 /* OutFileModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OutFileModel.swift; path = Model/OutFileModel.swift; sourceTree = "<group>"; };
 		E8D9B98EF7820D3CB0B60E24 /* Pods-PBBReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PBBReader.release.xcconfig"; path = "Pods/Target Support Files/Pods-PBBReader/Pods-PBBReader.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -987,6 +994,7 @@
 		1437DD9A1CF2AC6E001BD2D2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				84D6D2661DE5E03D00AC183D /* PBBLogModel.swift */,
 				1437DD9B1CF2AD92001BD2D2 /* ScaryBugData.swift */,
 				1437DD9D1CF2AE72001BD2D2 /* ScaryBugDoc.swift */,
 				143A68681CFEC9AD00BC66A1 /* PycReceiveModel.swift */,
@@ -1000,6 +1008,7 @@
 			children = (
 				146872381D9A596200460B8E /* PBBReaderTests.swift */,
 				1468723A1D9A596200460B8E /* Info.plist */,
+				84D6D2651DE5DBBD00AC183D /* PBBReaderTests-Bridging-Header.h */,
 			);
 			path = PBBReaderTests;
 			sourceTree = "<group>";
@@ -1461,6 +1470,9 @@
 				14B260091CFD8AA3001BCE84 /* OpenUDID.m */,
 				14105B8B1D339912004CB1C2 /* NSTextField+Attribute.h */,
 				14105B8C1D339912004CB1C2 /* NSTextField+Attribute.m */,
+				84D6D26B1DE5FE5D00AC183D /* Capapbilities.h */,
+				84D6D26C1DE5FE5D00AC183D /* Capapbilities.mm */,
+				84D6D26F1DE6005900AC183D /* main_mm.mm */,
 			);
 			name = util;
 			sourceTree = "<group>";
@@ -2391,6 +2403,7 @@
 				143E37FD1D3F1809004B0A4D /* SecretDao.m in Sources */,
 				14815B2B1D4AF55A00922A62 /* BarrageWalkImageSprite.m in Sources */,
 				143E37FE1D3F1809004B0A4D /* NSImage+Extras.m in Sources */,
+				84D6D2671DE5E03D00AC183D /* PBBLogModel.swift in Sources */,
 				143E38001D3F1809004B0A4D /* userDao.m in Sources */,
 				14815B311D4AF55A00922A62 /* NSView+UIView.m in Sources */,
 				143E38011D3F1809004B0A4D /* BaseDao.m in Sources */,
@@ -2470,6 +2483,7 @@
 				143E38351D3F1809004B0A4D /* AdvertisingImgCache.m in Sources */,
 				143E38361D3F1809004B0A4D /* ReceiveViewController.swift in Sources */,
 				143E38381D3F1809004B0A4D /* NSDate+String.m in Sources */,
+				84D6D26D1DE5FE5D00AC183D /* Capapbilities.mm in Sources */,
 				143E38391D3F1809004B0A4D /* BGHUDSliderCell.m in Sources */,
 				143E383A1D3F1809004B0A4D /* BGThemeManager.m in Sources */,
 				1447A22D1D87A2D600057039 /* CustomRotateButton.swift in Sources */,
@@ -2497,7 +2511,6 @@
 				149D53B01DE4270E00FC4F63 /* SmartBlockSettings.m in Sources */,
 				14BF317A1D77C9DE000EFF66 /* CellhighlightColorTableView.swift in Sources */,
 				149D53AD1DE4270E00FC4F63 /* KeywordBlockSettings.m in Sources */,
-				14C9423B1DE5D9A40092E888 /* Test.m in Sources */,
 				14389CA11D9CB4A100EAC29C /* CustomColorProgressIndicator.swift in Sources */,
 				1464019A1DACE04300305B12 /* indexSet+block.swift in Sources */,
 				149D53B11DE4270E00FC4F63 /* Tools.m in Sources */,
@@ -2510,6 +2523,7 @@
 				143E384F1D3F1809004B0A4D /* ApplyInfoViewController.swift in Sources */,
 				149D53AC1DE4270E00FC4F63 /* CommentBlockSettings.m in Sources */,
 				143E38501D3F1809004B0A4D /* VP_Local.m in Sources */,
+				84D6D2701DE6005900AC183D /* main_mm.mm in Sources */,
 				143E38511D3F1809004B0A4D /* VideoProvider.m in Sources */,
 				14815B201D4AF55A00922A62 /* BarrageClock.m in Sources */,
 			);
@@ -2801,7 +2815,7 @@
 				);
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/PBBReaderForMac/bilibili/libmpv";
 				INFOPLIST_FILE = "PBBReaderForMac/PBBReader-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) '@executable_path/../Frameworks' '@loader_path/Frameworks'";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) ";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PBBReaderForMac/bilibili/libmpv",
@@ -2866,7 +2880,7 @@
 				);
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/PBBReaderForMac/bilibili/libmpv";
 				INFOPLIST_FILE = "PBBReaderForMac/PBBReader-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) '@executable_path/../Frameworks' '@loader_path/Frameworks'";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) ";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PBBReaderForMac/bilibili/libmpv",
@@ -2914,7 +2928,8 @@
 				MACH_O_TYPE = mh_execute;
 				PRODUCT_BUNDLE_IDENTIFIER = pyc.com.cn.PBBReaderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "PBBReaderForMac/PBBReaderTests-Bridging-Header.h";
+				SWIFT_VERSION = 3.0.1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PBBReader.app/Contents/MacOS/PBBReader";
 			};
 			name = Debug;
@@ -2930,7 +2945,8 @@
 				MACH_O_TYPE = mh_execute;
 				PRODUCT_BUNDLE_IDENTIFIER = pyc.com.cn.PBBReaderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "PBBReaderForMac/PBBReaderTests-Bridging-Header.h";
+				SWIFT_VERSION = 3.0.1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PBBReader.app/Contents/MacOS/PBBReader";
 			};
 			name = Release;
