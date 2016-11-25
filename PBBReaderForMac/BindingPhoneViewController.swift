@@ -67,7 +67,8 @@ class BindingPhoneViewController: NSViewController {
     
     @IBAction func submitBtnAction(_ sender: AnyObject) {
         /* 判断手机号是否合法 */
-        if (!isPhoneNumberOfString(phoneTF.stringValue)) {
+        if (!isPhoneNumberOfString(phoneTF.stringValue))
+        {
             // 手机号不合法
             pycFileHelper?.setAlertView("请输入正确的手机号")
             return
@@ -75,31 +76,36 @@ class BindingPhoneViewController: NSViewController {
         
         //用户输入短信验证码后，查询本地是否存在
         codeModel.seeFile = "1"
-        if (!userPhone) {
+        if (!userPhone)
+        {
             codeModel.seeFile = "0"
         }
         
         codeModel.verificationCode = messageTF.stringValue
-        
         let messageId = VerificationCodeDao.shared().searchVerificationCode(ofMessageId: codeModel)
-        
         /* 判断输入验证码正确性，如果正确，调用查看文件接口，不正确给出提示*/
-        if (messageId != nil) {
+        if (messageId != nil)
+        {
             self.dismiss(true as AnyObject?)
             getCodeStateYes() // 调整界面控件状态
-
-            if(!userPhone){
+            if(!userPhone)
+            {
                 pycFileHelper?.phoneNo = messageTF.stringValue
                 pycFileHelper?.messageID = messageId
                 pycFileHelper?.openedNum = 0
                 pycFileHelper?.isShowAvert = true
                 pycFileHelper?.openURLOfPycFile(byLaunchedApp: filePath)// 查看文件
-            }else{
+                PBBLogModel(.LogTypeInfo, in: .APPNameReaderMac, desc: "手机号激活+1").sendTo()
+            }
+            else
+            {
                 //完善个人信息，绑定手机号
                 PycFile().bindPhone(byVerificationCode: messageTF.stringValue, logname: userDao.shareduser().getLogName(), messageId: messageId)
+                
             }
-            
-        } else {
+        }
+        else
+        {
             pycFileHelper?.setAlertView("验证码无效，请重新获取！")
         }
     }

@@ -86,7 +86,6 @@ class ActivationController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         ibApplyButton.updateTitleAttribute(ibApplyButton.title, textColor: NSColor.white)
         // Do view setup here.
         if (needReApply != 0)
@@ -367,18 +366,18 @@ class ActivationController: NSViewController {
         pycFileHelper?.phoneNo = ""
         pycFileHelper?.messageID = ""
         pycFileHelper?.needReapply = needReApply
-        _ = pycFileHelper?.applyFile(byFidAndOrderId: fileId,
-                                               orderId: orderId,
-                                               applyId: applyId,
-                                               qq: qqField.stringValue,
-                                               email: emailField.stringValue,
-                                               phone: phoneField.stringValue,
-                                               field1: sel1,
-                                               field2: sel2,
-                                               seeLogName: userName,
-                                               fileName: fileUrl)
+        pycFileHelper?.applyFile(byFidAndOrderId: fileId,
+                                           orderId: orderId,
+                                           applyId: applyId,
+                                           qq: qqField.stringValue,
+                                           email: emailField.stringValue,
+                                           phone: phoneField.stringValue,
+                                           field1: sel1,
+                                           field2: sel2,
+                                           seeLogName: userName,
+                                           fileName: fileUrl)
         
-        
+        PBBLogModel(.LogTypeInfo, in: .APPNameReaderMac, desc: "申请激活+1").sendTo()
 //        self.performSegueWithIdentifier("pushApplyInfo", sender: self)// 跳转信息确认
     }
     
@@ -386,7 +385,8 @@ class ActivationController: NSViewController {
 //    override func shouldPerformSegue(withIdentifier: String, sender: AnyObject?) -> Bool {
 //        return false
 //    }
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool
+    {
          return false
     }
     
@@ -395,10 +395,10 @@ class ActivationController: NSViewController {
 //        
 //    }
     
-    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
-        
-        if (segue.identifier == "pushApplyInfo") {
-            
+    override func prepare(for segue: NSStoryboardSegue, sender: Any?)
+    {
+        if (segue.identifier == "pushApplyInfo")
+        {
             let applyInfo = segue.destinationController as! ApplyInfoViewController
             
             applyInfo.qq = trimSpace(qqField.stringValue)
@@ -416,14 +416,15 @@ class ActivationController: NSViewController {
             applyInfo.field2needprotect = field2needprotect
             applyInfo.needReApply = needReApply
             applyInfo.applyId = applyId
-            
         }
     }
     
     
-    override func dismiss(_ sender: Any?) {
+    override func dismiss(_ sender: Any?)
+    {
         super.dismiss(sender)
-        if !(sender is Bool){
+        if !(sender is Bool)
+        {
             NotificationCenter.default.post(name: Notification.Name(rawValue: "CancleClosePlayerWindows"), object: nil, userInfo: ["pycFileID":fileId])
         }
     }

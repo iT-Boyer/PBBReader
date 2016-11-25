@@ -40,7 +40,8 @@ class ActivationSuccessController: NSViewController
     var applyId = 0
     var remark:String!
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         ibRetoActivation.updateTitleAttribute(ibRetoActivation.title, textColor: NSColor.white)
         // Do view setup here.
@@ -49,34 +50,44 @@ class ActivationSuccessController: NSViewController
         emailLabel.stringValue = email!
         //    BOOL uu = [qq isEqualToString:""]
         
-        if (ToolString.isBlankString(qq!)) {
+        if (ToolString.isBlankString(qq!))
+        {
             qqLabel.stringValue =  "无"
             qq = "无"
         }
-        if (ToolString.isBlankString(phone!)) {
+        if (ToolString.isBlankString(phone!))
+        {
             phoneLabel.stringValue = "无"
             phone = "无"
         }
-        if (ToolString.isBlankString(email!)) {
+        if (ToolString.isBlankString(email!))
+        {
             emailLabel.stringValue = "无"
             email = "无"
         }
-        if (ToolString.isBlankString(remark!)) {
+        if (ToolString.isBlankString(remark!))
+        {
             remark = ""
         }
         
-        if (needReapply == 1) {
+        if (needReapply == 1)
+        {
             ibSelfTitleLabel.stringValue = "激活失败"
             ibRetoActivation.isHidden = false
-        }else{
+        }
+        else
+        {
             ibSelfTitleLabel.stringValue = "申请已提交"
             ibRetoActivation.isHidden = true
         }
         
         
-        if (needShowDiff == 0) {
+        if (needShowDiff == 0)
+        {
             ibShowInfoLabel.textColor = kGreen
-        }else{
+        }
+        else
+        {
             ibShowInfoLabel.textColor = NSColor.orange
         }
         
@@ -87,15 +98,20 @@ class ActivationSuccessController: NSViewController
         ibRemarkLabel.stringValue = remark!
     }
     
-    @IBAction func ibaRetoActivation(_ sender: AnyObject) {
+    @IBAction func ibaRetoActivation(_ sender: AnyObject)
+    {
         self.dismiss(true)
         AppDelegateHelper.shared().getApplyFileInfo(byApplyId: applyId,fileID: fileId)
+        PBBLogModel(.LogTypeInfo, in: .APPNameReaderMac, desc: "重新申请+1").sendTo()
     }
     
-    override func dismiss(_ sender: Any?) {
+    override func dismiss(_ sender: Any?)
+    {
         super.dismiss(sender)
-        if !(sender is Bool){
+        if !(sender is Bool)
+        {
             NotificationCenter.default.post(name: Notification.Name(rawValue: "CancleClosePlayerWindows"), object: nil, userInfo: ["pycFileID":fileId])
+            
         }
     }
 }

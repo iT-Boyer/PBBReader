@@ -16,6 +16,8 @@
     import UIKit
 #endif
 
+//let url = "http://114.112.104.138:6001/HostMonitor/client/log/addLog"
+let url = "http://192.168.85.92:8099/HostMonitor/client/log/addLog"
 public class PBBLogAPI: NSObject
 {
     //创建一个属于自己类型的计算类型的类变量
@@ -36,10 +38,18 @@ public class PBBLogAPI: NSObject
         
     }
     
-    public func upLoadLog(to url:String,logModel:PBBLogModel)
+    public func upLoadLog(to neweUrl:String = url,logModel:PBBLogModel)
     {
         //
-        logClient.upLoadLog(to: url,logData: logModel)
+        if url == neweUrl
+        {
+            logClient.upLoadLog(logData: logModel)
+        }
+        else
+        {
+            logClient.upLoadLog(to: neweUrl,logData: logModel)
+        }
+        
     }
     
 }

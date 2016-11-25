@@ -62,9 +62,9 @@ public enum NetworkType:String
 public class PBBLogModel: NSObject
 {
     var level = ""
-    var file_name = ""
-    var method_name = ""
-    var lines = 0  //日志行
+    var file_name = { return #file}()
+    var method_name = {return (#function as NSString).lastPathComponent}()
+    var lines = {return #line}()  //日志行
     var content = "" //日志内容
     var desc = "" //描述
     var extension1 = ""
@@ -81,11 +81,11 @@ public class PBBLogModel: NSObject
     var login_type = ""
     var application_name = ""
     var account_name = ""
-    var account_password = "80F008F8C906098FCE93A89B3DB2EF4E"
+    var account_password = ""
     var network_type:NetworkType!
     
     fileprivate var op_version = ""   //操作系统版本
-    fileprivate var equip_serial = "" //设备序列号
+    fileprivate var equip_serial = {return UserDefaults.standard.object(forKey: "equip_serial")}() //设备序列号
     fileprivate var equip_host = ""   //机主信息
     fileprivate var equip_model = ""  //设备型号
     fileprivate var device_info = ""  //设备参数
@@ -96,33 +96,34 @@ public class PBBLogModel: NSObject
      http://stackoverflow.com/questions/24402533/is-there-a-swift-alternative-for-nslogs-pretty-function
      
      */
-   public init(_ level:LogType = LogType.LogTypeInfo,
-         APPName:APPName = APPName.APPNameReaderMac,
-         fileName filename:String=#file,
-         inLine line: Int = #line,
-         funcname: String = #function,
-         description desc:String = "")
+    ///LogModel构造器
+   public init(_ type:LogType = LogType.LogTypeInfo,
+            in APPName:APPName = APPName.APPNameReaderMac,
+               desc:String = "")
     {
         //默认赋值
-        self.level = level.rawValue
+        self.level = type.rawValue
         self.application_name = APPName.rawValue //Bundle.main.object(forInfoDictionaryKey: "MakeInstallerName") as! String
-
-        self.file_name = (filename as NSString).lastPathComponent
-        self.lines = line
-        self.method_name = "login"//funcname
         self.desc = desc
         
-        self.sdk_version = "10.1.1"
-        self.system = "iPhone" //SystemType.SystemTypeMac.rawValue
-        self.username = "pddd"
-        self.token = "ddfdfdfd"
-        
-        self.login_type = LoginType.LoginTypeAccount.rawValue
-        self.imei = "334532223554"
-        self.equip_host = "Amin's iPhone"
-        
+        //必须的
+        self.sdk_version = "10.12.1"
+        self.system = SystemType.SystemTypeMac.rawValue
+        self.username = "Mac user"
+        self.token = "Mac token"
+        self.equip_host = "Mac"
+        //宓钥加密
         self.account_password = PBBLogModel.aesEncryptPassword(password: self.account_password,
-                                                                secret: "80F008F8C906098FCE93A89B3DB2EF4E")
+                                                 secret: "80F008F8C906098FCE93A89B3DB2EF4E")
+        //可选的
+        self.login_type = "登陆方式"
+        self.imei = "Mac imei"
+        self.op_version = "OSX"
+        self.equip_serial = "序列号"
+        self.equip_model = "设备型号"
+        self.device_info = "暂无"
+        
+        
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/yyyy HH:mm:ss:SSS"
@@ -132,15 +133,12 @@ public class PBBLogModel: NSObject
         let threadId = "?"
         let processIdentifier = process.processIdentifier
 
-        self.content = "\(executionTime) \(processName))[\(processIdentifier):\(threadId)] \(self.file_name)(\(line)) \(funcname):\r\t\(desc)\n"
+        self.content = "\(executionTime) \(processName)[\(processIdentifier):\(threadId)] \(file_name)(\(lines)) \(method_name):\r\t\(desc)\n"
     }
     public func indit(level:LogType, APPName:APPName, description desc:String)
     {
         //
-        
-        
     }
-   
     
     ///手动设置设备信息
     public func setDeviceForiOS(op_version:String?,

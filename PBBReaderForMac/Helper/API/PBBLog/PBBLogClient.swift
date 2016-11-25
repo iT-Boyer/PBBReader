@@ -11,14 +11,13 @@
 #elseif os(iOS)
     import UIKit
 #endif
-//let url = "http://114.112.104.138:6001/HostMonitor/client/log/addLog"
-let url = "http://192.168.85.92:8099/HostMonitor/client/log/addLog"
+
 class PBBLogClient
 {
     //上传
     func upLoadLog(to URL:String = url,logData logModel:PBBLogModel)
     {
-        let URL = Foundation.URL(string: url)
+        let URL = Foundation.URL(string: URL)
         var request = URLRequest(url: URL!)
         //application/json Accept-Language:en;q=1
         request.addValue("multipart/form-data; boundary=Boundary+7B85D32FB0763B96", forHTTPHeaderField: "Content-Type")

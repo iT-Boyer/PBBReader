@@ -19,7 +19,11 @@ class AppDelegate: NSObject, NSApplicationDelegate{
     //必须声明为全局属性，否则在声明PycFile调用delegate时，delegate = nil
     //还出现第一次启动执行两次openFiles方法
     let appHelper = AppDelegateHelper()
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
+    func applicationDidFinishLaunching(_ aNotification: Notification)
+    {
+        //设置日志序列号
+        UserDefaults.standard.setValue(OpenUDID.value(), forKey: "equip_serial")
+        UserDefaults.standard.synchronize()
         // Insert code here to initialize your application
         //监测升级
         let infoFileURL = URL.init(string: "http://www.pyc.com.cn/appupdate/pbbreader_mac/updateinfo.plist")
@@ -39,17 +43,18 @@ class AppDelegate: NSObject, NSApplicationDelegate{
                 alert.addButton(withTitle: "下载")
 //                alert.addButtonWithTitle("稍后提醒")
                 alert.messageText = UpdateContent as! String
-                if alert.runModal() == NSAlertFirstButtonReturn {
+                if alert.runModal() == NSAlertFirstButtonReturn
+                {
                     //打开safari下载安装包
-                    PBBLogModel(.LogTypeInfo, APPName: .APPNameReaderMac, description: "用户下载包+1").sendTo()
-                    
+                    PBBLogModel(.LogTypeInfo, in: .APPNameReaderMac, desc: "用户下载包+1").sendTo()
                     NSWorkspace.shared().open(URL.init(string: InstallerPackage as! String)!)
                     //版本升级过程中，更新数据库
 //                    ReceiveFileDao.sharedReceiveFileDao().updateTable()
 //                    ReceiveFileDao.sharedReceiveFileDao().updateReceiveFileForVersionPBB()
 //                    userDao.shareduserDao().updateTable()
                     if FileManager.default.fileExists(atPath: KDataBasePath.appending("PBB.db")) && !FileManager.default.fileExists(atPath: KDataBasePath.appending(".PBB.db"))
-                    {
+                    {   //版本升级过程中，更新数据库
+                        PBBLogModel(.LogTypeInfo, in: .APPNameReaderMac, desc: "版本升级过程中，更新数据库").sendTo()
                        try! FileManager.default.copyItem(atPath: KDataBasePath.appending("PBB.db"), toPath: KDataBasePath.appending(".PBB.db"))
                     }
                 }
@@ -65,6 +70,7 @@ class AppDelegate: NSObject, NSApplicationDelegate{
         //https://twittercommunity.com/t/fabric-failed-to-download-settings-unknown-host/75443
         //macOS Support:https://docs.fabric.io/apple/crashlytics/os-x.html#macos-support
         //[[NSUserDefaults standardUserDefaults] registerDefaults:@{ @"NSApplicationCrashOnExceptions": @YES }];
+        //Crashlytics日志工具
         UserDefaults.standard.register(defaults: ["NSApplicationCrashOnExceptions" : true])
         //及时写入
         UserDefaults.standard.synchronize()
@@ -82,6 +88,8 @@ class AppDelegate: NSObject, NSApplicationDelegate{
         Crashlytics.sharedInstance().setUserEmail("724987481@qq.com")
         Crashlytics.sharedInstance().setUserIdentifier("724987481")
     }
+    
+    ///app将要退出时
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
         //
@@ -95,6 +103,7 @@ class AppDelegate: NSObject, NSApplicationDelegate{
                 let fileID = "\(outFile.fileid)"
                 if UserDefaults.standard.bool(forKey: fileID)
                 {
+                    PBBLogModel(.LogTypeInfo, in: .APPNameReaderMac, desc: "app将要退出时，取消所有刷新状态").sendTo()
                     UserDefaults.standard.set(false, forKey: fileID)
                     UserDefaults.standard.synchronize()
                 }
@@ -103,13 +112,14 @@ class AppDelegate: NSObject, NSApplicationDelegate{
     }
 
     
-    func application(_ sender: NSApplication, openFiles filenames: [String]) {
+    func application(_ sender: NSApplication, openFiles filenames: [String])
+    {
         //
         appHelper.phoneNo = ""
         appHelper.messageID = ""
 //        appHelper.openURLOfPycFileByLaunchedApp(filenames[0])
         appHelper.loadVideo(withLocalFiles: filenames[0])
-        
+        PBBLogModel(.LogTypeInfo, in: .APPNameReaderMac, desc: "使用次数+1").sendTo()
     }
 
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {

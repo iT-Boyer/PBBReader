@@ -17,14 +17,16 @@
 #import "VerificationCodeDao.h"
 #import "PlayerLoader.h"
 
-#if DEVELOPMENT
-#import "PBBReaderForMac-Swift.h"
-#else
+//#if DEVELOPMENT
+//#import "PBBReaderForMac-Swift.h"
+//
+//#else
+//
+//#endif
 #import "PBBReader-Swift.h"
-#endif
-
 #import "MBProgressHUD.h"
 #import "PlayerWindow.h"
+#import "PBBLogSDK.h"
 
 @implementation AppDelegateHelper
 {
@@ -42,7 +44,6 @@
     //绑定手机
     BOOL _userPhone;
     
-    
     NSInteger bOpenInCome;
     
     //申请
@@ -59,25 +60,21 @@ singleton_implementation(AppDelegateHelper);
 
 -(void)loadVideoWithLocalFiles:(NSString *)openFilePath
 {
-//    NSString *thisFilePathExtension = [[openFilePath stringByReplacingOccurrencesOfString:@".pbb" withString:@""] pathExtension];
-//    if (![self fileIsTypeOfVideo:[thisFilePathExtension lowercaseString]])
-//    {
-//        [self setAlertView:[NSString stringWithFormat:@"不支持该(%@)格式文件...",thisFilePathExtension]];
-//    }
-//    else
-//    {
-        NSString *waterPath = [[NSBundle mainBundle] pathForResource:@"water" ofType:@"xml"];
-        [[PlayerLoader sharedInstance] loadVideoWithLocalFiles:@[openFilePath,waterPath]];
-//    }
+    NSString *waterPath = [[NSBundle mainBundle] pathForResource:@"water" ofType:@"xml"];
+    [[PlayerLoader sharedInstance] loadVideoWithLocalFiles:@[openFilePath,waterPath]];
 }
 
 
 -(BOOL)openURLOfPycFileByLaunchedApp:(NSString *)openURL
 {
-    if(![openURL hasSuffix:@"pbb"]){
+    if(![openURL hasSuffix:@"pbb"])
+    {
         LookMedia *look = [[LookMedia alloc] init];
         look.receviveFileId = @"1";
         [look lookMedia:openURL];
+//        [[[PBBLogModel alloc] init] sendToServer:[NSNULL new]];
+//       PBBLog
+        
         return NO;
     }
     _fileManager = [[PycFile alloc] init];
@@ -88,7 +85,6 @@ singleton_implementation(AppDelegateHelper);
     {
         [self setAlertView:@"读取文件失败。可能错误原因：文件下载不完整，请重新下载！"];
         return YES;
-        
     }
     else if(fileID==3)
     {

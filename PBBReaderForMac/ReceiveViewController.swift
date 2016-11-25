@@ -356,24 +356,32 @@ extension ReceiveViewController
         
         
         //每次能看
-        if (receiveFile.limittime == 0) {
-            
-            if (receiveFile.fileMakeType == 0) {
+        if (receiveFile.limittime == 0)
+        {
+            if (receiveFile.fileMakeType == 0)
+            {
                 //hsg
                 ibOnceLong.isHidden = true
             }
-            
-        }else{
+        }
+        else
+        {
             let mm = receiveFile.limittime / 60;
             let ss = receiveFile.limittime % 60;
-            if (mm == 0) {
+            if (mm == 0)
+            {
                 onceTimeLabel.attributedStringValue = NSMutableAttributedString.init(attributedString: NSAttributedString.init(string: "\(ss) 秒"))
                 onceTimeLabel.addColorText("秒", aColor: NSColor.black, aFont: nil)
-            } else {
-                if (ss == 0) {
+            }
+            else
+            {
+                if (ss == 0)
+                {
                     onceTimeLabel.attributedStringValue =  NSMutableAttributedString.init(attributedString: NSAttributedString.init(string: "\(mm) 分钟"))
                     onceTimeLabel.addColorText("分钟", aColor: NSColor.black, aFont: nil)
-                }else{
+                }
+                else
+                {
                     onceTimeLabel.attributedStringValue = NSMutableAttributedString.init(attributedString: NSAttributedString.init(string: "\(mm)分\(ss)秒"))
                     onceTimeLabel.addColorText("分", aColor: NSColor.black, aFont: nil)
                     onceTimeLabel.addColorText("秒", aColor: NSColor.black, aFont: nil)
@@ -382,13 +390,16 @@ extension ReceiveViewController
         }
         
         //天数限制
-        if (!receiveFile.freetime){
+        if (!receiveFile.freetime)
+        {
             
             lastDayProgressView.isHidden = true
             canTimeDateLabel.isHidden = true
             lastDayLabel.stringValue = "不限制"
             lastDayLabel.addColorText("不限制", aColor: kGreen, aFont: nil)
-        }else {
+        }
+        else
+        {
             lastDayProgressView.isHidden = false
             canTimeDateLabel.isHidden = false
             let lastday = "\(receiveFile.lastday)"
@@ -399,14 +410,15 @@ extension ReceiveViewController
             lastDayLabel.addColorText(" 天", aColor: kGray, aFont: nil)
             lastDayProgressView.doubleValue = (Double(receiveFile.lastday) * 1.0) / Double(receiveFile.allday)
             
-            if let starttime = receiveFile.starttime,let endtime = receiveFile.endtime{
+            if let starttime = receiveFile.starttime,let endtime = receiveFile.endtime
+            {
                 canTimeDateLabel.stringValue = "从\((starttime as NSDate).dateStringByDay()!)到\((endtime as NSDate).dateStringByDay()!)"
             }
         }
         
         var str = ""
-        if (receiveFile.fileMakeType == 0) {
-            
+        if (receiveFile.fileMakeType == 0)
+        {
             //手动激活
             makerSayLabel.isHidden = true
             lastDayLabel.isHidden = false
@@ -415,11 +427,14 @@ extension ReceiveViewController
             receiveFile.firstOpenTime = ReceiveFileDao.shared().selectReceiveFileFistOpenTime(byFileId: receiveFile.fileid)
             
             //首次阅读
-            if (receiveFile.firstOpenTime == nil || receiveFile.firstOpenTime == "") {
+            if (receiveFile.firstOpenTime == nil || receiveFile.firstOpenTime == "")
+            {
                 onceTimeNumLabel.isHidden = true
                 onceTimeLabel.isHidden = true
                 ibOnceLong.isHidden = true
-            } else {
+            }
+            else
+            {
                 onceTimeNumLabel.stringValue = "首次阅读:"
                 onceTimeLabel.stringValue = receiveFile.firstOpenTime
             }
@@ -431,7 +446,8 @@ extension ReceiveViewController
             
             
             let b_CanOpen = isCanOpen(receiveFile)
-            if (b_CanOpen) {
+            if (b_CanOpen)
+            {
                 
                 if (receiveFile.limitnum != 0)
                 {
@@ -445,7 +461,8 @@ extension ReceiveViewController
             }
             else
             {
-                if (receiveFile.limitnum != 0){
+                if (receiveFile.limitnum != 0)
+                {
                     
                     let lastNum = "\(receiveFile.lastnum)"
                     let limitnum = "\(receiveFile.limitnum)"
@@ -458,16 +475,17 @@ extension ReceiveViewController
                     lastNumLabel.addColorText("次，共", aColor: kGray, aFont: nil)
                     lastNumLabel.addColorText(" 次", aColor: kGray, aFont: nil)
                     lastNumLabel.addColorText("共 ", aColor: kGray, aFont: nil)
-                    
                 }
             }
             
-            if (receiveFile.fileTimeType==4) {
+            if (receiveFile.fileTimeType==4)
+            {
                 lastDayProgressView.isHidden = false
                 canTimeDateLabel.isHidden = false
                 lastNumProgressView.isHidden = false
             }else{
-                if (receiveFile.fileOpenDay > 0){
+                if (receiveFile.fileOpenDay > 0)
+                {
                     if(b_CanOpen)//能打开
                     {
                         //当天数大于0
@@ -495,14 +513,17 @@ extension ReceiveViewController
                             lastDayLabel.addColorText(" 天", aColor: kGray, aFont: nil)
                             
                         }
-                    }else{
+                    }
+                    else
+                    {
                         //未激活
                         lastDayLabel.attributedStringValue = NSMutableAttributedString.init(string: "共\(openDay)天")
                         lastDayLabel.addColorText("共", aColor: kGray, aFont: nil)
                         lastDayLabel.addColorText("天", aColor: kGray, aFont: nil)
-                        
                     }
-                }else if(receiveFile.fileOpenYear > 0) {
+                }
+                else if(receiveFile.fileOpenYear > 0)
+                {
                     
                     if(b_CanOpen)//能打开
                     {
@@ -530,13 +551,16 @@ extension ReceiveViewController
                             lastDayLabel.addColorText(" 年", aColor: kGray, aFont: nil)
                         }
                     }
-                    else{
+                    else
+                    {
                         //未激活
                         lastDayLabel.attributedStringValue = NSMutableAttributedString.init(string: "共 \(openYear) 年")
                         lastDayLabel.addColorText("共 ", aColor: kGray, aFont: nil)
                         lastDayLabel.addColorText(" 年", aColor: kGray, aFont: nil)
                     }
-                }else{
+                }
+                else
+                {
                     lastDayLabel.attributedStringValue = NSMutableAttributedString.init(string: "不限制")
                 }
                 
@@ -550,14 +574,18 @@ extension ReceiveViewController
                 if (b_CanOpen)
                 {
 //                    str = "send_icon_Detail";
-                    if (receiveFile.readnum > 0) {
+                    if (receiveFile.readnum > 0)
+                    {
 //                        str = "send_icon_already_Detail"
                     }
                 }else{
                     
-                    if (receiveFile.readnum > 0) {
+                    if (receiveFile.readnum > 0)
+                    {
 //                        str = "send_after_file_Detail"
-                    }else {
+                    }
+                    else
+                    {
 //                        str = "send_icon_stop_Detail"
                     }
                 }
@@ -576,12 +604,15 @@ extension ReceiveViewController
                 readBtn.updateTitleAttribute("申请激活", textColor: NSColor.white)
             }
             
-        }else{
+        }
+        else
+        {
             //自由传播刷新界面
             if (receiveFile.open == 2)
             {
 //                str = "send_icon_stop_Detail";
-                if (receiveFile.readnum > 0) {
+                if (receiveFile.readnum > 0)
+                {
 //                    str = "send_after_file_Detail";
                 }
                 readBtn.isHidden = true
@@ -594,7 +625,8 @@ extension ReceiveViewController
                 readBtn.isHidden = false
                 readBtn.updateTitleAttribute("阅读", textColor: NSColor.white)
                 
-            } else if (receiveFile.open == 0) {
+            } else if (receiveFile.open == 0)
+            {
                 
 //                str = "send_icon_Detail";
                 readBtn.isEnabled = true
@@ -602,10 +634,13 @@ extension ReceiveViewController
                readBtn.updateTitleAttribute("阅读", textColor: NSColor.white)
                 
             }
-            if (receiveFile.forbid == 1) {
+            if (receiveFile.forbid == 1)
+            {
                 //forbid: 1开放
                 makerSayLabel.isHidden = true
-            }else{
+            }
+            else
+            {
                 makerSayLabel.isHidden = false
             }
             fileFlageImage.image = NSImage.init(named: str)
@@ -627,9 +662,11 @@ extension ReceiveViewController
 //        ibRefreshFileButton.enabled = readBtn.enabled
     }
     
-    func isCanOpen(_ outFile:OutFile) -> Bool {
+    func isCanOpen(_ outFile:OutFile) -> Bool
+    {
         var b_CanOpen = false
-        if(outFile.forbid == 1){
+        if(outFile.forbid == 1)
+        {
             
             if(outFile.limitnum == 0 || outFile.readnum < outFile.limitnum)
             {
@@ -668,7 +705,8 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
 {
     //MARK: tableView Delegate
     //单击单元格，显示详情信息
-    func tableViewSelectionDidChange(_ notification: Notification) {
+    func tableViewSelectionDidChange(_ notification: Notification)
+    {
         
         if let receiveFile = selectedFileList()
         {
@@ -685,17 +723,20 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
     }
     
     //MARK: - Helper
-    func selectedFileList() -> OutFile? {
+    func selectedFileList() -> OutFile?
+    {
         //
         let selectedRow = ReceiveTableView.selectedRow
-        if(selectedRow >= 0 && receiveArray.count > selectedRow){
+        if(selectedRow >= 0 && receiveArray.count > selectedRow)
+        {
             return receiveArray[selectedRow] as? OutFile
         }
         return nil
     }
     
     //自定义单元格选中样式
-    func ChangeCellBySelectedStatus() {
+    func ChangeCellBySelectedStatus()
+    {
         //被选中的单元格
         guard let cellView = self.ReceiveTableView.view(atColumn: 0, row: ReceiveTableView.selectedRow, makeIfNecessary: true) as? CustomTableCellView
             else {
@@ -750,13 +791,14 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
     }
     
     //拖动鼠标多选响应事件
-    func tableView(_ tableView: NSTableView, draggingSession session: NSDraggingSession, willBeginAt screenPoint: NSPoint, forRowIndexes rowIndexes: IndexSet) {
+    func tableView(_ tableView: NSTableView, draggingSession session: NSDraggingSession, willBeginAt screenPoint: NSPoint, forRowIndexes rowIndexes: IndexSet)
+    {
         //
-        
     }
     
     //MARK: tableDataSource
-    func numberOfRows(in tableView: NSTableView) -> Int {
+    func numberOfRows(in tableView: NSTableView) -> Int
+    {
         //
         if receiveArray != nil
         {
@@ -777,7 +819,8 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
         return 30
     }
     
-    private func tableView(_ tableView: NSTableView, willDisplayCell cell: AnyObject, for tableColumn: NSTableColumn?, row: Int) {
+    private func tableView(_ tableView: NSTableView, willDisplayCell cell: AnyObject, for tableColumn: NSTableColumn?, row: Int)
+    {
         //        let cellw = cell as! SelectedRowHighlightCell
         //        cellw.setSelectionBKColor(NSColor.lightGrayColor())
 //        if ([cell isKindOfClass:[FSCustomCell class]]) {
@@ -841,7 +884,8 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
     
     //MARK: 右击事件
     //https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/TableView/RowSelection/RowSelection.html#//apple_ref/doc/uid/10000026i-CH6-SW1
-    func indexesToProcessForContextMenu() -> IndexSet {
+    func indexesToProcessForContextMenu() -> IndexSet
+    {
         // If the clicked row was in the selectedIndexes, then we process all selectedIndexes. Otherwise, we process just the clickedRow
         var selectedIndexes = ReceiveTableView.selectedRowIndexes
         if (ReceiveTableView.clickedRow != -1 && !selectedIndexes.contains(ReceiveTableView.clickedRow))
@@ -865,7 +909,8 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
     }
     
     //右击菜单在Finder中显示功能
-    @IBAction func mnuRevealInFinderSelected(_ sender: AnyObject) {
+    @IBAction func mnuRevealInFinderSelected(_ sender: AnyObject)
+    {
         let selectedIndexes = indexesToProcessForContextMenu()
         for (_, row) in selectedIndexes.enumerated() {
             //
@@ -875,14 +920,15 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
     }
     
     //右击菜单删除功能
-    @IBAction func mnuRemoveRowSelected(_ sender: AnyObject) {
-        
+    @IBAction func mnuRemoveRowSelected(_ sender: AnyObject)
+    {
         let selectedIndexes = indexesToProcessForContextMenu()
-        if selectedIndexes.first == nil {
-            //
+        if selectedIndexes.first == nil
+        {
             return
         }
-        for (_, row) in selectedIndexes.enumerated() {
+        for (_, row) in selectedIndexes.enumerated()
+        {
             //
             let ReceiveColumn = self.receiveArray[row] as! OutFile
             ReceiveFileDao.shared().deleteReceiveFile(ReceiveColumn.fileid, logName: self.loginName)
@@ -916,15 +962,16 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
     }
     
     //右击刷新功能
-    @IBAction @objc func refreshReceiveTableView(_ sender:AnyObject){
+    @IBAction @objc func refreshReceiveTableView(_ sender:AnyObject)
+    {
         receiveArray = nil
         receiveArray = ReceiveFileDao.shared().selectReceiveFileAll(loginName)
         ReceiveTableView.reloadData()
     }
     
     //移动单元格 从 - 到 -
-    @IBAction func btnMoveRowClick(_ sender:AnyObject) {
-        //
+    @IBAction func btnMoveRowClick(_ sender:AnyObject)
+    {
         let fromRow = 1
         let toRow = 3
         ReceiveTableView.beginUpdates()
@@ -952,7 +999,8 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
             return
         }
         let row = ReceiveTableView.selectedRow
-        if row != -1 {
+        if row != -1
+        {
             //
             let ReceiveColumn = self.receiveArray[row] as! OutFile
             

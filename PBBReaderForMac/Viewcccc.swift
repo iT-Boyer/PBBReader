@@ -19,10 +19,9 @@ class Viewcccc: NSViewController {
     
     @IBAction func dfdfdfdf(_ sender: Any) {
         let url = "http://192.168.85.92:8099/HostMonitor/client/log/addLog"
-        let model = PBBLogModel.init(.LogTypeFatal,
-                                     APPName: .APPNameReader,
-                                     description: "ddddd")
+        let model = PBBLogModel.init(.LogTypeFatal, in: .APPNameReader, desc: "ddddd")
         let log = PBBLogAPI.shareInstance.upLoadLog(to: url, logModel: model)
+//        PBBLogAPI.shareInstance.upLoadLog.(<#T##String#>, <#T##PBBLogModel#>)
     }
     
 }
