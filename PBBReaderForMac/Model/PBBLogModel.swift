@@ -17,7 +17,7 @@
 
 
 
-//枚举类:String
+//／枚举类:String类型原始值会自动赋值为枚举成员的字面值
 public enum LogType:String
 {
     case FATAL
