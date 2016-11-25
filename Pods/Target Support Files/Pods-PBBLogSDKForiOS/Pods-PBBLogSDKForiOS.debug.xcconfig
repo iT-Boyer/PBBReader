@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 EMBEDDED_CONTENT_CONTAINS_SWIFT = YES
-=======
->>>>>>> a826ee56b0e3bbad46316df397308dfaafd5646f
 FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/RNCryptor-iOS"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
