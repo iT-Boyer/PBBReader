@@ -8,6 +8,7 @@
 
 import Cocoa
 import Toasty
+import PBBLogSDK
 
 class ActivationController: NSViewController {
     
