@@ -17,14 +17,14 @@
 
 
 
-//枚举类
+//枚举类:String
 public enum LogType:String
 {
-    case LogTypeFatal = "FATAL"
-    case LogTypeError = "ERROR"
-    case LogTypeWarn = "WARN"
-    case LogTypeInfo = "INFO"
-    case LogTypeDebug = "DEBUG"
+    case FATAL
+    case ERROR
+    case WARN
+    case INFO
+    case DEBUG
 }
 
 public enum APPName:String
@@ -49,8 +49,10 @@ public enum SystemType:String
     case SystemTypeMac = "Mac"
 }
 
+//@objc(ddd)
 public enum NetworkType:String
 {
+//    case NetworkTypeUnknown(weight:Double,name:String) = "未知"
     case NetworkTypeUnknown = "未知"
     case NetworkTypeNone  = "其他"
     case NetworkType3G  = "3G"
@@ -58,18 +60,18 @@ public enum NetworkType:String
     case NetworkTypeWifi = "Wifi"
 }
 
-
+@objc(PBBLogModel)
 public class PBBLogModel: NSObject
 {
-    var level = ""
+    public var level = ""
     var file_name = { return #file}()
     var method_name = {return (#function as NSString).lastPathComponent}()
     var lines = {return #line}()  //日志行
-    var content = "" //日志内容
-    var desc = "" //描述
-    var extension1 = ""
-    var extension2 = ""
-    var extension3 = ""
+    public var content = "" //日志内容
+    public var desc = "" //描述
+    public var extension1 = ""
+    public var extension2 = ""
+    public var extension3 = ""
     
     
     fileprivate var sdk_version = "" //SDK版本
@@ -97,10 +99,11 @@ public class PBBLogModel: NSObject
      
      */
     ///LogModel构造器
-   public init(_ type:LogType = LogType.LogTypeInfo,
+   public convenience init(_ type:LogType = LogType.INFO,
             in APPName:APPName = APPName.APPNameReaderMac,
                desc:String = "")
     {
+        self.init()
         //默认赋值
         self.level = type.rawValue
         self.application_name = APPName.rawValue //Bundle.main.object(forInfoDictionaryKey: "MakeInstallerName") as! String
@@ -113,7 +116,7 @@ public class PBBLogModel: NSObject
         self.token = "Mac token"
         self.equip_host = "Mac"
         //宓钥加密
-        self.account_password = PBBLogModel.aesEncryptPassword(password: self.account_password,
+        self.account_password = aesEncryptPassword(password: self.account_password,
                                                  secret: "80F008F8C906098FCE93A89B3DB2EF4E")
         //可选的
         self.login_type = "登陆方式"
@@ -135,9 +138,30 @@ public class PBBLogModel: NSObject
 
         self.content = "\(executionTime) \(processName)[\(processIdentifier):\(threadId)] \(file_name)(\(lines)) \(method_name):\r\t\(desc)\n"
     }
-    public func indit(level:LogType, APPName:APPName, description desc:String)
+    ///便立构造器
+    @objc(inittWithType:inApp:desc:)
+    public convenience init(type:Int, APPNdame:String, description desc:String)
     {
         //
+//        case LogTypeFatal = "FATAL"
+//        case LogTypeError = "ERROR"
+//        case LogTypeWarn = "WARN"
+//        case LogTypeInfo = "INFO"
+//        case LogTypeDebug = "DEBUG"
+        var logType = LogType.INFO
+        switch type {
+        case 1:
+            logType = .FATAL
+        case 2:
+            logType = .ERROR
+        case 3:
+            logType = .WARN
+        case 4:
+            logType = .DEBUG
+        default:
+            logType = .INFO
+        }
+        self.init(logType,in:APPName.APPNameReaderMac,desc:desc)
     }
     
     ///手动设置设备信息
@@ -197,18 +221,24 @@ public class PBBLogModel: NSObject
         return ""
     }
 
-    //aes加密
-    class func aesEncryptPassword(password:String,secret:String)->String
+    ///aes加密
+    func aesEncryptPassword(password:String,secret:String)->String
     {
         let data: Data = Data.init(base64Encoded: password, options: .ignoreUnknownCharacters)!
         let ciphertext = RNCryptor.encrypt(data: data, withPassword: secret)
         return String.init(data: ciphertext, encoding: .utf8)!
     }
     
-    //直接上传
+    ///上传到指定服务器
     public func sendTo(server serverUrl:String = url)
     {
         PBBLogClient().upLoadLog(to: serverUrl,logData: self)
+    }
+    
+    ///上传到默认服务器
+    public func sendToServer()
+    {
+        sendTo()
     }
 }
 

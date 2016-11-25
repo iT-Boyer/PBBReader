@@ -72,9 +72,7 @@ singleton_implementation(AppDelegateHelper);
         LookMedia *look = [[LookMedia alloc] init];
         look.receviveFileId = @"1";
         [look lookMedia:openURL];
-//        [[[PBBLogModel alloc] init] sendToServer:[NSNULL new]];
-//       PBBLog
-        
+        [[[PBBLogModel alloc] inittWithType:5 inApp:@"" desc:@"明文浏览"] sendToServer:nil];
         return NO;
     }
     _fileManager = [[PycFile alloc] init];

@@ -103,7 +103,7 @@ class ActivationSuccessController: NSViewController
     {
         self.dismiss(true)
         AppDelegateHelper.shared().getApplyFileInfo(byApplyId: applyId,fileID: fileId)
-        PBBLogModel(.LogTypeInfo, in: .APPNameReaderMac, desc: "重新申请+1").sendTo()
+        PBBLogModel(.INFO, in: .APPNameReaderMac, desc: "重新申请+1").sendTo()
     }
     
     override func dismiss(_ sender: Any?)
