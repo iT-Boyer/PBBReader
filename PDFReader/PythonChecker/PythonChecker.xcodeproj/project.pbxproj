@@ -96,6 +96,7 @@
 			};
 			buildConfigurationList = 68E0477614C61C930079F9E3 /* Build configuration list for PBXProject "PythonChecker" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
