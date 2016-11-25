@@ -14,6 +14,11 @@
 			<key>orderHint</key>
 			<integer>13</integer>
 		</dict>
+		<key>PBBLogSDKForiOS.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>20</integer>
+		</dict>
 		<key>PBBReader.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -93,6 +98,11 @@
 			<true/>
 		</dict>
 		<key>84AEDA3F1DC5FF02001E8116</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>84B6794C1DE72A4300496634</key>
 		<dict>
 			<key>primary</key>
 			<true/>

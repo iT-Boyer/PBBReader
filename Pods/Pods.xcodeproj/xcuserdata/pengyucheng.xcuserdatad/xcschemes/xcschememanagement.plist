@@ -30,6 +30,11 @@
 			<key>orderHint</key>
 			<integer>16</integer>
 		</dict>
+		<key>Pods-PBBLogSDKForiOS.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>17</integer>
+		</dict>
 		<key>Pods-PBBReader.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -39,6 +44,16 @@
 		<dict>
 			<key>orderHint</key>
 			<integer>3</integer>
+		</dict>
+		<key>RNCryptor-OSX.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>19</integer>
+		</dict>
+		<key>RNCryptor-iOS.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>18</integer>
 		</dict>
 		<key>RNCryptor.xcscheme</key>
 		<dict>
@@ -70,7 +85,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>1415F1C239D5F6C16F26A6772B164FA9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>23CF27B2BA6AC7125EFFEDA8C5AA819F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>251BAD17812F7EBF6532EACF66F941C3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -80,7 +105,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>4917DD2C74D48734FAE1F340DF1534AA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>4C88E2756805A2F1753E7C5796671779</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4C977AED3C152246338BB0CE99949EDA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6C8821A585BF222974A09B052A51FC9D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -90,7 +130,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>6F49CD9570C077D3CB140BCA282BCB94</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>711ADECC6D802925DE1DCCFBA19879E2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7AEA38E7DC42DCFBB8811DED86BADB97</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7D6B752AEA070BEA1A3A968CDF8AA1F3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>A46399945D18308F6E6F073507A3A78B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AC0D2D2B4EE7C873431AB3502859CA60</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -110,12 +175,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>C98A9E39CF02116FD1089C62127D3F86</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CFEEF5EF28670C0EAD8B5F08D5313205</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>DB10112B28F962D13A1D0224117169E4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>DD2D647200D2A37E46CB6AA75CEBA4E2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E1FC98DD1C530B80F6E07EAEBC3CF404</key>
 		<dict>
 			<key>primary</key>
 			<true/>
