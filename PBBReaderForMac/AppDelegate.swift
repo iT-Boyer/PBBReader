@@ -46,7 +46,7 @@ class AppDelegate: NSObject, NSApplicationDelegate{
                 if alert.runModal() == NSAlertFirstButtonReturn
                 {
                     //打开safari下载安装包
-                    PBBLogModel(.INFO, in: .APPNameReaderMac, desc: "用户下载包+1").sendTo()
+                    PBBLogModel(.INFO, in: .ReaderMac, desc: "用户下载包+1").sendTo()
                     NSWorkspace.shared().open(URL.init(string: InstallerPackage as! String)!)
                     //版本升级过程中，更新数据库
 //                    ReceiveFileDao.sharedReceiveFileDao().updateTable()
@@ -54,7 +54,7 @@ class AppDelegate: NSObject, NSApplicationDelegate{
 //                    userDao.shareduserDao().updateTable()
                     if FileManager.default.fileExists(atPath: KDataBasePath.appending("PBB.db")) && !FileManager.default.fileExists(atPath: KDataBasePath.appending(".PBB.db"))
                     {   //版本升级过程中，更新数据库
-                        PBBLogModel(.INFO, in: .APPNameReaderMac, desc: "版本升级过程中，更新数据库").sendTo()
+                        PBBLogModel(.INFO, in: .ReaderMac, desc: "版本升级过程中，更新数据库").sendTo()
                        try! FileManager.default.copyItem(atPath: KDataBasePath.appending("PBB.db"), toPath: KDataBasePath.appending(".PBB.db"))
                     }
                 }
@@ -103,7 +103,7 @@ class AppDelegate: NSObject, NSApplicationDelegate{
                 let fileID = "\(outFile.fileid)"
                 if UserDefaults.standard.bool(forKey: fileID)
                 {
-                    PBBLogModel(.INFO, in: .APPNameReaderMac, desc: "app将要退出时，取消所有刷新状态").sendTo()
+                    PBBLogModel(.INFO, in: .ReaderMac, desc: "app将要退出时，取消所有刷新状态").sendTo()
                     UserDefaults.standard.set(false, forKey: fileID)
                     UserDefaults.standard.synchronize()
                 }
@@ -119,7 +119,7 @@ class AppDelegate: NSObject, NSApplicationDelegate{
         appHelper.messageID = ""
 //        appHelper.openURLOfPycFileByLaunchedApp(filenames[0])
         appHelper.loadVideo(withLocalFiles: filenames[0])
-        PBBLogModel(.INFO, in: .APPNameReaderMac, desc: "使用次数+1").sendTo()
+        PBBLogModel(.INFO, in: .ReaderMac, desc: "使用次数+1").sendTo()
     }
 
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {

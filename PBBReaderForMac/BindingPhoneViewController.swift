@@ -96,7 +96,7 @@ class BindingPhoneViewController: NSViewController {
                 pycFileHelper?.openedNum = 0
                 pycFileHelper?.isShowAvert = true
                 pycFileHelper?.openURLOfPycFile(byLaunchedApp: filePath)// 查看文件
-                PBBLogModel(.INFO, in: .APPNameReaderMac, desc: "手机号激活+1").sendTo()
+                PBBLogModel(.INFO, in: .ReaderMac, desc: "手机号激活+1").sendTo()
             }
             else
             {

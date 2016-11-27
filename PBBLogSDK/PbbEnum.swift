@@ -24,33 +24,33 @@ public enum LogType:String
 
 public enum APPName:String
 {
-    case APPNameReader = "Reader for iOS"
-    case APPNamePBBMaker = "PBBMaker for iOS"
-    case APPNameReaderMac = "Reader for OS"
-    case APPNameSuiZhi = "SuiZhi for iOS"
+    case Reader = "Reader for iOS"
+    case PBBMaker = "PBBMaker for iOS"
+    case ReaderMac = "Reader for OS"
+    case SuiZhi = "SuiZhi for iOS"
 }
 
 public enum LoginType:String
 {
-    case LoginTypeAccount = "账号登录"
-    case LoginTypeWeiXin = "微信登录"
-    case LoginTypeQQ   = "QQ登录"
-    case LoginTypeVerificationCode = "手机验证码登录"
+    case Account = "账号登录"
+    case WeiXin = "微信登录"
+    case QQ   = "QQ登录"
+    case VerificationCode = "手机验证码登录"
 }
 
 public enum SystemType:String
 {
-    case SystemTypeiOS = "iOS"
-    case SystemTypeMac = "Mac"
+    case iOS = "iOS"
+    case Mac = "Mac"
 }
 
 //@objc(ddd)
 public enum NetworkType:String
 {
     //    case NetworkTypeUnknown(weight:Double,name:String) = "未知"
-    case NetworkTypeUnknown = "未知"
-    case NetworkTypeNone  = "其他"
-    case NetworkType3G  = "3G"
-    case NetworkType4G  = "4G"
-    case NetworkTypeWifi = "Wifi"
+    case Unknown = "未知"
+    case None  = "其他"
+    case G3 = "3G"
+    case G4 = "4G"
+    case Wifi = "Wifi"
 }

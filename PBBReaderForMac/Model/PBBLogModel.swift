@@ -28,9 +28,8 @@ public class PBBLogModel: NSObject
     public var extension1 = ""
     public var extension2 = ""
     public var extension3 = ""
-    
-    
-    fileprivate var sdk_version = "" //SDK版本
+
+    var sdk_version = "" //SDK版本
     var system = ""
     var imei = ""
     var username = ""
@@ -56,7 +55,7 @@ public class PBBLogModel: NSObject
      */
     ///LogModel构造器
     public convenience init(_ type:LogType = LogType.INFO,
-                       in APPName:APPName = APPName.APPNameReaderMac,
+                       in APPName:APPName = .ReaderMac,
                        file file_name:String = #file,
                method method_name:String = #function,
                        line lines:Int = #line,
@@ -73,7 +72,7 @@ public class PBBLogModel: NSObject
         
         //必须的
         self.sdk_version = "10.12.1"
-        self.system = SystemType.SystemTypeMac.rawValue
+        self.system = SystemType.Mac.rawValue
         self.username = "Mac user"
         self.token = "Mac token"
         
@@ -122,12 +121,11 @@ public class PBBLogModel: NSObject
         default:
             logType = .INFO
         }
-        self.init(logType,in:APPName.APPNameReaderMac,desc:desc)
+        self.init(logType,in:APPName.ReaderMac,desc:desc)
     }
     
     public override var description: String
     {
-        NSLog(#function)
         return logModelDescription
     }
     ///手动设置设备信息
