@@ -16,8 +16,8 @@
     import UIKit
 #endif
 
-//let url = "http://114.112.104.138:6001/HostMonitor/client/log/addLog"
-let url = "http://192.168.85.92:8099/HostMonitor/client/log/addLog"
+let url = "http://114.112.104.138:6001/HostMonitor/client/log/addLog"
+//let url = "http://192.168.85.92:8099/HostMonitor/client/log/addLog"
 @objc(PBBLogAPI)
 public class PBBLogAPI: NSObject
 {

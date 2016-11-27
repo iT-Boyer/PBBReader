@@ -21,6 +21,11 @@ target 'PBBReader' do
         use_frameworks!
         pod 'RNCryptor', '~> 5.0.1'
     end
+    target 'PBBLogSDKTests' do
+        inherit! :search_paths
+        pod 'RNCryptor', '~> 5.0.1'
+    end
+    
 end
 
     
