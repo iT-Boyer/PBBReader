@@ -80,8 +80,6 @@ public class PBBLogModel: NSObject
         self.account_password = aesEncryptPassword(password: self.account_password,
                                                  secret: "80F008F8C906098FCE93A89B3DB2EF4E")
         
-        
-        
         let confInfo = DeviceUtil()
 
         self.login_type = "Mac"
@@ -168,13 +166,15 @@ public class PBBLogModel: NSObject
     //aes解密
     func aesDecryptor(password:String,secret:String)->String
     {
-        var plaintext: Data = password.data(using: String.Encoding.utf8)!
+        
+        var plaintext: Data = Data.init(base64Encoded: password,
+                                         options: .ignoreUnknownCharacters)!
         do {
             plaintext = try RNCryptor.Decryptor(password: secret).decrypt(data: plaintext)
         } catch {
             plaintext = Data(bytes: [0])
         }
-        return plaintext.base64EncodedString()
+        return String.init(data: plaintext, encoding: .utf8)!
     }
     
     ///上传到指定服务器
