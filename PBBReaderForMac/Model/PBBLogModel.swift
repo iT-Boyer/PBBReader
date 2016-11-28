@@ -168,9 +168,9 @@ public class PBBLogModel: NSObject
     //aes解密
     func aesDecryptor(password:String,secret:String)->String
     {
-        var plaintext: Data
+        var plaintext: Data = password.data(using: String.Encoding.utf8)!
         do {
-            plaintext = try RNCryptor.Decryptor(password: secret).decrypt(data: password)
+            plaintext = try RNCryptor.Decryptor(password: secret).decrypt(data: plaintext)
         } catch {
             plaintext = Data(bytes: [0])
         }
