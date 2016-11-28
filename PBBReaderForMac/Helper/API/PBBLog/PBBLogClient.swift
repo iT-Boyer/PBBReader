@@ -16,7 +16,7 @@
 class PBBLogClient
 {
     
-    func upLoadLog(to serverUrl:String = url,logData logModel:PBBLogModel)
+    func upLoadLogg(to serverUrl:String = url,logData logModel:PBBLogModel)
     {
         //
         var request = URLRequest(url: URL(string: serverUrl)!)
@@ -38,7 +38,7 @@ class PBBLogClient
     }
     
     //上传
-    func upLoadLogg(to URL:String = url,logData logModel:PBBLogModel)
+    func upLoadLog(to URL:String = url,logData logModel:PBBLogModel)
     {
         let URL = Foundation.URL(string: URL)
         var request = URLRequest(url: URL!)
@@ -50,10 +50,10 @@ class PBBLogClient
 //         Accept-Language: en;q=1
 //         Accept-Encoding: gzip, deflate
 //         Content-Length: 1575
-        request.addValue("multipart/form-data; boundary=Boundary+29E471EAEC23B6A0", forHTTPHeaderField: "Content-Type")
-        request.addValue("*/*", forHTTPHeaderField: "Accept")
-        request.addValue("en;q=1", forHTTPHeaderField: "Accept-Language")
-        request.addValue("gzip, deflate", forHTTPHeaderField: "Accept-Encoding")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+//        request.addValue("en;q=1", forHTTPHeaderField: "Accept-Language")
+//        request.addValue("gzip, deflate", forHTTPHeaderField: "Accept-Encoding")
         request.httpMethod = "POST"
         request.timeoutInterval = 20
         request.cachePolicy = .reloadIgnoringCacheData

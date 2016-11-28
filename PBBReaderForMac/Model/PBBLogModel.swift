@@ -152,6 +152,8 @@ public class PBBLogModel: NSObject
         {
            sendData = try! JSONSerialization.data(withJSONObject: dict,
                                                          options:.prettyPrinted)
+        logModelDescription = String.init(data: sendData!, encoding: String.Encoding.utf8)!
+        NSLog("sendData:\(logModelDescription)")
         }
         return sendData
     }
