@@ -80,8 +80,6 @@ public class PBBLogModel: NSObject
         self.account_password = aesEncryptPassword(password: self.account_password,
                                                  secret: "80F008F8C906098FCE93A89B3DB2EF4E")
         
-        
-        
         let confInfo = DeviceUtil()
 
         self.login_type = "Mac"
@@ -94,6 +92,21 @@ public class PBBLogModel: NSObject
         
         self.content = "\(confInfo.executionTime) \(confInfo.processName)[\(confInfo.processIdentifier):\(confInfo.threadId)] \(file_name)(\(lines)) \(method_name):\r\t\(desc)\n"
         
+<<<<<<< HEAD
+        let confInfo = DeviceUtil()
+
+        self.login_type = "Mac"
+        self.imei = confInfo.platform_UUID
+        self.op_version = confInfo.op_version
+        self.equip_serial = confInfo.equip_serial
+        self.equip_model = confInfo.equip_model
+        self.device_info = confInfo.hostName
+//        self.equip_host = ":\(process.userName)"
+        
+        self.content = "\(confInfo.executionTime) \(confInfo.processName)[\(confInfo.processIdentifier):\(confInfo.threadId)] \(file_name)(\(lines)) \(method_name):\r\t\(desc)\n"
+        
+=======
+>>>>>>> 946f05e90f461a17daf8c254c20fdeb460e21230
         
         let dict = self.convertToDictionary()
         if JSONSerialization.isValidJSONObject(dict)
@@ -152,8 +165,11 @@ public class PBBLogModel: NSObject
         {
            sendData = try! JSONSerialization.data(withJSONObject: dict,
                                                          options:.prettyPrinted)
+<<<<<<< HEAD
         logModelDescription = String.init(data: sendData!, encoding: String.Encoding.utf8)!
         NSLog("sendData:\(logModelDescription)")
+=======
+>>>>>>> 946f05e90f461a17daf8c254c20fdeb460e21230
         }
         return sendData
     }
@@ -165,6 +181,23 @@ public class PBBLogModel: NSObject
         let ciphertext = RNCryptor.encrypt(data: data, withPassword: secret)
 //        let ciphertext2 = RNCryptor.Encryptor(password: secret).encrypt(data: data)
         return ciphertext.base64EncodedString()
+<<<<<<< HEAD
+=======
+    }
+    
+    //aes解密
+    func aesDecryptor(password:String,secret:String)->String
+    {
+        
+        var plaintext: Data = Data.init(base64Encoded: password,
+                                         options: .ignoreUnknownCharacters)!
+        do {
+            plaintext = try RNCryptor.Decryptor(password: secret).decrypt(data: plaintext)
+        } catch {
+            plaintext = Data(bytes: [0])
+        }
+        return String.init(data: plaintext, encoding: .utf8)!
+>>>>>>> 946f05e90f461a17daf8c254c20fdeb460e21230
     }
     
     ///上传到指定服务器

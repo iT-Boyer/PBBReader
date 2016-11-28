@@ -11,6 +11,9 @@
       location = "group:PBBReaderForMac.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:PBBReaderForMac.xcodeproj/project.pbxproj">
+   </FileRef>
+   <FileRef
       location = "group:PDFReader/PDFReader.xcodeproj">
    </FileRef>
    <FileRef

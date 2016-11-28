@@ -39,6 +39,13 @@
 			<key>orderHint</key>
 			<integer>17</integer>
 		</dict>
+		<key>Pods-PBBLogSDKTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>21</integer>
+		</dict>
 		<key>Pods-PBBReader.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -164,6 +171,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>A2E5BD81F6E183CC8864022820FB0EDC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>A46399945D18308F6E6F073507A3A78B</key>
 		<dict>
 			<key>primary</key>
@@ -195,6 +207,11 @@
 			<true/>
 		</dict>
 		<key>CFEEF5EF28670C0EAD8B5F08D5313205</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D5CCC547D934F2CBECEC9A773DCDBF25</key>
 		<dict>
 			<key>primary</key>
 			<true/>

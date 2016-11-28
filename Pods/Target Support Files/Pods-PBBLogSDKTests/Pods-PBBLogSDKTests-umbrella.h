@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #ifdef __OBJC__
 #import <Cocoa/Cocoa.h>
 #else
@@ -9,6 +10,9 @@
 #endif
 #endif
 #endif
+=======
+#import <Cocoa/Cocoa.h>
+>>>>>>> 946f05e90f461a17daf8c254c20fdeb460e21230
 
 
 FOUNDATION_EXPORT double Pods_PBBLogSDKTestsVersionNumber;

@@ -19,6 +19,11 @@
 			<key>orderHint</key>
 			<integer>20</integer>
 		</dict>
+		<key>PBBLogSDKTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>22</integer>
+		</dict>
 		<key>PBBReader.xcscheme</key>
 		<dict>
 			<key>orderHint</key>

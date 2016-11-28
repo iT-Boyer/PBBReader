@@ -875,10 +875,6 @@
 		14BF31791D77C9DE000EFF66 /* CellhighlightColorTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellhighlightColorTableView.swift; sourceTree = "<group>"; };
 		14BF31801D780AB1000EFF66 /* CustomBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBox.swift; sourceTree = "<group>"; };
 		14C75DCC1D6AE9C6009CBE09 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
-		14C942361DE5D9A40092E888 /* RequestAddLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestAddLog.h; sourceTree = "<group>"; };
-		14C942371DE5D9A40092E888 /* RequestAddLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestAddLog.m; sourceTree = "<group>"; };
-		14C942381DE5D9A40092E888 /* Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
-		14C942391DE5D9A40092E888 /* Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
 		14C9B6A41D8E859800A0C6B9 /* FSCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCustomCell.h; sourceTree = "<group>"; };
 		14C9B6A51D8E859800A0C6B9 /* FSCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCustomCell.m; sourceTree = "<group>"; };
 		14E14B0D1DC0B34F00417640 /* Mac开发:发布证书合集.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mac开发:发布证书合集.p12"; sourceTree = "<group>"; };
@@ -1668,15 +1664,24 @@
 			path = model;
 			sourceTree = "<group>";
 		};
-		14C942251DE59B9D0092E888 /* Log */ = {
+		14CD565A1DEBD8E00058BF61 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				14C942361DE5D9A40092E888 /* RequestAddLog.h */,
-				14C942371DE5D9A40092E888 /* RequestAddLog.m */,
-				14C942381DE5D9A40092E888 /* Test.h */,
-				14C942391DE5D9A40092E888 /* Test.m */,
+				840E724C1DEAA76200E90644 /* PbbEnum.swift */,
+				84D6D2661DE5E03D00AC183D /* PBBLogModel.swift */,
 			);
-			name = Log;
+			name = Model;
+			sourceTree = "<group>";
+		};
+		14CD565B1DEBD8F40058BF61 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				840E724A1DEAA35300E90644 /* ConvertToDictionary.swift */,
+				840E72421DE8B28C00E90644 /* DeviceUtil.swift */,
+				840E72461DE9DA8200E90644 /* IOUSBDetector.swift */,
+				840E72481DEA778100E90644 /* DeviceXMLParser.swift */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 		14EA57C91D7E62220026602B /* Distribution */ = {
@@ -1723,7 +1728,6 @@
 		14EE61891CF816E50051FD1A /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				14C942251DE59B9D0092E888 /* Log */,
 				148AB4731CFFD24E00CAF9BA /* AppDelegateHelper.h */,
 				148AB4741CFFD24E00CAF9BA /* AppDelegateHelper.m */,
 				14430C291D012D1D00A5394D /* LookMedia.h */,
@@ -2295,6 +2299,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		02330401411F4166EB521534 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		0AC80FC14DF6856FC747BBEC /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		0DECE3213ECDCD8C67DD6428 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2517,6 +2551,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PBBLogSDK/Pods-PBBLogSDK-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		65E912C3F135A5E4C97D5494 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PBBLogSDKTests/Pods-PBBLogSDKTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6FF822FB36820B453C9B8EDD /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2544,6 +2593,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PBBLogSDKForiOS/Pods-PBBLogSDKForiOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		81E78135405DA7AD4D1D6726 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		84AEDA3E1DC5F571001E8116 /* Run Fabric */ = {
@@ -2718,6 +2782,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PBBReader/Pods-PBBReader-resources.sh\"\n";
+		};
+		D1DA4687E9E26517F5D3FAF5 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PBBLogSDKTests/Pods-PBBLogSDKTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D6760C1A4F277FF2B2FE0A09 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
 		};
 		E8F8A211AFB888C78DEE3106 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

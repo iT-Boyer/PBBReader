@@ -16,7 +16,7 @@
 class PBBLogClient
 {
     
-    func upLoadLogg(to serverUrl:String = url,logData logModel:PBBLogModel)
+    func upLoadLog(to serverUrl:String = url,logData logModel:PBBLogModel)
     {
         //
         var request = URLRequest(url: URL(string: serverUrl)!)
@@ -38,7 +38,7 @@ class PBBLogClient
     }
     
     //上传
-    func upLoadLog(to URL:String = url,logData logModel:PBBLogModel)
+    func upLoadLogg(to URL:String = url,logData logModel:PBBLogModel)
     {
         let URL = Foundation.URL(string: URL)
         var request = URLRequest(url: URL!)
