@@ -378,7 +378,7 @@ class ActivationController: NSViewController {
                                            seeLogName: userName,
                                            fileName: fileUrl)
         
-        PBBLogModel(.INFO, in: .APPNameReaderMac, desc: "申请激活+1").sendTo()
+        PBBLogModel(.INFO, in: .ReaderMac, desc: "申请激活+1").sendTo()
 //        self.performSegueWithIdentifier("pushApplyInfo", sender: self)// 跳转信息确认
     }
     

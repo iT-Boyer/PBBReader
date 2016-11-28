@@ -19,8 +19,8 @@ class Viewcccc: NSViewController {
     
     @IBAction func dfdfdfdf(_ sender: Any) {
 //        let url = "http://192.168.85.92:8099/HostMonitor/client/log/addLog"
-        let logmodel = PBBLogModel.init(.FATAL, in: .APPNameReader, desc: "ddddd")
-        NSLog("\(logmodel.debugDescription)")
+
+        PBBLogModel.init(.FATAL, in: .Reader, desc: "ddddd").sendTo()
     
     }
 }

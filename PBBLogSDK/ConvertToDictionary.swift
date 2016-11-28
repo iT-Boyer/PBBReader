@@ -6,8 +6,15 @@
 //  Copyright © 2016年 recomend. All rights reserved.
 //
 
-import Cocoa
+#if os(OSX)
+    import Cocoa
+#elseif os(iOS)
+    import UIKit
+#endif
 
+/*
+    针对不是基本（集合）类型的实例转为字典
+ */
 extension NSObject{
     
 //    var toDictionary:[String:Any]?{
@@ -81,12 +88,22 @@ extension NSObject{
             }
             return targetDict
         }
-        NSLog("--------------")
         //当不满足上述基本类型时，获取该对象的所有属性名，继续迭代这个自定义类的说有属性
-//        return convertToDictionary()
-        return ""
+        return convertToDictionary()
     }
 
     
-    
+    func requestBody()->String
+    {
+        let dic = convertToDictionary()
+        let allKeys:[String] = (dic as NSDictionary).allKeys as! [String]
+        var body = ""
+        for key in allKeys {
+            if key == "description" {
+                continue
+            }
+            body += "\(key)=\(dic[key]!)&"
+        }
+        return body
+    }
 }

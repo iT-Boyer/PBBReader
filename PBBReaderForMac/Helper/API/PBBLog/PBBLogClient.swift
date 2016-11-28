@@ -8,14 +8,37 @@
 #if os(OSX)
     import Cocoa
     import AppKit
+    import Foundation
 #elseif os(iOS)
     import UIKit
 #endif
 
 class PBBLogClient
 {
+    
+    func upLoadLog(to serverUrl:String = url,logData logModel:PBBLogModel)
+    {
+        //
+        var request = URLRequest(url: URL(string: serverUrl)!)
+        let data = logModel.requestBody().data(using: .utf8)
+        request.httpBodyStream = InputStream.init(data: data!)
+        request.httpMethod = "POST"
+        let dataTask: URLSessionDataTask = URLSession.shared.dataTask(with: request) {
+            (data, resp, err) in
+            print("响应的服务器地址：\(resp?.url?.absoluteString)")
+            var dict:NSDictionary? = nil
+            do {
+                dict  = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.init(rawValue: 0)) as? NSDictionary
+            } catch {
+                
+            }
+            print("\(dict)")
+        }
+        dataTask.resume()
+    }
+    
     //上传
-    func upLoadLog(to URL:String = url,logData logModel:PBBLogModel)
+    func upLoadLogg(to URL:String = url,logData logModel:PBBLogModel)
     {
         let URL = Foundation.URL(string: URL)
         var request = URLRequest(url: URL!)
@@ -56,7 +79,5 @@ class PBBLogClient
                                         })
             uploadTask.resume()
         }
-        
-      
     }
 }
