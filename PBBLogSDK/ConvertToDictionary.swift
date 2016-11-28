@@ -52,10 +52,6 @@ extension NSObject{
                 }
             }
         }
-<<<<<<< HEAD
-=======
-        
->>>>>>> 946f05e90f461a17daf8c254c20fdeb460e21230
         return targetDic
     }
     

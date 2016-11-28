@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-<<<<<<< HEAD
 		052A9F875D8608CAB1594FDD6C3DA419 /* Pods-PBBLogSDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DECED220326A37B3A715A6D8A45B1823 /* Pods-PBBLogSDK-dummy.m */; };
 		07BE18471B8AA8B220FEFE24BB1E54EF /* RNCryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE41BE500CACA6947FAC969F63D8ED1 /* RNCryptor.swift */; };
 		0BFE49D32CED47338F22AD0686626C80 /* RNCryptor.h in Headers */ = {isa = PBXBuildFile; fileRef = B553C47AFCDBD935C9A6D5122154BE84 /* RNCryptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -59,59 +58,6 @@
 		F11FAB91014130EE233A3429439D38D7 /* FMDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = CC93D86E725851A5B6E3B27E0F62C4CD /* FMDatabase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F95611029C43324D58C15F9CA78906FF /* EDStarRating-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A64B9F2E9E4571CB84E4F02BF001DF1E /* EDStarRating-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FDB07DF20A6D30E4B47DF87DD0D1E377 /* RNCryptor.h in Headers */ = {isa = PBXBuildFile; fileRef = B553C47AFCDBD935C9A6D5122154BE84 /* RNCryptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-=======
-		00027F114AB8734DEC66F40E55F4FDB7 /* Pods-PBBReader-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 64221956F929509B18E0FC025140E0A0 /* Pods-PBBReader-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0D619A711F71058C9238B17E9AF48AFC /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = F64E7502C605EAF2098E412396D655FF /* FMDatabaseQueue.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		183A0D8AF38E0EE20E47F1FEF9B37327 /* FMResultSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 29566312026493C8F5B1AB99CB9AB584 /* FMResultSet.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1D22E2C881AF33AD1681C1CEE70D4FCF /* Pods-PBBLogSDKTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B825D843EA7B24EBEFF417C7A3D8014 /* Pods-PBBLogSDKTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1F321990EB771D3B014C18D6D625BAB0 /* Pods-PBBLogSDKForiOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 962C3F443B333DC2DE1BDB6FE19C99DD /* Pods-PBBLogSDKForiOS-dummy.m */; };
-		338337F55CD853260947EC22A7B93450 /* Pods-PBBLogSDK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 17511D390DA71083E331AE77DB240E5C /* Pods-PBBLogSDK-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3E9679BA5AB8F6B9D99B32361DECFA52 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 022421859D635F58F87040D54F814E17 /* Cocoa.framework */; };
-		3ECC23FFAE400A6B2658AAF2990D83BE /* FMDB.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C90943D91E54FA7BE9A15170013AADC /* FMDB.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3F61BE79D4B46C119C136EDE960CE78C /* FMDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = CC93D86E725851A5B6E3B27E0F62C4CD /* FMDatabase.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		535EF619EEDABE14A32BFC74D471CF18 /* RNCryptor-OSX-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F806435E8F3B367A70192F5A3A55D3 /* RNCryptor-OSX-dummy.m */; };
-		551864BF98FF39945A2F33B4C0B97A06 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 022421859D635F58F87040D54F814E17 /* Cocoa.framework */; };
-		58CE33E7875BEC7B12D551A398FB9A97 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7FC6AD2778BA3920B23DD50B5BFC19C /* Security.framework */; };
-		5F6BF9B5FEB8DD9342325ACD9E626761 /* EDStarRating.h in Headers */ = {isa = PBXBuildFile; fileRef = CB68388D4F29A1F1863A8FD78F11A619 /* EDStarRating.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		69B619B7AFF55DA92CC9416E0A11B9E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8A9DB9DADDE61D966FEDBFD25715792 /* Foundation.framework */; };
-		6AAFA2F344A6B58F728AF958F3FE6D89 /* GCDAsyncSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 711D5E0BE798E53094C5B1DA8627D591 /* GCDAsyncSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6C63E2BEBE2BC08BD46F6A91D0A08143 /* FMDatabasePool.h in Headers */ = {isa = PBXBuildFile; fileRef = C2D4143BA54D00584594AF95502D3B37 /* FMDatabasePool.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7252B26F45161B79E2033F6704A3263D /* Pods-PBBLogSDKTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2EFB6ADFB812DD5D6CD657D7A110FD /* Pods-PBBLogSDKTests-dummy.m */; };
-		74695802583BDB0C0818AC1B97F63815 /* FMDatabaseAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = F0CD2CD6EF20207278995CD5B0677852 /* FMDatabaseAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7C818AE74E830311E61FF1A7E42D0713 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E292AA60BE591DEC07D913F3FC63368 /* FMResultSet.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		88521D90EF1256B7CECA92055C882D7D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 022421859D635F58F87040D54F814E17 /* Cocoa.framework */; };
-		92AED971B91C640191A5ABA1567FE358 /* GCDAsyncUdpSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 42CD5961AE839193D9831051FCDEA31A /* GCDAsyncUdpSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		991BFD139F6A45C9B654960C2F6A7F09 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = F2B2314575EB77F6183327AF29D22696 /* GCDAsyncSocket.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		9E782BE61960B1E4D03391550BC89DFA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 022421859D635F58F87040D54F814E17 /* Cocoa.framework */; };
-		9ED7D145E127C7882CC96F7450862BAE /* EDStarRating-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E11882E30E2234B3343F86A9E1A927A /* EDStarRating-dummy.m */; };
-		A0364D62857DD020BA1A2BC1E6CADBB2 /* RNCryptor-OSX-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0965DB7FF5ECB493A04ACD0D7E86DA43 /* RNCryptor-OSX-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		ACFE60AB34A7FEF697E6EEFB62436A8D /* CocoaAsyncSocket-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 42B0B3432257DEADB690486A6FF8F109 /* CocoaAsyncSocket-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AD01D434D8D120A3767270766AD30797 /* FMDB-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FEC567CA8C663047AF94E7400610EBB /* FMDB-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B053B4F567DA9547E8B67270E0505B16 /* Pods-PBBReader-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0050EBAB642D1CC1072273F6FAD796EC /* Pods-PBBReader-dummy.m */; };
-		B498A7ED6F5AAC22DADCE71B433F780D /* Pods-PBBLogSDKForiOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B76DEA889E86AA25237C6D8DA5FE9D16 /* Pods-PBBLogSDKForiOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B63D4FC29D61D661FF6B2C7AF25076BF /* RNCryptor-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E3104C5E8F52F44CA6B05FA933996087 /* RNCryptor-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B9696DF8710911BE3081BD31EADB4144 /* EDStarRating-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A64B9F2E9E4571CB84E4F02BF001DF1E /* EDStarRating-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BA88E88A631D6BD023521B7206CE6C25 /* FMDB-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 76ECCDF2A2549C773373DFC2F9321359 /* FMDB-dummy.m */; };
-		C5C58FEE0A35A9EF7DA80B26B6DF2089 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24D0F58545AF4609C965385A2E80E9DA /* CoreServices.framework */; };
-		C8FC0929A42C36174794FE1ADFD620E3 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F064B8FAC52EB20C85CBA4558EB9E2 /* FMDatabasePool.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		C9EDD31B8DA345245D5044CFDA0E24AF /* Pods-PBBLogSDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CFED219A0BA1CBD7CBD57A792E5DAB /* Pods-PBBLogSDK-dummy.m */; };
-		CDA51D1B4892D9DCD48B0CCD357C7EBE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 022421859D635F58F87040D54F814E17 /* Cocoa.framework */; };
-		D0DC195F7504CBF55633B88E56CB7F13 /* RNCryptor.h in Headers */ = {isa = PBXBuildFile; fileRef = B553C47AFCDBD935C9A6D5122154BE84 /* RNCryptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D1CED8FF406F2E3EE4A302EC53B1A7ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8A9DB9DADDE61D966FEDBFD25715792 /* Foundation.framework */; };
-		D6BBE6EB79048BA84D469F1E2CF50703 /* RNCryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE41BE500CACA6947FAC969F63D8ED1 /* RNCryptor.swift */; };
-		D6BDD4E655D023A3EEB86143F9A450DA /* RNCryptor.h in Headers */ = {isa = PBXBuildFile; fileRef = B553C47AFCDBD935C9A6D5122154BE84 /* RNCryptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D92B24E1B94B2A572C0FAFF67E3544CD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB7C2797F3E3E8E6CE5AB58ED5ED701 /* QuartzCore.framework */; };
-		D9A44696356E299F3C9A4BFF9E57343F /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E914D8B88E914746D3400DBE0E59FF /* GCDAsyncUdpSocket.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		DBA1723568F5AA75E744827A877E5268 /* RNCryptor-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A2D76E6C8BE5ED95AD7AC0C40F3F46C0 /* RNCryptor-iOS-dummy.m */; };
-		DCCE50BA42EC4671525ED005F1E7FCB9 /* EDStarRating.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ED9894189DEF1E1038D25554253FD78 /* EDStarRating.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		E330886E0E7C450E9669C4BD025D9ABD /* FMDatabaseQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = F6ABD6E304C43ACA201DBF548CC980BC /* FMDatabaseQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EA185A0AD2E05402FBFFEA1B09D13D7B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 022421859D635F58F87040D54F814E17 /* Cocoa.framework */; };
-		EF0CC690099FD83DFF59F3C48FF96047 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 022421859D635F58F87040D54F814E17 /* Cocoa.framework */; };
-		F0895B2A83F948153E1E5EA38A230B66 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C45D317BDF46127D37702CD40A29A66B /* FMDatabaseAdditions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		F0EB7597BC44A3005B24258D223B98D5 /* RNCryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE41BE500CACA6947FAC969F63D8ED1 /* RNCryptor.swift */; };
-		F45B40DF0BF596BDCD96B2D85EF848FA /* CocoaAsyncSocket-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F348DD2BF5182930C13FDC8F554BDA /* CocoaAsyncSocket-dummy.m */; };
-		F5A0569CB70F6F37A16E32EE210D0C66 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9418AE0EB8454A31C83CA59AD8E25050 /* FMDatabase.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
->>>>>>> 946f05e90f461a17daf8c254c20fdeb460e21230
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,18 +68,7 @@
 			remoteGlobalIDString = E1FC98DD1C530B80F6E07EAEBC3CF404;
 			remoteInfo = "RNCryptor-iOS";
 		};
-<<<<<<< HEAD
 		51DE1E0309175A0D129B56A3562695B5 /* PBXContainerItemProxy */ = {
-=======
-		23BDEFC988E36B11D18950B6F241A552 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1415F1C239D5F6C16F26A6772B164FA9;
-			remoteInfo = "RNCryptor-OSX";
-		};
-		40CA0F43C10702D9ECDCED3450386146 /* PBXContainerItemProxy */ = {
->>>>>>> 946f05e90f461a17daf8c254c20fdeb460e21230
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
@@ -178,19 +113,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-<<<<<<< HEAD
-=======
-		0050EBAB642D1CC1072273F6FAD796EC /* Pods-PBBReader-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PBBReader-dummy.m"; sourceTree = "<group>"; };
-		01B1495C97C95AD96159676CBE59B15B /* Pods-PBBLogSDKTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PBBLogSDKTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		022421859D635F58F87040D54F814E17 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
-		03F9F0ECD2A2A6510CDB005FDCE55EF9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		04CFED219A0BA1CBD7CBD57A792E5DAB /* Pods-PBBLogSDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PBBLogSDK-dummy.m"; sourceTree = "<group>"; };
->>>>>>> 946f05e90f461a17daf8c254c20fdeb460e21230
 		06235DB1F4DD9CED573F488D83F9022C /* CLSStackFrame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSStackFrame.h; path = OSX/Crashlytics.framework/Versions/A/Headers/CLSStackFrame.h; sourceTree = "<group>"; };
 		07F064B8FAC52EB20C85CBA4558EB9E2 /* FMDatabasePool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabasePool.m; path = src/fmdb/FMDatabasePool.m; sourceTree = "<group>"; };
 		0965DB7FF5ECB493A04ACD0D7E86DA43 /* RNCryptor-OSX-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RNCryptor-OSX-umbrella.h"; sourceTree = "<group>"; };
 		0E40178A65A052A959F01BD8B8C25985 /* EDStarRating-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EDStarRating-prefix.pch"; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		11A6C20387999A6A1BDE41F5E9640253 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11F806435E8F3B367A70192F5A3A55D3 /* RNCryptor-OSX-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RNCryptor-OSX-dummy.m"; sourceTree = "<group>"; };
 		120040932552B683B533006ED8349C30 /* RNCryptor-OSX-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RNCryptor-OSX-prefix.pch"; sourceTree = "<group>"; };
@@ -243,62 +169,10 @@
 		7A002788F79FA973944AB771926E2B16 /* FMDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FMDB.framework; path = FMDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A434661D52FB2981B5F3C3BBD4D7AEC /* CLSReport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSReport.h; path = OSX/Crashlytics.framework/Versions/A/Headers/CLSReport.h; sourceTree = "<group>"; };
 		7C48EE0AA0E36CF3A55723F3B2304247 /* RNCryptor-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; name = "RNCryptor-iOS.modulemap"; path = "../RNCryptor-iOS/RNCryptor-iOS.modulemap"; sourceTree = "<group>"; };
-=======
-		0EB2D9FCA608F990FA43FA6A49F01A2F /* Pods-PBBLogSDKTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PBBLogSDKTests-resources.sh"; sourceTree = "<group>"; };
-		0F10965D2F6F36DDA2D4AF70A901E240 /* Pods-PBBLogSDKTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PBBLogSDKTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		11A6C20387999A6A1BDE41F5E9640253 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		11F806435E8F3B367A70192F5A3A55D3 /* RNCryptor-OSX-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RNCryptor-OSX-dummy.m"; sourceTree = "<group>"; };
-		120040932552B683B533006ED8349C30 /* RNCryptor-OSX-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RNCryptor-OSX-prefix.pch"; sourceTree = "<group>"; };
-		123122016F9F5E02FED69652C4819E97 /* RNCryptor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RNCryptor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		17511D390DA71083E331AE77DB240E5C /* Pods-PBBLogSDK-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PBBLogSDK-umbrella.h"; sourceTree = "<group>"; };
-		1800E4F325F629043F6D828CD17C0FE0 /* Pods_PBBLogSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PBBLogSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		181FC40A3991D1D788FE1C5319F95DD2 /* Pods-PBBReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PBBReader.debug.xcconfig"; sourceTree = "<group>"; };
-		18976B9B6968A93FC008AB786DA212A8 /* Pods-PBBLogSDKTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PBBLogSDKTests.modulemap"; sourceTree = "<group>"; };
-		1B825D843EA7B24EBEFF417C7A3D8014 /* Pods-PBBLogSDKTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PBBLogSDKTests-umbrella.h"; sourceTree = "<group>"; };
-		1E79BC1BDF903C852813079D238CF2AC /* Pods-PBBLogSDKForiOS-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PBBLogSDKForiOS-frameworks.sh"; sourceTree = "<group>"; };
-		23A631C26FA3686AAF78A3EACE11D64F /* Crashlytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Crashlytics.h; path = OSX/Crashlytics.framework/Versions/A/Headers/Crashlytics.h; sourceTree = "<group>"; };
-		2420E8D7A143A8F2625AC1EAC3420431 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		24D0F58545AF4609C965385A2E80E9DA /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/CoreServices.framework; sourceTree = DEVELOPER_DIR; };
-		25CB4585E374BACA0B750603AB8A7CDD /* Pods-PBBReader-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PBBReader-acknowledgements.plist"; sourceTree = "<group>"; };
-		27A3C6733187B46BA8F1326304E8E2A3 /* CocoaAsyncSocket.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = CocoaAsyncSocket.modulemap; sourceTree = "<group>"; };
-		29566312026493C8F5B1AB99CB9AB584 /* FMResultSet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMResultSet.h; path = src/fmdb/FMResultSet.h; sourceTree = "<group>"; };
-		2CB38D8B38280F81C3BE3EA981B03768 /* Pods-PBBLogSDKForiOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PBBLogSDKForiOS-acknowledgements.plist"; sourceTree = "<group>"; };
-		2F54D6CC4D3E277EC8BE2A4BB8FAD714 /* Pods-PBBLogSDK-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PBBLogSDK-frameworks.sh"; sourceTree = "<group>"; };
-		341CF35537D9942D4B46EE976FE3895F /* CLSLogging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSLogging.h; path = OSX/Crashlytics.framework/Versions/A/Headers/CLSLogging.h; sourceTree = "<group>"; };
-		361D93192E54F206CDA85EA12059DC32 /* Answers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Answers.h; path = OSX/Crashlytics.framework/Versions/A/Headers/Answers.h; sourceTree = "<group>"; };
-		38B4ADA029DC72319BD72EBB83655110 /* Pods-PBBLogSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PBBLogSDK.debug.xcconfig"; sourceTree = "<group>"; };
-		3E292AA60BE591DEC07D913F3FC63368 /* FMResultSet.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = src/fmdb/FMResultSet.m; sourceTree = "<group>"; };
-		3ED9894189DEF1E1038D25554253FD78 /* EDStarRating.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EDStarRating.m; path = EDStarRating/EDStarRating.m; sourceTree = "<group>"; };
-		3EFC563DBF1998E213354041F2CE2F97 /* ANSCompatibility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ANSCompatibility.h; path = OSX/Crashlytics.framework/Versions/A/Headers/ANSCompatibility.h; sourceTree = "<group>"; };
-		40D38E4F81C4E49E86140129FA04AF47 /* Pods_PBBLogSDKTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PBBLogSDKTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		42B0B3432257DEADB690486A6FF8F109 /* CocoaAsyncSocket-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CocoaAsyncSocket-umbrella.h"; sourceTree = "<group>"; };
-		42CD5961AE839193D9831051FCDEA31A /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDAsyncUdpSocket.h; path = Source/GCD/GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
-		43E914D8B88E914746D3400DBE0E59FF /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncUdpSocket.m; path = Source/GCD/GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
-		485C57388D7894498479B1B94AAF3714 /* Pods-PBBLogSDKForiOS-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PBBLogSDKForiOS-resources.sh"; sourceTree = "<group>"; };
-		5C90943D91E54FA7BE9A15170013AADC /* FMDB.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDB.h; path = src/fmdb/FMDB.h; sourceTree = "<group>"; };
-		61B16735B3BDF10C63120EC7BDFE3EEF /* Pods-PBBLogSDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PBBLogSDK.modulemap"; sourceTree = "<group>"; };
-		61F348DD2BF5182930C13FDC8F554BDA /* CocoaAsyncSocket-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CocoaAsyncSocket-dummy.m"; sourceTree = "<group>"; };
-		62E27A5CB7C74437B93B89F1D23ECD22 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = OSX/Crashlytics.framework; sourceTree = "<group>"; };
-		64221956F929509B18E0FC025140E0A0 /* Pods-PBBReader-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PBBReader-umbrella.h"; sourceTree = "<group>"; };
-		6430CFF983310E4C6229EC9623B09822 /* FABAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FABAttributes.h; path = OSX/Fabric.framework/Versions/A/Headers/FABAttributes.h; sourceTree = "<group>"; };
-		64CC7949B389FEF0C24D04A03EEF6DBD /* CocoaAsyncSocket.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CocoaAsyncSocket.xcconfig; sourceTree = "<group>"; };
-		6B8E28D0CF8F09C79BB48EFFC785962C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6F059AFDEE0CEE099BA262BFA4ACA71F /* Pods-PBBReader.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PBBReader.modulemap"; sourceTree = "<group>"; };
-		711D5E0BE798E53094C5B1DA8627D591 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDAsyncSocket.h; path = Source/GCD/GCDAsyncSocket.h; sourceTree = "<group>"; };
-		72CD95B38CD56AB421106CE69C42DB02 /* FMDB-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FMDB-prefix.pch"; sourceTree = "<group>"; };
-		76498FCDC6B2C163F8D2CCD2071C7442 /* RNCryptor-OSX.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "RNCryptor-OSX.modulemap"; sourceTree = "<group>"; };
-		76ECCDF2A2549C773373DFC2F9321359 /* FMDB-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FMDB-dummy.m"; sourceTree = "<group>"; };
-		78576F2674584E3F3BBC711C0D959DBC /* Fabric.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Fabric.h; path = OSX/Fabric.framework/Versions/A/Headers/Fabric.h; sourceTree = "<group>"; };
-		7A002788F79FA973944AB771926E2B16 /* FMDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FMDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7A434661D52FB2981B5F3C3BBD4D7AEC /* CLSReport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSReport.h; path = OSX/Crashlytics.framework/Versions/A/Headers/CLSReport.h; sourceTree = "<group>"; };
-		7BC27D2932FE9F0DD0842DA6C6A15F1B /* Pods-PBBLogSDKTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PBBLogSDKTests.release.xcconfig"; sourceTree = "<group>"; };
-		7C48EE0AA0E36CF3A55723F3B2304247 /* RNCryptor-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "RNCryptor-iOS.modulemap"; path = "../RNCryptor-iOS/RNCryptor-iOS.modulemap"; sourceTree = "<group>"; };
->>>>>>> 946f05e90f461a17daf8c254c20fdeb460e21230
 		7DC5F4B6A27076042427FBB4BBB1902C /* RNCryptor-OSX.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "RNCryptor-OSX.xcconfig"; sourceTree = "<group>"; };
 		7E11882E30E2234B3343F86A9E1A927A /* EDStarRating-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "EDStarRating-dummy.m"; sourceTree = "<group>"; };
 		7F74A5C96F2A770A5BE017EA995C4232 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FEC567CA8C663047AF94E7400610EBB /* FMDB-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FMDB-umbrella.h"; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		8024B3E1335017B3EC01B4FAB76253C6 /* Pods-PBBLogSDK-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PBBLogSDK-resources.sh"; sourceTree = "<group>"; };
 		856EA4365FF1C136CB1ACC24527BB3E6 /* Pods-PBBLogSDK-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PBBLogSDK-acknowledgements.markdown"; sourceTree = "<group>"; };
 		859D94DA7403AC225C02753D3B04BBA7 /* Pods_PBBReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PBBReader.framework; path = "Pods-PBBReader.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -311,24 +185,9 @@
 		98446514E298A2523D97AEDC238A827B /* CocoaAsyncSocket-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CocoaAsyncSocket-prefix.pch"; sourceTree = "<group>"; };
 		9BE0538D8B304C65D6B6990B652ADDC9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		9F065A3C73A23DFD40F1A365537F0D27 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CocoaAsyncSocket.framework; path = CocoaAsyncSocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-=======
-		80FACD7903F3BC2B7883310248BD5E37 /* Pods-PBBLogSDK-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PBBLogSDK-acknowledgements.markdown"; sourceTree = "<group>"; };
-		859D94DA7403AC225C02753D3B04BBA7 /* Pods_PBBReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PBBReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		880004555D43DD0C491A762C55842C72 /* Pods-PBBLogSDKForiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PBBLogSDKForiOS.debug.xcconfig"; sourceTree = "<group>"; };
-		907323A057F27FB294A817170F91499A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		90D4F1C808158BA55F292F28FEAA5A7D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9418AE0EB8454A31C83CA59AD8E25050 /* FMDatabase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabase.m; path = src/fmdb/FMDatabase.m; sourceTree = "<group>"; };
-		9527A61D5F7C249152FB086C7935A17B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../RNCryptor-iOS/Info.plist"; sourceTree = "<group>"; };
-		962C3F443B333DC2DE1BDB6FE19C99DD /* Pods-PBBLogSDKForiOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PBBLogSDKForiOS-dummy.m"; sourceTree = "<group>"; };
-		966FB82806DB0876CDCCB8183619D05A /* FMDB.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FMDB.xcconfig; sourceTree = "<group>"; };
-		98446514E298A2523D97AEDC238A827B /* CocoaAsyncSocket-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CocoaAsyncSocket-prefix.pch"; sourceTree = "<group>"; };
-		9F065A3C73A23DFD40F1A365537F0D27 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CocoaAsyncSocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
->>>>>>> 946f05e90f461a17daf8c254c20fdeb460e21230
 		A2D76E6C8BE5ED95AD7AC0C40F3F46C0 /* RNCryptor-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "RNCryptor-iOS-dummy.m"; path = "../RNCryptor-iOS/RNCryptor-iOS-dummy.m"; sourceTree = "<group>"; };
 		A64B9F2E9E4571CB84E4F02BF001DF1E /* EDStarRating-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EDStarRating-umbrella.h"; sourceTree = "<group>"; };
 		A97DDB6DBC72EF80ABE3AC35DFB79752 /* RNCryptor-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "RNCryptor-iOS-prefix.pch"; path = "../RNCryptor-iOS/RNCryptor-iOS-prefix.pch"; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		A9B6660CB4363274F21DBA13DA06E3BE /* Pods-PBBLogSDKForiOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PBBLogSDKForiOS-dummy.m"; sourceTree = "<group>"; };
 		A9D658F72759A4CBA65B45B5A34F5DCC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADBBD2FD13FC4D46334A8FED164C4825 /* Pods-PBBLogSDKForiOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PBBLogSDKForiOS-umbrella.h"; sourceTree = "<group>"; };
@@ -348,64 +207,25 @@
 		CC93D86E725851A5B6E3B27E0F62C4CD /* FMDatabase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabase.h; path = src/fmdb/FMDatabase.h; sourceTree = "<group>"; };
 		D0A6CA2C9043B17CE3792E9FEE9B60D5 /* Pods-PBBLogSDKForiOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PBBLogSDKForiOS-acknowledgements.plist"; sourceTree = "<group>"; };
 		D2B79BFB904F385BACFFC348E4D73DB2 /* Pods-PBBReader-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PBBReader-resources.sh"; sourceTree = "<group>"; };
-=======
-		AB2EFB6ADFB812DD5D6CD657D7A110FD /* Pods-PBBLogSDKTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PBBLogSDKTests-dummy.m"; sourceTree = "<group>"; };
-		AEB7C2797F3E3E8E6CE5AB58ED5ED701 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		B3106D196A383F132B1837288DB3B102 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B553C47AFCDBD935C9A6D5122154BE84 /* RNCryptor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RNCryptor.h; sourceTree = "<group>"; };
-		B76DEA889E86AA25237C6D8DA5FE9D16 /* Pods-PBBLogSDKForiOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PBBLogSDKForiOS-umbrella.h"; sourceTree = "<group>"; };
-		B932CCA23BC7B0865C0F630F6D3A9967 /* Pods-PBBReader-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PBBReader-acknowledgements.markdown"; sourceTree = "<group>"; };
-		BC452AC5FB0A30866E3809025EB2CB94 /* Pods-PBBLogSDK-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PBBLogSDK-resources.sh"; sourceTree = "<group>"; };
-		C2D4143BA54D00584594AF95502D3B37 /* FMDatabasePool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabasePool.h; path = src/fmdb/FMDatabasePool.h; sourceTree = "<group>"; };
-		C325E79FEB726A5E6752A18A15D88BD3 /* Pods_PBBLogSDKForiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PBBLogSDKForiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C3649EC5DAF268B1BBFF97B80C1D4B6A /* Pods-PBBLogSDKForiOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PBBLogSDKForiOS-acknowledgements.markdown"; sourceTree = "<group>"; };
-		C3917B3D8729479894A84027257F0014 /* Pods-PBBLogSDKTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PBBLogSDKTests-frameworks.sh"; sourceTree = "<group>"; };
-		C45D317BDF46127D37702CD40A29A66B /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseAdditions.m; path = src/fmdb/FMDatabaseAdditions.m; sourceTree = "<group>"; };
-		C657B2AEBCF49DBEBA8F2BDC4B8A4755 /* EDStarRating.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EDStarRating.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C73B47AA421A67F8CF80C5D608859C24 /* RNCryptor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RNCryptor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CB68388D4F29A1F1863A8FD78F11A619 /* EDStarRating.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EDStarRating.h; path = EDStarRating/EDStarRating.h; sourceTree = "<group>"; };
-		CC93D86E725851A5B6E3B27E0F62C4CD /* FMDatabase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabase.h; path = src/fmdb/FMDatabase.h; sourceTree = "<group>"; };
-		D1BCB1055A5EB8BD2904C145D0CCEE86 /* Pods-PBBLogSDK-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PBBLogSDK-acknowledgements.plist"; sourceTree = "<group>"; };
-		D620B588FF7EDBBF64E76FB98B359048 /* Pods-PBBReader-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PBBReader-frameworks.sh"; sourceTree = "<group>"; };
-		D7FC6AD2778BA3920B23DD50B5BFC19C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
->>>>>>> 946f05e90f461a17daf8c254c20fdeb460e21230
 		DBC414FD1724A5022F26AF89E6BEFEA4 /* EDStarRating.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EDStarRating.xcconfig; sourceTree = "<group>"; };
 		DD0E032D09DEE23C3B785200429E522E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE1D6B24145A1FFFCF9AAC20BD0206BC /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = OSX/Fabric.framework; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		DECED220326A37B3A715A6D8A45B1823 /* Pods-PBBLogSDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PBBLogSDK-dummy.m"; sourceTree = "<group>"; };
 		E0F12C0EE0605F3A6C2B8E8DE4FCFC31 /* FMDB.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = FMDB.modulemap; sourceTree = "<group>"; };
-=======
-		DE31A17BF6ECD6EBCFB14B1DE20E0510 /* Pods-PBBLogSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PBBLogSDK.release.xcconfig"; sourceTree = "<group>"; };
-		DF2FAEF289241426F43123AF5B7A03A9 /* Pods-PBBReader-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PBBReader-resources.sh"; sourceTree = "<group>"; };
-		E0F12C0EE0605F3A6C2B8E8DE4FCFC31 /* FMDB.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = FMDB.modulemap; sourceTree = "<group>"; };
->>>>>>> 946f05e90f461a17daf8c254c20fdeb460e21230
 		E3104C5E8F52F44CA6B05FA933996087 /* RNCryptor-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "RNCryptor-iOS-umbrella.h"; path = "../RNCryptor-iOS/RNCryptor-iOS-umbrella.h"; sourceTree = "<group>"; };
 		E39644A813FFC84EA5793BD456E288E7 /* Pods-PBBLogSDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-PBBLogSDK.modulemap"; sourceTree = "<group>"; };
 		E40DE0894E434CA42F4A6B49776CDCB4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		E52F7264A326142B052D44F19E3AA941 /* EDStarRating.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = EDStarRating.modulemap; sourceTree = "<group>"; };
 		ED82A1F58FA48C65963BB1FB7564382C /* CLSAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSAttributes.h; path = OSX/Crashlytics.framework/Versions/A/Headers/CLSAttributes.h; sourceTree = "<group>"; };
-=======
-		E52F7264A326142B052D44F19E3AA941 /* EDStarRating.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = EDStarRating.modulemap; sourceTree = "<group>"; };
-		EB389B2EB63A061423BD1FBCBB5AAF85 /* Pods-PBBLogSDKForiOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PBBLogSDKForiOS.modulemap"; sourceTree = "<group>"; };
-		ED82A1F58FA48C65963BB1FB7564382C /* CLSAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSAttributes.h; path = OSX/Crashlytics.framework/Versions/A/Headers/CLSAttributes.h; sourceTree = "<group>"; };
-		EE4358F2AD01DB6D0793B858ACC2383C /* Pods-PBBLogSDKTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PBBLogSDKTests.debug.xcconfig"; sourceTree = "<group>"; };
->>>>>>> 946f05e90f461a17daf8c254c20fdeb460e21230
 		F0CD2CD6EF20207278995CD5B0677852 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabaseAdditions.h; path = src/fmdb/FMDatabaseAdditions.h; sourceTree = "<group>"; };
 		F2301EE424F5843E47736DDEE912F5A7 /* Pods-PBBLogSDKTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PBBLogSDKTests-dummy.m"; sourceTree = "<group>"; };
 		F232BB1F4065FBB8C54B8C1B2E436B27 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		F2B2314575EB77F6183327AF29D22696 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncSocket.m; path = Source/GCD/GCDAsyncSocket.m; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		F55431F34C745D9DC3A79C0433B2319F /* Pods-PBBReader.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-PBBReader.modulemap"; sourceTree = "<group>"; };
-=======
->>>>>>> 946f05e90f461a17daf8c254c20fdeb460e21230
 		F64E7502C605EAF2098E412396D655FF /* FMDatabaseQueue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseQueue.m; path = src/fmdb/FMDatabaseQueue.m; sourceTree = "<group>"; };
 		F6919C73333A35474B93888312D038E8 /* RNCryptor-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "RNCryptor-iOS.xcconfig"; path = "../RNCryptor-iOS/RNCryptor-iOS.xcconfig"; sourceTree = "<group>"; };
 		F6ABD6E304C43ACA201DBF548CC980BC /* FMDatabaseQueue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabaseQueue.h; path = src/fmdb/FMDatabaseQueue.h; sourceTree = "<group>"; };
 		FBE41BE500CACA6947FAC969F63D8ED1 /* RNCryptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RNCryptor.swift; sourceTree = "<group>"; };
-		FE433C5C782B4B5247F404C29C16AE21 /* Pods-PBBLogSDKForiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PBBLogSDKForiOS.release.xcconfig"; sourceTree = "<group>"; };
-		FF4F5A97A8E25FEE365C0BA4CBADB65E /* Pods-PBBReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PBBReader.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -443,19 +263,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-<<<<<<< HEAD
 		A49BF517E7A31AFBC5C1E75770F833E6 /* Frameworks */ = {
-=======
-		7946D2D8AC1A3F623E706A59A293242E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3E9679BA5AB8F6B9D99B32361DECFA52 /* Cocoa.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		934B56B76C194DC60EA1E6AFCB9EAAFD /* Frameworks */ = {
->>>>>>> 946f05e90f461a17daf8c254c20fdeb460e21230
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -569,7 +377,6 @@
 			path = EDStarRating;
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
 		36EB916A1AECEFDDACA0F0F2ADDECA77 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -593,35 +400,6 @@
 			);
 			name = "Pods-PBBLogSDKForiOS";
 			path = "Target Support Files/Pods-PBBLogSDKForiOS";
-=======
-		36B9169B0A301CF668237A6893802BEA /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				665A024E7CA2A570A47033CE3982A984 /* Pods-PBBLogSDK */,
-				DA122543334B959901E73C56651AFEE6 /* Pods-PBBLogSDKForiOS */,
-				C27FD1DEF20182598ACA5F04B73A6E32 /* Pods-PBBLogSDKTests */,
-				3903AAA84114E11B00F7B14EA0A5D4D7 /* Pods-PBBReader */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		3903AAA84114E11B00F7B14EA0A5D4D7 /* Pods-PBBReader */ = {
-			isa = PBXGroup;
-			children = (
-				2420E8D7A143A8F2625AC1EAC3420431 /* Info.plist */,
-				6F059AFDEE0CEE099BA262BFA4ACA71F /* Pods-PBBReader.modulemap */,
-				B932CCA23BC7B0865C0F630F6D3A9967 /* Pods-PBBReader-acknowledgements.markdown */,
-				25CB4585E374BACA0B750603AB8A7CDD /* Pods-PBBReader-acknowledgements.plist */,
-				0050EBAB642D1CC1072273F6FAD796EC /* Pods-PBBReader-dummy.m */,
-				D620B588FF7EDBBF64E76FB98B359048 /* Pods-PBBReader-frameworks.sh */,
-				DF2FAEF289241426F43123AF5B7A03A9 /* Pods-PBBReader-resources.sh */,
-				64221956F929509B18E0FC025140E0A0 /* Pods-PBBReader-umbrella.h */,
-				181FC40A3991D1D788FE1C5319F95DD2 /* Pods-PBBReader.debug.xcconfig */,
-				FF4F5A97A8E25FEE365C0BA4CBADB65E /* Pods-PBBReader.release.xcconfig */,
-			);
-			name = "Pods-PBBReader";
-			path = "Target Support Files/Pods-PBBReader";
->>>>>>> 946f05e90f461a17daf8c254c20fdeb460e21230
 			sourceTree = "<group>";
 		};
 		4D14FA7D0C8CCCFDBCC5014439F619BF /* Support Files */ = {
@@ -657,7 +435,6 @@
 			path = RNCryptor;
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
 		5C3AD913E962089CFABB971AD7A9B509 /* Pods-PBBLogSDKTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -677,9 +454,6 @@
 			sourceTree = "<group>";
 		};
 		76BCB605111A5EFD25338082E5A8D81D /* OS X */ = {
-=======
-		6644E2DA397B0709D0861BCD2529A5D3 /* OS X */ = {
->>>>>>> 946f05e90f461a17daf8c254c20fdeb460e21230
 			isa = PBXGroup;
 			children = (
 				B3251A79D406C5548E87CA1DA47E7B92 /* Cocoa.framework */,
@@ -690,24 +464,6 @@
 			name = "OS X";
 			sourceTree = "<group>";
 		};
-		665A024E7CA2A570A47033CE3982A984 /* Pods-PBBLogSDK */ = {
-			isa = PBXGroup;
-			children = (
-				03F9F0ECD2A2A6510CDB005FDCE55EF9 /* Info.plist */,
-				61B16735B3BDF10C63120EC7BDFE3EEF /* Pods-PBBLogSDK.modulemap */,
-				80FACD7903F3BC2B7883310248BD5E37 /* Pods-PBBLogSDK-acknowledgements.markdown */,
-				D1BCB1055A5EB8BD2904C145D0CCEE86 /* Pods-PBBLogSDK-acknowledgements.plist */,
-				04CFED219A0BA1CBD7CBD57A792E5DAB /* Pods-PBBLogSDK-dummy.m */,
-				2F54D6CC4D3E277EC8BE2A4BB8FAD714 /* Pods-PBBLogSDK-frameworks.sh */,
-				BC452AC5FB0A30866E3809025EB2CB94 /* Pods-PBBLogSDK-resources.sh */,
-				17511D390DA71083E331AE77DB240E5C /* Pods-PBBLogSDK-umbrella.h */,
-				38B4ADA029DC72319BD72EBB83655110 /* Pods-PBBLogSDK.debug.xcconfig */,
-				DE31A17BF6ECD6EBCFB14B1DE20E0510 /* Pods-PBBLogSDK.release.xcconfig */,
-			);
-			name = "Pods-PBBLogSDK";
-			path = "Target Support Files/Pods-PBBLogSDK";
-			sourceTree = "<group>";
-		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
@@ -715,18 +471,7 @@
 				987782E60E7D42D5D09B5298802657CA /* Frameworks */,
 				DFE7AED2F27A4929D4D5985932F43250 /* Pods */,
 				D8F67B4FBB755EF78DE75E32A5D3CA5C /* Products */,
-<<<<<<< HEAD
 				F74FFD87FC72FAA7FE08F75A03FEFEA4 /* Targets Support Files */,
-=======
-				36B9169B0A301CF668237A6893802BEA /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		83DACD55256EF704533E6195CE7CED7F /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				A8A9DB9DADDE61D966FEDBFD25715792 /* Foundation.framework */,
->>>>>>> 946f05e90f461a17daf8c254c20fdeb460e21230
 			);
 			sourceTree = "<group>";
 		};
@@ -758,24 +503,6 @@
 				43E914D8B88E914746D3400DBE0E59FF /* GCDAsyncUdpSocket.m */,
 			);
 			name = GCD;
-			sourceTree = "<group>";
-		};
-		C27FD1DEF20182598ACA5F04B73A6E32 /* Pods-PBBLogSDKTests */ = {
-			isa = PBXGroup;
-			children = (
-				B3106D196A383F132B1837288DB3B102 /* Info.plist */,
-				18976B9B6968A93FC008AB786DA212A8 /* Pods-PBBLogSDKTests.modulemap */,
-				01B1495C97C95AD96159676CBE59B15B /* Pods-PBBLogSDKTests-acknowledgements.markdown */,
-				0F10965D2F6F36DDA2D4AF70A901E240 /* Pods-PBBLogSDKTests-acknowledgements.plist */,
-				AB2EFB6ADFB812DD5D6CD657D7A110FD /* Pods-PBBLogSDKTests-dummy.m */,
-				C3917B3D8729479894A84027257F0014 /* Pods-PBBLogSDKTests-frameworks.sh */,
-				0EB2D9FCA608F990FA43FA6A49F01A2F /* Pods-PBBLogSDKTests-resources.sh */,
-				1B825D843EA7B24EBEFF417C7A3D8014 /* Pods-PBBLogSDKTests-umbrella.h */,
-				EE4358F2AD01DB6D0793B858ACC2383C /* Pods-PBBLogSDKTests.debug.xcconfig */,
-				7BC27D2932FE9F0DD0842DA6C6A15F1B /* Pods-PBBLogSDKTests.release.xcconfig */,
-			);
-			name = "Pods-PBBLogSDKTests";
-			path = "Target Support Files/Pods-PBBLogSDKTests";
 			sourceTree = "<group>";
 		};
 		C286F99E98201E0C0363910ED552CF14 /* Fabric */ = {
@@ -831,27 +558,6 @@
 				123122016F9F5E02FED69652C4819E97 /* RNCryptor.framework */,
 			);
 			name = Products;
-<<<<<<< HEAD
-=======
-			sourceTree = "<group>";
-		};
-		DA122543334B959901E73C56651AFEE6 /* Pods-PBBLogSDKForiOS */ = {
-			isa = PBXGroup;
-			children = (
-				90D4F1C808158BA55F292F28FEAA5A7D /* Info.plist */,
-				EB389B2EB63A061423BD1FBCBB5AAF85 /* Pods-PBBLogSDKForiOS.modulemap */,
-				C3649EC5DAF268B1BBFF97B80C1D4B6A /* Pods-PBBLogSDKForiOS-acknowledgements.markdown */,
-				2CB38D8B38280F81C3BE3EA981B03768 /* Pods-PBBLogSDKForiOS-acknowledgements.plist */,
-				962C3F443B333DC2DE1BDB6FE19C99DD /* Pods-PBBLogSDKForiOS-dummy.m */,
-				1E79BC1BDF903C852813079D238CF2AC /* Pods-PBBLogSDKForiOS-frameworks.sh */,
-				485C57388D7894498479B1B94AAF3714 /* Pods-PBBLogSDKForiOS-resources.sh */,
-				B76DEA889E86AA25237C6D8DA5FE9D16 /* Pods-PBBLogSDKForiOS-umbrella.h */,
-				880004555D43DD0C491A762C55842C72 /* Pods-PBBLogSDKForiOS.debug.xcconfig */,
-				FE433C5C782B4B5247F404C29C16AE21 /* Pods-PBBLogSDKForiOS.release.xcconfig */,
-			);
-			name = "Pods-PBBLogSDKForiOS";
-			path = "Target Support Files/Pods-PBBLogSDKForiOS";
->>>>>>> 946f05e90f461a17daf8c254c20fdeb460e21230
 			sourceTree = "<group>";
 		};
 		DFE7AED2F27A4929D4D5985932F43250 /* Pods */ = {
@@ -881,7 +587,6 @@
 			path = "../Target Support Files/FMDB";
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
 		F74FFD87FC72FAA7FE08F75A03FEFEA4 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -911,8 +616,6 @@
 			path = "Target Support Files/Pods-PBBReader";
 			sourceTree = "<group>";
 		};
-=======
->>>>>>> 946f05e90f461a17daf8c254c20fdeb460e21230
 		F9B223B8BDDECD950C274934231DBE13 /* Crashlytics */ = {
 			isa = PBXGroup;
 			children = (
@@ -932,7 +635,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-<<<<<<< HEAD
 		066131069354C4CC132CAB645145E8F7 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -944,17 +646,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		10D5780B5F67C7A79C0BE0CA33CD33FA /* Headers */ = {
-=======
-		26832802017E40FB042633A76666EE4C /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1D22E2C881AF33AD1681C1CEE70D4FCF /* Pods-PBBLogSDKTests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		408E7833CFA70DF34F37E8494AEE84B1 /* Headers */ = {
->>>>>>> 946f05e90f461a17daf8c254c20fdeb460e21230
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1077,15 +768,9 @@
 			dependencies = (
 				5EB1210D57CDB8C84F1F4646B8194DBD /* PBXTargetDependency */,
 			);
-<<<<<<< HEAD
 			name = "Pods-PBBLogSDK";
 			productName = "Pods-PBBLogSDK";
 			productReference = 1800E4F325F629043F6D828CD17C0FE0 /* Pods_PBBLogSDK.framework */;
-=======
-			name = FMDB;
-			productName = FMDB;
-			productReference = 7A002788F79FA973944AB771926E2B16 /* FMDB.framework */;
->>>>>>> 946f05e90f461a17daf8c254c20fdeb460e21230
 			productType = "com.apple.product-type.framework";
 		};
 		6F49CD9570C077D3CB140BCA282BCB94 /* Pods-PBBReader */ = {
@@ -1121,15 +806,9 @@
 			);
 			dependencies = (
 			);
-<<<<<<< HEAD
 			name = CocoaAsyncSocket;
 			productName = CocoaAsyncSocket;
 			productReference = 9F065A3C73A23DFD40F1A365537F0D27 /* CocoaAsyncSocket.framework */;
-=======
-			name = "Pods-PBBLogSDKForiOS";
-			productName = "Pods-PBBLogSDKForiOS";
-			productReference = C325E79FEB726A5E6752A18A15D88BD3 /* Pods_PBBLogSDKForiOS.framework */;
->>>>>>> 946f05e90f461a17daf8c254c20fdeb460e21230
 			productType = "com.apple.product-type.framework";
 		};
 		C98A9E39CF02116FD1089C62127D3F86 /* Pods-PBBLogSDKForiOS */ = {
@@ -1145,15 +824,9 @@
 			dependencies = (
 				4B4092B20592A75D4A22AF024B11FE89 /* PBXTargetDependency */,
 			);
-<<<<<<< HEAD
 			name = "Pods-PBBLogSDKForiOS";
 			productName = "Pods-PBBLogSDKForiOS";
 			productReference = C325E79FEB726A5E6752A18A15D88BD3 /* Pods_PBBLogSDKForiOS.framework */;
-=======
-			name = "Pods-PBBLogSDK";
-			productName = "Pods-PBBLogSDK";
-			productReference = 1800E4F325F629043F6D828CD17C0FE0 /* Pods_PBBLogSDK.framework */;
->>>>>>> 946f05e90f461a17daf8c254c20fdeb460e21230
 			productType = "com.apple.product-type.framework";
 		};
 		CFEEF5EF28670C0EAD8B5F08D5313205 /* EDStarRating */ = {
@@ -1168,33 +841,9 @@
 			);
 			dependencies = (
 			);
-<<<<<<< HEAD
 			name = EDStarRating;
 			productName = EDStarRating;
 			productReference = C657B2AEBCF49DBEBA8F2BDC4B8A4755 /* EDStarRating.framework */;
-=======
-			name = "RNCryptor-iOS";
-			productName = "RNCryptor-iOS";
-			productReference = 123122016F9F5E02FED69652C4819E97 /* RNCryptor.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		A2E5BD81F6E183CC8864022820FB0EDC /* Pods-PBBLogSDKTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DE60B1DCE2612F86EB9CF7B45EF6AFC7 /* Build configuration list for PBXNativeTarget "Pods-PBBLogSDKTests" */;
-			buildPhases = (
-				9C6AD728F5E5814B405FC9C22840C271 /* Sources */,
-				7946D2D8AC1A3F623E706A59A293242E /* Frameworks */,
-				26832802017E40FB042633A76666EE4C /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				ACF1F5705482EE77757B48968FF055CB /* PBXTargetDependency */,
-			);
-			name = "Pods-PBBLogSDKTests";
-			productName = "Pods-PBBLogSDKTests";
-			productReference = 40D38E4F81C4E49E86140129FA04AF47 /* Pods_PBBLogSDKTests.framework */;
->>>>>>> 946f05e90f461a17daf8c254c20fdeb460e21230
 			productType = "com.apple.product-type.framework";
 		};
 		D5CCC547D934F2CBECEC9A773DCDBF25 /* Pods-PBBLogSDKTests */ = {
@@ -1210,15 +859,9 @@
 			dependencies = (
 				6AC91723423A542E82B485629C32B7B0 /* PBXTargetDependency */,
 			);
-<<<<<<< HEAD
 			name = "Pods-PBBLogSDKTests";
 			productName = "Pods-PBBLogSDKTests";
 			productReference = 40D38E4F81C4E49E86140129FA04AF47 /* Pods_PBBLogSDKTests.framework */;
-=======
-			name = EDStarRating;
-			productName = EDStarRating;
-			productReference = C657B2AEBCF49DBEBA8F2BDC4B8A4755 /* EDStarRating.framework */;
->>>>>>> 946f05e90f461a17daf8c254c20fdeb460e21230
 			productType = "com.apple.product-type.framework";
 		};
 		E1FC98DD1C530B80F6E07EAEBC3CF404 /* RNCryptor-iOS */ = {
@@ -1233,15 +876,9 @@
 			);
 			dependencies = (
 			);
-<<<<<<< HEAD
 			name = "RNCryptor-iOS";
 			productName = "RNCryptor-iOS";
 			productReference = 123122016F9F5E02FED69652C4819E97 /* RNCryptor.framework */;
-=======
-			name = CocoaAsyncSocket;
-			productName = CocoaAsyncSocket;
-			productReference = 9F065A3C73A23DFD40F1A365537F0D27 /* CocoaAsyncSocket.framework */;
->>>>>>> 946f05e90f461a17daf8c254c20fdeb460e21230
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -1265,7 +902,6 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-<<<<<<< HEAD
 				AC0D2D2B4EE7C873431AB3502859CA60 /* CocoaAsyncSocket */,
 				CFEEF5EF28670C0EAD8B5F08D5313205 /* EDStarRating */,
 				251BAD17812F7EBF6532EACF66F941C3 /* FMDB */,
@@ -1275,17 +911,6 @@
 				6F49CD9570C077D3CB140BCA282BCB94 /* Pods-PBBReader */,
 				E1FC98DD1C530B80F6E07EAEBC3CF404 /* RNCryptor-iOS */,
 				4917DD2C74D48734FAE1F340DF1534AA /* RNCryptor-OSX */,
-=======
-				B37E19CA872A7535725D1E1946E5C271 /* CocoaAsyncSocket */,
-				A46399945D18308F6E6F073507A3A78B /* EDStarRating */,
-				23CF27B2BA6AC7125EFFEDA8C5AA819F /* FMDB */,
-				7AEA38E7DC42DCFBB8811DED86BADB97 /* Pods-PBBLogSDK */,
-				711ADECC6D802925DE1DCCFBA19879E2 /* Pods-PBBLogSDKForiOS */,
-				A2E5BD81F6E183CC8864022820FB0EDC /* Pods-PBBLogSDKTests */,
-				4C977AED3C152246338BB0CE99949EDA /* Pods-PBBReader */,
-				7D6B752AEA070BEA1A3A968CDF8AA1F3 /* RNCryptor-iOS */,
-				1415F1C239D5F6C16F26A6772B164FA9 /* RNCryptor-OSX */,
->>>>>>> 946f05e90f461a17daf8c254c20fdeb460e21230
 			);
 		};
 /* End PBXProject section */
@@ -1333,19 +958,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-<<<<<<< HEAD
 		8FE0D4B503A94502F3431DC0DCB58040 /* Sources */ = {
-=======
-		9C6AD728F5E5814B405FC9C22840C271 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7252B26F45161B79E2033F6704A3263D /* Pods-PBBLogSDKTests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9EE896D10003FFA3E81488B07DA45AAA /* Sources */ = {
->>>>>>> 946f05e90f461a17daf8c254c20fdeb460e21230
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1418,17 +1031,7 @@
 			target = 4917DD2C74D48734FAE1F340DF1534AA /* RNCryptor-OSX */;
 			targetProxy = F6B0118CCB2A7D3BDDC5B301B91B3636 /* PBXContainerItemProxy */;
 		};
-<<<<<<< HEAD
 		74FE0E01FE6C1878C0B8FB045BDDA63D /* PBXTargetDependency */ = {
-=======
-		ACF1F5705482EE77757B48968FF055CB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "RNCryptor-OSX";
-			target = 1415F1C239D5F6C16F26A6772B164FA9 /* RNCryptor-OSX */;
-			targetProxy = 23BDEFC988E36B11D18950B6F241A552 /* PBXContainerItemProxy */;
-		};
-		D66E139D270F6F0399081BE406A195F5 /* PBXTargetDependency */ = {
->>>>>>> 946f05e90f461a17daf8c254c20fdeb460e21230
 			isa = PBXTargetDependency;
 			name = EDStarRating;
 			target = CFEEF5EF28670C0EAD8B5F08D5313205 /* EDStarRating */;
@@ -1515,11 +1118,7 @@
 		};
 		1835AA06C9D40412FB10CBEEF2635FB5 /* Release */ = {
 			isa = XCBuildConfiguration;
-<<<<<<< HEAD
 			baseConfigurationReference = 64CC7949B389FEF0C24D04A03EEF6DBD /* CocoaAsyncSocket.xcconfig */;
-=======
-			baseConfigurationReference = DE31A17BF6ECD6EBCFB14B1DE20E0510 /* Pods-PBBLogSDK.release.xcconfig */;
->>>>>>> 946f05e90f461a17daf8c254c20fdeb460e21230
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				CODE_SIGN_IDENTITY = "-";
@@ -1554,11 +1153,7 @@
 		};
 		1F9A95BF8CFF57E02E0A6350189E016B /* Debug */ = {
 			isa = XCBuildConfiguration;
-<<<<<<< HEAD
 			baseConfigurationReference = 3A80F7C432553A46D074643EEC9801E2 /* Pods-PBBReader.debug.xcconfig */;
-=======
-			baseConfigurationReference = FE433C5C782B4B5247F404C29C16AE21 /* Pods-PBBLogSDKForiOS.release.xcconfig */;
->>>>>>> 946f05e90f461a17daf8c254c20fdeb460e21230
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				CODE_SIGN_IDENTITY = "-";
@@ -1595,46 +1190,7 @@
 			};
 			name = Debug;
 		};
-<<<<<<< HEAD
 		2C66AFA1563C73A971A9F9E55E361A72 /* Release */ = {
-=======
-		2CD6A35F635CD71E1D18D6FE02D2BEFA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EE4358F2AD01DB6D0793B858ACC2383C /* Pods-PBBLogSDKTests.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-PBBLogSDKTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MODULEMAP_FILE = "Target Support Files/Pods-PBBLogSDKTests/Pods-PBBLogSDKTests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_PBBLogSDKTests;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		311C88EA6B11F65E4687F884BEAD00F6 /* Debug */ = {
->>>>>>> 946f05e90f461a17daf8c254c20fdeb460e21230
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F6919C73333A35474B93888312D038E8 /* RNCryptor-iOS.xcconfig */;
 			buildSettings = {
@@ -1668,11 +1224,7 @@
 		};
 		39105A737B54600663FBD912A5CBF73D /* Debug */ = {
 			isa = XCBuildConfiguration;
-<<<<<<< HEAD
 			baseConfigurationReference = 60E5F000FAE5B6C466ECB4A84DCAFA46 /* Pods-PBBLogSDKForiOS.debug.xcconfig */;
-=======
-			baseConfigurationReference = 880004555D43DD0C491A762C55842C72 /* Pods-PBBLogSDKForiOS.debug.xcconfig */;
->>>>>>> 946f05e90f461a17daf8c254c20fdeb460e21230
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1708,11 +1260,7 @@
 		};
 		3E6B5D0D66A4A01C0D8671951225C487 /* Debug */ = {
 			isa = XCBuildConfiguration;
-<<<<<<< HEAD
 			baseConfigurationReference = F6919C73333A35474B93888312D038E8 /* RNCryptor-iOS.xcconfig */;
-=======
-			baseConfigurationReference = FF4F5A97A8E25FEE365C0BA4CBADB65E /* Pods-PBBReader.release.xcconfig */;
->>>>>>> 946f05e90f461a17daf8c254c20fdeb460e21230
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1818,11 +1366,7 @@
 		};
 		4FF7786B214ACE6BB5317082CFB83DF6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-<<<<<<< HEAD
 			baseConfigurationReference = 536ACF0D28A39BFB766937B095CFE93A /* Pods-PBBLogSDK.debug.xcconfig */;
-=======
-			baseConfigurationReference = 181FC40A3991D1D788FE1C5319F95DD2 /* Pods-PBBReader.debug.xcconfig */;
->>>>>>> 946f05e90f461a17daf8c254c20fdeb460e21230
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1858,45 +1402,7 @@
 			};
 			name = Debug;
 		};
-<<<<<<< HEAD
 		60FC86EEF22E2991C4128C931BF85BC4 /* Debug */ = {
-=======
-		758E0B004F91415F5463E442692CE0EF /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7BC27D2932FE9F0DD0842DA6C6A15F1B /* Pods-PBBLogSDKTests.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-PBBLogSDKTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MODULEMAP_FILE = "Target Support Files/Pods-PBBLogSDKTests/Pods-PBBLogSDKTests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_PBBLogSDKTests;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		BA9022468D9DEAC0A38FF3C9B43C8681 /* Release */ = {
->>>>>>> 946f05e90f461a17daf8c254c20fdeb460e21230
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 64CC7949B389FEF0C24D04A03EEF6DBD /* CocoaAsyncSocket.xcconfig */;
 			buildSettings = {
@@ -2235,54 +1741,7 @@
 		};
 		D09905D3D30956358E490FA6CAFA23C2 /* Release */ = {
 			isa = XCBuildConfiguration;
-<<<<<<< HEAD
 			baseConfigurationReference = 21D26270377F037E4A965724DAD70983 /* Pods-PBBLogSDK.release.xcconfig */;
-=======
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_DEBUG=1",
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				ONLY_ACTIVE_ARCH = YES;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Debug;
-		};
-		F2D03D3CC78C85267E43FF073C9117F6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 38B4ADA029DC72319BD72EBB83655110 /* Pods-PBBLogSDK.debug.xcconfig */;
->>>>>>> 946f05e90f461a17daf8c254c20fdeb460e21230
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2392,20 +1851,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-<<<<<<< HEAD
 		E82BB14227675F6C1E635FF8E602DCF9 /* Build configuration list for PBXNativeTarget "Pods-PBBLogSDK" */ = {
-=======
-		DE60B1DCE2612F86EB9CF7B45EF6AFC7 /* Build configuration list for PBXNativeTarget "Pods-PBBLogSDKTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2CD6A35F635CD71E1D18D6FE02D2BEFA /* Debug */,
-				758E0B004F91415F5463E442692CE0EF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E130BB4A68655453C9FDC5692FA44094 /* Build configuration list for PBXNativeTarget "FMDB" */ = {
->>>>>>> 946f05e90f461a17daf8c254c20fdeb460e21230
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4FF7786B214ACE6BB5317082CFB83DF6 /* Debug */,
