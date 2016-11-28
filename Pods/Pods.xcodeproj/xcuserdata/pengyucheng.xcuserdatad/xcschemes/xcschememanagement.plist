@@ -41,6 +41,8 @@
 		</dict>
 		<key>Pods-PBBLogSDKTests.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>21</integer>
 		</dict>
@@ -165,6 +167,11 @@
 			<true/>
 		</dict>
 		<key>7D6B752AEA070BEA1A3A968CDF8AA1F3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A2E5BD81F6E183CC8864022820FB0EDC</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -35,6 +35,7 @@
     #import "SZMobileSDK/SZMobileSDK.h"
     #import "QRHistory.h"
 
+    #import "PBBLogSDK.h"
     #endif
 
 #endif

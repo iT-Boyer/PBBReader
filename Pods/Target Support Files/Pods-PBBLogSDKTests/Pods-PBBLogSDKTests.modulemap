@@ -1,0 +1,6 @@
+framework module Pods_PBBLogSDKTests {
+  umbrella header "Pods-PBBLogSDKTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

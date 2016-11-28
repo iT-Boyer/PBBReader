@@ -12,6 +12,8 @@
 #import <CoreFoundation/CoreFoundation.h>
 #import <Carbon/Carbon.h>
 
+#import "PBBLogSDK.h"
+
 @implementation PlayerWindow{
     BOOL paused;
     BOOL hide;
@@ -339,7 +341,8 @@
 - (void)keyDown:(NSEvent*)event {
     
     [self flagsChanged:event];
-    
+    NSString *desc = [[NSString alloc] initWithFormat:@"播放器键盘快捷键：%hu",[event keyCode]];
+    [[[PBBLogModel alloc] inittWithType:5 inApp:@"" desc:desc] sendToServer];
     if(!self.player.mpv){
         NSLog(@"MPV not exists");
         return;
