@@ -226,6 +226,14 @@
 		14BF31811D780AB1000EFF66 /* CustomBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BF31801D780AB1000EFF66 /* CustomBox.swift */; };
 		14C9B6A61D8E859800A0C6B9 /* FSCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C9B6A51D8E859800A0C6B9 /* FSCustomCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		14EA57EA1D7EBEAA0026602B /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EA57E91D7EBEA90026602B /* CustomView.swift */; };
+		55E1BE6FD2144EFE8882E2B8 /* Pods_PBBLogSDKTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40874F023A774C2E48331599 /* Pods_PBBLogSDKTests.framework */; };
+		840E72411DE8790300E90644 /* LogTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E72401DE8790300E90644 /* LogTest.swift */; };
+		840E72431DE8B28D00E90644 /* DeviceUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E72421DE8B28C00E90644 /* DeviceUtil.swift */; };
+		840E72451DE91ECC00E90644 /* DeviceInfoTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E72441DE91ECC00E90644 /* DeviceInfoTest.swift */; };
+		840E72471DE9DA8200E90644 /* IOUSBDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E72461DE9DA8200E90644 /* IOUSBDetector.swift */; };
+		840E72491DEA778100E90644 /* DeviceXMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E72481DEA778100E90644 /* DeviceXMLParser.swift */; };
+		840E724B1DEAA35300E90644 /* ConvertToDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E724A1DEAA35300E90644 /* ConvertToDictionary.swift */; };
+		840E724D1DEAA76200E90644 /* PbbEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E724C1DEAA76200E90644 /* PbbEnum.swift */; };
 		84AEDA461DC5FF02001E8116 /* Toasty.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14A5058E1DAA2656008BF666 /* Toasty.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		84AEDA4B1DC5FF02001E8116 /* PycReceiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A68681CFEC9AD00BC66A1 /* PycReceiveModel.swift */; };
 		84AEDA4C1DC5FF02001E8116 /* SecretDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FCC1CFD844E001BCE84 /* SecretDao.m */; };
@@ -442,13 +450,6 @@
 			remoteGlobalIDString = 148B6D8E1DE69166005B5DFB;
 			remoteInfo = PBBLogSDK;
 		};
-		148B6D9B1DE69167005B5DFB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1437DD601CF2A75E001BD2D2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 143E37F71D3F1809004B0A4D;
-			remoteInfo = PBBReader;
-		};
 		14A505931DAA2656008BF666 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1437DD601CF2A75E001BD2D2 /* Project object */;
@@ -536,6 +537,7 @@
 
 /* Begin PBXFileReference section */
 		0090F6BCE53F529B6F20CE05 /* Pods_PBBReaderForOSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PBBReaderForOSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		11FA829A05C5EB6E83A4721B /* Pods-PBBLogSDKTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PBBLogSDKTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PBBLogSDKTests/Pods-PBBLogSDKTests.debug.xcconfig"; sourceTree = "<group>"; };
 		14105B811D337FD1004CB1C2 /* ReceiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiveViewController.swift; sourceTree = "<group>"; };
 		14105B8B1D339912004CB1C2 /* NSTextField+Attribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTextField+Attribute.h"; sourceTree = "<group>"; };
 		14105B8C1D339912004CB1C2 /* NSTextField+Attribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTextField+Attribute.m"; sourceTree = "<group>"; };
@@ -891,10 +893,19 @@
 		14EE618B1CF816E50051FD1A /* Array+RemoveObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+RemoveObject.swift"; sourceTree = "<group>"; };
 		14EE618C1CF816E50051FD1A /* NSImage+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+Extras.h"; sourceTree = "<group>"; };
 		14EE618D1CF816E50051FD1A /* NSImage+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+Extras.m"; sourceTree = "<group>"; };
+		15F868F5A0168D2547B4F472 /* Pods-PBBLogSDKTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PBBLogSDKTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PBBLogSDKTests/Pods-PBBLogSDKTests.release.xcconfig"; sourceTree = "<group>"; };
 		1C40DC9F339715B6A2E7A3F6 /* Pods-PBBReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PBBReader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PBBReader/Pods-PBBReader.debug.xcconfig"; sourceTree = "<group>"; };
+		40874F023A774C2E48331599 /* Pods_PBBLogSDKTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PBBLogSDKTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		434B0666046D9F6CE037531F /* Pods-PBBLogSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PBBLogSDK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PBBLogSDK/Pods-PBBLogSDK.debug.xcconfig"; sourceTree = "<group>"; };
 		7A66CA53F5B73961FE573D22 /* Pods_PBBReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PBBReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		840AA6901CFCA2EA00819203 /* 114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 114.png; sourceTree = "<group>"; };
+		840E72401DE8790300E90644 /* LogTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogTest.swift; sourceTree = "<group>"; };
+		840E72421DE8B28C00E90644 /* DeviceUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceUtil.swift; sourceTree = "<group>"; };
+		840E72441DE91ECC00E90644 /* DeviceInfoTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfoTest.swift; sourceTree = "<group>"; };
+		840E72461DE9DA8200E90644 /* IOUSBDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOUSBDetector.swift; sourceTree = "<group>"; };
+		840E72481DEA778100E90644 /* DeviceXMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceXMLParser.swift; sourceTree = "<group>"; };
+		840E724A1DEAA35300E90644 /* ConvertToDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvertToDictionary.swift; sourceTree = "<group>"; };
+		840E724C1DEAA76200E90644 /* PbbEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PbbEnum.swift; sourceTree = "<group>"; };
 		843CADFE1D09367800CE84F4 /* Appfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = Appfile; sourceTree = "<group>"; };
 		843CADFF1D09367800CE84F4 /* Deliverfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = Deliverfile; sourceTree = "<group>"; };
 		843CAE001D09367800CE84F4 /* Fastfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = Fastfile; sourceTree = "<group>"; };
@@ -968,6 +979,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				148B6D981DE69167005B5DFB /* PBBLogSDK.framework in Frameworks */,
+				55E1BE6FD2144EFE8882E2B8 /* Pods_PBBLogSDKTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1236,6 +1248,7 @@
 				148B6D911DE69166005B5DFB /* PBBLogSDK.h */,
 				148B6D921DE69166005B5DFB /* Info.plist */,
 				84B6795C1DE72A4400496634 /* PBBLogSDK-Info.plist */,
+				840E72401DE8790300E90644 /* LogTest.swift */,
 			);
 			path = PBBLogSDK;
 			sourceTree = "<group>";
@@ -1245,6 +1258,7 @@
 			children = (
 				148B6D9E1DE69167005B5DFB /* PBBLogSDKTests.swift */,
 				148B6DA01DE69167005B5DFB /* Info.plist */,
+				840E72441DE91ECC00E90644 /* DeviceInfoTest.swift */,
 			);
 			path = PBBLogSDKTests;
 			sourceTree = "<group>";
@@ -1757,6 +1771,7 @@
 				7A66CA53F5B73961FE573D22 /* Pods_PBBReader.framework */,
 				DD3A0CE932E7E0812171DA7E /* Pods_PBBLogSDK.framework */,
 				F37F032AEFFDD913E2AA58C6 /* Pods_PBBLogSDKForiOS.framework */,
+				40874F023A774C2E48331599 /* Pods_PBBLogSDKTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1817,6 +1832,11 @@
 				14A524A11DE6732600E4E0B9 /* PBBLogAPI.swift */,
 				148B6D621DE68DA9005B5DFB /* PBBLogClient.swift */,
 				84D6D2661DE5E03D00AC183D /* PBBLogModel.swift */,
+				840E72421DE8B28C00E90644 /* DeviceUtil.swift */,
+				840E72461DE9DA8200E90644 /* IOUSBDetector.swift */,
+				840E72481DEA778100E90644 /* DeviceXMLParser.swift */,
+				840E724A1DEAA35300E90644 /* ConvertToDictionary.swift */,
+				840E724C1DEAA76200E90644 /* PbbEnum.swift */,
 			);
 			name = LogAPI;
 			sourceTree = "<group>";
@@ -1830,6 +1850,8 @@
 				B03BDA5F66CAF5ADECD5882B /* Pods-PBBLogSDK.release.xcconfig */,
 				8ED118D5EB5BF646A1C3FC8C /* Pods-PBBLogSDKForiOS.debug.xcconfig */,
 				C5891DAAC3F08EE858B4202F /* Pods-PBBLogSDKForiOS.release.xcconfig */,
+				11FA829A05C5EB6E83A4721B /* Pods-PBBLogSDKTests.debug.xcconfig */,
+				15F868F5A0168D2547B4F472 /* Pods-PBBLogSDKTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1868,7 +1890,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 143E38AA1D3F1809004B0A4D /* Build configuration list for PBXNativeTarget "PBBReader" */;
 			buildPhases = (
-				61283CDA81857A8A94659788 /* 📦 Check Pods Manifest.lock */,
+				61283CDA81857A8A94659788 /* [CP] Check Pods Manifest.lock */,
 				E8F8A211AFB888C78DEE3106 /* [CP] Check Pods Manifest.lock */,
 				0DECE3213ECDCD8C67DD6428 /* [CP] Check Pods Manifest.lock */,
 				14A4203D1D549CD7009B9DF3 /* 自动递增build版本号 */,
@@ -1919,7 +1941,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 148B6DA61DE69167005B5DFB /* Build configuration list for PBXNativeTarget "PBBLogSDK" */;
 			buildPhases = (
-				B48976E9D2DFDA7FD9F41782 /* 📦 Check Pods Manifest.lock */,
+				B48976E9D2DFDA7FD9F41782 /* [CP] Check Pods Manifest.lock */,
 				F648D8874D0085430F41B029 /* [CP] Check Pods Manifest.lock */,
 				148B6D8A1DE69166005B5DFB /* Sources */,
 				148B6D8B1DE69166005B5DFB /* Frameworks */,
@@ -1941,15 +1963,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 148B6DA91DE69167005B5DFB /* Build configuration list for PBXNativeTarget "PBBLogSDKTests" */;
 			buildPhases = (
+				503E3573BB1978DE73DA6CBB /* [CP] Check Pods Manifest.lock */,
 				148B6D931DE69166005B5DFB /* Sources */,
 				148B6D941DE69166005B5DFB /* Frameworks */,
 				148B6D951DE69166005B5DFB /* Resources */,
+				111EC34C856C0A4907EEC622 /* [CP] Embed Pods Frameworks */,
+				226B9A6DC0A5753960E9F853 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				148B6D9A1DE69167005B5DFB /* PBXTargetDependency */,
-				148B6D9C1DE69167005B5DFB /* PBXTargetDependency */,
 			);
 			name = PBBLogSDKTests;
 			productName = PBBLogSDKTests;
@@ -2004,7 +2028,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84B679581DE72A4300496634 /* Build configuration list for PBXNativeTarget "PBBLogSDKForiOS" */;
 			buildPhases = (
-				45FC8F0D51472DD08A4A1D5C /* 📦 Check Pods Manifest.lock */,
+				45FC8F0D51472DD08A4A1D5C /* [CP] Check Pods Manifest.lock */,
 				84B6794D1DE72A4300496634 /* [CP] Check Pods Manifest.lock */,
 				84B6794E1DE72A4300496634 /* Sources */,
 				84B679521DE72A4300496634 /* Frameworks */,
@@ -2060,7 +2084,6 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = FA78T6VRG8;
 						ProvisioningStyle = Automatic;
-						TestTargetID = 143E37F71D3F1809004B0A4D;
 					};
 					14A5058D1DAA2656008BF666 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -2274,6 +2297,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		111EC34C856C0A4907EEC622 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PBBLogSDKTests/Pods-PBBLogSDKTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		143E37F91D3F1809004B0A4D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2376,6 +2414,21 @@
 			shellPath = /bin/sh;
 			shellScript = "#递增build版本号，重命名app带版本号的文件名称\n#递增版本号\n#方法一：获取上一版本号并递增\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\necho $buildNumber\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"\n\n#方法二：直接修改指定版本号\n#pwd\n#PLIST_FILE_PATH=${PROJECT_DIR}/'PBBReader-Info.plist'\n#buildVersion=13\n#ImportSVN=\"importSVN\"\n\n#echo $PLIST_FILE_PATH\n#echo \"/<key>CFBundleVersion<\\/key>/{ n; s/\\(<string>\\).*\\(<\\/string>\\)/\\1${buildVersion}\\2/;}\" ${PLIST_FILE_PATH}\n\n#sed -i '' \"/<key>CFBundleVersion<\\/key>/{ n; s/\\(<string>\\).*\\(<\\/string>\\)/\\1${buildVersion}\\2/;}\" ${PLIST_FILE_PATH}\n\n";
 		};
+		226B9A6DC0A5753960E9F853 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PBBLogSDKTests/Pods-PBBLogSDKTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		2D5EB76C5F90B02F9963A93F /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2391,34 +2444,49 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PBBLogSDK/Pods-PBBLogSDK-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		45FC8F0D51472DD08A4A1D5C /* 📦 Check Pods Manifest.lock */ = {
+		45FC8F0D51472DD08A4A1D5C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		61283CDA81857A8A94659788 /* 📦 Check Pods Manifest.lock */ = {
+		503E3573BB1978DE73DA6CBB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		61283CDA81857A8A94659788 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		61682459C4EC472602F03B39 /* [CP] Copy Pods Resources */ = {
@@ -2609,19 +2677,19 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		B48976E9D2DFDA7FD9F41782 /* 📦 Check Pods Manifest.lock */ = {
+		B48976E9D2DFDA7FD9F41782 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		BCDAB9E20263CFF328C04908 /* 📦 Copy Pods Resources */ = {
@@ -2816,6 +2884,12 @@
 			files = (
 				148B6DAD1DE69184005B5DFB /* PBBLogClient.swift in Sources */,
 				148B6DAC1DE69181005B5DFB /* PBBLogAPI.swift in Sources */,
+				840E72491DEA778100E90644 /* DeviceXMLParser.swift in Sources */,
+				840E724D1DEAA76200E90644 /* PbbEnum.swift in Sources */,
+				840E72471DE9DA8200E90644 /* IOUSBDetector.swift in Sources */,
+				840E72411DE8790300E90644 /* LogTest.swift in Sources */,
+				840E72431DE8B28D00E90644 /* DeviceUtil.swift in Sources */,
+				840E724B1DEAA35300E90644 /* ConvertToDictionary.swift in Sources */,
 				148B6DAE1DE69189005B5DFB /* PBBLogModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2825,6 +2899,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				148B6D9F1DE69167005B5DFB /* PBBLogSDKTests.swift in Sources */,
+				840E72451DE91ECC00E90644 /* DeviceInfoTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2988,11 +3063,6 @@
 			target = 148B6D8E1DE69166005B5DFB /* PBBLogSDK */;
 			targetProxy = 148B6D991DE69167005B5DFB /* PBXContainerItemProxy */;
 		};
-		148B6D9C1DE69167005B5DFB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 143E37F71D3F1809004B0A4D /* PBBReader */;
-			targetProxy = 148B6D9B1DE69167005B5DFB /* PBXContainerItemProxy */;
-		};
 		14A505941DAA2656008BF666 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 14A5058D1DAA2656008BF666 /* Toasty */;
@@ -3137,7 +3207,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/PBBReaderForMac/bilibili/libmpv",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-iquote",
@@ -3203,7 +3273,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/PBBReaderForMac/bilibili/libmpv",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-iquote",
@@ -3357,6 +3427,7 @@
 		};
 		148B6DAA1DE69167005B5DFB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11FA829A05C5EB6E83A4721B /* Pods-PBBLogSDKTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -3372,12 +3443,12 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PBBReader.app/Contents/MacOS/PBBReader";
 			};
 			name = Debug;
 		};
 		148B6DAB1DE69167005B5DFB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15F868F5A0168D2547B4F472 /* Pods-PBBLogSDKTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -3393,7 +3464,6 @@
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PBBReader.app/Contents/MacOS/PBBReader";
 			};
 			name = Release;
 		};

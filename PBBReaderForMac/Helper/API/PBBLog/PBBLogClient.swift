@@ -48,7 +48,7 @@ class PBBLogClient
                                                 NSLog("上传成功。\(dataFormatToString)。。\(error)")
                                                 if JSONSerialization.isValidJSONObject(receiveData)
                                                 {
-                                                    let message = try! JSONSerialization.data(withJSONObject: receiveData,
+                                                    _ = try! JSONSerialization.data(withJSONObject: receiveData,
                                                                                               options: .prettyPrinted)
                                                     NSLog("")
                                                 }
