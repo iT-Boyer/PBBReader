@@ -165,6 +165,18 @@ public class PBBLogModel: NSObject
         return ciphertext.base64EncodedString()
     }
     
+    //aes解密
+    func aesDecryptor(password:String,secret:String)->String
+    {
+        var plaintext: Data
+        do {
+            plaintext = try RNCryptor.Decryptor(password: secret).decrypt(data: password)
+        } catch {
+            plaintext = Data(bytes: [0])
+        }
+        return plaintext.base64EncodedString()
+    }
+    
     ///上传到指定服务器
     public func sendTo(server serverUrl:String = url)
     {
