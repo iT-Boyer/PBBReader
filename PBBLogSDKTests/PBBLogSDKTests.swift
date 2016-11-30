@@ -49,17 +49,8 @@ class PBBLogSDKTests: XCTestCase {
         let logmodel = PBBLogModel.init(.INFO, in: .ReaderMac, desc: "dddd")
         NSLog(logmodel.description)
 //        logmodel.sendTo()
-//        logmodel.sendTo(server: URLString)
     }
-    
-    func testReplace() {
-        //
-        var str = "{  \"system\" : \"Reader for iOS\",  \"account_name\" : \"123456\",  \"login_type\" : \"1010100\",  \"application_name\" : \"Reader for iOS\",  \"imei\" : \"1231313112\",  \"content\" : \"1010100\",  \"account_password\" : \"iOS\",  \"sdk_version\" : \"123456\"}"
-        str = str.replacingOccurrences(of: "\\", with: "")
-        NSLog("\(str)")
-    }
-    
-    
+
     func testRequest()
     {
         //
@@ -123,14 +114,8 @@ class PBBLogSDKTests: XCTestCase {
     {
         let session: URLSession = URLSession.shared
         var request: URLRequest = URLRequest(url: URL(string:url)!)
-
-//        let vvv:NSString = "sdk_version=9.3.1&login_type=未登录&extension3=自定义extension3&equip_model=iPad&network_type=Wifi&imei=bd6d65bc85e22c29e790f9feb044d534d4f3b94f&file_name=ShareFolderFileListViewController_Pad&systemType=0&system=iOS&method_name=-[ShareFolderFileListViewController tableView:didSelectRowAtIndexPath:]&logType=0&loginType=0&level=FATAL&appName=0&account_password=自定义account_password&networkType=5&equip_host=绥知的 iPad&application_name=Reader for iOS&equip_serial=bd6d65bc85e22c29e790f9feb044d534d4f3b94f&op_version=9.3.1&desc=自定义desc&device_info=iPad5,1&extension1=自定义extension1&content=自定义content&extension2=自定义extension2"
         let logmodel = PBBLogModel.init(.INFO, in: .ReaderMac, desc: "dddd")
-        let vvv = logmodel.requestBody()
-        
-        let evvv = vvv.data(using: .utf8)
-
-        
+        let evvv =  logmodel.requestBody().data(using: .utf8)
         request.httpBodyStream = InputStream.init(data: evvv!)
         request.httpMethod = "POST"
         let expecttaion = expectation(description: "timeout....")

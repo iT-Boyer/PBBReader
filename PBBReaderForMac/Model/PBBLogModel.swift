@@ -30,10 +30,10 @@ public class PBBLogModel: NSObject
     public var extension3 = ""
 
     var sdk_version = "" //SDK版本
-    var system = ""
-    var imei = ""
+    var system = ""     //
+    var imei = ""      //移动设备唯一编码，非移动端忽略此参数
     var username = ""
-    var token = ""
+    var token = ""    //登录令牌
     
     var login_type = ""
     var application_name = ""
@@ -42,10 +42,23 @@ public class PBBLogModel: NSObject
     var network_type:NetworkType!
     
     var op_version = ""   //操作系统版本
-    var equip_serial = "" //设备序列号
+    var equip_serial = "" //设备序列号，非移动端忽略此参数
     var equip_host = ""   //机主信息
     lazy var equip_model = "" //设备型号
     var device_info = ""  //设备参数
+    
+    fileprivate var bind_count = 0 //当前绑定设备数，非移动端忽略此参数
+    fileprivate var wifi_mac = ""   //Wi-Fi的Mac值
+    fileprivate var product_manufacturer = "" //终端设备制造商。如blackBerry。
+    fileprivate var board_info = ""         //主板
+    var cpu_abi = ""
+    fileprivate var cpu_abi2 = ""
+    fileprivate var device_token = ""  //推送设备号
+    var hardware_info = "" //硬件信息
+    fileprivate var hardware_manufecturer = "" //硬件制造商
+    
+    
+    
     
     fileprivate var logModelDescription = ""
     /*
@@ -81,13 +94,14 @@ public class PBBLogModel: NSObject
                                                  secret: "80F008F8C906098FCE93A89B3DB2EF4E")
         
         let confInfo = DeviceUtil()
-
-        self.login_type = "Mac"
+        self.login_type = LoginType.UnLogin.rawValue
         self.imei = confInfo.platform_UUID
         self.op_version = confInfo.op_version
-        self.equip_serial = confInfo.equip_serial
-        self.equip_model = confInfo.equip_model
+        self.equip_serial = confInfo.serial_number
+        self.equip_model = confInfo.machine_model
         self.device_info = confInfo.hostName
+        self.cpu_abi = confInfo.cpu_type
+        self.hardware_info = confInfo.physical_memory
 //        self.equip_host = ":\(process.userName)"
         
         self.content = "\(confInfo.executionTime) \(confInfo.processName)[\(confInfo.processIdentifier):\(confInfo.threadId)] \(file_name)(\(lines)) \(method_name):\r\t\(desc)\n"
@@ -149,6 +163,7 @@ public class PBBLogModel: NSObject
         {
            sendData = try! JSONSerialization.data(withJSONObject: dict,
                                                          options:.prettyPrinted)
+        logModelDescription = String.init(data: sendData!, encoding: String.Encoding.utf8)!
         }
         return sendData
     }
@@ -160,6 +175,7 @@ public class PBBLogModel: NSObject
         let ciphertext = RNCryptor.encrypt(data: data, withPassword: secret)
 //        let ciphertext2 = RNCryptor.Encryptor(password: secret).encrypt(data: data)
         return ciphertext.base64EncodedString()
+
     }
     
     //aes解密

@@ -50,10 +50,10 @@ class PBBLogClient
 //         Accept-Language: en;q=1
 //         Accept-Encoding: gzip, deflate
 //         Content-Length: 1575
-        request.addValue("multipart/form-data; boundary=Boundary+29E471EAEC23B6A0", forHTTPHeaderField: "Content-Type")
-        request.addValue("*/*", forHTTPHeaderField: "Accept")
-        request.addValue("en;q=1", forHTTPHeaderField: "Accept-Language")
-        request.addValue("gzip, deflate", forHTTPHeaderField: "Accept-Encoding")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+//        request.addValue("en;q=1", forHTTPHeaderField: "Accept-Language")
+//        request.addValue("gzip, deflate", forHTTPHeaderField: "Accept-Encoding")
         request.httpMethod = "POST"
         request.timeoutInterval = 20
         request.cachePolicy = .reloadIgnoringCacheData

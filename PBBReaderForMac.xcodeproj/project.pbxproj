@@ -227,7 +227,6 @@
 		14C9B6A61D8E859800A0C6B9 /* FSCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C9B6A51D8E859800A0C6B9 /* FSCustomCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		14EA57EA1D7EBEAA0026602B /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EA57E91D7EBEA90026602B /* CustomView.swift */; };
 		55E1BE6FD2144EFE8882E2B8 /* Pods_PBBLogSDKTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40874F023A774C2E48331599 /* Pods_PBBLogSDKTests.framework */; };
-		840E72411DE8790300E90644 /* LogTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E72401DE8790300E90644 /* LogTest.swift */; };
 		840E72431DE8B28D00E90644 /* DeviceUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E72421DE8B28C00E90644 /* DeviceUtil.swift */; };
 		840E72451DE91ECC00E90644 /* DeviceInfoTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E72441DE91ECC00E90644 /* DeviceInfoTest.swift */; };
 		840E72471DE9DA8200E90644 /* IOUSBDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E72461DE9DA8200E90644 /* IOUSBDetector.swift */; };
@@ -895,7 +894,6 @@
 		434B0666046D9F6CE037531F /* Pods-PBBLogSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PBBLogSDK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PBBLogSDK/Pods-PBBLogSDK.debug.xcconfig"; sourceTree = "<group>"; };
 		7A66CA53F5B73961FE573D22 /* Pods_PBBReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PBBReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		840AA6901CFCA2EA00819203 /* 114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 114.png; sourceTree = "<group>"; };
-		840E72401DE8790300E90644 /* LogTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogTest.swift; sourceTree = "<group>"; };
 		840E72421DE8B28C00E90644 /* DeviceUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceUtil.swift; sourceTree = "<group>"; };
 		840E72441DE91ECC00E90644 /* DeviceInfoTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfoTest.swift; sourceTree = "<group>"; };
 		840E72461DE9DA8200E90644 /* IOUSBDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOUSBDetector.swift; sourceTree = "<group>"; };
@@ -1244,7 +1242,6 @@
 				148B6D911DE69166005B5DFB /* PBBLogSDK.h */,
 				148B6D921DE69166005B5DFB /* Info.plist */,
 				84B6795C1DE72A4400496634 /* PBBLogSDK-Info.plist */,
-				840E72401DE8790300E90644 /* LogTest.swift */,
 			);
 			path = PBBLogSDK;
 			sourceTree = "<group>";
@@ -1830,22 +1827,39 @@
 			path = screenshots;
 			sourceTree = "<group>";
 		};
+		844A66371DEB249700E4E123 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				84D6D2661DE5E03D00AC183D /* PBBLogModel.swift */,
+				840E724C1DEAA76200E90644 /* PbbEnum.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		844A66381DEB24C200E4E123 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				840E724A1DEAA35300E90644 /* ConvertToDictionary.swift */,
+				840E72421DE8B28C00E90644 /* DeviceUtil.swift */,
+				840E72461DE9DA8200E90644 /* IOUSBDetector.swift */,
+				840E72481DEA778100E90644 /* DeviceXMLParser.swift */,
+			);
+			name = util;
+			sourceTree = "<group>";
+		};
 		84B679171DE7180D00496634 /* LogAPI */ = {
 			isa = PBXGroup;
 			children = (
 				14A524A11DE6732600E4E0B9 /* PBBLogAPI.swift */,
 				148B6D621DE68DA9005B5DFB /* PBBLogClient.swift */,
-<<<<<<< 946f05e90f461a17daf8c254c20fdeb460e21230
-				14CD565A1DEBD8E00058BF61 /* Model */,
-				14CD565B1DEBD8F40058BF61 /* Util */,
-=======
+				844A66371DEB249700E4E123 /* Model */,
+				844A66381DEB24C200E4E123 /* util */,
 				84D6D2661DE5E03D00AC183D /* PBBLogModel.swift */,
 				840E72421DE8B28C00E90644 /* DeviceUtil.swift */,
 				840E72461DE9DA8200E90644 /* IOUSBDetector.swift */,
 				840E72481DEA778100E90644 /* DeviceXMLParser.swift */,
 				840E724A1DEAA35300E90644 /* ConvertToDictionary.swift */,
 				840E724C1DEAA76200E90644 /* PbbEnum.swift */,
->>>>>>> 获取设备硬件信息
 			);
 			name = LogAPI;
 			sourceTree = "<group>";
@@ -1899,10 +1913,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 143E38AA1D3F1809004B0A4D /* Build configuration list for PBXNativeTarget "PBBReader" */;
 			buildPhases = (
-<<<<<<< 946f05e90f461a17daf8c254c20fdeb460e21230
-				0AC80FC14DF6856FC747BBEC /* 📦 Check Pods Manifest.lock */,
-=======
->>>>>>> 获取设备硬件信息
 				61283CDA81857A8A94659788 /* [CP] Check Pods Manifest.lock */,
 				E8F8A211AFB888C78DEE3106 /* [CP] Check Pods Manifest.lock */,
 				0DECE3213ECDCD8C67DD6428 /* [CP] Check Pods Manifest.lock */,
@@ -1954,10 +1964,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 148B6DA61DE69167005B5DFB /* Build configuration list for PBXNativeTarget "PBBLogSDK" */;
 			buildPhases = (
-<<<<<<< 946f05e90f461a17daf8c254c20fdeb460e21230
-				81E78135405DA7AD4D1D6726 /* 📦 Check Pods Manifest.lock */,
-=======
->>>>>>> 获取设备硬件信息
 				B48976E9D2DFDA7FD9F41782 /* [CP] Check Pods Manifest.lock */,
 				F648D8874D0085430F41B029 /* [CP] Check Pods Manifest.lock */,
 				148B6D8A1DE69166005B5DFB /* Sources */,
@@ -1980,21 +1986,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 148B6DA91DE69167005B5DFB /* Build configuration list for PBXNativeTarget "PBBLogSDKTests" */;
 			buildPhases = (
-<<<<<<< 946f05e90f461a17daf8c254c20fdeb460e21230
-				D6760C1A4F277FF2B2FE0A09 /* 📦 Check Pods Manifest.lock */,
-=======
->>>>>>> 获取设备硬件信息
 				503E3573BB1978DE73DA6CBB /* [CP] Check Pods Manifest.lock */,
 				148B6D931DE69166005B5DFB /* Sources */,
 				148B6D941DE69166005B5DFB /* Frameworks */,
 				148B6D951DE69166005B5DFB /* Resources */,
 				111EC34C856C0A4907EEC622 /* [CP] Embed Pods Frameworks */,
 				226B9A6DC0A5753960E9F853 /* [CP] Copy Pods Resources */,
-<<<<<<< 946f05e90f461a17daf8c254c20fdeb460e21230
-				D1DA4687E9E26517F5D3FAF5 /* 📦 Embed Pods Frameworks */,
-				65E912C3F135A5E4C97D5494 /* 📦 Copy Pods Resources */,
-=======
->>>>>>> 获取设备硬件信息
 			);
 			buildRules = (
 			);
@@ -2054,10 +2051,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84B679581DE72A4300496634 /* Build configuration list for PBXNativeTarget "PBBLogSDKForiOS" */;
 			buildPhases = (
-<<<<<<< 946f05e90f461a17daf8c254c20fdeb460e21230
-				02330401411F4166EB521534 /* 📦 Check Pods Manifest.lock */,
-=======
->>>>>>> 获取设备硬件信息
 				45FC8F0D51472DD08A4A1D5C /* [CP] Check Pods Manifest.lock */,
 				84B6794D1DE72A4300496634 /* [CP] Check Pods Manifest.lock */,
 				84B6794E1DE72A4300496634 /* Sources */,
@@ -3007,7 +3000,6 @@
 				840E72491DEA778100E90644 /* DeviceXMLParser.swift in Sources */,
 				840E724D1DEAA76200E90644 /* PbbEnum.swift in Sources */,
 				840E72471DE9DA8200E90644 /* IOUSBDetector.swift in Sources */,
-				840E72411DE8790300E90644 /* LogTest.swift in Sources */,
 				840E72431DE8B28D00E90644 /* DeviceUtil.swift in Sources */,
 				840E724B1DEAA35300E90644 /* ConvertToDictionary.swift in Sources */,
 				148B6DAE1DE69189005B5DFB /* PBBLogModel.swift in Sources */,
