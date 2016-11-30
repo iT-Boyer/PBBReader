@@ -6,15 +6,14 @@
 //  Copyright © 2016年 recomend. All rights reserved.
 //
 
+
 #if os(OSX)
     import Cocoa
 #elseif os(iOS)
     import UIKit
 #endif
 
-/*
-    针对不是基本（集合）类型的实例转为字典
- */
+
 extension NSObject{
     
 //    var toDictionary:[String:Any]?{

@@ -32,6 +32,7 @@ public enum APPName:String
 
 public enum LoginType:String
 {
+
     case Account = "账号登录"
     case WeiXin = "微信登录"
     case QQ   = "QQ登录"

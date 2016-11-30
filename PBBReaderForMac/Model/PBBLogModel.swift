@@ -106,7 +106,6 @@ public class PBBLogModel: NSObject
         
         self.content = "\(confInfo.executionTime) \(confInfo.processName)[\(confInfo.processIdentifier):\(confInfo.threadId)] \(file_name)(\(lines)) \(method_name):\r\t\(desc)\n"
         
-        
         let dict = self.convertToDictionary()
         if JSONSerialization.isValidJSONObject(dict)
         {
@@ -191,6 +190,7 @@ public class PBBLogModel: NSObject
             plaintext = Data(bytes: [0])
         }
         return String.init(data: plaintext, encoding: .utf8)!
+
     }
     
     ///上传到指定服务器
