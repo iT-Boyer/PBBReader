@@ -58,14 +58,15 @@
 		F0EB7597BC44A3005B24258D223B98D5 /* RNCryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE41BE500CACA6947FAC969F63D8ED1 /* RNCryptor.swift */; };
 		F45B40DF0BF596BDCD96B2D85EF848FA /* CocoaAsyncSocket-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F348DD2BF5182930C13FDC8F554BDA /* CocoaAsyncSocket-dummy.m */; };
 		F5A0569CB70F6F37A16E32EE210D0C66 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9418AE0EB8454A31C83CA59AD8E25050 /* FMDatabase.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		104D560DC7F28815881027B342F11E53 /* PBXContainerItemProxy */ = {
+		3F6F632E354EFA27561B070F7725E57C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 7D6B752AEA070BEA1A3A968CDF8AA1F3;
+			remoteGlobalIDString = E1FC98DD1C530B80F6E07EAEBC3CF404;
 			remoteInfo = "RNCryptor-iOS";
 		};
 		23BDEFC988E36B11D18950B6F241A552 /* PBXContainerItemProxy */ = {
@@ -79,36 +80,43 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A46399945D18308F6E6F073507A3A78B;
-			remoteInfo = EDStarRating;
-		};
-		4A4511C7028D4808A0A43780AE4CA746 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1415F1C239D5F6C16F26A6772B164FA9;
-			remoteInfo = "RNCryptor-OSX";
-		};
-		841801BA8523890F5E1145E1E7F36EDA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 23CF27B2BA6AC7125EFFEDA8C5AA819F;
+			remoteGlobalIDString = 251BAD17812F7EBF6532EACF66F941C3;
 			remoteInfo = FMDB;
 		};
-		B82BE22E46EE32185A4E8E988DE91343 /* PBXContainerItemProxy */ = {
+		62B09B133FDB139272C1FA93E22E513F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 1415F1C239D5F6C16F26A6772B164FA9;
+			remoteGlobalIDString = AC0D2D2B4EE7C873431AB3502859CA60;
+			remoteInfo = CocoaAsyncSocket;
+		};
+		D29A313FC6E61D8640786144B23C04D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CFEEF5EF28670C0EAD8B5F08D5313205;
+			remoteInfo = EDStarRating;
+		};
+		DC68272D915F7F9611AC9254D77015E3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4917DD2C74D48734FAE1F340DF1534AA;
 			remoteInfo = "RNCryptor-OSX";
 		};
-		FFE8E719B1A1BC6696734D9D6B627550 /* PBXContainerItemProxy */ = {
+		EF49ED293F92EAE6BF404002FE6E32DF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = B37E19CA872A7535725D1E1946E5C271;
-			remoteInfo = CocoaAsyncSocket;
+			remoteGlobalIDString = 4917DD2C74D48734FAE1F340DF1534AA;
+			remoteInfo = "RNCryptor-OSX";
+		};
+		F6B0118CCB2A7D3BDDC5B301B91B3636 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4917DD2C74D48734FAE1F340DF1534AA;
+			remoteInfo = "RNCryptor-OSX";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -171,9 +179,12 @@
 		7A434661D52FB2981B5F3C3BBD4D7AEC /* CLSReport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSReport.h; path = OSX/Crashlytics.framework/Versions/A/Headers/CLSReport.h; sourceTree = "<group>"; };
 		7BC27D2932FE9F0DD0842DA6C6A15F1B /* Pods-PBBLogSDKTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PBBLogSDKTests.release.xcconfig"; sourceTree = "<group>"; };
 		7C48EE0AA0E36CF3A55723F3B2304247 /* RNCryptor-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "RNCryptor-iOS.modulemap"; path = "../RNCryptor-iOS/RNCryptor-iOS.modulemap"; sourceTree = "<group>"; };
+
 		7DC5F4B6A27076042427FBB4BBB1902C /* RNCryptor-OSX.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "RNCryptor-OSX.xcconfig"; sourceTree = "<group>"; };
 		7E11882E30E2234B3343F86A9E1A927A /* EDStarRating-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "EDStarRating-dummy.m"; sourceTree = "<group>"; };
+		7F74A5C96F2A770A5BE017EA995C4232 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FEC567CA8C663047AF94E7400610EBB /* FMDB-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FMDB-umbrella.h"; sourceTree = "<group>"; };
+
 		80FACD7903F3BC2B7883310248BD5E37 /* Pods-PBBLogSDK-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PBBLogSDK-acknowledgements.markdown"; sourceTree = "<group>"; };
 		859D94DA7403AC225C02753D3B04BBA7 /* Pods_PBBReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PBBReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		880004555D43DD0C491A762C55842C72 /* Pods-PBBLogSDKForiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PBBLogSDKForiOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -186,10 +197,11 @@
 		966FB82806DB0876CDCCB8183619D05A /* FMDB.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FMDB.xcconfig; sourceTree = "<group>"; };
 		98446514E298A2523D97AEDC238A827B /* CocoaAsyncSocket-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CocoaAsyncSocket-prefix.pch"; sourceTree = "<group>"; };
 		9F065A3C73A23DFD40F1A365537F0D27 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CocoaAsyncSocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+
 		A2D76E6C8BE5ED95AD7AC0C40F3F46C0 /* RNCryptor-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "RNCryptor-iOS-dummy.m"; path = "../RNCryptor-iOS/RNCryptor-iOS-dummy.m"; sourceTree = "<group>"; };
 		A64B9F2E9E4571CB84E4F02BF001DF1E /* EDStarRating-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EDStarRating-umbrella.h"; sourceTree = "<group>"; };
-		A8A9DB9DADDE61D966FEDBFD25715792 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		A97DDB6DBC72EF80ABE3AC35DFB79752 /* RNCryptor-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "RNCryptor-iOS-prefix.pch"; path = "../RNCryptor-iOS/RNCryptor-iOS-prefix.pch"; sourceTree = "<group>"; };
+
 		AB2EFB6ADFB812DD5D6CD657D7A110FD /* Pods-PBBLogSDKTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PBBLogSDKTests-dummy.m"; sourceTree = "<group>"; };
 		AEB7C2797F3E3E8E6CE5AB58ED5ED701 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		B3106D196A383F132B1837288DB3B102 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -209,19 +221,29 @@
 		D1BCB1055A5EB8BD2904C145D0CCEE86 /* Pods-PBBLogSDK-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PBBLogSDK-acknowledgements.plist"; sourceTree = "<group>"; };
 		D620B588FF7EDBBF64E76FB98B359048 /* Pods-PBBReader-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PBBReader-frameworks.sh"; sourceTree = "<group>"; };
 		D7FC6AD2778BA3920B23DD50B5BFC19C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+
 		DBC414FD1724A5022F26AF89E6BEFEA4 /* EDStarRating.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EDStarRating.xcconfig; sourceTree = "<group>"; };
+		DD0E032D09DEE23C3B785200429E522E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE1D6B24145A1FFFCF9AAC20BD0206BC /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = OSX/Fabric.framework; sourceTree = "<group>"; };
+
 		DE31A17BF6ECD6EBCFB14B1DE20E0510 /* Pods-PBBLogSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PBBLogSDK.release.xcconfig"; sourceTree = "<group>"; };
 		DF2FAEF289241426F43123AF5B7A03A9 /* Pods-PBBReader-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PBBReader-resources.sh"; sourceTree = "<group>"; };
 		E0F12C0EE0605F3A6C2B8E8DE4FCFC31 /* FMDB.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = FMDB.modulemap; sourceTree = "<group>"; };
+
 		E3104C5E8F52F44CA6B05FA933996087 /* RNCryptor-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "RNCryptor-iOS-umbrella.h"; path = "../RNCryptor-iOS/RNCryptor-iOS-umbrella.h"; sourceTree = "<group>"; };
+		E39644A813FFC84EA5793BD456E288E7 /* Pods-PBBLogSDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-PBBLogSDK.modulemap"; sourceTree = "<group>"; };
 		E40DE0894E434CA42F4A6B49776CDCB4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+
 		E52F7264A326142B052D44F19E3AA941 /* EDStarRating.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = EDStarRating.modulemap; sourceTree = "<group>"; };
 		EB389B2EB63A061423BD1FBCBB5AAF85 /* Pods-PBBLogSDKForiOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PBBLogSDKForiOS.modulemap"; sourceTree = "<group>"; };
 		ED82A1F58FA48C65963BB1FB7564382C /* CLSAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSAttributes.h; path = OSX/Crashlytics.framework/Versions/A/Headers/CLSAttributes.h; sourceTree = "<group>"; };
 		EE4358F2AD01DB6D0793B858ACC2383C /* Pods-PBBLogSDKTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PBBLogSDKTests.debug.xcconfig"; sourceTree = "<group>"; };
+
 		F0CD2CD6EF20207278995CD5B0677852 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabaseAdditions.h; path = src/fmdb/FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		F2301EE424F5843E47736DDEE912F5A7 /* Pods-PBBLogSDKTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PBBLogSDKTests-dummy.m"; sourceTree = "<group>"; };
+		F232BB1F4065FBB8C54B8C1B2E436B27 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		F2B2314575EB77F6183327AF29D22696 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncSocket.m; path = Source/GCD/GCDAsyncSocket.m; sourceTree = "<group>"; };
+
 		F64E7502C605EAF2098E412396D655FF /* FMDatabaseQueue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseQueue.m; path = src/fmdb/FMDatabaseQueue.m; sourceTree = "<group>"; };
 		F6919C73333A35474B93888312D038E8 /* RNCryptor-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "RNCryptor-iOS.xcconfig"; path = "../RNCryptor-iOS/RNCryptor-iOS.xcconfig"; sourceTree = "<group>"; };
 		F6ABD6E304C43ACA201DBF548CC980BC /* FMDatabaseQueue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabaseQueue.h; path = src/fmdb/FMDatabaseQueue.h; sourceTree = "<group>"; };
@@ -231,28 +253,37 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0F9551B6498D4A5F8D79FC86A0D28DF0 /* Frameworks */ = {
+		2ED2C0538C218421A88BC1932A582111 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E782BE61960B1E4D03391550BC89DFA /* Cocoa.framework in Frameworks */,
+				283341FCBAC0BB9C9C7295B0CF1E9909 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3585CD1AA1488A99340F79F6590108EC /* Frameworks */ = {
+		3AB94BD53B89D3BC64E118F95399BB4B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDA51D1B4892D9DCD48B0CCD357C7EBE /* Cocoa.framework in Frameworks */,
+				2420DC194A79D5449768222A010D7A5C /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5DBEFFA214BA77ADF1E2350B3FC0AB20 /* Frameworks */ = {
+		93F869EDFDD36756BA537EB665793449 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF0CC690099FD83DFF59F3C48FF96047 /* Cocoa.framework in Frameworks */,
-				D92B24E1B94B2A572C0FAFF67E3544CD /* QuartzCore.framework in Frameworks */,
+				C48AB028BF64F558C4671ADA227E9F40 /* Cocoa.framework in Frameworks */,
+				781C271B7443AD52B0979D3732ACD05F /* CoreServices.framework in Frameworks */,
+				3144345774E1197710DF187304F8C5F4 /* Security.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D9ED1C0CC4F77F4DF7FB4CB7F5A2472 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7798654931ADA5D4FDC59ACFBB6E7A59 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,44 +296,44 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		934B56B76C194DC60EA1E6AFCB9EAAFD /* Frameworks */ = {
+
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88521D90EF1256B7CECA92055C882D7D /* Cocoa.framework in Frameworks */,
+				DEF232EA6113E5CEC884527E64E91F11 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		96607AB2AEE845ACC854B2DF450D15DC /* Frameworks */ = {
+		AA20F5691886BD852F149396D5ADEA99 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA185A0AD2E05402FBFFEA1B09D13D7B /* Cocoa.framework in Frameworks */,
+				57AA1928589C49CEFFF780A5788F77DB /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B21E2DA355F2B52C3985434FE5825F68 /* Frameworks */ = {
+		CBAF42C9F17651B2AF2B30C5E20C056E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69B619B7AFF55DA92CC9416E0A11B9E9 /* Foundation.framework in Frameworks */,
+				D3D5B1A72BCEFD252D36956DBCFE5F80 /* Cocoa.framework in Frameworks */,
+				2841DCEF48FF9B79E084A279307D77DD /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D7C73994171FDDB2769DC70B66E73B63 /* Frameworks */ = {
+		E9DC24F4B3002E1B44821C0727B03501 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1CED8FF406F2E3EE4A302EC53B1A7ED /* Foundation.framework in Frameworks */,
+				102FE931C69326B790AC2AF0E8135275 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F324C34599273EC2FE98A8DA30CE302F /* Frameworks */ = {
+		FCA1A1D2592E1EC03CE86425B8CA6883 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				551864BF98FF39945A2F33B4C0B97A06 /* Cocoa.framework in Frameworks */,
-				C5C58FEE0A35A9EF7DA80B26B6DF2089 /* CoreServices.framework in Frameworks */,
-				58CE33E7875BEC7B12D551A398FB9A97 /* Security.framework in Frameworks */,
+				5A4680B4779273547800969E4FA47FF5 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +346,7 @@
 				0EDD0D9FEC54AA93527ACC24913C0D83 /* standard */,
 				E5C2B47E1B3D45DA7CFBD109C6B12D23 /* Support Files */,
 			);
+			name = FMDB;
 			path = FMDB;
 			sourceTree = "<group>";
 		};
@@ -350,6 +382,23 @@
 			path = "../Target Support Files/EDStarRating";
 			sourceTree = "<group>";
 		};
+		206E77FD84895A4154664DDAEA1993F6 /* Pods-PBBLogSDK */ = {
+			isa = PBXGroup;
+			children = (
+				DD0E032D09DEE23C3B785200429E522E /* Info.plist */,
+				E39644A813FFC84EA5793BD456E288E7 /* Pods-PBBLogSDK.modulemap */,
+				856EA4365FF1C136CB1ACC24527BB3E6 /* Pods-PBBLogSDK-acknowledgements.markdown */,
+				199EB06B3659B1A44ECEECA27E53B33D /* Pods-PBBLogSDK-acknowledgements.plist */,
+				DECED220326A37B3A715A6D8A45B1823 /* Pods-PBBLogSDK-dummy.m */,
+				8024B3E1335017B3EC01B4FAB76253C6 /* Pods-PBBLogSDK-resources.sh */,
+				4CED94E07786607756905A2459D1054A /* Pods-PBBLogSDK-umbrella.h */,
+				536ACF0D28A39BFB766937B095CFE93A /* Pods-PBBLogSDK.debug.xcconfig */,
+				21D26270377F037E4A965724DAD70983 /* Pods-PBBLogSDK.release.xcconfig */,
+			);
+			name = "Pods-PBBLogSDK";
+			path = "Target Support Files/Pods-PBBLogSDK";
+			sourceTree = "<group>";
+		};
 		28BB571D863C9A3E8F07445BE55A31B4 /* EDStarRating */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,9 +406,11 @@
 				3ED9894189DEF1E1038D25554253FD78 /* EDStarRating.m */,
 				1F11B7980A86DD3569E34DFBEC89AA90 /* Support Files */,
 			);
+			name = EDStarRating;
 			path = EDStarRating;
 			sourceTree = "<group>";
 		};
+
 		36B9169B0A301CF668237A6893802BEA /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -387,6 +438,7 @@
 			);
 			name = "Pods-PBBReader";
 			path = "Target Support Files/Pods-PBBReader";
+
 			sourceTree = "<group>";
 		};
 		4D14FA7D0C8CCCFDBCC5014439F619BF /* Support Files */ = {
@@ -418,16 +470,17 @@
 				FBE41BE500CACA6947FAC969F63D8ED1 /* RNCryptor.swift */,
 				CAB41C8EF6BACF4C6649A2B5ED8672F7 /* Support Files */,
 			);
+			name = RNCryptor;
 			path = RNCryptor;
 			sourceTree = "<group>";
 		};
 		6644E2DA397B0709D0861BCD2529A5D3 /* OS X */ = {
 			isa = PBXGroup;
 			children = (
-				022421859D635F58F87040D54F814E17 /* Cocoa.framework */,
-				24D0F58545AF4609C965385A2E80E9DA /* CoreServices.framework */,
-				AEB7C2797F3E3E8E6CE5AB58ED5ED701 /* QuartzCore.framework */,
-				D7FC6AD2778BA3920B23DD50B5BFC19C /* Security.framework */,
+				B3251A79D406C5548E87CA1DA47E7B92 /* Cocoa.framework */,
+				B87F8A235E671B62154302639420F3C6 /* CoreServices.framework */,
+				F232BB1F4065FBB8C54B8C1B2E436B27 /* QuartzCore.framework */,
+				9BE0538D8B304C65D6B6990B652ADDC9 /* Security.framework */,
 			);
 			name = "OS X";
 			sourceTree = "<group>";
@@ -465,15 +518,15 @@
 			isa = PBXGroup;
 			children = (
 				A8A9DB9DADDE61D966FEDBFD25715792 /* Foundation.framework */,
+
 			);
-			name = iOS;
 			sourceTree = "<group>";
 		};
 		987782E60E7D42D5D09B5298802657CA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				83DACD55256EF704533E6195CE7CED7F /* iOS */,
-				6644E2DA397B0709D0861BCD2529A5D3 /* OS X */,
+				36EB916A1AECEFDDACA0F0F2ADDECA77 /* iOS */,
+				76BCB605111A5EFD25338082E5A8D81D /* OS X */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -484,6 +537,7 @@
 				B44B2B3E5CB62B1D49ECC933F7F31649 /* GCD */,
 				4D14FA7D0C8CCCFDBCC5014439F619BF /* Support Files */,
 			);
+			name = CocoaAsyncSocket;
 			path = CocoaAsyncSocket;
 			sourceTree = "<group>";
 		};
@@ -523,6 +577,7 @@
 				78576F2674584E3F3BBC711C0D959DBC /* Fabric.h */,
 				50F228E10D6065775C2D10FD7EC998F4 /* Frameworks */,
 			);
+			name = Fabric;
 			path = Fabric;
 			sourceTree = "<group>";
 		};
@@ -568,6 +623,7 @@
 				123122016F9F5E02FED69652C4819E97 /* RNCryptor.framework */,
 			);
 			name = Products;
+
 			sourceTree = "<group>";
 		};
 		DA122543334B959901E73C56651AFEE6 /* Pods-PBBLogSDKForiOS */ = {
@@ -586,6 +642,7 @@
 			);
 			name = "Pods-PBBLogSDKForiOS";
 			path = "Target Support Files/Pods-PBBLogSDKForiOS";
+
 			sourceTree = "<group>";
 		};
 		DFE7AED2F27A4929D4D5985932F43250 /* Pods */ = {
@@ -627,12 +684,14 @@
 				23A631C26FA3686AAF78A3EACE11D64F /* Crashlytics.h */,
 				D829CBA3645E5D2BB51ADA469CBD391F /* Frameworks */,
 			);
+			name = Crashlytics;
 			path = Crashlytics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+
 		26832802017E40FB042633A76666EE4C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -642,107 +701,89 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		408E7833CFA70DF34F37E8494AEE84B1 /* Headers */ = {
+
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0364D62857DD020BA1A2BC1E6CADBB2 /* RNCryptor-OSX-umbrella.h in Headers */,
-				D0DC195F7504CBF55633B88E56CB7F13 /* RNCryptor.h in Headers */,
+				B16AA3B1F665FBD51C482A19DD6E6767 /* Pods-PBBLogSDKTests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		41F6279547BA8C6095CA882FB1059614 /* Headers */ = {
+		3D2A080C5CD4ED4520C6AEFA1D6BA26F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACFE60AB34A7FEF697E6EEFB62436A8D /* CocoaAsyncSocket-umbrella.h in Headers */,
-				6AAFA2F344A6B58F728AF958F3FE6D89 /* GCDAsyncSocket.h in Headers */,
-				92AED971B91C640191A5ABA1567FE358 /* GCDAsyncUdpSocket.h in Headers */,
+				F11FAB91014130EE233A3429439D38D7 /* FMDatabase.h in Headers */,
+				A548833BE5FAD40830428F36E77D0F52 /* FMDatabaseAdditions.h in Headers */,
+				9B8D84996694C541CD3434386E0A081A /* FMDatabasePool.h in Headers */,
+				22554065FA07F1BFE5308A685394CB12 /* FMDatabaseQueue.h in Headers */,
+				96E70B43FC04BC99AED1BBD4FB1D7581 /* FMDB-umbrella.h in Headers */,
+				CCB74062CE0F4B8E5B7483599BC398DA /* FMDB.h in Headers */,
+				3E43906B70EB01C06F3AE17008B853B9 /* FMResultSet.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4F74A0FF9202C3FCB9FA7655061A7EB6 /* Headers */ = {
+		411A1A3E4BF54617F24A3BEAEC21D358 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				338337F55CD853260947EC22A7B93450 /* Pods-PBBLogSDK-umbrella.h in Headers */,
+				AACBF5398B57047AC9825CB50F675F13 /* Pods-PBBReader-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5377335086645B4335DBDDD4E7183933 /* Headers */ = {
+		52B292B6B02E50E616D4088D27324018 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9696DF8710911BE3081BD31EADB4144 /* EDStarRating-umbrella.h in Headers */,
-				5F6BF9B5FEB8DD9342325ACD9E626761 /* EDStarRating.h in Headers */,
+				96868E8BF3EF84E39A7EF54F6ACFEC91 /* Pods-PBBLogSDKForiOS-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		68A5A0D0DD3EF356CD98F898ECA1F97F /* Headers */ = {
+		7BE129EFFECDF5C05C928534FBAA5097 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B498A7ED6F5AAC22DADCE71B433F780D /* Pods-PBBLogSDKForiOS-umbrella.h in Headers */,
+				F95611029C43324D58C15F9CA78906FF /* EDStarRating-umbrella.h in Headers */,
+				717C3B9E2C3F72BC5C1797CAD3B95731 /* EDStarRating.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A8A1B98F16F13F2F72C375E44D51EE8A /* Headers */ = {
+		8E3D79493F37DF90A0368282064D9682 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F61BE79D4B46C119C136EDE960CE78C /* FMDatabase.h in Headers */,
-				74695802583BDB0C0818AC1B97F63815 /* FMDatabaseAdditions.h in Headers */,
-				6C63E2BEBE2BC08BD46F6A91D0A08143 /* FMDatabasePool.h in Headers */,
-				E330886E0E7C450E9669C4BD025D9ABD /* FMDatabaseQueue.h in Headers */,
-				AD01D434D8D120A3767270766AD30797 /* FMDB-umbrella.h in Headers */,
-				3ECC23FFAE400A6B2658AAF2990D83BE /* FMDB.h in Headers */,
-				183A0D8AF38E0EE20E47F1FEF9B37327 /* FMResultSet.h in Headers */,
+				7D47AA44A72FE8520DEAFB9EAF286CD4 /* Pods-PBBLogSDK-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CD29A51D398597FE6FBF48DB58D8678D /* Headers */ = {
+		C58AF13E8DD3A370D129EEF166106AC0 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00027F114AB8734DEC66F40E55F4FDB7 /* Pods-PBBReader-umbrella.h in Headers */,
+				972E6D2E895C08F1000FE213DE7657A0 /* RNCryptor-OSX-umbrella.h in Headers */,
+				0BFE49D32CED47338F22AD0686626C80 /* RNCryptor.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F047C4A02D66A9EFEA2BD710B526313D /* Headers */ = {
+		FEFA93222BDF507F488E0FE7C5F0A205 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B63D4FC29D61D661FF6B2C7AF25076BF /* RNCryptor-iOS-umbrella.h in Headers */,
-				D6BDD4E655D023A3EEB86143F9A450DA /* RNCryptor.h in Headers */,
+				4975E3E6C35C9C27EC9F92880FFBFC0F /* RNCryptor-iOS-umbrella.h in Headers */,
+				FDB07DF20A6D30E4B47DF87DD0D1E377 /* RNCryptor.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		1415F1C239D5F6C16F26A6772B164FA9 /* RNCryptor-OSX */ = {
+		251BAD17812F7EBF6532EACF66F941C3 /* FMDB */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EB989D67551732165E0D0B69428E1455 /* Build configuration list for PBXNativeTarget "RNCryptor-OSX" */;
+			buildConfigurationList = 5B0566FF0CE681AC326D316CEC45A8CF /* Build configuration list for PBXNativeTarget "FMDB" */;
 			buildPhases = (
-				06BE18161F9A6974EDC401BE3DABDD24 /* Sources */,
-				96607AB2AEE845ACC854B2DF450D15DC /* Frameworks */,
-				408E7833CFA70DF34F37E8494AEE84B1 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "RNCryptor-OSX";
-			productName = "RNCryptor-OSX";
-			productReference = C73B47AA421A67F8CF80C5D608859C24 /* RNCryptor.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		23CF27B2BA6AC7125EFFEDA8C5AA819F /* FMDB */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E130BB4A68655453C9FDC5692FA44094 /* Build configuration list for PBXNativeTarget "FMDB" */;
-			buildPhases = (
-				6F019F4B57C689E3B448935B617CFF76 /* Sources */,
-				3585CD1AA1488A99340F79F6590108EC /* Frameworks */,
-				A8A1B98F16F13F2F72C375E44D51EE8A /* Headers */,
+				8FE0D4B503A94502F3431DC0DCB58040 /* Sources */,
+				A49BF517E7A31AFBC5C1E75770F833E6 /* Frameworks */,
+				3D2A080C5CD4ED4520C6AEFA1D6BA26F /* Headers */,
 			);
 			buildRules = (
 			);
@@ -753,75 +794,115 @@
 			productReference = 7A002788F79FA973944AB771926E2B16 /* FMDB.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		4C977AED3C152246338BB0CE99949EDA /* Pods-PBBReader */ = {
+		4917DD2C74D48734FAE1F340DF1534AA /* RNCryptor-OSX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AAEB6146A82E36E1CA13AEB062408769 /* Build configuration list for PBXNativeTarget "Pods-PBBReader" */;
+			buildConfigurationList = 2CB1316CEEA45089B2820A78B676D0A2 /* Build configuration list for PBXNativeTarget "RNCryptor-OSX" */;
 			buildPhases = (
-				34E3BAA7187F322012B5E87856255F8F /* Sources */,
-				934B56B76C194DC60EA1E6AFCB9EAAFD /* Frameworks */,
-				CD29A51D398597FE6FBF48DB58D8678D /* Headers */,
+				7BB665B4EF50CDB8E5938BF1D558A721 /* Sources */,
+				AA20F5691886BD852F149396D5ADEA99 /* Frameworks */,
+				C58AF13E8DD3A370D129EEF166106AC0 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				80455EDD80F00DD2B752783AA2C2AF4E /* PBXTargetDependency */,
-				5EB8B8E0E07368C8F74FD4710C9C979A /* PBXTargetDependency */,
-				D66E139D270F6F0399081BE406A195F5 /* PBXTargetDependency */,
-				55CE432C18F7F4EEED7F625E154A1F8E /* PBXTargetDependency */,
+			);
+			name = "RNCryptor-OSX";
+			productName = "RNCryptor-OSX";
+			productReference = C73B47AA421A67F8CF80C5D608859C24 /* RNCryptor.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		6C8821A585BF222974A09B052A51FC9D /* Pods-PBBLogSDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E82BB14227675F6C1E635FF8E602DCF9 /* Build configuration list for PBXNativeTarget "Pods-PBBLogSDK" */;
+			buildPhases = (
+				C34CFA71B4173DD003D9B6478F15C630 /* Sources */,
+				2ED2C0538C218421A88BC1932A582111 /* Frameworks */,
+				8E3D79493F37DF90A0368282064D9682 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5EB1210D57CDB8C84F1F4646B8194DBD /* PBXTargetDependency */,
+			);
+			name = FMDB;
+			productName = FMDB;
+			productReference = 7A002788F79FA973944AB771926E2B16 /* FMDB.framework */;
+
+			productType = "com.apple.product-type.framework";
+		};
+		6F49CD9570C077D3CB140BCA282BCB94 /* Pods-PBBReader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7033850BD1332D46CBEDFC217CD7FC59 /* Build configuration list for PBXNativeTarget "Pods-PBBReader" */;
+			buildPhases = (
+				561921E6AA992E26F369F085DBC95A9B /* Sources */,
+				3AB94BD53B89D3BC64E118F95399BB4B /* Frameworks */,
+				411A1A3E4BF54617F24A3BEAEC21D358 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DCAAD8C03F701DC413290C3D8955C461 /* PBXTargetDependency */,
+				74FE0E01FE6C1878C0B8FB045BDDA63D /* PBXTargetDependency */,
+				1A6C36451CB679D856D7AA6FE55BBDC4 /* PBXTargetDependency */,
+				04E56BE7F59FB2B02EBC8830CEC6139B /* PBXTargetDependency */,
 			);
 			name = "Pods-PBBReader";
 			productName = "Pods-PBBReader";
 			productReference = 859D94DA7403AC225C02753D3B04BBA7 /* Pods_PBBReader.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		711ADECC6D802925DE1DCCFBA19879E2 /* Pods-PBBLogSDKForiOS */ = {
+		AC0D2D2B4EE7C873431AB3502859CA60 /* CocoaAsyncSocket */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 560DA32193457FA5AF1A42C06B3944CA /* Build configuration list for PBXNativeTarget "Pods-PBBLogSDKForiOS" */;
+			buildConfigurationList = F2A03B912F777B2BFB05E7B9E903B15F /* Build configuration list for PBXNativeTarget "CocoaAsyncSocket" */;
 			buildPhases = (
-				B670D7B6B8546ACA159512D2E08149E6 /* Sources */,
-				D7C73994171FDDB2769DC70B66E73B63 /* Frameworks */,
-				68A5A0D0DD3EF356CD98F898ECA1F97F /* Headers */,
+				FD452A203117FF8DFA26B0711D439093 /* Sources */,
+				93F869EDFDD36756BA537EB665793449 /* Frameworks */,
+				066131069354C4CC132CAB645145E8F7 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				85470948D3C5DE6AA520B3998FFFF5D0 /* PBXTargetDependency */,
 			);
+
 			name = "Pods-PBBLogSDKForiOS";
 			productName = "Pods-PBBLogSDKForiOS";
 			productReference = C325E79FEB726A5E6752A18A15D88BD3 /* Pods_PBBLogSDKForiOS.framework */;
+
 			productType = "com.apple.product-type.framework";
 		};
-		7AEA38E7DC42DCFBB8811DED86BADB97 /* Pods-PBBLogSDK */ = {
+		C98A9E39CF02116FD1089C62127D3F86 /* Pods-PBBLogSDKForiOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C0A23D496C822CCDCAE2B9927894B821 /* Build configuration list for PBXNativeTarget "Pods-PBBLogSDK" */;
+			buildConfigurationList = 6DA9DE9897CC75F5E33BB33D57921121 /* Build configuration list for PBXNativeTarget "Pods-PBBLogSDKForiOS" */;
 			buildPhases = (
-				9BA5EE233CF728F1BB0F4F24AF0EB90A /* Sources */,
-				0F9551B6498D4A5F8D79FC86A0D28DF0 /* Frameworks */,
-				4F74A0FF9202C3FCB9FA7655061A7EB6 /* Headers */,
+				47DDE5C0E2D66DDA3BBDD6F5AB3F2707 /* Sources */,
+				FCA1A1D2592E1EC03CE86425B8CA6883 /* Frameworks */,
+				52B292B6B02E50E616D4088D27324018 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				5C0D52BAE92BC02DB32BA4118ACE6822 /* PBXTargetDependency */,
+				4B4092B20592A75D4A22AF024B11FE89 /* PBXTargetDependency */,
 			);
+
 			name = "Pods-PBBLogSDK";
 			productName = "Pods-PBBLogSDK";
 			productReference = 1800E4F325F629043F6D828CD17C0FE0 /* Pods_PBBLogSDK.framework */;
+
 			productType = "com.apple.product-type.framework";
 		};
-		7D6B752AEA070BEA1A3A968CDF8AA1F3 /* RNCryptor-iOS */ = {
+		CFEEF5EF28670C0EAD8B5F08D5313205 /* EDStarRating */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 559AB353D4F647D31440F6CA35A076BD /* Build configuration list for PBXNativeTarget "RNCryptor-iOS" */;
+			buildConfigurationList = 6AFAE2417FBF58144CFB636F9D940C27 /* Build configuration list for PBXNativeTarget "EDStarRating" */;
 			buildPhases = (
-				AF214E9ED668E2268C10F241AE476EFC /* Sources */,
-				B21E2DA355F2B52C3985434FE5825F68 /* Frameworks */,
-				F047C4A02D66A9EFEA2BD710B526313D /* Headers */,
+				3FA8BABA629B0AE781B0DDD8F96CF3B0 /* Sources */,
+				CBAF42C9F17651B2AF2B30C5E20C056E /* Frameworks */,
+				7BE129EFFECDF5C05C928534FBAA5097 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
+
 			name = "RNCryptor-iOS";
 			productName = "RNCryptor-iOS";
 			productReference = 123122016F9F5E02FED69652C4819E97 /* RNCryptor.framework */;
@@ -843,40 +924,46 @@
 			name = "Pods-PBBLogSDKTests";
 			productName = "Pods-PBBLogSDKTests";
 			productReference = 40D38E4F81C4E49E86140129FA04AF47 /* Pods_PBBLogSDKTests.framework */;
+
 			productType = "com.apple.product-type.framework";
 		};
-		A46399945D18308F6E6F073507A3A78B /* EDStarRating */ = {
+		D5CCC547D934F2CBECEC9A773DCDBF25 /* Pods-PBBLogSDKTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 83568DC6D394A7A138093B1FB3CA9AAF /* Build configuration list for PBXNativeTarget "EDStarRating" */;
+			buildConfigurationList = 5949B56C195F9CBFCA173D9B9B58280E /* Build configuration list for PBXNativeTarget "Pods-PBBLogSDKTests" */;
 			buildPhases = (
-				9EE896D10003FFA3E81488B07DA45AAA /* Sources */,
-				5DBEFFA214BA77ADF1E2350B3FC0AB20 /* Frameworks */,
-				5377335086645B4335DBDDD4E7183933 /* Headers */,
+				47BCF3D8E6F4215E8A936E6E173B50AB /* Sources */,
+				E9DC24F4B3002E1B44821C0727B03501 /* Frameworks */,
+				10D5780B5F67C7A79C0BE0CA33CD33FA /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				6AC91723423A542E82B485629C32B7B0 /* PBXTargetDependency */,
 			);
+
 			name = EDStarRating;
 			productName = EDStarRating;
 			productReference = C657B2AEBCF49DBEBA8F2BDC4B8A4755 /* EDStarRating.framework */;
+
 			productType = "com.apple.product-type.framework";
 		};
-		B37E19CA872A7535725D1E1946E5C271 /* CocoaAsyncSocket */ = {
+		E1FC98DD1C530B80F6E07EAEBC3CF404 /* RNCryptor-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 551479B287B69C7447DFBC6CA5EADF0B /* Build configuration list for PBXNativeTarget "CocoaAsyncSocket" */;
+			buildConfigurationList = 74E5B369ED14C4C5E27E7BBD5C177D5B /* Build configuration list for PBXNativeTarget "RNCryptor-iOS" */;
 			buildPhases = (
-				217D9EA001DB8A7A00EBCC79A99280A3 /* Sources */,
-				F324C34599273EC2FE98A8DA30CE302F /* Frameworks */,
-				41F6279547BA8C6095CA882FB1059614 /* Headers */,
+				A660C4EC8BAA2BFC71500B44EDD2EEB1 /* Sources */,
+				9D9ED1C0CC4F77F4DF7FB4CB7F5A2472 /* Frameworks */,
+				FEFA93222BDF507F488E0FE7C5F0A205 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
+
 			name = CocoaAsyncSocket;
 			productName = CocoaAsyncSocket;
 			productReference = 9F065A3C73A23DFD40F1A365537F0D27 /* CocoaAsyncSocket.framework */;
+
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -900,6 +987,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+
 				B37E19CA872A7535725D1E1946E5C271 /* CocoaAsyncSocket */,
 				A46399945D18308F6E6F073507A3A78B /* EDStarRating */,
 				23CF27B2BA6AC7125EFFEDA8C5AA819F /* FMDB */,
@@ -909,59 +997,55 @@
 				4C977AED3C152246338BB0CE99949EDA /* Pods-PBBReader */,
 				7D6B752AEA070BEA1A3A968CDF8AA1F3 /* RNCryptor-iOS */,
 				1415F1C239D5F6C16F26A6772B164FA9 /* RNCryptor-OSX */,
+
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		06BE18161F9A6974EDC401BE3DABDD24 /* Sources */ = {
+		3FA8BABA629B0AE781B0DDD8F96CF3B0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				535EF619EEDABE14A32BFC74D471CF18 /* RNCryptor-OSX-dummy.m in Sources */,
-				F0EB7597BC44A3005B24258D223B98D5 /* RNCryptor.swift in Sources */,
+				A111494E0E14CE744EAB81411AABB3E5 /* EDStarRating-dummy.m in Sources */,
+				4500C331CE1F178BF0AC8C494E550050 /* EDStarRating.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		217D9EA001DB8A7A00EBCC79A99280A3 /* Sources */ = {
+		47BCF3D8E6F4215E8A936E6E173B50AB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F45B40DF0BF596BDCD96B2D85EF848FA /* CocoaAsyncSocket-dummy.m in Sources */,
-				991BFD139F6A45C9B654960C2F6A7F09 /* GCDAsyncSocket.m in Sources */,
-				D9A44696356E299F3C9A4BFF9E57343F /* GCDAsyncUdpSocket.m in Sources */,
+				43853CCC5E894807200FFA77425BDD15 /* Pods-PBBLogSDKTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		34E3BAA7187F322012B5E87856255F8F /* Sources */ = {
+		47DDE5C0E2D66DDA3BBDD6F5AB3F2707 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B053B4F567DA9547E8B67270E0505B16 /* Pods-PBBReader-dummy.m in Sources */,
+				9A82CD1C358AFDE3024A8A33AF8A7816 /* Pods-PBBLogSDKForiOS-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6F019F4B57C689E3B448935B617CFF76 /* Sources */ = {
+		561921E6AA992E26F369F085DBC95A9B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5A0569CB70F6F37A16E32EE210D0C66 /* FMDatabase.m in Sources */,
-				F0895B2A83F948153E1E5EA38A230B66 /* FMDatabaseAdditions.m in Sources */,
-				C8FC0929A42C36174794FE1ADFD620E3 /* FMDatabasePool.m in Sources */,
-				0D619A711F71058C9238B17E9AF48AFC /* FMDatabaseQueue.m in Sources */,
-				BA88E88A631D6BD023521B7206CE6C25 /* FMDB-dummy.m in Sources */,
-				7C818AE74E830311E61FF1A7E42D0713 /* FMResultSet.m in Sources */,
+				87383BEB0346D11BD50B76EBE06E0599 /* Pods-PBBReader-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9BA5EE233CF728F1BB0F4F24AF0EB90A /* Sources */ = {
+		7BB665B4EF50CDB8E5938BF1D558A721 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9EDD31B8DA345245D5044CFDA0E24AF /* Pods-PBBLogSDK-dummy.m in Sources */,
+				8A71FCD660F1115E914E7F6E211265B6 /* RNCryptor-OSX-dummy.m in Sources */,
+				4BB5394F23453739CE6A5279BF8FC775 /* RNCryptor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+
 		9C6AD728F5E5814B405FC9C22840C271 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -971,64 +1055,80 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		9EE896D10003FFA3E81488B07DA45AAA /* Sources */ = {
+
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9ED7D145E127C7882CC96F7450862BAE /* EDStarRating-dummy.m in Sources */,
-				DCCE50BA42EC4671525ED005F1E7FCB9 /* EDStarRating.m in Sources */,
+				37F097E2269EF1BD238AD7449D796445 /* FMDatabase.m in Sources */,
+				9C11A290C9C5866A185A54F1EC04E2BB /* FMDatabaseAdditions.m in Sources */,
+				C605A44DF96E7FCACF7D6E37B62F795D /* FMDatabasePool.m in Sources */,
+				A1B5D80A8998311B8C9043E6942925E6 /* FMDatabaseQueue.m in Sources */,
+				D5991941DC41DDDDDACAE0B5D47A4639 /* FMDB-dummy.m in Sources */,
+				87ECA447DB887426665260651B7F147E /* FMResultSet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AF214E9ED668E2268C10F241AE476EFC /* Sources */ = {
+		A660C4EC8BAA2BFC71500B44EDD2EEB1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DBA1723568F5AA75E744827A877E5268 /* RNCryptor-iOS-dummy.m in Sources */,
-				D6BBE6EB79048BA84D469F1E2CF50703 /* RNCryptor.swift in Sources */,
+				AC9AA5AC48D5B2CE2DAFB432A8990638 /* RNCryptor-iOS-dummy.m in Sources */,
+				07BE18471B8AA8B220FEFE24BB1E54EF /* RNCryptor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B670D7B6B8546ACA159512D2E08149E6 /* Sources */ = {
+		C34CFA71B4173DD003D9B6478F15C630 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F321990EB771D3B014C18D6D625BAB0 /* Pods-PBBLogSDKForiOS-dummy.m in Sources */,
+				052A9F875D8608CAB1594FDD6C3DA419 /* Pods-PBBLogSDK-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD452A203117FF8DFA26B0711D439093 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E4F0161B4D135DA3A0763619A56C2F5 /* CocoaAsyncSocket-dummy.m in Sources */,
+				8480493AEC1C7AF1B5C0E0BF2F70FB44 /* GCDAsyncSocket.m in Sources */,
+				AEE9644DA0EFCF945438E125BA4F0724 /* GCDAsyncUdpSocket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		55CE432C18F7F4EEED7F625E154A1F8E /* PBXTargetDependency */ = {
+		04E56BE7F59FB2B02EBC8830CEC6139B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "RNCryptor-OSX";
-			target = 1415F1C239D5F6C16F26A6772B164FA9 /* RNCryptor-OSX */;
-			targetProxy = B82BE22E46EE32185A4E8E988DE91343 /* PBXContainerItemProxy */;
+			target = 4917DD2C74D48734FAE1F340DF1534AA /* RNCryptor-OSX */;
+			targetProxy = EF49ED293F92EAE6BF404002FE6E32DF /* PBXContainerItemProxy */;
 		};
-		5C0D52BAE92BC02DB32BA4118ACE6822 /* PBXTargetDependency */ = {
+		1A6C36451CB679D856D7AA6FE55BBDC4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "RNCryptor-OSX";
-			target = 1415F1C239D5F6C16F26A6772B164FA9 /* RNCryptor-OSX */;
-			targetProxy = 4A4511C7028D4808A0A43780AE4CA746 /* PBXContainerItemProxy */;
+			name = FMDB;
+			target = 251BAD17812F7EBF6532EACF66F941C3 /* FMDB */;
+			targetProxy = 51DE1E0309175A0D129B56A3562695B5 /* PBXContainerItemProxy */;
 		};
-		5EB8B8E0E07368C8F74FD4710C9C979A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = EDStarRating;
-			target = A46399945D18308F6E6F073507A3A78B /* EDStarRating */;
-			targetProxy = 40CA0F43C10702D9ECDCED3450386146 /* PBXContainerItemProxy */;
-		};
-		80455EDD80F00DD2B752783AA2C2AF4E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CocoaAsyncSocket;
-			target = B37E19CA872A7535725D1E1946E5C271 /* CocoaAsyncSocket */;
-			targetProxy = FFE8E719B1A1BC6696734D9D6B627550 /* PBXContainerItemProxy */;
-		};
-		85470948D3C5DE6AA520B3998FFFF5D0 /* PBXTargetDependency */ = {
+		4B4092B20592A75D4A22AF024B11FE89 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "RNCryptor-iOS";
-			target = 7D6B752AEA070BEA1A3A968CDF8AA1F3 /* RNCryptor-iOS */;
-			targetProxy = 104D560DC7F28815881027B342F11E53 /* PBXContainerItemProxy */;
+			target = E1FC98DD1C530B80F6E07EAEBC3CF404 /* RNCryptor-iOS */;
+			targetProxy = 3F6F632E354EFA27561B070F7725E57C /* PBXContainerItemProxy */;
 		};
+		5EB1210D57CDB8C84F1F4646B8194DBD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "RNCryptor-OSX";
+			target = 4917DD2C74D48734FAE1F340DF1534AA /* RNCryptor-OSX */;
+			targetProxy = DC68272D915F7F9611AC9254D77015E3 /* PBXContainerItemProxy */;
+		};
+		6AC91723423A542E82B485629C32B7B0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "RNCryptor-OSX";
+			target = 4917DD2C74D48734FAE1F340DF1534AA /* RNCryptor-OSX */;
+			targetProxy = F6B0118CCB2A7D3BDDC5B301B91B3636 /* PBXContainerItemProxy */;
+		};
+
 		ACF1F5705482EE77757B48968FF055CB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "RNCryptor-OSX";
@@ -1036,23 +1136,68 @@
 			targetProxy = 23BDEFC988E36B11D18950B6F241A552 /* PBXContainerItemProxy */;
 		};
 		D66E139D270F6F0399081BE406A195F5 /* PBXTargetDependency */ = {
+
 			isa = PBXTargetDependency;
-			name = FMDB;
-			target = 23CF27B2BA6AC7125EFFEDA8C5AA819F /* FMDB */;
-			targetProxy = 841801BA8523890F5E1145E1E7F36EDA /* PBXContainerItemProxy */;
+			name = EDStarRating;
+			target = CFEEF5EF28670C0EAD8B5F08D5313205 /* EDStarRating */;
+			targetProxy = D29A313FC6E61D8640786144B23C04D3 /* PBXContainerItemProxy */;
+		};
+		DCAAD8C03F701DC413290C3D8955C461 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CocoaAsyncSocket;
+			target = AC0D2D2B4EE7C873431AB3502859CA60 /* CocoaAsyncSocket */;
+			targetProxy = 62B09B133FDB139272C1FA93E22E513F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0B06119F8B4651338F8495A97CDD0565 /* Release */ = {
+		0E540AD8A3D2F3CB6AE445EA5EC88FD1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 966FB82806DB0876CDCCB8183619D05A /* FMDB.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FMDB/FMDB-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FMDB/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MODULEMAP_FILE = "Target Support Files/FMDB/FMDB.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = FMDB;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		17B197C263AEA451C92DF9AB7102DD8E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DBC414FD1724A5022F26AF89E6BEFEA4 /* EDStarRating.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1066,51 +1211,27 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				MODULEMAP_FILE = "Target Support Files/EDStarRating/EDStarRating.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = EDStarRating;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		111B91774D438A75BB48012E703A673F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F6919C73333A35474B93888312D038E8 /* RNCryptor-iOS.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/RNCryptor-iOS/RNCryptor-iOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/RNCryptor-iOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/RNCryptor-iOS/RNCryptor-iOS.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = RNCryptor;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0.1;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		13F94E65DD6C289BE5574127C5CC4AB0 /* Release */ = {
+		1835AA06C9D40412FB10CBEEF2635FB5 /* Release */ = {
 			isa = XCBuildConfiguration;
+
 			baseConfigurationReference = DE31A17BF6ECD6EBCFB14B1DE20E0510 /* Pods-PBBLogSDK.release.xcconfig */;
+
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1121,58 +1242,63 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_VERSION = A;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-PBBLogSDK/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/CocoaAsyncSocket/CocoaAsyncSocket-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CocoaAsyncSocket/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MODULEMAP_FILE = "Target Support Files/Pods-PBBLogSDK/Pods-PBBLogSDK.modulemap";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MODULEMAP_FILE = "Target Support Files/CocoaAsyncSocket/CocoaAsyncSocket.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_PBBLogSDK;
+				PRODUCT_NAME = CocoaAsyncSocket;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		1C2EFE38EE7C11AA3314D703AA1F4DE7 /* Release */ = {
+		1F9A95BF8CFF57E02E0A6350189E016B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FE433C5C782B4B5247F404C29C16AE21 /* Pods-PBBLogSDKForiOS.release.xcconfig */;
+
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ARCHS = "$(ARCHS_STANDARD)";
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-PBBLogSDKForiOS/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-PBBReader/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-PBBLogSDKForiOS/Pods-PBBLogSDKForiOS.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MODULEMAP_FILE = "Target Support Files/Pods-PBBReader/Pods-PBBReader.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_PBBLogSDKForiOS;
-				SDKROOT = iphoneos;
+				PRODUCT_NAME = Pods_PBBReader;
+				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
+
 		2CD6A35F635CD71E1D18D6FE02D2BEFA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EE4358F2AD01DB6D0793B858ACC2383C /* Pods-PBBLogSDKTests.debug.xcconfig */;
@@ -1209,41 +1335,47 @@
 			name = Debug;
 		};
 		311C88EA6B11F65E4687F884BEAD00F6 /* Debug */ = {
+
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 966FB82806DB0876CDCCB8183619D05A /* FMDB.xcconfig */;
+			baseConfigurationReference = F6919C73333A35474B93888312D038E8 /* RNCryptor-iOS.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/FMDB/FMDB-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/FMDB/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/RNCryptor-iOS/RNCryptor-iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RNCryptor-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				MODULEMAP_FILE = "Target Support Files/FMDB/FMDB.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = FMDB;
-				SDKROOT = macosx;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/RNCryptor-iOS/RNCryptor-iOS.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = RNCryptor;
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
-		4B1B1E0202E710B66673968D09A05089 /* Debug */ = {
+		39105A737B54600663FBD912A5CBF73D /* Debug */ = {
 			isa = XCBuildConfiguration;
+
 			baseConfigurationReference = 880004555D43DD0C491A762C55842C72 /* Pods-PBBLogSDKForiOS.debug.xcconfig */;
+
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
@@ -1273,12 +1405,85 @@
 			};
 			name = Debug;
 		};
-		578E54CF634231210F5B53CED10E1929 /* Release */ = {
+		3E6B5D0D66A4A01C0D8671951225C487 /* Debug */ = {
 			isa = XCBuildConfiguration;
+
 			baseConfigurationReference = FF4F5A97A8E25FEE365C0BA4CBADB65E /* Pods-PBBReader.release.xcconfig */;
+
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/RNCryptor-iOS/RNCryptor-iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RNCryptor-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/RNCryptor-iOS/RNCryptor-iOS.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = RNCryptor;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4699B9875271409E93FB4C22AD4B1B8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74FC0A0A890B4F62F8EB8BE06B4F5EEF /* Pods-PBBLogSDKForiOS.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PBBLogSDKForiOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PBBLogSDKForiOS/Pods-PBBLogSDKForiOS.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_PBBLogSDKForiOS;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		47D2F2AF1F0AF51B204A31537BEEAF91 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55F278CA99750F01B217DE5293AA6F1F /* Pods-PBBReader.release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1308,44 +1513,16 @@
 			};
 			name = Release;
 		};
-		5F6BF7A4D8238A8DA5AAA89899BCD3B2 /* Release */ = {
+		4FF7786B214ACE6BB5317082CFB83DF6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7DC5F4B6A27076042427FBB4BBB1902C /* RNCryptor-OSX.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/RNCryptor-OSX/RNCryptor-OSX-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/RNCryptor-OSX/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				MODULEMAP_FILE = "Target Support Files/RNCryptor-OSX/RNCryptor-OSX.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = RNCryptor;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0.1;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		67315F12EA43B84780E839F9A6D4D558 /* Debug */ = {
-			isa = XCBuildConfiguration;
+
 			baseConfigurationReference = 181FC40A3991D1D788FE1C5319F95DD2 /* Pods-PBBReader.debug.xcconfig */;
+
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -1356,18 +1533,18 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_VERSION = A;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-PBBReader/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-PBBLogSDK/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MODULEMAP_FILE = "Target Support Files/Pods-PBBReader/Pods-PBBReader.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-PBBLogSDK/Pods-PBBLogSDK.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_PBBReader;
+				PRODUCT_NAME = Pods_PBBLogSDK;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1376,6 +1553,7 @@
 			};
 			name = Debug;
 		};
+
 		758E0B004F91415F5463E442692CE0EF /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7BC27D2932FE9F0DD0842DA6C6A15F1B /* Pods-PBBLogSDKTests.release.xcconfig */;
@@ -1411,42 +1589,15 @@
 			name = Release;
 		};
 		BA9022468D9DEAC0A38FF3C9B43C8681 /* Release */ = {
+
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 64CC7949B389FEF0C24D04A03EEF6DBD /* CocoaAsyncSocket.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/CocoaAsyncSocket/CocoaAsyncSocket-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/CocoaAsyncSocket/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MODULEMAP_FILE = "Target Support Files/CocoaAsyncSocket/CocoaAsyncSocket.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = CocoaAsyncSocket;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		BB2B6A305DCB050DB36A2C656AD18552 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 64CC7949B389FEF0C24D04A03EEF6DBD /* CocoaAsyncSocket.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
-				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -1467,12 +1618,48 @@
 				PRODUCT_NAME = CocoaAsyncSocket;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		BF0616709FB45924CF4B904D34734693 /* Release */ = {
+		72747DCE66595582F0E6542EFAFAD61B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7DC5F4B6A27076042427FBB4BBB1902C /* RNCryptor-OSX.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/RNCryptor-OSX/RNCryptor-OSX-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RNCryptor-OSX/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MODULEMAP_FILE = "Target Support Files/RNCryptor-OSX/RNCryptor-OSX.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = RNCryptor;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7890C22CF7E58319C2001CAC5F610698 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -1490,13 +1677,18 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
 					"$(inherited)",
 				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -1505,110 +1697,22 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		C005C764BF732BF43BFEE8258A756F6C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 966FB82806DB0876CDCCB8183619D05A /* FMDB.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/FMDB/FMDB-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/FMDB/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				MODULEMAP_FILE = "Target Support Files/FMDB/FMDB.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = FMDB;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		C0F8579A1CAA8568B43D06CA5EBD29C1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DBC414FD1724A5022F26AF89E6BEFEA4 /* EDStarRating.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/EDStarRating/EDStarRating-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/EDStarRating/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				MODULEMAP_FILE = "Target Support Files/EDStarRating/EDStarRating.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = EDStarRating;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		C5A2A904F55923987F02C6F75B4AF6FB /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F6919C73333A35474B93888312D038E8 /* RNCryptor-iOS.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/RNCryptor-iOS/RNCryptor-iOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/RNCryptor-iOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/RNCryptor-iOS/RNCryptor-iOS.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = RNCryptor;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0.1;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		C6E43543239815F70C73D8FA65CD0700 /* Debug */ = {
+		855A72DD73652DBB91F145ED43A0E562 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7DC5F4B6A27076042427FBB4BBB1902C /* RNCryptor-OSX.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -1630,14 +1734,201 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0.1;
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		DB2E407B09A48AC742332418C909F1BA /* Debug */ = {
+		97F3773FD92438D33E8E08D35740A79D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 966FB82806DB0876CDCCB8183619D05A /* FMDB.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FMDB/FMDB-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FMDB/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MODULEMAP_FILE = "Target Support Files/FMDB/FMDB.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = FMDB;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A36F41C8C67A36929C3278183B51C171 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A981CC9A586AA09795C1AE6636B936D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBC414FD1724A5022F26AF89E6BEFEA4 /* EDStarRating.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/EDStarRating/EDStarRating-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/EDStarRating/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MODULEMAP_FILE = "Target Support Files/EDStarRating/EDStarRating.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = EDStarRating;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BA42D1BA6A195E6DA98A76AD379FFA36 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 125A4506C33E339489265D6D5081C8DF /* Pods-PBBLogSDKTests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PBBLogSDKTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MODULEMAP_FILE = "Target Support Files/Pods-PBBLogSDKTests/Pods-PBBLogSDKTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_PBBLogSDKTests;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C3DAC162A8EDE3998DC9B695236EC1BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5101F265C5E846F6E140D7C506347387 /* Pods-PBBLogSDKTests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PBBLogSDKTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MODULEMAP_FILE = "Target Support Files/Pods-PBBLogSDKTests/Pods-PBBLogSDKTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_PBBLogSDKTests;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D09905D3D30956358E490FA6CAFA23C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1682,11 +1973,15 @@
 		F2D03D3CC78C85267E43FF073C9117F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 38B4ADA029DC72319BD72EBB83655110 /* Pods-PBBLogSDK.debug.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1700,7 +1995,7 @@
 				MACH_O_TYPE = staticlib;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MODULEMAP_FILE = "Target Support Files/Pods-PBBLogSDK/Pods-PBBLogSDK.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -1708,78 +2003,87 @@
 				PRODUCT_NAME = Pods_PBBLogSDK;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2CB1316CEEA45089B2820A78B676D0A2 /* Build configuration list for PBXNativeTarget "RNCryptor-OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				855A72DD73652DBB91F145ED43A0E562 /* Debug */,
+				72747DCE66595582F0E6542EFAFAD61B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DB2E407B09A48AC742332418C909F1BA /* Debug */,
-				BF0616709FB45924CF4B904D34734693 /* Release */,
+				7890C22CF7E58319C2001CAC5F610698 /* Debug */,
+				A36F41C8C67A36929C3278183B51C171 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		551479B287B69C7447DFBC6CA5EADF0B /* Build configuration list for PBXNativeTarget "CocoaAsyncSocket" */ = {
+		5949B56C195F9CBFCA173D9B9B58280E /* Build configuration list for PBXNativeTarget "Pods-PBBLogSDKTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BB2B6A305DCB050DB36A2C656AD18552 /* Debug */,
-				BA9022468D9DEAC0A38FF3C9B43C8681 /* Release */,
+				C3DAC162A8EDE3998DC9B695236EC1BB /* Debug */,
+				BA42D1BA6A195E6DA98A76AD379FFA36 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		559AB353D4F647D31440F6CA35A076BD /* Build configuration list for PBXNativeTarget "RNCryptor-iOS" */ = {
+		5B0566FF0CE681AC326D316CEC45A8CF /* Build configuration list for PBXNativeTarget "FMDB" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				111B91774D438A75BB48012E703A673F /* Debug */,
-				C5A2A904F55923987F02C6F75B4AF6FB /* Release */,
+				97F3773FD92438D33E8E08D35740A79D /* Debug */,
+				0E540AD8A3D2F3CB6AE445EA5EC88FD1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		560DA32193457FA5AF1A42C06B3944CA /* Build configuration list for PBXNativeTarget "Pods-PBBLogSDKForiOS" */ = {
+		6AFAE2417FBF58144CFB636F9D940C27 /* Build configuration list for PBXNativeTarget "EDStarRating" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4B1B1E0202E710B66673968D09A05089 /* Debug */,
-				1C2EFE38EE7C11AA3314D703AA1F4DE7 /* Release */,
+				17B197C263AEA451C92DF9AB7102DD8E /* Debug */,
+				A981CC9A586AA09795C1AE6636B936D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83568DC6D394A7A138093B1FB3CA9AAF /* Build configuration list for PBXNativeTarget "EDStarRating" */ = {
+		6DA9DE9897CC75F5E33BB33D57921121 /* Build configuration list for PBXNativeTarget "Pods-PBBLogSDKForiOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C0F8579A1CAA8568B43D06CA5EBD29C1 /* Debug */,
-				0B06119F8B4651338F8495A97CDD0565 /* Release */,
+				39105A737B54600663FBD912A5CBF73D /* Debug */,
+				4699B9875271409E93FB4C22AD4B1B8B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AAEB6146A82E36E1CA13AEB062408769 /* Build configuration list for PBXNativeTarget "Pods-PBBReader" */ = {
+		7033850BD1332D46CBEDFC217CD7FC59 /* Build configuration list for PBXNativeTarget "Pods-PBBReader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				67315F12EA43B84780E839F9A6D4D558 /* Debug */,
-				578E54CF634231210F5B53CED10E1929 /* Release */,
+				1F9A95BF8CFF57E02E0A6350189E016B /* Debug */,
+				47D2F2AF1F0AF51B204A31537BEEAF91 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C0A23D496C822CCDCAE2B9927894B821 /* Build configuration list for PBXNativeTarget "Pods-PBBLogSDK" */ = {
+		74E5B369ED14C4C5E27E7BBD5C177D5B /* Build configuration list for PBXNativeTarget "RNCryptor-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F2D03D3CC78C85267E43FF073C9117F6 /* Debug */,
-				13F94E65DD6C289BE5574127C5CC4AB0 /* Release */,
+				3E6B5D0D66A4A01C0D8671951225C487 /* Debug */,
+				2C66AFA1563C73A971A9F9E55E361A72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+
 		DE60B1DCE2612F86EB9CF7B45EF6AFC7 /* Build configuration list for PBXNativeTarget "Pods-PBBLogSDKTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1790,19 +2094,20 @@
 			defaultConfigurationName = Release;
 		};
 		E130BB4A68655453C9FDC5692FA44094 /* Build configuration list for PBXNativeTarget "FMDB" */ = {
+
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				311C88EA6B11F65E4687F884BEAD00F6 /* Debug */,
-				C005C764BF732BF43BFEE8258A756F6C /* Release */,
+				4FF7786B214ACE6BB5317082CFB83DF6 /* Debug */,
+				D09905D3D30956358E490FA6CAFA23C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EB989D67551732165E0D0B69428E1455 /* Build configuration list for PBXNativeTarget "RNCryptor-OSX" */ = {
+		F2A03B912F777B2BFB05E7B9E903B15F /* Build configuration list for PBXNativeTarget "CocoaAsyncSocket" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C6E43543239815F70C73D8FA65CD0700 /* Debug */,
-				5F6BF7A4D8238A8DA5AAA89899BCD3B2 /* Release */,
+				60FC86EEF22E2991C4128C931BF85BC4 /* Debug */,
+				1835AA06C9D40412FB10CBEEF2635FB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

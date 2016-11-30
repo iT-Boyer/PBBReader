@@ -129,6 +129,7 @@ class PBBLogSDKTests: XCTestCase {
         let vvv = logmodel.requestBody()
         
         let evvv = vvv.data(using: .utf8)
+
         
         request.httpBodyStream = InputStream.init(data: evvv!)
         request.httpMethod = "POST"

@@ -1835,8 +1835,17 @@
 			children = (
 				14A524A11DE6732600E4E0B9 /* PBBLogAPI.swift */,
 				148B6D621DE68DA9005B5DFB /* PBBLogClient.swift */,
+<<<<<<< 946f05e90f461a17daf8c254c20fdeb460e21230
 				14CD565A1DEBD8E00058BF61 /* Model */,
 				14CD565B1DEBD8F40058BF61 /* Util */,
+=======
+				84D6D2661DE5E03D00AC183D /* PBBLogModel.swift */,
+				840E72421DE8B28C00E90644 /* DeviceUtil.swift */,
+				840E72461DE9DA8200E90644 /* IOUSBDetector.swift */,
+				840E72481DEA778100E90644 /* DeviceXMLParser.swift */,
+				840E724A1DEAA35300E90644 /* ConvertToDictionary.swift */,
+				840E724C1DEAA76200E90644 /* PbbEnum.swift */,
+>>>>>>> 获取设备硬件信息
 			);
 			name = LogAPI;
 			sourceTree = "<group>";
@@ -1890,7 +1899,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 143E38AA1D3F1809004B0A4D /* Build configuration list for PBXNativeTarget "PBBReader" */;
 			buildPhases = (
+<<<<<<< 946f05e90f461a17daf8c254c20fdeb460e21230
 				0AC80FC14DF6856FC747BBEC /* 📦 Check Pods Manifest.lock */,
+=======
+>>>>>>> 获取设备硬件信息
 				61283CDA81857A8A94659788 /* [CP] Check Pods Manifest.lock */,
 				E8F8A211AFB888C78DEE3106 /* [CP] Check Pods Manifest.lock */,
 				0DECE3213ECDCD8C67DD6428 /* [CP] Check Pods Manifest.lock */,
@@ -1942,7 +1954,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 148B6DA61DE69167005B5DFB /* Build configuration list for PBXNativeTarget "PBBLogSDK" */;
 			buildPhases = (
+<<<<<<< 946f05e90f461a17daf8c254c20fdeb460e21230
 				81E78135405DA7AD4D1D6726 /* 📦 Check Pods Manifest.lock */,
+=======
+>>>>>>> 获取设备硬件信息
 				B48976E9D2DFDA7FD9F41782 /* [CP] Check Pods Manifest.lock */,
 				F648D8874D0085430F41B029 /* [CP] Check Pods Manifest.lock */,
 				148B6D8A1DE69166005B5DFB /* Sources */,
@@ -1965,15 +1980,21 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 148B6DA91DE69167005B5DFB /* Build configuration list for PBXNativeTarget "PBBLogSDKTests" */;
 			buildPhases = (
+<<<<<<< 946f05e90f461a17daf8c254c20fdeb460e21230
 				D6760C1A4F277FF2B2FE0A09 /* 📦 Check Pods Manifest.lock */,
+=======
+>>>>>>> 获取设备硬件信息
 				503E3573BB1978DE73DA6CBB /* [CP] Check Pods Manifest.lock */,
 				148B6D931DE69166005B5DFB /* Sources */,
 				148B6D941DE69166005B5DFB /* Frameworks */,
 				148B6D951DE69166005B5DFB /* Resources */,
 				111EC34C856C0A4907EEC622 /* [CP] Embed Pods Frameworks */,
 				226B9A6DC0A5753960E9F853 /* [CP] Copy Pods Resources */,
+<<<<<<< 946f05e90f461a17daf8c254c20fdeb460e21230
 				D1DA4687E9E26517F5D3FAF5 /* 📦 Embed Pods Frameworks */,
 				65E912C3F135A5E4C97D5494 /* 📦 Copy Pods Resources */,
+=======
+>>>>>>> 获取设备硬件信息
 			);
 			buildRules = (
 			);
@@ -2033,7 +2054,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84B679581DE72A4300496634 /* Build configuration list for PBXNativeTarget "PBBLogSDKForiOS" */;
 			buildPhases = (
+<<<<<<< 946f05e90f461a17daf8c254c20fdeb460e21230
 				02330401411F4166EB521534 /* 📦 Check Pods Manifest.lock */,
+=======
+>>>>>>> 获取设备硬件信息
 				45FC8F0D51472DD08A4A1D5C /* [CP] Check Pods Manifest.lock */,
 				84B6794D1DE72A4300496634 /* [CP] Check Pods Manifest.lock */,
 				84B6794E1DE72A4300496634 /* Sources */,
