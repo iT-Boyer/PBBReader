@@ -88,7 +88,10 @@ git svn dcommit 	//这样就会成功
 git checkout master //结束
 git branch -D temp  //删除temp分支
 
+#问题：git svn branch results in Authentication failed
 #无法新建分支http://stackoverflow.com/questions/34623108/git-svn-branch-results-in-authentication-failed
+原文：当Tortoise SVN 和 git-svn合用时，会导致git svn branch results in Authentication failed
+卸载Tortoise SVN，执行新建分支命令git svn branch opera
 git svn branch opera #新建分支 类同 svn copy trunk branches/opera，该命令不会检出该分支，提交代码时还是提交到trunk中
 git branch opera     #切换独立工作的独立分支
 git merge master   #把master分支合并进当前分支
