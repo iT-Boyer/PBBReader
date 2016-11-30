@@ -23,13 +23,16 @@ class DeviceUtil: NSObject
     var hostName = ""
     var executionTime = ""
     //设备硬件
-    var equip_serial = "" //设备序列号
+    var serial_number = "" //设备序列号
     var equip_host = ""   //机主信息
-    var equip_model = "" //设备型号
+    var machine_model = "" //设备型号
     var device_info = ""  //设备参数
     var platform_UUID = "" //mac UUID
     
     var iterator = ""
+    
+    var cpu_type = ""
+    var physical_memory = ""  //物理内存
     
     override init() {
         super.init()
@@ -43,10 +46,11 @@ class DeviceUtil: NSObject
         //判断是否已经持久化
         if UserDefaults.standard.bool(forKey: "kbySystem_profiler")
         {
-            equip_serial = UserDefaults.standard.object(forKey: "kequip_serial") as! String
-            equip_model = UserDefaults.standard.object(forKey: "kequip_model") as! String
+            serial_number = UserDefaults.standard.object(forKey: "kserial_number") as! String
+            machine_model = UserDefaults.standard.object(forKey: "kmachine_model") as! String
             platform_UUID = UserDefaults.standard.object(forKey: "kplatform_UUID") as! String
-            
+            cpu_type = UserDefaults.standard.object(forKey: "kcpu_type") as! String
+            physical_memory = UserDefaults.standard.object(forKey: "kphysical_memory") as! String
         }
         else
         {
@@ -61,7 +65,6 @@ class DeviceUtil: NSObject
             let outString = String.init(data: outData, encoding: .utf8)
             //开始解析
             parpserIterator((outString! as NSString).propertyList())
-            UserDefaults.standard.set(true, forKey: "kbySystem_profiler")
         }
     }
     
@@ -86,14 +89,14 @@ class DeviceUtil: NSObject
                         
                         if key == "machine_model"
                         {
-                            equip_model = dic.object(forKey: key) as! String
-                            UserDefaults.standard.set(equip_model, forKey: "kequip_model")
+                            machine_model = dic.object(forKey: key) as! String
+                            UserDefaults.standard.set(machine_model, forKey: "kmachine_model")
                         }
                         
                         if key == "serial_number"
                         {
-                            equip_serial = dic.object(forKey: key) as! String
-                             UserDefaults.standard.set(equip_serial, forKey: "kequip_serial")
+                            serial_number = dic.object(forKey: key) as! String
+                             UserDefaults.standard.set(serial_number, forKey: "kserial_number")
                         }
                         
                         if key == "platform_UUID"
@@ -101,9 +104,22 @@ class DeviceUtil: NSObject
                             platform_UUID = dic.object(forKey: key) as! String
                             UserDefaults.standard.set(platform_UUID, forKey: "kplatform_UUID")
                         }
+                        
+                        if key == "cpu_type"
+                        {
+                            cpu_type = dic.object(forKey: key) as! String
+                            UserDefaults.standard.set(cpu_type, forKey: "kcpu_type")
+                        }
+                        
+                        if key == "physical_memory"
+                        {
+                            physical_memory = dic.object(forKey: key) as! String
+                            UserDefaults.standard.set(physical_memory, forKey: "kphysical_memory")
+                        }
                     }
                 }
             })
+            UserDefaults.standard.set(true, forKey: "kbySystem_profiler")
         }
     }
     

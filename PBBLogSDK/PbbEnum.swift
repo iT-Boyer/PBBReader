@@ -36,12 +36,15 @@ public enum LoginType:String
     case WeiXin = "微信登录"
     case QQ   = "QQ登录"
     case VerificationCode = "手机验证码登录"
+    case UnLogin = "未登录"
 }
 
 public enum SystemType:String
 {
-    case iOS = "iOS"
-    case Mac = "Mac"
+    case iOS
+    case Mac = "Mac OS"
+    case Android
+    case Windows
 }
 
 //@objc(ddd)

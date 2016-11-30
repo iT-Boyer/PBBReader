@@ -35,18 +35,19 @@ class DeviceInfoTest: XCTestCase {
         }
     }
     
+    //模仿使用shell命令，读取系统文件信息失败
     func testShell(){
 //    $(/usr/libexec/PlistBuddy -c "Print MakeInstallerName" "$INFOPLIST_FILE")
         let pipe = Pipe()
         let task = Process()
         
-//        task.launchPath = "/usr/libexec/PlistBuddy"
-//        task.arguments = ["-c","Print machine_model","/usr/sbin/system_profiler"]
-//        task.standardOutput = pipe
-//        task.launch()
-//        var outData = pipe.fileHandleForReading.readDataToEndOfFile()
-//        let outString = String.init(data: outData, encoding: .utf8)
-//        NSLog(outString!)
+        task.launchPath = "/usr/libexec/PlistBuddy"
+        task.arguments = ["-c","Print machine_model","/usr/sbin/system_profiler"]
+        task.standardOutput = pipe
+        task.launch()
+        let outData = pipe.fileHandleForReading.readDataToEndOfFile()
+        let outString = String.init(data: outData, encoding: .utf8)
+        NSLog(outString!)
     }
     
     
@@ -61,6 +62,7 @@ class DeviceInfoTest: XCTestCase {
         task.launch()
         let outData = pipe.fileHandleForReading.readDataToEndOfFile()
         let outString:String! = String.init(data: outData, encoding: .utf8)
+        //print(outString!)
         let list = (outString! as NSString).propertyList()
         hhhh(list: list)
     }
