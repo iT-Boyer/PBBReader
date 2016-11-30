@@ -112,6 +112,9 @@
 		F45B40DF0BF596BDCD96B2D85EF848FA /* CocoaAsyncSocket-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F348DD2BF5182930C13FDC8F554BDA /* CocoaAsyncSocket-dummy.m */; };
 		F5A0569CB70F6F37A16E32EE210D0C66 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9418AE0EB8454A31C83CA59AD8E25050 /* FMDatabase.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 
+<<<<<<< HEAD
+>>>>>>> temp
+=======
 >>>>>>> temp
 /* End PBXBuildFile section */
 
@@ -142,6 +145,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
+<<<<<<< HEAD
 			remoteGlobalIDString = CFEEF5EF28670C0EAD8B5F08D5313205;
 			remoteInfo = EDStarRating;
 		};
@@ -168,10 +172,29 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
+=======
+			remoteGlobalIDString = 251BAD17812F7EBF6532EACF66F941C3;
+			remoteInfo = FMDB;
+		};
+		62B09B133FDB139272C1FA93E22E513F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AC0D2D2B4EE7C873431AB3502859CA60;
+			remoteInfo = CocoaAsyncSocket;
+		};
+		D29A313FC6E61D8640786144B23C04D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+>>>>>>> temp
 			remoteGlobalIDString = CFEEF5EF28670C0EAD8B5F08D5313205;
 			remoteInfo = EDStarRating;
 		};
 		DC68272D915F7F9611AC9254D77015E3 /* PBXContainerItemProxy */ = {
+<<<<<<< HEAD
+>>>>>>> temp
+=======
 >>>>>>> temp
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
@@ -180,7 +203,11 @@
 			remoteInfo = "RNCryptor-OSX";
 		};
 <<<<<<< HEAD
+<<<<<<< HEAD
 		F6B0118CCB2A7D3BDDC5B301B91B3636 /* PBXContainerItemProxy */ = {
+=======
+		EF49ED293F92EAE6BF404002FE6E32DF /* PBXContainerItemProxy */ = {
+>>>>>>> temp
 =======
 		EF49ED293F92EAE6BF404002FE6E32DF /* PBXContainerItemProxy */ = {
 >>>>>>> temp
@@ -190,7 +217,10 @@
 			remoteGlobalIDString = 4917DD2C74D48734FAE1F340DF1534AA;
 			remoteInfo = "RNCryptor-OSX";
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> temp
 		};
 		F6B0118CCB2A7D3BDDC5B301B91B3636 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -198,6 +228,9 @@
 			proxyType = 1;
 			remoteGlobalIDString = 4917DD2C74D48734FAE1F340DF1534AA;
 			remoteInfo = "RNCryptor-OSX";
+<<<<<<< HEAD
+>>>>>>> temp
+=======
 >>>>>>> temp
 		};
 /* End PBXContainerItemProxy section */
@@ -264,17 +297,23 @@
 		7BC27D2932FE9F0DD0842DA6C6A15F1B /* Pods-PBBLogSDKTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PBBLogSDKTests.release.xcconfig"; sourceTree = "<group>"; };
 		7C48EE0AA0E36CF3A55723F3B2304247 /* RNCryptor-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "RNCryptor-iOS.modulemap"; path = "../RNCryptor-iOS/RNCryptor-iOS.modulemap"; sourceTree = "<group>"; };
 
+<<<<<<< HEAD
+>>>>>>> temp
+=======
 >>>>>>> temp
 		7DC5F4B6A27076042427FBB4BBB1902C /* RNCryptor-OSX.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "RNCryptor-OSX.xcconfig"; sourceTree = "<group>"; };
 		7E11882E30E2234B3343F86A9E1A927A /* EDStarRating-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "EDStarRating-dummy.m"; sourceTree = "<group>"; };
 		7F74A5C96F2A770A5BE017EA995C4232 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FEC567CA8C663047AF94E7400610EBB /* FMDB-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FMDB-umbrella.h"; sourceTree = "<group>"; };
 <<<<<<< HEAD
+<<<<<<< HEAD
 		8024B3E1335017B3EC01B4FAB76253C6 /* Pods-PBBLogSDK-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PBBLogSDK-resources.sh"; sourceTree = "<group>"; };
 		856EA4365FF1C136CB1ACC24527BB3E6 /* Pods-PBBLogSDK-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PBBLogSDK-acknowledgements.markdown"; sourceTree = "<group>"; };
 		859D94DA7403AC225C02753D3B04BBA7 /* Pods_PBBReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PBBReader.framework; path = "Pods-PBBReader.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C73A3680CB11A31AE386000EBF50539 /* Pods-PBBReader-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PBBReader-umbrella.h"; sourceTree = "<group>"; };
 =======
+=======
+>>>>>>> temp
 
 		80FACD7903F3BC2B7883310248BD5E37 /* Pods-PBBLogSDK-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PBBLogSDK-acknowledgements.markdown"; sourceTree = "<group>"; };
 		859D94DA7403AC225C02753D3B04BBA7 /* Pods_PBBReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PBBReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -355,13 +394,20 @@
 		ED82A1F58FA48C65963BB1FB7564382C /* CLSAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSAttributes.h; path = OSX/Crashlytics.framework/Versions/A/Headers/CLSAttributes.h; sourceTree = "<group>"; };
 		EE4358F2AD01DB6D0793B858ACC2383C /* Pods-PBBLogSDKTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PBBLogSDKTests.debug.xcconfig"; sourceTree = "<group>"; };
 
+<<<<<<< HEAD
+>>>>>>> temp
+=======
 >>>>>>> temp
 		F0CD2CD6EF20207278995CD5B0677852 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabaseAdditions.h; path = src/fmdb/FMDatabaseAdditions.h; sourceTree = "<group>"; };
 		F2301EE424F5843E47736DDEE912F5A7 /* Pods-PBBLogSDKTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PBBLogSDKTests-dummy.m"; sourceTree = "<group>"; };
 		F232BB1F4065FBB8C54B8C1B2E436B27 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		F2B2314575EB77F6183327AF29D22696 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncSocket.m; path = Source/GCD/GCDAsyncSocket.m; sourceTree = "<group>"; };
 <<<<<<< HEAD
+<<<<<<< HEAD
 		F55431F34C745D9DC3A79C0433B2319F /* Pods-PBBReader.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-PBBReader.modulemap"; sourceTree = "<group>"; };
+=======
+
+>>>>>>> temp
 =======
 
 >>>>>>> temp
@@ -373,6 +419,7 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		2ED2C0538C218421A88BC1932A582111 /* Frameworks */ = {
+<<<<<<< HEAD
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -406,6 +453,38 @@
 			files = (
 				7798654931ADA5D4FDC59ACFBB6E7A59 /* Foundation.framework in Frameworks */,
 >>>>>>> temp
+=======
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				283341FCBAC0BB9C9C7295B0CF1E9909 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AB94BD53B89D3BC64E118F95399BB4B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2420DC194A79D5449768222A010D7A5C /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93F869EDFDD36756BA537EB665793449 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C48AB028BF64F558C4671ADA227E9F40 /* Cocoa.framework in Frameworks */,
+				781C271B7443AD52B0979D3732ACD05F /* CoreServices.framework in Frameworks */,
+				3144345774E1197710DF187304F8C5F4 /* Security.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D9ED1C0CC4F77F4DF7FB4CB7F5A2472 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7798654931ADA5D4FDC59ACFBB6E7A59 /* Foundation.framework in Frameworks */,
+>>>>>>> temp
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +501,9 @@
 =======
 		934B56B76C194DC60EA1E6AFCB9EAAFD /* Frameworks */ = {
 
+<<<<<<< HEAD
+>>>>>>> temp
+=======
 >>>>>>> temp
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -537,8 +619,11 @@
 			sourceTree = "<group>";
 		};
 <<<<<<< HEAD
+<<<<<<< HEAD
 		36EB916A1AECEFDDACA0F0F2ADDECA77 /* iOS */ = {
 =======
+=======
+>>>>>>> temp
 
 		36B9169B0A301CF668237A6893802BEA /* Targets Support Files */ = {
 >>>>>>> temp
@@ -569,6 +654,9 @@
 			name = "Pods-PBBReader";
 			path = "Target Support Files/Pods-PBBReader";
 
+<<<<<<< HEAD
+>>>>>>> temp
+=======
 >>>>>>> temp
 			sourceTree = "<group>";
 		};
@@ -609,6 +697,7 @@
 			isa = PBXGroup;
 			children = (
 <<<<<<< HEAD
+<<<<<<< HEAD
 				67E5B4EF4B284AAE405ACE9FAB95187A /* Info.plist */,
 				5E79F2E4682C3EEB88C181A7F5924011 /* Pods-PBBLogSDKTests.modulemap */,
 				36ECD8C0CDB417FDB95EC0C62FB73AFC /* Pods-PBBLogSDKTests-acknowledgements.markdown */,
@@ -620,10 +709,15 @@
 				5101F265C5E846F6E140D7C506347387 /* Pods-PBBLogSDKTests.debug.xcconfig */,
 				125A4506C33E339489265D6D5081C8DF /* Pods-PBBLogSDKTests.release.xcconfig */,
 =======
+=======
+>>>>>>> temp
 				B3251A79D406C5548E87CA1DA47E7B92 /* Cocoa.framework */,
 				B87F8A235E671B62154302639420F3C6 /* CoreServices.framework */,
 				F232BB1F4065FBB8C54B8C1B2E436B27 /* QuartzCore.framework */,
 				9BE0538D8B304C65D6B6990B652ADDC9 /* Security.framework */,
+<<<<<<< HEAD
+>>>>>>> temp
+=======
 >>>>>>> temp
 			);
 			name = "Pods-PBBLogSDKTests";
@@ -660,6 +754,9 @@
 			children = (
 				A8A9DB9DADDE61D966FEDBFD25715792 /* Foundation.framework */,
 
+<<<<<<< HEAD
+>>>>>>> temp
+=======
 >>>>>>> temp
 			);
 			sourceTree = "<group>";
@@ -848,8 +945,11 @@
 
 /* Begin PBXHeadersBuildPhase section */
 <<<<<<< HEAD
+<<<<<<< HEAD
 		066131069354C4CC132CAB645145E8F7 /* Headers */ = {
 =======
+=======
+>>>>>>> temp
 
 		26832802017E40FB042633A76666EE4C /* Headers */ = {
 >>>>>>> temp
@@ -867,6 +967,9 @@
 =======
 		408E7833CFA70DF34F37E8494AEE84B1 /* Headers */ = {
 
+<<<<<<< HEAD
+>>>>>>> temp
+=======
 >>>>>>> temp
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -951,6 +1054,8 @@
 				A49BF517E7A31AFBC5C1E75770F833E6 /* Frameworks */,
 				3D2A080C5CD4ED4520C6AEFA1D6BA26F /* Headers */,
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
 =======
 			);
 			buildRules = (
@@ -988,6 +1093,7 @@
 				7BB665B4EF50CDB8E5938BF1D558A721 /* Sources */,
 				AA20F5691886BD852F149396D5ADEA99 /* Frameworks */,
 				C58AF13E8DD3A370D129EEF166106AC0 /* Headers */,
+>>>>>>> temp
 =======
 		6C8821A585BF222974A09B052A51FC9D /* Pods-PBBLogSDK */ = {
 			isa = PBXNativeTarget;
@@ -1002,6 +1108,52 @@
 			);
 			dependencies = (
 				5EB1210D57CDB8C84F1F4646B8194DBD /* PBXTargetDependency */,
+			);
+			name = FMDB;
+			productName = FMDB;
+			productReference = 7A002788F79FA973944AB771926E2B16 /* FMDB.framework */;
+
+			productType = "com.apple.product-type.framework";
+		};
+<<<<<<< HEAD
+<<<<<<< HEAD
+		4917DD2C74D48734FAE1F340DF1534AA /* RNCryptor-OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2CB1316CEEA45089B2820A78B676D0A2 /* Build configuration list for PBXNativeTarget "RNCryptor-OSX" */;
+			buildPhases = (
+				7BB665B4EF50CDB8E5938BF1D558A721 /* Sources */,
+				AA20F5691886BD852F149396D5ADEA99 /* Frameworks */,
+				C58AF13E8DD3A370D129EEF166106AC0 /* Headers */,
+=======
+		6C8821A585BF222974A09B052A51FC9D /* Pods-PBBLogSDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E82BB14227675F6C1E635FF8E602DCF9 /* Build configuration list for PBXNativeTarget "Pods-PBBLogSDK" */;
+			buildPhases = (
+				C34CFA71B4173DD003D9B6478F15C630 /* Sources */,
+				2ED2C0538C218421A88BC1932A582111 /* Frameworks */,
+				8E3D79493F37DF90A0368282064D9682 /* Headers */,
+>>>>>>> temp
+=======
+		6F49CD9570C077D3CB140BCA282BCB94 /* Pods-PBBReader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7033850BD1332D46CBEDFC217CD7FC59 /* Build configuration list for PBXNativeTarget "Pods-PBBReader" */;
+			buildPhases = (
+				561921E6AA992E26F369F085DBC95A9B /* Sources */,
+				3AB94BD53B89D3BC64E118F95399BB4B /* Frameworks */,
+				411A1A3E4BF54617F24A3BEAEC21D358 /* Headers */,
+>>>>>>> temp
+			);
+			buildRules = (
+			);
+			dependencies = (
+<<<<<<< HEAD
+				5EB1210D57CDB8C84F1F4646B8194DBD /* PBXTargetDependency */,
+=======
+				DCAAD8C03F701DC413290C3D8955C461 /* PBXTargetDependency */,
+				74FE0E01FE6C1878C0B8FB045BDDA63D /* PBXTargetDependency */,
+				1A6C36451CB679D856D7AA6FE55BBDC4 /* PBXTargetDependency */,
+				04E56BE7F59FB2B02EBC8830CEC6139B /* PBXTargetDependency */,
+>>>>>>> temp
 			);
 <<<<<<< HEAD
 			name = "RNCryptor-OSX";
@@ -1050,6 +1202,7 @@
 			productType = "com.apple.product-type.framework";
 		};
 <<<<<<< HEAD
+<<<<<<< HEAD
 		6F49CD9570C077D3CB140BCA282BCB94 /* Pods-PBBReader */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7033850BD1332D46CBEDFC217CD7FC59 /* Build configuration list for PBXNativeTarget "Pods-PBBReader" */;
@@ -1066,10 +1219,20 @@
 				93F869EDFDD36756BA537EB665793449 /* Frameworks */,
 				066131069354C4CC132CAB645145E8F7 /* Headers */,
 >>>>>>> temp
+=======
+		AC0D2D2B4EE7C873431AB3502859CA60 /* CocoaAsyncSocket */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F2A03B912F777B2BFB05E7B9E903B15F /* Build configuration list for PBXNativeTarget "CocoaAsyncSocket" */;
+			buildPhases = (
+				FD452A203117FF8DFA26B0711D439093 /* Sources */,
+				93F869EDFDD36756BA537EB665793449 /* Frameworks */,
+				066131069354C4CC132CAB645145E8F7 /* Headers */,
+>>>>>>> temp
 			);
 			buildRules = (
 			);
 			dependencies = (
+<<<<<<< HEAD
 <<<<<<< HEAD
 				DCAAD8C03F701DC413290C3D8955C461 /* PBXTargetDependency */,
 				74FE0E01FE6C1878C0B8FB045BDDA63D /* PBXTargetDependency */,
@@ -1089,6 +1252,8 @@
 				93F869EDFDD36756BA537EB665793449 /* Frameworks */,
 				066131069354C4CC132CAB645145E8F7 /* Headers */,
 =======
+=======
+>>>>>>> temp
 			);
 
 			name = "Pods-PBBLogSDKForiOS";
@@ -1104,11 +1269,15 @@
 				47DDE5C0E2D66DDA3BBDD6F5AB3F2707 /* Sources */,
 				FCA1A1D2592E1EC03CE86425B8CA6883 /* Frameworks */,
 				52B292B6B02E50E616D4088D27324018 /* Headers */,
+<<<<<<< HEAD
+>>>>>>> temp
+=======
 >>>>>>> temp
 			);
 			buildRules = (
 			);
 			dependencies = (
+<<<<<<< HEAD
 <<<<<<< HEAD
 			);
 			name = CocoaAsyncSocket;
@@ -1126,6 +1295,10 @@
 =======
 				4B4092B20592A75D4A22AF024B11FE89 /* PBXTargetDependency */,
 			);
+=======
+				4B4092B20592A75D4A22AF024B11FE89 /* PBXTargetDependency */,
+			);
+>>>>>>> temp
 
 			name = "Pods-PBBLogSDK";
 			productName = "Pods-PBBLogSDK";
@@ -1140,6 +1313,9 @@
 				3FA8BABA629B0AE781B0DDD8F96CF3B0 /* Sources */,
 				CBAF42C9F17651B2AF2B30C5E20C056E /* Frameworks */,
 				7BE129EFFECDF5C05C928534FBAA5097 /* Headers */,
+<<<<<<< HEAD
+>>>>>>> temp
+=======
 >>>>>>> temp
 			);
 			buildRules = (
@@ -1148,10 +1324,13 @@
 				4B4092B20592A75D4A22AF024B11FE89 /* PBXTargetDependency */,
 			);
 <<<<<<< HEAD
+<<<<<<< HEAD
 			name = "Pods-PBBLogSDKForiOS";
 			productName = "Pods-PBBLogSDKForiOS";
 			productReference = C325E79FEB726A5E6752A18A15D88BD3 /* Pods_PBBLogSDKForiOS.framework */;
 =======
+=======
+>>>>>>> temp
 
 			name = "RNCryptor-iOS";
 			productName = "RNCryptor-iOS";
@@ -1180,6 +1359,9 @@
 			productName = "Pods-PBBLogSDKTests";
 			productReference = 40D38E4F81C4E49E86140129FA04AF47 /* Pods_PBBLogSDKTests.framework */;
 
+<<<<<<< HEAD
+>>>>>>> temp
+=======
 >>>>>>> temp
 			productType = "com.apple.product-type.framework";
 		};
@@ -1197,15 +1379,21 @@
 				6AC91723423A542E82B485629C32B7B0 /* PBXTargetDependency */,
 			);
 <<<<<<< HEAD
+<<<<<<< HEAD
 			name = "Pods-PBBLogSDKTests";
 			productName = "Pods-PBBLogSDKTests";
 			productReference = 40D38E4F81C4E49E86140129FA04AF47 /* Pods_PBBLogSDKTests.framework */;
 =======
+=======
+>>>>>>> temp
 
 			name = EDStarRating;
 			productName = EDStarRating;
 			productReference = C657B2AEBCF49DBEBA8F2BDC4B8A4755 /* EDStarRating.framework */;
 
+<<<<<<< HEAD
+>>>>>>> temp
+=======
 >>>>>>> temp
 			productType = "com.apple.product-type.framework";
 		};
@@ -1222,15 +1410,21 @@
 			dependencies = (
 			);
 <<<<<<< HEAD
+<<<<<<< HEAD
 			name = "RNCryptor-iOS";
 			productName = "RNCryptor-iOS";
 			productReference = 123122016F9F5E02FED69652C4819E97 /* RNCryptor.framework */;
 =======
+=======
+>>>>>>> temp
 
 			name = CocoaAsyncSocket;
 			productName = CocoaAsyncSocket;
 			productReference = 9F065A3C73A23DFD40F1A365537F0D27 /* CocoaAsyncSocket.framework */;
 
+<<<<<<< HEAD
+>>>>>>> temp
+=======
 >>>>>>> temp
 			productType = "com.apple.product-type.framework";
 		};
@@ -1256,6 +1450,7 @@
 			projectRoot = "";
 			targets = (
 <<<<<<< HEAD
+<<<<<<< HEAD
 				AC0D2D2B4EE7C873431AB3502859CA60 /* CocoaAsyncSocket */,
 				CFEEF5EF28670C0EAD8B5F08D5313205 /* EDStarRating */,
 				251BAD17812F7EBF6532EACF66F941C3 /* FMDB */,
@@ -1266,6 +1461,8 @@
 				E1FC98DD1C530B80F6E07EAEBC3CF404 /* RNCryptor-iOS */,
 				4917DD2C74D48734FAE1F340DF1534AA /* RNCryptor-OSX */,
 =======
+=======
+>>>>>>> temp
 
 				B37E19CA872A7535725D1E1946E5C271 /* CocoaAsyncSocket */,
 				A46399945D18308F6E6F073507A3A78B /* EDStarRating */,
@@ -1277,6 +1474,9 @@
 				7D6B752AEA070BEA1A3A968CDF8AA1F3 /* RNCryptor-iOS */,
 				1415F1C239D5F6C16F26A6772B164FA9 /* RNCryptor-OSX */,
 
+<<<<<<< HEAD
+>>>>>>> temp
+=======
 >>>>>>> temp
 			);
 		};
@@ -1326,8 +1526,11 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 <<<<<<< HEAD
+<<<<<<< HEAD
 		8FE0D4B503A94502F3431DC0DCB58040 /* Sources */ = {
 =======
+=======
+>>>>>>> temp
 
 		9C6AD728F5E5814B405FC9C22840C271 /* Sources */ = {
 >>>>>>> temp
@@ -1347,6 +1550,7 @@
 =======
 		9EE896D10003FFA3E81488B07DA45AAA /* Sources */ = {
 
+<<<<<<< HEAD
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1381,6 +1585,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+=======
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37F097E2269EF1BD238AD7449D796445 /* FMDatabase.m in Sources */,
+				9C11A290C9C5866A185A54F1EC04E2BB /* FMDatabaseAdditions.m in Sources */,
+				C605A44DF96E7FCACF7D6E37B62F795D /* FMDatabasePool.m in Sources */,
+				A1B5D80A8998311B8C9043E6942925E6 /* FMDatabaseQueue.m in Sources */,
+				D5991941DC41DDDDDACAE0B5D47A4639 /* FMDB-dummy.m in Sources */,
+				87ECA447DB887426665260651B7F147E /* FMResultSet.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A660C4EC8BAA2BFC71500B44EDD2EEB1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC9AA5AC48D5B2CE2DAFB432A8990638 /* RNCryptor-iOS-dummy.m in Sources */,
+				07BE18471B8AA8B220FEFE24BB1E54EF /* RNCryptor.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C34CFA71B4173DD003D9B6478F15C630 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				052A9F875D8608CAB1594FDD6C3DA419 /* Pods-PBBLogSDK-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD452A203117FF8DFA26B0711D439093 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+>>>>>>> temp
 				7E4F0161B4D135DA3A0763619A56C2F5 /* CocoaAsyncSocket-dummy.m in Sources */,
 				8480493AEC1C7AF1B5C0E0BF2F70FB44 /* GCDAsyncSocket.m in Sources */,
 				AEE9644DA0EFCF945438E125BA4F0724 /* GCDAsyncUdpSocket.m in Sources */,
@@ -1421,8 +1660,11 @@
 			targetProxy = F6B0118CCB2A7D3BDDC5B301B91B3636 /* PBXContainerItemProxy */;
 		};
 <<<<<<< HEAD
+<<<<<<< HEAD
 		74FE0E01FE6C1878C0B8FB045BDDA63D /* PBXTargetDependency */ = {
 =======
+=======
+>>>>>>> temp
 
 		ACF1F5705482EE77757B48968FF055CB /* PBXTargetDependency */ = {
 >>>>>>> temp
@@ -1444,6 +1686,9 @@
 		};
 		DCAAD8C03F701DC413290C3D8955C461 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+<<<<<<< HEAD
+>>>>>>> temp
+=======
 >>>>>>> temp
 			name = CocoaAsyncSocket;
 			target = AC0D2D2B4EE7C873431AB3502859CA60 /* CocoaAsyncSocket */;
@@ -1525,7 +1770,13 @@
 		1835AA06C9D40412FB10CBEEF2635FB5 /* Release */ = {
 			isa = XCBuildConfiguration;
 <<<<<<< HEAD
+<<<<<<< HEAD
 			baseConfigurationReference = 64CC7949B389FEF0C24D04A03EEF6DBD /* CocoaAsyncSocket.xcconfig */;
+=======
+
+			baseConfigurationReference = DE31A17BF6ECD6EBCFB14B1DE20E0510 /* Pods-PBBLogSDK.release.xcconfig */;
+
+>>>>>>> temp
 =======
 
 			baseConfigurationReference = DE31A17BF6ECD6EBCFB14B1DE20E0510 /* Pods-PBBLogSDK.release.xcconfig */;
@@ -1565,7 +1816,10 @@
 		};
 		1F9A95BF8CFF57E02E0A6350189E016B /* Debug */ = {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> temp
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FE433C5C782B4B5247F404C29C16AE21 /* Pods-PBBLogSDKForiOS.release.xcconfig */;
 
@@ -1651,6 +1905,9 @@
 =======
 		311C88EA6B11F65E4687F884BEAD00F6 /* Debug */ = {
 
+<<<<<<< HEAD
+>>>>>>> temp
+=======
 >>>>>>> temp
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F6919C73333A35474B93888312D038E8 /* RNCryptor-iOS.xcconfig */;
@@ -1686,7 +1943,13 @@
 		39105A737B54600663FBD912A5CBF73D /* Debug */ = {
 			isa = XCBuildConfiguration;
 <<<<<<< HEAD
+<<<<<<< HEAD
 			baseConfigurationReference = 60E5F000FAE5B6C466ECB4A84DCAFA46 /* Pods-PBBLogSDKForiOS.debug.xcconfig */;
+=======
+
+			baseConfigurationReference = 880004555D43DD0C491A762C55842C72 /* Pods-PBBLogSDKForiOS.debug.xcconfig */;
+
+>>>>>>> temp
 =======
 
 			baseConfigurationReference = 880004555D43DD0C491A762C55842C72 /* Pods-PBBLogSDKForiOS.debug.xcconfig */;
@@ -1728,7 +1991,13 @@
 		3E6B5D0D66A4A01C0D8671951225C487 /* Debug */ = {
 			isa = XCBuildConfiguration;
 <<<<<<< HEAD
+<<<<<<< HEAD
 			baseConfigurationReference = F6919C73333A35474B93888312D038E8 /* RNCryptor-iOS.xcconfig */;
+=======
+
+			baseConfigurationReference = FF4F5A97A8E25FEE365C0BA4CBADB65E /* Pods-PBBReader.release.xcconfig */;
+
+>>>>>>> temp
 =======
 
 			baseConfigurationReference = FF4F5A97A8E25FEE365C0BA4CBADB65E /* Pods-PBBReader.release.xcconfig */;
@@ -1739,6 +2008,8 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
 =======
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -1748,6 +2019,41 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/RNCryptor-iOS/RNCryptor-iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RNCryptor-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/RNCryptor-iOS/RNCryptor-iOS.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = RNCryptor;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4699B9875271409E93FB4C22AD4B1B8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74FC0A0A890B4F62F8EB8BE06B4F5EEF /* Pods-PBBLogSDKForiOS.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+>>>>>>> temp
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+<<<<<<< HEAD
 				GCC_PREFIX_HEADER = "Target Support Files/RNCryptor-iOS/RNCryptor-iOS-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/RNCryptor-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1798,6 +2104,10 @@
 =======
 				INFOPLIST_FILE = "Target Support Files/Pods-PBBLogSDKForiOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+=======
+				INFOPLIST_FILE = "Target Support Files/Pods-PBBLogSDKForiOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+>>>>>>> temp
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
@@ -1810,6 +2120,9 @@
 				PRODUCT_NAME = Pods_PBBLogSDKForiOS;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+<<<<<<< HEAD
+>>>>>>> temp
+=======
 >>>>>>> temp
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1817,6 +2130,7 @@
 			};
 			name = Debug;
 		};
+<<<<<<< HEAD
 <<<<<<< HEAD
 		4699B9875271409E93FB4C22AD4B1B8B /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1828,6 +2142,10 @@
 =======
 		47D2F2AF1F0AF51B204A31537BEEAF91 /* Release */ = {
 			isa = XCBuildConfiguration;
+=======
+		47D2F2AF1F0AF51B204A31537BEEAF91 /* Release */ = {
+			isa = XCBuildConfiguration;
+>>>>>>> temp
 			baseConfigurationReference = 55F278CA99750F01B217DE5293AA6F1F /* Pods-PBBReader.release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
@@ -1846,6 +2164,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 <<<<<<< HEAD
+<<<<<<< HEAD
 				INFOPLIST_FILE = "Target Support Files/Pods-PBBLogSDKForiOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1853,12 +2172,17 @@
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-PBBLogSDKForiOS/Pods-PBBLogSDKForiOS.modulemap";
 =======
+=======
+>>>>>>> temp
 				INFOPLIST_FILE = "Target Support Files/Pods-PBBReader/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MODULEMAP_FILE = "Target Support Files/Pods-PBBReader/Pods-PBBReader.modulemap";
+<<<<<<< HEAD
+>>>>>>> temp
+=======
 >>>>>>> temp
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
@@ -1866,10 +2190,16 @@
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 <<<<<<< HEAD
+<<<<<<< HEAD
 				PRODUCT_NAME = Pods_PBBLogSDKForiOS;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+=======
+				PRODUCT_NAME = Pods_PBBReader;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+>>>>>>> temp
 =======
 				PRODUCT_NAME = Pods_PBBReader;
 				SDKROOT = macosx;
@@ -1881,9 +2211,17 @@
 			name = Release;
 		};
 <<<<<<< HEAD
+<<<<<<< HEAD
 		47D2F2AF1F0AF51B204A31537BEEAF91 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 55F278CA99750F01B217DE5293AA6F1F /* Pods-PBBReader.release.xcconfig */;
+=======
+		4FF7786B214ACE6BB5317082CFB83DF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+
+			baseConfigurationReference = 181FC40A3991D1D788FE1C5319F95DD2 /* Pods-PBBReader.debug.xcconfig */;
+
+>>>>>>> temp
 =======
 		4FF7786B214ACE6BB5317082CFB83DF6 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1912,9 +2250,12 @@
 				MACH_O_TYPE = staticlib;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 <<<<<<< HEAD
+<<<<<<< HEAD
 				MODULEMAP_FILE = "Target Support Files/Pods-PBBReader/Pods-PBBReader.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 =======
+=======
+>>>>>>> temp
 				MODULEMAP_FILE = "Target Support Files/Pods-PBBLogSDK/Pods-PBBLogSDK.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 >>>>>>> temp
@@ -1931,8 +2272,11 @@
 			name = Release;
 		};
 <<<<<<< HEAD
+<<<<<<< HEAD
 		4FF7786B214ACE6BB5317082CFB83DF6 /* Debug */ = {
 =======
+=======
+>>>>>>> temp
 
 		758E0B004F91415F5463E442692CE0EF /* Release */ = {
 >>>>>>> temp
@@ -1978,6 +2322,9 @@
 =======
 		BA9022468D9DEAC0A38FF3C9B43C8681 /* Release */ = {
 
+<<<<<<< HEAD
+>>>>>>> temp
+=======
 >>>>>>> temp
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 64CC7949B389FEF0C24D04A03EEF6DBD /* CocoaAsyncSocket.xcconfig */;
@@ -2318,8 +2665,11 @@
 		D09905D3D30956358E490FA6CAFA23C2 /* Release */ = {
 			isa = XCBuildConfiguration;
 <<<<<<< HEAD
+<<<<<<< HEAD
 			baseConfigurationReference = 21D26270377F037E4A965724DAD70983 /* Pods-PBBLogSDK.release.xcconfig */;
 =======
+=======
+>>>>>>> temp
 
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -2366,6 +2716,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 38B4ADA029DC72319BD72EBB83655110 /* Pods-PBBLogSDK.debug.xcconfig */;
 
+<<<<<<< HEAD
+>>>>>>> temp
+=======
 >>>>>>> temp
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
@@ -2406,11 +2759,14 @@
 /* Begin XCConfigurationList section */
 		2CB1316CEEA45089B2820A78B676D0A2 /* Build configuration list for PBXNativeTarget "RNCryptor-OSX" */ = {
 <<<<<<< HEAD
+<<<<<<< HEAD
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				855A72DD73652DBB91F145ED43A0E562 /* Debug */,
 				72747DCE66595582F0E6542EFAFAD61B /* Release */,
 =======
+=======
+>>>>>>> temp
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				855A72DD73652DBB91F145ED43A0E562 /* Debug */,
@@ -2424,11 +2780,15 @@
 			buildConfigurations = (
 				7890C22CF7E58319C2001CAC5F610698 /* Debug */,
 				A36F41C8C67A36929C3278183B51C171 /* Release */,
+<<<<<<< HEAD
+>>>>>>> temp
+=======
 >>>>>>> temp
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+<<<<<<< HEAD
 <<<<<<< HEAD
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
@@ -2442,10 +2802,18 @@
 				C3DAC162A8EDE3998DC9B695236EC1BB /* Debug */,
 				BA42D1BA6A195E6DA98A76AD379FFA36 /* Release */,
 >>>>>>> temp
+=======
+		5949B56C195F9CBFCA173D9B9B58280E /* Build configuration list for PBXNativeTarget "Pods-PBBLogSDKTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3DAC162A8EDE3998DC9B695236EC1BB /* Debug */,
+				BA42D1BA6A195E6DA98A76AD379FFA36 /* Release */,
+>>>>>>> temp
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+<<<<<<< HEAD
 <<<<<<< HEAD
 		5949B56C195F9CBFCA173D9B9B58280E /* Build configuration list for PBXNativeTarget "Pods-PBBLogSDKTests" */ = {
 			isa = XCConfigurationList;
@@ -2453,16 +2821,22 @@
 				C3DAC162A8EDE3998DC9B695236EC1BB /* Debug */,
 				BA42D1BA6A195E6DA98A76AD379FFA36 /* Release */,
 =======
+=======
+>>>>>>> temp
 		5B0566FF0CE681AC326D316CEC45A8CF /* Build configuration list for PBXNativeTarget "FMDB" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				97F3773FD92438D33E8E08D35740A79D /* Debug */,
 				0E540AD8A3D2F3CB6AE445EA5EC88FD1 /* Release */,
+<<<<<<< HEAD
+>>>>>>> temp
+=======
 >>>>>>> temp
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+<<<<<<< HEAD
 <<<<<<< HEAD
 		5B0566FF0CE681AC326D316CEC45A8CF /* Build configuration list for PBXNativeTarget "FMDB" */ = {
 			isa = XCConfigurationList;
@@ -2470,16 +2844,22 @@
 				97F3773FD92438D33E8E08D35740A79D /* Debug */,
 				0E540AD8A3D2F3CB6AE445EA5EC88FD1 /* Release */,
 =======
+=======
+>>>>>>> temp
 		6AFAE2417FBF58144CFB636F9D940C27 /* Build configuration list for PBXNativeTarget "EDStarRating" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				17B197C263AEA451C92DF9AB7102DD8E /* Debug */,
 				A981CC9A586AA09795C1AE6636B936D4 /* Release */,
+<<<<<<< HEAD
+>>>>>>> temp
+=======
 >>>>>>> temp
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+<<<<<<< HEAD
 <<<<<<< HEAD
 		6AFAE2417FBF58144CFB636F9D940C27 /* Build configuration list for PBXNativeTarget "EDStarRating" */ = {
 			isa = XCConfigurationList;
@@ -2493,10 +2873,18 @@
 				39105A737B54600663FBD912A5CBF73D /* Debug */,
 				4699B9875271409E93FB4C22AD4B1B8B /* Release */,
 >>>>>>> temp
+=======
+		6DA9DE9897CC75F5E33BB33D57921121 /* Build configuration list for PBXNativeTarget "Pods-PBBLogSDKForiOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39105A737B54600663FBD912A5CBF73D /* Debug */,
+				4699B9875271409E93FB4C22AD4B1B8B /* Release */,
+>>>>>>> temp
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+<<<<<<< HEAD
 <<<<<<< HEAD
 		6DA9DE9897CC75F5E33BB33D57921121 /* Build configuration list for PBXNativeTarget "Pods-PBBLogSDKForiOS" */ = {
 			isa = XCConfigurationList;
@@ -2510,10 +2898,18 @@
 				1F9A95BF8CFF57E02E0A6350189E016B /* Debug */,
 				47D2F2AF1F0AF51B204A31537BEEAF91 /* Release */,
 >>>>>>> temp
+=======
+		7033850BD1332D46CBEDFC217CD7FC59 /* Build configuration list for PBXNativeTarget "Pods-PBBReader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F9A95BF8CFF57E02E0A6350189E016B /* Debug */,
+				47D2F2AF1F0AF51B204A31537BEEAF91 /* Release */,
+>>>>>>> temp
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+<<<<<<< HEAD
 <<<<<<< HEAD
 		7033850BD1332D46CBEDFC217CD7FC59 /* Build configuration list for PBXNativeTarget "Pods-PBBReader" */ = {
 			isa = XCConfigurationList;
@@ -2521,19 +2917,27 @@
 				1F9A95BF8CFF57E02E0A6350189E016B /* Debug */,
 				47D2F2AF1F0AF51B204A31537BEEAF91 /* Release */,
 =======
+=======
+>>>>>>> temp
 		74E5B369ED14C4C5E27E7BBD5C177D5B /* Build configuration list for PBXNativeTarget "RNCryptor-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3E6B5D0D66A4A01C0D8671951225C487 /* Debug */,
 				2C66AFA1563C73A971A9F9E55E361A72 /* Release */,
+<<<<<<< HEAD
+>>>>>>> temp
+=======
 >>>>>>> temp
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 <<<<<<< HEAD
+<<<<<<< HEAD
 		74E5B369ED14C4C5E27E7BBD5C177D5B /* Build configuration list for PBXNativeTarget "RNCryptor-iOS" */ = {
 =======
+=======
+>>>>>>> temp
 
 		DE60B1DCE2612F86EB9CF7B45EF6AFC7 /* Build configuration list for PBXNativeTarget "Pods-PBBLogSDKTests" */ = {
 >>>>>>> temp
@@ -2550,6 +2954,9 @@
 =======
 		E130BB4A68655453C9FDC5692FA44094 /* Build configuration list for PBXNativeTarget "FMDB" */ = {
 
+<<<<<<< HEAD
+>>>>>>> temp
+=======
 >>>>>>> temp
 			isa = XCConfigurationList;
 			buildConfigurations = (
