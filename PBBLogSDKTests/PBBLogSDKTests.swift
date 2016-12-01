@@ -11,7 +11,7 @@ import XCTest
 
 class PBBLogSDKTests: XCTestCase {
     
-    let url = "http://114.112.104.138:6001/HostMonitor/client/log/addLog"
+    let url = "http://localhost:8181/HostMonitor/client/log/addLog"
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -48,7 +48,7 @@ class PBBLogSDKTests: XCTestCase {
         //
         let logmodel = PBBLogModel.init(.INFO, in: .ReaderMac, desc: "dddd")
         NSLog(logmodel.description)
-//        logmodel.sendTo()
+        logmodel.sendTo(server: "http://localhost:8181/HostMonitor/client/log/addLog")
     }
 
     func testRequest()
@@ -112,14 +112,15 @@ class PBBLogSDKTests: XCTestCase {
     
     func testRequestBodyStream()
     {
-        let session: URLSession = URLSession.shared
-        var request: URLRequest = URLRequest(url: URL(string:url)!)
+        
         let logmodel = PBBLogModel.init(.INFO, in: .ReaderMac, desc: "dddd")
         let evvv =  logmodel.requestBody().data(using: .utf8)
+        
+        var request: URLRequest = URLRequest(url: URL(string:url)!)
         request.httpBodyStream = InputStream.init(data: evvv!)
         request.httpMethod = "POST"
         let expecttaion = expectation(description: "timeout....")
-        let dataTask: URLSessionDataTask = session.dataTask(with: request) { (data, resp, err) in
+        let dataTask: URLSessionDataTask = URLSession.shared.dataTask(with: request) { (data, resp, err) in
             expecttaion.fulfill()
             print("响应的服务器地址：\(resp?.url?.absoluteString)")
             XCTAssertNotNil(data,"数据返回为nil")
@@ -136,6 +137,42 @@ class PBBLogSDKTests: XCTestCase {
         waitForExpectations(timeout: (dataTask.originalRequest?.timeoutInterval)!) { (error) in
             //错误处理
         }
+    }
+    
+    func testRequstUpload()  {
+        //
+        let logmodel = PBBLogModel.init(.INFO, in: .ReaderMac, desc: "dddd")
+        var request: URLRequest = URLRequest(url: URL(string:url)!)
+        request.httpMethod = "POST"
+//        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+//        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        if let sendData = logmodel.toData()
+        {
+            let expecttaion = expectation(description: "timeout....")
+            let uploadTask = URLSession.shared.uploadTask(with: request,
+                                                          from: sendData,
+                                                          completionHandler: {
+                                                            (data, response, error) in
+                                                            expecttaion.fulfill()
+                                                            if let receiveData = data
+                                                            {
+                                                                let dataFormatToString = String(data: receiveData,
+                                                                                                encoding: String.Encoding.utf8)
+                                                                NSLog("上传成功。\(dataFormatToString)。。\(error)")
+                                                                if JSONSerialization.isValidJSONObject(receiveData)
+                                                                {
+                                                                    _ = try! JSONSerialization.data(withJSONObject: receiveData,
+                                                                                                    options: .prettyPrinted)
+                                                                    NSLog("")
+                                                                }
+                                                            }
+            })
+            uploadTask.resume()
+            waitForExpectations(timeout: (uploadTask.originalRequest?.timeoutInterval)!) { (error) in
+                //错误处理
+            }
+        }
+
     }
     
 }

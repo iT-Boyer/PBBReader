@@ -41,7 +41,10 @@ extension NSObject{
                     if let propName =  String(cString: property_getName(property),
                                               encoding: String.Encoding.utf8)
                     {
-                        //                    NSLog("\(propsCount)个，属性\(i)：\(propName)")
+                        if propName == "description" {
+                            continue
+                        }
+                        //NSLog("\(propsCount)个，属性\(i)：\(propName)")
                         if var value = self.value(forKey: propName)
                         {
                             value = getObjectInternal(value: value)
@@ -97,9 +100,6 @@ extension NSObject{
         let allKeys:[String] = (dic as NSDictionary).allKeys as! [String]
         var body = ""
         for key in allKeys {
-            if key == "description" {
-                continue
-            }
             body += "\(key)=\(dic[key]!)&"
         }
         return body
