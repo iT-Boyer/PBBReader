@@ -25,9 +25,6 @@
 /* Begin PBXBuildFile section */
 		03E75CB73D882FA8AE840814 /* Pods_PBBReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A66CA53F5B73961FE573D22 /* Pods_PBBReader.framework */; };
 		1422A89E1D757FD40057E9D4 /* CustomWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1422A89D1D757FD40057E9D4 /* CustomWindowController.swift */; };
-		1424DFFE1DEFC54C00CCAC21 /* PbbEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E724C1DEAA76200E90644 /* PbbEnum.swift */; };
-		1424DFFF1DEFC55400CCAC21 /* DeviceUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E72421DE8B28C00E90644 /* DeviceUtil.swift */; };
-		1424E0001DEFC84B00CCAC21 /* ConvertToDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E724A1DEAA35300E90644 /* ConvertToDictionary.swift */; };
 		14389CA11D9CB4A100EAC29C /* CustomColorProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14389CA01D9CB4A100EAC29C /* CustomColorProgressIndicator.swift */; };
 		143E37FC1D3F1809004B0A4D /* PycReceiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A68681CFEC9AD00BC66A1 /* PycReceiveModel.swift */; };
 		143E37FD1D3F1809004B0A4D /* SecretDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FCC1CFD844E001BCE84 /* SecretDao.m */; };
@@ -211,9 +208,6 @@
 		148B6D981DE69167005B5DFB /* PBBLogSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 148B6D8F1DE69166005B5DFB /* PBBLogSDK.framework */; };
 		148B6D9F1DE69167005B5DFB /* PBBLogSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148B6D9E1DE69167005B5DFB /* PBBLogSDKTests.swift */; };
 		148B6DA11DE69167005B5DFB /* PBBLogSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 148B6D911DE69166005B5DFB /* PBBLogSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		148B6DAC1DE69181005B5DFB /* PBBLogAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A524A11DE6732600E4E0B9 /* PBBLogAPI.swift */; };
-		148B6DAD1DE69184005B5DFB /* PBBLogClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148B6D621DE68DA9005B5DFB /* PBBLogClient.swift */; };
-		148B6DAE1DE69189005B5DFB /* PBBLogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D6D2661DE5E03D00AC183D /* PBBLogModel.swift */; };
 		149D53AC1DE4270E00FC4F63 /* CommentBlockSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 149D53A11DE4270E00FC4F63 /* CommentBlockSettings.m */; };
 		149D53AD1DE4270E00FC4F63 /* KeywordBlockSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 149D53A31DE4270E00FC4F63 /* KeywordBlockSettings.m */; };
 		149D53AE1DE4270E00FC4F63 /* MPVSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 149D53A51DE4270E00FC4F63 /* MPVSettings.m */; };
@@ -228,14 +222,24 @@
 		14BF317A1D77C9DE000EFF66 /* CellhighlightColorTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BF31791D77C9DE000EFF66 /* CellhighlightColorTableView.swift */; };
 		14BF31811D780AB1000EFF66 /* CustomBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BF31801D780AB1000EFF66 /* CustomBox.swift */; };
 		14C9B6A61D8E859800A0C6B9 /* FSCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C9B6A51D8E859800A0C6B9 /* FSCustomCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		14E007181DF01C880056CBEF /* PBBLogAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E007161DF01C880056CBEF /* PBBLogAPI.swift */; };
+		14E007191DF01C880056CBEF /* PBBLogAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E007161DF01C880056CBEF /* PBBLogAPI.swift */; };
+		14E0071A1DF01C880056CBEF /* PBBLogClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E007171DF01C880056CBEF /* PBBLogClient.swift */; };
+		14E0071B1DF01C880056CBEF /* PBBLogClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E007171DF01C880056CBEF /* PBBLogClient.swift */; };
+		14E0071F1DF01C980056CBEF /* PbbEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E0071D1DF01C980056CBEF /* PbbEnum.swift */; };
+		14E007201DF01C980056CBEF /* PbbEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E0071D1DF01C980056CBEF /* PbbEnum.swift */; };
+		14E007211DF01C980056CBEF /* PBBLogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E0071E1DF01C980056CBEF /* PBBLogModel.swift */; };
+		14E007221DF01C980056CBEF /* PBBLogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E0071E1DF01C980056CBEF /* PBBLogModel.swift */; };
+		14E007281DF01CA10056CBEF /* ConvertToDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E007241DF01CA10056CBEF /* ConvertToDictionary.swift */; };
+		14E007291DF01CA10056CBEF /* ConvertToDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E007241DF01CA10056CBEF /* ConvertToDictionary.swift */; };
+		14E0072A1DF01CA10056CBEF /* DeviceUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E007251DF01CA10056CBEF /* DeviceUtil.swift */; };
+		14E0072B1DF01CA10056CBEF /* DeviceUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E007251DF01CA10056CBEF /* DeviceUtil.swift */; };
+		14E0072C1DF01CA10056CBEF /* DeviceXMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E007261DF01CA10056CBEF /* DeviceXMLParser.swift */; };
+		14E0072D1DF01CA10056CBEF /* DeviceXMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E007261DF01CA10056CBEF /* DeviceXMLParser.swift */; };
+		14E0072E1DF01CA10056CBEF /* IOUSBDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E007271DF01CA10056CBEF /* IOUSBDetector.swift */; };
 		14EA57EA1D7EBEAA0026602B /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EA57E91D7EBEA90026602B /* CustomView.swift */; };
 		55E1BE6FD2144EFE8882E2B8 /* Pods_PBBLogSDKTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40874F023A774C2E48331599 /* Pods_PBBLogSDKTests.framework */; };
-		840E72431DE8B28D00E90644 /* DeviceUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E72421DE8B28C00E90644 /* DeviceUtil.swift */; };
 		840E72451DE91ECC00E90644 /* DeviceInfoTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E72441DE91ECC00E90644 /* DeviceInfoTest.swift */; };
-		840E72471DE9DA8200E90644 /* IOUSBDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E72461DE9DA8200E90644 /* IOUSBDetector.swift */; };
-		840E72491DEA778100E90644 /* DeviceXMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E72481DEA778100E90644 /* DeviceXMLParser.swift */; };
-		840E724B1DEAA35300E90644 /* ConvertToDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E724A1DEAA35300E90644 /* ConvertToDictionary.swift */; };
-		840E724D1DEAA76200E90644 /* PbbEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E724C1DEAA76200E90644 /* PbbEnum.swift */; };
 		84AEDA461DC5FF02001E8116 /* Toasty.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14A5058E1DAA2656008BF666 /* Toasty.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		84AEDA4B1DC5FF02001E8116 /* PycReceiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A68681CFEC9AD00BC66A1 /* PycReceiveModel.swift */; };
 		84AEDA4C1DC5FF02001E8116 /* SecretDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FCC1CFD844E001BCE84 /* SecretDao.m */; };
@@ -421,9 +425,6 @@
 		84AEDB091DC5FF02001E8116 /* libz.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E3D1D2A187200838B88 /* libz.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		84B679181DE719D600496634 /* PBBLogSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 148B6D8F1DE69166005B5DFB /* PBBLogSDK.framework */; };
 		84B679191DE719D600496634 /* PBBLogSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 148B6D8F1DE69166005B5DFB /* PBBLogSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		84B6794F1DE72A4300496634 /* PBBLogClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148B6D621DE68DA9005B5DFB /* PBBLogClient.swift */; };
-		84B679501DE72A4300496634 /* PBBLogAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A524A11DE6732600E4E0B9 /* PBBLogAPI.swift */; };
-		84B679511DE72A4300496634 /* PBBLogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D6D2661DE5E03D00AC183D /* PBBLogModel.swift */; };
 		84B679551DE72A4300496634 /* PBBLogSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 148B6D911DE69166005B5DFB /* PBBLogSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84CD4F211DC7901900EE0BEB /* Fastfile_Fabric in Resources */ = {isa = PBXBuildFile; fileRef = 84CD4F201DC7901900EE0BEB /* Fastfile_Fabric */; };
 		9DEA84C4876A239142E64C4C /* Pods_PBBLogSDKForiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F37F032AEFFDD913E2AA58C6 /* Pods_PBBLogSDKForiOS.framework */; };
@@ -648,7 +649,6 @@
 		148AB47D1CFFD78600CAF9BA /* AdvertisingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvertisingView.h; sourceTree = "<group>"; };
 		148AB47E1CFFD78600CAF9BA /* AdvertisingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvertisingView.m; sourceTree = "<group>"; };
 		148AB47F1CFFD78600CAF9BA /* advitising.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = advitising.jpg; sourceTree = "<group>"; };
-		148B6D621DE68DA9005B5DFB /* PBBLogClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PBBLogClient.swift; path = ../PBBReaderForMac/Helper/API/PBBLog/PBBLogClient.swift; sourceTree = "<group>"; };
 		148B6D8F1DE69166005B5DFB /* PBBLogSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PBBLogSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		148B6D911DE69166005B5DFB /* PBBLogSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PBBLogSDK.h; sourceTree = "<group>"; };
 		148B6D921DE69166005B5DFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -672,7 +672,6 @@
 		14A505901DAA2656008BF666 /* Toasty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Toasty.h; sourceTree = "<group>"; };
 		14A505921DAA2656008BF666 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14A5059B1DAA269C008BF666 /* Toasty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toasty.swift; sourceTree = "<group>"; };
-		14A524A11DE6732600E4E0B9 /* PBBLogAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PBBLogAPI.swift; path = ../PBBReaderForMac/Helper/API/PBBLogAPI.swift; sourceTree = "<group>"; };
 		14AA3E0F1D2A187200838B88 /* client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = client.h; sourceTree = "<group>"; };
 		14AA3E351D2A187200838B88 /* libavcodec.57.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libavcodec.57.dylib; sourceTree = "<group>"; };
 		14AA3E361D2A187200838B88 /* libavdevice.57.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libavdevice.57.dylib; sourceTree = "<group>"; };
@@ -880,6 +879,14 @@
 		14C75DCC1D6AE9C6009CBE09 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		14C9B6A41D8E859800A0C6B9 /* FSCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCustomCell.h; sourceTree = "<group>"; };
 		14C9B6A51D8E859800A0C6B9 /* FSCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCustomCell.m; sourceTree = "<group>"; };
+		14E007161DF01C880056CBEF /* PBBLogAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBBLogAPI.swift; sourceTree = "<group>"; };
+		14E007171DF01C880056CBEF /* PBBLogClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBBLogClient.swift; sourceTree = "<group>"; };
+		14E0071D1DF01C980056CBEF /* PbbEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PbbEnum.swift; sourceTree = "<group>"; };
+		14E0071E1DF01C980056CBEF /* PBBLogModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBBLogModel.swift; sourceTree = "<group>"; };
+		14E007241DF01CA10056CBEF /* ConvertToDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvertToDictionary.swift; sourceTree = "<group>"; };
+		14E007251DF01CA10056CBEF /* DeviceUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceUtil.swift; sourceTree = "<group>"; };
+		14E007261DF01CA10056CBEF /* DeviceXMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceXMLParser.swift; sourceTree = "<group>"; };
+		14E007271DF01CA10056CBEF /* IOUSBDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOUSBDetector.swift; sourceTree = "<group>"; };
 		14E14B0D1DC0B34F00417640 /* Mac开发:发布证书合集.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mac开发:发布证书合集.p12"; sourceTree = "<group>"; };
 		14EA57D41D7E62790026602B /* PBBReaderForOSX.pkgproj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = PBBReaderForOSX.pkgproj; sourceTree = "<group>"; };
 		14EA57D81D7E723E0026602B /* importSVN.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = importSVN.sh; sourceTree = "<group>"; };
@@ -897,12 +904,7 @@
 		434B0666046D9F6CE037531F /* Pods-PBBLogSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PBBLogSDK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PBBLogSDK/Pods-PBBLogSDK.debug.xcconfig"; sourceTree = "<group>"; };
 		7A66CA53F5B73961FE573D22 /* Pods_PBBReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PBBReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		840AA6901CFCA2EA00819203 /* 114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 114.png; sourceTree = "<group>"; };
-		840E72421DE8B28C00E90644 /* DeviceUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceUtil.swift; sourceTree = "<group>"; };
 		840E72441DE91ECC00E90644 /* DeviceInfoTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfoTest.swift; sourceTree = "<group>"; };
-		840E72461DE9DA8200E90644 /* IOUSBDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOUSBDetector.swift; sourceTree = "<group>"; };
-		840E72481DEA778100E90644 /* DeviceXMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceXMLParser.swift; sourceTree = "<group>"; };
-		840E724A1DEAA35300E90644 /* ConvertToDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvertToDictionary.swift; sourceTree = "<group>"; };
-		840E724C1DEAA76200E90644 /* PbbEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PbbEnum.swift; sourceTree = "<group>"; };
 		843CADFE1D09367800CE84F4 /* Appfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = Appfile; sourceTree = "<group>"; };
 		843CADFF1D09367800CE84F4 /* Deliverfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = Deliverfile; sourceTree = "<group>"; };
 		843CAE001D09367800CE84F4 /* Fastfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = Fastfile; sourceTree = "<group>"; };
@@ -930,7 +932,6 @@
 		84CB248F1D0349AB0088112B /* FMResultSet_备份.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FMResultSet_备份.m"; sourceTree = "<group>"; };
 		84CD4F201DC7901900EE0BEB /* Fastfile_Fabric */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = Fastfile_Fabric; sourceTree = "<group>"; };
 		84D6D2651DE5DBBD00AC183D /* PBBReaderTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "PBBReaderTests-Bridging-Header.h"; path = "PBBReaderForMac/PBBReaderTests-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
-		84D6D2661DE5E03D00AC183D /* PBBLogModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PBBLogModel.swift; path = PBBReaderForMac/Model/PBBLogModel.swift; sourceTree = SOURCE_ROOT; };
 		84D6D26B1DE5FE5D00AC183D /* Capapbilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Capapbilities.h; sourceTree = "<group>"; };
 		84D6D26C1DE5FE5D00AC183D /* Capapbilities.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Capapbilities.mm; sourceTree = "<group>"; };
 		84D6D26F1DE6005900AC183D /* main_mm.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main_mm.mm; sourceTree = "<group>"; };
@@ -1241,7 +1242,9 @@
 		148B6D901DE69166005B5DFB /* PBBLogSDK */ = {
 			isa = PBXGroup;
 			children = (
-				84B679171DE7180D00496634 /* LogAPI */,
+				14E007151DF01C880056CBEF /* API */,
+				14E0071C1DF01C980056CBEF /* Model */,
+				14E007231DF01CA10056CBEF /* Util */,
 				148B6D911DE69166005B5DFB /* PBBLogSDK.h */,
 				148B6D921DE69166005B5DFB /* Info.plist */,
 				84B6795C1DE72A4400496634 /* PBBLogSDK-Info.plist */,
@@ -1667,6 +1670,35 @@
 			path = model;
 			sourceTree = "<group>";
 		};
+		14E007151DF01C880056CBEF /* API */ = {
+			isa = PBXGroup;
+			children = (
+				14E007161DF01C880056CBEF /* PBBLogAPI.swift */,
+				14E007171DF01C880056CBEF /* PBBLogClient.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		14E0071C1DF01C980056CBEF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				14E0071D1DF01C980056CBEF /* PbbEnum.swift */,
+				14E0071E1DF01C980056CBEF /* PBBLogModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		14E007231DF01CA10056CBEF /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				14E007241DF01CA10056CBEF /* ConvertToDictionary.swift */,
+				14E007251DF01CA10056CBEF /* DeviceUtil.swift */,
+				14E007261DF01CA10056CBEF /* DeviceXMLParser.swift */,
+				14E007271DF01CA10056CBEF /* IOUSBDetector.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		14EA57C91D7E62220026602B /* Distribution */ = {
 			isa = PBXGroup;
 			children = (
@@ -1808,37 +1840,6 @@
 				843CAE121D09367800CE84F4 /* README.txt */,
 			);
 			path = screenshots;
-			sourceTree = "<group>";
-		};
-		844A66371DEB249700E4E123 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				840E724C1DEAA76200E90644 /* PbbEnum.swift */,
-				84D6D2661DE5E03D00AC183D /* PBBLogModel.swift */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		844A66381DEB24C200E4E123 /* util */ = {
-			isa = PBXGroup;
-			children = (
-				840E72421DE8B28C00E90644 /* DeviceUtil.swift */,
-				840E72461DE9DA8200E90644 /* IOUSBDetector.swift */,
-				840E72481DEA778100E90644 /* DeviceXMLParser.swift */,
-				840E724A1DEAA35300E90644 /* ConvertToDictionary.swift */,
-			);
-			name = util;
-			sourceTree = "<group>";
-		};
-		84B679171DE7180D00496634 /* LogAPI */ = {
-			isa = PBXGroup;
-			children = (
-				14A524A11DE6732600E4E0B9 /* PBBLogAPI.swift */,
-				148B6D621DE68DA9005B5DFB /* PBBLogClient.swift */,
-				844A66371DEB249700E4E123 /* Model */,
-				844A66381DEB24C200E4E123 /* util */,
-			);
-			name = LogAPI;
 			sourceTree = "<group>";
 		};
 		E015C5766FC51DAFA87206A5 /* Pods */ = {
@@ -2978,14 +2979,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				148B6DAD1DE69184005B5DFB /* PBBLogClient.swift in Sources */,
-				148B6DAC1DE69181005B5DFB /* PBBLogAPI.swift in Sources */,
-				840E72491DEA778100E90644 /* DeviceXMLParser.swift in Sources */,
-				840E724D1DEAA76200E90644 /* PbbEnum.swift in Sources */,
-				840E72471DE9DA8200E90644 /* IOUSBDetector.swift in Sources */,
-				840E72431DE8B28D00E90644 /* DeviceUtil.swift in Sources */,
-				840E724B1DEAA35300E90644 /* ConvertToDictionary.swift in Sources */,
-				148B6DAE1DE69189005B5DFB /* PBBLogModel.swift in Sources */,
+				14E0071F1DF01C980056CBEF /* PbbEnum.swift in Sources */,
+				14E0071A1DF01C880056CBEF /* PBBLogClient.swift in Sources */,
+				14E0072E1DF01CA10056CBEF /* IOUSBDetector.swift in Sources */,
+				14E0072C1DF01CA10056CBEF /* DeviceXMLParser.swift in Sources */,
+				14E007281DF01CA10056CBEF /* ConvertToDictionary.swift in Sources */,
+				14E007181DF01C880056CBEF /* PBBLogAPI.swift in Sources */,
+				14E007211DF01C980056CBEF /* PBBLogModel.swift in Sources */,
+				14E0072A1DF01CA10056CBEF /* DeviceUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3134,12 +3135,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84B6794F1DE72A4300496634 /* PBBLogClient.swift in Sources */,
-				1424DFFE1DEFC54C00CCAC21 /* PbbEnum.swift in Sources */,
-				84B679501DE72A4300496634 /* PBBLogAPI.swift in Sources */,
-				1424DFFF1DEFC55400CCAC21 /* DeviceUtil.swift in Sources */,
-				1424E0001DEFC84B00CCAC21 /* ConvertToDictionary.swift in Sources */,
-				84B679511DE72A4300496634 /* PBBLogModel.swift in Sources */,
+				14E007201DF01C980056CBEF /* PbbEnum.swift in Sources */,
+				14E0071B1DF01C880056CBEF /* PBBLogClient.swift in Sources */,
+				14E0072D1DF01CA10056CBEF /* DeviceXMLParser.swift in Sources */,
+				14E007291DF01CA10056CBEF /* ConvertToDictionary.swift in Sources */,
+				14E007191DF01C880056CBEF /* PBBLogAPI.swift in Sources */,
+				14E007221DF01C980056CBEF /* PBBLogModel.swift in Sources */,
+				14E0072B1DF01CA10056CBEF /* DeviceUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
