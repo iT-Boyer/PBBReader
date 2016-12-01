@@ -25,6 +25,9 @@
 /* Begin PBXBuildFile section */
 		03E75CB73D882FA8AE840814 /* Pods_PBBReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A66CA53F5B73961FE573D22 /* Pods_PBBReader.framework */; };
 		1422A89E1D757FD40057E9D4 /* CustomWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1422A89D1D757FD40057E9D4 /* CustomWindowController.swift */; };
+		1424DFFE1DEFC54C00CCAC21 /* PbbEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E724C1DEAA76200E90644 /* PbbEnum.swift */; };
+		1424DFFF1DEFC55400CCAC21 /* DeviceUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E72421DE8B28C00E90644 /* DeviceUtil.swift */; };
+		1424E0001DEFC84B00CCAC21 /* ConvertToDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E724A1DEAA35300E90644 /* ConvertToDictionary.swift */; };
 		14389CA11D9CB4A100EAC29C /* CustomColorProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14389CA01D9CB4A100EAC29C /* CustomColorProgressIndicator.swift */; };
 		143E37FC1D3F1809004B0A4D /* PycReceiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A68681CFEC9AD00BC66A1 /* PycReceiveModel.swift */; };
 		143E37FD1D3F1809004B0A4D /* SecretDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FCC1CFD844E001BCE84 /* SecretDao.m */; };
@@ -3132,7 +3135,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				84B6794F1DE72A4300496634 /* PBBLogClient.swift in Sources */,
+				1424DFFE1DEFC54C00CCAC21 /* PbbEnum.swift in Sources */,
 				84B679501DE72A4300496634 /* PBBLogAPI.swift in Sources */,
+				1424DFFF1DEFC55400CCAC21 /* DeviceUtil.swift in Sources */,
+				1424E0001DEFC84B00CCAC21 /* ConvertToDictionary.swift in Sources */,
 				84B679511DE72A4300496634 /* PBBLogModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

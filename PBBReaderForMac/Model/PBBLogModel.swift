@@ -39,7 +39,7 @@ public class PBBLogModel: NSObject
     var application_name = ""
     var account_name = ""
     var account_password = ""
-    var network_type:NetworkType!
+    var network_type = ""
     
     var op_version = ""   //操作系统版本
     var equip_serial = "" //设备序列号，非移动端忽略此参数
@@ -75,6 +75,11 @@ public class PBBLogModel: NSObject
                              desc:String = "")
     {
         self.init()
+        if UserDefaults.standard.bool(forKey: "kSetUserInfo")
+        {
+            //当用户没有事先设置相关信息，执行初始化操作
+            PBBLogModel.setUserInfo()
+        }
         //默认赋值
         self.level = type.rawValue
         self.application_name = APPName.rawValue //Bundle.main.object(forInfoDictionaryKey: "MakeInstallerName") as! String
@@ -83,26 +88,30 @@ public class PBBLogModel: NSObject
         self.lines = lines
         self.desc = desc
         
-        //必须的
-        self.sdk_version = "10.12.1"
-        self.system = SystemType.Mac.rawValue
-        self.username = "Mac user"
-        self.token = "Mac token"
+        let confInfo = DeviceUtil()
         
+        //用户信息
+        self.username = confInfo.username
+        self.account_name = confInfo.account_name
+        self.account_password = confInfo.account_password
+        self.network_type = confInfo.network_type
+        self.token = confInfo.token
+        self.login_type = confInfo.login_type
         //宓钥加密
         self.account_password = aesEncryptPassword(password: self.account_password,
                                                  secret: "80F008F8C906098FCE93A89B3DB2EF4E")
         
-        let confInfo = DeviceUtil()
-        self.login_type = LoginType.UnLogin.rawValue
+        //设备信息
         self.imei = confInfo.platform_UUID
         self.op_version = confInfo.op_version
+        self.sdk_version = confInfo.op_version
         self.equip_serial = confInfo.serial_number
         self.equip_model = confInfo.machine_model
         self.device_info = confInfo.hostName
         self.cpu_abi = confInfo.cpu_type
+        self.system = confInfo.system
         self.hardware_info = confInfo.physical_memory
-//        self.equip_host = ":\(process.userName)"
+        self.equip_host = confInfo.equip_host
         
         self.content = "\(confInfo.executionTime) \(confInfo.processName)[\(confInfo.processIdentifier):\(confInfo.threadId)] \(file_name)(\(lines)) \(method_name):\r\t\(desc)\n"
         
@@ -115,24 +124,37 @@ public class PBBLogModel: NSObject
         }
     }
     ///便立构造器
-    @objc(inittWithType:inApp:desc:)
-    public convenience init(type:Int, APPNdame:String, description desc:String)
+    @objc(initWithType:inApp:desc:)
+    public convenience init(type:Log, APPNam:APP, description desc:String)
     {
         //
-        var logType = LogType.INFO
+        var log = LogType.INFO
         switch type {
-        case 1:
-            logType = .FATAL
-        case 2:
-            logType = .ERROR
-        case 3:
-            logType = .WARN
-        case 4:
-            logType = .DEBUG
-        default:
-            logType = .INFO
+        case .FATAL:
+            log = .FATAL
+        case .ERROR:
+            log = .ERROR
+        case .WARN:
+            log = .WARN
+        case .DEBUG:
+            log = .DEBUG
+        case .INFO:
+            log = .INFO
         }
-        self.init(logType,in:APPName.ReaderMac,desc:desc)
+        
+        var APP = APPName.ReaderMac
+        switch APPNam {
+        case .PBBMaker:
+            APP = APPName.PBBMaker
+        case .Reader:
+            APP = APPName.Reader
+        case .ReaderMac:
+            APP = APPName.ReaderMac
+        case .SuiZhi:
+            APP = APPName.SuiZhi
+        }
+        
+        self.init(log,in:APP,desc:desc)
     }
     
     public override var description: String
@@ -140,19 +162,21 @@ public class PBBLogModel: NSObject
         return logModelDescription
     }
     ///手动设置设备信息
-    public func setDeviceForiOS(op_version:String?,
-                         equip_serial:String?,
-                         equip_host:String?,
-                         equip_model:String?,
-                         device_info:String?,
-                         sdk_version:String?)
+    @objc(setUserName:id:pwd:token:netT:loginT:)
+    public class func setUserInfo(userName:String = "",
+                         account_name:String = "",
+                         account_password:String = "",
+                         token:String = "",
+                         network_type:String = "",
+                         login_type:String = "")
     {
-        self.op_version = op_version!
-        self.equip_serial = equip_serial!
-        self.equip_host = equip_host!
-        self.equip_model = equip_model!
-        self.device_info = device_info!
-        self.sdk_version = sdk_version!
+        UserDefaults.standard.set(true, forKey: "kSetUserInfo")
+        UserDefaults.standard.set(userName, forKey: "kusername")
+        UserDefaults.standard.set(account_name, forKey: "kaccount_name")
+        UserDefaults.standard.set(account_password, forKey: "kaccount_password")
+        UserDefaults.standard.set(token, forKey: "ktoken")
+        UserDefaults.standard.set(network_type, forKey: "knetwork_type")
+        UserDefaults.standard.set(login_type, forKey: "klogin_type")
     }
 
     func toData()->Data?

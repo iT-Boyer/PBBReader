@@ -11,7 +11,7 @@ import XCTest
 
 class PBBLogSDKTests: XCTestCase {
     
-    let url = "http://localhost:8181/HostMonitor/client/log/addLog"
+    let url = "http://server.local:8181/HostMonitor/client/log/addLog"
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.

@@ -6,16 +6,25 @@
 //  Copyright © 2016年 recomend. All rights reserved.
 //
 
-import Cocoa
-import Foundation
-import IOKit
-import IOKit.usb
-import IOKit.serial
+//import Cocoa
+//import Foundation
+//import IOKit
+//import IOKit.usb
+//import IOKit.serial
 
-
+#if os(OSX)
+    import Cocoa
+    import Foundation
+    import IOKit
+    import IOKit.usb
+    import IOKit.serial
+#elseif os(iOS)
+    import UIKit
+#endif
 class DeviceUtil: NSObject
 {
     //软件进程信息
+    var system = "Mac OS"
     var op_version = ""   //操作系统版本
     var processName = ""
     var threadId = ""
@@ -34,10 +43,21 @@ class DeviceUtil: NSObject
     var cpu_type = ""
     var physical_memory = ""  //物理内存
     
+    //用户信息
+    var username = ""
+    var account_name = ""
+    var account_password = ""
+    var network_type = ""
+    var token = ""
+    var login_type = LoginType.UnLogin.rawValue
+    
     override init() {
         super.init()
         //分析硬件
         bySystem_profiler()
+        if machine_model.contains(SystemType.iOS.rawValue) {
+            system = SystemType.iOS.rawValue
+        }
         //分析软件
         byProcessInfo()
     }
@@ -48,23 +68,48 @@ class DeviceUtil: NSObject
         {
             serial_number = UserDefaults.standard.object(forKey: "kserial_number") as! String
             machine_model = UserDefaults.standard.object(forKey: "kmachine_model") as! String
+#if os(OSX)
             platform_UUID = UserDefaults.standard.object(forKey: "kplatform_UUID") as! String
             cpu_type = UserDefaults.standard.object(forKey: "kcpu_type") as! String
             physical_memory = UserDefaults.standard.object(forKey: "kphysical_memory") as! String
+#else
+            equip_host = UIDevice.current.name
+            UserDefaults.standard.set(equip_host, forKey: "kequip_host")
+#endif
+            username = UserDefaults.standard.object(forKey: "kusername") as! String
+            account_name = UserDefaults.standard.object(forKey: "kaccount_name") as! String
+            account_password = UserDefaults.standard.object(forKey: "kaccount_password") as! String
+            network_type = UserDefaults.standard.object(forKey: "knetwork_type") as! String
+            token = UserDefaults.standard.object(forKey: "ktoken") as! String
+            login_type = UserDefaults.standard.object(forKey: "klogin_type") as! String
         }
         else
         {
-            let pipe = Pipe()
-            let task = Process()
-            task.launchPath = "/usr/sbin/system_profiler"
-            task.arguments = ["-xml","SPHardwareDataType"]
-            task.standardOutput = pipe
-            task.launch()
+            #if os(OSX)
+                let pipe = Pipe()
+                let task = Process()
+                task.launchPath = "/usr/sbin/system_profiler"
+                task.arguments = ["-xml","SPHardwareDataType"]
+                task.standardOutput = pipe
+                task.launch()
+                
+                let outData = pipe.fileHandleForReading.readDataToEndOfFile()
+                let outString = String.init(data: outData, encoding: .utf8)
+                //开始解析
+                parpserIterator((outString! as NSString).propertyList())
+            #elseif os(iOS)
+                machine_model = UIDevice.current.model
+                UserDefaults.standard.set(machine_model, forKey: "kmachine_model")
+
+                equip_host = UIDevice.current.name
+                UserDefaults.standard.set(equip_host, forKey: "kequip_host")
+                
+                serial_number = (UIDevice.current.identifierForVendor?.uuidString)!
+                UserDefaults.standard.set(serial_number, forKey: "kserial_number")
+                
+                UserDefaults.standard.set(true, forKey: "kbySystem_profiler")
+            #endif
             
-            let outData = pipe.fileHandleForReading.readDataToEndOfFile()
-            let outString = String.init(data: outData, encoding: .utf8)
-            //开始解析
-            parpserIterator((outString! as NSString).propertyList())
         }
     }
     
@@ -96,7 +141,7 @@ class DeviceUtil: NSObject
                         if key == "serial_number"
                         {
                             serial_number = dic.object(forKey: key) as! String
-                             UserDefaults.standard.set(serial_number, forKey: "kserial_number")
+                            UserDefaults.standard.set(serial_number, forKey: "kserial_number")
                         }
                         
                         if key == "platform_UUID"
@@ -143,7 +188,7 @@ class DeviceUtil: NSObject
     }
     
     
-    
+#if os(OSX)
     var driver:io_object_t = 0
     var matchDictionary:CFDictionary! = IOServiceMatching("AppleAHCIDiskDriver")
     var kr:kern_return_t = 0
@@ -174,8 +219,11 @@ class DeviceUtil: NSObject
             }
         }
     }
+#endif
+    
 }
 
+#if os(OSX)
 extension DeviceUtil
 {
 
@@ -277,5 +325,5 @@ extension DeviceUtil
         IOObjectRelease(iterator)
         return resultDict
     }
-
 }
+#endif

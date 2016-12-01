@@ -342,7 +342,7 @@
     
     [self flagsChanged:event];
     NSString *desc = [[NSString alloc] initWithFormat:@"播放器键盘快捷键：%hu",[event keyCode]];
-    [[[PBBLogModel alloc] inittWithType:5 inApp:@"" desc:desc] sendToServer];
+    [[[PBBLogModel alloc] initWithType:LogINFO inApp:APPReaderMac desc:desc] sendToServer];
     if(!self.player.mpv){
         NSLog(@"MPV not exists");
         return;

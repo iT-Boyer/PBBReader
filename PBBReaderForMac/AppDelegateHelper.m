@@ -72,7 +72,7 @@ singleton_implementation(AppDelegateHelper);
         LookMedia *look = [[LookMedia alloc] init];
         look.receviveFileId = @"1";
         [look lookMedia:openURL];
-        [[[PBBLogModel alloc] inittWithType:5 inApp:@"" desc:@"明文浏览"] sendToServer];
+        [[[PBBLogModel alloc] initWithType:LogINFO inApp:APPReaderMac desc:@"明文浏览"] sendToServer];
         return NO;
     }
     _fileManager = [[PycFile alloc] init];
@@ -90,7 +90,7 @@ singleton_implementation(AppDelegateHelper);
         return YES;
     }
     //更新数据库中的本地路径
-    [[[PBBLogModel alloc] inittWithType:5 inApp:@"" desc:@"查看文件时，更新数据库中的本地路径"] sendToServer];
+    [[[PBBLogModel alloc] initWithType:LogINFO inApp:APPReaderMac desc:@"查看文件时，更新数据库中的本地路径"] sendToServer];
     [[ReceiveFileDao sharedReceiveFileDao] updateReceiveFileLocalPath:fileID newPath:filePath];
     // 判断已接受数据库是否存在
     NSInteger openedNum = 0;
@@ -118,7 +118,7 @@ singleton_implementation(AppDelegateHelper);
     {
         //当手机号申请激活后，不显示广告
         [self show];
-        [[[PBBLogModel alloc] inittWithType:5 inApp:@"" desc:@"手机号申请激活后，不显示广告"] sendToServer];
+        [[[PBBLogModel alloc] initWithType:LogINFO inApp:APPReaderMac desc:@"手机号申请激活后，不显示广告"] sendToServer];
     }
     else
     {
@@ -261,7 +261,7 @@ singleton_implementation(AppDelegateHelper);
     
     //第一open In 本地没有该文件时更新
     if (!isReceiveFileExist) {
-        [[[PBBLogModel alloc] inittWithType:5 inApp:@"" desc:@"存储到SQLite 接收文件"] sendToServer];
+        [[[PBBLogModel alloc] initWithType:LogINFO inApp:APPReaderMac desc:@"存储到SQLite 接收文件"] sendToServer];
         //存储到SQLite 接收文件
         [[ReceiveFileDao sharedReceiveFileDao] saveReceiveFile:[OutFile initWithReceiveFileId:fileID//seePycFile.fileID
                                                                                      FileName:[seePycFile.filePycNameFromServer stringByDeletingPathExtension]
@@ -293,7 +293,7 @@ singleton_implementation(AppDelegateHelper);
         [[ReceiveFileDao sharedReceiveFileDao] updateReceiveFileFirstOpenTime:seePycFile.firstSeeTime FileId:fileID];//seePycFile.fileID];
         
     } else {
-        [[[PBBLogModel alloc] inittWithType:5 inApp:@"" desc:@"接收文件插入到SQLite"] sendToServer];
+        [[[PBBLogModel alloc] initWithType:LogINFO inApp:APPReaderMac desc:@"接收文件插入到SQLite"] sendToServer];
         [[ReceiveFileDao sharedReceiveFileDao] updateReceiveFile:[OutFile initWithReceiveFileId:fileID//seePycFile.fileID
                                                                                        FileName:[seePycFile.filePycNameFromServer stringByDeletingPathExtension]
                                                                                         LogName:seePycFile.fileSeeLogname
@@ -333,7 +333,7 @@ singleton_implementation(AppDelegateHelper);
      */
     if((returnValue & ERR_OK_OR_CANOPEN) && (returnValue & ERR_OK_IS_FEE))
     {
-        [[[PBBLogModel alloc] inittWithType:5 inApp:@"" desc:@"将以前的离线文件信息，转移至本地数据库中"] sendToServer];
+        [[[PBBLogModel alloc] initWithType:LogINFO inApp:APPReaderMac desc:@"将以前的离线文件信息，转移至本地数据库中"] sendToServer];
         [[ReceiveFileDao sharedReceiveFileDao] updateByFileIdReceiveFile:[OutFile initWithReceiveFileId:fileID//seePycFile.fileID
                                                                                                 ApplyId:seePycFile.applyId
                                                                                                 actived:seePycFile.activeNum
@@ -370,12 +370,12 @@ singleton_implementation(AppDelegateHelper);
     //can open
     if(returnValue & ERR_OK_OR_CANOPEN)
     {
-        [[[PBBLogModel alloc] inittWithType:4 inApp:@"" desc:@"can open"] sendToServer];
+        [[[PBBLogModel alloc] initWithType:LogDEBUG inApp:APPReaderMac desc:@"can open"] sendToServer];
         [custormActivityView removeFromSuperview];
         applyNum =0;
         if (returnValue & ERR_OK_IS_FEE)
         {
-            [[[PBBLogModel alloc] inittWithType:4 inApp:@"" desc:@"开始阅读文件"] sendToServer];
+            [[[PBBLogModel alloc] initWithType:LogDEBUG inApp:APPReaderMac desc:@"开始阅读文件"] sendToServer];
             [self hide:-0.5];
             //重生0：未使用 1：已使用
             [[ReceiveFileDao sharedReceiveFileDao] updateReceiveFileToRebornedByFileId:fileID Status:0];//seePycFile.fileID Status:0];
@@ -404,7 +404,7 @@ singleton_implementation(AppDelegateHelper);
         }
         else
         {
-            [[[PBBLogModel alloc] inittWithType:4 inApp:@"" desc:@"自由传播"] sendToServer];
+            [[[PBBLogModel alloc] initWithType:LogDEBUG inApp:APPReaderMac desc:@"自由传播"] sendToServer];
             [self hide:-0.5];
             //自由传播
             //重生0：未使用 1：已使用
@@ -1132,7 +1132,7 @@ singleton_implementation(AppDelegateHelper);
 //申请激活成功页面
 -(void)letusGOActivationSucVc:(PycFile*)pycfileObject
 {
-    [[[PBBLogModel alloc] inittWithType:5 inApp:@"" desc:@"申请成功，到成功界面"] sendToServer];
+    [[[PBBLogModel alloc] initWithType:LogINFO inApp:APPReaderMac desc:@"申请成功，到成功界面"] sendToServer];
     //申请成功，到成功界面
     ActivationSuccessController *activationSucVc = [[NSStoryboard storyboardWithName:@"Main" bundle:nil] instantiateControllerWithIdentifier:@"ActivationSuccessController"];
     activationSucVc.fileId = pycfileObject.fileID;
@@ -1157,7 +1157,7 @@ singleton_implementation(AppDelegateHelper);
 //填写申请表格页面
 -(void)letusGOActivationController:(PycFile *)pycFileObject
 {
-    [[[PBBLogModel alloc] inittWithType:5 inApp:@"" desc:@"申请成功，到成功界面"] sendToServer];
+    [[[PBBLogModel alloc] initWithType:LogINFO inApp:APPReaderMac desc:@"申请成功，到成功界面"] sendToServer];
     ActivationController *activationVc = [[NSStoryboard storyboardWithName:@"Main" bundle:nil] instantiateControllerWithIdentifier:@"ActivationController"];
     //带有申请条件，可以展示条件，并申请，目前到申请界面
     activationVc.fileId = pycFileObject.fileID;
@@ -1293,7 +1293,7 @@ singleton_implementation(AppDelegateHelper);
 
 -(BOOL)fileIsTypeOfVideo:(NSString *)pathExt
 {
-    [[[PBBLogModel alloc] inittWithType:5 inApp:@"" desc:@"浏览的格式文件：\(pathExt)"] sendToServer];
+    [[[PBBLogModel alloc] initWithType:LogINFO inApp:APPReaderMac desc:@"浏览的格式文件：\(pathExt)"] sendToServer];
     if(pathExt == nil || pathExt.length == 0)
     {
         return NO;
