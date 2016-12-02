@@ -64,26 +64,7 @@ class DeviceUtil: NSObject
     
     func bySystem_profiler(){
         //判断是否已经持久化
-        if UserDefaults.standard.bool(forKey: "kbySystem_profiler")
-        {
-            serial_number = UserDefaults.standard.object(forKey: "kserial_number") as! String
-            machine_model = UserDefaults.standard.object(forKey: "kmachine_model") as! String
-#if os(OSX)
-            platform_UUID = UserDefaults.standard.object(forKey: "kplatform_UUID") as! String
-            cpu_type = UserDefaults.standard.object(forKey: "kcpu_type") as! String
-            physical_memory = UserDefaults.standard.object(forKey: "kphysical_memory") as! String
-#else
-            equip_host = UIDevice.current.name
-            UserDefaults.standard.set(equip_host, forKey: "kequip_host")
-#endif
-            username = UserDefaults.standard.object(forKey: "kusername") as! String
-            account_name = UserDefaults.standard.object(forKey: "kaccount_name") as! String
-            account_password = UserDefaults.standard.object(forKey: "kaccount_password") as! String
-            network_type = UserDefaults.standard.object(forKey: "knetwork_type") as! String
-            token = UserDefaults.standard.object(forKey: "ktoken") as! String
-            login_type = UserDefaults.standard.object(forKey: "klogin_type") as! String
-        }
-        else
+        if !UserDefaults.standard.bool(forKey: "kbySystem_profiler")
         {
             #if os(OSX)
                 let pipe = Pipe()
@@ -100,7 +81,7 @@ class DeviceUtil: NSObject
             #elseif os(iOS)
                 machine_model = UIDevice.current.model
                 UserDefaults.standard.set(machine_model, forKey: "kmachine_model")
-
+                
                 equip_host = UIDevice.current.name
                 UserDefaults.standard.set(equip_host, forKey: "kequip_host")
                 
@@ -109,7 +90,26 @@ class DeviceUtil: NSObject
                 
                 UserDefaults.standard.set(true, forKey: "kbySystem_profiler")
             #endif
-            
+        }
+        else
+        {
+            serial_number = UserDefaults.standard.object(forKey: "kserial_number") as! String
+            machine_model = UserDefaults.standard.object(forKey: "kmachine_model") as! String
+        #if os(OSX)
+            platform_UUID = UserDefaults.standard.object(forKey: "kplatform_UUID") as! String
+            cpu_type = UserDefaults.standard.object(forKey: "kcpu_type") as! String
+            physical_memory = UserDefaults.standard.object(forKey: "kphysical_memory") as! String
+        #else
+            equip_host = UIDevice.current.name
+            UserDefaults.standard.set(equip_host, forKey: "kequip_host")
+        #endif
+            username = UserDefaults.standard.object(forKey: "kusername") as! String
+            account_name = UserDefaults.standard.object(forKey: "kaccount_name") as! String
+            account_password = UserDefaults.standard.object(forKey: "kaccount_password") as! String
+            network_type = UserDefaults.standard.object(forKey: "knetwork_type") as! String
+            token = UserDefaults.standard.object(forKey: "ktoken") as! String
+            login_type = UserDefaults.standard.object(forKey: "klogin_type") as! String
+
         }
     }
     

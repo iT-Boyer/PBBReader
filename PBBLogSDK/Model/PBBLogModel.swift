@@ -75,7 +75,7 @@ public class PBBLogModel: NSObject
                              desc:String = "")
     {
         self.init()
-        if UserDefaults.standard.bool(forKey: "kSetUserInfo")
+        if !UserDefaults.standard.bool(forKey: "kSetUserInfo")
         {
             //当用户没有事先设置相关信息，执行初始化操作
             PBBLogModel.setUserInfo()
