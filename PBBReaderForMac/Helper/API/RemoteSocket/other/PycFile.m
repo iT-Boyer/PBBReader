@@ -53,9 +53,21 @@
     if (self)
     {
 //        _sysInfoVersion = [NSString stringWithFormat:@"%@%@",[[UIDevice currentDevice] systemName],[[UIDevice currentDevice] systemVersion]];
-        _sysInfoVersion = [ToolString platformString];
+        NSString *model = [[NSUserDefaults standardUserDefaults] objectForKey:@"kmachine_model"];
+        if (model) {
+            //
+            _sysInfoVersion = model;
+        }
+//        _sysInfoVersion = [ToolString platformString];
 //        _deviceIdfv = [[[UIDevice currentDevice] identifierForVendor]UUIDString];
-        _OpenUUID = [OpenUDID value];
+//        UserDefaults.standard.object(forKey: "kplatform_UUID") as! String
+//        UserDefaults.standard.object(forKey: "kmachine_model") as! String
+        NSString *UUID = [[NSUserDefaults standardUserDefaults] objectForKey:@"kplatform_UUID"];
+        if(UUID)
+        {
+            _OpenUUID = UUID;
+        }
+//        _OpenUUID = [OpenUDID value];
         NSLog(@"init- pycfile-----");
         
     }

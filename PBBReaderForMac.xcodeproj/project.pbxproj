@@ -1232,13 +1232,6 @@
 			path = Advertising;
 			sourceTree = "<group>";
 		};
-		148B6D641DE68DF8005B5DFB /* LogAPI */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = LogAPI;
-			sourceTree = "<group>";
-		};
 		148B6D901DE69166005B5DFB /* PBBLogSDK */ = {
 			isa = PBXGroup;
 			children = (
@@ -1478,7 +1471,6 @@
 		14B25F771CFD7823001BCE84 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				148B6D641DE68DF8005B5DFB /* LogAPI */,
 				14B25F781CFD7823001BCE84 /* RemoteSocket */,
 				14B25FC51CFD844E001BCE84 /* sqlite */,
 			);
