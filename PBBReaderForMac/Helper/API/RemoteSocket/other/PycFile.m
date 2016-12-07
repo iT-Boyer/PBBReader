@@ -127,8 +127,8 @@
 //    NSLog(@"%@:%@",theDescription, hexStr);
 }
 
--(NSMutableArray *)checkSendByte:(Byte *)bytes len:(NSInteger)len{
-    
+-(NSMutableArray *)checkSendByte:(Byte *)bytes len:(NSInteger)len
+{
     NSMutableArray *result = [[NSMutableArray alloc] init];;
     //下面是Byte 转换为16进制。
     NSString *bytestr = @"";
@@ -160,13 +160,6 @@
     [result addObject:[NSNumber numberWithInteger:j2]];
     return result;
 }
-//-(void)makeReturnMessage:(NSInteger ) message
-//{
-//    MAKEPYCRECEIVE makeReceive;
-//    makeReceive.returnValue = message;
-//    [self.delegate PycFile:self didFinishOperate:&makeReceive forType:fileOperateType];
-//    
-//}
 
 #pragma mark - 调用delegate方法
 -(void)makeReturnMessage:(NSInteger)message forOperateType:(NSInteger)operateType
@@ -224,106 +217,11 @@
     }
 }
 
-//获取文件哈希值
--(BOOL)generateHash:(NSString *)filePath
-            outHash:(Byte *)hashValueTodo
-             length:(int)len
-        haveOutStru:(NSInteger *)haveOutLine
-{
 
-    NSInteger fileSizeTodo = 0;
-    Byte *fileContentTodo;
-    BOOL allFileContent = NO;
-    //  unsigned char hashvalue[HASH_STRUCT_LEN];
-    memset(hashValueTodo, 0, len);
-    //  unsigned char *hashValueTodo = hashvalue;
-    
-    //读文件
-    NSError *err;
-    NSFileManager *manager = [NSFileManager defaultManager];
-    NSDictionary *fileAttributes = [manager attributesOfItemAtPath:filePath error:&err];
-    NSNumber *fileSize;
-    if (fileAttributes != nil) {
-        fileSize = [fileAttributes objectForKey:NSFileSize];
-        NSLog(@"file size is %@", fileSize);
-    }
-
-    //判断是否是PBB文件
-    long structsize =  sizeof(PYCFILEEXT);
-    long fileheadoffset = (fileSize.longValue > structsize)? (fileSize.longValue - structsize):0;
-    if(fileheadoffset == 0)
-    {
-        NSLog(@"nothing in in");
-        return FALSE;
-    }
-
-    if (fileSize.longValue >= HASH_FILE_SIZE_TODO) {
-        fileSizeTodo = HASH_FILE_SIZE_TODO;
-    }
-    else{
-        fileSizeTodo = fileSize.longValue;
-        allFileContent = YES;
-    }
-    
-    //文件柄
-    NSFileHandle *handle = [NSFileHandle fileHandleForReadingAtPath:filePath];
-    
-    //将当前文件的操作位置设定为offset
-    [handle seekToFileOffset:fileheadoffset];
-    /*  NSData *data = [handle readDataOfLength:sizeof(PYCFILEHEADER)];
-     
-     PYCFILEHEADER *header = (PYCFILEHEADER *)[data bytes];
-     NSLog(@"file original size really %lld", header->fileSize);
-     */
-    
-    NSData *dataExt = [handle readDataOfLength:sizeof(PYCFILEEXT)];
-    PYCFILEEXT *fileExtHeader = (PYCFILEEXT *)[dataExt bytes];
-    PYCFILEEXT decodedData;
-    memcpy(&decodedData, fileExtHeader, sizeof(PYCFILEEXT));
-    PycCode *coder = [[PycCode alloc] init];
-    [coder decodeFileExtension:&decodedData];
-    if(decodedData.uTag == PycTag0)
-    {
-        NSInteger fileOffest = 0;
-
-        if (!allFileContent)
-        {
-            fileOffest = fileSize.longValue - HASH_FILE_SIZE_TODO;
-            
-        }
-
-        [handle seekToFileOffset:fileOffest];
-        NSData *data = [handle readDataToEndOfFile];
-        [handle closeFile];
-    
-        fileContentTodo = (Byte *)[data bytes];
-    }
-    else
-    {
-        *haveOutLine = 1;
-        [handle closeFile];
-
-        fileContentTodo = (Byte *)[dataExt bytes];
-        fileSizeTodo = sizeof(PYCFILEEXT);
-    }
-    
-    if (![coder CalculateHashValue:fileContentTodo datalen:(int)fileSizeTodo hashValue:hashValueTodo]) {
-        
-        return NO;
-        
-    }
-    
-    return YES;
-    
-}
-
-
-#pragma mark get file attribute
+#pragma mark - 获取pbb文件的fileID
 - (int)getAttributePycFileId:(NSString *)filename
 {
     int bReturn = 0;
-    
-
     if (![[filename pathExtension] isEqualToString:@"pbb"]
         ||
         ![[NSFileManager defaultManager] fileExistsAtPath:filename]) {
@@ -359,7 +257,7 @@
         return 3;
     }
     [handle seekToFileOffset:fileheadoffset];
-  /*  NSData *data = [handle readDataOfLength:sizeof(PYCFILEHEADER)];
+   /*NSData *data = [handle readDataOfLength:sizeof(PYCFILEHEADER)];
     NSLog(@"read len %d %s",[data length], [data bytes]);*/
    /* 
     PYCFILEHEADER *header = (PYCFILEHEADER *)[data bytes];
@@ -378,107 +276,6 @@
     [handle closeFile];
     
      return bReturn;
-}
-
-#pragma mark make file pyc
-- (void)sendSeeOverTime:(NSInteger )fileId openInfoID:(NSInteger) theOpenInfoID
-{
-    self.fileID = fileId;
-    self.openinfoid = theOpenInfoID;
-    self.pycsocket = [[PycSocket alloc] init];
-    self.pycsocket.delegate = self;
-    self.pycsocket.connectType = TYPE_SEE_FILE_OVER;
-    fileOperateType = TYPE_SEE_FILE_OVER;
-    if (![self.pycsocket connectToServer:IP_ADDRESS_FILE port:PORT_FILE]) {
-        NSLog(@"connect err");
-        return ;
-    }
-    
-//    NSLog(@"will send");
-    
-    
-    
-    return ;
-    
-}
--(BOOL)makePycFilePath: (NSString * )filePath fileOwner:(NSString *)fileowner startDay:(NSString *)startDay endDay:(NSString *)endday maxOpenNum:(NSInteger) openNumMax remark:(NSString *)theRemark  version:(NSString *)theVersion  duration:(NSInteger)duration qq:(NSString *)theQQ email:(NSString *)theEmail phone:(NSString *)thePhone maxOpenday:(NSInteger )theOpenDay maxOpenyear:(NSInteger )theOpenYear makeType:(NSInteger)theMakeType
-
-{
-    NSInteger openTimeLone = duration;
-    self.remark = theRemark;
-    
-    //add by lry 2014-05-05
-    self.openTimeLong = openTimeLone;
-    self.versionStr = theVersion;
-    self.QQ = theQQ;
-    self.email = theEmail;
-    self.phone = thePhone;
-    self.openDay = theOpenDay;
-    self.openYear = theOpenYear;
-    self.Random = arc4random() % ARC4RANDOM_MAX;
-    self.makeType = theMakeType;
-    //add end
-    
-    return [self makePycFilePath:filePath fileOwner:fileowner startDay:startDay endDay:endday maxOpenNum:openNumMax foruser:fileowner];
-}
--(BOOL)makePycFilePath: (NSString * )filePath fileOwner:(NSString *)fileowner startDay:(NSString *)startDay endDay:(NSString *)endday maxOpenNum:(NSInteger) openNumMax foruser:(NSString *)logname
-{
-    //从服务器得到ID
-    //int temp = 0;
-    if (logname == nil) {
-        return NO;
-    }
-    BOOL bReturn = NO;
-    NSError *err;
-    NSFileManager *manager = [NSFileManager defaultManager];
-    if (![manager fileExistsAtPath:filePath]) {
-        return bReturn;
-    }
-    NSDictionary *fileAttributes = [manager attributesOfItemAtPath:filePath error:&err];
-    if (!fileAttributes) {
-        
-        NSLog(@"file size is nil");
-        return bReturn;//--------
-    }
-    NSInteger fileSizeOriginal = [[fileAttributes objectForKey:NSFileSize] integerValue];
-    if (fileSizeOriginal <= 0) {
-        return bReturn;
-    }
-    
-    //BOOL bReturn;
-    
-    self.fileName = filePath;
-    self.filePycName = [self getNotExistPycName:self.fileName forUser:logname];
-    if (self.filePycName == nil) {
-        return  NO;
-    }
-    self.filePycNameFromServer = [self.filePycName lastPathComponent];
-    self.fileOwner = fileowner;
-    self.startDay = startDay;
-    self.endDay = endday;
-    self.AllowOpenmaxNum = openNumMax;
-    
-    
-    
-    self.pycsocket = [[PycSocket alloc] init];
-    self.pycsocket.delegate = self;
-    self.pycsocket.connectType = TYPE_FILE_OUT;
-    fileOperateType = TYPE_FILE_OUT;
-    if (![self.pycsocket connectToServer:IP_ADDRESS_FILE port:PORT_OUTFILE]) {
-        NSLog(@"connect err");
-        return bReturn;
-    }
-    
-//    NSLog(@"will send");
-    
-    
-    bReturn = YES;
-    
-    return bReturn;
-}
--(BOOL)isFileEncode:(NSString *)filePath
-{
-    return NO;
 }
 
 
@@ -532,175 +329,8 @@
     {
         self.fileType = [nsfileType integerValue];
     }
-    
     return self.fileType;
-    
 }
-
--(NSInteger)codeFile:(NSString *)filePath length:(NSInteger) codeLen
-{
-    //get file len
-    NSInteger readReallen = 0;
-    NSInteger preReadMaxLen = 1024 ;
-    NSInteger filePos = 0;
-    NSInteger encodelen = 0;
-    BOOL bFinish = NO;
-    
-    NSFileHandle *handle = [NSFileHandle fileHandleForUpdatingAtPath:filePath];
-    if (handle == nil) {
-        return -1;
-    }
-    
-    while (!bFinish) {
-        
-        NSData *data = [handle readDataOfLength:preReadMaxLen];
-        
-        readReallen += [data length];
-        if ([data length] == 0) {
-            NSLog(@"finish code %ld", (long)readReallen); //-------
-            break;
-        }
-        
-        
-        if (readReallen >= codeLen) {
-            encodelen = [data length] - (readReallen -codeLen);
-            NSLog(@"last encrypt len %ld", (long)encodelen);
-            readReallen = codeLen;//-------
-            bFinish = YES;
-        }else
-        {
-            encodelen = [data length];
-        }
-        
-        
-        PycCode *coder = [[PycCode alloc] init];
-        [coder codeBufferOfFile:(Byte *)[data bytes] length:(int)encodelen withKey:(Byte *)[self.fileSecretkeyR1  bytes]];
-        
-        [handle seekToFileOffset:filePos];
-        [handle writeData:data];
-        filePos += encodelen;
-    }
-    
-    [handle closeFile];
-    
-    return readReallen;
-    
-}
-
-
-
--(NSInteger)codePycFile:(NSString *)filePath filetype:(NSInteger)fileType;
-{
-    if ([self isFileEncode:filePath]) {
-        [self decodeFile:filePath];
-    }
-    
-    int codeLen = 0;
-    switch(fileType)
-    {
-        case FILE_TYPE_MOVIE:
-            
-            codeLen = LEN_MOVIE;
-            break;
-        case FILE_TYPE_PDF:
-            codeLen = LEN_PDF;
-            break;
-        case FILE_TYPE_PIC:
-            codeLen = LEN_PIC;
-            break;
-        case FILE_TYPE_UNKOWN:
-            //#warning test just
-            codeLen = LEN_UNKOWN;// to do ......
-            break;
-        default:
-            NSLog(@"something err");
-            
-    }
-    
-    
-    
-    return [self codeFile:filePath length:codeLen];
-    
-}
-
-//-(NSString *)getPycFileWithFileLastComponent:(NSString *)lastComponent forUser:(NSString *)logname
-//{
-//    NSString *pycFileNameReturn = nil;
-//    pycFileNameReturn = [PycFolder documentSendFolderWithUserID:logname];
-//    if (pycFileNameReturn == nil) {
-//        return nil;
-//    }
-//
-//    [[pycFileNameReturn stringByAppendingPathComponent:lastComponent] stringByAppendingPathExtension:@"pyc"];
-//}
-
-/**
- *  @breif 制作文件过程中，指定文件的存储位置，当文件路径冲突时，重命名文件名路径并保存到send目录中
- *
- */
--(NSString *)getNotExistPycName:(NSString *)FilePath forUser:(NSString *)logname
-{
-    NSLog(@"file path %@", FilePath);
-    
-    if (logname == nil) {
-        return nil;
-    }
-    
-    NSString *sendFolderForUser = [PycFolder documentSendFolderWithUserID:logname];
-    NSString *pycFileWithOutExtention  =  [sendFolderForUser stringByAppendingPathComponent:[FilePath lastPathComponent]];
-    NSString *pycFilePath = [pycFileWithOutExtention stringByAppendingPathExtension:PYC_FILE_EXTENTION];
-    NSFileManager *manager = [NSFileManager defaultManager];
-    
-    
-    BOOL isDir;
-    NSError *err;
-    if (![manager fileExistsAtPath:sendFolderForUser isDirectory:&isDir]) {
-        
-        if(![manager createDirectoryAtPath:sendFolderForUser withIntermediateDirectories:YES attributes:nil error:&err])
-        {
-            NSLog(@"create dir err %@", err);
-            return nil;
-        }
-        else{
-            NSLog(@"create dir %@", sendFolderForUser);
-        }
-    }
-    else
-    {
-        NSLog(@"send folder exist");
-    }
-    
-    if (![manager fileExistsAtPath:pycFilePath]) {
-        NSLog(@"pyc file path %@", pycFilePath);
-        return pycFilePath;
-    }
-    
-    NSString *strFileExtend = [NSString stringWithFormat:@".%@",[FilePath pathExtension] ];
-    NSMutableString *fileWithOutAnyExtention = [NSMutableString stringWithFormat:@"%@",pycFileWithOutExtention];
-    NSRange range = [fileWithOutAnyExtention rangeOfString:strFileExtend];
-    if (range.location == NSNotFound) {
-        NSLog(@"*****file name err");
-        return nil;
-    }
-    [fileWithOutAnyExtention deleteCharactersInRange:range];
-    
-    
-    for (int i = 1; i<MAX_RENAME_COUNT; i++) {
-        NSString *testFilePath = [fileWithOutAnyExtention stringByAppendingFormat:@"(%d)%@.%@",i, strFileExtend,PYC_FILE_EXTENTION];
-//        NSLog(@"test pyc File Path %@", testFilePath);
-        if (![manager fileExistsAtPath:testFilePath]) {
-            return testFilePath;
-        }
-        if (i == MAX_RENAME_COUNT-1) {
-            NSError *err;
-            [manager removeItemAtPath:testFilePath error:&err];
-            return testFilePath;
-        }
-        
-    }
-    return nil;//never do this
-}
-
 
 /**
  * @breif 构建接收文件的存放目录
@@ -774,6 +404,74 @@
     return nil;//never do this
 }
 
+/**
+ *  @breif 制作文件过程中，指定文件的存储位置，当文件路径冲突时，重命名文件名路径并保存到send目录中
+ *
+ */
+-(NSString *)getNotExistPycName:(NSString *)FilePath forUser:(NSString *)logname
+{
+    NSLog(@"file path %@", FilePath);
+    
+    if (logname == nil) {
+        return nil;
+    }
+    
+    NSString *sendFolderForUser = [PycFolder documentSendFolderWithUserID:logname];
+    NSString *pycFileWithOutExtention  =  [sendFolderForUser stringByAppendingPathComponent:[FilePath lastPathComponent]];
+    NSString *pycFilePath = [pycFileWithOutExtention stringByAppendingPathExtension:PYC_FILE_EXTENTION];
+    NSFileManager *manager = [NSFileManager defaultManager];
+    
+    
+    BOOL isDir;
+    NSError *err;
+    if (![manager fileExistsAtPath:sendFolderForUser isDirectory:&isDir]) {
+        
+        if(![manager createDirectoryAtPath:sendFolderForUser withIntermediateDirectories:YES attributes:nil error:&err])
+        {
+            NSLog(@"create dir err %@", err);
+            return nil;
+        }
+        else{
+            NSLog(@"create dir %@", sendFolderForUser);
+        }
+    }
+    else
+    {
+        NSLog(@"send folder exist");
+    }
+    
+    if (![manager fileExistsAtPath:pycFilePath]) {
+        NSLog(@"pyc file path %@", pycFilePath);
+        return pycFilePath;
+    }
+    
+    NSString *strFileExtend = [NSString stringWithFormat:@".%@",[FilePath pathExtension] ];
+    NSMutableString *fileWithOutAnyExtention = [NSMutableString stringWithFormat:@"%@",pycFileWithOutExtention];
+    NSRange range = [fileWithOutAnyExtention rangeOfString:strFileExtend];
+    if (range.location == NSNotFound) {
+        NSLog(@"*****file name err");
+        return nil;
+    }
+    [fileWithOutAnyExtention deleteCharactersInRange:range];
+    
+    
+    for (int i = 1; i<MAX_RENAME_COUNT; i++) {
+        NSString *testFilePath = [fileWithOutAnyExtention stringByAppendingFormat:@"(%d)%@.%@",i, strFileExtend,PYC_FILE_EXTENTION];
+        //        NSLog(@"test pyc File Path %@", testFilePath);
+        if (![manager fileExistsAtPath:testFilePath]) {
+            return testFilePath;
+        }
+        if (i == MAX_RENAME_COUNT-1) {
+            NSError *err;
+            [manager removeItemAtPath:testFilePath error:&err];
+            return testFilePath;
+        }
+        
+    }
+    return nil;//never do this
+}
+
+
 -(BOOL)getReceiveFileINfo
 {
 //    if (![self.filePycNameFromServer isEqualToString:[self.filePycName lastPathComponent]]) {
@@ -806,6 +504,642 @@
 //    
     return YES;
 }
+
+//新建明文释放到该路径
+-(NSString *)getNotExistFileNameFromPycFile:(NSString *)filePycNameFromServer
+                              withExtention:(NSString *)pycExtention
+                                    forUser:(NSString *)logname
+{
+    if (logname == nil)
+    {
+        return nil;
+    }
+    
+    NSMutableString *filePath = [NSMutableString stringWithFormat:@"%@", [filePycNameFromServer lastPathComponent]];
+    NSString *pycExtentionDot = [[NSString alloc] initWithFormat:@".%@", pycExtention];
+    NSRange range = [filePath rangeOfString:pycExtentionDot];
+    if (range.location == NSNotFound) {
+        NSLog(@"*****file name err");
+        return nil;
+    }
+    //删除.pbb后缀
+    [filePath deleteCharactersInRange:range];
+    NSString *fileName = [filePath lastPathComponent];
+    //tmp目录
+    NSString *tmpDir = [PycFolder documentViewFolderWithUserID:logname];
+    //明文路径
+    NSString *filePathForOpenFile = [tmpDir stringByAppendingPathComponent:fileName];
+    
+    //新建tmp目录
+    NSFileManager *manager = [NSFileManager defaultManager];
+    BOOL isDir;
+    NSError *err;
+    if (![manager fileExistsAtPath:tmpDir isDirectory:&isDir])
+    {
+        if(![manager createDirectoryAtPath:tmpDir
+               withIntermediateDirectories:YES
+                                attributes:nil
+                                     error:&err])
+        {
+            NSLog(@"create dir err %@", err);
+            return nil;
+        }
+        else
+        {
+            NSLog(@"create dir %@", tmpDir);
+        }
+    }
+    else
+    {
+        NSLog(@"send folder exist");
+    }
+    return filePathForOpenFile;
+}
+
+
+-(BOOL)moveFileAndDecodeFrom:(NSString *)strFileName
+               partOfContent:(NSInteger)originalFileLen
+                  decodeSize:(NSInteger)encryptLen
+               toDestination:(NSString *)strDestination
+{
+    self.fileName = [self getNotExistFileNameFromPycFile:self.filePycNameFromServer withExtention:[ self.filePycNameFromServer pathExtension] forUser:@"not use"];
+    
+    NSString *realDestinationPath  = self.fileName;//= [self getNotExistName:strDestination];
+    NSFileManager *manager = [NSFileManager defaultManager];
+    NSLog(@"destnatin file is %@", realDestinationPath);
+    NSLog(@"strFileName file is %@", strFileName);
+    //    if (![manager createFileAtPath:realDestinationPath contents:nil attributes:nil]) {
+    //        NSLog(@"err");
+    //
+    //        return NO;
+    //    }
+    //
+    NSError *error;
+    if([manager fileExistsAtPath:realDestinationPath])
+    {
+        [manager removeItemAtPath:realDestinationPath error:&error];
+    }
+    if(![manager copyItemAtPath:strFileName toPath:realDestinationPath error:&error]) {
+        NSLog(@"err");
+        
+        return NO;
+    }
+    
+    
+    
+    //get file len
+    NSInteger readReallen = 0;
+    NSInteger preReadMaxLen = 1024*1024 ;
+    NSInteger encodelen = 0;
+    //    int readlen = 0;
+    //    BOOL bDecodeFinish = NO;
+    //    BOOL bCopyFinish = NO;
+    BOOL bFinish = NO;
+    NSInteger filePos = 0;
+    NSFileHandle *handleDestination = [NSFileHandle fileHandleForUpdatingAtPath:realDestinationPath];
+    if (!handleDestination ) {
+        NSLog(@"file handle move err");
+        return NO;
+    }
+    
+//    _imageData = [[NSMutableData alloc] init];
+    //解密完成
+    while (!bFinish) {
+        NSData *data = [[NSData alloc] init];
+        
+        data = [handleDestination readDataOfLength:preReadMaxLen];
+        //NSData *data = [handleDestination readDataOfLength:preReadMaxLen];
+        
+        readReallen += [data length];
+        if ([data length] == 0) {
+            NSLog(@"finish code %ld", (long)readReallen); //-------
+            break;
+        }
+        
+        
+        if ((readReallen >= encryptLen) || (encryptLen == -1)) {
+            if(encryptLen == -1)
+            {
+                if(readReallen >= originalFileLen)
+                {
+                    if((readReallen-originalFileLen)%16 >0)
+                    {
+                        encodelen = [data length] - (readReallen-originalFileLen) + 16 - (readReallen-originalFileLen)%16;
+                    }
+                    else
+                    {
+                        encodelen = [data length] - (readReallen-originalFileLen);
+                    }
+                    bFinish = YES;
+                }
+                else{
+                    encodelen = [data length];
+                }
+                
+            }
+            else
+            {
+                encodelen = [data length] - (readReallen -encryptLen);
+                NSLog(@"last encrypt len %ld", (long)encodelen);
+                readReallen = encryptLen;//-------
+                bFinish = YES;
+            }
+        }else
+        {
+            encodelen = [data length];
+        }
+        
+        PycCode *coder = [[PycCode alloc] init];
+        [coder decodeBufferOfFile:(Byte *)[data bytes] length:(int)encodelen withKey:(Byte *)[self.fileSecretkeyR1 bytes]];
+        
+        //缓存图片到内存
+//        [_imageData appendData:data];
+
+        [handleDestination seekToFileOffset:filePos];
+        [handleDestination writeData:data];
+        filePos += encodelen;
+    }
+    filePos = originalFileLen;
+    [handleDestination seekToFileOffset:filePos];
+    [handleDestination truncateFileAtOffset:filePos];
+    [handleDestination closeFile];
+    
+    //
+    return YES;
+}
+
+-(BOOL)fileIsTypeOfVideo:(NSString *)pathExt
+{
+    
+    NSString *str = [NSString stringWithFormat:@"%@",@"+rmvb+mkv+mpeg+mp4+mov+avi+3gp+flv+wmv+rm+mpg+vob+dat+"];
+    pathExt = [pathExt lowercaseString];
+    //    NSComparisonResult *result = [pathExt commonPrefixWithString:str options:NSCaseInsensitiveSearch|NSNumericSearch];
+    NSRange range=[str rangeOfString: pathExt];
+    if (!(range.location==NSNotFound)) {
+        return YES;
+    }
+    return NO;
+}
+
+#pragma mark - socket网络
+#pragma mark socket 连接成功，封装请求数据包，并发送
+-(void)PycSocket: (PycSocket *)fileObject didFinishConnect: (Byte *)receiveDataByte
+{
+    NSLog(@"*****************%s******************", __func__);
+    // SENDDATA * receiveData = (SENDDATA *)receiveDataByte;
+    NSLog(@"finish connect can send data");
+    SENDDATA_NEW_NEW data;
+    memset(&data, 0, sizeof(SENDDATA_NEW_NEW));
+    data.suc=0;
+    data.pos1=0;
+    data.pos2=0;
+    if (fileObject.connectType == TYPE_FILE_OUT) {
+        NSLog(@"file out type");
+         [self MakeFileOutPackage:&data];
+    }
+    else if(fileObject.connectType == TYEP_FILE_SAVE_HASH_ENCRYPT)
+    {
+        NSLog(@"hash type receive");
+        [self MakeSaveHashAndSecretPackage:&data];
+    }
+    else if(fileObject.connectType == TYPE_FILE_OPEN)
+    {
+        NSLog(@"open type receive");
+        [self MakeOpenFilePackage:&data];
+    }
+    else if (fileObject.connectType == TYPE_FILE_REFRESH)
+    {
+        NSLog(@"refresh file list receive");
+        [self MakerefreshListInfoPackage:&data];
+    }
+    else if (fileObject.connectType == TYPE_FILE_CHANGE_READ_CONDITION)
+    {
+        [self makePycFileReadConditionPackage:&data];
+    }
+    else if (fileObject.connectType == TYPE_FILE_CHANGE_FILE_CONTROLL)
+    {
+        [self makePycFileChangeControllPackage:&data];
+    }
+    else if (fileObject.connectType == TYPE_FILE_INFO)
+    {
+        [self MakeGetFileInfoByIdPackage:&data];
+    }
+    else if(fileObject.connectType == TYPE_FILE_CLIENT)
+    {
+        [self MakeGetFileClientByFidAndOrderIdPackage:&data];
+    }
+    else if (fileObject.connectType == TYPE_FILE_APPLYINFO)
+    {
+        [self MakeGetApplyFileInfoByIdPackage:&data];
+    }
+    else if(fileObject.connectType == TYPE_APPLY)
+    {
+        [self MakeapplyFileByFidAndOrderIdPackage:&data];
+    }
+    else if(fileObject.connectType == TYPE_REAPPLY)
+    {
+        [self MakeReapplyFileByFidAndOrderIdPackage:&data];
+    }
+    else if(fileObject.connectType == TYPE_FILE_VERIFICATIONCODE
+            || fileObject.connectType == NewPycUerRemoteOperateTypeGetConfirm)
+    {
+        [self MakeVerificationCodeByFidPackage:&data];
+    }
+    else if(fileObject.connectType == TYPE_SEE_FILE_OVER)
+    {
+        [self MakeSeeFileOVerPackage:&data];
+    }
+    else if (fileObject.connectType == NewPycUerRemoteOperateTypeBindPhone)
+    {
+        [self makeSendPackageForBindPhone:&data];
+    }
+    NSMutableArray *arry= [self checkSendByte:(Byte *)&data len:sizeof(SENDDATA_NEW_NEW)];
+    int j1=[arry[0] intValue];
+    int j2=[arry[1] intValue];
+    
+    data.pos1=j1;
+    data.pos2=j2;
+    if (fileObject.connectType == TYPE_SEE_FILE_OVER) {
+        [self.pycsocket SocketWrite:(Byte *)&data length:sizeof(SENDDATA_NEW_NEW) receiveDataLength:sizeof(RECEIVEDATA_NEW_NEW)];
+    }else{
+        if (0 == [self.pycsocket SocketWrite:(Byte *)&data length:sizeof(SENDDATA_NEW_NEW) receiveDataLength:sizeof(RECEIVEDATA_NEW_NEW)]) {
+            NSLog(@"err when doing:%ld",(long)fileObject.connectType);
+            [self makeReturnMessage:0 forOperateType:fileObject.connectType];
+        }
+    }
+}
+
+#pragma mark socket 服务器响应，开始解析接收到的数据包
+-(void)PycSocket: (PycSocket *)fileObject didFinishSend: (Byte *)receiveDataByte
+{
+    NSLog(@"*****************%s******************", __func__);
+    RECEIVEDATA_NEW_NEW * receiveData = (RECEIVEDATA_NEW_NEW *)receiveDataByte;
+
+    if (!receiveData) {
+        
+        if(!b_needNet && _receiveFile && fileOperateType == TYPE_FILE_OPEN)
+        {
+            
+            //当网络不给力时，
+            //旧版本手动激活文件，可读时
+            //解析离线文件，并给self赋值,获取明文文件
+            [self setValueOfSelfByNewFile:_receiveFile];
+            //支持离线阅读的文件，且根据本地数据库的数据判断可阅读时
+            [self makeReturnMessage:_receiveFile.canSeeForOutline forOperateType:fileOperateType];
+        }
+        else{
+            [self makeReturnMessage:0 forOperateType:fileOperateType];
+        }
+        
+        return;
+    }
+    int pos1 = receiveData->pos1;
+    int pos2 = receiveData->pos2;
+    if (pos1!=0) {
+        ((Byte *)receiveData)[pos1]=0x0A;
+    }
+    if (pos2!=0) {
+        ((Byte *)receiveData)[pos2]=0x0A;
+    }
+    PycCode *coder = [[PycCode alloc] init];
+    
+    if (receiveData->userData.random != self.Random)
+    {
+        [coder decodeBuffer:(Byte *)&(receiveData->userData) length:sizeof(STRUCTDATA_NEW_NEW)];
+    }
+    else
+    {
+        return;
+    }
+
+    if (receiveData->type == TYPE_FILE_OUT || receiveData->type == TYPE_FILE_OUT_SALER_APPLY)
+    {
+        if (receiveData->suc == 0)
+        {
+            NSLog(@"return operate server suc = 0");
+            [self makeReturnMessage:0 forOperateType:TYPE_FILE_OUT];
+            return;
+        }
+        
+        //随机因子不同
+        if (receiveData->userData.random != self.Random)
+        {
+            NSLog(@"return operate server suc = 0");
+            [self makeReturnMessage:-1 forOperateType:TYPE_FILE_OUT];
+            return;
+        }
+        
+        if (!(receiveData->suc & ERR_OK_OR_CANOPEN))
+        {
+            [self makeReturnMessage:receiveData->suc forOperateType:TYPE_FILE_OUT];
+            return;
+        }
+       
+        self.fileID = receiveData->userData.ID;
+        self.orderNo =  [[NSString alloc]initWithBytes:receiveData->userData.orderno
+                                                length:ORDERNO_LEN
+                                              encoding:NSUTF8StringEncoding];
+        NSLog(@"file id is %ld",(long)self.fileID);
+        
+        //制作.pbb文件
+        if (![self makePycFile])
+        {
+            [self makeReturnMessage:0 forOperateType:TYPE_FILE_OUT];
+            return;
+        }
+        //制作完成访问服务器
+        [self uploadMakePycFile];
+        
+    }
+    else if(receiveData->type == TYEP_FILE_SAVE_HASH_ENCRYPT)
+    {
+
+        NSLog(@"type is hash");
+        if (receiveData->suc == 0) {
+            NSLog(@"return operate server save hash suc = 0");
+            [self makeReturnMessage:0 forOperateType:TYPE_FILE_OUT];
+            return;
+        }
+        
+        [self makeReturnMessage:receiveData->suc forOperateType:TYPE_FILE_OUT];
+        
+    }
+    else if(receiveData->type == TYPE_FILE_OPEN)
+    {
+        NSLog(@"type is open");
+        //随机因子不同
+        if (receiveData->userData.random != self.Random)
+        {
+            [self makeReturnMessage:-1 forOperateType:TYPE_FILE_OPEN];
+            return;
+        }
+        [self ReceiveOpenFileByFidPackage:receiveData];
+        [self makeReturnMessage:receiveData->suc forOperateType:TYPE_FILE_OPEN];
+    }
+    else if(receiveData->type == TYPE_FILE_REFRESH)
+    {
+        if(receiveData->suc & ERR_OK_OR_CANOPEN)
+        {
+            [self receiveRefreshListInfoPackage:receiveData];
+        }
+        
+        [self makeReturnMessage:receiveData->suc forOperateType:TYPE_FILE_REFRESH];
+    }
+    else if (receiveData->type == TYPE_FILE_CHANGE_READ_CONDITION)
+    {
+        //随机因子不同
+        if (receiveData->userData.random != self.Random)
+        {
+            NSLog(@"return operate server suc = 0");
+            [self makeReturnMessage:-1 forOperateType:TYPE_FILE_CHANGE_READ_CONDITION];
+            return;
+        }
+       [self makeReturnMessage:receiveData->suc forOperateType:TYPE_FILE_CHANGE_READ_CONDITION];
+    }
+    else if (receiveData->type == TYPE_FILE_CHANGE_FILE_CONTROLL)
+    {
+       //随机因子不同
+        if (receiveData->userData.random != self.Random)
+        {
+            NSLog(@"return operate server suc = 0");
+            [self makeReturnMessage:-1 forOperateType:TYPE_FILE_CHANGE_FILE_CONTROLL];
+            return;
+        }
+        [self makeReturnMessage:receiveData->suc forOperateType:TYPE_FILE_CHANGE_FILE_CONTROLL];
+    }
+    else if (receiveData->type == TYPE_FILE_INFO)
+    {
+       //随机因子不同
+        if (receiveData->userData.random != self.Random)
+        {
+            NSLog(@"return operate server suc = 0");
+            [self makeReturnMessage:-1 forOperateType:TYPE_FILE_INFO];
+            return;
+        }
+       [self receiveGetFileInfoByIdPackage:receiveData];
+        [self makeReturnMessage:receiveData->suc forOperateType:TYPE_FILE_INFO];
+    
+    }
+    else if (receiveData->type == TYPE_FILE_APPLYINFO)
+    {
+        //随机因子不同
+        if (receiveData->userData.random != self.Random)
+        {
+            [self makeReturnMessage:-1 forOperateType:TYPE_FILE_APPLYINFO];
+            return;
+        }
+        [self receiveApplyFileInfoByIdPackage:receiveData];
+        [self makeReturnMessage:receiveData->suc forOperateType:TYPE_FILE_APPLYINFO];
+        
+    }
+    else if (receiveData->type == TYPE_FILE_CLIENT)
+    {
+        //随机因子不同
+        if (receiveData->userData.random != self.Random)
+        {
+            [self makeReturnMessage:-1 forOperateType:TYPE_FILE_CLIENT];
+            return;
+        }
+        if (receiveData->suc & ERR_OK_OR_CANOPEN) {
+        //能看
+            [self setOutLineStructData:self.filePycName isFirstSee:0 isSetFirst:0 isSee:0 isVerifyOk:1 isTimeIsChanged:0 isApplySucess:0 data:receiveData];
+        }
+        [self ReceiveGetFileClientByFidAndOrderIdPackage:receiveData];
+        [self makeReturnMessage:receiveData->suc forOperateType:TYPE_FILE_CLIENT];
+        
+    }
+    else if (receiveData->type == TYPE_APPLY)
+    {
+        //随机因子不同
+        if (receiveData->userData.random != self.Random)
+        {
+            NSLog(@"return operate server suc = 0");
+            [self makeReturnMessage:-1 forOperateType:TYPE_APPLY];
+            return;
+        }
+        [self receiveApplyFileByFidAndOrderIdPackage:receiveData];
+        [self makeReturnMessage:receiveData->suc forOperateType:TYPE_APPLY];
+        
+    }
+    else if (receiveData->type == TYPE_REAPPLY)
+    {
+        //随机因子不同
+        if (receiveData->userData.random != self.Random)
+        {
+            [self makeReturnMessage:-1 forOperateType:TYPE_REAPPLY];
+            return;
+        }
+        
+        [self receiveReapplyFileInfoByIdPackage:receiveData];
+
+        [self makeReturnMessage:receiveData->suc forOperateType:TYPE_REAPPLY];
+        
+    }
+    else if (receiveData->type == TYPE_FILE_VERIFICATIONCODE
+              || receiveData->type == NewPycUerRemoteOperateTypeGetConfirm)
+    {
+        //随机因子不同
+        if (receiveData->userData.random != self.Random)
+        {
+            [self makeReturnMessage:-1 forOperateType:fileOperateType];
+            return;
+        }
+        
+        [self receiveVerificationCodeInfoByIdPackage:receiveData];
+        
+        [self makeReturnMessage:receiveData->suc forOperateType:fileOperateType];
+        
+    }
+    else if(receiveData->type == NewPycUerRemoteOperateTypeBindPhone)
+    {
+        NSLog(@"绑定手机号...");
+        if (receiveData->suc == 0) {
+            [self makeReturnMessage:0 forOperateType:NewPycUerRemoteOperateTypeBindPhone];
+            return;
+        }
+        [self makeReturnMessage:receiveData->suc forOperateType:NewPycUerRemoteOperateTypeBindPhone];
+    }
+}
+
+#pragma mark - 制作
+#pragma mark pbb文件
+-(BOOL)makePycFilePath: (NSString * )filePath
+             fileOwner:(NSString *)fileowner
+              startDay:(NSString *)startDay
+                endDay:(NSString *)endday
+            maxOpenNum:(NSInteger) openNumMax
+                remark:(NSString *)theRemark
+               version:(NSString *)theVersion
+              duration:(NSInteger)duration
+                    qq:(NSString *)theQQ
+                 email:(NSString *)theEmail
+                 phone:(NSString *)thePhone
+            maxOpenday:(NSInteger )theOpenDay
+           maxOpenyear:(NSInteger )theOpenYear
+              makeType:(NSInteger)theMakeType
+
+{
+    NSInteger openTimeLone = duration;
+    self.remark = theRemark;
+    
+    //add by lry 2014-05-05
+    self.openTimeLong = openTimeLone;
+    self.versionStr = theVersion;
+    self.QQ = theQQ;
+    self.email = theEmail;
+    self.phone = thePhone;
+    self.openDay = theOpenDay;
+    self.openYear = theOpenYear;
+    self.Random = arc4random() % ARC4RANDOM_MAX;
+    self.makeType = theMakeType;
+    //add end
+    
+    return [self makePycFilePath:filePath fileOwner:fileowner startDay:startDay endDay:endday maxOpenNum:openNumMax foruser:fileowner];
+}
+-(BOOL)makePycFilePath: (NSString * )filePath
+             fileOwner:(NSString *)fileowner
+              startDay:(NSString *)startDay
+                endDay:(NSString *)endday
+            maxOpenNum:(NSInteger)openNumMax
+               foruser:(NSString *)logname
+{
+    if (logname == nil) {
+        return NO;
+    }
+    BOOL bReturn = NO;
+    NSError *err;
+    NSFileManager *manager = [NSFileManager defaultManager];
+    if (![manager fileExistsAtPath:filePath]) {
+        return bReturn;
+    }
+    NSDictionary *fileAttributes = [manager attributesOfItemAtPath:filePath error:&err];
+    if (!fileAttributes) {
+        
+        NSLog(@"file size is nil");
+        return bReturn;//--------
+    }
+    NSInteger fileSizeOriginal = [[fileAttributes objectForKey:NSFileSize] integerValue];
+    if (fileSizeOriginal <= 0) {
+        return bReturn;
+    }
+
+    self.fileName = filePath;
+    self.filePycName = [self getNotExistPycName:self.fileName forUser:logname];
+    if (self.filePycName == nil) {
+        return  NO;
+    }
+    self.filePycNameFromServer = [self.filePycName lastPathComponent];
+    self.fileOwner = fileowner;
+    self.startDay = startDay;
+    self.endDay = endday;
+    self.AllowOpenmaxNum = openNumMax;
+    
+    
+    
+    self.pycsocket = [[PycSocket alloc] init];
+    self.pycsocket.delegate = self;
+    self.pycsocket.connectType = TYPE_FILE_OUT;
+    fileOperateType = TYPE_FILE_OUT;
+    if (![self.pycsocket connectToServer:IP_ADDRESS_FILE port:PORT_OUTFILE]) {
+        NSLog(@"connect err");
+        return bReturn;
+    }
+    
+    //    NSLog(@"will send");
+    
+    
+    bReturn = YES;
+    
+    return bReturn;
+}
+//封装制作文件请求包
+-(void)MakeFileOutPackage:(SENDDATA_NEW_NEW *)data
+{
+    NSLog(@"*****************%s******************", __func__);
+    
+    memset(data, 0, sizeof(SENDDATA_NEW_NEW));
+    NSString *strFileOutName = [self.filePycName lastPathComponent];
+    NSLog(@"file out pyc %@", strFileOutName);
+    
+    //modified by lry 2014-05-05;0:手动激活；1：自由传播
+    if(self.makeType == 0)
+    {
+        data->type = TYPE_FILE_OUT_SALER_APPLY;
+    }
+    else
+    {
+        data->type = TYPE_FILE_OUT;
+    }
+    //modified end
+    
+    memcpy(&(data->userData.logName[0]), [self.fileOwner UTF8String] , MIN([self.fileOwner lengthOfBytesUsingEncoding:NSUTF8StringEncoding], USERNAME_LEN));
+    memcpy(&(data->userData.fileoutName[0]), [strFileOutName UTF8String], MIN([strFileOutName lengthOfBytesUsingEncoding:NSUTF8StringEncoding], FILENAME_LEN));
+    memcpy(&(data->userData.startTime[0]), [self.startDay UTF8String], MIN([self.startDay lengthOfBytesUsingEncoding:NSUTF8StringEncoding], TIME_LEN));
+    memcpy(&(data->userData.endTime[0]), [self.endDay UTF8String], MIN([self.endDay lengthOfBytesUsingEncoding:NSUTF8StringEncoding], TIME_LEN));
+    memcpy(&(data->userData.remark[0]), [self.remark UTF8String], MIN([self.remark lengthOfBytesUsingEncoding:NSUTF8StringEncoding], REMARK_LEN));
+    memcpy(&(data->userData.versionStr[0]), [self.versionStr UTF8String], MIN([self.versionStr lengthOfBytesUsingEncoding:NSUTF8StringEncoding], VERSION_LEN));
+    
+    //add by lry 2014-05-05
+    memcpy(&(data->userData.QQ[0]), [self.QQ UTF8String] , MIN([self.QQ lengthOfBytesUsingEncoding:NSUTF8StringEncoding], QQ_LEN));
+    memcpy(&(data->userData.email[0]), [self.email UTF8String] , MIN([self.email lengthOfBytesUsingEncoding:NSUTF8StringEncoding], EMAIL_LEN));
+    memcpy(&(data->userData.phone[0]), [self.phone UTF8String] , MIN([self.phone lengthOfBytesUsingEncoding:NSUTF8StringEncoding], PHONE_LEN));
+    //memcpy(&(data->userData.nick[0]), [self.nickname UTF8String], [self.nickname length]);
+    data->userData.appType = CURRENTAPPTYPE;
+    data->userData.random = self.Random;
+    data->userData.version = VERSION;
+    data->userData.dayNum = (int)self.openDay;
+    data->userData.yearNum = (int)self.openYear;
+    //add end
+    
+    data->userData.fileOpenNum = (int)self.AllowOpenmaxNum;
+    data->userData.iOpenTimeLong = (int)self.openTimeLong;
+    //add by lry 2014-9-17
+    data->userData.fileversion = 1;
+    //add end
+    PycCode *coder = [[PycCode alloc] init];
+    [coder codeBuffer:(Byte *)&(data->userData) length:sizeof(STRUCTDATA_NEW_NEW)];
+}
+//制作pbb文件
 -(BOOL)makePycFile
 {
     NSError * err;
@@ -825,7 +1159,7 @@
     self.fileSecretkeyR1 = [[NSData alloc] initWithBytes:r1new length:SECRET_KEY_LEN];
     
     NSFileManager *manager = [NSFileManager defaultManager];
-
+    
     //判断是否移动-------
     if ([manager copyItemAtPath:self.fileName toPath:self.filePycName error:&err] != YES)
     {
@@ -889,7 +1223,7 @@
     NSData *dataFileOutLineHeader = [[NSData alloc] initWithBytes:&fileOutLineStruction length:sizeof(OUTLINE_STRUCT)];
     [filehandle seekToEndOfFile];
     [filehandle writeData: dataFileOutLineHeader];
-
+    
     //添加扩展头
     PYCFILEEXT fileExtension;
     memset(&fileExtension, 0, sizeof(PYCFILEEXT));
@@ -907,10 +1241,10 @@
     
     Byte hashValue[HASH_LEN];
     memset(hashValue, 0, HASH_LEN);
-//    [coder CalculateHashValue:&&fileExtension datalen:sizeof(PYCFILEEXT) hashValue:hashValue];
- //   if (![self generateHash:self.filePycName outHash:hashValue length:HASH_LEN]) {
+    //    [coder CalculateHashValue:&&fileExtension datalen:sizeof(PYCFILEEXT) hashValue:hashValue];
+    //   if (![self generateHash:self.filePycName outHash:hashValue length:HASH_LEN]) {
     if (![coder CalculateHashValue:(Byte*)&fileExtension datalen:sizeof(PYCFILEEXT) hashValue:hashValue]) {
-
+        
         NSLog(@"generate hash err");
         self.fileHash = nil;
         return NO;//-----------
@@ -923,18 +1257,111 @@
     bReturn = YES;
     
 _ALL_END:
-    
-    
-    
     return bReturn;
 }
+#pragma mark 加密方法
+-(NSInteger)codeFile:(NSString *)filePath length:(NSInteger) codeLen
+{
+    //get file len
+    NSInteger readReallen = 0;
+    NSInteger preReadMaxLen = 1024 ;
+    NSInteger filePos = 0;
+    NSInteger encodelen = 0;
+    BOOL bFinish = NO;
+    
+    NSFileHandle *handle = [NSFileHandle fileHandleForUpdatingAtPath:filePath];
+    if (handle == nil) {
+        return -1;
+    }
+    
+    while (!bFinish) {
+        
+        NSData *data = [handle readDataOfLength:preReadMaxLen];
+        
+        readReallen += [data length];
+        if ([data length] == 0) {
+            NSLog(@"finish code %ld", (long)readReallen); //-------
+            break;
+        }
+        
+        
+        if (readReallen >= codeLen) {
+            encodelen = [data length] - (readReallen -codeLen);
+            NSLog(@"last encrypt len %ld", (long)encodelen);
+            readReallen = codeLen;//-------
+            bFinish = YES;
+        }else
+        {
+            encodelen = [data length];
+        }
+        
+        
+        PycCode *coder = [[PycCode alloc] init];
+        [coder codeBufferOfFile:(Byte *)[data bytes] length:(int)encodelen withKey:(Byte *)[self.fileSecretkeyR1  bytes]];
+        
+        [handle seekToFileOffset:filePos];
+        [handle writeData:data];
+        filePos += encodelen;
+    }
+    
+    [handle closeFile];
+    
+    return readReallen;
+}
 
+-(NSInteger)codePycFile:(NSString *)filePath filetype:(NSInteger)fileType;
+{
+    if ([self isFileEncode:filePath]) {
+        [self decodeFile:filePath];
+    }
+    
+    int codeLen = 0;
+    switch(fileType)
+    {
+        case FILE_TYPE_MOVIE:
+            
+            codeLen = LEN_MOVIE;
+            break;
+        case FILE_TYPE_PDF:
+            codeLen = LEN_PDF;
+            break;
+        case FILE_TYPE_PIC:
+            codeLen = LEN_PIC;
+            break;
+        case FILE_TYPE_UNKOWN:
+            //#warning test just
+            codeLen = LEN_UNKOWN;// to do ......
+            break;
+        default:
+            NSLog(@"something err");
+    }
+    return [self codeFile:filePath length:codeLen];
+}
 
+-(BOOL)isFileEncode:(NSString *)filePath
+{
+    return NO;
+}
 
+-(NSInteger)decodeFile:(NSString *)filePath
+{
+    return 1;
+}
+#pragma mark 加密制作后上传服务器
+-(void)uploadMakePycFile
+{
+    //.pbb文件制作成功后，pbb信息上传到服务器
+    if (![self.pycsocket connectToServer:IP_ADDRESS_FILE port:PORT_OUTFILE])
+    {
+        NSLog(@"connect err when send file out");
+        [self makeReturnMessage:0 forOperateType:TYPE_FILE_OUT];
+    }
+    self.pycsocket.delegate = self;
+    self.pycsocket.connectType = TYEP_FILE_SAVE_HASH_ENCRYPT;
+}
+//封装上传制作后的pbb信息请求包
 -(void)MakeSaveHashAndSecretPackage:(SENDDATA_NEW_NEW *)data
 {
-    
-    
     memset(data, 0, sizeof(SENDDATA_NEW_NEW));
     
     (*data).type = TYEP_FILE_SAVE_HASH_ENCRYPT;
@@ -945,7 +1372,7 @@ _ALL_END:
     memcpy((Byte *)(data->userData.SessionKey), [self.fileSessionkeyOrigianlRR2 bytes], SECRET_KEY_LEN);
     memcpy((Byte *)(data->userData.HashValue ), [self.fileHash bytes], HASH_LEN);
     
-     //add by lry 2014-05-05
+    //add by lry 2014-05-05
     data->userData.random = self.Random;
     data->userData.version = VERSION;
     //add end
@@ -954,18 +1381,136 @@ _ALL_END:
     
 }
 
+//解析响应包
+#pragma mark - 修改pbb文件阅读条件
+-(BOOL)changePycFileReadCondition:(NSInteger ) theOpenCondition
+                        forFileId:(NSInteger )theFileId
+                          forUser:(NSString *)theFileowner
+{
+    BOOL bReturn = NO;
+    if ((theOpenCondition != FILE_READ_CONDITION_CANOPEN && theOpenCondition != FILE_READ_CONDITION_CANNOTOPEN)
+        ||
+        theFileId < 0
+        ||
+        theFileowner == nil)
+    {
+        return bReturn;
+    }
+    
+    self.fileOwner = theFileowner;
+    self.pycsocket = [[PycSocket alloc] initWithDelegate:self];
+    self.pycsocket.connectType = TYPE_FILE_CHANGE_READ_CONDITION;
+    fileOperateType = TYPE_FILE_CHANGE_READ_CONDITION;
+    self.fileID = theFileId;
+    self.iCanOpen = theOpenCondition;
+    
+    //add by lry 2014-05-05
+    self.Random = arc4random() % ARC4RANDOM_MAX;
+    //add end
+    
+    if (![self.pycsocket connectToServer:IP_ADDRESS_FILE port:PORT_FILE]) {
+        NSLog(@"connect err");
+        return bReturn;
+    }
+    bReturn = YES;
+    return bReturn;
+}
+//封装修改条件请求数据包
+-(void)makePycFileReadConditionPackage:(SENDDATA_NEW_NEW *)data
+{
+    memset(data, 0, sizeof(SENDDATA_NEW_NEW));
+    
+    data->type = TYPE_FILE_CHANGE_READ_CONDITION;
+    
+    //add by lry 2014-05-05
+    data->userData.random = self.Random;
+    data->userData.version = VERSION;
+    data->userData.appType = 33; //MAC版本
+    //add end
+    
+    
+    data->userData.iCanOpen = (int)self.iCanOpen;
+    data->userData.ID = (int)self.fileID;
+    memcpy(&(data->userData.logName[0]), [self.fileOwner UTF8String] , MIN([self.fileOwner lengthOfBytesUsingEncoding:NSUTF8StringEncoding], USERNAME_LEN));
+    
+    PycCode *coder = [[PycCode alloc] init];
+    [coder codeBuffer:(Byte *)&(data->userData) length:sizeof(STRUCTDATA_NEW_NEW)];
+    
+}
 
-#pragma mark open pyc file
-//-(BOOL)seePycFile:(NSString *)pycFileName
-//{
-//   // seefileForuser = NO;
-//    BOOL isOffLine = FALSE;
-//    
-//    return   [self seePycFile:pycFileName forUser:@"" pbbFile:@"" phoneNo:@"" messageID:@"" isOffLine:&isOffLine];
-//}
+#pragma mark 禁止阅读／取消禁止
+-(BOOL)changePycFileStartDay:(NSString *)theStartDay endDay:(NSString *)theEndDay allowOpenedMaxNum:(NSInteger )theAllowOpenMaxNum openTimeLong:(NSInteger)theOpenTimeLong remark:(NSString *)theRemark forFileId:(NSInteger )theFileId forUser:(NSString *)theFileowner duration:(NSInteger)duration  qq:(NSString *)theQQ email:(NSString *)theEmail phone:(NSString *)thePhone
+{
+    
+    NSInteger iOpenTime = duration;
+    
+    BOOL bReturn = NO;
+    if ( theAllowOpenMaxNum < 0 || theOpenTimeLong < 0)
+    {
+        return bReturn;
+    }
+    
+    self.fileOwner = theFileowner;
+    self.pycsocket = [[PycSocket alloc] initWithDelegate:self];
+    self.pycsocket.connectType = TYPE_FILE_CHANGE_FILE_CONTROLL;
+    fileOperateType = TYPE_FILE_CHANGE_FILE_CONTROLL;
+    self.fileID = theFileId;
+    self.startDay = theStartDay;
+    self.endDay = theEndDay;
+    self.AllowOpenmaxNum =theAllowOpenMaxNum;
+    self.openTimeLong = theOpenTimeLong;
+    self.remark = theRemark;
+    self.openTimeLong = iOpenTime;
+    
+    //add by lry 2014-05-07
+    self.QQ = theQQ;
+    self.email = theEmail;
+    self.phone = thePhone;
+    //add end
+    //add by lry 2014-05-05
+    self.Random = arc4random() % ARC4RANDOM_MAX;
+    //add end
+    
+    if (![self.pycsocket connectToServer:IP_ADDRESS_FILE port:PORT_FILE]) {
+        NSLog(@"connect err");
+        return bReturn;
+    }
+    bReturn = YES;
+    return bReturn;
+}
+//封装取消／禁止请求数据包
+-(void)makePycFileChangeControllPackage:(SENDDATA_NEW_NEW *)data
+{
+    memset(data, 0, sizeof(SENDDATA_NEW_NEW));
+    
+    data->type = TYPE_FILE_CHANGE_FILE_CONTROLL;
+    
+    //add by lry 2014-05-05
+    data->userData.random = self.Random;
+    data->userData.version = VERSION;
+    data->userData.appType = CURRENTAPPTYPE;
+    //add end
+    
+    //add by lry 2014-05-07
+    memcpy(&(data->userData.QQ[0]), [self.QQ UTF8String] , MIN([self.QQ lengthOfBytesUsingEncoding:NSUTF8StringEncoding], QQ_LEN));
+    memcpy(&(data->userData.email[0]), [self.email UTF8String] , MIN([self.email lengthOfBytesUsingEncoding:NSUTF8StringEncoding], EMAIL_LEN));
+    memcpy(&(data->userData.phone[0]), [self.phone UTF8String] , MIN([self.phone lengthOfBytesUsingEncoding:NSUTF8StringEncoding], PHONE_LEN));
+    //add end
+    memcpy(&(data->userData.logName[0]), [self.fileOwner UTF8String] , MIN([self.fileOwner lengthOfBytesUsingEncoding:NSUTF8StringEncoding], USERNAME_LEN));
+    
+    memcpy(&(data->userData.startTime[0]), [self.startDay UTF8String], MIN([self.startDay lengthOfBytesUsingEncoding:NSUTF8StringEncoding], TIME_LEN));
+    memcpy(&(data->userData.endTime[0]), [self.endDay UTF8String], MIN([self.endDay lengthOfBytesUsingEncoding:NSUTF8StringEncoding], TIME_LEN));
+    data->userData.fileOpenNum = (int)self.AllowOpenmaxNum;
+    memcpy(&(data->userData.remark[0]), [self.remark UTF8String], MIN([self.remark lengthOfBytesUsingEncoding:NSUTF8StringEncoding], REMARK_LEN));
+    data->userData.iOpenTimeLong = (int)self.openTimeLong;
+    data->userData.ID = (int)self.fileID;
+    
+    PycCode *coder = [[PycCode alloc] init];
+    [coder codeBuffer:(Byte *)&(data->userData) length:sizeof(STRUCTDATA_NEW_NEW)];
+}
 
-
-//查看文件借口
+#pragma mark - 解密
+#pragma mark 文件并浏览
 -(BOOL)seePycFile:(NSString *)pycFileName
           forUser:(NSString *)logname
           pbbFile:(NSString *)pbbFileName
@@ -975,7 +1520,7 @@ _ALL_END:
     FileOpenedNum:(NSInteger)openedNum
 {
     NSLog(@"查看业务时间点：%@",[NSDate date]);
-   // seefileForuser = YES;
+    // seefileForuser = YES;
     *bIsOFFLine = FALSE;
     BOOL bReturn = NO;
     self.iResultIsOffLine = FALSE;
@@ -987,14 +1532,18 @@ _ALL_END:
     if ([pbbFileName isEqualToString:@""]) {
         pbbFileName = [pycFileName lastPathComponent];
     }
-    if ([pbbFileName isEqualToString:@""] || pbbFileName == nil ) {
+    if ([pbbFileName isEqualToString:@""] || pbbFileName == nil )
+    {
         self.filePycNameFromServer = [self.filePycName lastPathComponent];
-    }else{
+    }
+    else
+    {
         self.filePycNameFromServer = pbbFileName;
     }
     
     NSFileManager *manager = [NSFileManager defaultManager];
-    if (![manager fileExistsAtPath:pycFileName]) {
+    if (![manager fileExistsAtPath:pycFileName])
+    {
         NSLog(@"no file");
         return bReturn;
     }
@@ -1016,12 +1565,11 @@ _ALL_END:
         NSLog(@"file hash err");
         return bReturn;
     }
-
+    
     //文件hash
     self.fileHash = [[NSData alloc] initWithBytes:hashValue length:HASH_LEN];
     
     //step 2 get file ext head fileID
-    
     b_needNet = TRUE;
     __block int i_canSeeForOutline = 0;
     NSNumber *fileSize ;
@@ -1038,12 +1586,12 @@ _ALL_END:
     long fileheadoffset = (fileSize.longValue > structsize)? (fileSize.longValue - structsize):0;
     if(fileheadoffset == 0)
     {
-        NSLog(@"nothing in in"); 
+        NSLog(@"nothing in in");
         return bReturn;
     }
-//    NSFileHandle *handle = [NSFileHandle fileHandleForReadingAtPath:self.filePycName];
+    //    NSFileHandle *handle = [NSFileHandle fileHandleForReadingAtPath:self.filePycName];
     NSRange range = [_filePycName rangeOfString:@"Inbox"];
-//     if (haveOutStru == 1 && range.length>0) {
+    //     if (haveOutStru == 1 && range.length>0) {
     if (range.length>0) {
         //取得接收目录，把源pbb文件拷贝到接收目录中，
         NSLog(@"把源文件拷贝到接收目录中");
@@ -1057,7 +1605,7 @@ _ALL_END:
             
             return NO;
         }
-            //删除inbox下的文件
+        //删除inbox下的文件
         NSString *ducomentPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
         NSString *inboxPath = [ducomentPath stringByAppendingString:@"/Inbox/"];
         NSArray *fileArray = [manager subpathsAtPath:inboxPath];
@@ -1104,7 +1652,7 @@ _ALL_END:
     *bIsOFFLine = TRUE;
     if(_receiveFile!=nil && _receiveFile.fileMakeType == 0)
     {
-       
+        
         //手动激活
         //需要联网:支持离线新文件和在线文件
         if(_receiveFile.EncodeKey == nil){
@@ -1120,7 +1668,7 @@ _ALL_END:
                 //不需要联网时
                 i_canSeeForOutline = [self isOutLineFileCanSee:self.filePycName remainDay:nil remainYear:nil] ;
                 //根据返回值处理文件，解析离线文件结构体，对self赋值
-//                [self modifySourceFileByOutlineValue:i_canSeeForOutline filename:self.filePycName];
+                //                [self modifySourceFileByOutlineValue:i_canSeeForOutline filename:self.filePycName];
                 //根据返回值返回给回调函数，结束本次处理
                 if(i_canSeeForOutline == ERR_OUTLINE_OK)
                 {
@@ -1165,7 +1713,7 @@ _ALL_END:
                 b_needNet = NO;
             }
             
-           
+            
             
             if(![ToolString isConnectionAvailable]){
                 //网络异常
@@ -1210,9 +1758,6 @@ _ALL_END:
     bReturn = YES;
     return bReturn;
 }
-
-
-//查看文件借口
 /**
  1:no file
  2:no logname
@@ -1363,7 +1908,6 @@ _ALL_END:
     *bIsOFFLine = TRUE;
     if(_receiveFile!=nil && _receiveFile.fileMakeType == 0)
     {
-        
         //手动激活
         //需要联网:支持离线新文件和在线文件
         if(_receiveFile.EncodeKey == nil){
@@ -1452,26 +1996,25 @@ _ALL_END:
                     if (i_canSeeForOutline&ERR_OK_OR_CANOPEN) {
                         dispatch_async(dispatch_get_main_queue(), ^{
                             [self makeReturnMessage:_receiveFile.canSeeForOutline forOperateType:TYPE_FILE_OPEN];
-//                            [self makeReturnMessage:i_canSeeForOutline forOperateType:TYPE_FILE_OPEN];
+                            //                            [self makeReturnMessage:i_canSeeForOutline forOperateType:TYPE_FILE_OPEN];
                         });
                     }else{
                         dispatch_async(dispatch_get_main_queue(), ^{
-//                            [self makeReturnMessage:_receiveFile.canSeeForOutline forOperateType:TYPE_FILE_OPEN];
+                            //                            [self makeReturnMessage:_receiveFile.canSeeForOutline forOperateType:TYPE_FILE_OPEN];
                             [self makeReturnMessage:i_canSeeForOutline forOperateType:TYPE_FILE_OPEN];
                         });
                     }
-                    
-                    
                     bReturn=@"0";
                     return  bReturn;
                 }
-                
             }
-            
         }
         
-    }else{
-        if(![ToolString isConnectionAvailable]){
+    }
+    else
+    {
+        if(![ToolString isConnectionAvailable])
+        {
             bReturn=@"6";
             return bReturn;
         }
@@ -1498,18 +2041,100 @@ _ALL_END:
     bReturn = @"0";
     return bReturn;
 }
-
+//辅助方法：获取文件哈希值
+-(BOOL)generateHash:(NSString *)filePath
+            outHash:(Byte *)hashValueTodo
+             length:(int)len
+        haveOutStru:(NSInteger *)haveOutLine
+{
+    NSInteger fileSizeTodo = 0;
+    Byte *fileContentTodo;
+    BOOL allFileContent = NO;
+    //  unsigned char hashvalue[HASH_STRUCT_LEN];
+    memset(hashValueTodo, 0, len);
+    //  unsigned char *hashValueTodo = hashvalue;
+    
+    //读文件
+    NSError *err;
+    NSFileManager *manager = [NSFileManager defaultManager];
+    NSDictionary *fileAttributes = [manager attributesOfItemAtPath:filePath error:&err];
+    NSNumber *fileSize;
+    if (fileAttributes != nil) {
+        fileSize = [fileAttributes objectForKey:NSFileSize];
+        NSLog(@"file size is %@", fileSize);
+    }
+    
+    //判断是否是PBB文件
+    long structsize =  sizeof(PYCFILEEXT);
+    long fileheadoffset = (fileSize.longValue > structsize)? (fileSize.longValue - structsize):0;
+    if(fileheadoffset == 0)
+    {
+        NSLog(@"nothing in in");
+        return FALSE;
+    }
+    
+    if (fileSize.longValue >= HASH_FILE_SIZE_TODO) {
+        fileSizeTodo = HASH_FILE_SIZE_TODO;
+    }
+    else{
+        fileSizeTodo = fileSize.longValue;
+        allFileContent = YES;
+    }
+    
+    //文件柄
+    NSFileHandle *handle = [NSFileHandle fileHandleForReadingAtPath:filePath];
+    
+    //将当前文件的操作位置设定为offset
+    [handle seekToFileOffset:fileheadoffset];
+    /*  NSData *data = [handle readDataOfLength:sizeof(PYCFILEHEADER)];
+     
+     PYCFILEHEADER *header = (PYCFILEHEADER *)[data bytes];
+     NSLog(@"file original size really %lld", header->fileSize);
+     */
+    
+    NSData *dataExt = [handle readDataOfLength:sizeof(PYCFILEEXT)];
+    PYCFILEEXT *fileExtHeader = (PYCFILEEXT *)[dataExt bytes];
+    PYCFILEEXT decodedData;
+    memcpy(&decodedData, fileExtHeader, sizeof(PYCFILEEXT));
+    PycCode *coder = [[PycCode alloc] init];
+    [coder decodeFileExtension:&decodedData];
+    if(decodedData.uTag == PycTag0)
+    {
+        NSInteger fileOffest = 0;
+        
+        if (!allFileContent)
+        {
+            fileOffest = fileSize.longValue - HASH_FILE_SIZE_TODO;
+            
+        }
+        
+        [handle seekToFileOffset:fileOffest];
+        NSData *data = [handle readDataToEndOfFile];
+        [handle closeFile];
+        
+        fileContentTodo = (Byte *)[data bytes];
+    }
+    else
+    {
+        *haveOutLine = 1;
+        [handle closeFile];
+        
+        fileContentTodo = (Byte *)[dataExt bytes];
+        fileSizeTodo = sizeof(PYCFILEEXT);
+    }
+    
+    if (![coder CalculateHashValue:fileContentTodo datalen:(int)fileSizeTodo hashValue:hashValueTodo])
+    {
+        return NO;
+    }
+    return YES;
+}
+//封装浏览文件请求包
 -(void)MakeOpenFilePackage:(SENDDATA_NEW_NEW *)data
 {
-    
-    
     memset(data, 0, sizeof(SENDDATA_NEW_NEW));
-    
     (*data).type = TYPE_FILE_OPEN;
-    
     PycCode *coder = [[PycCode alloc] init];
-    
-    
     memcpy((Byte *)(data->userData.HashValue ), [self.fileHash bytes], HASH_LEN);
     memcpy((Byte *)(data->userData.phone ), [_bindingPhone UTF8String], PHONE_LEN);
     memcpy((Byte *)(data->userData.messageId ), [_verificationCodeID UTF8String], MESSAGE_ID_LEN);
@@ -1527,297 +2152,238 @@ _ALL_END:
     memcpy((Byte *)(data->userData.sysinfo ), [_sysInfoVersion UTF8String], SYSINFO_LEN);//例子:IOS7.0
     memcpy(&(data->userData.logName[0]), [self.fileSeeLogname UTF8String] , MIN([self.fileSeeLogname lengthOfBytesUsingEncoding:NSUTF8StringEncoding], USERNAME_LEN));
     //add end
-    
     [coder codeBuffer:(Byte *)&((*data).userData) length:sizeof(STRUCTDATA_NEW_NEW)];
-    
-    
-    
 }
--(NSInteger)decodeFile:(NSString *)filePath
+//解析阅读文件的响应包
+- (void)ReceiveOpenFileByFidPackage:(RECEIVEDATA_NEW_NEW *)receiveData
 {
-    return 1;
-}
-
-
--(NSString *)getNotExistFileNameFromPycFile:(NSString *)filePycNameFromServer withExtention:(NSString *)pycExtention forUser:(NSString *)logname
-{
+    self.hardno = _OpenUUID;
+    self.fileSecretkeyOrigianlR1 = [[NSData alloc] initWithBytes:receiveData->userData.EncodeKey length: ENCRYPKEY_LEN];
     
-   
-    NSLog(@"pycfilePath path %@", filePycNameFromServer);
+    [self printByte:receiveData->userData.EncodeKey len:ENCRYPKEY_LEN description:@"miyao r1 "];
+    /* //test because of server return 0
+     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+     NSString *documentsDirectory = [paths objectAtIndex:0];
+     NSString *strFile = [NSString stringWithFormat:@"%@", [documentsDirectory stringByAppendingPathComponent:@"save.txt"]];
+     self.fileSecretkeyOrigianlR1 = [NSData dataWithContentsOfFile:strFile];
+     */
+    Byte fileScreateR1[ENCRYPKEY_LEN];
+    PycCode *coder = [[PycCode alloc] init];
+    [coder getSecretKeyFromOriginalKey:(Byte *)[self.fileSecretkeyOrigianlR1 bytes]  to:fileScreateR1];
     
-    if (logname == nil) {
-        return nil;
-    }
-    NSMutableString *fileNew = [NSMutableString stringWithFormat:@"%@",[filePycNameFromServer lastPathComponent]];
-    NSString *pycExtentionDot = [[NSString alloc] initWithFormat:@".%@",pycExtention];
-    NSRange range = [fileNew rangeOfString:pycExtentionDot];
-    if (range.location == NSNotFound) {
-        NSLog(@"*****file name err");
-        return nil;
-    }
-    //删除.pbb后缀
-    [fileNew deleteCharactersInRange:range];
+    //密钥
+    self.fileSecretkeyR1 = [[NSData alloc] initWithBytes:fileScreateR1 length: ENCRYPKEY_LEN];
+    [self printByte:fileScreateR1 len:ENCRYPKEY_LEN description:@"miyao r1' "];
+    self.fileOwner = [[NSString alloc] initWithBytes:receiveData->userData.logName length:USERNAME_LEN encoding:NSUTF8StringEncoding];
+    self.filePycNameFromServer = [[NSString alloc]initWithBytes:receiveData->userData.fileoutName length:FILENAME_LEN encoding:NSUTF8StringEncoding];
+    self.startDay =  [[NSString alloc]initWithBytes:receiveData->userData.startTime  length:TIME_LEN encoding:NSUTF8StringEncoding];
+    self.endDay = [[NSString alloc]initWithBytes:receiveData->userData.endTime  length:TIME_LEN encoding:NSUTF8StringEncoding];
+    self.AllowOpenmaxNum = receiveData->userData.fileOpenNum;
+    self.haveOpenedNum = receiveData->userData.fileOpenedNum;
+    self.bCanprint = receiveData->userData.bCanPrint;
+    self.iCanOpen = receiveData->userData.iCanOpen;
+    self.bNeedBinding = receiveData->userData.otherset&8;
+    self.nickname = [[NSString alloc]initWithBytes:receiveData->userData.nick length:NICK_LEN encoding:NSUTF8StringEncoding];
+    self.remark = [[NSString alloc]initWithBytes:receiveData->userData.remark length:REMARK_LEN encoding:NSUTF8StringEncoding];
     
+    //添加接收系列ID字段
+    //       fileversion:查看文件时返回该文件所属系列ID
+    // 系列id改为apptype
+    //        self.seriesID = receiveData->userData.fileversion;
+    self.seriesID = receiveData->userData.appType;
+    //       |查看文件时，返回系列中文件总数
+    self.seriesFileNums = receiveData->userData.tableid;
+    /*!
+     系列名称
+     */
+    self.seriesName = [[NSString alloc] initWithBytes:receiveData->userData.seriesname length:SERIESNAME_LEN encoding:NSUTF8StringEncoding];
+    self.seriesName = [self.seriesName stringByReplacingOccurrencesOfString:@"\0" withString:@""];
+    //fileversion＝＝4:是否采用时间范围限制
+    self.timeType=receiveData->userData.fileversion;
+    NSLog(@"result is %d", receiveData->suc);
     
-   // NSString *filelastComponentWithOutPyc = [fileWithOutExtention lastPathComponent];
-    
-    NSString *receiveFolderForUser = [PycFolder documentViewFolderWithUserID:logname];
-    NSString *filePathForOpenFile  =  [receiveFolderForUser stringByAppendingPathComponent:[fileNew lastPathComponent]];
-    NSFileManager *manager = [NSFileManager defaultManager];
-    
-    
-    BOOL isDir;
-    NSError *err;
-    if (![manager fileExistsAtPath:receiveFolderForUser isDirectory:&isDir]) {
-        
-        if(![manager createDirectoryAtPath:receiveFolderForUser withIntermediateDirectories:YES attributes:nil error:&err])
-        {
-            NSLog(@"create dir err %@", err);
-            return nil;
-        }
-        else{
-            NSLog(@"create dir %@", receiveFolderForUser);
-        }
+    //add by lry 2014-05-05
+    if (strlen(receiveData->userData.QQ) == 0)
+    {
+        self.QQ = @"";
     }
     else
     {
-        NSLog(@"send folder exist");
+        self.QQ = [[NSString alloc] initWithUTF8String:receiveData->userData.QQ];
     }
- 
-    return filePathForOpenFile;
-
-}
-
-
--(BOOL)moveFileAndDecodeFrom:(NSString *)strFileName partOfContent:(NSInteger)originalFileLen decodeSize:(NSInteger)encryptLen toDestination:(NSString *)strDestination
-{
-    self.fileName = [self getNotExistFileNameFromPycFile:self.filePycNameFromServer withExtention:[ self.filePycNameFromServer pathExtension] forUser:@"not use"];
     
-    NSString *realDestinationPath  = self.fileName;//= [self getNotExistName:strDestination];
-    NSFileManager *manager = [NSFileManager defaultManager];
-    NSLog(@"destnatin file is %@", realDestinationPath);
-    NSLog(@"strFileName file is %@", strFileName);
-    //    if (![manager createFileAtPath:realDestinationPath contents:nil attributes:nil]) {
-    //        NSLog(@"err");
-    //
-    //        return NO;
-    //    }
-    //
-    NSError *error;
-    if([manager fileExistsAtPath:realDestinationPath])
+    if (strlen(receiveData->userData.phone) == 0)
     {
-        [manager removeItemAtPath:realDestinationPath error:&error];
+        self.phone = @"";
     }
-    if(![manager copyItemAtPath:strFileName toPath:realDestinationPath error:&error]) {
-        NSLog(@"err");
-        
-        return NO;
-    }
-    
-    
-    
-    //get file len
-    NSInteger readReallen = 0;
-    NSInteger preReadMaxLen = 1024*1024 ;
-    NSInteger encodelen = 0;
-    //    int readlen = 0;
-    //    BOOL bDecodeFinish = NO;
-    //    BOOL bCopyFinish = NO;
-    BOOL bFinish = NO;
-    NSInteger filePos = 0;
-    NSFileHandle *handleDestination = [NSFileHandle fileHandleForUpdatingAtPath:realDestinationPath];
-    if (!handleDestination ) {
-        NSLog(@"file handle move err");
-        return NO;
-    }
-    
-//    _imageData = [[NSMutableData alloc] init];
-    //解密完成
-    while (!bFinish) {
-        NSData *data = [[NSData alloc] init];
-        
-        data = [handleDestination readDataOfLength:preReadMaxLen];
-        //NSData *data = [handleDestination readDataOfLength:preReadMaxLen];
-        
-        readReallen += [data length];
-        if ([data length] == 0) {
-            NSLog(@"finish code %ld", (long)readReallen); //-------
-            break;
-        }
-        
-        
-        if ((readReallen >= encryptLen) || (encryptLen == -1)) {
-            if(encryptLen == -1)
-            {
-                if(readReallen >= originalFileLen)
-                {
-                    if((readReallen-originalFileLen)%16 >0)
-                    {
-                        encodelen = [data length] - (readReallen-originalFileLen) + 16 - (readReallen-originalFileLen)%16;
-                    }
-                    else
-                    {
-                        encodelen = [data length] - (readReallen-originalFileLen);
-                    }
-                    bFinish = YES;
-                }
-                else{
-                    encodelen = [data length];
-                }
-                
-            }
-            else
-            {
-                encodelen = [data length] - (readReallen -encryptLen);
-                NSLog(@"last encrypt len %ld", (long)encodelen);
-                readReallen = encryptLen;//-------
-                bFinish = YES;
-            }
-        }else
-        {
-            encodelen = [data length];
-        }
-        
-        PycCode *coder = [[PycCode alloc] init];
-        [coder decodeBufferOfFile:(Byte *)[data bytes] length:(int)encodelen withKey:(Byte *)[self.fileSecretkeyR1 bytes]];
-        
-        //缓存图片到内存
-//        [_imageData appendData:data];
-
-        [handleDestination seekToFileOffset:filePos];
-        [handleDestination writeData:data];
-        filePos += encodelen;
-    }
-    filePos = originalFileLen;
-    [handleDestination seekToFileOffset:filePos];
-    [handleDestination truncateFileAtOffset:filePos];
-    [handleDestination closeFile];
-    
-    //
-    return YES;
-}
-
-
--(BOOL)moveFileAndDecodeFromAndBeginpos:(NSString *)strFileName partOfContent:(NSInteger)originalFileLen decodeSize:(NSInteger)encryptLen toDestination:(NSString *)strDestination beginpos:(NSInteger)beginpos
-{
-    self.fileName = [self getNotExistFileNameFromPycFile:self.filePycNameFromServer withExtention:[ self.filePycNameFromServer pathExtension] forUser:@"not use"];
-    
-    NSString *realDestinationPath  = self.fileName;//= [self getNotExistName:strDestination];
-    NSFileManager *manager = [NSFileManager defaultManager];
-    NSLog(@"destnatin file is %@", realDestinationPath);
-    NSLog(@"strFileName file is %@", strFileName);
-    //    if (![manager createFileAtPath:realDestinationPath contents:nil attributes:nil]) {
-    //        NSLog(@"err");
-    //
-    //        return NO;
-    //    }
-    //
-    NSError *error;
-    if([manager fileExistsAtPath:realDestinationPath])
+    else
     {
-        [manager removeItemAtPath:realDestinationPath error:&error];
-    }
-    if(![manager copyItemAtPath:strFileName toPath:realDestinationPath error:&error]) {
-        NSLog(@"err");
-        
-        return NO;
+        self.phone = [[NSString alloc] initWithUTF8String:receiveData->userData.phone];
     }
     
-    
-    
-    //get file len
-    NSInteger readReallen = 0;
-    NSInteger preReadMaxLen = 1024*1024 ;
-    NSInteger encodelen = 0;
-    //    int readlen = 0;
-    //    BOOL bDecodeFinish = NO;
-    //    BOOL bCopyFinish = NO;
-    BOOL bFinish = NO;
-    NSInteger filePos = beginpos;
-    NSFileHandle *handleDestination = [NSFileHandle fileHandleForUpdatingAtPath:realDestinationPath];
-    if (!handleDestination ) {
-        NSLog(@"file handle move err");
-        return NO;
+    if (strlen(receiveData->userData.email) == 0) {
+        self.email = @"";
+    }
+    else
+    {
+        self.email = [[NSString alloc] initWithUTF8String:receiveData->userData.email];
     }
     
-    //    _imageData = [[NSMutableData alloc] init];
-    //解密完成
-    while (!bFinish) {
-        NSData *data = [[NSData alloc] init];
-        
-        data = [handleDestination readDataOfLength:preReadMaxLen];
-        //NSData *data = [handleDestination readDataOfLength:preReadMaxLen];
-        
-        readReallen += [data length];
-        if ([data length] == 0) {
-            NSLog(@"finish code %ld", (long)readReallen); //-------
-            break;
-        }
-        
-        
-        if ((readReallen >= encryptLen) || (encryptLen == -1)) {
-            if(encryptLen == -1)
-            {
-                if(readReallen >= originalFileLen)
-                {
-                    if((readReallen-originalFileLen)%16 >0)
-                    {
-                        encodelen = [data length] - (readReallen-originalFileLen) + 16 - (readReallen-originalFileLen)%16;
-                    }
-                    else
-                    {
-                        encodelen = [data length] - (readReallen-originalFileLen);
-                    }
-                    bFinish = YES;
-                }
-                else{
-                    encodelen = [data length];
-                }
-                
-            }
-            else
-            {
-                encodelen = [data length] - (readReallen -encryptLen);
-                NSLog(@"last encrypt len %ld", (long)encodelen);
-                readReallen = encryptLen;//-------
-                bFinish = YES;
-            }
-        }else
+    self.dayRemain = receiveData->userData.dayRemain;
+    self.yearRemain = receiveData->userData.yearRemain;
+    self.orderID = receiveData->userData.ooid;
+    self.makeFrom = receiveData->userData.appType;
+    self.openDay = receiveData->userData.dayNum;
+    self.openYear = receiveData->userData.yearNum;
+    if (strlen(receiveData->userData.outTime)>0) {
+        self.makeTime = [[NSString alloc] initWithUTF8String:(receiveData->userData.outTime)];
+    }else
+    {
+        self.makeTime = @"";
+    }
+    
+    if (strlen(receiveData->userData.firstSeeTime)>0) {
+        self.firstSeeTime = [[NSString alloc] initWithUTF8String:(receiveData->userData.firstSeeTime)];
+    }else{
+        self.firstSeeTime = @"";
+    }
+    
+    //        self.makeTime = [[NSString alloc]initWithBytes:receiveData->userData.outTime length:FIRST_SEE_TIME_LEN encoding:NSUTF8StringEncoding];
+    //        self.firstSeeTime = [[NSString alloc]initWithBytes:receiveData->userData.firstSeeTime length:FIRST_SEE_TIME_LEN encoding:NSUTF8StringEncoding];
+    //add end
+    //add by lry 2014-7-14
+    self.canseeCondition = receiveData->userData.otherset;
+    if (strlen(receiveData->userData.field1) == 0) {
+        self.field1 = @"";
+    }
+    else
+    {
+        self.field1 = [[NSString alloc] initWithUTF8String:(receiveData->userData.field1)];
+    }
+    if (strlen(receiveData->userData.field2) == 0) {
+        self.field2 = @"";
+    }
+    else
+    {
+        NSLog(@"%s length = %lu", receiveData->userData.field2, strlen(receiveData->userData.field2));
+        self.field2 = [[NSString alloc] initWithUTF8String:(receiveData->userData.field2)];
+    }
+    if (strlen(receiveData->userData.hardno) == 0) {
+        self.fild1name = @"";
+    }
+    else
+    {
+        self.fild1name = [[NSString alloc] initWithUTF8String:(receiveData->userData.hardno)];
+    }
+    
+    if (strlen(receiveData->userData.logName) == 0) {
+        self.fild2name = @"";
+    }
+    else
+    {
+        self.fild2name = [[NSString alloc] initWithUTF8String:(receiveData->userData.logName)];
+    }
+    self.openinfoid = receiveData->userData.version;      //添加结束逻辑，所需的参数值
+    self.definechecked = receiveData->userData.bindNum;   //服务器端对联系方式的勾选，根据勾选条件，申请激活，或显示水印
+    self.selffieldnum = receiveData->userData.activeNum;  //自定义字段的个数
+    self.field1needprotect = receiveData->userData.ID&1?1:0;  //1:保密
+    self.field2needprotect = receiveData->userData.ID&2?1:0;  //1:保密
+    self.applyId = receiveData->userData.applyId;
+    self.showInfo = [[NSString alloc] initWithUTF8String:(receiveData->userData.showInfo)];
+    //        self.showInfo = [[NSString alloc]initWithBytes:receiveData->userData.showInfo length:SHOW_INFO_LEN encoding:NSUTF8StringEncoding];
+    self.iCanClient = receiveData->userData.iCanClient;
+    self.needReapply = receiveData->userData.need_reapply;
+    self.needShowDiff = receiveData->userData.need_showdiff;
+    
+    //add end
+    self.openTimeLong = receiveData->userData.iOpenTimeLong;
+    
+    NSString *strFileExtend = [NSString stringWithFormat:@".%@",[ self.filePycNameFromServer  pathExtension]];
+    NSMutableString *fileWithOutExtention = [NSMutableString stringWithFormat:@"%@", self.filePycNameFromServer];
+    NSRange range = [fileWithOutExtention rangeOfString:strFileExtend];
+    if (range.location == NSNotFound) {
+        NSLog(@"*****file name err");
+        receiveData->suc = 0;
+    }
+    else
+    {
+        [fileWithOutExtention deleteCharactersInRange:range];
+    }
+    //文件类型
+    self.fileType = [self getFileType:fileWithOutExtention];
+    
+    self.fileName = [self getNotExistFileNameFromPycFile:self.filePycNameFromServer
+                                           withExtention:[ self.filePycNameFromServer  pathExtension]
+                                                 forUser:@"not use"];
+    if (self.fileName == nil)
+    {
+        receiveData->suc = 0;
+    }
+    
+//    [self makeOpenFile];
+    
+    if (receiveData->suc & ERR_OK_OR_CANOPEN)
+    {
+        //离线机构，第一次查看需要设置离线结构
+        if(receiveData->userData.iCanClient)
         {
-            encodelen = [data length];
+            /**
+             *  申请/重新申请成功过后，第一次阅读离线文件,写入离线文件属性值
+             *  该步骤，将服务器返回的数据同步到本地数据库
+             */
+            
+            [self setOutLineStructData:self.filePycName
+                            isFirstSee:1
+                            isSetFirst:0
+                                 isSee:0
+                            isVerifyOk:0
+                       isTimeIsChanged:0
+                         isApplySucess:0
+                                  data:receiveData];
         }
-        
-        PycCode *coder = [[PycCode alloc] init];
-        [coder decodeBufferOfFile:(Byte *)[data bytes] length:(int)encodelen withKey:(Byte *)[self.fileSecretkeyR1 bytes]];
-        
-        //缓存图片到内存
-        //        [_imageData appendData:data];
-        
-        [handleDestination seekToFileOffset:filePos];
-        [handleDestination writeData:data];
-        filePos += encodelen;
+        if([self getReceiveFileINfo])
+        {
+            [self makeOpenFile];
+            
+        }else{
+            receiveData->suc = 0;
+        }
     }
-    filePos = originalFileLen;
-    [handleDestination seekToFileOffset:filePos];
-    [handleDestination truncateFileAtOffset:filePos];
-    [handleDestination closeFile];
-    
-    //
-    return YES;
+    else if(receiveData->suc & ERR_APPLIED)
+    {
+        /**
+         *  申请/重新申请成功，但还不能读，离线结构体所有值都设为false
+         *  该步骤在以后版本将不用
+         */
+        if(receiveData->userData.iCanClient)
+        {
+            self.applyId = receiveData->userData.applyId;
+            [self setOutLineStructData:self.filePycName
+                            isFirstSee:FALSE
+                            isSetFirst:FALSE
+                                 isSee:FALSE
+                            isVerifyOk:FALSE
+                       isTimeIsChanged:FALSE
+                         isApplySucess:TRUE
+                                  data:NULL];
+        }
+    }
 }
 
-#pragma mark - 解析更新密文数据结构的内容信息
+
+#pragma mark 明文解密到本地辅助方法
 -(BOOL) makeOpenFile
 {
     long structsize = 0;
     long fileheadoffset = 0;
-
+    
     NSFileManager *manager = [NSFileManager defaultManager];
-    NSNumber *fileSize ;
+    NSNumber *fileSize;
     NSError *err;
     //得到文件大小
     NSDictionary *fileAttributes = [manager attributesOfItemAtPath:self.filePycName error:&err];
-    if (fileAttributes != nil) {
+    if (fileAttributes != nil)
+    {
         fileSize = [fileAttributes objectForKey:NSFileSize];
         NSLog(@"%ld", fileSize.longValue);
     }
@@ -1829,37 +2395,39 @@ _ALL_END:
         return FALSE;
     }
     NSFileHandle *handle = [NSFileHandle fileHandleForReadingAtPath:self.filePycName];
-    if (!handle ) {
+    if (!handle)
+    {
         return FALSE;
     }
-    
-    [handle seekToFileOffset:fileheadoffset];
-    /*  NSData *data = [handle readDataOfLength:sizeof(PYCFILEHEADER)];
-     
-     PYCFILEHEADER *header = (PYCFILEHEADER *)[data bytes];
-     NSLog(@"file original size really %lld", header->fileSize);
-     */
-  
+    //读取文件头扩展结构：PYCFILEEXT
+    [handle seekToFileOffset:fileheadoffset];  //偏移量
     NSData *dataExt = [handle readDataOfLength:sizeof(PYCFILEEXT)];
     PYCFILEEXT *fileExtHeader = (PYCFILEEXT *)[dataExt bytes];
+    //解密
     PycCode *coder = [[PycCode alloc] init];
     [coder decodeFileExtension:fileExtHeader];
-    fileheadoffset -= sizeof(PYCFILEHEADER);
     if(fileExtHeader->uTag == PycTag1)
     {
         fileheadoffset -= sizeof(OUTLINE_STRUCT);
- 
+    }
+    else
+    {
+        fileheadoffset -= sizeof(PYCFILEHEADER);
     }
     
+    //读取文件头结构：PYCFILEHEADER：包括源文件大小，加密长度
     [handle seekToFileOffset:fileheadoffset];
     NSData *data = [handle readDataOfLength:sizeof(PYCFILEHEADER)];
     PYCFILEHEADER *header = (PYCFILEHEADER *)[data bytes];
     PycCode *coderheader = [[PycCode alloc] init];
-    if (header->uTag!=PycTag1&&header->uTag!=PycTag0) {
+    if (header->uTag!=PycTag1&&header->uTag!=PycTag0)
+    {
         [coderheader decodeHeader:header];
     }
     NSLog(@"file original size really %lld", header->fileSize);
     [handle closeFile];
+    
+    //加密长度
     if(header->encryptSize != -1)
     {
         self.encryptedLen = header->encryptSize;
@@ -1870,7 +2438,7 @@ _ALL_END:
     
     //计算开始解密的位置
     long long decodebegin = 0;
-    long long fileToAdd =  header->fileSize;
+    long long fileToAdd =  header->fileSize;  //源文件大小
     int a = (fileToAdd%16);
     if (a != 0) {
         
@@ -1886,97 +2454,189 @@ _ALL_END:
     
     self.fileSize = header->fileSize;
     self.offset =fileheadoffset-decodebegin;// decodebegin;
-    //TODO:解密，释放明文到本地
-    //如果是pdf返回，使用mupdf解密查看
-//    pathExt = [pathExt lowercaseString];
-//    if ([pathExt isEqualToString:@"pdf"]) {
-//        return YES;
-//    }
-//    return NO;
-    NSString *pathExt = [self.fileExtentionWithOutDot lowercaseString];
-    if(pathExt.length ==0 || pathExt ==nil)
-    {
-        return NO;
-    }
-    if([pathExt isEqualToString:@"pdf"])
-    {
-        return NO;
-    }
     
+    //扩展名
+    NSString *pathExt = [self.fileExtentionWithOutDot lowercaseString];
+    if(pathExt.length ==0 || pathExt == nil)
+    {
+        return NO;
+    }
+    //如果是视频，使用bilibili浏览
     if([self fileIsTypeOfVideo:pathExt])
     {
         return NO;
     }
-    
-    //return [self moveFileAndDecodeFrom:self.filePycName partOfContent:header->fileSize decodeSize:header->encryptSize toDestination:self.fileName];
-    return [self moveFileAndDecodeFromAndBeginpos:self.filePycName partOfContent:header->fileSize decodeSize:header->encryptSize toDestination:self.fileName beginpos:fileheadoffset-decodebegin];
-}
-
--(BOOL)fileIsTypeOfVideo:(NSString *)pathExt
-{
-    
-    NSString *str = [NSString stringWithFormat:@"%@",@"+rmvb+mkv+mpeg+mp4+mov+avi+3gp+flv+wmv+rm+mpg+vob+dat+"];
-    pathExt = [pathExt lowercaseString];
-    //    NSComparisonResult *result = [pathExt commonPrefixWithString:str options:NSCaseInsensitiveSearch|NSNumericSearch];
-    NSRange range=[str rangeOfString: pathExt];
-    if (!(range.location==NSNotFound)) {
-        return YES;
+    //如果是pdf，释放明文到本地，使用PDFKit查看
+    if([pathExt isEqualToString:@"pdf"])
+    {
+        //        return NO;
     }
-    return NO;
+    NSString *toDestination = [self getNotExistFileNameFromPycFile:self.filePycNameFromServer
+                                                     withExtention:[self.filePycNameFromServer pathExtension]
+                                                           forUser:@"not use"];
+    
+    return [self moveFileAndDecodeFromAndBeginpos:self.filePycName
+                                    partOfContent:self.fileSize
+                                       decodeSize:self.encryptedLen
+                                    toDestination:toDestination
+                                         beginpos:self.offset];
+}
+//明文浏览时：解密文件到指定的目录中
+-(BOOL)moveFileAndDecodeFromAndBeginpos:(NSString *)strFileName
+                          partOfContent:(NSInteger)originalFileLen
+                             decodeSize:(NSInteger)encryptLen
+                          toDestination:(NSString *)strDestination
+                               beginpos:(NSInteger)beginpos
+{
+    NSFileManager *manager = [NSFileManager defaultManager];
+    NSLog(@"destnatin file is %@", strDestination);
+    NSLog(@"strFileName file is %@", strFileName);
+        if (![manager createFileAtPath:strDestination contents:nil attributes:nil])
+        {
+            NSLog(@"err");
+            return NO;
+        }
+    
+    NSError *error;
+    if([manager fileExistsAtPath:strDestination])
+    {
+        //删除老文件
+        [manager removeItemAtPath:strDestination error:&error];
+    }
+    //拷贝到目标地址
+    if(![manager copyItemAtPath:strFileName toPath:strDestination error:&error])
+    {
+        NSLog(@"err");
+        return NO;
+    }
+
+    //get file len
+    NSInteger readReallen = 0;
+    NSInteger preReadMaxLen = 1024*1024;
+    NSInteger encodelen = 0;
+    //    int readlen = 0;
+    //    BOOL bDecodeFinish = NO;
+    //    BOOL bCopyFinish = NO;
+    BOOL bFinish = NO;
+    NSInteger filePos = beginpos;
+    
+    //处理文件
+    NSFileHandle *handleDestination = [NSFileHandle fileHandleForUpdatingAtPath:strDestination];
+    if (!handleDestination ) {
+        NSLog(@"file handle move err");
+        return NO;
+    }
+    
+    //_imageData = [[NSMutableData alloc] init];
+    //解密完成
+    while (!bFinish)
+    {
+        NSData *data = [[NSData alloc] init];
+        
+        data = [handleDestination readDataOfLength:preReadMaxLen];
+        //NSData *data = [handleDestination readDataOfLength:preReadMaxLen];
+        
+        readReallen += [data length];
+        if ([data length] == 0) {
+            NSLog(@"finish code %ld", (long)readReallen);
+            break;
+        }
+        
+        if ((readReallen >= encryptLen) || (encryptLen == -1))
+        {
+            if(encryptLen == -1)
+            {
+                if(readReallen >= originalFileLen)
+                {
+                    if((readReallen-originalFileLen)%16 > 0)
+                    {
+                        encodelen = [data length] - (readReallen-originalFileLen) + 16 - (readReallen-originalFileLen)%16;
+                    }
+                    else
+                    {
+                        encodelen = [data length] - (readReallen-originalFileLen);
+                    }
+                    bFinish = YES;
+                }
+                else{
+                    encodelen = [data length];
+                }
+            }
+            else
+            {
+                encodelen = [data length] - (readReallen -encryptLen);
+                NSLog(@"last encrypt len %ld", (long)encodelen);
+                readReallen = encryptLen;
+                bFinish = YES;
+            }
+        }else
+        {
+            encodelen = [data length];
+        }
+        
+        PycCode *coder = [[PycCode alloc] init];
+        [coder decodeBufferOfFile:(Byte *)[data bytes]
+                           length:(int)encodelen
+                          withKey:(Byte *)[self.fileSecretkeyR1 bytes]];
+        
+        //缓存图片到内存
+        //        [_imageData appendData:data];
+        
+        [handleDestination seekToFileOffset:filePos];
+        [handleDestination writeData:data];
+        filePos += encodelen;
+    }
+    filePos = originalFileLen;
+    [handleDestination seekToFileOffset:filePos];
+    [handleDestination truncateFileAtOffset:filePos];
+    [handleDestination closeFile];
+    
+    return YES;
 }
 
-#pragma mark - 封装网络数据包
--(void)MakeFileOutPackage:(SENDDATA_NEW_NEW *)data
+#pragma mark - 查看离线验证
+-(BOOL)ClientFileById:(NSInteger )applyID fileOpenedNum:(NSInteger) fileOpenedNum
 {
-    NSLog(@"*****************%s******************", __func__);
+    BOOL bReturn = NO;
+    self.Random = arc4random() % ARC4RANDOM_MAX;
+    self.applyId = applyID;
+    self.haveOpenedNum = fileOpenedNum;
     
+    self.pycsocket = [[PycSocket alloc] init];
+    self.pycsocket.delegate = self;
+    self.pycsocket.connectType = TYPE_FILE_CLIENT;
+    fileOperateType = TYPE_FILE_CLIENT;
+    if (![self.pycsocket connectToServer:IP_ADDRESS_FILE port:PORT_FILE]) {
+        return bReturn;
+    }
+    
+    bReturn = YES;
+    return bReturn;
+}
+- (void)MakeGetFileClientByFidAndOrderIdPackage:(SENDDATA_NEW_NEW *)data
+{
     memset(data, 0, sizeof(SENDDATA_NEW_NEW));
-    NSString *strFileOutName = [self.filePycName lastPathComponent];
-    NSLog(@"file out pyc %@", strFileOutName);
-    
-    //modified by lry 2014-05-05;0:手动激活；1：自由传播
-    if(self.makeType == 0)
-    {
-        data->type = TYPE_FILE_OUT_SALER_APPLY;
-    }
-    else
-    {
-        data->type = TYPE_FILE_OUT;
-    }
-    //modified end
-    
-    memcpy(&(data->userData.logName[0]), [self.fileOwner UTF8String] , MIN([self.fileOwner lengthOfBytesUsingEncoding:NSUTF8StringEncoding], USERNAME_LEN));
-    memcpy(&(data->userData.fileoutName[0]), [strFileOutName UTF8String], MIN([strFileOutName lengthOfBytesUsingEncoding:NSUTF8StringEncoding], FILENAME_LEN));
-    memcpy(&(data->userData.startTime[0]), [self.startDay UTF8String], MIN([self.startDay lengthOfBytesUsingEncoding:NSUTF8StringEncoding], TIME_LEN));
-    memcpy(&(data->userData.endTime[0]), [self.endDay UTF8String], MIN([self.endDay lengthOfBytesUsingEncoding:NSUTF8StringEncoding], TIME_LEN));
-    memcpy(&(data->userData.remark[0]), [self.remark UTF8String], MIN([self.remark lengthOfBytesUsingEncoding:NSUTF8StringEncoding], REMARK_LEN));
-    memcpy(&(data->userData.versionStr[0]), [self.versionStr UTF8String], MIN([self.versionStr lengthOfBytesUsingEncoding:NSUTF8StringEncoding], VERSION_LEN));
-    
-    //add by lry 2014-05-05
-    memcpy(&(data->userData.QQ[0]), [self.QQ UTF8String] , MIN([self.QQ lengthOfBytesUsingEncoding:NSUTF8StringEncoding], QQ_LEN));
-    memcpy(&(data->userData.email[0]), [self.email UTF8String] , MIN([self.email lengthOfBytesUsingEncoding:NSUTF8StringEncoding], EMAIL_LEN));
-    memcpy(&(data->userData.phone[0]), [self.phone UTF8String] , MIN([self.phone lengthOfBytesUsingEncoding:NSUTF8StringEncoding], PHONE_LEN));
-   //memcpy(&(data->userData.nick[0]), [self.nickname UTF8String], [self.nickname length]);
-    data->userData.appType = CURRENTAPPTYPE;
-    data->userData.random = self.Random;
-    data->userData.version = VERSION;
-    data->userData.dayNum = (int)self.openDay;
-    data->userData.yearNum = (int)self.openYear;
-    //add end
-    
-    data->userData.fileOpenNum = (int)self.AllowOpenmaxNum;
-    data->userData.iOpenTimeLong = (int)self.openTimeLong;
-    //add by lry 2014-9-17
-    data->userData.fileversion = 1;
-    //add end
+    (*data).type = TYPE_FILE_CLIENT;
     PycCode *coder = [[PycCode alloc] init];
-    [coder codeBuffer:(Byte *)&(data->userData) length:sizeof(STRUCTDATA_NEW_NEW)];
+    
+    data->userData.random = self.Random;
+    memcpy((Byte *)(data->userData.hardno ), [_OpenUUID UTF8String], HARDNO_LEN);
+    data->userData.fileOpenedNum = (int)self.haveOpenedNum;
+    data->userData.applyId = (int)self.applyId;
+    
+    data->userData.appType = CURRENTAPPTYPE;
     
     
-    
+    [coder codeBuffer:(Byte *)&((*data).userData) length:sizeof(STRUCTDATA_NEW_NEW)];
 }
-#pragma mark refresh list info with fileids
+- (void)ReceiveGetFileClientByFidAndOrderIdPackage:(RECEIVEDATA_NEW_NEW *)receiveData
+{
+    self.dayRemain = receiveData->userData.dayRemain;
+    self.yearRemain = receiveData->userData.yearRemain;
+}
 
+#pragma mark - 刷新
+#pragma mark 刷新文件列表
 -(BOOL)refreshListInfoByFileId:(NSArray *)theFileIdsArray  listType:(NSInteger) theListType
 {
     //从服务器得到ID
@@ -1997,19 +2657,15 @@ _ALL_END:
         return bReturn;
     }
     
-//    NSLog(@"will send");
+    //    NSLog(@"will send");
     
     
     bReturn = YES;
     
     return bReturn;
 }
-
-
 -(void)MakerefreshListInfoPackage:(SENDDATA_NEW_NEW *)data
 {
-    
-    
     memset(data, 0, sizeof(SENDDATA_NEW_NEW));
     
     (*data).type = TYPE_FILE_REFRESH;
@@ -2026,7 +2682,6 @@ _ALL_END:
     [coder codeBuffer:(Byte *)&((*data).userData) length:sizeof(STRUCTDATA_NEW_NEW)];
     
 }
-
 -(void)receiveRefreshListInfoPackage:(RECEIVEDATA_NEW_NEW *)receiveData
 {
     int iLen = 0;
@@ -2155,7 +2810,8 @@ _ALL_END:
     }
     
 }
-#pragma mark getfileinfo
+
+#pragma mark 刷新文件详情
 -(BOOL)getFileInfoById:(NSInteger )theFileId pbbFile:(NSString *)pbbFileName PycFile:(NSString *)pycFileName fileType:(NSInteger) theFileType
 {
     //从服务器得到ID
@@ -2165,7 +2821,7 @@ _ALL_END:
     self.filePycNameFromServer = pbbFileName;
     self.filePycName = pycFileName;
     self.fileType = theFileType;
-
+    
     int i_canSeeForOutline = 0;
     NSNumber *fileSize ;
     NSError *err;
@@ -2174,7 +2830,7 @@ _ALL_END:
     if (![manager fileExistsAtPath:pycFileName]) {
         return bReturn;
     }
-
+    
     NSDictionary *fileAttributes = [manager attributesOfItemAtPath:self.filePycName error:&err];
     if (fileAttributes != nil) {
         fileSize = [fileAttributes objectForKey:NSFileSize];
@@ -2186,7 +2842,7 @@ _ALL_END:
     {
         return bReturn;
     }
-
+    
     NSFileHandle *handle = [NSFileHandle fileHandleForReadingAtPath:self.filePycName];
     [handle seekToFileOffset:fileheadoffset];
     
@@ -2260,14 +2916,10 @@ _ALL_END:
             
         }else {
             //数据库已经保存有encodekey
-            
-            
             if (_receiveFile.status)
             {
                 b_needNet = NO;
             }
-            
-            
             
             if(![ToolString isConnectionAvailable]){
                 //网络异常
@@ -2314,8 +2966,6 @@ _ALL_END:
 }
 -(void)MakeGetFileInfoByIdPackage:(SENDDATA_NEW_NEW *)data
 {
-    
-    
     memset(data, 0, sizeof(SENDDATA_NEW_NEW));
     
     (*data).type = TYPE_FILE_INFO;
@@ -2324,7 +2974,7 @@ _ALL_END:
     
     //add by lry 2014-05-05
     data->userData.random = self.Random;
-
+    
     data->userData.version = VERSION;
     data->userData.appType = CURRENTAPPTYPE;
     //add end
@@ -2333,7 +2983,7 @@ _ALL_END:
         //接收文件
         memcpy((Byte *)(data->userData.hardno ), [_OpenUUID UTF8String], HARDNO_LEN);
     }
-   
+    
     
     data->userData.ID = (int)self.fileID;
     
@@ -2341,10 +2991,9 @@ _ALL_END:
     [coder codeBuffer:(Byte *)&((*data).userData) length:sizeof(STRUCTDATA_NEW_NEW)];
     
 }
-
 -(void)receiveGetFileInfoByIdPackage:(RECEIVEDATA_NEW_NEW *)receiveData
 {
-  
+    
     self.fileOwner = [[NSString alloc] initWithBytes:receiveData->userData.logName length:USERNAME_LEN encoding:NSUTF8StringEncoding];
     self.filePycNameFromServer = [[NSString alloc]initWithBytes:receiveData->userData.fileoutName length:FILENAME_LEN encoding:NSUTF8StringEncoding];
     self.startDay =  [[NSString alloc]initWithBytes:receiveData->userData.startTime  length:TIME_LEN encoding:NSUTF8StringEncoding];
@@ -2385,898 +3034,28 @@ _ALL_END:
      */
     self.seriesName = [[NSString alloc] initWithBytes:receiveData->userData.seriesname length:SERIESNAME_LEN encoding:NSUTF8StringEncoding];
     self.seriesName = [self.seriesName stringByReplacingOccurrencesOfString:@"\0" withString:@""];
-
-
-//    NSString *strFileExtend = [NSString stringWithFormat:@".%@",[ self.filePycNameFromServer  pathExtension]];
+    
+    
+    //    NSString *strFileExtend = [NSString stringWithFormat:@".%@",[ self.filePycNameFromServer  pathExtension]];
     NSMutableString *fileWithOutExtention = [NSMutableString stringWithFormat:@"%@", [self.filePycNameFromServer stringByDeletingPathExtension]];
-//    NSRange range = [fileWithOutExtention rangeOfString:strFileExtend];
-//    if (range.location == NSNotFound) {
-//        NSLog(@"*****file name err");
-//        receiveData->suc = 0;
-//    }
-//    else
-//    {
-//        [fileWithOutExtention deleteCharactersInRange:range];
-//    }
-//    NSLog(@"new file name with no extention %@", fileWithOutExtention);
+    //    NSRange range = [fileWithOutExtention rangeOfString:strFileExtend];
+    //    if (range.location == NSNotFound) {
+    //        NSLog(@"*****file name err");
+    //        receiveData->suc = 0;
+    //    }
+    //    else
+    //    {
+    //        [fileWithOutExtention deleteCharactersInRange:range];
+    //    }
+    //    NSLog(@"new file name with no extention %@", fileWithOutExtention);
     //文件类型
     self.fileType = [self getFileType:fileWithOutExtention];
     
-   
-
-}
-#pragma mark chang pyc file condition
--(BOOL)changePycFileReadCondition:(NSInteger ) theOpenCondition forFileId:(NSInteger )theFileId forUser:(NSString *)theFileowner
-{
-    BOOL bReturn = NO;
-    if ((theOpenCondition != FILE_READ_CONDITION_CANOPEN && theOpenCondition != FILE_READ_CONDITION_CANNOTOPEN)
-        ||
-        theFileId < 0
-        ||
-        theFileowner == nil)
-    {
-        return bReturn;
-    }
-    
-    self.fileOwner = theFileowner;
-    self.pycsocket = [[PycSocket alloc] initWithDelegate:self];
-    self.pycsocket.connectType = TYPE_FILE_CHANGE_READ_CONDITION;
-    fileOperateType = TYPE_FILE_CHANGE_READ_CONDITION;
-    self.fileID = theFileId;
-    self.iCanOpen = theOpenCondition;
-    
-    //add by lry 2014-05-05
-    self.Random = arc4random() % ARC4RANDOM_MAX;
-    //add end
-    
-    if (![self.pycsocket connectToServer:IP_ADDRESS_FILE port:PORT_FILE]) {
-        NSLog(@"connect err");
-        return bReturn;
-    }
-    
-//    NSLog(@"will send");
-    
-    
-    bReturn = YES;
-    
-    return bReturn;
     
     
 }
--(void)makePycFileReadConditionPackage:(SENDDATA_NEW_NEW *)data
-{
-    
-    memset(data, 0, sizeof(SENDDATA_NEW_NEW));
-    
-    data->type = TYPE_FILE_CHANGE_READ_CONDITION;
-    
-    //add by lry 2014-05-05
-    data->userData.random = self.Random;
-    data->userData.version = VERSION;
-    data->userData.appType = 33; //MAC版本
-    //add end
-
-    
-    data->userData.iCanOpen = (int)self.iCanOpen;
-    data->userData.ID = (int)self.fileID;
-    memcpy(&(data->userData.logName[0]), [self.fileOwner UTF8String] , MIN([self.fileOwner lengthOfBytesUsingEncoding:NSUTF8StringEncoding], USERNAME_LEN));
-    
-    PycCode *coder = [[PycCode alloc] init];
-    [coder codeBuffer:(Byte *)&(data->userData) length:sizeof(STRUCTDATA_NEW_NEW)];
-    
-}
-#pragma mark chang pyc file controller
--(BOOL)changePycFileStartDay:(NSString *)theStartDay endDay:(NSString *)theEndDay allowOpenedMaxNum:(NSInteger )theAllowOpenMaxNum openTimeLong:(NSInteger)theOpenTimeLong remark:(NSString *)theRemark forFileId:(NSInteger )theFileId forUser:(NSString *)theFileowner duration:(NSInteger)duration  qq:(NSString *)theQQ email:(NSString *)theEmail phone:(NSString *)thePhone
-{
-    
-    NSInteger iOpenTime = duration;
-    
-    BOOL bReturn = NO;
-    if ( theAllowOpenMaxNum < 0 || theOpenTimeLong < 0)
-    {
-        return bReturn;
-    }
-    
-    self.fileOwner = theFileowner;
-    self.pycsocket = [[PycSocket alloc] initWithDelegate:self];
-    self.pycsocket.connectType = TYPE_FILE_CHANGE_FILE_CONTROLL;
-    fileOperateType = TYPE_FILE_CHANGE_FILE_CONTROLL;
-    self.fileID = theFileId;
-    self.startDay = theStartDay;
-    self.endDay = theEndDay;
-    self.AllowOpenmaxNum =theAllowOpenMaxNum;
-    self.openTimeLong = theOpenTimeLong;
-    self.remark = theRemark;
-    self.openTimeLong = iOpenTime;
-    
-    //add by lry 2014-05-07
-    self.QQ = theQQ;
-    self.email = theEmail;
-    self.phone = thePhone;
-    //add end
-    //add by lry 2014-05-05
-    self.Random = arc4random() % ARC4RANDOM_MAX;
-    //add end
-
-    if (![self.pycsocket connectToServer:IP_ADDRESS_FILE port:PORT_FILE]) {
-        NSLog(@"connect err");
-        return bReturn;
-    }
-    
-//    NSLog(@"will send");
-    
-    
-    bReturn = YES;
-    
-    return bReturn;
-    
-
-}
--(void)makePycFileChangeControllPackage:(SENDDATA_NEW_NEW *)data
-{
-    
-    memset(data, 0, sizeof(SENDDATA_NEW_NEW));
-    
-    data->type = TYPE_FILE_CHANGE_FILE_CONTROLL;
-    
-    //add by lry 2014-05-05
-    data->userData.random = self.Random;
-    data->userData.version = VERSION;
-    data->userData.appType = CURRENTAPPTYPE;
-    //add end
-
-    //add by lry 2014-05-07
-    memcpy(&(data->userData.QQ[0]), [self.QQ UTF8String] , MIN([self.QQ lengthOfBytesUsingEncoding:NSUTF8StringEncoding], QQ_LEN));
-    memcpy(&(data->userData.email[0]), [self.email UTF8String] , MIN([self.email lengthOfBytesUsingEncoding:NSUTF8StringEncoding], EMAIL_LEN));
-    memcpy(&(data->userData.phone[0]), [self.phone UTF8String] , MIN([self.phone lengthOfBytesUsingEncoding:NSUTF8StringEncoding], PHONE_LEN));
-    //add end
-    memcpy(&(data->userData.logName[0]), [self.fileOwner UTF8String] , MIN([self.fileOwner lengthOfBytesUsingEncoding:NSUTF8StringEncoding], USERNAME_LEN));
-    
-    memcpy(&(data->userData.startTime[0]), [self.startDay UTF8String], MIN([self.startDay lengthOfBytesUsingEncoding:NSUTF8StringEncoding], TIME_LEN));
-    memcpy(&(data->userData.endTime[0]), [self.endDay UTF8String], MIN([self.endDay lengthOfBytesUsingEncoding:NSUTF8StringEncoding], TIME_LEN));
-    data->userData.fileOpenNum = (int)self.AllowOpenmaxNum;
-    memcpy(&(data->userData.remark[0]), [self.remark UTF8String], MIN([self.remark lengthOfBytesUsingEncoding:NSUTF8StringEncoding], REMARK_LEN));
-    data->userData.iOpenTimeLong = (int)self.openTimeLong;
-    data->userData.ID = (int)self.fileID;
-    
-    PycCode *coder = [[PycCode alloc] init];
-    [coder codeBuffer:(Byte *)&(data->userData) length:sizeof(STRUCTDATA_NEW_NEW)];
-    
-    
-}
-
-#pragma mark - socket 连接成功，封装请求数据包，并发送
--(void)PycSocket: (PycSocket *)fileObject didFinishConnect: (Byte *)receiveDataByte
-{
-    NSLog(@"*****************%s******************", __func__);
-    // SENDDATA * receiveData = (SENDDATA *)receiveDataByte;
-    NSLog(@"finish connect can send data");
-    SENDDATA_NEW_NEW data;
-    memset(&data, 0, sizeof(SENDDATA_NEW_NEW));
-    data.suc=0;
-    data.pos1=0;
-    data.pos2=0;
-    if (fileObject.connectType == TYPE_FILE_OUT) {
-        NSLog(@"file out type");
-         [self MakeFileOutPackage:&data];
-        
-//        if (0 == [self.pycsocket SocketWrite:(Byte *)&data length:sizeof(SENDDATA_NEW_NEW) receiveDataLength:sizeof(RECEIVEDATA_NEW_NEW)]) {
-//            NSLog(@"err when make pyc file");
-//            [self makeReturnMessage:0 forOperateType:TYPE_FILE_OUT];
-//        }
-        
-    }else if(fileObject.connectType == TYEP_FILE_SAVE_HASH_ENCRYPT)
-    {
-        NSLog(@"hash type receive");
-        [self MakeSaveHashAndSecretPackage:&data];
-//        if (0 == [self.pycsocket SocketWrite:(Byte *)&data length:sizeof(SENDDATA_NEW_NEW) receiveDataLength:sizeof(RECEIVEDATA_NEW_NEW)]) {
-//            NSLog(@"err when hash pyc file");
-//            [self makeReturnMessage:0 forOperateType:TYPE_FILE_OUT];
-//        }
-    }else if(fileObject.connectType == TYPE_FILE_OPEN)
-    {
-        NSLog(@"open type receive");
-        [self MakeOpenFilePackage:&data];
-//        if (0 == [self.pycsocket SocketWrite:(Byte *)&data length:sizeof(SENDDATA_NEW_NEW) receiveDataLength:sizeof(RECEIVEDATA_NEW_NEW)]) {
-//            NSLog(@"err when hash pyc file");
-//           [self makeReturnMessage:0 forOperateType:TYPE_FILE_OPEN];
-//        }
-    }
-    else if (fileObject.connectType == TYPE_FILE_REFRESH)
-    {
-        NSLog(@"refresh file list receive");
-        [self MakerefreshListInfoPackage:&data];
-//        if (0 == [self.pycsocket SocketWrite:(Byte *)&data length:sizeof(SENDDATA_NEW_NEW) receiveDataLength:sizeof(RECEIVEDATA_NEW_NEW)]) {
-//            NSLog(@"err when hash pycRefresh file list");
-//            [self makeReturnMessage:0 forOperateType:TYPE_FILE_REFRESH];
-//        }
-    }else if (fileObject.connectType == TYPE_FILE_CHANGE_READ_CONDITION)
-    {
-        [self makePycFileReadConditionPackage:&data];
-//        if (0 == [self.pycsocket SocketWrite:(Byte *)&data length:sizeof(SENDDATA_NEW_NEW) receiveDataLength:sizeof(RECEIVEDATA_NEW_NEW)]) {
-//            NSLog(@"err when chang pyc file condition");
-//            [self makeReturnMessage:0 forOperateType:TYPE_FILE_CHANGE_READ_CONDITION];
-//        }
-        
-    }else if (fileObject.connectType == TYPE_FILE_CHANGE_FILE_CONTROLL)
-    {
-        [self makePycFileChangeControllPackage:&data];
-//        if (0 == [self.pycsocket SocketWrite:(Byte *)&data length:sizeof(SENDDATA_NEW_NEW) receiveDataLength:sizeof(RECEIVEDATA_NEW_NEW)]) {
-//            NSLog(@"err when chang pyc file controll");
-//           [self makeReturnMessage:0 forOperateType:TYPE_FILE_CHANGE_FILE_CONTROLL];
-//        }
-    }else if (fileObject.connectType == TYPE_FILE_INFO)
-    {
-        [self MakeGetFileInfoByIdPackage:&data];
-//        if (0 == [self.pycsocket SocketWrite:(Byte *)&data length:sizeof(SENDDATA_NEW_NEW) receiveDataLength:sizeof(RECEIVEDATA_NEW_NEW)]) {
-//            NSLog(@"err when chang pyc file controll");
-//            [self makeReturnMessage:0 forOperateType:TYPE_FILE_INFO];
-//        }
-
-    }else if(fileObject.connectType == TYPE_FILE_CLIENT)
-    {
-        [self MakeGetFileClientByFidAndOrderIdPackage:&data];
-//        if (0 == [self.pycsocket SocketWrite:(Byte *)&data length:sizeof(SENDDATA_NEW_NEW) receiveDataLength:sizeof(RECEIVEDATA_NEW_NEW)]) {
-//            NSLog(@"err when chang pyc file controll");
-//            [self makeReturnMessage:0 forOperateType:TYPE_FILE_CLIENT];
-//        }
-    }
-    else if (fileObject.connectType == TYPE_FILE_APPLYINFO)
-    {
-        [self MakeGetApplyFileInfoByIdPackage:&data];
-//        if (0 == [self.pycsocket SocketWrite:(Byte *)&data length:sizeof(SENDDATA_NEW_NEW) receiveDataLength:sizeof(RECEIVEDATA_NEW_NEW)]) {
-//            [self makeReturnMessage:0 forOperateType:TYPE_FILE_APPLYINFO];
-//        }
-        
-    }else if(fileObject.connectType == TYPE_APPLY)
-    {
-        [self MakeapplyFileByFidAndOrderIdPackage:&data];
-//        if (0 == [self.pycsocket SocketWrite:(Byte *)&data length:sizeof(SENDDATA_NEW_NEW) receiveDataLength:sizeof(RECEIVEDATA_NEW_NEW)]) {
-//            NSLog(@"err when chang pyc file controll");
-//            [self makeReturnMessage:0 forOperateType:TYPE_APPLY];
-//        }
-        
-    }
-    else if(fileObject.connectType == TYPE_REAPPLY)
-    {
-        [self MakeReapplyFileByFidAndOrderIdPackage:&data];
-//        if (0 == [self.pycsocket SocketWrite:(Byte *)&data length:sizeof(SENDDATA_NEW_NEW) receiveDataLength:sizeof(RECEIVEDATA_NEW_NEW)]) {
-//            [self makeReturnMessage:0 forOperateType:TYPE_REAPPLY];
-//        }
-        
-    }
-    else if(fileObject.connectType == TYPE_FILE_VERIFICATIONCODE
-            || fileObject.connectType == NewPycUerRemoteOperateTypeGetConfirm)
-    {
-        [self MakeVerificationCodeByFidPackage:&data];
-//        if (0 == [self.pycsocket SocketWrite:(Byte *)&data length:sizeof(SENDDATA_NEW_NEW) receiveDataLength:sizeof(RECEIVEDATA_NEW_NEW)]) {
-//            [self makeReturnMessage:0 forOperateType:fileObject.connectType];
-//        }
-    }
-    else if(fileObject.connectType == TYPE_SEE_FILE_OVER)
-    {
-        [self MakeSeeFileOVerPackage:&data];
-//        [self.pycsocket SocketWrite:(Byte *)&data length:sizeof(SENDDATA_NEW_NEW) receiveDataLength:sizeof(RECEIVEDATA_NEW_NEW)];
-    }
-    else if (fileObject.connectType == NewPycUerRemoteOperateTypeBindPhone)
-    {
-        [self makeSendPackageForBindPhone:&data];
-//        if (0 == [self.pycsocket SocketWrite:(Byte *)&data length:sizeof(SENDDATA_NEW_NEW) receiveDataLength:sizeof(RECEIVEDATA_NEW_NEW)]) {
-//            [self makeReturnMessage:0 forOperateType:fileObject.connectType];
-//        }
-    }
-    NSMutableArray *arry= [self checkSendByte:(Byte *)&data len:sizeof(SENDDATA_NEW_NEW)];
-    int j1=[arry[0] intValue];
-    int j2=[arry[1] intValue];
-    
-    data.pos1=j1;
-    data.pos2=j2;
-    if (fileObject.connectType == TYPE_SEE_FILE_OVER) {
-        [self.pycsocket SocketWrite:(Byte *)&data length:sizeof(SENDDATA_NEW_NEW) receiveDataLength:sizeof(RECEIVEDATA_NEW_NEW)];
-    }else{
-        if (0 == [self.pycsocket SocketWrite:(Byte *)&data length:sizeof(SENDDATA_NEW_NEW) receiveDataLength:sizeof(RECEIVEDATA_NEW_NEW)]) {
-            NSLog(@"err when doing:%ld",(long)fileObject.connectType);
-            [self makeReturnMessage:0 forOperateType:fileObject.connectType];
-        }
-    }
-}
-
-
-
-#pragma mark - socket服务器响应，开始解析接收到的数据包
--(void)PycSocket: (PycSocket *)fileObject didFinishSend: (Byte *)receiveDataByte
-{
-    
-    NSLog(@"*****************%s******************", __func__);
-    RECEIVEDATA_NEW_NEW * receiveData = (RECEIVEDATA_NEW_NEW *)receiveDataByte;
-
-    if (!receiveData) {
-        
-        if(!b_needNet && _receiveFile && fileOperateType == TYPE_FILE_OPEN)
-        {
-            
-            //当网络不给力时，
-            //旧版本手动激活文件，可读时
-            //解析离线文件，并给self赋值,获取明文文件
-            [self setValueOfSelfByNewFile:_receiveFile];
-            //支持离线阅读的文件，且根据本地数据库的数据判断可阅读时
-            [self makeReturnMessage:_receiveFile.canSeeForOutline forOperateType:fileOperateType];
-        }
-        else{
-            [self makeReturnMessage:0 forOperateType:fileOperateType];
-        }
-        
-        return;
-    }
-    int pos1 = receiveData->pos1;
-    int pos2 = receiveData->pos2;
-    if (pos1!=0) {
-        ((Byte *)receiveData)[pos1]=0x0A;
-    }
-    if (pos2!=0) {
-        ((Byte *)receiveData)[pos2]=0x0A;
-    }
-    PycCode *coder = [[PycCode alloc] init];
-    
-    if (receiveData->userData.random != self.Random)
-    {
-        [coder decodeBuffer:(Byte *)&(receiveData->userData) length:sizeof(STRUCTDATA_NEW_NEW)];
-    }
-    else{
-        return;
-    }
-    
-//    PycCode *coder = [[PycCode alloc] init];
-//    [coder decodeBuffer:(Byte *)&(receiveData->userData) length:sizeof(STRUCTDATA)];
-//
-    //[self.pycsocket SocketClose];
-    if (receiveData->type == TYPE_FILE_OUT || receiveData->type == TYPE_FILE_OUT_SALER_APPLY) {
-      if (receiveData->suc == 0) {
-            NSLog(@"return operate server suc = 0");
-            [self makeReturnMessage:0 forOperateType:TYPE_FILE_OUT];
-            return;
-        }
-        
-        //随机因子不同
-        if (receiveData->userData.random != self.Random)
-        {
-            NSLog(@"return operate server suc = 0");
-            [self makeReturnMessage:-1 forOperateType:TYPE_FILE_OUT];
-            return;
-        }
-        if (!(receiveData->suc & ERR_OK_OR_CANOPEN)) {
-            [self makeReturnMessage:receiveData->suc forOperateType:TYPE_FILE_OUT];
-            return;
-        }
-       
-        self.fileID = receiveData->userData.ID;
-        self.orderNo =  [[NSString alloc]initWithBytes:receiveData->userData.orderno  length:ORDERNO_LEN encoding:NSUTF8StringEncoding];
-        NSLog(@"file id is %ld",(long)self.fileID);
-        
-        if (![self makePycFile]) {
-             [self makeReturnMessage:0 forOperateType:TYPE_FILE_OUT];
-            return;
-        }
-        if (![self.pycsocket connectToServer:IP_ADDRESS_FILE port:PORT_OUTFILE]) {
-            NSLog(@"connect err when send file out");
-             [self makeReturnMessage:0 forOperateType:TYPE_FILE_OUT];
-        }
-        self.pycsocket.delegate = self;
-        self.pycsocket.connectType = TYEP_FILE_SAVE_HASH_ENCRYPT;
-        
-    }
-    else if(receiveData->type == TYEP_FILE_SAVE_HASH_ENCRYPT)
-    {
-
-        NSLog(@"type is hash");
-        if (receiveData->suc == 0) {
-            NSLog(@"return operate server save hash suc = 0");
-            [self makeReturnMessage:0 forOperateType:TYPE_FILE_OUT];
-            return;
-        }
-        
-        [self makeReturnMessage:receiveData->suc forOperateType:TYPE_FILE_OUT];
-        
-    }
-    else if(receiveData->type == TYPE_FILE_OPEN)
-    {
-
-        NSLog(@"type is open");
-        
-        //随机因子不同
-        if (receiveData->userData.random != self.Random)
-        {
-            [self makeReturnMessage:-1 forOperateType:TYPE_FILE_OPEN];
-            return;
-        }
-        self.hardno = _OpenUUID;
-        self.fileSecretkeyOrigianlR1 = [[NSData alloc] initWithBytes:receiveData->userData.EncodeKey length: ENCRYPKEY_LEN];
-        
-        [self printByte:receiveData->userData.EncodeKey len:ENCRYPKEY_LEN description:@"miyao r1 "];
-        /* //test because of server return 0
-         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-         NSString *documentsDirectory = [paths objectAtIndex:0];
-         NSString *strFile = [NSString stringWithFormat:@"%@", [documentsDirectory stringByAppendingPathComponent:@"save.txt"]];
-         self.fileSecretkeyOrigianlR1 = [NSData dataWithContentsOfFile:strFile];
-         */
-        Byte fileScreateR1[ENCRYPKEY_LEN];
-        [coder getSecretKeyFromOriginalKey:(Byte *)[self.fileSecretkeyOrigianlR1 bytes]  to:fileScreateR1];
-        
-        //密钥
-        self.fileSecretkeyR1 = [[NSData alloc] initWithBytes:fileScreateR1 length: ENCRYPKEY_LEN];
-        [self printByte:fileScreateR1 len:ENCRYPKEY_LEN description:@"miyao r1' "];
-        self.fileOwner = [[NSString alloc] initWithBytes:receiveData->userData.logName length:USERNAME_LEN encoding:NSUTF8StringEncoding];
-        self.filePycNameFromServer = [[NSString alloc]initWithBytes:receiveData->userData.fileoutName length:FILENAME_LEN encoding:NSUTF8StringEncoding];
-        self.startDay =  [[NSString alloc]initWithBytes:receiveData->userData.startTime  length:TIME_LEN encoding:NSUTF8StringEncoding];
-        self.endDay = [[NSString alloc]initWithBytes:receiveData->userData.endTime  length:TIME_LEN encoding:NSUTF8StringEncoding];
-        self.AllowOpenmaxNum = receiveData->userData.fileOpenNum;
-        self.haveOpenedNum = receiveData->userData.fileOpenedNum;
-        self.bCanprint = receiveData->userData.bCanPrint;
-        self.iCanOpen = receiveData->userData.iCanOpen;
-        self.bNeedBinding = receiveData->userData.otherset&8;
-        self.nickname = [[NSString alloc]initWithBytes:receiveData->userData.nick length:NICK_LEN encoding:NSUTF8StringEncoding];
-        self.remark = [[NSString alloc]initWithBytes:receiveData->userData.remark length:REMARK_LEN encoding:NSUTF8StringEncoding];
-        
-        //TODO:添加接收系列ID字段
-//       fileversion:查看文件时返回该文件所属系列ID
-        // 系列id改为apptype
-//        self.seriesID = receiveData->userData.fileversion;
-        self.seriesID = receiveData->userData.appType;
-//       |查看文件时，返回系列中文件总数
-        self.seriesFileNums = receiveData->userData.tableid;
-        /*!
-         系列名称
-         */
-        self.seriesName = [[NSString alloc] initWithBytes:receiveData->userData.seriesname length:SERIESNAME_LEN encoding:NSUTF8StringEncoding];
-        self.seriesName = [self.seriesName stringByReplacingOccurrencesOfString:@"\0" withString:@""];
-        //fileversion＝＝4:是否采用时间范围限制
-        self.timeType=receiveData->userData.fileversion;
-        NSLog(@"result is %d", receiveData->suc);
-        //add by lry 2014-05-05
-        if (strlen(receiveData->userData.QQ) == 0) {
-            self.QQ = @"";
-        }
-        else
-        {
-            self.QQ = [[NSString alloc] initWithUTF8String:receiveData->userData.QQ];
-            
-//            
-//            memset(receiveData->userData.QQ+strlen(receiveData->userData.QQ), 0, QQ_LEN-strlen(receiveData->userData.QQ));
-//            self.QQ = [[NSString alloc]initWithBytes:receiveData->userData.QQ length:QQ_LEN encoding:NSUTF8StringEncoding];
-        }
-        if (strlen(receiveData->userData.phone) == 0) {
-            self.phone = @"";
-        }
-        else
-        {
-            self.phone = [[NSString alloc] initWithUTF8String:receiveData->userData.phone];
-//            memset(receiveData->userData.phone+strlen(receiveData->userData.phone), 0, PHONE_LEN-strlen(receiveData->userData.phone));
-//            self.phone = [[NSString alloc]initWithBytes:receiveData->userData.phone length:PHONE_LEN encoding:NSUTF8StringEncoding];
-        }
-        if (strlen(receiveData->userData.email) == 0) {
-            self.email = @"";
-        }
-        else
-        {
-            self.email = [[NSString alloc] initWithUTF8String:receiveData->userData.email];
-//            memset(receiveData->userData.email+strlen(receiveData->userData.email), 0, EMAIL_LEN-strlen(receiveData->userData.email));
-//            self.email = [[NSString alloc]initWithBytes:receiveData->userData.email length:EMAIL_LEN encoding:NSUTF8StringEncoding];
-        }
-        self.dayRemain = receiveData->userData.dayRemain;
-        self.yearRemain = receiveData->userData.yearRemain;
-        self.orderID = receiveData->userData.ooid;
-        self.makeFrom = receiveData->userData.appType;
-        self.openDay = receiveData->userData.dayNum;
-        self.openYear = receiveData->userData.yearNum;
-        if (strlen(receiveData->userData.outTime)>0) {
-            self.makeTime = [[NSString alloc] initWithUTF8String:(receiveData->userData.outTime)];
-        }else
-        {
-            self.makeTime = @"";
-        }
-        
-        if (strlen(receiveData->userData.firstSeeTime)>0) {
-            self.firstSeeTime = [[NSString alloc] initWithUTF8String:(receiveData->userData.firstSeeTime)];
-        }else{
-            self.firstSeeTime = @"";
-        }
-        
-//        self.makeTime = [[NSString alloc]initWithBytes:receiveData->userData.outTime length:FIRST_SEE_TIME_LEN encoding:NSUTF8StringEncoding];
-//        self.firstSeeTime = [[NSString alloc]initWithBytes:receiveData->userData.firstSeeTime length:FIRST_SEE_TIME_LEN encoding:NSUTF8StringEncoding];
-         //add end
-        //add by lry 2014-7-14
-        self.canseeCondition = receiveData->userData.otherset;
-        if (strlen(receiveData->userData.field1) == 0) {
-            self.field1 = @"";
-        }
-        else
-        {
-             self.field1 = [[NSString alloc] initWithUTF8String:(receiveData->userData.field1)];
-        }
-        if (strlen(receiveData->userData.field2) == 0) {
-            self.field2 = @"";
-        }
-        else
-        {
-            NSLog(@"%s length = %lu", receiveData->userData.field2, strlen(receiveData->userData.field2));
-             self.field2 = [[NSString alloc] initWithUTF8String:(receiveData->userData.field2)];
-        }
-        if (strlen(receiveData->userData.hardno) == 0) {
-            self.fild1name = @"";
-        }
-        else
-        {
-           self.fild1name = [[NSString alloc] initWithUTF8String:(receiveData->userData.hardno)];
-//            memset(receiveData->userData.hardno+strlen(receiveData->userData.hardno), 0, HARDNO_LEN-strlen(receiveData->userData.hardno));
-//            self.fild1name = [[NSString alloc]initWithBytes:receiveData->userData.hardno length:FIELD_LEN encoding:NSUTF8StringEncoding];
-        }
-        if (strlen(receiveData->userData.logName) == 0) {
-            self.fild2name = @"";
-        }
-        else
-        {
-            self.fild2name = [[NSString alloc] initWithUTF8String:(receiveData->userData.logName)];
-//            memset(receiveData->userData.logName+strlen(receiveData->userData.logName), 0, USERNAME_LEN-strlen(receiveData->userData.logName));
-//            self.fild2name = [[NSString alloc]initWithBytes:receiveData->userData.logName length:FIELD_LEN encoding:NSUTF8StringEncoding];
-
-        }
-        self.openinfoid = receiveData->userData.version;      //添加结束逻辑，所需的参数值
-        self.definechecked = receiveData->userData.bindNum;   //服务器端对联系方式的勾选，根据勾选条件，申请激活，或显示水印
-        self.selffieldnum = receiveData->userData.activeNum;  //自定义字段的个数
-        self.field1needprotect = receiveData->userData.ID&1?1:0;  //1:保密
-        self.field2needprotect = receiveData->userData.ID&2?1:0;  //1:保密
-        self.applyId = receiveData->userData.applyId;
-        self.showInfo = [[NSString alloc] initWithUTF8String:(receiveData->userData.showInfo)];
-//        self.showInfo = [[NSString alloc]initWithBytes:receiveData->userData.showInfo length:SHOW_INFO_LEN encoding:NSUTF8StringEncoding];
-        self.iCanClient = receiveData->userData.iCanClient;
-        self.needReapply = receiveData->userData.need_reapply;
-        self.needShowDiff = receiveData->userData.need_showdiff;
-        
-        //add end
-        self.openTimeLong = receiveData->userData.iOpenTimeLong;
-        
-        NSString *strFileExtend = [NSString stringWithFormat:@".%@",[ self.filePycNameFromServer  pathExtension]];
-        NSMutableString *fileWithOutExtention = [NSMutableString stringWithFormat:@"%@", self.filePycNameFromServer];
-        NSRange range = [fileWithOutExtention rangeOfString:strFileExtend];
-        if (range.location == NSNotFound) {
-            NSLog(@"*****file name err");
-            receiveData->suc = 0;
-        }
-        else
-        {
-           [fileWithOutExtention deleteCharactersInRange:range]; 
-        }
-        //文件类型
-        self.fileType = [self getFileType:fileWithOutExtention];
-        
-        self.fileName = [self getNotExistFileNameFromPycFile:self.filePycNameFromServer withExtention:[ self.filePycNameFromServer  pathExtension] forUser:@"not use"];
-        if (self.fileName == nil) {
-            receiveData->suc = 0;
-        }
-
-        
-        if (receiveData->suc & ERR_OK_OR_CANOPEN) {
-            //离线机构，第一次查看需要设置离线结构
-            if(receiveData->userData.iCanClient)
-            {
-
-                /**
-                 *  申请/重新申请成功过后，第一次阅读离线文件,写入离线文件属性值
-                 *  该步骤，将服务器返回的数据同步到本地数据库
-                 */
-                
-                [self setOutLineStructData:self.filePycName isFirstSee:1 isSetFirst:0 isSee:0 isVerifyOk:0 isTimeIsChanged:0 isApplySucess:0 data:receiveData];
-            }
-            if([self getReceiveFileINfo])
-            {
-                [self makeOpenFile];
-            }else{
-                receiveData->suc = 0;
-            }
-        }
-        else if(receiveData->suc & ERR_APPLIED)
-        {
-            /**
-             *  申请/重新申请成功，但还不能读，离线结构体所有值都设为false
-             *  该步骤在以后版本将不用
-             */
-            if(receiveData->userData.iCanClient)
-            {
-                self.applyId = receiveData->userData.applyId;
-                [self setOutLineStructData:self.filePycName isFirstSee:FALSE isSetFirst:FALSE isSee:FALSE isVerifyOk:FALSE isTimeIsChanged:FALSE isApplySucess:TRUE data:NULL];
-            }
-                
-        }
-        
-        [self makeReturnMessage:receiveData->suc forOperateType:TYPE_FILE_OPEN];
-    }
-    else if(receiveData->type == TYPE_FILE_REFRESH)
-    {
-        if(receiveData->suc & ERR_OK_OR_CANOPEN)
-        {
-            [self receiveRefreshListInfoPackage:receiveData];
-        }
-        
-        [self makeReturnMessage:receiveData->suc forOperateType:TYPE_FILE_REFRESH];
-    }else if (receiveData->type == TYPE_FILE_CHANGE_READ_CONDITION)
-    {
-        //随机因子不同
-        if (receiveData->userData.random != self.Random)
-        {
-            NSLog(@"return operate server suc = 0");
-            [self makeReturnMessage:-1 forOperateType:TYPE_FILE_CHANGE_READ_CONDITION];
-            return;
-        }
-       [self makeReturnMessage:receiveData->suc forOperateType:TYPE_FILE_CHANGE_READ_CONDITION];
-    }else if (receiveData->type == TYPE_FILE_CHANGE_FILE_CONTROLL)
-    {
-       //随机因子不同
-        if (receiveData->userData.random != self.Random)
-        {
-            NSLog(@"return operate server suc = 0");
-            [self makeReturnMessage:-1 forOperateType:TYPE_FILE_CHANGE_FILE_CONTROLL];
-            return;
-        }
-        [self makeReturnMessage:receiveData->suc forOperateType:TYPE_FILE_CHANGE_FILE_CONTROLL];
-    }else if (receiveData->type == TYPE_FILE_INFO)
-    {
-       //随机因子不同
-        if (receiveData->userData.random != self.Random)
-        {
-            NSLog(@"return operate server suc = 0");
-            [self makeReturnMessage:-1 forOperateType:TYPE_FILE_INFO];
-            return;
-        }
-       [self receiveGetFileInfoByIdPackage:receiveData];
-        [self makeReturnMessage:receiveData->suc forOperateType:TYPE_FILE_INFO];
-    
-    }else if (receiveData->type == TYPE_FILE_APPLYINFO)
-    {
-        
-        //随机因子不同
-        if (receiveData->userData.random != self.Random)
-        {
-            [self makeReturnMessage:-1 forOperateType:TYPE_FILE_APPLYINFO];
-            return;
-        }
-        [self receiveApplyFileInfoByIdPackage:receiveData];
-        [self makeReturnMessage:receiveData->suc forOperateType:TYPE_FILE_APPLYINFO];
-        
-    }else if (receiveData->type == TYPE_FILE_CLIENT)
-    {
-        
-        //随机因子不同
-        if (receiveData->userData.random != self.Random)
-        {
-            [self makeReturnMessage:-1 forOperateType:TYPE_FILE_CLIENT];
-            return;
-        }
-        if (receiveData->suc & ERR_OK_OR_CANOPEN) {
-        //能看
-            [self setOutLineStructData:self.filePycName isFirstSee:0 isSetFirst:0 isSee:0 isVerifyOk:1 isTimeIsChanged:0 isApplySucess:0 data:receiveData];
-        }
-        [self ReceiveGetFileClientByFidAndOrderIdPackage:receiveData];
-        [self makeReturnMessage:receiveData->suc forOperateType:TYPE_FILE_CLIENT];
-        
-    }else if (receiveData->type == TYPE_APPLY)
-    {
-        
-        //随机因子不同
-        if (receiveData->userData.random != self.Random)
-        {
-            NSLog(@"return operate server suc = 0");
-            [self makeReturnMessage:-1 forOperateType:TYPE_APPLY];
-            return;
-        }
-
-        if (strlen(receiveData->userData.QQ) == 0) {
-            self.QQ = @"";
-        }
-        else
-        {
-            self.QQ = [[NSString alloc]initWithBytes:receiveData->userData.QQ length:QQ_LEN encoding:NSUTF8StringEncoding];
-        }
-        if (strlen(receiveData->userData.phone) == 0) {
-            self.phone = @"";
-        }
-        else
-        {
-            self.phone = [[NSString alloc]initWithBytes:receiveData->userData.phone length:PHONE_LEN encoding:NSUTF8StringEncoding];
-        }
-        if (strlen(receiveData->userData.email) == 0) {
-            self.email = @"";
-        }
-        else
-        {
-            self.email = [[NSString alloc]initWithBytes:receiveData->userData.email length:EMAIL_LEN encoding:NSUTF8StringEncoding];
-        }
-        if (strlen(receiveData->userData.showInfo) == 0) {
-            self.showInfo = @"";
-        }
-        else
-        {
-            self.showInfo = [[NSString alloc]initWithBytes:receiveData->userData.showInfo length:SHOW_INFO_LEN encoding:NSUTF8StringEncoding];
-        }
-
-        self.iCanClient = receiveData->userData.iCanClient;
-        self.needShowDiff = receiveData->userData.need_showdiff;
-        //add end
-        //如果离线，需要修改文件中的离线结构
-        if(receiveData->suc & ERR_OK_OR_CANOPEN)
-        {
-            if(receiveData->userData.iCanClient)
-            {
-                self.applyId = receiveData->userData.applyId;
-                [self setOutLineStructData:self.fileName isFirstSee:FALSE isSetFirst:FALSE isSee:FALSE isVerifyOk:FALSE isTimeIsChanged:FALSE isApplySucess:TRUE data:NULL];
-                //修改文件离线结构中的applyid
-                
-            }
-        }
-        [self makeReturnMessage:receiveData->suc forOperateType:TYPE_APPLY];
-        
-    }else if (receiveData->type == TYPE_REAPPLY)
-    {
-        
-        //随机因子不同
-        if (receiveData->userData.random != self.Random)
-        {
-            [self makeReturnMessage:-1 forOperateType:TYPE_REAPPLY];
-            return;
-        }
-        
-        [self receiveReapplyFileInfoByIdPackage:receiveData];
-
-        [self makeReturnMessage:receiveData->suc forOperateType:TYPE_REAPPLY];
-        
-    }else if (receiveData->type == TYPE_FILE_VERIFICATIONCODE
-              || receiveData->type == NewPycUerRemoteOperateTypeGetConfirm)
-    {
-        //随机因子不同
-        if (receiveData->userData.random != self.Random)
-        {
-            [self makeReturnMessage:-1 forOperateType:fileOperateType];
-            return;
-        }
-        
-        [self receiveVerificationCodeInfoByIdPackage:receiveData];
-        
-        [self makeReturnMessage:receiveData->suc forOperateType:fileOperateType];
-        
-    }
-    else if(receiveData->type == NewPycUerRemoteOperateTypeBindPhone)
-    {
-        NSLog(@"绑定手机号...");
-        if (receiveData->suc == 0) {
-            [self makeReturnMessage:0 forOperateType:NewPycUerRemoteOperateTypeBindPhone];
-            return;
-        }
-        [self makeReturnMessage:receiveData->suc forOperateType:NewPycUerRemoteOperateTypeBindPhone];
-        
-    }
-}
-
-#pragma mark 查看离线验证
-//查看离线验证
--(BOOL)ClientFileById:(NSInteger )applyID fileOpenedNum:(NSInteger) fileOpenedNum
-{
-    BOOL bReturn = NO;
-    self.Random = arc4random() % ARC4RANDOM_MAX;
-    self.applyId = applyID;
-    self.haveOpenedNum = fileOpenedNum;
-    
-    self.pycsocket = [[PycSocket alloc] init];
-    self.pycsocket.delegate = self;
-    self.pycsocket.connectType = TYPE_FILE_CLIENT;
-    fileOperateType = TYPE_FILE_CLIENT;
-    if (![self.pycsocket connectToServer:IP_ADDRESS_FILE port:PORT_FILE]) {
-        return bReturn;
-    }
-    
-    bReturn = YES;
-    return bReturn;
-}
-
-
-- (void)MakeGetFileClientByFidAndOrderIdPackage:(SENDDATA_NEW_NEW *)data
-{
-    memset(data, 0, sizeof(SENDDATA_NEW_NEW));
-    (*data).type = TYPE_FILE_CLIENT;
-    PycCode *coder = [[PycCode alloc] init];
-    
-    data->userData.random = self.Random;
-    memcpy((Byte *)(data->userData.hardno ), [_OpenUUID UTF8String], HARDNO_LEN);
-    data->userData.fileOpenedNum = (int)self.haveOpenedNum;
-    data->userData.applyId = (int)self.applyId;
-    
-    data->userData.appType = CURRENTAPPTYPE;
-    
-    
-    [coder codeBuffer:(Byte *)&((*data).userData) length:sizeof(STRUCTDATA_NEW_NEW)];
-}
-
-
-- (void)ReceiveGetFileClientByFidAndOrderIdPackage:(RECEIVEDATA_NEW_NEW *)receiveData
-{
-    self.dayRemain = receiveData->userData.dayRemain;
-    self.yearRemain = receiveData->userData.yearRemain;
-}
-
-#pragma mark apply
-//申请手动激活
-- (NSString *)applyFileByFidAndOrderId:(NSInteger )fileId orderId:(NSInteger )thOrderId qq:(NSString *)theQQ email:(NSString *)theEmail phone:(NSString *)thePhone  field1:(NSString *)theField1 field2:(NSString *)theField2 seeLogName:(NSString *)theSeeLogName  fileName:(NSString*)theFileName
-{
-    NSLog(@"*****************%s******************", __func__);
-    //add by lry 2014-05-05
-    NSString *bReturn = @"0";
-    if (![ToolString isConnectionAvailable]) {
-        bReturn=@"1";
-        return bReturn;
-    }
-    self.fileName = theFileName;
-    self.QQ = theQQ;
-    self.email = theEmail;
-    self.phone = thePhone;
-    self.field1 = theField1;
-    self.field2 = theField2;
-    self.Random = arc4random() % ARC4RANDOM_MAX;
-    self.orderID = thOrderId;
-    self.fileID = fileId;
-    self.fileSeeLogname = theSeeLogName;
-    self.pycsocket = [[PycSocket alloc] init];
-    self.pycsocket.delegate = self;
-    self.pycsocket.connectType = TYPE_APPLY;
-    fileOperateType = TYPE_APPLY;
-    if (![self.pycsocket connectToServer:IP_ADDRESS_FILE port:PORT_FILE]) {
-        NSLog(@"connect file server err");
-        bReturn=@"2";
-        return bReturn;
-    }
-    
-//    NSLog(@"will send open");
-    
-    
-    //bReturn = YES;
-    return bReturn;
-}
-
-
--(void)MakeapplyFileByFidAndOrderIdPackage:(SENDDATA_NEW_NEW *)data
-{
-    
-    
-    memset(data, 0, sizeof(SENDDATA_NEW_NEW));
-    
-    (*data).type = TYPE_APPLY;
-    
-    PycCode *coder = [[PycCode alloc] init];
-    
-    data->userData.random = self.Random;
-    data->userData.version = VERSION;
-    memcpy((Byte *)(data->userData.hardno ), [_OpenUUID UTF8String], HARDNO_LEN);
-    memcpy((Byte *)(data->userData.sysinfo ), [_sysInfoVersion UTF8String], SYSINFO_LEN);
-    memcpy(&(data->userData.logName[0]), [self.fileSeeLogname UTF8String] , MIN([self.fileSeeLogname lengthOfBytesUsingEncoding:NSUTF8StringEncoding], USERNAME_LEN));
-    memcpy(&(data->userData.QQ[0] ), [self.QQ UTF8String], QQ_LEN);
-    memcpy(&(data->userData.email[0] ), [self.email UTF8String], EMAIL_LEN);
-    memcpy(&(data->userData.phone[0] ), [self.phone UTF8String], PHONE_LEN);
-    
-    if (self.field1 != nil) {
-        memcpy(&(data->userData.field1[0] ), [self.field1 UTF8String], FIELD_LEN);
-    }
-    
-    if (self.field2 != nil) {
-        memcpy(&(data->userData.field2[0] ), [self.field2 UTF8String], FIELD_LEN);
-    }
-    
-    data->userData.ID = (int) self.fileID;
-    data->userData.ooid = (int)self.orderID;
-    data->userData.appType = CURRENTAPPTYPE;
-    
-    [coder codeBuffer:(Byte *)&((*data).userData) length:sizeof(STRUCTDATA_NEW_NEW)];
-    
-}
-
+#pragma mark - 申请
 #pragma mark 查看申请提交申请<信息>
-//查看申请提交申请信息
 -(BOOL)getApplyFileInfoByApplyId:(NSInteger)applyId FileID:(NSInteger)fileID
 {
     BOOL bReturn = NO;
@@ -3294,7 +3073,7 @@ _ALL_END:
     bReturn = YES;
     return bReturn;
 }
-
+//封装请求包
 - (void)MakeGetApplyFileInfoByIdPackage:(SENDDATA_NEW_NEW *)data
 {
     memset(data, 0, sizeof(SENDDATA_NEW_NEW));
@@ -3309,9 +3088,7 @@ _ALL_END:
     
     [coder codeBuffer:(Byte *)&((*data).userData) length:sizeof(STRUCTDATA_NEW_NEW)];
 }
-
-
-#pragma mark - 下拉刷新获取文件最新内容
+//解析响应包
 - (void)receiveApplyFileInfoByIdPackage:(RECEIVEDATA_NEW_NEW *)receiveData
 {
     if (strlen(receiveData->userData.QQ) == 0) {
@@ -3387,7 +3164,7 @@ _ALL_END:
     self.selffieldnum = receiveData->userData.activeNum;
     self.field1needprotect = receiveData->userData.ID&1?1:0;  //1:保密
     self.field2needprotect = receiveData->userData.ID&2?1:0;  //1:保密
-    //TODO:添加接收系列ID字段
+    //添加接收系列ID字段
     //       fileversion:查看文件时返回该文件所属系列ID
     self.seriesID = receiveData->userData.appType;
     //       |查看文件时，返回系列中文件总数
@@ -3399,9 +3176,134 @@ _ALL_END:
     self.seriesName = [self.seriesName stringByReplacingOccurrencesOfString:@"\0" withString:@""];
 }
 
-#pragma mark reapply
-//重新申请手动激活
-- (NSString *)reapplyFileByFidAndOrderId:(NSInteger )fileId orderId:(NSInteger )thOrderId applyId:(NSInteger)applyId qq:(NSString *)theQQ email:(NSString *)theEmail phone:(NSString *)thePhone  field1:(NSString *)theField1 field2:(NSString *)theField2
+#pragma mark - 申请手动激活
+- (NSString *)applyFileByFidAndOrderId:(NSInteger )fileId
+                               orderId:(NSInteger )thOrderId
+                                    qq:(NSString *)theQQ
+                                 email:(NSString *)theEmail
+                                 phone:(NSString *)thePhone
+                                field1:(NSString *)theField1
+                                field2:(NSString *)theField2
+                            seeLogName:(NSString *)theSeeLogName
+                              fileName:(NSString*)theFileName
+{
+    NSLog(@"*****************%s******************", __func__);
+    //add by lry 2014-05-05
+    NSString *bReturn = @"0";
+    if (![ToolString isConnectionAvailable]) {
+        bReturn=@"1";
+        return bReturn;
+    }
+    self.fileName = theFileName;
+    self.QQ = theQQ;
+    self.email = theEmail;
+    self.phone = thePhone;
+    self.field1 = theField1;
+    self.field2 = theField2;
+    self.Random = arc4random() % ARC4RANDOM_MAX;
+    self.orderID = thOrderId;
+    self.fileID = fileId;
+    self.fileSeeLogname = theSeeLogName;
+    self.pycsocket = [[PycSocket alloc] init];
+    self.pycsocket.delegate = self;
+    self.pycsocket.connectType = TYPE_APPLY;
+    fileOperateType = TYPE_APPLY;
+    if (![self.pycsocket connectToServer:IP_ADDRESS_FILE port:PORT_FILE]) {
+        NSLog(@"connect file server err");
+        bReturn=@"2";
+        return bReturn;
+    }
+    return bReturn;
+}
+//封装请求包
+-(void)MakeapplyFileByFidAndOrderIdPackage:(SENDDATA_NEW_NEW *)data
+{
+    memset(data, 0, sizeof(SENDDATA_NEW_NEW));
+    
+    (*data).type = TYPE_APPLY;
+    
+    PycCode *coder = [[PycCode alloc] init];
+    
+    data->userData.random = self.Random;
+    data->userData.version = VERSION;
+    memcpy((Byte *)(data->userData.hardno ), [_OpenUUID UTF8String], HARDNO_LEN);
+    memcpy((Byte *)(data->userData.sysinfo ), [_sysInfoVersion UTF8String], SYSINFO_LEN);
+    memcpy(&(data->userData.logName[0]), [self.fileSeeLogname UTF8String] , MIN([self.fileSeeLogname lengthOfBytesUsingEncoding:NSUTF8StringEncoding], USERNAME_LEN));
+    memcpy(&(data->userData.QQ[0] ), [self.QQ UTF8String], QQ_LEN);
+    memcpy(&(data->userData.email[0] ), [self.email UTF8String], EMAIL_LEN);
+    memcpy(&(data->userData.phone[0] ), [self.phone UTF8String], PHONE_LEN);
+    
+    if (self.field1 != nil) {
+        memcpy(&(data->userData.field1[0] ), [self.field1 UTF8String], FIELD_LEN);
+    }
+    
+    if (self.field2 != nil) {
+        memcpy(&(data->userData.field2[0] ), [self.field2 UTF8String], FIELD_LEN);
+    }
+    
+    data->userData.ID = (int) self.fileID;
+    data->userData.ooid = (int)self.orderID;
+    data->userData.appType = CURRENTAPPTYPE;
+    
+    [coder codeBuffer:(Byte *)&((*data).userData) length:sizeof(STRUCTDATA_NEW_NEW)];
+    
+}
+//解析响应包
+- (void)receiveApplyFileByFidAndOrderIdPackage:(RECEIVEDATA_NEW_NEW *)receiveData
+{
+    if (strlen(receiveData->userData.QQ) == 0) {
+        self.QQ = @"";
+    }
+    else
+    {
+        self.QQ = [[NSString alloc]initWithBytes:receiveData->userData.QQ length:QQ_LEN encoding:NSUTF8StringEncoding];
+    }
+    if (strlen(receiveData->userData.phone) == 0) {
+        self.phone = @"";
+    }
+    else
+    {
+        self.phone = [[NSString alloc]initWithBytes:receiveData->userData.phone length:PHONE_LEN encoding:NSUTF8StringEncoding];
+    }
+    if (strlen(receiveData->userData.email) == 0) {
+        self.email = @"";
+    }
+    else
+    {
+        self.email = [[NSString alloc]initWithBytes:receiveData->userData.email length:EMAIL_LEN encoding:NSUTF8StringEncoding];
+    }
+    if (strlen(receiveData->userData.showInfo) == 0) {
+        self.showInfo = @"";
+    }
+    else
+    {
+        self.showInfo = [[NSString alloc]initWithBytes:receiveData->userData.showInfo length:SHOW_INFO_LEN encoding:NSUTF8StringEncoding];
+    }
+    
+    self.iCanClient = receiveData->userData.iCanClient;
+    self.needShowDiff = receiveData->userData.need_showdiff;
+    //add end
+    //如果离线，需要修改文件中的离线结构
+    if(receiveData->suc & ERR_OK_OR_CANOPEN)
+    {
+        if(receiveData->userData.iCanClient)
+        {
+            self.applyId = receiveData->userData.applyId;
+            [self setOutLineStructData:self.fileName isFirstSee:FALSE isSetFirst:FALSE isSee:FALSE isVerifyOk:FALSE isTimeIsChanged:FALSE isApplySucess:TRUE data:NULL];
+            //修改文件离线结构中的applyid
+            
+        }
+    }
+}
+#pragma mark 重新申请手动激活
+- (NSString *)reapplyFileByFidAndOrderId:(NSInteger )fileId
+                                 orderId:(NSInteger )thOrderId
+                                 applyId:(NSInteger)applyId
+                                      qq:(NSString *)theQQ
+                                   email:(NSString *)theEmail
+                                   phone:(NSString *)thePhone
+                                  field1:(NSString *)theField1
+                                  field2:(NSString *)theField2
 {
     NSString *bReturn = @"0";
     if (![ToolString isConnectionAvailable]) {
@@ -3427,8 +3329,7 @@ _ALL_END:
     }
     return bReturn;
 }
-
-
+//封装请求包
 -(void)MakeReapplyFileByFidAndOrderIdPackage:(SENDDATA_NEW_NEW *)data
 {
     memset(data, 0, sizeof(SENDDATA_NEW_NEW));
@@ -3459,7 +3360,7 @@ _ALL_END:
     
     [coder codeBuffer:(Byte *)&((*data).userData) length:sizeof(STRUCTDATA_NEW_NEW)];
 }
-
+//解析响应包
 - (void)receiveReapplyFileInfoByIdPackage:(RECEIVEDATA_NEW_NEW *)receiveData
 {
     if (strlen(receiveData->userData.QQ) == 0) {
@@ -3504,9 +3405,9 @@ _ALL_END:
     
 }
 
-#pragma mark 获取验证码
-// 获取手机验证码
--(BOOL)getVerificationCodeByPhone:(NSString *)phone userPhone:(BOOL)userPhone{
+#pragma mark - 获取手机验证码
+-(BOOL)getVerificationCodeByPhone:(NSString *)phone userPhone:(BOOL)userPhone
+{
     BOOL bReturn = NO;
     self.bindingPhone = phone;
     self.Random = arc4random() % ARC4RANDOM_MAX;
@@ -3528,9 +3429,7 @@ _ALL_END:
     bReturn = YES;
     return bReturn;
 }
-
-
-
+//封装获取手机验证码的请求包
 -(void)MakeVerificationCodeByFidPackage:(SENDDATA_NEW_NEW *)data
 {
     memset(data, 0, sizeof(SENDDATA_NEW_NEW));
@@ -3544,7 +3443,7 @@ _ALL_END:
 
     [coder codeBuffer:(Byte *)&((*data).userData) length:sizeof(STRUCTDATA_NEW_NEW)];
 }
-
+//解析手机验证码的响应数据包
 - (void)receiveVerificationCodeInfoByIdPackage:(RECEIVEDATA_NEW_NEW *)receiveData
 {
     if (strlen(receiveData->userData.phone) == 0) {
@@ -3565,31 +3464,26 @@ _ALL_END:
     NSLog(@"verificationCodeID = %@,len = %lu", _verificationCodeID, (unsigned long)[_verificationCodeID length]);
 }
 
-//查看激活用完记录
-- (BOOL)seeAppliedAndOverListByFid:(NSInteger )fileId;
+#pragma mark - 当文件阅读结束时告知服务器
+- (void)sendSeeOverTime:(NSInteger )fileId
+             openInfoID:(NSInteger) theOpenInfoID
 {
-    BOOL bReturn = NO;
     self.fileID = fileId;
+    self.openinfoid = theOpenInfoID;
+    self.pycsocket = [[PycSocket alloc] init];
     self.pycsocket.delegate = self;
-    self.Random = arc4random() % ARC4RANDOM_MAX;
-    self.pycsocket.connectType = TYPE_SEE_ACTIVE_OVERLIST;
-    fileOperateType = TYPE_SEE_ACTIVE_OVERLIST;
+    self.pycsocket.connectType = TYPE_SEE_FILE_OVER;
+    fileOperateType = TYPE_SEE_FILE_OVER;
     if (![self.pycsocket connectToServer:IP_ADDRESS_FILE port:PORT_FILE]) {
-        NSLog(@"connect file server err");
-        return bReturn;
+        NSLog(@"connect err");
+        return ;
     }
-    
-//    NSLog(@"will send open");
-    
-    
-    bReturn = YES;
-    return bReturn;
-
+    return;
 }
+
+//封装文件阅读结束请求包
 -(void)MakeSeeFileOVerPackage:(SENDDATA_NEW_NEW *)data
 {
-    
-    
     memset(data, 0, sizeof(SENDDATA_NEW_NEW));
     
     (*data).type = TYPE_SEE_FILE_OVER;
@@ -3607,14 +3501,92 @@ _ALL_END:
     [coder codeBuffer:(Byte *)&((*data).userData) length:sizeof(STRUCTDATA_NEW_NEW)];
     
 }
+
+
+#pragma mark - 绑定手机号
+-(BOOL)bindPhoneByVerificationCode:(NSString *)verificationCode logname:(NSString *)logname messageId:(NSString *)messageId
+{
+    BOOL bReturn = false;
+    
+    self.Random = arc4random() % ARC4RANDOM_MAX;
+    self.verificationCodeID = messageId;
+    self.fileSeeLogname = logname;
+    self.phone = verificationCode;
+    fileOperateType = NewPycUerRemoteOperateTypeBindPhone;
+    self.pycsocket.connectType = NewPycUerRemoteOperateTypeBindPhone;
+    if (![self.pycsocket connectToServer:IP_ADDRESS_FILE port:PORT_FILE]) {
+        return bReturn;
+    }
+    bReturn = YES;
+    return bReturn;
+}
+//封装绑定手机号请求包
+-(void)makeSendPackageForBindPhone:(SENDDATA_NEW_NEW *)pSendData
+{
+    MyLog(@"getReceivePackageForGetUserInfo");
+    pSendData->userData.random = self.Random;
+    
+    pSendData->type = NewPycUerRemoteOperateTypeBindPhone;
+    pSendData->userData.version = VERSION;
+    memcpy(&(pSendData->userData.phone), [self.phone UTF8String], MIN([self.phone lengthOfBytesUsingEncoding:NSUTF8StringEncoding],PHONE_LEN));
+    //    memcpy(&(pSendData->userData.versionStr), [self.versionStr UTF8String], MIN([self.versionStr lengthOfBytesUsingEncoding:NSUTF8StringEncoding],VERSION_LEN));
+    memcpy(&(pSendData->userData.messageId), [self.verificationCodeID UTF8String], MIN([self.verificationCodeID lengthOfBytesUsingEncoding:NSUTF8StringEncoding],MESSAGE_ID_LEN));
+    memcpy(&(pSendData->userData.logName), [self.fileSeeLogname UTF8String], MIN([self.fileSeeLogname lengthOfBytesUsingEncoding:NSUTF8StringEncoding],USERNAME_LEN));
+    PycCode *coder = [[PycCode alloc] init];
+    [coder codeBuffer:(Byte *)&((*pSendData).userData) length:sizeof(STRUCTDATA_NEW_NEW)];
+}
+
+#pragma mark - 未知功能快
+-(void)codeUrl:(NSString *)sUrl dUrl:(void (^)(NSString *))dUrl
+{
+    NSData* sUrlbytes = [sUrl dataUsingEncoding:NSUTF8StringEncoding];
+    PycCodeUrl *coderurl = [[PycCodeUrl alloc] init];
+    Byte * myByte = (Byte *)[sUrlbytes bytes];
+    Byte dUrlbyte[1000];
+    int retLen = 0;
+    [coderurl codeUrl:myByte length:(int)[sUrl length ] to:dUrlbyte retlen:(&retLen)];
+    NSData *adata = [[NSData alloc] initWithBytes:dUrlbyte length:2*retLen ];
+    NSString *url =[[NSString alloc]initWithData:adata encoding:NSUTF8StringEncoding];
+    dUrl(url);
+
+}
+
+-(void)codeUrlnew:(NSString *)sUrl dUrl:(void (^)(NSString *))dUrl
+{
+    NSData* sUrlbytes = [sUrl dataUsingEncoding:NSUTF8StringEncoding];
+    PycCodeUrl *coderurl = [[PycCodeUrl alloc] init];
+    Byte * myByte = (Byte *)[sUrlbytes bytes];
+    Byte dUrlbyte[1000];
+    int retLen = 0;
+    [coderurl codeUrlnew:myByte length:(int)[sUrl length ] to:dUrlbyte retlen:(&retLen)];
+    NSData *adata = [[NSData alloc] initWithBytes:dUrlbyte length:2*retLen ];
+    NSString *url =[[NSString alloc]initWithData:adata encoding:NSUTF8StringEncoding];
+    dUrl(url);
+    
+}
+
+#pragma mark 查看激活用完记录
+- (BOOL)seeAppliedAndOverListByFid:(NSInteger )fileId;
+{
+    BOOL bReturn = NO;
+    self.fileID = fileId;
+    self.pycsocket.delegate = self;
+    self.Random = arc4random() % ARC4RANDOM_MAX;
+    self.pycsocket.connectType = TYPE_SEE_ACTIVE_OVERLIST;
+    fileOperateType = TYPE_SEE_ACTIVE_OVERLIST;
+    if (![self.pycsocket connectToServer:IP_ADDRESS_FILE port:PORT_FILE]) {
+        NSLog(@"connect file server err");
+        return bReturn;
+    }
+    bReturn = YES;
+    return bReturn;
+}
+
+
 -(void)MakeseeAppliedAndOverListByFidPackage:(SENDDATA_NEW_NEW *)data
 {
-    
-    
     memset(data, 0, sizeof(SENDDATA_NEW_NEW));
-    
     (*data).type = TYPE_APPLY;
-    
     PycCode *coder = [[PycCode alloc] init];
     
     data->userData.random = self.Random;
@@ -3627,14 +3599,11 @@ _ALL_END:
     data->userData.ooid = (int)self.orderID;
     data->userData.appType = CURRENTAPPTYPE;
     
-    
     [coder codeBuffer:(Byte *)&((*data).userData) length:sizeof(STRUCTDATA_NEW_NEW)];
     
 }
-
 -(void)receiveseeAppliedAndOverListByFidPackage:(RECEIVEDATA_NEW_NEW *)receiveData
 {
-
     int itemCount = 0;
     int iLen = 0;
     Byte *receiveDataIinfo = (Byte *)&(receiveData->userData);
@@ -3672,7 +3641,7 @@ _ALL_END:
     if (self.fileRefreshInfo == nil) {
         self.fileRefreshInfo = [[NSMutableArray alloc] initWithCapacity:5];
     }
-
+    
     for (NSString *string1 in arrayInfo) {
         
         SeeApplyEndListDataModel *listInfo =  [[SeeApplyEndListDataModel alloc] init];
@@ -3718,33 +3687,7 @@ _ALL_END:
     
 }
 
--(void)codeUrl:(NSString *)sUrl dUrl:(void (^)(NSString *))dUrl
-{
-    NSData* sUrlbytes = [sUrl dataUsingEncoding:NSUTF8StringEncoding];
-    PycCodeUrl *coderurl = [[PycCodeUrl alloc] init];
-    Byte * myByte = (Byte *)[sUrlbytes bytes];
-    Byte dUrlbyte[1000];
-    int retLen = 0;
-    [coderurl codeUrl:myByte length:(int)[sUrl length ] to:dUrlbyte retlen:(&retLen)];
-    NSData *adata = [[NSData alloc] initWithBytes:dUrlbyte length:2*retLen ];
-    NSString *url =[[NSString alloc]initWithData:adata encoding:NSUTF8StringEncoding];
-    dUrl(url);
 
-}
-
--(void)codeUrlnew:(NSString *)sUrl dUrl:(void (^)(NSString *))dUrl
-{
-    NSData* sUrlbytes = [sUrl dataUsingEncoding:NSUTF8StringEncoding];
-    PycCodeUrl *coderurl = [[PycCodeUrl alloc] init];
-    Byte * myByte = (Byte *)[sUrlbytes bytes];
-    Byte dUrlbyte[1000];
-    int retLen = 0;
-    [coderurl codeUrlnew:myByte length:(int)[sUrl length ] to:dUrlbyte retlen:(&retLen)];
-    NSData *adata = [[NSData alloc] initWithBytes:dUrlbyte length:2*retLen ];
-    NSString *url =[[NSString alloc]initWithData:adata encoding:NSUTF8StringEncoding];
-    dUrl(url);
-    
-}
 #pragma mark - 解读离线文件，将文件属性值传入pycFile属性中
 -(BOOL)setSeeInfoFromOutLineStru:(NSString*)filename
 {
@@ -3950,7 +3893,9 @@ _ALL_END:
                 self.firstSeeTime = @"";
             }
             
-            self.fileName = [self getNotExistFileNameFromPycFile:self.filePycNameFromServer withExtention:[ self.filePycNameFromServer  pathExtension] forUser:@"not use"];
+            self.fileName = [self getNotExistFileNameFromPycFile:self.filePycNameFromServer
+                                                   withExtention:[ self.filePycNameFromServer  pathExtension]
+                                                         forUser:@"not use"];
             if (self.fileName != nil) {
                 bReturn = TRUE;
             }
@@ -4259,13 +4204,6 @@ _ALL_END:
 -(void)setValueOfSelfByNewFile:(OutFile *)newFile
 {
     //离线查看文件需要更新的数据
-    
-//   fileName=?,fileOwner=?,fileOwnerNick = ?,startTime=?, endTime =?, limitTime=?, note=?,
-//    forbid=?,limitNum=?,fileDayRemain = ?,fileYearRemain = ?,isEye=?
-    
-
-
-    
     self.filePycNameFromServer = [newFile.filename stringByAppendingString:@".pbb"];
     self.fileOwner = newFile.fileowner;
     self.nickname = newFile.fileOwnerNick;
@@ -4556,41 +4494,6 @@ _ALL_END:
     [handle closeFile];
     return iReturn;
     
-}
-
-
-#pragma mark  绑定手机号
--(void)makeSendPackageForBindPhone:(SENDDATA_NEW_NEW *)pSendData
-{
-    MyLog(@"getReceivePackageForGetUserInfo");
-    pSendData->userData.random = self.Random;
-    
-    pSendData->type = NewPycUerRemoteOperateTypeBindPhone;
-    pSendData->userData.version = VERSION;
-    memcpy(&(pSendData->userData.phone), [self.phone UTF8String], MIN([self.phone lengthOfBytesUsingEncoding:NSUTF8StringEncoding],PHONE_LEN));
-//    memcpy(&(pSendData->userData.versionStr), [self.versionStr UTF8String], MIN([self.versionStr lengthOfBytesUsingEncoding:NSUTF8StringEncoding],VERSION_LEN));
-    memcpy(&(pSendData->userData.messageId), [self.verificationCodeID UTF8String], MIN([self.verificationCodeID lengthOfBytesUsingEncoding:NSUTF8StringEncoding],MESSAGE_ID_LEN));
-    memcpy(&(pSendData->userData.logName), [self.fileSeeLogname UTF8String], MIN([self.fileSeeLogname lengthOfBytesUsingEncoding:NSUTF8StringEncoding],USERNAME_LEN));
-    PycCode *coder = [[PycCode alloc] init];
-    [coder codeBuffer:(Byte *)&((*pSendData).userData) length:sizeof(STRUCTDATA_NEW_NEW)];
-}
-
-
--(BOOL)bindPhoneByVerificationCode:(NSString *)verificationCode logname:(NSString *)logname messageId:(NSString *)messageId
-{
-    BOOL bReturn = false;
-    
-    self.Random = arc4random() % ARC4RANDOM_MAX;
-    self.verificationCodeID = messageId;
-    self.fileSeeLogname = logname;
-    self.phone = verificationCode;
-    fileOperateType = NewPycUerRemoteOperateTypeBindPhone;
-    self.pycsocket.connectType = NewPycUerRemoteOperateTypeBindPhone;
-    if (![self.pycsocket connectToServer:IP_ADDRESS_FILE port:PORT_FILE]) {
-        return bReturn;
-    }
-    bReturn = YES;
-    return bReturn;
 }
 
 

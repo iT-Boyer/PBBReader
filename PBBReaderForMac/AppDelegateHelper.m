@@ -222,7 +222,8 @@ singleton_implementation(AppDelegateHelper);
         [self setAlertView:@"该文件不支持离线阅读！"];
         return;
     }
-    if (![self fileIsTypeOfVideo:[seePycFile.fileExtentionWithOutDot lowercaseString]])
+    NSString *fileExt = [seePycFile.fileExtentionWithOutDot lowercaseString];
+    if (![self fileIsTypeOfVideo:fileExt] && ![fileExt isEqualToString:@"pdf"])
     {
         [self setAlertView:[NSString stringWithFormat:@"不支持该(%@)格式文件!",seePycFile.fileExtentionWithOutDot]];
         return;
