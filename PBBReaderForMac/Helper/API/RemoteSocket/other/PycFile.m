@@ -2466,10 +2466,10 @@ _ALL_END:
     {
         return NO;
     }
-    //如果是pdf，释放明文到本地，使用PDFKit查看
+    //如果是pdf，不释放明文到本地，使用PDFKit查看
     if([pathExt isEqualToString:@"pdf"])
     {
-        //        return NO;
+        return NO;
     }
     NSString *toDestination = [self getNotExistFileNameFromPycFile:self.filePycNameFromServer
                                                      withExtention:[self.filePycNameFromServer pathExtension]
