@@ -21,6 +21,7 @@ class CustomTableCellView: NSTableCellView {
     var cellID:Int = 0
     //选中的背景图片
     @IBOutlet weak var ibCellBackgroundImageView: NSImageView!
+    @IBOutlet weak var ibFileTypeIamge: NSImageView!
     
     
     //当被选中时，添加监听通知，同时发出取消通知

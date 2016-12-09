@@ -258,8 +258,12 @@ CA
                                                                                             <rect key="frame" x="-3" y="-2" width="226" height="33"/>
                                                                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="left" imageScaling="axesIndependently" imageFrameStyle="photo" image="CellBackground" id="e7v-JN-SQp"/>
                                                                                         </imageView>
+                                                                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B5v-Qq-qJ0">
+                                                                                            <rect key="frame" x="15" y="5" width="17" height="20"/>
+                                                                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="pdfImage" id="Yvf-IP-acr"/>
+                                                                                        </imageView>
                                                                                         <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="876-Em-s9i">
-                                                                                            <rect key="frame" x="18" y="5" width="201" height="21"/>
+                                                                                            <rect key="frame" x="35" y="5" width="184" height="21"/>
                                                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" focusRingType="none" alignment="left" title="Table View Cell" allowsEditingTextAttributes="YES" id="fAh-pD-7C9">
                                                                                                 <font key="font" size="13" name="MicrosoftYaHei"/>
                                                                                                 <color key="textColor" red="0.2274509804" green="0.2274509804" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
@@ -267,7 +271,7 @@ CA
                                                                                             </textFieldCell>
                                                                                         </textField>
                                                                                         <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="ywj-YQ-YlW" userLabel="上">
-                                                                                            <rect key="frame" x="8" y="27" width="204" height="5"/>
+                                                                                            <rect key="frame" x="15" y="27" width="197" height="5"/>
                                                                                         </box>
                                                                                     </subviews>
                                                                                     <constraints>
@@ -275,15 +279,18 @@ CA
                                                                                         <constraint firstItem="ywj-YQ-YlW" firstAttribute="top" secondItem="Q1U-uF-fvd" secondAttribute="top" id="JnK-Ek-onu"/>
                                                                                         <constraint firstItem="kBb-Cm-1ny" firstAttribute="leading" secondItem="Q1U-uF-fvd" secondAttribute="leading" id="KtB-D1-IQQ"/>
                                                                                         <constraint firstItem="kBb-Cm-1ny" firstAttribute="top" secondItem="Q1U-uF-fvd" secondAttribute="top" constant="2" id="LH0-jJ-7wr"/>
-                                                                                        <constraint firstItem="ywj-YQ-YlW" firstAttribute="leading" secondItem="Q1U-uF-fvd" secondAttribute="leading" constant="8" id="MnF-YM-frb"/>
-                                                                                        <constraint firstItem="876-Em-s9i" firstAttribute="leading" secondItem="Q1U-uF-fvd" secondAttribute="leading" constant="20" id="SUa-ox-Gmi"/>
+                                                                                        <constraint firstItem="ywj-YQ-YlW" firstAttribute="leading" secondItem="Q1U-uF-fvd" secondAttribute="leading" constant="15" id="MnF-YM-frb"/>
+                                                                                        <constraint firstItem="876-Em-s9i" firstAttribute="leading" secondItem="B5v-Qq-qJ0" secondAttribute="trailing" constant="5" id="Uzo-b5-VcD"/>
+                                                                                        <constraint firstItem="B5v-Qq-qJ0" firstAttribute="centerY" secondItem="Q1U-uF-fvd" secondAttribute="centerY" id="Z7C-1G-32x"/>
                                                                                         <constraint firstAttribute="trailing" secondItem="ywj-YQ-YlW" secondAttribute="trailing" constant="8" id="fyf-WT-P9I"/>
                                                                                         <constraint firstAttribute="bottom" secondItem="kBb-Cm-1ny" secondAttribute="bottom" constant="1" id="lnZ-4P-KDk"/>
                                                                                         <constraint firstAttribute="trailing" secondItem="kBb-Cm-1ny" secondAttribute="trailing" id="q5B-5W-Cl1"/>
                                                                                         <constraint firstAttribute="trailing" secondItem="876-Em-s9i" secondAttribute="trailing" constant="3" id="s1N-Pa-n9c"/>
+                                                                                        <constraint firstItem="B5v-Qq-qJ0" firstAttribute="leading" secondItem="Q1U-uF-fvd" secondAttribute="leading" constant="15" id="tmc-ab-Ex1"/>
                                                                                     </constraints>
                                                                                     <connections>
                                                                                         <outlet property="ibCellBackgroundImageView" destination="kBb-Cm-1ny" id="NjS-Db-D4C"/>
+                                                                                        <outlet property="ibFileTypeIamge" destination="B5v-Qq-qJ0" id="nYY-zy-YKp"/>
                                                                                         <outlet property="textField" destination="876-Em-s9i" id="LtB-9C-fWm"/>
                                                                                     </connections>
                                                                                 </tableCellView>
@@ -2270,6 +2277,7 @@ CA
         <image name="leftLine" width="6" height="28"/>
         <image name="liulan" width="38" height="28"/>
         <image name="liulan3" width="216" height="31"/>
+        <image name="pdfImage" width="17" height="20"/>
         <image name="playerbackgroundImage" width="112" height="50"/>
         <image name="refresh" width="16" height="20"/>
         <image name="shuru" width="479" height="126"/>

@@ -1,20 +1,24 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "2C84DAD92C501E351EBA0C3FFB29E3AEF2079C6F",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "2C84DAD92C501E351EBA0C3FFB29E3AEF2079C6F+++065051D",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "08FEB38241A6005817FCFEE6F8E48E250BAAD0E3" : 0,
-    "993772488E2C7091A87ADF1800F1BCE4715B2B34" : 0,
-    "2C84DAD92C501E351EBA0C3FFB29E3AEF2079C6F" : 9223372036854775807,
-    "299D7FFF1C0D99DAE706BBD8E703A6D0E5840D2E" : 0
+    "2C84DAD92C501E351EBA0C3FFB29E3AEF2079C6F+++065051D" : 9223372036854775807,
+    "993772488E2C7091A87ADF1800F1BCE4715B2B34+++8EF623E" : 0,
+    "9FA7BFD300A2F56ADB67C8FE41D38B236AF5FCA2+++6B738DA" : 9223372036854775807,
+    "08FEB38241A6005817FCFEE6F8E48E250BAAD0E3+++063D578" : 0,
+    "993772488E2C7091A87ADF1800F1BCE4715B2B34+++C1AB0A0" : 0,
+    "299D7FFF1C0D99DAE706BBD8E703A6D0E5840D2E+++BCDA3C9" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "F6688E2A-9C8E-4841-BEB3-7C8686BB5F28",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "08FEB38241A6005817FCFEE6F8E48E250BAAD0E3" : "PBBReaderForMac\/",
-    "993772488E2C7091A87ADF1800F1BCE4715B2B34" : "PBBReaderForOSX\/",
-    "2C84DAD92C501E351EBA0C3FFB29E3AEF2079C6F" : "PBBReader\/",
-    "299D7FFF1C0D99DAE706BBD8E703A6D0E5840D2E" : "..\/git\/SISpeciesNotes"
+    "2C84DAD92C501E351EBA0C3FFB29E3AEF2079C6F+++065051D" : "PBBReader\/",
+    "993772488E2C7091A87ADF1800F1BCE4715B2B34+++8EF623E" : "PBBReaderForOSX\/",
+    "9FA7BFD300A2F56ADB67C8FE41D38B236AF5FCA2+++6B738DA" : "..\/mupdf",
+    "08FEB38241A6005817FCFEE6F8E48E250BAAD0E3+++063D578" : "PBBReaderForMac\/",
+    "993772488E2C7091A87ADF1800F1BCE4715B2B34+++C1AB0A0" : "PBBReaderForOSX\/",
+    "299D7FFF1C0D99DAE706BBD8E703A6D0E5840D2E+++BCDA3C9" : "..\/git\/SISpeciesNotes"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "PBBReaderForMac",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -23,22 +27,32 @@
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/git.oschina.net\/huosan\/PBBReader.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "08FEB38241A6005817FCFEE6F8E48E250BAAD0E3"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "08FEB38241A6005817FCFEE6F8E48E250BAAD0E3+++063D578"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/git.oschina.net\/huosan\/SISpeciesNotes.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "299D7FFF1C0D99DAE706BBD8E703A6D0E5840D2E"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "299D7FFF1C0D99DAE706BBD8E703A6D0E5840D2E+++BCDA3C9"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/git.oschina.net\/huosan\/PBBReader.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2C84DAD92C501E351EBA0C3FFB29E3AEF2079C6F"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2C84DAD92C501E351EBA0C3FFB29E3AEF2079C6F+++065051D"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/git.oschina.net\/huosan\/PBBReader.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "993772488E2C7091A87ADF1800F1BCE4715B2B34"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "993772488E2C7091A87ADF1800F1BCE4715B2B34+++8EF623E"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/git.oschina.net\/huosan\/PBBReader.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "993772488E2C7091A87ADF1800F1BCE4715B2B34+++C1AB0A0"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/git.oschina.net\/huosan\/mupdf.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9FA7BFD300A2F56ADB67C8FE41D38B236AF5FCA2+++6B738DA"
     }
   ]
 }

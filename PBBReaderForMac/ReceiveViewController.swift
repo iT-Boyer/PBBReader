@@ -842,19 +842,28 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
     }
     
     //初始化单元格状态信息
-    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        //
+    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView?
+    {
         // Get a new ViewCell
         let cellView = tableView.make(withIdentifier: (tableColumn?.identifier)!, owner: self) as! CustomTableCellView
         
         // Since this is a single-column table view, this would not be necessary.
         // But it's a good practice to do it in order by remember it when a table is multicolumn.
-        if tableColumn?.identifier == "ReceiveColumn" {
-            
+        if tableColumn?.identifier == "ReceiveColumn"
+        {
             let ReceiveColumn = self.receiveArray[row] as! OutFile
             cellView.cellID = ReceiveColumn.fileid
             cellView.textField?.stringValue = ReceiveColumn.filename
-            
+            //视频/PDF.png
+            if ReceiveColumn.filetype == "pdf"
+            {
+                  cellView.ibFileTypeIamge.image = NSImage.init(named: "pdfImage")
+            }
+            else
+            {
+                  cellView.ibFileTypeIamge.image = NSImage.init(named: "videoImage")
+            }
+//
             //设置单元格字体样式
             if FileManager.default.fileExists(atPath: ReceiveColumn.fileurl)
             {
