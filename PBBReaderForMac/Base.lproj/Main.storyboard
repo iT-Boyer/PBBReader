@@ -258,12 +258,12 @@ CA
                                                                                             <rect key="frame" x="-3" y="-2" width="226" height="33"/>
                                                                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="left" imageScaling="axesIndependently" imageFrameStyle="photo" image="CellBackground" id="e7v-JN-SQp"/>
                                                                                         </imageView>
-                                                                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B5v-Qq-qJ0">
-                                                                                            <rect key="frame" x="15" y="5" width="17" height="20"/>
+                                                                                        <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B5v-Qq-qJ0">
+                                                                                            <rect key="frame" x="-8" y="5" width="17" height="20"/>
                                                                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="pdfImage" id="Yvf-IP-acr"/>
                                                                                         </imageView>
                                                                                         <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="876-Em-s9i">
-                                                                                            <rect key="frame" x="35" y="5" width="184" height="21"/>
+                                                                                            <rect key="frame" x="12" y="5" width="207" height="21"/>
                                                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" focusRingType="none" alignment="left" title="Table View Cell" allowsEditingTextAttributes="YES" id="fAh-pD-7C9">
                                                                                                 <font key="font" size="13" name="MicrosoftYaHei"/>
                                                                                                 <color key="textColor" red="0.2274509804" green="0.2274509804" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
@@ -286,7 +286,7 @@ CA
                                                                                         <constraint firstAttribute="bottom" secondItem="kBb-Cm-1ny" secondAttribute="bottom" constant="1" id="lnZ-4P-KDk"/>
                                                                                         <constraint firstAttribute="trailing" secondItem="kBb-Cm-1ny" secondAttribute="trailing" id="q5B-5W-Cl1"/>
                                                                                         <constraint firstAttribute="trailing" secondItem="876-Em-s9i" secondAttribute="trailing" constant="3" id="s1N-Pa-n9c"/>
-                                                                                        <constraint firstItem="B5v-Qq-qJ0" firstAttribute="leading" secondItem="Q1U-uF-fvd" secondAttribute="leading" constant="15" id="tmc-ab-Ex1"/>
+                                                                                        <constraint firstItem="B5v-Qq-qJ0" firstAttribute="leading" secondItem="Q1U-uF-fvd" secondAttribute="leading" constant="-8" id="tmc-ab-Ex1"/>
                                                                                     </constraints>
                                                                                     <connections>
                                                                                         <outlet property="ibCellBackgroundImageView" destination="kBb-Cm-1ny" id="NjS-Db-D4C"/>
