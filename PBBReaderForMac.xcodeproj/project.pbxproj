@@ -218,8 +218,204 @@
 		14A505951DAA2656008BF666 /* Toasty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A5058E1DAA2656008BF666 /* Toasty.framework */; };
 		14A505961DAA2656008BF666 /* Toasty.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14A5058E1DAA2656008BF666 /* Toasty.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		14A5059C1DAA269C008BF666 /* Toasty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A5059B1DAA269C008BF666 /* Toasty.swift */; };
-		14AB1A391DFABC53005A6A90 /* MuPDFFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14C917D51DFA85E40025F6FB /* MuPDFFramework.framework */; };
-		14AB1A3A1DFABC53005A6A90 /* MuPDFFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14C917D51DFA85E40025F6FB /* MuPDFFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		14B64D351DFFED81008C828F /* MuPDFFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14C917D51DFA85E40025F6FB /* MuPDFFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		14B64D361DFFED81008C828F /* Toasty.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14A5058E1DAA2656008BF666 /* Toasty.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		14B64D371DFFED81008C828F /* PBBLogSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 148B6D8F1DE69166005B5DFB /* PBBLogSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		14B64D3C1DFFED81008C828F /* PycReceiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A68681CFEC9AD00BC66A1 /* PycReceiveModel.swift */; };
+		14B64D3D1DFFED81008C828F /* SecretDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FCC1CFD844E001BCE84 /* SecretDao.m */; };
+		14B64D3E1DFFED81008C828F /* BarrageWalkImageSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B121D4AF55A00922A62 /* BarrageWalkImageSprite.m */; };
+		14B64D3F1DFFED81008C828F /* NSImage+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EE618D1CF816E50051FD1A /* NSImage+Extras.m */; };
+		14B64D401DFFED81008C828F /* userDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FD21CFD844E001BCE84 /* userDao.m */; };
+		14B64D411DFFED81008C828F /* NSView+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B1E1D4AF55A00922A62 /* NSView+UIView.m */; };
+		14B64D421DFFED81008C828F /* BaseDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FD71CFD844E001BCE84 /* BaseDao.m */; };
+		14B64D431DFFED81008C828F /* DateTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FC31CFD8396001BCE84 /* DateTool.m */; };
+		14B64D441DFFED81008C828F /* PycFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F861CFD7823001BCE84 /* PycFolder.m */; };
+		14B64D451DFFED81008C828F /* SeriesDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FD01CFD844E001BCE84 /* SeriesDao.m */; };
+		14B64D461DFFED81008C828F /* BarrageDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815AFC1D4AF55A00922A62 /* BarrageDispatcher.m */; };
+		14B64D471DFFED81008C828F /* ScaryBugDoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1437DD9D1CF2AE72001BD2D2 /* ScaryBugDoc.swift */; };
+		14B64D481DFFED81008C828F /* MPVSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 149D53A51DE4270E00FC4F63 /* MPVSettings.m */; };
+		14B64D491DFFED81008C828F /* BarrageFloatTextSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B0B1D4AF55A00922A62 /* BarrageFloatTextSprite.m */; };
+		14B64D4A1DFFED81008C828F /* CustomWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1422A89D1D757FD40057E9D4 /* CustomWindowController.swift */; };
+		14B64D4B1DFFED81008C828F /* Viewcccc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1465589F1DE6A89E00BDB021 /* Viewcccc.swift */; };
+		14B64D4C1DFFED81008C828F /* SendFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FDF1CFD844E001BCE84 /* SendFileManager.m */; };
+		14B64D4D1DFFED81008C828F /* CustomBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BF31801D780AB1000EFF66 /* CustomBox.swift */; };
+		14B64D4E1DFFED81008C828F /* VerificationCodeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FF01CFD844E001BCE84 /* VerificationCodeModel.m */; };
+		14B64D4F1DFFED81008C828F /* DB.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FD91CFD844E001BCE84 /* DB.m */; };
+		14B64D501DFFED81008C828F /* BarrageSpriteFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B001D4AF55A00922A62 /* BarrageSpriteFactory.m */; };
+		14B64D511DFFED81008C828F /* ArticleDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FC81CFD844E001BCE84 /* ArticleDao.m */; };
+		14B64D521DFFED81008C828F /* LookMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 14430C2A1D012D1D00A5394D /* LookMedia.m */; };
+		14B64D531DFFED81008C828F /* PycFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 143A68601CFEB64300BC66A1 /* PycFile.m */; };
+		14B64D541DFFED81008C828F /* ReceiveFileDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FCA1CFD844E001BCE84 /* ReceiveFileDao.m */; };
+		14B64D551DFFED81008C828F /* LiveChat.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B4C1D4B0D0600922A62 /* LiveChat.m */; };
+		14B64D561DFFED81008C828F /* BarrageFloatSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B091D4AF55A00922A62 /* BarrageFloatSprite.m */; };
+		14B64D571DFFED81008C828F /* ScaryBugData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1437DD9B1CF2AD92001BD2D2 /* ScaryBugData.swift */; };
+		14B64D581DFFED81008C828F /* BarrageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B041D4AF55A00922A62 /* BarrageLoader.m */; };
+		14B64D591DFFED81008C828F /* OutFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FE81CFD844E001BCE84 /* OutFile.m */; };
+		14B64D5A1DFFED81008C828F /* utility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F9F1CFD7823001BCE84 /* utility.cpp */; };
+		14B64D5B1DFFED81008C828F /* BarrageDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815AFA1D4AF55A00922A62 /* BarrageDescriptor.m */; };
+		14B64D5C1DFFED81008C828F /* SendFileDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FCE1CFD844E001BCE84 /* SendFileDao.m */; };
+		14B64D5D1DFFED81008C828F /* Socket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14815B4D1D4B0D0600922A62 /* Socket.cpp */; };
+		14B64D5E1DFFED81008C828F /* BarrageWalkSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B141D4AF55A00922A62 /* BarrageWalkSprite.m */; };
+		14B64D5F1DFFED81008C828F /* SecretModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FEA1CFD844E001BCE84 /* SecretModel.m */; };
+		14B64D601DFFED81008C828F /* SMS4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F7E1CFD7823001BCE84 /* SMS4.cpp */; };
+		14B64D611DFFED81008C828F /* VerificationCodeDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FD41CFD844E001BCE84 /* VerificationCodeDao.m */; };
+		14B64D621DFFED81008C828F /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B260091CFD8AA3001BCE84 /* OpenUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		14B64D631DFFED81008C828F /* BindingPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B0CF731D34C715004D22B5 /* BindingPhoneViewController.swift */; };
+		14B64D641DFFED81008C828F /* HttpDes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F9B1CFD7823001BCE84 /* HttpDes.cpp */; };
+		14B64D651DFFED81008C828F /* NSString+More.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FBF1CFD834C001BCE84 /* NSString+More.m */; };
+		14B64D661DFFED81008C828F /* readMe.md in Sources */ = {isa = PBXBuildFile; fileRef = 142EC3AA1D2D0B1A00B88F96 /* readMe.md */; };
+		14B64D671DFFED81008C828F /* NewPycUserRemote.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F951CFD7823001BCE84 /* NewPycUserRemote.m */; };
+		14B64D681DFFED81008C828F /* BilibiliSocketClient.mm in Sources */ = {isa = PBXBuildFile; fileRef = 14815B4A1D4B0D0600922A62 /* BilibiliSocketClient.mm */; };
+		14B64D691DFFED81008C828F /* NSTextField+Attribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 14105B8C1D339912004CB1C2 /* NSTextField+Attribute.m */; };
+		14B64D6A1DFFED81008C828F /* MyProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FE61CFD844E001BCE84 /* MyProduct.m */; };
+		14B64D6B1DFFED81008C828F /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B2600C1CFD8AED001BCE84 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		14B64D6C1DFFED81008C828F /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 149D53A71DE4270E00FC4F63 /* Settings.m */; };
+		14B64D6D1DFFED81008C828F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1437DD6B1CF2A75F001BD2D2 /* AppDelegate.swift */; };
+		14B64D6E1DFFED81008C828F /* RefreshDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F8B1CFD7823001BCE84 /* RefreshDataModel.m */; };
+		14B64D6F1DFFED81008C828F /* BarrageSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B0D1D4AF55A00922A62 /* BarrageSprite.m */; };
+		14B64D701DFFED81008C828F /* NSValue+iOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B1C1D4AF55A00922A62 /* NSValue+iOS.m */; };
+		14B64D711DFFED81008C828F /* SandboxFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B260061CFD86A8001BCE84 /* SandboxFile.m */; };
+		14B64D721DFFED81008C828F /* PycSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F921CFD7823001BCE84 /* PycSocket.m */; };
+		14B64D731DFFED81008C828F /* Label+shadeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14815AE61D49D7E100922A62 /* Label+shadeAnimation.swift */; };
+		14B64D741DFFED81008C828F /* PycUserRemote.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F971CFD7823001BCE84 /* PycUserRemote.m */; };
+		14B64D751DFFED81008C828F /* readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 1437DD9F1CF2AF7C001BD2D2 /* readme.md */; };
+		14B64D761DFFED81008C828F /* DataFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FE41CFD844E001BCE84 /* DataFactory.m */; };
+		14B64D771DFFED81008C828F /* PycPrivateFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F881CFD7823001BCE84 /* PycPrivateFile.m */; };
+		14B64D781DFFED81008C828F /* BarrageFloatImageSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B071D4AF55A00922A62 /* BarrageFloatImageSprite.m */; };
+		14B64D791DFFED81008C828F /* AppDelegateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 148AB4741CFFD24E00CAF9BA /* AppDelegateHelper.m */; };
+		14B64D7A1DFFED81008C828F /* PycCode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F7B1CFD7823001BCE84 /* PycCode.mm */; };
+		14B64D7B1DFFED81008C828F /* PycCodeUrl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F9E1CFD7823001BCE84 /* PycCodeUrl.mm */; };
+		14B64D7C1DFFED81008C828F /* PycFileOperateCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F841CFD7823001BCE84 /* PycFileOperateCommon.m */; };
+		14B64D7D1DFFED81008C828F /* Des.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F991CFD7823001BCE84 /* Des.cpp */; };
+		14B64D7E1DFFED81008C828F /* ToolString.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FB41CFD815A001BCE84 /* ToolString.m */; };
+		14B64D7F1DFFED81008C828F /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FEE1CFD844E001BCE84 /* UserModel.m */; };
+		14B64D801DFFED81008C828F /* ActivationSuccessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B0CF791D34F3AE004D22B5 /* ActivationSuccessController.swift */; };
+		14B64D811DFFED81008C828F /* SeriesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FEC1CFD844E001BCE84 /* SeriesModel.m */; };
+		14B64D821DFFED81008C828F /* AdvertisingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 148AB47E1CFFD78600CAF9BA /* AdvertisingView.m */; };
+		14B64D831DFFED81008C828F /* SM3.c in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F7C1CFD7823001BCE84 /* SM3.c */; };
+		14B64D841DFFED81008C828F /* BarrageWalkTextSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B161D4AF55A00922A62 /* BarrageWalkTextSprite.m */; };
+		14B64D851DFFED81008C828F /* LKDaoBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FDB1CFD844E001BCE84 /* LKDaoBase.m */; };
+		14B64D861DFFED81008C828F /* Array+RemoveObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EE618B1CF816E50051FD1A /* Array+RemoveObject.swift */; };
+		14B64D871DFFED81008C828F /* NSDate+TimeInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FBB1CFD8335001BCE84 /* NSDate+TimeInterval.m */; };
+		14B64D881DFFED81008C828F /* ArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FE21CFD844E001BCE84 /* ArticleModel.m */; };
+		14B64D891DFFED81008C828F /* BarrageRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815AFE1D4AF55A00922A62 /* BarrageRenderer.m */; };
+		14B64D8A1DFFED81008C828F /* ReceiveFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FDD1CFD844E001BCE84 /* ReceiveFileManager.m */; };
+		14B64D8B1DFFED81008C828F /* NHDisplayLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B181D4AF55A00922A62 /* NHDisplayLink.m */; };
+		14B64D8C1DFFED81008C828F /* AdvertisingImgCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 148AB47C1CFFD78600CAF9BA /* AdvertisingImgCache.m */; };
+		14B64D8D1DFFED81008C828F /* ReceiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14105B811D337FD1004CB1C2 /* ReceiveViewController.swift */; };
+		14B64D8E1DFFED81008C828F /* NSDate+String.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FB91CFD8335001BCE84 /* NSDate+String.m */; };
+		14B64D8F1DFFED81008C828F /* BGHUDSliderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F5D1D2A187300838B88 /* BGHUDSliderCell.m */; };
+		14B64D901DFFED81008C828F /* BGThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F611D2A187300838B88 /* BGThemeManager.m */; };
+		14B64D911DFFED81008C828F /* CustomRotateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1447A22C1D87A2D500057039 /* CustomRotateButton.swift */; };
+		14B64D921DFFED81008C828F /* BGTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F5F1D2A187300838B88 /* BGTheme.m */; };
+		14B64D931DFFED81008C828F /* ActivationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B0CF771D34F394004D22B5 /* ActivationController.swift */; };
+		14B64D941DFFED81008C828F /* ControlsWithVibracy.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F631D2A187300838B88 /* ControlsWithVibracy.m */; };
+		14B64D951DFFED81008C828F /* BarrageCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815AF61D4AF55A00922A62 /* BarrageCanvas.m */; };
+		14B64D961DFFED81008C828F /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F591D2A187300838B88 /* MBProgressHUD.m */; };
+		14B64D971DFFED81008C828F /* CustomTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146C08D01D7FF56A00AB3153 /* CustomTableCellView.swift */; };
+		14B64D981DFFED81008C828F /* NSString+LcsDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3FAA1D2A187300838B88 /* NSString+LcsDiff.m */; };
+		14B64D991DFFED81008C828F /* FSCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C9B6A51D8E859800A0C6B9 /* FSCustomCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		14B64D9A1DFFED81008C828F /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F921D2A187300838B88 /* Player.m */; };
+		14B64D9B1DFFED81008C828F /* PlayerView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F9A1D2A187300838B88 /* PlayerView.mm */; };
+		14B64D9C1DFFED81008C828F /* PlayerWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F9C1D2A187300838B88 /* PlayerWindow.m */; };
+		14B64D9D1DFFED81008C828F /* PlayerLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F961D2A187300838B88 /* PlayerLoader.m */; };
+		14B64D9E1DFFED81008C828F /* BarrageSpriteUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B101D4AF55A00922A62 /* BarrageSpriteUtility.m */; };
+		14B64D9F1DFFED81008C828F /* NSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B1A1D4AF55A00922A62 /* NSLabel.m */; };
+		14B64DA01DFFED81008C828F /* PlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F981D2A187300838B88 /* PlayerManager.m */; };
+		14B64DA11DFFED81008C828F /* PlayLocalFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3FA11D2A187300838B88 /* PlayLocalFile.m */; };
+		14B64DA21DFFED81008C828F /* PlayerEventProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F941D2A187300838B88 /* PlayerEventProxy.m */; };
+		14B64DA31DFFED81008C828F /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EA57E91D7EBEA90026602B /* CustomView.swift */; };
+		14B64DA41DFFED81008C828F /* PlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F651D2A187300838B88 /* PlayerControlView.m */; };
+		14B64DA51DFFED81008C828F /* PostComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3FA31D2A187300838B88 /* PostComment.m */; };
+		14B64DA61DFFED81008C828F /* SimpleVideoFormatParser.mm in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3FA71D2A187300838B88 /* SimpleVideoFormatParser.mm */; };
+		14B64DA71DFFED81008C828F /* SmartBlockSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 149D53A91DE4270E00FC4F63 /* SmartBlockSettings.m */; };
+		14B64DA81DFFED81008C828F /* CellhighlightColorTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BF31791D77C9DE000EFF66 /* CellhighlightColorTableView.swift */; };
+		14B64DA91DFFED81008C828F /* KeywordBlockSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 149D53A31DE4270E00FC4F63 /* KeywordBlockSettings.m */; };
+		14B64DAA1DFFED81008C828F /* CustomColorProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14389CA01D9CB4A100EAC29C /* CustomColorProgressIndicator.swift */; };
+		14B64DAB1DFFED81008C828F /* indexSet+block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146401991DACE04300305B12 /* indexSet+block.swift */; };
+		14B64DAC1DFFED81008C828F /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 149D53AB1DE4270E00FC4F63 /* Tools.m */; };
+		14B64DAD1DFFED81008C828F /* SubtitleProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3FB21D2A187300838B88 /* SubtitleProvider.m */; };
+		14B64DAE1DFFED81008C828F /* SubtitleHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3FB01D2A187300838B88 /* SubtitleHelper.m */; };
+		14B64DAF1DFFED81008C828F /* TimeSliderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F671D2A187300838B88 /* TimeSliderCell.m */; };
+		14B64DB01DFFED81008C828F /* PlayPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815AF11D49FCBC00922A62 /* PlayPosition.m */; };
+		14B64DB11DFFED81008C828F /* SP_Local.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3FAE1D2A187300838B88 /* SP_Local.m */; };
+		14B64DB21DFFED81008C828F /* VideoAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3FB51D2A187300838B88 /* VideoAddress.m */; };
+		14B64DB31DFFED81008C828F /* ApplyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1494D6081D36305900842CD1 /* ApplyInfoViewController.swift */; };
+		14B64DB41DFFED81008C828F /* CommentBlockSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 149D53A11DE4270E00FC4F63 /* CommentBlockSettings.m */; };
+		14B64DB51DFFED81008C828F /* VP_Local.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3FBB1D2A187300838B88 /* VP_Local.m */; };
+		14B64DB61DFFED81008C828F /* VideoProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3FB71D2A187300838B88 /* VideoProvider.m */; };
+		14B64DB71DFFED81008C828F /* BarrageClock.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815AF81D4AF55A00922A62 /* BarrageClock.m */; };
+		14B64DB91DFFED81008C828F /* MuPDFFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14C917D51DFA85E40025F6FB /* MuPDFFramework.framework */; };
+		14B64DBA1DFFED81008C828F /* Toasty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A5058E1DAA2656008BF666 /* Toasty.framework */; };
+		14B64DBB1DFFED81008C828F /* libmpv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AA3E3A1D2A187200838B88 /* libmpv.dylib */; };
+		14B64DBC1DFFED81008C828F /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AA3E3D1D2A187200838B88 /* libz.1.dylib */; };
+		14B64DBD1DFFED81008C828F /* Pods_PBBReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A66CA53F5B73961FE573D22 /* Pods_PBBReader.framework */; };
+		14B64DBE1DFFED81008C828F /* PBBLogSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 148B6D8F1DE69166005B5DFB /* PBBLogSDK.framework */; };
+		14B64DC01DFFED81008C828F /* exitfillscreen_lr.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F771D2A187300838B88 /* exitfillscreen_lr.pdf */; };
+		14B64DC11DFFED81008C828F /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F8E1D2A187300838B88 /* search.png */; };
+		14B64DC21DFFED81008C828F /* primary_first_sub_category.txt in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE0C1D09367800CE84F4 /* primary_first_sub_category.txt */; };
+		14B64DC31DFFED81008C828F /* vol_high.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F881D2A187300838B88 /* vol_high.pdf */; };
+		14B64DC41DFFED81008C828F /* enterfullscreen.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F761D2A187300838B88 /* enterfullscreen.pdf */; };
+		14B64DC51DFFED81008C828F /* secondary_first_sub_category.txt in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE0F1D09367800CE84F4 /* secondary_first_sub_category.txt */; };
+		14B64DC61DFFED81008C828F /* release_notes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE091D09367800CE84F4 /* release_notes.txt */; };
+		14B64DC71DFFED81008C828F /* reload.png in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F8C1D2A187300838B88 /* reload.png */; };
+		14B64DC81DFFED81008C828F /* 114.png in Resources */ = {isa = PBXBuildFile; fileRef = 840AA6901CFCA2EA00819203 /* 114.png */; };
+		14B64DC91DFFED81008C828F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1437DD6F1CF2A75F001BD2D2 /* Assets.xcassets */; };
+		14B64DCA1DFFED81008C828F /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE121D09367800CE84F4 /* README.txt */; };
+		14B64DCB1DFFED81008C828F /* secondary_second_sub_category.txt in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE101D09367800CE84F4 /* secondary_second_sub_category.txt */; };
+		14B64DCC1DFFED81008C828F /* credits.txt in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F751D2A187300838B88 /* credits.txt */; };
+		14B64DCD1DFFED81008C828F /* titlebar-middle.png in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F841D2A187300838B88 /* titlebar-middle.png */; };
+		14B64DCE1DFFED81008C828F /* vol_no.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F8B1D2A187300838B88 /* vol_no.pdf */; };
+		14B64DCF1DFFED81008C828F /* PBBReader-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14B9EE5E1D79744400EC8986 /* PBBReader-Info.plist */; };
+		14B64DD01DFFED81008C828F /* AdvertisingViewOSX.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14430C1D1D01214000A5394D /* AdvertisingViewOSX.xib */; };
+		14B64DD11DFFED81008C828F /* b_play.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F741D2A187300838B88 /* b_play.pdf */; };
+		14B64DD21DFFED81008C828F /* webpage.png in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F901D2A187300838B88 /* webpage.png */; };
+		14B64DD31DFFED81008C828F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1437DD711CF2A75F001BD2D2 /* Main.storyboard */; };
+		14B64DD41DFFED81008C828F /* reloadp.png in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F8D1D2A187300838B88 /* reloadp.png */; };
+		14B64DD51DFFED81008C828F /* advitising.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 148AB47F1CFFD78600CAF9BA /* advitising.jpg */; };
+		14B64DD61DFFED81008C828F /* secondary_category.txt in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE0E1D09367800CE84F4 /* secondary_category.txt */; };
+		14B64DD71DFFED81008C828F /* PlayerControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3FA41D2A187300838B88 /* PlayerControl.xib */; };
+		14B64DD81DFFED81008C828F /* pause.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F7F1D2A187300838B88 /* pause.pdf */; };
+		14B64DD91DFFED81008C828F /* marketing_url.txt in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE061D09367800CE84F4 /* marketing_url.txt */; };
+		14B64DDA1DFFED81008C828F /* vol_mid.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F8A1D2A187300838B88 /* vol_mid.pdf */; };
+		14B64DDB1DFFED81008C828F /* mute.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F7D1D2A187300838B88 /* mute.pdf */; };
+		14B64DDC1DFFED81008C828F /* backwards.png in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F691D2A187300838B88 /* backwards.png */; };
+		14B64DDD1DFFED81008C828F /* prev-episode.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F801D2A187300838B88 /* prev-episode.pdf */; };
+		14B64DDE1DFFED81008C828F /* name.txt in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE071D09367800CE84F4 /* name.txt */; };
+		14B64DDF1DFFED81008C828F /* privacy_url.txt in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE081D09367800CE84F4 /* privacy_url.txt */; };
+		14B64DE01DFFED81008C828F /* titlebar-corner-left.png in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F821D2A187300838B88 /* titlebar-corner-left.png */; };
+		14B64DE11DFFED81008C828F /* fold.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F7C1D2A187300838B88 /* fold.pdf */; };
+		14B64DE21DFFED81008C828F /* description.txt in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE041D09367800CE84F4 /* description.txt */; };
+		14B64DE31DFFED81008C828F /* PlayerLoader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3FA51D2A187300838B88 /* PlayerLoader.xib */; };
+		14B64DE41DFFED81008C828F /* next-episode.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F7E1D2A187300838B88 /* next-episode.pdf */; };
+		14B64DE51DFFED81008C828F /* primary_category.txt in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE0B1D09367800CE84F4 /* primary_category.txt */; };
+		14B64DE61DFFED81008C828F /* titlebar-corner-right.png in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F831D2A187300838B88 /* titlebar-corner-right.png */; };
+		14B64DE71DFFED81008C828F /* primary_second_sub_category.txt in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE0D1D09367800CE84F4 /* primary_second_sub_category.txt */; };
+		14B64DE81DFFED81008C828F /* exitfullscreen.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F791D2A187300838B88 /* exitfullscreen.pdf */; };
+		14B64DE91DFFED81008C828F /* support_url.txt in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE0A1D09367800CE84F4 /* support_url.txt */; };
+		14B64DEA1DFFED81008C828F /* exitfillscreen_ub.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F781D2A187300838B88 /* exitfillscreen_ub.pdf */; };
+		14B64DEB1DFFED81008C828F /* Fastfile_Fabric in Resources */ = {isa = PBXBuildFile; fileRef = 84CD4F201DC7901900EE0BEB /* Fastfile_Fabric */; };
+		14B64DEC1DFFED81008C828F /* menubutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F6F1D2A187300838B88 /* menubutton.png */; };
+		14B64DED1DFFED81008C828F /* copyright.txt in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE021D09367800CE84F4 /* copyright.txt */; };
+		14B64DEE1DFFED81008C828F /* fillscreen_ub.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F7B1D2A187300838B88 /* fillscreen_ub.pdf */; };
+		14B64DEF1DFFED81008C828F /* keywords.txt in Resources */ = {isa = PBXBuildFile; fileRef = 843CAE051D09367800CE84F4 /* keywords.txt */; };
+		14B64DF01DFFED81008C828F /* resizeindicator.png in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F811D2A187300838B88 /* resizeindicator.png */; };
+		14B64DF11DFFED81008C828F /* water.xml in Resources */ = {isa = PBXBuildFile; fileRef = 14815B521D4B131A00922A62 /* water.xml */; };
+		14B64DF21DFFED81008C828F /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F721D2A187300838B88 /* play.png */; };
+		14B64DF31DFFED81008C828F /* unfold.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F871D2A187300838B88 /* unfold.pdf */; };
+		14B64DF41DFFED81008C828F /* vol_low.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F891D2A187300838B88 /* vol_low.pdf */; };
+		14B64DF51DFFED81008C828F /* fillscreen_lr.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F7A1D2A187300838B88 /* fillscreen_lr.pdf */; };
+		14B64DF61DFFED81008C828F /* copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F6A1D2A187300838B88 /* copy.png */; };
+		14B64DF71DFFED81008C828F /* credits.txt in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F6B1D2A187300838B88 /* credits.txt */; };
+		14B64DFB1DFFED81008C828F /* libavcodec.57.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E351D2A187200838B88 /* libavcodec.57.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		14B64DFC1DFFED81008C828F /* libavdevice.57.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E361D2A187200838B88 /* libavdevice.57.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		14B64DFD1DFFED81008C828F /* libavfilter.6.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E371D2A187200838B88 /* libavfilter.6.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		14B64DFE1DFFED81008C828F /* libavformat.57.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E381D2A187200838B88 /* libavformat.57.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		14B64DFF1DFFED81008C828F /* libavutil.55.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E391D2A187200838B88 /* libavutil.55.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		14B64E001DFFED81008C828F /* libmpv.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E3A1D2A187200838B88 /* libmpv.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		14B64E011DFFED81008C828F /* libswresample.2.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E3B1D2A187200838B88 /* libswresample.2.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		14B64E021DFFED81008C828F /* libswscale.4.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E3C1D2A187200838B88 /* libswscale.4.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		14B64E031DFFED81008C828F /* libz.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E3D1D2A187200838B88 /* libz.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		14B9EE5F1D79744400EC8986 /* PBBReader-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14B9EE5E1D79744400EC8986 /* PBBReader-Info.plist */; };
 		14BF317A1D77C9DE000EFF66 /* CellhighlightColorTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BF31791D77C9DE000EFF66 /* CellhighlightColorTableView.swift */; };
 		14BF31811D780AB1000EFF66 /* CustomBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BF31801D780AB1000EFF66 /* CustomBox.swift */; };
@@ -462,7 +658,28 @@
 			remoteGlobalIDString = 14A5058D1DAA2656008BF666;
 			remoteInfo = Toasty;
 		};
-		14AB1A3B1DFABC53005A6A90 /* PBXContainerItemProxy */ = {
+		14B64D281DFFED81008C828F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 14C917971DFA5B350025F6FB /* MuPDF.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 14C917AE1DFA734D0025F6FB;
+			remoteInfo = MuPDFFramework;
+		};
+		14B64D2A1DFFED81008C828F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1437DD601CF2A75E001BD2D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 14A5058D1DAA2656008BF666;
+			remoteInfo = Toasty;
+		};
+		14B64D2C1DFFED81008C828F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1437DD601CF2A75E001BD2D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 148B6D8E1DE69166005B5DFB;
+			remoteInfo = PBBLogSDK;
+		};
+		14B64D2E1DFFED81008C828F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 14C917971DFA5B350025F6FB /* MuPDF.xcodeproj */;
 			proxyType = 1;
@@ -488,13 +705,6 @@
 			containerPortal = 14C917971DFA5B350025F6FB /* MuPDF.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 14C917AF1DFA734D0025F6FB;
-			remoteInfo = MuPDFFramework;
-		};
-		14C917D61DFA85E90025F6FB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 14C917971DFA5B350025F6FB /* MuPDF.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 14C917AE1DFA734D0025F6FB;
 			remoteInfo = MuPDFFramework;
 		};
 		84AEDA411DC5FF02001E8116 /* PBXContainerItemProxy */ = {
@@ -538,11 +748,41 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				14AB1A3A1DFABC53005A6A90 /* MuPDFFramework.framework in Embed Frameworks */,
 				14A505961DAA2656008BF666 /* Toasty.framework in Embed Frameworks */,
 				84B679191DE719D600496634 /* PBBLogSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14B64D341DFFED81008C828F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				14B64D351DFFED81008C828F /* MuPDFFramework.framework in Embed Frameworks */,
+				14B64D361DFFED81008C828F /* Toasty.framework in Embed Frameworks */,
+				14B64D371DFFED81008C828F /* PBBLogSDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14B64DFA1DFFED81008C828F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = lib;
+			dstSubfolderSpec = 6;
+			files = (
+				14B64DFB1DFFED81008C828F /* libavcodec.57.dylib in CopyFiles */,
+				14B64DFC1DFFED81008C828F /* libavdevice.57.dylib in CopyFiles */,
+				14B64DFD1DFFED81008C828F /* libavfilter.6.dylib in CopyFiles */,
+				14B64DFE1DFFED81008C828F /* libavformat.57.dylib in CopyFiles */,
+				14B64DFF1DFFED81008C828F /* libavutil.55.dylib in CopyFiles */,
+				14B64E001DFFED81008C828F /* libmpv.dylib in CopyFiles */,
+				14B64E011DFFED81008C828F /* libswresample.2.dylib in CopyFiles */,
+				14B64E021DFFED81008C828F /* libswscale.4.dylib in CopyFiles */,
+				14B64E031DFFED81008C828F /* libz.1.dylib in CopyFiles */,
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		84AEDA451DC5FF02001E8116 /* Embed Frameworks */ = {
@@ -911,6 +1151,7 @@
 		14B260091CFD8AA3001BCE84 /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
 		14B2600B1CFD8AED001BCE84 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		14B2600C1CFD8AED001BCE84 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		14B64E0A1DFFED81008C828F /* PBBReaderPDF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PBBReaderPDF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14B9EE5E1D79744400EC8986 /* PBBReader-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "PBBReader-Info.plist"; sourceTree = "<group>"; };
 		14BF31791D77C9DE000EFF66 /* CellhighlightColorTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellhighlightColorTableView.swift; sourceTree = "<group>"; };
 		14BF31801D780AB1000EFF66 /* CustomBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBox.swift; sourceTree = "<group>"; };
@@ -988,7 +1229,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14AB1A391DFABC53005A6A90 /* MuPDFFramework.framework in Frameworks */,
 				14A505951DAA2656008BF666 /* Toasty.framework in Frameworks */,
 				14815B451D4B08AF00922A62 /* libmpv.dylib in Frameworks */,
 				14815B461D4B08AF00922A62 /* libz.1.dylib in Frameworks */,
@@ -1025,6 +1265,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14B64DB81DFFED81008C828F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14B64DB91DFFED81008C828F /* MuPDFFramework.framework in Frameworks */,
+				14B64DBA1DFFED81008C828F /* Toasty.framework in Frameworks */,
+				14B64DBB1DFFED81008C828F /* libmpv.dylib in Frameworks */,
+				14B64DBC1DFFED81008C828F /* libz.1.dylib in Frameworks */,
+				14B64DBD1DFFED81008C828F /* Pods_PBBReader.framework in Frameworks */,
+				14B64DBE1DFFED81008C828F /* PBBLogSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1089,6 +1342,7 @@
 				148B6D8F1DE69166005B5DFB /* PBBLogSDK.framework */,
 				148B6D971DE69166005B5DFB /* PBBLogSDKTests.xctest */,
 				84B6795B1DE72A4300496634 /* PBBLogSDKForiOS.framework */,
+				14B64E0A1DFFED81008C828F /* PBBReaderPDF.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1956,10 +2210,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				14C917D71DFA85E90025F6FB /* PBXTargetDependency */,
 				14A505941DAA2656008BF666 /* PBXTargetDependency */,
 				84B6791B1DE719D600496634 /* PBXTargetDependency */,
-				14AB1A3C1DFABC53005A6A90 /* PBXTargetDependency */,
 			);
 			name = PBBReader;
 			productName = PBBReaderForMac;
@@ -2048,6 +2300,42 @@
 			productName = Toasty;
 			productReference = 14A5058E1DAA2656008BF666 /* Toasty.framework */;
 			productType = "com.apple.product-type.framework";
+		};
+		14B64D261DFFED81008C828F /* PBBReaderPDF */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14B64E071DFFED81008C828F /* Build configuration list for PBXNativeTarget "PBBReaderPDF" */;
+			buildPhases = (
+				14B64D2F1DFFED81008C828F /* 📦 Check Pods Manifest.lock */,
+				14B64D301DFFED81008C828F /* [CP] Check Pods Manifest.lock */,
+				14B64D311DFFED81008C828F /* [CP] Check Pods Manifest.lock */,
+				14B64D321DFFED81008C828F /* [CP] Check Pods Manifest.lock */,
+				14B64D331DFFED81008C828F /* 自动递增build版本号 */,
+				14B64D341DFFED81008C828F /* Embed Frameworks */,
+				14B64D381DFFED81008C828F /* [CP] Check Pods Manifest.lock */,
+				14B64D391DFFED81008C828F /* [CP] Check Pods Manifest.lock */,
+				14B64D3A1DFFED81008C828F /* [CP] Check Pods Manifest.lock */,
+				14B64D3B1DFFED81008C828F /* Sources */,
+				14B64DB81DFFED81008C828F /* Frameworks */,
+				14B64DBF1DFFED81008C828F /* Resources */,
+				14B64DF81DFFED81008C828F /* [CP] Embed Pods Frameworks */,
+				14B64DF91DFFED81008C828F /* [CP] Copy Pods Resources */,
+				14B64DFA1DFFED81008C828F /* CopyFiles */,
+				14B64E041DFFED81008C828F /* 📦 Embed Pods Frameworks */,
+				14B64E051DFFED81008C828F /* 📦 Copy Pods Resources */,
+				14B64E061DFFED81008C828F /* Run Fabric */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				14B64D271DFFED81008C828F /* PBXTargetDependency */,
+				14B64D291DFFED81008C828F /* PBXTargetDependency */,
+				14B64D2B1DFFED81008C828F /* PBXTargetDependency */,
+				14B64D2D1DFFED81008C828F /* PBXTargetDependency */,
+			);
+			name = PBBReaderPDF;
+			productName = PBBReaderForMac;
+			productReference = 14B64E0A1DFFED81008C828F /* PBBReaderPDF.app */;
+			productType = "com.apple.product-type.application";
 		};
 		84AEDA3F1DC5FF02001E8116 /* PBBReaderForOSXRelese */ = {
 			isa = PBXNativeTarget;
@@ -2141,6 +2429,9 @@
 						CreatedOnToolsVersion = 7.3.1;
 						LastSwiftMigration = 0800;
 					};
+					14B64D261DFFED81008C828F = {
+						DevelopmentTeam = FA78T6VRG8;
+					};
 					84AEDA3F1DC5FF02001E8116 = {
 						DevelopmentTeam = FA78T6VRG8;
 					};
@@ -2166,6 +2457,7 @@
 			projectRoot = "";
 			targets = (
 				143E37F71D3F1809004B0A4D /* PBBReader */,
+				14B64D261DFFED81008C828F /* PBBReaderPDF */,
 				146872351D9A596100460B8E /* PBBReaderTests */,
 				14A5058D1DAA2656008BF666 /* Toasty */,
 				84AEDA3F1DC5FF02001E8116 /* PBBReaderForOSXRelese */,
@@ -2290,6 +2582,69 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14B64DBF1DFFED81008C828F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14B64DC01DFFED81008C828F /* exitfillscreen_lr.pdf in Resources */,
+				14B64DC11DFFED81008C828F /* search.png in Resources */,
+				14B64DC21DFFED81008C828F /* primary_first_sub_category.txt in Resources */,
+				14B64DC31DFFED81008C828F /* vol_high.pdf in Resources */,
+				14B64DC41DFFED81008C828F /* enterfullscreen.pdf in Resources */,
+				14B64DC51DFFED81008C828F /* secondary_first_sub_category.txt in Resources */,
+				14B64DC61DFFED81008C828F /* release_notes.txt in Resources */,
+				14B64DC71DFFED81008C828F /* reload.png in Resources */,
+				14B64DC81DFFED81008C828F /* 114.png in Resources */,
+				14B64DC91DFFED81008C828F /* Assets.xcassets in Resources */,
+				14B64DCA1DFFED81008C828F /* README.txt in Resources */,
+				14B64DCB1DFFED81008C828F /* secondary_second_sub_category.txt in Resources */,
+				14B64DCC1DFFED81008C828F /* credits.txt in Resources */,
+				14B64DCD1DFFED81008C828F /* titlebar-middle.png in Resources */,
+				14B64DCE1DFFED81008C828F /* vol_no.pdf in Resources */,
+				14B64DCF1DFFED81008C828F /* PBBReader-Info.plist in Resources */,
+				14B64DD01DFFED81008C828F /* AdvertisingViewOSX.xib in Resources */,
+				14B64DD11DFFED81008C828F /* b_play.pdf in Resources */,
+				14B64DD21DFFED81008C828F /* webpage.png in Resources */,
+				14B64DD31DFFED81008C828F /* Main.storyboard in Resources */,
+				14B64DD41DFFED81008C828F /* reloadp.png in Resources */,
+				14B64DD51DFFED81008C828F /* advitising.jpg in Resources */,
+				14B64DD61DFFED81008C828F /* secondary_category.txt in Resources */,
+				14B64DD71DFFED81008C828F /* PlayerControl.xib in Resources */,
+				14B64DD81DFFED81008C828F /* pause.pdf in Resources */,
+				14B64DD91DFFED81008C828F /* marketing_url.txt in Resources */,
+				14B64DDA1DFFED81008C828F /* vol_mid.pdf in Resources */,
+				14B64DDB1DFFED81008C828F /* mute.pdf in Resources */,
+				14B64DDC1DFFED81008C828F /* backwards.png in Resources */,
+				14B64DDD1DFFED81008C828F /* prev-episode.pdf in Resources */,
+				14B64DDE1DFFED81008C828F /* name.txt in Resources */,
+				14B64DDF1DFFED81008C828F /* privacy_url.txt in Resources */,
+				14B64DE01DFFED81008C828F /* titlebar-corner-left.png in Resources */,
+				14B64DE11DFFED81008C828F /* fold.pdf in Resources */,
+				14B64DE21DFFED81008C828F /* description.txt in Resources */,
+				14B64DE31DFFED81008C828F /* PlayerLoader.xib in Resources */,
+				14B64DE41DFFED81008C828F /* next-episode.pdf in Resources */,
+				14B64DE51DFFED81008C828F /* primary_category.txt in Resources */,
+				14B64DE61DFFED81008C828F /* titlebar-corner-right.png in Resources */,
+				14B64DE71DFFED81008C828F /* primary_second_sub_category.txt in Resources */,
+				14B64DE81DFFED81008C828F /* exitfullscreen.pdf in Resources */,
+				14B64DE91DFFED81008C828F /* support_url.txt in Resources */,
+				14B64DEA1DFFED81008C828F /* exitfillscreen_ub.pdf in Resources */,
+				14B64DEB1DFFED81008C828F /* Fastfile_Fabric in Resources */,
+				14B64DEC1DFFED81008C828F /* menubutton.png in Resources */,
+				14B64DED1DFFED81008C828F /* copyright.txt in Resources */,
+				14B64DEE1DFFED81008C828F /* fillscreen_ub.pdf in Resources */,
+				14B64DEF1DFFED81008C828F /* keywords.txt in Resources */,
+				14B64DF01DFFED81008C828F /* resizeindicator.png in Resources */,
+				14B64DF11DFFED81008C828F /* water.xml in Resources */,
+				14B64DF21DFFED81008C828F /* play.png in Resources */,
+				14B64DF31DFFED81008C828F /* unfold.pdf in Resources */,
+				14B64DF41DFFED81008C828F /* vol_low.pdf in Resources */,
+				14B64DF51DFFED81008C828F /* fillscreen_lr.pdf in Resources */,
+				14B64DF61DFFED81008C828F /* copy.png in Resources */,
+				14B64DF71DFFED81008C828F /* credits.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2510,6 +2865,197 @@
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "#递增build版本号，重命名app带版本号的文件名称\n#递增版本号\n#方法一：获取上一版本号并递增\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\necho $buildNumber\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"\n\n#方法二：直接修改指定版本号\n#pwd\n#PLIST_FILE_PATH=${PROJECT_DIR}/'PBBReader-Info.plist'\n#buildVersion=13\n#ImportSVN=\"importSVN\"\n\n#echo $PLIST_FILE_PATH\n#echo \"/<key>CFBundleVersion<\\/key>/{ n; s/\\(<string>\\).*\\(<\\/string>\\)/\\1${buildVersion}\\2/;}\" ${PLIST_FILE_PATH}\n\n#sed -i '' \"/<key>CFBundleVersion<\\/key>/{ n; s/\\(<string>\\).*\\(<\\/string>\\)/\\1${buildVersion}\\2/;}\" ${PLIST_FILE_PATH}\n\n";
+		};
+		14B64D2F1DFFED81008C828F /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		14B64D301DFFED81008C828F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		14B64D311DFFED81008C828F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		14B64D321DFFED81008C828F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		14B64D331DFFED81008C828F /* 自动递增build版本号 */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "自动递增build版本号";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "#递增build版本号，重命名app带版本号的文件名称\n#递增版本号\n#方法一：获取上一版本号并递增\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\necho $buildNumber\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"\n\n#方法二：直接修改指定版本号\n#pwd\n#PLIST_FILE_PATH=${PROJECT_DIR}/'PBBReader-Info.plist'\n#buildVersion=13\n#ImportSVN=\"importSVN\"\n\n#echo $PLIST_FILE_PATH\n#echo \"/<key>CFBundleVersion<\\/key>/{ n; s/\\(<string>\\).*\\(<\\/string>\\)/\\1${buildVersion}\\2/;}\" ${PLIST_FILE_PATH}\n\n#sed -i '' \"/<key>CFBundleVersion<\\/key>/{ n; s/\\(<string>\\).*\\(<\\/string>\\)/\\1${buildVersion}\\2/;}\" ${PLIST_FILE_PATH}\n\n";
+		};
+		14B64D381DFFED81008C828F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		14B64D391DFFED81008C828F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		14B64D3A1DFFED81008C828F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		14B64DF81DFFED81008C828F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PBBReader/Pods-PBBReader-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		14B64DF91DFFED81008C828F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PBBReader/Pods-PBBReader-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		14B64E041DFFED81008C828F /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PBBReader/Pods-PBBReader-frameworks.sh\"\n";
+		};
+		14B64E051DFFED81008C828F /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PBBReader/Pods-PBBReader-resources.sh\"\n";
+		};
+		14B64E061DFFED81008C828F /* Run Fabric */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Fabric";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 9fe72e817cb7d235a9b4e3724ead9eca82d6b85e 455a4df6bc7c170d9bbe8a1abfd4c796d16f34ebe3b46ac35dafabc2e88e8a84";
 		};
 		1E4121A42E88BC1015218FE7 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -3082,6 +3628,137 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		14B64D3B1DFFED81008C828F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14B64D3C1DFFED81008C828F /* PycReceiveModel.swift in Sources */,
+				14B64D3D1DFFED81008C828F /* SecretDao.m in Sources */,
+				14B64D3E1DFFED81008C828F /* BarrageWalkImageSprite.m in Sources */,
+				14B64D3F1DFFED81008C828F /* NSImage+Extras.m in Sources */,
+				14B64D401DFFED81008C828F /* userDao.m in Sources */,
+				14B64D411DFFED81008C828F /* NSView+UIView.m in Sources */,
+				14B64D421DFFED81008C828F /* BaseDao.m in Sources */,
+				14B64D431DFFED81008C828F /* DateTool.m in Sources */,
+				14B64D441DFFED81008C828F /* PycFolder.m in Sources */,
+				14B64D451DFFED81008C828F /* SeriesDao.m in Sources */,
+				14B64D461DFFED81008C828F /* BarrageDispatcher.m in Sources */,
+				14B64D471DFFED81008C828F /* ScaryBugDoc.swift in Sources */,
+				14B64D481DFFED81008C828F /* MPVSettings.m in Sources */,
+				14B64D491DFFED81008C828F /* BarrageFloatTextSprite.m in Sources */,
+				14B64D4A1DFFED81008C828F /* CustomWindowController.swift in Sources */,
+				14B64D4B1DFFED81008C828F /* Viewcccc.swift in Sources */,
+				14B64D4C1DFFED81008C828F /* SendFileManager.m in Sources */,
+				14B64D4D1DFFED81008C828F /* CustomBox.swift in Sources */,
+				14B64D4E1DFFED81008C828F /* VerificationCodeModel.m in Sources */,
+				14B64D4F1DFFED81008C828F /* DB.m in Sources */,
+				14B64D501DFFED81008C828F /* BarrageSpriteFactory.m in Sources */,
+				14B64D511DFFED81008C828F /* ArticleDao.m in Sources */,
+				14B64D521DFFED81008C828F /* LookMedia.m in Sources */,
+				14B64D531DFFED81008C828F /* PycFile.m in Sources */,
+				14B64D541DFFED81008C828F /* ReceiveFileDao.m in Sources */,
+				14B64D551DFFED81008C828F /* LiveChat.m in Sources */,
+				14B64D561DFFED81008C828F /* BarrageFloatSprite.m in Sources */,
+				14B64D571DFFED81008C828F /* ScaryBugData.swift in Sources */,
+				14B64D581DFFED81008C828F /* BarrageLoader.m in Sources */,
+				14B64D591DFFED81008C828F /* OutFile.m in Sources */,
+				14B64D5A1DFFED81008C828F /* utility.cpp in Sources */,
+				14B64D5B1DFFED81008C828F /* BarrageDescriptor.m in Sources */,
+				14B64D5C1DFFED81008C828F /* SendFileDao.m in Sources */,
+				14B64D5D1DFFED81008C828F /* Socket.cpp in Sources */,
+				14B64D5E1DFFED81008C828F /* BarrageWalkSprite.m in Sources */,
+				14B64D5F1DFFED81008C828F /* SecretModel.m in Sources */,
+				14B64D601DFFED81008C828F /* SMS4.cpp in Sources */,
+				14B64D611DFFED81008C828F /* VerificationCodeDao.m in Sources */,
+				14B64D621DFFED81008C828F /* OpenUDID.m in Sources */,
+				14B64D631DFFED81008C828F /* BindingPhoneViewController.swift in Sources */,
+				14B64D641DFFED81008C828F /* HttpDes.cpp in Sources */,
+				14B64D651DFFED81008C828F /* NSString+More.m in Sources */,
+				14B64D661DFFED81008C828F /* readMe.md in Sources */,
+				14B64D671DFFED81008C828F /* NewPycUserRemote.m in Sources */,
+				14B64D681DFFED81008C828F /* BilibiliSocketClient.mm in Sources */,
+				14B64D691DFFED81008C828F /* NSTextField+Attribute.m in Sources */,
+				14B64D6A1DFFED81008C828F /* MyProduct.m in Sources */,
+				14B64D6B1DFFED81008C828F /* Reachability.m in Sources */,
+				14B64D6C1DFFED81008C828F /* Settings.m in Sources */,
+				14B64D6D1DFFED81008C828F /* AppDelegate.swift in Sources */,
+				14B64D6E1DFFED81008C828F /* RefreshDataModel.m in Sources */,
+				14B64D6F1DFFED81008C828F /* BarrageSprite.m in Sources */,
+				14B64D701DFFED81008C828F /* NSValue+iOS.m in Sources */,
+				14B64D711DFFED81008C828F /* SandboxFile.m in Sources */,
+				14B64D721DFFED81008C828F /* PycSocket.m in Sources */,
+				14B64D731DFFED81008C828F /* Label+shadeAnimation.swift in Sources */,
+				14B64D741DFFED81008C828F /* PycUserRemote.m in Sources */,
+				14B64D751DFFED81008C828F /* readme.md in Sources */,
+				14B64D761DFFED81008C828F /* DataFactory.m in Sources */,
+				14B64D771DFFED81008C828F /* PycPrivateFile.m in Sources */,
+				14B64D781DFFED81008C828F /* BarrageFloatImageSprite.m in Sources */,
+				14B64D791DFFED81008C828F /* AppDelegateHelper.m in Sources */,
+				14B64D7A1DFFED81008C828F /* PycCode.mm in Sources */,
+				14B64D7B1DFFED81008C828F /* PycCodeUrl.mm in Sources */,
+				14B64D7C1DFFED81008C828F /* PycFileOperateCommon.m in Sources */,
+				14B64D7D1DFFED81008C828F /* Des.cpp in Sources */,
+				14B64D7E1DFFED81008C828F /* ToolString.m in Sources */,
+				14B64D7F1DFFED81008C828F /* UserModel.m in Sources */,
+				14B64D801DFFED81008C828F /* ActivationSuccessController.swift in Sources */,
+				14B64D811DFFED81008C828F /* SeriesModel.m in Sources */,
+				14B64D821DFFED81008C828F /* AdvertisingView.m in Sources */,
+				14B64D831DFFED81008C828F /* SM3.c in Sources */,
+				14B64D841DFFED81008C828F /* BarrageWalkTextSprite.m in Sources */,
+				14B64D851DFFED81008C828F /* LKDaoBase.m in Sources */,
+				14B64D861DFFED81008C828F /* Array+RemoveObject.swift in Sources */,
+				14B64D871DFFED81008C828F /* NSDate+TimeInterval.m in Sources */,
+				14B64D881DFFED81008C828F /* ArticleModel.m in Sources */,
+				14B64D891DFFED81008C828F /* BarrageRenderer.m in Sources */,
+				14B64D8A1DFFED81008C828F /* ReceiveFileManager.m in Sources */,
+				14B64D8B1DFFED81008C828F /* NHDisplayLink.m in Sources */,
+				14B64D8C1DFFED81008C828F /* AdvertisingImgCache.m in Sources */,
+				14B64D8D1DFFED81008C828F /* ReceiveViewController.swift in Sources */,
+				14B64D8E1DFFED81008C828F /* NSDate+String.m in Sources */,
+				14B64D8F1DFFED81008C828F /* BGHUDSliderCell.m in Sources */,
+				14B64D901DFFED81008C828F /* BGThemeManager.m in Sources */,
+				14B64D911DFFED81008C828F /* CustomRotateButton.swift in Sources */,
+				14B64D921DFFED81008C828F /* BGTheme.m in Sources */,
+				14B64D931DFFED81008C828F /* ActivationController.swift in Sources */,
+				14B64D941DFFED81008C828F /* ControlsWithVibracy.m in Sources */,
+				14B64D951DFFED81008C828F /* BarrageCanvas.m in Sources */,
+				14B64D961DFFED81008C828F /* MBProgressHUD.m in Sources */,
+				14B64D971DFFED81008C828F /* CustomTableCellView.swift in Sources */,
+				14B64D981DFFED81008C828F /* NSString+LcsDiff.m in Sources */,
+				14B64D991DFFED81008C828F /* FSCustomCell.m in Sources */,
+				14B64D9A1DFFED81008C828F /* Player.m in Sources */,
+				14B64D9B1DFFED81008C828F /* PlayerView.mm in Sources */,
+				14B64D9C1DFFED81008C828F /* PlayerWindow.m in Sources */,
+				14B64D9D1DFFED81008C828F /* PlayerLoader.m in Sources */,
+				14B64D9E1DFFED81008C828F /* BarrageSpriteUtility.m in Sources */,
+				14B64D9F1DFFED81008C828F /* NSLabel.m in Sources */,
+				14B64DA01DFFED81008C828F /* PlayerManager.m in Sources */,
+				14B64DA11DFFED81008C828F /* PlayLocalFile.m in Sources */,
+				14B64DA21DFFED81008C828F /* PlayerEventProxy.m in Sources */,
+				14B64DA31DFFED81008C828F /* CustomView.swift in Sources */,
+				14B64DA41DFFED81008C828F /* PlayerControlView.m in Sources */,
+				14B64DA51DFFED81008C828F /* PostComment.m in Sources */,
+				14B64DA61DFFED81008C828F /* SimpleVideoFormatParser.mm in Sources */,
+				14B64DA71DFFED81008C828F /* SmartBlockSettings.m in Sources */,
+				14B64DA81DFFED81008C828F /* CellhighlightColorTableView.swift in Sources */,
+				14B64DA91DFFED81008C828F /* KeywordBlockSettings.m in Sources */,
+				14B64DAA1DFFED81008C828F /* CustomColorProgressIndicator.swift in Sources */,
+				14B64DAB1DFFED81008C828F /* indexSet+block.swift in Sources */,
+				14B64DAC1DFFED81008C828F /* Tools.m in Sources */,
+				14B64DAD1DFFED81008C828F /* SubtitleProvider.m in Sources */,
+				14B64DAE1DFFED81008C828F /* SubtitleHelper.m in Sources */,
+				14B64DAF1DFFED81008C828F /* TimeSliderCell.m in Sources */,
+				14B64DB01DFFED81008C828F /* PlayPosition.m in Sources */,
+				14B64DB11DFFED81008C828F /* SP_Local.m in Sources */,
+				14B64DB21DFFED81008C828F /* VideoAddress.m in Sources */,
+				14B64DB31DFFED81008C828F /* ApplyInfoViewController.swift in Sources */,
+				14B64DB41DFFED81008C828F /* CommentBlockSettings.m in Sources */,
+				14B64DB51DFFED81008C828F /* VP_Local.m in Sources */,
+				14B64DB61DFFED81008C828F /* VideoProvider.m in Sources */,
+				14B64DB71DFFED81008C828F /* BarrageClock.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		84AEDA4A1DC5FF02001E8116 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -3243,15 +3920,25 @@
 			target = 14A5058D1DAA2656008BF666 /* Toasty */;
 			targetProxy = 14A505931DAA2656008BF666 /* PBXContainerItemProxy */;
 		};
-		14AB1A3C1DFABC53005A6A90 /* PBXTargetDependency */ = {
+		14B64D271DFFED81008C828F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MuPDFFramework;
-			targetProxy = 14AB1A3B1DFABC53005A6A90 /* PBXContainerItemProxy */;
+			targetProxy = 14B64D281DFFED81008C828F /* PBXContainerItemProxy */;
 		};
-		14C917D71DFA85E90025F6FB /* PBXTargetDependency */ = {
+		14B64D291DFFED81008C828F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 14A5058D1DAA2656008BF666 /* Toasty */;
+			targetProxy = 14B64D2A1DFFED81008C828F /* PBXContainerItemProxy */;
+		};
+		14B64D2B1DFFED81008C828F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 148B6D8E1DE69166005B5DFB /* PBBLogSDK */;
+			targetProxy = 14B64D2C1DFFED81008C828F /* PBXContainerItemProxy */;
+		};
+		14B64D2D1DFFED81008C828F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MuPDFFramework;
-			targetProxy = 14C917D61DFA85E90025F6FB /* PBXContainerItemProxy */;
+			targetProxy = 14B64D2E1DFFED81008C828F /* PBXContainerItemProxy */;
 		};
 		84AEDA401DC5FF02001E8116 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -3709,6 +4396,136 @@
 			};
 			name = Release;
 		};
+		14B64E081DFFED81008C828F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C40DC9F339715B6A2E7A3F6 /* Pods-PBBReader.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application: Beijing PYC Software Co., Ltd. (FA78T6VRG8)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application: Beijing PYC Software Co., Ltd. (FA78T6VRG8)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = FA78T6VRG8;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/CocoaAsyncSocket\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/EDStarRating\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/FMDB\"",
+				);
+				GCC_PREFIX_HEADER = "PBBReaderForMac/PBB-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"DEVELOPMENT=0",
+				);
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/PBBReaderForMac/bilibili/libmpv";
+				INFOPLIST_FILE = "PBBReaderForMac/PBBReader-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) '@executable_path/../Frameworks' '@loader_path/Frameworks'";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PBBReaderForMac/bilibili/libmpv",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-iquote",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/CocoaAsyncSocket/CocoaAsyncSocket.framework/Headers\"",
+					"-iquote",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/EDStarRating/EDStarRating.framework/Headers\"",
+					"-iquote",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/FMDB/FMDB.framework/Headers\"",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"CocoaAsyncSocket\"",
+					"-framework",
+					"\"EDStarRating\"",
+					"-framework",
+					"\"FMDB\"",
+				);
+				PODS_BUILD_DIR = $BUILD_DIR;
+				PODS_CONFIGURATION_BUILD_DIR = "$PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				PODS_ROOT = "${SRCROOT}/Pods";
+				PRODUCT_BUNDLE_IDENTIFIER = pyc.cn.com.PBBReaderForOSX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "4d16a757-9895-4203-bfc0-0a92571e29c0";
+				PROVISIONING_PROFILE_SPECIFIER = DirectDistribution;
+				SWIFT_OBJC_BRIDGING_HEADER = "PBBReaderForMac/PBBReaderForMac-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				USER_HEADER_SEARCH_PATHS = "\"${PODS_ROOT}/FMDB/src/fmdb\"";
+			};
+			name = Debug;
+		};
+		14B64E091DFFED81008C828F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8D9B98EF7820D3CB0B60E24 /* Pods-PBBReader.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application: Beijing PYC Software Co., Ltd. (FA78T6VRG8)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application: Beijing PYC Software Co., Ltd. (FA78T6VRG8)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = FA78T6VRG8;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/CocoaAsyncSocket\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/EDStarRating\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/FMDB\"",
+				);
+				GCC_PREFIX_HEADER = "PBBReaderForMac/PBB-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"DEVELOPMENT=0",
+				);
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/PBBReaderForMac/bilibili/libmpv";
+				INFOPLIST_FILE = "PBBReaderForMac/PBBReader-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) '@executable_path/../Frameworks' '@loader_path/Frameworks'";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PBBReaderForMac/bilibili/libmpv",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-iquote",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/CocoaAsyncSocket/CocoaAsyncSocket.framework/Headers\"",
+					"-iquote",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/EDStarRating/EDStarRating.framework/Headers\"",
+					"-iquote",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/FMDB-OSX10.11/FMDB.framework/Headers\"",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"CocoaAsyncSocket\"",
+					"-framework",
+					"\"EDStarRating\"",
+					"-framework",
+					"\"FMDB\"",
+				);
+				PODS_BUILD_DIR = $BUILD_DIR;
+				PODS_CONFIGURATION_BUILD_DIR = "$PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				PODS_ROOT = "${SRCROOT}/Pods";
+				PRODUCT_BUNDLE_IDENTIFIER = pyc.cn.com.PBBReaderForOSX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "4d16a757-9895-4203-bfc0-0a92571e29c0";
+				PROVISIONING_PROFILE_SPECIFIER = DirectDistribution;
+				SWIFT_OBJC_BRIDGING_HEADER = "PBBReaderForMac/PBBReaderForMac-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+				USER_HEADER_SEARCH_PATHS = "\"${PODS_ROOT}/FMDB/src/fmdb\"";
+			};
+			name = Release;
+		};
 		84AEDB121DC5FF02001E8116 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -3962,6 +4779,15 @@
 			buildConfigurations = (
 				14A505981DAA2657008BF666 /* Debug */,
 				14A505991DAA2657008BF666 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		14B64E071DFFED81008C828F /* Build configuration list for PBXNativeTarget "PBBReaderPDF" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14B64E081DFFED81008C828F /* Debug */,
+				14B64E091DFFED81008C828F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -12,17 +12,17 @@
 		<key>PBBLogSDK.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>15</integer>
+			<integer>14</integer>
 		</dict>
 		<key>PBBLogSDKForiOS.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>22</integer>
+			<integer>21</integer>
 		</dict>
 		<key>PBBLogSDKTests.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>24</integer>
+			<integer>23</integer>
 		</dict>
 		<key>PBBReader.xcscheme</key>
 		<dict>
@@ -41,12 +41,17 @@
 			<key>orderHint</key>
 			<integer>7</integer>
 		</dict>
+		<key>PBBReaderPDF.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>26</integer>
+		</dict>
 		<key>Toasty.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>16</integer>
+			<integer>15</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -102,6 +107,11 @@
 			<true/>
 		</dict>
 		<key>14A5058D1DAA2656008BF666</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>14B64D261DFFED81008C828F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
