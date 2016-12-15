@@ -27,10 +27,24 @@ class PBBLogClient
             (data, resp, err) in
 //            print("响应的服务器地址：\(resp?.url?.absoluteString)")
             var dict:NSDictionary? = nil
-            do {
-                dict  = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.init(rawValue: 0)) as? NSDictionary
-            } catch {
-                NSLog("搜集日志奔溃...\(logModel.description)")
+            if data != nil
+            {
+                do {
+                    
+                    if JSONSerialization.isValidJSONObject(data!)
+                    {
+                        dict  = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.init(rawValue: 0)) as? NSDictionary
+                    }
+                    else
+                    {
+                        let dataFormatToString = String(data: data!,
+                                                        encoding: String.Encoding.utf8)
+                        NSLog("搜集日志奔溃...\(dataFormatToString)")
+                    }
+                    
+                } catch {
+                    NSLog("搜集日志奔溃...\(logModel.description)")
+                }
             }
 //            print("响应内容：\(dict)")
         }
