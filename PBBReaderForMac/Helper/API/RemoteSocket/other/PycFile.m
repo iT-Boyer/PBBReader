@@ -2406,13 +2406,12 @@ _ALL_END:
     //解密
     PycCode *coder = [[PycCode alloc] init];
     [coder decodeFileExtension:fileExtHeader];
+    //文件头结构
+    fileheadoffset -= sizeof(PYCFILEHEADER);
     if(fileExtHeader->uTag == PycTag1)
     {
         fileheadoffset -= sizeof(OUTLINE_STRUCT);
-    }
-    else
-    {
-        fileheadoffset -= sizeof(PYCFILEHEADER);
+ 
     }
     
     //读取文件头结构：PYCFILEHEADER：包括源文件大小，加密长度

@@ -6,7 +6,9 @@
 #  Created by pengyucheng on 16/9/6.
 #  Copyright © 2016年 recomend. All rights reserved.
 
-echo "------------------------1111111=============="
+#timeDir=Time.new.strftime("%Y%m%d")
+timeDir=`date '+%Y%m%d'`
+echo "------------------------${timeDir}=============="
 pwd
 #拷贝
 APPName="PBBReader"
@@ -61,16 +63,27 @@ fi
 #安装packages并生成pkg安装包之后删除.app文件,目的是不让在上传SVN时，误上传文件
 rm -rf "${ImportSVN}/${APPName}.app"
 
+##########导入svn============
+#新建日期目录
+SVNTimeDir=$ImportSVN/${timeDir}
+if [ -d "$SVNTimeDir" ]; then
+echo 'SVNTimeDir目录已存在'
+else
+echo '新建SVNTimeDir目录'
+mkdir $SVNTimeDir
 #重命名:注在命名文件时，存在空格时必须有反斜杠修饰，或使用双毛号括住文件名
-echo "mv ${ImportSVN}/${APPName}.pkg ${ImportSVN}/$ProductName.pkg"
-mv -i ${ImportSVN}/${APPName}.pkg "${ImportSVN}/$ProductName.pkg"
+echo "mv ${ImportSVN}/${APPName}.pkg ${SVNTimeDir}/$ProductName.pkg"
+mv -i ${ImportSVN}/${APPName}.pkg "${SVNTimeDir}/$ProductName.pkg"
+fi
 
-#导入svn
-echo "import "${ImportSVN}" https:\/\/192.168.85.6/svn/Installation_Package/mac%20os -m "${ProductName}""
+#读取更新信息
+releaseNote=$(cat ${Distribution}/releaseNote.md)
+echo "svn import "${ImportSVN}" https:\/\/192.168.85.6/svn/Installation_Package/mac%20os -m "${releaseNote}""
 export LC_CTYPE="zh_CN.UTF-8" #设置当前系统的 locale,支持中文路径
-svn import "${ImportSVN}" https://192.168.85.6/svn/Installation_Package/mac%20os -m "${ProductName}"
+
+svn import "${ImportSVN}" https://192.168.85.6/svn/Installation_Package/mac%20os -m "${releaseNote}"
 #上传到SVN服务器之后，移除pkg
-rm -rf "${ImportSVN}/$ProductName.pkg"
+#rm -rf "${SVNTimeDir}/$ProductName.pkg"
 
 #Showing All Messages
 #svn: E170013: Unable to connect to a repository at URL 'https://192.168.85.6/svn/Installation_Package/mac%20os'

@@ -50,10 +50,13 @@
                      (long)_EncryptedLen,
                      (long)_fileSize,
                      (long)_offset);
-    }else{
+    }
+    else
+    {
         //明文
         set_key_info(nil,0,0,0);
     }
+    
     if (_waterMark) {
         [dic setObject:_waterMark forKey:@"waterMark"];
     }

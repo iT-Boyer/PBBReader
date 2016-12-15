@@ -1294,7 +1294,6 @@ singleton_implementation(AppDelegateHelper);
 
 -(BOOL)fileIsTypeOfVideo:(NSString *)pathExt
 {
-    [[[PBBLogModel alloc] initWithType:LogINFO inApp:APPReaderMac desc:@"浏览的格式文件：\(pathExt)"] sendToServer];
     if(pathExt == nil || pathExt.length == 0)
     {
         return NO;

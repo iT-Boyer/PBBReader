@@ -946,6 +946,7 @@
 		149D53A91DE4270E00FC4F63 /* SmartBlockSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmartBlockSettings.m; sourceTree = "<group>"; };
 		149D53AA1DE4270E00FC4F63 /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
 		149D53AB1DE4270E00FC4F63 /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
+		149FF70C1E023F6A00E6CE7B /* releaseNote.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = releaseNote.md; sourceTree = "<group>"; };
 		14A5058E1DAA2656008BF666 /* Toasty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Toasty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		14A505901DAA2656008BF666 /* Toasty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Toasty.h; sourceTree = "<group>"; };
 		14A505921DAA2656008BF666 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -2000,6 +2001,7 @@
 			isa = PBXGroup;
 			children = (
 				14E14B0D1DC0B34F00417640 /* Mac开发:发布证书合集.p12 */,
+				149FF70C1E023F6A00E6CE7B /* releaseNote.md */,
 				14EA57D61D7E723E0026602B /* Packages */,
 				14EA57D41D7E62790026602B /* PBBReaderForOSX.pkgproj */,
 			);

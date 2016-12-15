@@ -25,14 +25,14 @@ class PBBLogClient
         request.httpMethod = "POST"
         let dataTask: URLSessionDataTask = URLSession.shared.dataTask(with: request) {
             (data, resp, err) in
-            print("响应的服务器地址：\(resp?.url?.absoluteString)")
+//            print("响应的服务器地址：\(resp?.url?.absoluteString)")
             var dict:NSDictionary? = nil
             do {
                 dict  = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.init(rawValue: 0)) as? NSDictionary
             } catch {
-                
+                NSLog("搜集日志奔溃...\(logModel.description)")
             }
-            print("\(dict)")
+//            print("响应内容：\(dict)")
         }
         dataTask.resume()
     }
