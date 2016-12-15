@@ -11,10 +11,12 @@ timeDir=`date '+%Y%m%d'`
 echo "------------------------${timeDir}=============="
 pwd
 #拷贝
+
 APPName="PBBReader"
 ProductPath="$TARGET_BUILD_DIR/${APPName}.app"
 Distribution="$PROJECT_DIR/Distribution"
 ImportSVN="$Distribution/ImportSVN"
+SVNURL="https://192.168.85.6/svn/Installation_Package/mac%20os"
 #重命名导入SVN
 versionNumber=$(/usr/libexec/PlistBuddy -c "Print CFBundleShortVersionString" "$INFOPLIST_FILE")
 buildNumber=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" "$INFOPLIST_FILE")
@@ -64,24 +66,30 @@ fi
 rm -rf "${ImportSVN}/${APPName}.app"
 
 ##########导入svn============
+#读取releaseNote.md更新信息
+releaseNote=$(cat ${Distribution}/releaseNote.md)
+echo "svn import "${ImportSVN}" ${SVNURL} -m "${releaseNote}""
+export LC_CTYPE="zh_CN.UTF-8" #设置当前系统的 locale,支持中文路径
+
+#先判断svn目录是否存在,直接checkout目录导ImportSVN中
+cd $ImportSVN
+svn checkout ${SVNURL}/${timeDir}
 #新建日期目录
 SVNTimeDir=$ImportSVN/${timeDir}
 if [ -d "$SVNTimeDir" ]; then
-echo 'SVNTimeDir目录已存在'
+    echo 'SVNTimeDir目录已存在，先svn checkout再commit'
+    #把pkg文件移动到SVN版本目录，同时实现重命名
+    mv -i ${ImportSVN}/${APPName}.pkg "${SVNTimeDir}/$ProductName.pkg"
+    cd ${timeDir}     # 进入checkout目录
+    svn add "$ProductName.pkg"    # 安装包加入版本库
+    svn commit -m "${releaseNote}"   # 提交
 else
-echo '新建SVNTimeDir目录'
-mkdir $SVNTimeDir
-#重命名:注在命名文件时，存在空格时必须有反斜杠修饰，或使用双毛号括住文件名
-echo "mv ${ImportSVN}/${APPName}.pkg ${SVNTimeDir}/$ProductName.pkg"
-mv -i ${ImportSVN}/${APPName}.pkg "${SVNTimeDir}/$ProductName.pkg"
+    echo '新建SVNTimeDir目录，直接svn import'
+    mkdir $SVNTimeDir
+    mv -i ${ImportSVN}/${APPName}.pkg "${SVNTimeDir}/$ProductName.pkg"
+    svn import "${ImportSVN} ${SVNURL}" -m "${releaseNote}"
 fi
 
-#读取更新信息
-releaseNote=$(cat ${Distribution}/releaseNote.md)
-echo "svn import "${ImportSVN}" https:\/\/192.168.85.6/svn/Installation_Package/mac%20os -m "${releaseNote}""
-export LC_CTYPE="zh_CN.UTF-8" #设置当前系统的 locale,支持中文路径
-
-svn import "${ImportSVN}" https://192.168.85.6/svn/Installation_Package/mac%20os -m "${releaseNote}"
 #上传到SVN服务器之后，移除pkg
 #rm -rf "${SVNTimeDir}/$ProductName.pkg"
 
