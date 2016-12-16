@@ -25,13 +25,33 @@ class AppDelegate: NSObject, NSApplicationDelegate{
         UserDefaults.standard.setValue(OpenUDID.value(), forKey: "equip_serial")
         UserDefaults.standard.synchronize()
         // Insert code here to initialize your application
+        
+        
+        //问题；NSApplicationCrashOnExceptions is not set. This will result in poor top-level uncaught exception reporting
+        //https://twittercommunity.com/t/fabric-failed-to-download-settings-unknown-host/75443
+        //macOS Support:https://docs.fabric.io/apple/crashlytics/os-x.html#macos-support
+        //[[NSUserDefaults standardUserDefaults] registerDefaults:@{ @"NSApplicationCrashOnExceptions": @YES }];
+        //Crashlytics日志工具
+        UserDefaults.standard.register(defaults: ["NSApplicationCrashOnExceptions" : true])
+        //及时写入
+        UserDefaults.standard.synchronize()
+        Fabric.with([Crashlytics.self])
+        //TODO: Move this to where you establish a user session
+        self.logUser()
+        
+        //30s之后执行升级检测
+        self.perform(#selector(AppDelegate.checkAPPUpdate), with: nil, afterDelay: 30.0)
+    }
+    
+    func checkAPPUpdate()
+    {
         //监测升级
         let infoFileURL = URL.init(string: "http://www.pyc.com.cn/appupdate/pbbreader_mac/updateinfo.plist")
         
         if let updateInfo = NSDictionary.init(contentsOf: infoFileURL!)
-//        if let updateInfo = NSDictionary.init(contentsOfFile: NSBundle.mainBundle().pathForResource("updateinfo", ofType: "plist")!)
+            //        if let updateInfo = NSDictionary.init(contentsOfFile: NSBundle.mainBundle().pathForResource("updateinfo", ofType: "plist")!)
         {
-//            let versionString = updateInfo.objectForKey("CFBundleShortVersionString")!
+            //            let versionString = updateInfo.objectForKey("CFBundleShortVersionString")!
             let version = updateInfo.object(forKey: "CFBundleVersion") as! Double
             let InstallerPackage = updateInfo.object(forKey: "InstallerPackage")!
             let UpdateContent = updateInfo.object(forKey: "UpdateContent")!
@@ -49,34 +69,22 @@ class AppDelegate: NSObject, NSApplicationDelegate{
                     PBBLogModel(.INFO, in: .ReaderMac, desc: "用户下载包+1").sendTo()
                     NSWorkspace.shared().open(URL.init(string: InstallerPackage as! String)!)
                     //版本升级过程中，更新数据库
-//                    ReceiveFileDao.sharedReceiveFileDao().updateTable()
-//                    ReceiveFileDao.sharedReceiveFileDao().updateReceiveFileForVersionPBB()
-//                    userDao.shareduserDao().updateTable()
+                    //                    ReceiveFileDao.sharedReceiveFileDao().updateTable()
+                    //                    ReceiveFileDao.sharedReceiveFileDao().updateReceiveFileForVersionPBB()
+                    //                    userDao.shareduserDao().updateTable()
                     if FileManager.default.fileExists(atPath: KDataBasePath.appending("PBB.db")) && !FileManager.default.fileExists(atPath: KDataBasePath.appending(".PBB.db"))
                     {   //版本升级过程中，更新数据库
                         PBBLogModel(.INFO, in: .ReaderMac, desc: "版本升级过程中，更新数据库").sendTo()
-                       try! FileManager.default.copyItem(atPath: KDataBasePath.appending("PBB.db"), toPath: KDataBasePath.appending(".PBB.db"))
+                        try! FileManager.default.copyItem(atPath: KDataBasePath.appending("PBB.db"), toPath: KDataBasePath.appending(".PBB.db"))
                     }
                 }
-//                if alert.runModal() == NSAlertSecondButtonReturn
-//                {
-//                    //稍后提醒
-//                    
-//                }
+                //                if alert.runModal() == NSAlertSecondButtonReturn
+                //                {
+                //                    //稍后提醒
+                //                    
+                //                }
             }
         }
-        
-        //问题；NSApplicationCrashOnExceptions is not set. This will result in poor top-level uncaught exception reporting
-        //https://twittercommunity.com/t/fabric-failed-to-download-settings-unknown-host/75443
-        //macOS Support:https://docs.fabric.io/apple/crashlytics/os-x.html#macos-support
-        //[[NSUserDefaults standardUserDefaults] registerDefaults:@{ @"NSApplicationCrashOnExceptions": @YES }];
-        //Crashlytics日志工具
-        UserDefaults.standard.register(defaults: ["NSApplicationCrashOnExceptions" : true])
-        //及时写入
-        UserDefaults.standard.synchronize()
-        Fabric.with([Crashlytics.self])
-        //TODO: Move this to where you establish a user session
-        self.logUser()
     }
 
     //Log user information when your app crashes
