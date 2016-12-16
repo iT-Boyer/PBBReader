@@ -68,7 +68,7 @@ rm -rf "${ImportSVN}/${APPName}.app"
 ##########导入svn============
 #读取releaseNote.md更新信息
 releaseNote=$(cat ${Distribution}/releaseNote.md)
-echo "svn import "${ImportSVN}" ${SVNURL} -m "${releaseNote}""
+#echo "svn import "${ImportSVN}" ${SVNURL} -m "${releaseNote}"
 export LC_CTYPE="zh_CN.UTF-8" #设置当前系统的 locale,支持中文路径
 
 #先判断svn目录是否存在,直接checkout目录导ImportSVN中
@@ -87,7 +87,7 @@ else
     echo '新建SVNTimeDir目录，直接svn import'
     mkdir $SVNTimeDir
     mv -i ${ImportSVN}/${APPName}.pkg "${SVNTimeDir}/$ProductName.pkg"
-    svn import "${ImportSVN} ${SVNURL}" -m "${releaseNote}"
+    svn import "${ImportSVN}" ${SVNURL} -m "${releaseNote}"
 fi
 
 #上传到SVN服务器之后，移除pkg

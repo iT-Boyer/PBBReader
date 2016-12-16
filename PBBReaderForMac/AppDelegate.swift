@@ -41,7 +41,7 @@ class AppDelegate: NSObject, NSApplicationDelegate{
                 //提示下载更新安装包
                 let alert = NSAlert.init()
                 alert.addButton(withTitle: "下载")
-//                alert.addButtonWithTitle("稍后提醒")
+                alert.addButton(withTitle: "取消")
                 alert.messageText = UpdateContent as! String
                 if alert.runModal() == NSAlertFirstButtonReturn
                 {
