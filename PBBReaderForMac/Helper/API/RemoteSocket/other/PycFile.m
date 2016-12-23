@@ -218,7 +218,8 @@
 }
 
 
-#pragma mark - 获取pbb文件的fileID
+#pragma mark - 获取pbb文件的fileID 
+//当hsg自由传播没有结构体，无法获取fileID
 - (int)getAttributePycFileId:(NSString *)filename
 {
     int bReturn = 0;
@@ -263,7 +264,6 @@
     PYCFILEHEADER *header = (PYCFILEHEADER *)[data bytes];
     NSLog(@"file original size really %lld", header->fileSize);
     */
-   //hsg自由传播没有结构体，无法获取fileID
     NSData *dataExt = [handle readDataOfLength:sizeof(PYCFILEEXT)];
     PYCFILEEXT *fileExtHeader = (PYCFILEEXT *)[dataExt bytes];
     PycCode *coder = [[PycCode alloc] init];
@@ -281,48 +281,45 @@
 
 -(NSInteger)getFileType:(NSString *)filePath
 {
-    //NSInteger fileType = FILE_TYPE_UNKOWN;
-    
-//    NSString *fileSavePlist = [[PycFolder documentDirectory] stringByAppendingPathComponent:FILE_LIST_PATH];
-//    NSDictionary *fileTypeDic = [NSDictionary dictionaryWithContentsOfFile:fileSavePlist];
-//    if (fileTypeDic == nil) {
+    NSString *strFileExtend = [NSString stringWithFormat:@".%@",[filePath  pathExtension]];
+    NSMutableString *fileWithOutExtention = [NSMutableString stringWithFormat:@"%@", filePath];
+    NSRange range = [fileWithOutExtention rangeOfString:strFileExtend];
+    [fileWithOutExtention deleteCharactersInRange:range];
 
-    //    @"+jpg+png+bmp+gif+jpeg+jpe+"
-//    @"+rmvb+mkv+mpeg+mp4+mov+avi+3gp+flv+wmv+rm+mpg+vob+wav+dat+"
-         NSDictionary * fileTypeDic = [NSDictionary dictionaryWithObjectsAndKeys:
-                [NSNumber numberWithInteger:FILE_TYPE_MOVIE], @"mp4",
-                [NSNumber numberWithInteger:FILE_TYPE_MOVIE], @"rmvb",
-                [NSNumber numberWithInteger:FILE_TYPE_MOVIE], @"mkv",
-                [NSNumber numberWithInteger:FILE_TYPE_MOVIE], @"mpeg",
-                [NSNumber numberWithInteger:FILE_TYPE_MOVIE], @"mov",
-                [NSNumber numberWithInteger:FILE_TYPE_MOVIE], @"avi",
-                [NSNumber numberWithInteger:FILE_TYPE_MOVIE], @"3gp",
-                [NSNumber numberWithInteger:FILE_TYPE_MOVIE], @"flv",
-                [NSNumber numberWithInteger:FILE_TYPE_MOVIE], @"wmv",
-                [NSNumber numberWithInteger:FILE_TYPE_MOVIE], @"mpg",
-                [NSNumber numberWithInteger:FILE_TYPE_MOVIE], @"vob",
-                [NSNumber numberWithInteger:FILE_TYPE_MOVIE], @"rm",
-                [NSNumber numberWithInteger:FILE_TYPE_MOVIE], @"wav",
-                [NSNumber numberWithInteger:FILE_TYPE_MOVIE], @"dat",     
-                       [NSNumber numberWithInteger:FILE_TYPE_PIC], @"jpg",
-                       [NSNumber numberWithInteger:FILE_TYPE_PIC], @"bmp",
-                       [NSNumber numberWithInteger:FILE_TYPE_PIC], @"gif",
-                       [NSNumber numberWithInteger:FILE_TYPE_PIC], @"jpeg",
-                       [NSNumber numberWithInteger:FILE_TYPE_PIC], @"jpe",
-                       [NSNumber numberWithInteger:FILE_TYPE_PIC], @"png",nil];
-//        [fileTypeDic writeToFile:fileSavePlist atomically:YES];
-//    }
+//    NSMutableString *fileWithOutExtention = [NSMutableString stringWithFormat:@"%@", [filePath stringByDeletingPathExtension]];
     
-      
-    
-    NSString *fileExtention1 = [filePath pathExtension];
-    self.fileExtentionWithOutDot = [filePath pathExtension];
+    NSString *fileExtention1 = [fileWithOutExtention pathExtension];
+    self.fileExtentionWithOutDot = [fileWithOutExtention pathExtension];
     
     NSString *fileExtention = [fileExtention1 lowercaseString];
     
+    
+     NSDictionary * fileTypeDic = [NSDictionary dictionaryWithObjectsAndKeys:
+                                                 [NSNumber numberWithInteger:FILE_TYPE_MOVIE], @"mp4",
+                                                 [NSNumber numberWithInteger:FILE_TYPE_MOVIE], @"rmvb",
+                                                 [NSNumber numberWithInteger:FILE_TYPE_MOVIE], @"mkv",
+                                                 [NSNumber numberWithInteger:FILE_TYPE_MOVIE], @"mpeg",
+                                                 [NSNumber numberWithInteger:FILE_TYPE_MOVIE], @"mov",
+                                                 [NSNumber numberWithInteger:FILE_TYPE_MOVIE], @"avi",
+                                                 [NSNumber numberWithInteger:FILE_TYPE_MOVIE], @"3gp",
+                                                 [NSNumber numberWithInteger:FILE_TYPE_MOVIE], @"flv",
+                                                 [NSNumber numberWithInteger:FILE_TYPE_MOVIE], @"wmv",
+                                                 [NSNumber numberWithInteger:FILE_TYPE_MOVIE], @"mpg",
+                                                 [NSNumber numberWithInteger:FILE_TYPE_MOVIE], @"vob",
+                                                 [NSNumber numberWithInteger:FILE_TYPE_MOVIE], @"rm",
+                                                 [NSNumber numberWithInteger:FILE_TYPE_MOVIE], @"wav",
+                                                 [NSNumber numberWithInteger:FILE_TYPE_MOVIE], @"dat",
+                                                 [NSNumber numberWithInteger:FILE_TYPE_PIC], @"jpg",
+                                                 [NSNumber numberWithInteger:FILE_TYPE_PIC], @"bmp",
+                                                 [NSNumber numberWithInteger:FILE_TYPE_PIC], @"gif",
+                                                 [NSNumber numberWithInteger:FILE_TYPE_PIC], @"jpeg",
+                                                 [NSNumber numberWithInteger:FILE_TYPE_PIC], @"jpe",
+                                                 [NSNumber numberWithInteger:FILE_TYPE_PIC], @"png",nil];
+    
     NSNumber *nsfileType  = fileTypeDic[fileExtention];
     
-    if (nsfileType == nil) {
+    if (nsfileType == nil)
+    {
         self.fileType = FILE_TYPE_UNKOWN;
     }
     else
@@ -421,11 +418,10 @@
     NSString *pycFilePath = [pycFileWithOutExtention stringByAppendingPathExtension:PYC_FILE_EXTENTION];
     NSFileManager *manager = [NSFileManager defaultManager];
     
-    
     BOOL isDir;
     NSError *err;
-    if (![manager fileExistsAtPath:sendFolderForUser isDirectory:&isDir]) {
-        
+    if (![manager fileExistsAtPath:sendFolderForUser isDirectory:&isDir])
+    {
         if(![manager createDirectoryAtPath:sendFolderForUser withIntermediateDirectories:YES attributes:nil error:&err])
         {
             NSLog(@"create dir err %@", err);
@@ -556,117 +552,6 @@
     return filePathForOpenFile;
 }
 
-
--(BOOL)moveFileAndDecodeFrom:(NSString *)strFileName
-               partOfContent:(NSInteger)originalFileLen
-                  decodeSize:(NSInteger)encryptLen
-               toDestination:(NSString *)strDestination
-{
-    self.fileName = [self getNotExistFileNameFromPycFile:self.filePycNameFromServer withExtention:[ self.filePycNameFromServer pathExtension] forUser:@"not use"];
-    
-    NSString *realDestinationPath  = self.fileName;//= [self getNotExistName:strDestination];
-    NSFileManager *manager = [NSFileManager defaultManager];
-    NSLog(@"destnatin file is %@", realDestinationPath);
-    NSLog(@"strFileName file is %@", strFileName);
-    //    if (![manager createFileAtPath:realDestinationPath contents:nil attributes:nil]) {
-    //        NSLog(@"err");
-    //
-    //        return NO;
-    //    }
-    //
-    NSError *error;
-    if([manager fileExistsAtPath:realDestinationPath])
-    {
-        [manager removeItemAtPath:realDestinationPath error:&error];
-    }
-    if(![manager copyItemAtPath:strFileName toPath:realDestinationPath error:&error]) {
-        NSLog(@"err");
-        
-        return NO;
-    }
-    
-    
-    
-    //get file len
-    NSInteger readReallen = 0;
-    NSInteger preReadMaxLen = 1024*1024 ;
-    NSInteger encodelen = 0;
-    //    int readlen = 0;
-    //    BOOL bDecodeFinish = NO;
-    //    BOOL bCopyFinish = NO;
-    BOOL bFinish = NO;
-    NSInteger filePos = 0;
-    NSFileHandle *handleDestination = [NSFileHandle fileHandleForUpdatingAtPath:realDestinationPath];
-    if (!handleDestination ) {
-        NSLog(@"file handle move err");
-        return NO;
-    }
-    
-//    _imageData = [[NSMutableData alloc] init];
-    //解密完成
-    while (!bFinish) {
-        NSData *data = [[NSData alloc] init];
-        
-        data = [handleDestination readDataOfLength:preReadMaxLen];
-        //NSData *data = [handleDestination readDataOfLength:preReadMaxLen];
-        
-        readReallen += [data length];
-        if ([data length] == 0) {
-            NSLog(@"finish code %ld", (long)readReallen); //-------
-            break;
-        }
-        
-        
-        if ((readReallen >= encryptLen) || (encryptLen == -1)) {
-            if(encryptLen == -1)
-            {
-                if(readReallen >= originalFileLen)
-                {
-                    if((readReallen-originalFileLen)%16 >0)
-                    {
-                        encodelen = [data length] - (readReallen-originalFileLen) + 16 - (readReallen-originalFileLen)%16;
-                    }
-                    else
-                    {
-                        encodelen = [data length] - (readReallen-originalFileLen);
-                    }
-                    bFinish = YES;
-                }
-                else{
-                    encodelen = [data length];
-                }
-                
-            }
-            else
-            {
-                encodelen = [data length] - (readReallen -encryptLen);
-                NSLog(@"last encrypt len %ld", (long)encodelen);
-                readReallen = encryptLen;//-------
-                bFinish = YES;
-            }
-        }else
-        {
-            encodelen = [data length];
-        }
-        
-        PycCode *coder = [[PycCode alloc] init];
-        [coder decodeBufferOfFile:(Byte *)[data bytes] length:(int)encodelen withKey:(Byte *)[self.fileSecretkeyR1 bytes]];
-        
-        //缓存图片到内存
-//        [_imageData appendData:data];
-
-        [handleDestination seekToFileOffset:filePos];
-        [handleDestination writeData:data];
-        filePos += encodelen;
-    }
-    filePos = originalFileLen;
-    [handleDestination seekToFileOffset:filePos];
-    [handleDestination truncateFileAtOffset:filePos];
-    [handleDestination closeFile];
-    
-    //
-    return YES;
-}
 
 -(BOOL)fileIsTypeOfVideo:(NSString *)pathExt
 {
@@ -812,8 +697,10 @@
         return;
     }
 
+    
     if (receiveData->type == TYPE_FILE_OUT || receiveData->type == TYPE_FILE_OUT_SALER_APPLY)
     {
+        //文件制作
         if (receiveData->suc == 0)
         {
             NSLog(@"return operate server suc = 0");
@@ -866,6 +753,7 @@
     }
     else if(receiveData->type == TYPE_FILE_OPEN)
     {
+        //文件查看
         NSLog(@"type is open");
         //随机因子不同
         if (receiveData->userData.random != self.Random)
@@ -1784,17 +1672,22 @@ _ALL_END:
     self.bindingPhone = phoneNo;
     self.verificationCodeID = messageID;
     self.haveOpenedNum = openedNum;
-    if ([pbbFileName isEqualToString:@""]) {
+    if ([pbbFileName isEqualToString:@""])
+    {
         pbbFileName = [pycFileName lastPathComponent];
     }
-    if ([pbbFileName isEqualToString:@""] || pbbFileName == nil ) {
+    if ([pbbFileName isEqualToString:@""] || pbbFileName == nil )
+    {
         self.filePycNameFromServer = [self.filePycName lastPathComponent];
-    }else{
+    }
+    else
+    {
         self.filePycNameFromServer = pbbFileName;
     }
     
     NSFileManager *manager = [NSFileManager defaultManager];
-    if (![manager fileExistsAtPath:pycFileName]) {
+    if (![manager fileExistsAtPath:pycFileName])
+    {
         NSLog(@"no file");
         bReturn=@"1";
         return  bReturn;
@@ -1831,8 +1724,8 @@ _ALL_END:
     NSError *err;
     //得到文件大小
     NSDictionary *fileAttributes = [manager attributesOfItemAtPath:self.filePycName error:&err];
-    if (fileAttributes != nil) {
-        
+    if (fileAttributes != nil)
+    {
         fileSize = [fileAttributes objectForKey:NSFileSize];
         NSLog(@"%ld", fileSize.longValue);
     }
@@ -1845,10 +1738,11 @@ _ALL_END:
         bReturn=@"4";
         return  bReturn;
     }
-    //    NSFileHandle *handle = [NSFileHandle fileHandleForReadingAtPath:self.filePycName];
+
+    //沙盒环境下，先移动到自定义目录中再进一步操作
     NSRange range = [_filePycName rangeOfString:@"Inbox"];
-    //     if (haveOutStru == 1 && range.length>0) {
-    if (range.length>0) {
+    if (range.length>0)
+    {
         //取得接收目录，把源pbb文件拷贝到接收目录中，
         NSLog(@"把源文件拷贝到接收目录中");
         self.filePycName = [self getNotExistRecievePycName:pycFileName forUser:logname];
@@ -1899,7 +1793,8 @@ _ALL_END:
     //数据库中都存在
     
     //离线问题
-    if (_receiveFile == nil) {
+    if (_receiveFile == nil)
+    {
         _receiveFile = [[ReceiveFileDao sharedReceiveFileDao] fetchReceiveFileCellByFileId:_fileID
                                                                                    LogName:[[userDao shareduserDao] getLogName]];
     }
@@ -1969,14 +1864,13 @@ _ALL_END:
             
         }else {
             //数据库已经保存有encodekey
-            
-            
             if (_receiveFile.status)
             {
                 b_needNet = NO;
             }
             
-            if(![ToolString isConnectionAvailable]){
+            if(![ToolString isConnectionAvailable])
+            {
                 //网络异常
                 if (b_needNet) {
                     //此过程需要连网
@@ -1984,7 +1878,8 @@ _ALL_END:
                     return  bReturn;
                 }else{
                     NSLog(@"查看文件时，网络异常...开始离线阅读2");
-                    if (_receiveFile.status) {
+                    if (_receiveFile.status)
+                    {
                         //旧版本手动激活文件，可读时
                         //解析离线文件，并给self赋值,获取明文文件
                         [self setValueOfSelfByNewFile:_receiveFile];
@@ -1993,12 +1888,15 @@ _ALL_END:
                     //根据本地数据库中的纪录判断文件是否可阅读
                     i_canSeeForOutline=[[ReceiveFileDao sharedReceiveFileDao] verifyOutFileCurrent:_receiveFile.fileid];
                     //离线阅读手动激活文件
-                    if (i_canSeeForOutline&ERR_OK_OR_CANOPEN) {
+                    if (i_canSeeForOutline&ERR_OK_OR_CANOPEN)
+                    {
                         dispatch_async(dispatch_get_main_queue(), ^{
                             [self makeReturnMessage:_receiveFile.canSeeForOutline forOperateType:TYPE_FILE_OPEN];
                             //                            [self makeReturnMessage:i_canSeeForOutline forOperateType:TYPE_FILE_OPEN];
                         });
-                    }else{
+                    }
+                    else
+                    {
                         dispatch_async(dispatch_get_main_queue(), ^{
                             //                            [self makeReturnMessage:_receiveFile.canSeeForOutline forOperateType:TYPE_FILE_OPEN];
                             [self makeReturnMessage:i_canSeeForOutline forOperateType:TYPE_FILE_OPEN];
@@ -2298,29 +2196,8 @@ _ALL_END:
     //add end
     self.openTimeLong = receiveData->userData.iOpenTimeLong;
     
-    NSString *strFileExtend = [NSString stringWithFormat:@".%@",[ self.filePycNameFromServer  pathExtension]];
-    NSMutableString *fileWithOutExtention = [NSMutableString stringWithFormat:@"%@", self.filePycNameFromServer];
-    NSRange range = [fileWithOutExtention rangeOfString:strFileExtend];
-    if (range.location == NSNotFound) {
-        NSLog(@"*****file name err");
-        receiveData->suc = 0;
-    }
-    else
-    {
-        [fileWithOutExtention deleteCharactersInRange:range];
-    }
     //文件类型
-    self.fileType = [self getFileType:fileWithOutExtention];
-    
-    self.fileName = [self getNotExistFileNameFromPycFile:self.filePycNameFromServer
-                                           withExtention:[ self.filePycNameFromServer  pathExtension]
-                                                 forUser:@"not use"];
-    if (self.fileName == nil)
-    {
-        receiveData->suc = 0;
-    }
-    
-//    [self makeOpenFile];
+    self.fileType = [self getFileType:self.filePycNameFromServer];
     
     if (receiveData->suc & ERR_OK_OR_CANOPEN)
     {
@@ -2470,6 +2347,8 @@ _ALL_END:
     {
         return NO;
     }
+    
+    //释放明文的路径
     NSString *toDestination = [self getNotExistFileNameFromPycFile:self.filePycNameFromServer
                                                      withExtention:[self.filePycNameFromServer pathExtension]
                                                            forUser:@"not use"];
@@ -2490,11 +2369,11 @@ _ALL_END:
     NSFileManager *manager = [NSFileManager defaultManager];
     NSLog(@"destnatin file is %@", strDestination);
     NSLog(@"strFileName file is %@", strFileName);
-        if (![manager createFileAtPath:strDestination contents:nil attributes:nil])
-        {
-            NSLog(@"err");
-            return NO;
-        }
+    if (![manager createFileAtPath:strDestination contents:nil attributes:nil])
+    {
+        NSLog(@"err");
+        return NO;
+    }
     
     NSError *error;
     if([manager fileExistsAtPath:strDestination])
@@ -2589,7 +2468,8 @@ _ALL_END:
     [handleDestination seekToFileOffset:filePos];
     [handleDestination truncateFileAtOffset:filePos];
     [handleDestination closeFile];
-    
+    //明文释放成功复制给明文地址属性变量
+    self.fileName = strDestination;
     return YES;
 }
 
@@ -2992,7 +2872,6 @@ _ALL_END:
 }
 -(void)receiveGetFileInfoByIdPackage:(RECEIVEDATA_NEW_NEW *)receiveData
 {
-    
     self.fileOwner = [[NSString alloc] initWithBytes:receiveData->userData.logName length:USERNAME_LEN encoding:NSUTF8StringEncoding];
     self.filePycNameFromServer = [[NSString alloc]initWithBytes:receiveData->userData.fileoutName length:FILENAME_LEN encoding:NSUTF8StringEncoding];
     self.startDay =  [[NSString alloc]initWithBytes:receiveData->userData.startTime  length:TIME_LEN encoding:NSUTF8StringEncoding];
@@ -3033,25 +2912,8 @@ _ALL_END:
      */
     self.seriesName = [[NSString alloc] initWithBytes:receiveData->userData.seriesname length:SERIESNAME_LEN encoding:NSUTF8StringEncoding];
     self.seriesName = [self.seriesName stringByReplacingOccurrencesOfString:@"\0" withString:@""];
-    
-    
-    //    NSString *strFileExtend = [NSString stringWithFormat:@".%@",[ self.filePycNameFromServer  pathExtension]];
-    NSMutableString *fileWithOutExtention = [NSMutableString stringWithFormat:@"%@", [self.filePycNameFromServer stringByDeletingPathExtension]];
-    //    NSRange range = [fileWithOutExtention rangeOfString:strFileExtend];
-    //    if (range.location == NSNotFound) {
-    //        NSLog(@"*****file name err");
-    //        receiveData->suc = 0;
-    //    }
-    //    else
-    //    {
-    //        [fileWithOutExtention deleteCharactersInRange:range];
-    //    }
-    //    NSLog(@"new file name with no extention %@", fileWithOutExtention);
     //文件类型
-    self.fileType = [self getFileType:fileWithOutExtention];
-    
-    
-    
+    self.fileType = [self getFileType:self.filePycNameFromServer];
 }
 #pragma mark - 申请
 #pragma mark 查看申请提交申请<信息>
@@ -3193,7 +3055,7 @@ _ALL_END:
         bReturn=@"1";
         return bReturn;
     }
-    self.fileName = theFileName;
+    self.filePycNameFromServer = theFileName;
     self.QQ = theQQ;
     self.email = theEmail;
     self.phone = thePhone;
@@ -3288,7 +3150,14 @@ _ALL_END:
         if(receiveData->userData.iCanClient)
         {
             self.applyId = receiveData->userData.applyId;
-            [self setOutLineStructData:self.fileName isFirstSee:FALSE isSetFirst:FALSE isSee:FALSE isVerifyOk:FALSE isTimeIsChanged:FALSE isApplySucess:TRUE data:NULL];
+            [self setOutLineStructData:self.filePycNameFromServer
+                            isFirstSee:FALSE
+                            isSetFirst:FALSE
+                                 isSee:FALSE
+                            isVerifyOk:FALSE
+                       isTimeIsChanged:FALSE
+                         isApplySucess:TRUE
+                                  data:NULL];
             //修改文件离线结构中的applyid
             
         }
@@ -3746,32 +3615,15 @@ _ALL_END:
         [coder decodeBufferOfFile:(Byte*)fileOutLineStru length:sizeof(OUTLINE_STRUCT) withKey:sessionKey];
         if(fileOutLineStru->structflag == PycTag0)
         {
-
             self.fileSecretkeyOrigianlR1 = [[NSData alloc] initWithBytes:fileOutLineStru->EncodeKey length: ENCRYPKEY_LEN];
-            
-            //    [self printByte:receiveData->userData.EncodeKey len:ENCRYPKEY_LEN description:@"miyao r1 "];
-            /* //test because of server return 0
-             NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-             NSString *documentsDirectory = [paths objectAtIndex:0];
-             NSString *strFile = [NSString stringWithFormat:@"%@", [documentsDirectory stringByAppendingPathComponent:@"save.txt"]];
-             self.fileSecretkeyOrigianlR1 = [NSData dataWithContentsOfFile:strFile];
-             */
             Byte fileScreateR1[ENCRYPKEY_LEN];
             [coder getSecretKeyFromOriginalKey:(Byte *)[self.fileSecretkeyOrigianlR1 bytes]  to:fileScreateR1];
             self.fileSecretkeyR1 = [[NSData alloc] initWithBytes:fileScreateR1 length: ENCRYPKEY_LEN];
-            //   [self printByte:fileScreateR1 len:ENCRYPKEY_LEN description:@"miyao r1' "];
-            //                self.fileOwner = [[NSString alloc] initWithBytes:receiveData->userData.logName length:USERNAME_LEN encoding:NSUTF8StringEncoding];
-            //                self.filePycNameFromServer = [[NSString alloc]initWithBytes:receiveData->userData.fileoutName length:FILENAME_LEN encoding:NSUTF8StringEncoding];
-            //                self.startDay =  [[NSString alloc]initWithBytes:receiveData->userData.startTime  length:TIME_LEN encoding:NSUTF8StringEncoding];
-            //                self.endDay = [[NSString alloc]initWithBytes:receiveData->userData.endTime  length:TIME_LEN encoding:NSUTF8StringEncoding];
             self.AllowOpenmaxNum = fileOutLineStru->fileopennum;
             self.haveOpenedNum = fileOutLineStru->fileopenednum - 1;
             self.bCanprint = fileOutLineStru->bCanPrint;
             self.canseeCondition = fileOutLineStru->iCanSeeCondition;
             self.iCanOpen = 1;
-            //                self.nickname = [[NSString alloc]initWithBytes:receiveData->userData.nick length:NICK_LEN encoding:NSUTF8StringEncoding];
-            //                self.remark = [[NSString alloc]initWithBytes:receiveData->userData.remark length:REMARK_LEN encoding:NSUTF8StringEncoding];
-            //                NSLog(@"result is %d", receiveData->suc);
             //add by lry 2014-05-05
             if (strlen(fileOutLineStru->QQ) == 0) {
                 self.QQ = @"";
@@ -3779,8 +3631,6 @@ _ALL_END:
             else
             {
                 self.QQ = [[NSString alloc] initWithUTF8String:fileOutLineStru->QQ];
-//                memset(fileOutLineStru->QQ+strlen(fileOutLineStru->QQ), 0, QQ_LEN-strlen(fileOutLineStru->QQ));
-//                self.QQ = [[NSString alloc]initWithBytes:fileOutLineStru->QQ length:QQ_LEN encoding:NSUTF8StringEncoding];
             }
             if (strlen(fileOutLineStru->phone) == 0) {
                 self.phone = @"";
@@ -3788,8 +3638,6 @@ _ALL_END:
             else
             {
                 self.phone = [[NSString alloc] initWithUTF8String:fileOutLineStru->phone];
-//                memset(fileOutLineStru->phone+strlen(fileOutLineStru->phone), 0, PHONE_LEN-strlen(fileOutLineStru->phone));
-//                self.phone = [[NSString alloc]initWithBytes:fileOutLineStru->phone length:PHONE_LEN encoding:NSUTF8StringEncoding];
             }
             if (strlen(fileOutLineStru->email) == 0) {
                 self.email = @"";
@@ -3797,8 +3645,6 @@ _ALL_END:
             else
             {
                 self.email = [[NSString alloc] initWithUTF8String:fileOutLineStru->email];
-//                memset(fileOutLineStru->email+strlen(fileOutLineStru->email), 0, EMAIL_LEN-strlen(fileOutLineStru->email));
-//                self.email = [[NSString alloc]initWithBytes:fileOutLineStru->email length:EMAIL_LEN encoding:NSUTF8StringEncoding];
             }
             //计算剩余年和天
             //取得当前时间
@@ -3818,23 +3664,16 @@ _ALL_END:
                 self.dayRemain = allDays % 365;
                 self.yearRemain = allDays / 365;
             }
-            //                self.orderID = receiveData->userData.ooid;
-            //                self.makeFrom = receiveData->userData.appType;
             self.openDay = fileOutLineStru->daynum;
             self.openYear = fileOutLineStru->yearnum;
-            //                self.makeTime = [[NSString alloc]initWithBytes:receiveData->userData.outTime length:FIRST_SEE_TIME_LEN encoding:NSUTF8StringEncoding];
-            //                self.firstSeeTime = [[NSString alloc]initWithBytes:receiveData->userData.firstSeeTime length:FIRST_SEE_TIME_LEN encoding:NSUTF8StringEncoding];
-            //add end
             //add by lry 2014-7-14
-           
-            if (strlen(fileOutLineStru->field1) == 0) {
+            if (strlen(fileOutLineStru->field1) == 0)
+            {
                 self.field1 = @"";
             }
             else
             {
                 self.field1 = [[NSString alloc] initWithUTF8String:fileOutLineStru->field1];
-//                memset(fileOutLineStru->field1+strlen(fileOutLineStru->field1), 0, FIELD_LEN-strlen(fileOutLineStru->field1));
-//                self.field1 = [[NSString alloc]initWithBytes:fileOutLineStru->field1 length:FIELD_LEN encoding:NSUTF8StringEncoding];
             }
             if (strlen(fileOutLineStru->field2) == 0) {
                 self.field2 = @"";
@@ -3842,8 +3681,6 @@ _ALL_END:
             else
             {
                  self.field2 = [[NSString alloc] initWithUTF8String:fileOutLineStru->field2];
-//                memset(fileOutLineStru->field2+strlen(fileOutLineStru->field2), 0, FIELD_LEN-strlen(fileOutLineStru->field2));
-//                self.field2 = [[NSString alloc]initWithBytes:fileOutLineStru->field2 length:FIELD_LEN encoding:NSUTF8StringEncoding];
             }
             if (strlen(fileOutLineStru->field1name) == 0) {
                 self.fild1name = @"";
@@ -3851,58 +3688,33 @@ _ALL_END:
             else
             {
                  self.fild1name = [[NSString alloc] initWithUTF8String:fileOutLineStru->field1name];
-               // memset(fileOutLineStru->field1name+strlen(fileOutLineStru->field1name), 0, HARDNO_LEN-strlen(fileOutLineStru->field1name));
-                //self.fild1name = [[NSString alloc]initWithBytes:fileOutLineStru->field1name length:FIELD_LEN encoding:NSUTF8StringEncoding];
-            }
+             }
             if (strlen(fileOutLineStru->field2name) == 0) {
                 self.fild2name = @"";
             }
             else
             {
                  self.fild2name = [[NSString alloc] initWithUTF8String:fileOutLineStru->field2name];
-               // memset(fileOutLineStru->field2name+strlen(fileOutLineStru->field2name), 0, USERNAME_LEN-strlen(fileOutLineStru->field2name));
-               // self.fild2name = [[NSString alloc]initWithBytes:fileOutLineStru->field2name length:FIELD_LEN encoding:NSUTF8StringEncoding];
             }
             //                self.openinfoid = receiveData->userData.version;      //添加结束逻辑，所需的参数值
             self.definechecked = fileOutLineStru->chosenum;   //服务器端对联系方式的勾选，根据勾选条件，申请激活，或显示水印
             self.selffieldnum = fileOutLineStru->fieldnum;  //自定义字段的个数
             self.field1needprotect = fileOutLineStru->fieldprotect&1?1:0;  //1:保密
             self.field2needprotect = fileOutLineStru->fieldprotect&2?1:0;  //1:保密
+            //文件类型
+            self.fileType = [self getFileType:self.filePycNameFromServer];
             
-            
-            //add end
-            //                self.openTimeLong = receiveData->userData.iOpenTimeLong;
-            
-            NSString *strFileExtend = [NSString stringWithFormat:@".%@",[ self.filePycNameFromServer  pathExtension]];
-            NSMutableString *fileWithOutExtention = [NSMutableString stringWithFormat:@"%@", self.filePycNameFromServer ];
-            NSRange range = [fileWithOutExtention rangeOfString:strFileExtend];
-            if (range.location == NSNotFound) {
-                NSLog(@"*****file name err");
+            if (strlen(fileOutLineStru->firstseeTime)>0)
+            {
+                self.firstSeeTime = [[NSString alloc]initWithBytes:fileOutLineStru->firstseeTime length:LONGTIME_LEN encoding:NSUTF8StringEncoding];
             }
             else
             {
-                [fileWithOutExtention deleteCharactersInRange:range];
-            }
-            //文件类型
-            self.fileType = [self getFileType:fileWithOutExtention];
-            
-            if (strlen(fileOutLineStru->firstseeTime)>0) {
-                self.firstSeeTime = [[NSString alloc]initWithBytes:fileOutLineStru->firstseeTime length:LONGTIME_LEN encoding:NSUTF8StringEncoding];
-            }else{
                 self.firstSeeTime = @"";
-            }
-            
-            self.fileName = [self getNotExistFileNameFromPycFile:self.filePycNameFromServer
-                                                   withExtention:[ self.filePycNameFromServer  pathExtension]
-                                                         forUser:@"not use"];
-            if (self.fileName != nil) {
-                bReturn = TRUE;
             }
             
             if(bReturn)
             {
-                
-
                 if([self getReceiveFileINfo])
                 {
                     [self makeOpenFile];
@@ -3945,19 +3757,15 @@ _ALL_END:
               isApplySucess:(NSInteger)bApplySucess
                        data:(RECEIVEDATA_NEW_NEW *)theData
 {
-    
-    
     /**
      *  新文件
      */
-    
-    
     BOOL bReturn = FALSE;
     NSFileManager *manager = [NSFileManager defaultManager];
-    if (![manager fileExistsAtPath:filename]) {
+    if (![manager fileExistsAtPath:filename])
+    {
         NSLog(@"no file");
         return bReturn;
-        
     }
     NSNumber *fileSize ;
     NSError *err;
@@ -4195,6 +4003,7 @@ _ALL_END:
     return TRUE;
 }
 
+#pragma mark 离线阅读从数据库中获取文件信息
 /**
  *  将可读文件的属性值，赋值给self的相关属性
  *
@@ -4204,6 +4013,7 @@ _ALL_END:
 {
     //离线查看文件需要更新的数据
     self.filePycNameFromServer = [newFile.filename stringByAppendingString:@".pbb"];
+    self.fileType = [self getFileType:self.filePycNameFromServer];
     self.fileOwner = newFile.fileowner;
     self.nickname = newFile.fileOwnerNick;
     self.AllowOpenmaxNum = newFile.limitnum;
@@ -4213,12 +4023,11 @@ _ALL_END:
     self.endDay = [newFile.endtime dateStringByDay];
     self.openTimeLong = newFile.limittime;
     self.remark = newFile.note;
-    
-    if (newFile.fileMakeType == 1) {
+    if (newFile.fileMakeType == 1)
+    {
         self.iCanOpen = newFile.forbid;
     }
     self.canseeCondition = newFile.isEye;
-    
     self.QQ = newFile.waterMarkQQ;
     self.phone = newFile.waterMarkPhone;
     self.email = newFile.waterMarkEmail;
@@ -4229,12 +4038,11 @@ _ALL_END:
     self.fild1name = newFile.field1name;
     self.fild2name = newFile.field2name;
     self.fileSecretkeyR1 = newFile.EncodeKey;
-    self.fileExtentionWithOutDot = [newFile.filename pathExtension];
     self.selffieldnum = newFile.selffieldnum;
     self.definechecked = newFile.definechecked;
-    self.fileName = newFile.fileurl;
     //获取离线明文文件
-    if (newFile.status && fileOperateType == TYPE_FILE_OPEN) {
+    if (newFile.status && fileOperateType == TYPE_FILE_OPEN)
+    {
         [self makeOpenFile];
     }
     
