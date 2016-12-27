@@ -60,6 +60,7 @@ singleton_implementation(AppDelegateHelper);
 
 -(void)loadVideoWithLocalFiles:(NSString *)openFilePath
 {
+    //
     NSString *waterPath = [[NSBundle mainBundle] pathForResource:@"water" ofType:@"xml"];
     [[PlayerLoader sharedInstance] loadVideoWithLocalFiles:@[openFilePath,waterPath]];
 }

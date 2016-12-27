@@ -8,6 +8,8 @@
 
 #import "Player.h"
 #import "PlayerManager.h"
+//#import <MuPDFFramework/MuPDFFramework.h>
+#import "MuPDFFramework.h"
 
 @implementation Player{
     NSMutableDictionary *attrs;
@@ -35,10 +37,27 @@
         NSString *queue_name = [NSString stringWithFormat:@"player_queue_%ld",time(0)];
         self.queue = dispatch_queue_create([queue_name UTF8String], DISPATCH_QUEUE_SERIAL);
         
-        NSStoryboard *storyBoard = [NSStoryboard storyboardWithName:@"Main" bundle:nil];
-        windowController = [storyBoard instantiateControllerWithIdentifier:@"playerWindow"];
-        view = (PlayerView *)windowController.contentViewController;
-        [view loadWithPlayer:self];
+        BOOL isPDF = [[self.video.firstFragmentURL lowercaseString] containsString:@".pdf"];
+        if (!isPDF)
+        {
+            //PDF
+            NSBundle *muBundle = [NSBundle bundleForClass:MuPDFViewController.self];
+            NSStoryboard *storyBoard = [NSStoryboard storyboardWithName:@"muPDF" bundle:muBundle];
+            windowController = [storyBoard instantiateControllerWithIdentifier:@"playerWindow"];
+            MuPDFViewController *muPDF = (MuPDFViewController *)windowController.contentViewController;
+//            muPDF.openfilepath = self.video.firstFragmentURL;
+            muPDF.openfilepath = @"/Users/pengyucheng/Desktop/Manual.pdf";
+            muPDF.filename = @"Manual.pdf";
+            [muPDF loadpdf];
+        }else
+        {
+            //视频
+            NSStoryboard *storyBoard = [NSStoryboard storyboardWithName:@"Main" bundle:nil];
+            windowController = [storyBoard instantiateControllerWithIdentifier:@"playerWindow"];
+            view = (PlayerView *)windowController.contentViewController;
+            [view loadWithPlayer:self];
+        }
+        
         [windowController showWindow:self];
         [[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
     }

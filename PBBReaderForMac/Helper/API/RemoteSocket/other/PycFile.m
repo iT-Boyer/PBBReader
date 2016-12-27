@@ -223,21 +223,12 @@
 - (int)getAttributePycFileId:(NSString *)filename
 {
     int bReturn = 0;
-    if (![[filename pathExtension] isEqualToString:@"pbb"]
-        ||
-        ![[NSFileManager defaultManager] fileExistsAtPath:filename]) {
-        NSLog(@"no file");
-        //bReturn=-1;
-        return bReturn;
-        
-    }
-
-    NSNumber *fileSize ;
+    NSNumber *fileSize;
     NSError *err;
     //得到文件大小
     NSDictionary *fileAttributes = [[NSFileManager defaultManager]  attributesOfItemAtPath:filename error:&err];
-    if (fileAttributes != nil) {
-        
+    if (fileAttributes != nil)
+    {
         fileSize = [fileAttributes objectForKey:NSFileSize];
         NSLog(@"%ld", fileSize.longValue);
     }
@@ -268,7 +259,8 @@
     PYCFILEEXT *fileExtHeader = (PYCFILEEXT *)[dataExt bytes];
     PycCode *coder = [[PycCode alloc] init];
     [coder decodeFileExtension:fileExtHeader];
-    if (fileExtHeader->uTag != PycTag0 && fileExtHeader->uTag != PycTag1) {
+    if (fileExtHeader->uTag != PycTag0 && fileExtHeader->uTag != PycTag1)
+    {
         //bReturn=-1;
         return bReturn;
     }
@@ -286,13 +278,12 @@
     NSRange range = [fileWithOutExtention rangeOfString:strFileExtend];
     [fileWithOutExtention deleteCharactersInRange:range];
 
-//    NSMutableString *fileWithOutExtention = [NSMutableString stringWithFormat:@"%@", [filePath stringByDeletingPathExtension]];
+//  NSMutableString *fileWithOutExtention = [NSMutableString stringWithFormat:@"%@", [filePath stringByDeletingPathExtension]];
     
     NSString *fileExtention1 = [fileWithOutExtention pathExtension];
     self.fileExtentionWithOutDot = [fileWithOutExtention pathExtension];
     
     NSString *fileExtention = [fileExtention1 lowercaseString];
-    
     
      NSDictionary * fileTypeDic = [NSDictionary dictionaryWithObjectsAndKeys:
                                                  [NSNumber numberWithInteger:FILE_TYPE_MOVIE], @"mp4",
@@ -317,7 +308,6 @@
                                                  [NSNumber numberWithInteger:FILE_TYPE_PIC], @"png",nil];
     
     NSNumber *nsfileType  = fileTypeDic[fileExtention];
-    
     if (nsfileType == nil)
     {
         self.fileType = FILE_TYPE_UNKOWN;

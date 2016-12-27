@@ -25,6 +25,11 @@
 /* Begin PBXBuildFile section */
 		03E75CB73D882FA8AE840814 /* Pods_PBBReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A66CA53F5B73961FE573D22 /* Pods_PBBReader.framework */; };
 		1422A89E1D757FD40057E9D4 /* CustomWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1422A89D1D757FD40057E9D4 /* CustomWindowController.swift */; };
+		1426872A1E126EF0002CF075 /* MuPDFFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 142687291E126EF0002CF075 /* MuPDFFramework.framework */; };
+		1426872F1E126F17002CF075 /* MuDialogCreator.h in Headers */ = {isa = PBXBuildFile; fileRef = 1426872B1E126F17002CF075 /* MuDialogCreator.h */; };
+		142687301E126F17002CF075 /* MuPDFFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 1426872C1E126F17002CF075 /* MuPDFFramework.h */; };
+		142687311E126F17002CF075 /* MuPDFViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1426872D1E126F17002CF075 /* MuPDFViewController.h */; };
+		142687321E126F17002CF075 /* MuUpdater.h in Headers */ = {isa = PBXBuildFile; fileRef = 1426872E1E126F17002CF075 /* MuUpdater.h */; };
 		14389CA11D9CB4A100EAC29C /* CustomColorProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14389CA01D9CB4A100EAC29C /* CustomColorProgressIndicator.swift */; };
 		143E37FC1D3F1809004B0A4D /* PycReceiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A68681CFEC9AD00BC66A1 /* PycReceiveModel.swift */; };
 		143E37FD1D3F1809004B0A4D /* SecretDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FCC1CFD844E001BCE84 /* SecretDao.m */; };
@@ -218,7 +223,6 @@
 		14A505951DAA2656008BF666 /* Toasty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A5058E1DAA2656008BF666 /* Toasty.framework */; };
 		14A505961DAA2656008BF666 /* Toasty.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14A5058E1DAA2656008BF666 /* Toasty.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		14A5059C1DAA269C008BF666 /* Toasty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A5059B1DAA269C008BF666 /* Toasty.swift */; };
-		14B64D351DFFED81008C828F /* MuPDFFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14C917D51DFA85E40025F6FB /* MuPDFFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		14B64D361DFFED81008C828F /* Toasty.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14A5058E1DAA2656008BF666 /* Toasty.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		14B64D371DFFED81008C828F /* PBBLogSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 148B6D8F1DE69166005B5DFB /* PBBLogSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		14B64D3C1DFFED81008C828F /* PycReceiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A68681CFEC9AD00BC66A1 /* PycReceiveModel.swift */; };
@@ -315,7 +319,6 @@
 		14B64D971DFFED81008C828F /* CustomTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146C08D01D7FF56A00AB3153 /* CustomTableCellView.swift */; };
 		14B64D981DFFED81008C828F /* NSString+LcsDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3FAA1D2A187300838B88 /* NSString+LcsDiff.m */; };
 		14B64D991DFFED81008C828F /* FSCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C9B6A51D8E859800A0C6B9 /* FSCustomCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		14B64D9A1DFFED81008C828F /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F921D2A187300838B88 /* Player.m */; };
 		14B64D9B1DFFED81008C828F /* PlayerView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F9A1D2A187300838B88 /* PlayerView.mm */; };
 		14B64D9C1DFFED81008C828F /* PlayerWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F9C1D2A187300838B88 /* PlayerWindow.m */; };
 		14B64D9D1DFFED81008C828F /* PlayerLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F961D2A187300838B88 /* PlayerLoader.m */; };
@@ -345,7 +348,6 @@
 		14B64DB51DFFED81008C828F /* VP_Local.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3FBB1D2A187300838B88 /* VP_Local.m */; };
 		14B64DB61DFFED81008C828F /* VideoProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3FB71D2A187300838B88 /* VideoProvider.m */; };
 		14B64DB71DFFED81008C828F /* BarrageClock.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815AF81D4AF55A00922A62 /* BarrageClock.m */; };
-		14B64DB91DFFED81008C828F /* MuPDFFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14C917D51DFA85E40025F6FB /* MuPDFFramework.framework */; };
 		14B64DBA1DFFED81008C828F /* Toasty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A5058E1DAA2656008BF666 /* Toasty.framework */; };
 		14B64DBB1DFFED81008C828F /* libmpv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AA3E3A1D2A187200838B88 /* libmpv.dylib */; };
 		14B64DBC1DFFED81008C828F /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AA3E3D1D2A187200838B88 /* libz.1.dylib */; };
@@ -529,7 +531,6 @@
 		84AEDAA41DC5FF02001E8116 /* CustomTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146C08D01D7FF56A00AB3153 /* CustomTableCellView.swift */; };
 		84AEDAA51DC5FF02001E8116 /* NSString+LcsDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3FAA1D2A187300838B88 /* NSString+LcsDiff.m */; };
 		84AEDAA61DC5FF02001E8116 /* FSCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C9B6A51D8E859800A0C6B9 /* FSCustomCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		84AEDAA71DC5FF02001E8116 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F921D2A187300838B88 /* Player.m */; };
 		84AEDAA81DC5FF02001E8116 /* PlayerView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F9A1D2A187300838B88 /* PlayerView.mm */; };
 		84AEDAA91DC5FF02001E8116 /* PlayerWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F9C1D2A187300838B88 /* PlayerWindow.m */; };
 		84AEDAAA1DC5FF02001E8116 /* PlayerLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F961D2A187300838B88 /* PlayerLoader.m */; };
@@ -658,13 +659,6 @@
 			remoteGlobalIDString = 14A5058D1DAA2656008BF666;
 			remoteInfo = Toasty;
 		};
-		14B64D281DFFED81008C828F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 14C917971DFA5B350025F6FB /* MuPDF.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 14C917AE1DFA734D0025F6FB;
-			remoteInfo = MuPDFFramework;
-		};
 		14B64D2A1DFFED81008C828F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1437DD601CF2A75E001BD2D2 /* Project object */;
@@ -678,34 +672,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 148B6D8E1DE69166005B5DFB;
 			remoteInfo = PBBLogSDK;
-		};
-		14B64D2E1DFFED81008C828F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 14C917971DFA5B350025F6FB /* MuPDF.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 14C917AE1DFA734D0025F6FB;
-			remoteInfo = MuPDFFramework;
-		};
-		14C9179D1DFA5B350025F6FB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 14C917971DFA5B350025F6FB /* MuPDF.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 968E1E3D1779A54F0050CEA3;
-			remoteInfo = MuPDF;
-		};
-		14C9179F1DFA5B350025F6FB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 14C917971DFA5B350025F6FB /* MuPDF.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 14C6CCA91DF8F64A0078072A;
-			remoteInfo = MuPDFForOSX;
-		};
-		14C917D41DFA85E40025F6FB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 14C917971DFA5B350025F6FB /* MuPDF.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 14C917AF1DFA734D0025F6FB;
-			remoteInfo = MuPDFFramework;
 		};
 		84AEDA411DC5FF02001E8116 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -760,7 +726,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				14B64D351DFFED81008C828F /* MuPDFFramework.framework in Embed Frameworks */,
 				14B64D361DFFED81008C828F /* Toasty.framework in Embed Frameworks */,
 				14B64D371DFFED81008C828F /* PBBLogSDK.framework in Embed Frameworks */,
 			);
@@ -824,6 +789,11 @@
 		14105B8C1D339912004CB1C2 /* NSTextField+Attribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTextField+Attribute.m"; sourceTree = "<group>"; };
 		1422A89D1D757FD40057E9D4 /* CustomWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomWindowController.swift; sourceTree = "<group>"; };
 		14248E461D2CCEFC00D3704C /* for_the_birds.avi */ = {isa = PBXFileReference; lastKnownFileType = video.avi; path = for_the_birds.avi; sourceTree = "<group>"; };
+		142687291E126EF0002CF075 /* MuPDFFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MuPDFFramework.framework; sourceTree = "<group>"; };
+		1426872B1E126F17002CF075 /* MuDialogCreator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MuDialogCreator.h; path = MuPDFFramework.framework/Headers/MuDialogCreator.h; sourceTree = "<group>"; };
+		1426872C1E126F17002CF075 /* MuPDFFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MuPDFFramework.h; path = MuPDFFramework.framework/Headers/MuPDFFramework.h; sourceTree = "<group>"; };
+		1426872D1E126F17002CF075 /* MuPDFViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MuPDFViewController.h; path = MuPDFFramework.framework/Headers/MuPDFViewController.h; sourceTree = "<group>"; };
+		1426872E1E126F17002CF075 /* MuUpdater.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MuUpdater.h; path = MuPDFFramework.framework/Headers/MuUpdater.h; sourceTree = "<group>"; };
 		142EC39D1D2CDE0A00B88F96 /* 1.mp4.pbb */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1.mp4.pbb; sourceTree = "<group>"; };
 		142EC3AA1D2D0B1A00B88F96 /* readMe.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readMe.md; sourceTree = "<group>"; };
 		142EC3B01D2D0B8D00B88F96 /* mpv.def */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mpv.def; sourceTree = "<group>"; };
@@ -1157,7 +1127,6 @@
 		14BF31791D77C9DE000EFF66 /* CellhighlightColorTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellhighlightColorTableView.swift; sourceTree = "<group>"; };
 		14BF31801D780AB1000EFF66 /* CustomBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBox.swift; sourceTree = "<group>"; };
 		14C75DCC1D6AE9C6009CBE09 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
-		14C917971DFA5B350025F6FB /* MuPDF.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MuPDF.xcodeproj; path = ../../mupdf/platform/ios/MuPDF.xcodeproj; sourceTree = "<group>"; };
 		14C9B6A41D8E859800A0C6B9 /* FSCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCustomCell.h; sourceTree = "<group>"; };
 		14C9B6A51D8E859800A0C6B9 /* FSCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCustomCell.m; sourceTree = "<group>"; };
 		14E007161DF01C880056CBEF /* PBBLogAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBBLogAPI.swift; sourceTree = "<group>"; };
@@ -1230,11 +1199,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1426872A1E126EF0002CF075 /* MuPDFFramework.framework in Frameworks */,
+				84B679181DE719D600496634 /* PBBLogSDK.framework in Frameworks */,
 				14A505951DAA2656008BF666 /* Toasty.framework in Frameworks */,
 				14815B451D4B08AF00922A62 /* libmpv.dylib in Frameworks */,
 				14815B461D4B08AF00922A62 /* libz.1.dylib in Frameworks */,
 				03E75CB73D882FA8AE840814 /* Pods_PBBReader.framework in Frameworks */,
-				84B679181DE719D600496634 /* PBBLogSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1273,7 +1243,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14B64DB91DFFED81008C828F /* MuPDFFramework.framework in Frameworks */,
 				14B64DBA1DFFED81008C828F /* Toasty.framework in Frameworks */,
 				14B64DBB1DFFED81008C828F /* libmpv.dylib in Frameworks */,
 				14B64DBC1DFFED81008C828F /* libz.1.dylib in Frameworks */,
@@ -1303,6 +1272,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		142687331E126F23002CF075 /* MuPDF */ = {
+			isa = PBXGroup;
+			children = (
+				1426872B1E126F17002CF075 /* MuDialogCreator.h */,
+				1426872C1E126F17002CF075 /* MuPDFFramework.h */,
+				1426872D1E126F17002CF075 /* MuPDFViewController.h */,
+				1426872E1E126F17002CF075 /* MuUpdater.h */,
+				142687291E126EF0002CF075 /* MuPDFFramework.framework */,
+			);
+			name = MuPDF;
+			sourceTree = "<group>";
+		};
 		142EC3A91D2D0B1A00B88F96 /* SMS4 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1318,7 +1299,6 @@
 		1437DD5F1CF2A75E001BD2D2 = {
 			isa = PBXGroup;
 			children = (
-				14C917971DFA5B350025F6FB /* MuPDF.xcodeproj */,
 				14642DBD1DB4C251004D9E9F /* PBBReader.entitlements */,
 				843CADFD1D09367800CE84F4 /* fastlane */,
 				14EA57C91D7E62220026602B /* Distribution */,
@@ -1605,6 +1585,7 @@
 		14AA3DCA1D2A187200838B88 /* libmpv */ = {
 			isa = PBXGroup;
 			children = (
+				142687331E126F23002CF075 /* MuPDF */,
 				142EC3A91D2D0B1A00B88F96 /* SMS4 */,
 				14AA3E351D2A187200838B88 /* libavcodec.57.dylib */,
 				14AA3E361D2A187200838B88 /* libavdevice.57.dylib */,
@@ -1958,16 +1939,6 @@
 			path = model;
 			sourceTree = "<group>";
 		};
-		14C917981DFA5B350025F6FB /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				14C9179E1DFA5B350025F6FB /* MuPDF.app */,
-				14C917A01DFA5B350025F6FB /* MuPDFForOSX.app */,
-				14C917D51DFA85E40025F6FB /* MuPDFFramework.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		14E007151DF01C880056CBEF /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -2159,6 +2130,17 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		142687201E126D14002CF075 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1426872F1E126F17002CF075 /* MuDialogCreator.h in Headers */,
+				142687301E126F17002CF075 /* MuPDFFramework.h in Headers */,
+				142687311E126F17002CF075 /* MuPDFViewController.h in Headers */,
+				142687321E126F17002CF075 /* MuUpdater.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		148B6D8C1DE69166005B5DFB /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -2200,7 +2182,6 @@
 				143E37F91D3F1809004B0A4D /* [CP] Check Pods Manifest.lock */,
 				143E37FA1D3F1809004B0A4D /* [CP] Check Pods Manifest.lock */,
 				143E37FB1D3F1809004B0A4D /* Sources */,
-				143E38521D3F1809004B0A4D /* Frameworks */,
 				143E38561D3F1809004B0A4D /* Resources */,
 				143E389C1D3F1809004B0A4D /* [CP] Embed Pods Frameworks */,
 				143E389D1D3F1809004B0A4D /* [CP] Copy Pods Resources */,
@@ -2208,6 +2189,8 @@
 				6FF822FB36820B453C9B8EDD /* 📦 Embed Pods Frameworks */,
 				BCDAB9E20263CFF328C04908 /* 📦 Copy Pods Resources */,
 				84AEDA3E1DC5F571001E8116 /* Run Fabric */,
+				143E38521D3F1809004B0A4D /* Frameworks */,
+				142687201E126D14002CF075 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -2329,10 +2312,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				14B64D271DFFED81008C828F /* PBXTargetDependency */,
 				14B64D291DFFED81008C828F /* PBXTargetDependency */,
 				14B64D2B1DFFED81008C828F /* PBXTargetDependency */,
-				14B64D2D1DFFED81008C828F /* PBXTargetDependency */,
 			);
 			name = PBBReaderPDF;
 			productName = PBBReaderForMac;
@@ -2450,12 +2431,6 @@
 			mainGroup = 1437DD5F1CF2A75E001BD2D2;
 			productRefGroup = 1437DD691CF2A75F001BD2D2 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 14C917981DFA5B350025F6FB /* Products */;
-					ProjectRef = 14C917971DFA5B350025F6FB /* MuPDF.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				143E37F71D3F1809004B0A4D /* PBBReader */,
@@ -2470,30 +2445,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		14C9179E1DFA5B350025F6FB /* MuPDF.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = MuPDF.app;
-			remoteRef = 14C9179D1DFA5B350025F6FB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		14C917A01DFA5B350025F6FB /* MuPDFForOSX.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = MuPDFForOSX.app;
-			remoteRef = 14C9179F1DFA5B350025F6FB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		14C917D51DFA85E40025F6FB /* MuPDFFramework.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = MuPDFFramework.framework;
-			remoteRef = 14C917D41DFA85E40025F6FB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		143E38561D3F1809004B0A4D /* Resources */ = {
@@ -3728,7 +3679,6 @@
 				14B64D971DFFED81008C828F /* CustomTableCellView.swift in Sources */,
 				14B64D981DFFED81008C828F /* NSString+LcsDiff.m in Sources */,
 				14B64D991DFFED81008C828F /* FSCustomCell.m in Sources */,
-				14B64D9A1DFFED81008C828F /* Player.m in Sources */,
 				14B64D9B1DFFED81008C828F /* PlayerView.mm in Sources */,
 				14B64D9C1DFFED81008C828F /* PlayerWindow.m in Sources */,
 				14B64D9D1DFFED81008C828F /* PlayerLoader.m in Sources */,
@@ -3856,7 +3806,6 @@
 				84AEDAA41DC5FF02001E8116 /* CustomTableCellView.swift in Sources */,
 				84AEDAA51DC5FF02001E8116 /* NSString+LcsDiff.m in Sources */,
 				84AEDAA61DC5FF02001E8116 /* FSCustomCell.m in Sources */,
-				84AEDAA71DC5FF02001E8116 /* Player.m in Sources */,
 				84AEDAA81DC5FF02001E8116 /* PlayerView.mm in Sources */,
 				84AEDAA91DC5FF02001E8116 /* PlayerWindow.m in Sources */,
 				84AEDAAA1DC5FF02001E8116 /* PlayerLoader.m in Sources */,
@@ -3922,11 +3871,6 @@
 			target = 14A5058D1DAA2656008BF666 /* Toasty */;
 			targetProxy = 14A505931DAA2656008BF666 /* PBXContainerItemProxy */;
 		};
-		14B64D271DFFED81008C828F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MuPDFFramework;
-			targetProxy = 14B64D281DFFED81008C828F /* PBXContainerItemProxy */;
-		};
 		14B64D291DFFED81008C828F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 14A5058D1DAA2656008BF666 /* Toasty */;
@@ -3936,11 +3880,6 @@
 			isa = PBXTargetDependency;
 			target = 148B6D8E1DE69166005B5DFB /* PBBLogSDK */;
 			targetProxy = 14B64D2C1DFFED81008C828F /* PBXContainerItemProxy */;
-		};
-		14B64D2D1DFFED81008C828F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MuPDFFramework;
-			targetProxy = 14B64D2E1DFFED81008C828F /* PBXContainerItemProxy */;
 		};
 		84AEDA401DC5FF02001E8116 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -4067,6 +4006,9 @@
 					"\"$PODS_CONFIGURATION_BUILD_DIR/CocoaAsyncSocket\"",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/EDStarRating\"",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/FMDB\"",
+					"$(PROJECT_DIR)/PBBReaderForMac",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/PBBReaderForMac/bilibili/libmpv",
 				);
 				GCC_PREFIX_HEADER = "PBBReaderForMac/PBB-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -4133,6 +4075,9 @@
 					"\"$PODS_CONFIGURATION_BUILD_DIR/CocoaAsyncSocket\"",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/EDStarRating\"",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/FMDB\"",
+					"$(PROJECT_DIR)/PBBReaderForMac",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/PBBReaderForMac/bilibili/libmpv",
 				);
 				GCC_PREFIX_HEADER = "PBBReaderForMac/PBB-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
