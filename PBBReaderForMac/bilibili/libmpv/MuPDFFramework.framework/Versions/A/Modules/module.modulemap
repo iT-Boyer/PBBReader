@@ -1,6 +1,0 @@
-framework module MuPDFFramework {
-  umbrella header "MuPDFFramework.h"
-
-  export *
-  module * { export * }
-}

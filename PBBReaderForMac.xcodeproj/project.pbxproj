@@ -25,12 +25,8 @@
 /* Begin PBXBuildFile section */
 		03E75CB73D882FA8AE840814 /* Pods_PBBReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A66CA53F5B73961FE573D22 /* Pods_PBBReader.framework */; };
 		1422A89E1D757FD40057E9D4 /* CustomWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1422A89D1D757FD40057E9D4 /* CustomWindowController.swift */; };
-		1426872A1E126EF0002CF075 /* MuPDFFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 142687291E126EF0002CF075 /* MuPDFFramework.framework */; };
-		1426872F1E126F17002CF075 /* MuDialogCreator.h in Headers */ = {isa = PBXBuildFile; fileRef = 1426872B1E126F17002CF075 /* MuDialogCreator.h */; };
-		142687301E126F17002CF075 /* MuPDFFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 1426872C1E126F17002CF075 /* MuPDFFramework.h */; };
-		142687311E126F17002CF075 /* MuPDFViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1426872D1E126F17002CF075 /* MuPDFViewController.h */; };
-		142687321E126F17002CF075 /* MuUpdater.h in Headers */ = {isa = PBXBuildFile; fileRef = 1426872E1E126F17002CF075 /* MuUpdater.h */; };
 		142687561E135906002CF075 /* MuPDFFramework.framework in [CP]MuPDF到指定目录实现集成 */ = {isa = PBXBuildFile; fileRef = 142687431E135692002CF075 /* MuPDFFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		142687581E13603C002CF075 /* MuPDFFramework.framework in [CP]Embed APP包中的Frameworks目录 */ = {isa = PBXBuildFile; fileRef = 142687431E135692002CF075 /* MuPDFFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		14389CA11D9CB4A100EAC29C /* CustomColorProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14389CA01D9CB4A100EAC29C /* CustomColorProgressIndicator.swift */; };
 		143E37FC1D3F1809004B0A4D /* PycReceiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A68681CFEC9AD00BC66A1 /* PycReceiveModel.swift */; };
 		143E37FD1D3F1809004B0A4D /* SecretDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FCC1CFD844E001BCE84 /* SecretDao.m */; };
@@ -742,14 +738,14 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		142687551E1357ED002CF075 /* [CP]MuPDF到指定目录实现集成 */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			dstPath = $PROJECT_DIR/PBBReaderForMac/bilibili/libmpv;
 			dstSubfolderSpec = 0;
 			files = (
 				142687561E135906002CF075 /* MuPDFFramework.framework in [CP]MuPDF到指定目录实现集成 */,
 			);
 			name = "[CP]MuPDF到指定目录实现集成";
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 		};
 		143E38A01D3F1809004B0A4D /* [CP]Bilibili到APP包的执行目录 */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -776,6 +772,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				142687581E13603C002CF075 /* MuPDFFramework.framework in [CP]Embed APP包中的Frameworks目录 */,
 				14A505961DAA2656008BF666 /* Toasty.framework in [CP]Embed APP包中的Frameworks目录 */,
 				84B679191DE719D600496634 /* PBBLogSDK.framework in [CP]Embed APP包中的Frameworks目录 */,
 			);
@@ -851,11 +848,6 @@
 		14105B8C1D339912004CB1C2 /* NSTextField+Attribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTextField+Attribute.m"; sourceTree = "<group>"; };
 		1422A89D1D757FD40057E9D4 /* CustomWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomWindowController.swift; sourceTree = "<group>"; };
 		14248E461D2CCEFC00D3704C /* for_the_birds.avi */ = {isa = PBXFileReference; lastKnownFileType = video.avi; path = for_the_birds.avi; sourceTree = "<group>"; };
-		142687291E126EF0002CF075 /* MuPDFFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MuPDFFramework.framework; sourceTree = "<group>"; };
-		1426872B1E126F17002CF075 /* MuDialogCreator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MuDialogCreator.h; path = MuPDFFramework.framework/Headers/MuDialogCreator.h; sourceTree = "<group>"; };
-		1426872C1E126F17002CF075 /* MuPDFFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MuPDFFramework.h; path = MuPDFFramework.framework/Headers/MuPDFFramework.h; sourceTree = "<group>"; };
-		1426872D1E126F17002CF075 /* MuPDFViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MuPDFViewController.h; path = MuPDFFramework.framework/Headers/MuPDFViewController.h; sourceTree = "<group>"; };
-		1426872E1E126F17002CF075 /* MuUpdater.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MuUpdater.h; path = MuPDFFramework.framework/Headers/MuUpdater.h; sourceTree = "<group>"; };
 		142687341E135692002CF075 /* MuPDF.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MuPDF.xcodeproj; path = ../../mupdf/platform/ios/MuPDF.xcodeproj; sourceTree = "<group>"; };
 		142EC39D1D2CDE0A00B88F96 /* 1.mp4.pbb */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1.mp4.pbb; sourceTree = "<group>"; };
 		142EC3AA1D2D0B1A00B88F96 /* readMe.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readMe.md; sourceTree = "<group>"; };
@@ -1262,7 +1254,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1426872A1E126EF0002CF075 /* MuPDFFramework.framework in Frameworks */,
 				84B679181DE719D600496634 /* PBBLogSDK.framework in Frameworks */,
 				14A505951DAA2656008BF666 /* Toasty.framework in Frameworks */,
 				14815B451D4B08AF00922A62 /* libmpv.dylib in Frameworks */,
@@ -1335,18 +1326,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		142687331E126F23002CF075 /* MuPDF */ = {
-			isa = PBXGroup;
-			children = (
-				1426872B1E126F17002CF075 /* MuDialogCreator.h */,
-				1426872C1E126F17002CF075 /* MuPDFFramework.h */,
-				1426872D1E126F17002CF075 /* MuPDFViewController.h */,
-				1426872E1E126F17002CF075 /* MuUpdater.h */,
-				142687291E126EF0002CF075 /* MuPDFFramework.framework */,
-			);
-			name = MuPDF;
-			sourceTree = "<group>";
-		};
 		142687351E135692002CF075 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -1662,7 +1641,6 @@
 		14AA3DCA1D2A187200838B88 /* libmpv */ = {
 			isa = PBXGroup;
 			children = (
-				142687331E126F23002CF075 /* MuPDF */,
 				142EC3A91D2D0B1A00B88F96 /* SMS4 */,
 				14AA3E351D2A187200838B88 /* libavcodec.57.dylib */,
 				14AA3E361D2A187200838B88 /* libavdevice.57.dylib */,
@@ -2207,17 +2185,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		142687201E126D14002CF075 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1426872F1E126F17002CF075 /* MuDialogCreator.h in Headers */,
-				142687301E126F17002CF075 /* MuPDFFramework.h in Headers */,
-				142687311E126F17002CF075 /* MuPDFViewController.h in Headers */,
-				142687321E126F17002CF075 /* MuUpdater.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		148B6D8C1DE69166005B5DFB /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -2252,7 +2219,6 @@
 				14A4203D1D549CD7009B9DF3 /* 自动递增build版本号 */,
 				143E38561D3F1809004B0A4D /* Resources */,
 				142687551E1357ED002CF075 /* [CP]MuPDF到指定目录实现集成 */,
-				142687201E126D14002CF075 /* Headers */,
 				14A5059A1DAA2657008BF666 /* [CP]Embed APP包中的Frameworks目录 */,
 				143E37FB1D3F1809004B0A4D /* Sources */,
 				143E38A01D3F1809004B0A4D /* [CP]Bilibili到APP包的执行目录 */,

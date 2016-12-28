@@ -8,8 +8,8 @@
 
 #import "Player.h"
 #import "PlayerManager.h"
-//#import <MuPDFFramework/MuPDFFramework.h>
-#import "MuPDFFramework.h"
+#import <MuPDFFramework/MuPDFFramework.h>
+//#import "MuPDFFramework.h"
 
 @implementation Player{
     NSMutableDictionary *attrs;
