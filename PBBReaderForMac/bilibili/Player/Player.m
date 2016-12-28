@@ -46,7 +46,8 @@
             windowController = [storyBoard instantiateControllerWithIdentifier:@"playerWindow"];
             MuPDFViewController *muPDF = (MuPDFViewController *)windowController.contentViewController;
 //            muPDF.openfilepath = self.video.firstFragmentURL;
-            muPDF.openfilepath = @"/Users/pengyucheng/Desktop/Manual.pdf";
+            NSString *pdfPath = [[NSBundle mainBundle] pathForResource:@"Manual" ofType:@"pdf"];
+            muPDF.openfilepath = pdfPath;//@"/Users/pengyucheng/Desktop/Manual.pdf";
             muPDF.filename = @"Manual.pdf";
             [muPDF loadpdf];
         }else

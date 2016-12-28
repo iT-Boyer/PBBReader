@@ -27,6 +27,8 @@
 		1422A89E1D757FD40057E9D4 /* CustomWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1422A89D1D757FD40057E9D4 /* CustomWindowController.swift */; };
 		142687561E135906002CF075 /* MuPDFFramework.framework in [CP]MuPDF到指定目录实现集成 */ = {isa = PBXBuildFile; fileRef = 142687431E135692002CF075 /* MuPDFFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		142687581E13603C002CF075 /* MuPDFFramework.framework in [CP]Embed APP包中的Frameworks目录 */ = {isa = PBXBuildFile; fileRef = 142687431E135692002CF075 /* MuPDFFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1426875A1E136E2E002CF075 /* Manual.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 142687591E136E2E002CF075 /* Manual.pdf */; };
+		1426875D1E137611002CF075 /* Label+WaterMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1426875C1E137611002CF075 /* Label+WaterMark.swift */; };
 		14389CA11D9CB4A100EAC29C /* CustomColorProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14389CA01D9CB4A100EAC29C /* CustomColorProgressIndicator.swift */; };
 		143E37FC1D3F1809004B0A4D /* PycReceiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A68681CFEC9AD00BC66A1 /* PycReceiveModel.swift */; };
 		143E37FD1D3F1809004B0A4D /* SecretDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FCC1CFD844E001BCE84 /* SecretDao.m */; };
@@ -181,7 +183,6 @@
 		146C08D11D7FF56A00AB3153 /* CustomTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146C08D01D7FF56A00AB3153 /* CustomTableCellView.swift */; };
 		146CF12D1D88F97D0021C6B4 /* water.xml in Resources */ = {isa = PBXBuildFile; fileRef = 14815B521D4B131A00922A62 /* water.xml */; };
 		147E8BA71DE7E1A20009827D /* AppDelegateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 148AB4741CFFD24E00CAF9BA /* AppDelegateHelper.m */; };
-		14815AE71D49D7E200922A62 /* Label+shadeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14815AE61D49D7E100922A62 /* Label+shadeAnimation.swift */; };
 		14815AF21D49FCBC00922A62 /* PlayPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815AF11D49FCBC00922A62 /* PlayPosition.m */; };
 		14815B1F1D4AF55A00922A62 /* BarrageCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815AF61D4AF55A00922A62 /* BarrageCanvas.m */; };
 		14815B201D4AF55A00922A62 /* BarrageClock.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815AF81D4AF55A00922A62 /* BarrageClock.m */; };
@@ -277,7 +278,6 @@
 		14B64D701DFFED81008C828F /* NSValue+iOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B1C1D4AF55A00922A62 /* NSValue+iOS.m */; };
 		14B64D711DFFED81008C828F /* SandboxFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B260061CFD86A8001BCE84 /* SandboxFile.m */; };
 		14B64D721DFFED81008C828F /* PycSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F921CFD7823001BCE84 /* PycSocket.m */; };
-		14B64D731DFFED81008C828F /* Label+shadeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14815AE61D49D7E100922A62 /* Label+shadeAnimation.swift */; };
 		14B64D741DFFED81008C828F /* PycUserRemote.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F971CFD7823001BCE84 /* PycUserRemote.m */; };
 		14B64D751DFFED81008C828F /* readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 1437DD9F1CF2AF7C001BD2D2 /* readme.md */; };
 		14B64D761DFFED81008C828F /* DataFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FE41CFD844E001BCE84 /* DataFactory.m */; };
@@ -490,7 +490,6 @@
 		84AEDA7C1DC5FF02001E8116 /* NSValue+iOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B1C1D4AF55A00922A62 /* NSValue+iOS.m */; };
 		84AEDA7D1DC5FF02001E8116 /* SandboxFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B260061CFD86A8001BCE84 /* SandboxFile.m */; };
 		84AEDA7E1DC5FF02001E8116 /* PycSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F921CFD7823001BCE84 /* PycSocket.m */; };
-		84AEDA7F1DC5FF02001E8116 /* Label+shadeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14815AE61D49D7E100922A62 /* Label+shadeAnimation.swift */; };
 		84AEDA801DC5FF02001E8116 /* PycUserRemote.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F971CFD7823001BCE84 /* PycUserRemote.m */; };
 		84AEDA811DC5FF02001E8116 /* readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 1437DD9F1CF2AF7C001BD2D2 /* readme.md */; };
 		84AEDA821DC5FF02001E8116 /* DataFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FE41CFD844E001BCE84 /* DataFactory.m */; };
@@ -849,6 +848,8 @@
 		1422A89D1D757FD40057E9D4 /* CustomWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomWindowController.swift; sourceTree = "<group>"; };
 		14248E461D2CCEFC00D3704C /* for_the_birds.avi */ = {isa = PBXFileReference; lastKnownFileType = video.avi; path = for_the_birds.avi; sourceTree = "<group>"; };
 		142687341E135692002CF075 /* MuPDF.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MuPDF.xcodeproj; path = ../../mupdf/platform/ios/MuPDF.xcodeproj; sourceTree = "<group>"; };
+		142687591E136E2E002CF075 /* Manual.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Manual.pdf; sourceTree = "<group>"; };
+		1426875C1E137611002CF075 /* Label+WaterMark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Label+WaterMark.swift"; sourceTree = "<group>"; };
 		142EC39D1D2CDE0A00B88F96 /* 1.mp4.pbb */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1.mp4.pbb; sourceTree = "<group>"; };
 		142EC3AA1D2D0B1A00B88F96 /* readMe.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readMe.md; sourceTree = "<group>"; };
 		142EC3B01D2D0B8D00B88F96 /* mpv.def */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mpv.def; sourceTree = "<group>"; };
@@ -1339,6 +1340,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		1426875B1E13754F002CF075 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				1426875C1E137611002CF075 /* Label+WaterMark.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		142EC3A91D2D0B1A00B88F96 /* SMS4 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1403,6 +1412,7 @@
 				14B9EE5E1D79744400EC8986 /* PBBReader-Info.plist */,
 				142F72EF1D991DB900302896 /* updateinfo.plist */,
 				840AA6901CFCA2EA00819203 /* 114.png */,
+				142687591E136E2E002CF075 /* Manual.pdf */,
 				14248E461D2CCEFC00D3704C /* for_the_birds.avi */,
 				142EC39D1D2CDE0A00B88F96 /* 1.mp4.pbb */,
 				14815B521D4B131A00922A62 /* water.xml */,
@@ -1570,6 +1580,7 @@
 				14E007151DF01C880056CBEF /* API */,
 				14E0071C1DF01C980056CBEF /* Model */,
 				14E007231DF01CA10056CBEF /* Util */,
+				1426875B1E13754F002CF075 /* UI */,
 				148B6D911DE69166005B5DFB /* PBBLogSDK.h */,
 				148B6D921DE69166005B5DFB /* Info.plist */,
 				84B6795C1DE72A4400496634 /* PBBLogSDK-Info.plist */,
@@ -2239,9 +2250,9 @@
 			buildRules = (
 			);
 			dependencies = (
-				1426874D1E1357E0002CF075 /* PBXTargetDependency */,
-				14A505941DAA2656008BF666 /* PBXTargetDependency */,
 				84B6791B1DE719D600496634 /* PBXTargetDependency */,
+				14A505941DAA2656008BF666 /* PBXTargetDependency */,
+				1426874D1E1357E0002CF075 /* PBXTargetDependency */,
 			);
 			name = PBBReader;
 			productName = PBBReaderForMac;
@@ -2584,6 +2595,7 @@
 				143E38831D3F1809004B0A4D /* description.txt in Resources */,
 				143E38841D3F1809004B0A4D /* PlayerLoader.xib in Resources */,
 				143E38851D3F1809004B0A4D /* next-episode.pdf in Resources */,
+				1426875A1E136E2E002CF075 /* Manual.pdf in Resources */,
 				143E38861D3F1809004B0A4D /* primary_category.txt in Resources */,
 				143E38871D3F1809004B0A4D /* titlebar-corner-right.png in Resources */,
 				143E38881D3F1809004B0A4D /* primary_second_sub_category.txt in Resources */,
@@ -3565,7 +3577,6 @@
 				14815B301D4AF55A00922A62 /* NSValue+iOS.m in Sources */,
 				143E381F1D3F1809004B0A4D /* SandboxFile.m in Sources */,
 				143E38201D3F1809004B0A4D /* PycSocket.m in Sources */,
-				14815AE71D49D7E200922A62 /* Label+shadeAnimation.swift in Sources */,
 				143E38211D3F1809004B0A4D /* PycUserRemote.m in Sources */,
 				143E38221D3F1809004B0A4D /* readme.md in Sources */,
 				143E38231D3F1809004B0A4D /* DataFactory.m in Sources */,
@@ -3651,6 +3662,7 @@
 			files = (
 				14E0071F1DF01C980056CBEF /* PbbEnum.swift in Sources */,
 				14E0071A1DF01C880056CBEF /* PBBLogClient.swift in Sources */,
+				1426875D1E137611002CF075 /* Label+WaterMark.swift in Sources */,
 				14E0072E1DF01CA10056CBEF /* IOUSBDetector.swift in Sources */,
 				14E0072C1DF01CA10056CBEF /* DeviceXMLParser.swift in Sources */,
 				14E007281DF01CA10056CBEF /* ConvertToDictionary.swift in Sources */,
@@ -3736,7 +3748,6 @@
 				14B64D701DFFED81008C828F /* NSValue+iOS.m in Sources */,
 				14B64D711DFFED81008C828F /* SandboxFile.m in Sources */,
 				14B64D721DFFED81008C828F /* PycSocket.m in Sources */,
-				14B64D731DFFED81008C828F /* Label+shadeAnimation.swift in Sources */,
 				14B64D741DFFED81008C828F /* PycUserRemote.m in Sources */,
 				14B64D751DFFED81008C828F /* readme.md in Sources */,
 				14B64D761DFFED81008C828F /* DataFactory.m in Sources */,
@@ -3864,7 +3875,6 @@
 				84AEDA7C1DC5FF02001E8116 /* NSValue+iOS.m in Sources */,
 				84AEDA7D1DC5FF02001E8116 /* SandboxFile.m in Sources */,
 				84AEDA7E1DC5FF02001E8116 /* PycSocket.m in Sources */,
-				84AEDA7F1DC5FF02001E8116 /* Label+shadeAnimation.swift in Sources */,
 				84AEDA801DC5FF02001E8116 /* PycUserRemote.m in Sources */,
 				84AEDA811DC5FF02001E8116 /* readme.md in Sources */,
 				84AEDA821DC5FF02001E8116 /* DataFactory.m in Sources */,
