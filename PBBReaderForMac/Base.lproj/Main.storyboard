@@ -1177,32 +1177,6 @@ CA
             </objects>
             <point key="canvasLocation" x="-292" y="1267"/>
         </scene>
-        <!--Viewcccc-->
-        <scene sceneID="xE1-N5-XTw">
-            <objects>
-                <viewController id="sYq-t3-0KH" customClass="Viewcccc" customModule="PBBReader" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="Yfv-lR-auo">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7E6-hR-i33">
-                                <rect key="frame" x="189" y="182" width="73" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="ceshi" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6kz-s7-kch">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="dfdfdfdf:" target="sYq-t3-0KH" id="pkS-bc-TYR"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                    </view>
-                </viewController>
-                <customObject id="bo7-Od-dzs" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-357" y="995"/>
-        </scene>
         <!--申请页面-->
         <scene sceneID="MgF-60-Lcx">
             <objects>
@@ -1804,10 +1778,10 @@ CA
             </objects>
             <point key="canvasLocation" x="3174" y="332"/>
         </scene>
-        <!--Media Player View Controller-->
+        <!--bili播放器-->
         <scene sceneID="FHz-K6-s9k">
             <objects>
-                <viewController storyboardIdentifier="PlayerView" id="9L2-rI-XWN" userLabel="Media Player View Controller" customClass="PlayerView" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlayerView" id="9L2-rI-XWN" userLabel="bili播放器" customClass="PlayerView" sceneMemberID="viewController">
                     <view key="view" id="n1w-f8-DSb">
                         <rect key="frame" x="0.0" y="0.0" width="432" height="265"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1857,10 +1831,10 @@ CA
             </objects>
             <point key="canvasLocation" x="456" y="-1718"/>
         </scene>
-        <!--Miedia Player Window Controller-->
+        <!--bili播放器窗口-->
         <scene sceneID="FoM-kS-Mrc">
             <objects>
-                <windowController storyboardIdentifier="playerWindow" showSeguePresentationStyle="single" id="M1q-z2-1fI" userLabel="Miedia Player Window Controller" sceneMemberID="viewController">
+                <windowController storyboardIdentifier="playerWindow" showSeguePresentationStyle="single" id="M1q-z2-1fI" userLabel="bili播放器窗口" sceneMemberID="viewController">
                     <window key="window" title="PBB Reader 播放器" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="Oc1-Jb-U2t" customClass="PlayerWindow">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -1952,11 +1926,11 @@ CA
             </objects>
             <point key="canvasLocation" x="-331" y="-1224"/>
         </scene>
-        <!--General Settings-->
+        <!--偏好设置-->
         <scene sceneID="Rxw-Mq-KXu">
             <objects>
                 <customObject id="CoF-vi-6bB" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <viewController title="通用设置" id="K1o-mR-Xeb" userLabel="General Settings" customClass="Settings" sceneMemberID="viewController">
+                <viewController title="通用设置" id="K1o-mR-Xeb" userLabel="偏好设置" customClass="Settings" sceneMemberID="viewController">
                     <view key="view" id="s7c-l9-VXu">
                         <rect key="frame" x="0.0" y="0.0" width="524" height="246"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>

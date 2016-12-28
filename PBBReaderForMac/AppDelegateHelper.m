@@ -60,9 +60,34 @@ singleton_implementation(AppDelegateHelper);
 
 -(void)loadVideoWithLocalFiles:(NSString *)openFilePath
 {
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(openPDFFileByLaunchedApp:) name:@"openURLOfPycFileByLaunchedApp" object:nil];
     //
     NSString *waterPath = [[NSBundle mainBundle] pathForResource:@"water" ofType:@"xml"];
     [[PlayerLoader sharedInstance] loadVideoWithLocalFiles:@[openFilePath,waterPath]];
+}
+
+-(void)openPDFFileByLaunchedApp:(NSNotification *)notification
+{
+    NSString *openfilepath = [notification.userInfo valueForKey:@"openfilepath"];
+    [self openURLOfPycFileByLaunched:openfilepath];
+}
+
+-(void)openURLOfPycFileByLaunched:(NSString *)openFilePath
+{
+    //密钥
+    char keycode[] = {175,193,147,120,110,140,91,230,18,28,131,46,58,222,207,210};
+    long long keylength = 9206048;
+    long long offset=2097164;
+    long long filesize=9206038;
+    NSMutableDictionary  *dic = [NSMutableDictionary dictionaryWithObject:openFilePath forKey:@"set_key_info"];
+    [dic setObject:[NSNumber numberWithInteger:10] forKey:@"CountDownTime"];
+    [dic setObject:@"dfhdfhdhfhd" forKey:@"waterMark"];
+
+    [dic setValue:[NSNumber numberWithLongLong:keylength] forKey:@"EncryptedLen"];
+    [dic setValue:[NSNumber numberWithLongLong:offset] forKey:@"offset"];
+    [dic setValue:[NSNumber numberWithLongLong:filesize] forKey:@"filesize"];
+    [dic setValue:[NSData dataWithBytes: keycode length:16] forKey:@"fileSecretkeyR1"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"set_key_info_PDF" object:nil userInfo: dic];
 }
 
 

@@ -178,7 +178,6 @@
 		143EA9671D50368700457717 /* BindingPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B0CF731D34C715004D22B5 /* BindingPhoneViewController.swift */; };
 		1447A22D1D87A2D600057039 /* CustomRotateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1447A22C1D87A2D500057039 /* CustomRotateButton.swift */; };
 		1464019A1DACE04300305B12 /* indexSet+block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146401991DACE04300305B12 /* indexSet+block.swift */; };
-		146558A01DE6A89E00BDB021 /* Viewcccc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1465589F1DE6A89E00BDB021 /* Viewcccc.swift */; };
 		146872391D9A596200460B8E /* PBBReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146872381D9A596200460B8E /* PBBReaderTests.swift */; };
 		146C08D11D7FF56A00AB3153 /* CustomTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146C08D01D7FF56A00AB3153 /* CustomTableCellView.swift */; };
 		146CF12D1D88F97D0021C6B4 /* water.xml in Resources */ = {isa = PBXBuildFile; fileRef = 14815B521D4B131A00922A62 /* water.xml */; };
@@ -238,7 +237,6 @@
 		14B64D481DFFED81008C828F /* MPVSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 149D53A51DE4270E00FC4F63 /* MPVSettings.m */; };
 		14B64D491DFFED81008C828F /* BarrageFloatTextSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B0B1D4AF55A00922A62 /* BarrageFloatTextSprite.m */; };
 		14B64D4A1DFFED81008C828F /* CustomWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1422A89D1D757FD40057E9D4 /* CustomWindowController.swift */; };
-		14B64D4B1DFFED81008C828F /* Viewcccc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1465589F1DE6A89E00BDB021 /* Viewcccc.swift */; };
 		14B64D4C1DFFED81008C828F /* SendFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FDF1CFD844E001BCE84 /* SendFileManager.m */; };
 		14B64D4D1DFFED81008C828F /* CustomBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BF31801D780AB1000EFF66 /* CustomBox.swift */; };
 		14B64D4E1DFFED81008C828F /* VerificationCodeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FF01CFD844E001BCE84 /* VerificationCodeModel.m */; };
@@ -873,7 +871,6 @@
 		1447A22C1D87A2D500057039 /* CustomRotateButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomRotateButton.swift; sourceTree = "<group>"; };
 		146401991DACE04300305B12 /* indexSet+block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "indexSet+block.swift"; sourceTree = "<group>"; };
 		14642DBD1DB4C251004D9E9F /* PBBReader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PBBReader.entitlements; sourceTree = "<group>"; };
-		1465589F1DE6A89E00BDB021 /* Viewcccc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Viewcccc.swift; sourceTree = "<group>"; };
 		146872361D9A596100460B8E /* PBBReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PBBReaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		146872381D9A596200460B8E /* PBBReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBBReaderTests.swift; sourceTree = "<group>"; };
 		1468723A1D9A596200460B8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1418,7 +1415,6 @@
 				14815B521D4B131A00922A62 /* water.xml */,
 				14B25FB61CFD824A001BCE84 /* PBB-Prefix.pch */,
 				147A617B1CF6A01900390F83 /* PBBReaderForMac-Bridging-Header.h */,
-				1465589F1DE6A89E00BDB021 /* Viewcccc.swift */,
 			);
 			path = PBBReaderForMac;
 			sourceTree = "<group>";
@@ -3537,7 +3533,6 @@
 				149D53AE1DE4270E00FC4F63 /* MPVSettings.m in Sources */,
 				14815B281D4AF55A00922A62 /* BarrageFloatTextSprite.m in Sources */,
 				1422A89E1D757FD40057E9D4 /* CustomWindowController.swift in Sources */,
-				146558A01DE6A89E00BDB021 /* Viewcccc.swift in Sources */,
 				143E38071D3F1809004B0A4D /* SendFileManager.m in Sources */,
 				14BF31811D780AB1000EFF66 /* CustomBox.swift in Sources */,
 				143E38081D3F1809004B0A4D /* VerificationCodeModel.m in Sources */,
@@ -3708,7 +3703,6 @@
 				14B64D481DFFED81008C828F /* MPVSettings.m in Sources */,
 				14B64D491DFFED81008C828F /* BarrageFloatTextSprite.m in Sources */,
 				14B64D4A1DFFED81008C828F /* CustomWindowController.swift in Sources */,
-				14B64D4B1DFFED81008C828F /* Viewcccc.swift in Sources */,
 				14B64D4C1DFFED81008C828F /* SendFileManager.m in Sources */,
 				14B64D4D1DFFED81008C828F /* CustomBox.swift in Sources */,
 				14B64D4E1DFFED81008C828F /* VerificationCodeModel.m in Sources */,

@@ -45,12 +45,15 @@
             NSStoryboard *storyBoard = [NSStoryboard storyboardWithName:@"muPDF" bundle:muBundle];
             windowController = [storyBoard instantiateControllerWithIdentifier:@"playerWindow"];
             MuPDFViewController *muPDF = (MuPDFViewController *)windowController.contentViewController;
-//            muPDF.openfilepath = self.video.firstFragmentURL;
             NSString *pdfPath = [[NSBundle mainBundle] pathForResource:@"Manual" ofType:@"pdf"];
-            muPDF.openfilepath = pdfPath;//@"/Users/pengyucheng/Desktop/Manual.pdf";
-            muPDF.filename = @"Manual.pdf";
-            [muPDF loadpdf];
-        }else
+            muPDF.openfilepath = pdfPath;
+            
+            [[NSNotificationCenter defaultCenter] addObserver:self
+                                                     selector:@selector(ReleasePlayerWindows:)
+                                                         name:@"ReleasePlayerWindows"
+                                                       object:nil];
+        }
+        else
         {
             //视频
             NSStoryboard *storyBoard = [NSStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -62,7 +65,13 @@
         [windowController showWindow:self];
         [[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
     }
+    
     return self;
+}
+
+-(void)ReleasePlayerWindows:(NSNotification *)notification
+{
+    [self destory];
 }
 
 - (id)getAttr:(NSString *)key{
@@ -88,6 +97,7 @@
 
 - (void)dealloc{
     NSLog(@"[Player] Dealloc player %@",self);
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end
