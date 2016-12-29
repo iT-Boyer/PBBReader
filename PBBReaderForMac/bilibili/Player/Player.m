@@ -47,7 +47,7 @@
             MuPDFViewController *muPDF = (MuPDFViewController *)windowController.contentViewController;
             NSString *pdfPath = [[NSBundle mainBundle] pathForResource:@"Manual" ofType:@"pdf"];
             muPDF.openfilepath = pdfPath;
-            
+            //当mupdf播放器被关闭时
             [[NSNotificationCenter defaultCenter] addObserver:self
                                                      selector:@selector(ReleasePlayerWindows:)
                                                          name:@"ReleasePlayerWindows"
@@ -71,6 +71,7 @@
 
 -(void)ReleasePlayerWindows:(NSNotification *)notification
 {
+    NSLog(@"--PlayerWindow destory---");
     [self destory];
 }
 

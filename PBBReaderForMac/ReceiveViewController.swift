@@ -71,9 +71,15 @@ class ReceiveViewController: NSViewController{
         ibOpenInLocalFileButtion.updateTitleAttribute(ibOpenInLocalFileButtion.title,textColor: NSColor.white)
         readBtn.updateTitleAttribute(readBtn.title, textColor: NSColor.white)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(ReceiveViewController.openInPBBFile(_:)), name: NSNotification.Name("RefreshOpenInFile"), object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(ReceiveViewController.openInPBBFile(_:)),
+                                                   name: NSNotification.Name("RefreshOpenInFile"),
+                                                 object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(ReceiveViewController.createPlayer(_:)), name: NSNotification.Name("TYPlayerCreatedFailed"), object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(ReceiveViewController.createPlayer(_:)),
+                                                   name: NSNotification.Name("TYPlayerCreatedFailed"),
+                                                 object: nil)
         
         ReceiveTableView.setDraggingSourceOperationMask(.every, forLocal: false)
      
@@ -172,7 +178,8 @@ class ReceiveViewController: NSViewController{
     }
     
     //MARK: 通知处理事件 更新主页
-    func openInPBBFile(_ notification:Notification){
+    func openInPBBFile(_ notification:Notification)
+    {
         
         let fileID = (notification as NSNotification).userInfo!["pycFileID"] as! Int
         

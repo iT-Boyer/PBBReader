@@ -3265,7 +3265,7 @@
 		};
 		84AEDA3E1DC5F571001E8116 /* Run Fabric */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -4101,7 +4101,7 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Developer ID Application: Beijing PYC Software Co., Ltd. (FA78T6VRG8)";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application: Beijing PYC Software Co., Ltd. (FA78T6VRG8)";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = FA78T6VRG8;
@@ -4153,7 +4153,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = pyc.cn.com.PBBReaderForOSX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "4d16a757-9895-4203-bfc0-0a92571e29c0";
-				PROVISIONING_PROFILE_SPECIFIER = DirectDistribution;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PBBReaderForMac/PBBReaderForMac-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -4169,7 +4169,7 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Developer ID Application: Beijing PYC Software Co., Ltd. (FA78T6VRG8)";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application: Beijing PYC Software Co., Ltd. (FA78T6VRG8)";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = FA78T6VRG8;
@@ -4222,7 +4222,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = pyc.cn.com.PBBReaderForOSX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "4d16a757-9895-4203-bfc0-0a92571e29c0";
-				PROVISIONING_PROFILE_SPECIFIER = DirectDistribution;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PBBReaderForMac/PBBReaderForMac-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				USER_HEADER_SEARCH_PATHS = "\"${PODS_ROOT}/FMDB/src/fmdb\"";
