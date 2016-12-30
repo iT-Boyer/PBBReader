@@ -79,15 +79,12 @@ class AppDelegate: NSObject, NSApplicationDelegate
 //                                    userInfo: dic)
     }
     
-    
-
     //MARK: app将要退出时
     func applicationWillTerminate(_ aNotification: Notification)
     {
         // Insert code here to tear down your application
-        //
         let filesArray = ReceiveFileDao.shared().selectReceiveFileAll(userDao.shareduser().getLogName())
-//        (obj, idx, stop) in
+        // (obj, idx, stop) in
         filesArray?.enumerateObjects({ (outObj, idx, stop) in
             //
             //取消所有刷新状态

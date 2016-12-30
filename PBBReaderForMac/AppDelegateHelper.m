@@ -124,7 +124,7 @@ singleton_implementation(AppDelegateHelper);
     else
     {
         //custormActivityView = (AdvertisingView *)[[NSWindowController alloc] initWithWindowNibName:@"AdvertisingView"];
-        //加载广告
+        //TODO: 加载广告
         if(!custormActivityView)
         {
             [self setKeyWindow:false];
@@ -140,7 +140,9 @@ singleton_implementation(AppDelegateHelper);
                     if ([obj isKindOfClass:[AdvertisingView class]])
                     {
                         custormActivityView = (AdvertisingView *)array[i];
-                        [custormActivityView startLoadingWindow:keyWindow fileID:fileID isOutLine:OutLine];
+                        [custormActivityView startLoadingWindow:keyWindow
+                                                         fileID:fileID
+                                                      isOutLine:OutLine];
                     }
                 }
             }
@@ -148,7 +150,9 @@ singleton_implementation(AppDelegateHelper);
         else
         {
             [self setKeyWindow:false];
-            [custormActivityView startLoadingWindow:keyWindow fileID:fileID isOutLine:OutLine];
+            [custormActivityView startLoadingWindow:keyWindow
+                                             fileID:fileID
+                                          isOutLine:OutLine];
         }
     }
     
@@ -1243,18 +1247,8 @@ singleton_implementation(AppDelegateHelper);
 -(void)setKeyWindow:(BOOL)isCanClose
 {
     NSArray *windows = [[NSApplication sharedApplication] windows];
-    
     for (NSWindow *window in windows)
     {
-        //
-//        if ([window isKindOfClass:[NSPanel class]])
-//        {
-////            keyWindow = (NSWindow *) [windows lastObject];
-//            [window makeKeyAndOrderFront:self];
-//            [window setLevel:NSPopUpMenuWindowLevel];
-//            break;
-//        }
-//        else
         if ([window isKindOfClass:[PlayerWindow class]])
         {
             //播放器窗口
@@ -1268,7 +1262,6 @@ singleton_implementation(AppDelegateHelper);
             {
                 [keyWindow setStyleMask:[window styleMask] & ~ NSClosableWindowMask];
             }
-//            break;
         }
         
         if ([window isKindOfClass:[MuPDFWindow class]])
@@ -1284,13 +1277,11 @@ singleton_implementation(AppDelegateHelper);
             {
                 [keyWindow setStyleMask:[window styleMask] & ~ NSClosableWindowMask];
             }
-            //            break;
         }
         if ([window.identifier isEqualToString:@"MainWindow"])
         {
             //详情页面窗口
             keyWindow = window;
-//            continue;
         }
     }
 }
