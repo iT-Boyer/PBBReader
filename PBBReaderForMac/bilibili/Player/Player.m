@@ -36,17 +36,21 @@
         
         NSString *queue_name = [NSString stringWithFormat:@"player_queue_%ld",time(0)];
         self.queue = dispatch_queue_create([queue_name UTF8String], DISPATCH_QUEUE_SERIAL);
-        
+        //这样，必须保证文件名字正确，视频文件名不能存在.pdf字样
         BOOL isPDF = [[self.video.firstFragmentURL lowercaseString] containsString:@".pdf"];
-        if (!isPDF)
+        if (isPDF)
         {
             //PDF
             NSBundle *muBundle = [NSBundle bundleForClass:MuPDFViewController.self];
             NSStoryboard *storyBoard = [NSStoryboard storyboardWithName:@"muPDF" bundle:muBundle];
             windowController = [storyBoard instantiateControllerWithIdentifier:@"playerWindow"];
             MuPDFViewController *muPDF = (MuPDFViewController *)windowController.contentViewController;
-            NSString *pdfPath = [[NSBundle mainBundle] pathForResource:@"Manual" ofType:@"pdf"];
+            //测试文件来源
+            //NSString *pdfPath = [[NSBundle mainBundle] pathForResource:@"Manual" ofType:@"pdf"];
+            //正式文件来源
+            NSString *pdfPath = self.video.firstFragmentURL;
             muPDF.openfilepath = pdfPath;
+            
             //当mupdf播放器被关闭时
             [[NSNotificationCenter defaultCenter] addObserver:self
                                                      selector:@selector(ReleasePlayerWindows:)

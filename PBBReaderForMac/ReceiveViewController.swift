@@ -120,7 +120,8 @@ class ReceiveViewController: NSViewController{
     
 
     //浏览按钮
-    @IBAction func ibaBrowseFinder(_ sender: AnyObject) {
+    @IBAction func ibaBrowseFinder(_ sender: AnyObject)
+    {
         CLSLogv("Log awesomeness %d %d %@", getVaList([1, 2, "three"]))
 //        Crashlytics.sharedInstance().crash()
 //        Crashlytics.sharedInstance().throwException()
@@ -134,7 +135,7 @@ class ReceiveViewController: NSViewController{
         //文件可以多选
         panel.allowsMultipleSelection = false
         //可选文件类型
-        panel.allowedFileTypes = ["pbb"]
+        panel.allowedFileTypes = ["pbb","pdf"]
         
         var path_all = ""
         let result = panel.runModal()
@@ -275,7 +276,7 @@ extension ReceiveViewController
             ibSeriesNameLabel.isHidden = true
             ibSeriesLabel.isHidden = false
             makeTimeToTitleConstraint.constant = 41
-//            ibSeriesNameLabel.stringValue = seriesName
+            //ibSeriesNameLabel.stringValue = seriesName
             ibSeriesLabel.stringValue = "所属系列：\(seriesName!)"
         }
         
@@ -300,7 +301,6 @@ extension ReceiveViewController
         {
             phoneLabel.stringValue = phone
         }
-        
         
         if (receiveFile.fileQQ == nil || receiveFile.fileQQ == "")
         {
@@ -328,7 +328,6 @@ extension ReceiveViewController
         }
         else
         {
-            
             self.lastNumProgressView.isHidden = false
             let lastNum = "\(receiveFile.lastnum)"
             let limitnum = "\(receiveFile.limitnum)"
@@ -455,7 +454,6 @@ extension ReceiveViewController
             let b_CanOpen = isCanOpen(receiveFile)
             if (b_CanOpen)
             {
-                
                 if (receiveFile.limitnum != 0)
                 {
                     let lastNum = "\(receiveFile.lastnum)"
@@ -654,13 +652,14 @@ extension ReceiveViewController
         }
         
         //限制条件是否可见
-        if (!receiveFile.isEye) {
+        if (!receiveFile.isEye)
+        {
             //ibisEyeView.hidden = true
             readBtn.frame = CGRect(x: readBtn.frame.origin.x, y: 274, width: readBtn.frame.size.width, height: readBtn.frame.size.height);
         }
         
         if !FileManager.default.fileExists(atPath: receiveFile.fileurl)
-            || !(appHelper?.fileIsType(ofVideo: receiveFile.filetype))!
+            || !((appHelper?.fileIsType(ofVideo: receiveFile.filetype))! || receiveFile.filetype.lowercased() == "pdf")
         {
             readBtn.isEnabled = false
             readBtn.isHidden = true

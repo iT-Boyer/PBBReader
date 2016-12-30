@@ -121,7 +121,8 @@ inline void check_error(int status)
     NSDictionary  *dic = [NSDictionary dictionaryWithObject:[info.userInfo valueForKey:@"pycFileID"] forKey:@"pycFileID"];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshOpenInFile" object:self userInfo:dic];
 }
-- (void)viewDidAppear{
+- (void)viewDidAppear
+{
     window = (PlayerWindow *)self.view.window;
     [window makeKeyAndOrderFront:NSApp];
     [window makeMainWindow];
@@ -131,7 +132,8 @@ inline void check_error(int status)
     }
 }
 
-- (void)loadControls {
+- (void)loadControls
+{
     playerControlWindowController = [[PlayerControlWindowController alloc] initWithWindowNibName:@"PlayerControl"];
     
     playerControlView = (PlayerControlView *)playerControlWindowController.window.contentView;

@@ -62,16 +62,20 @@
                                                          multiplier:1.0
                                                            constant:constant]];
 }
--(void)startLoadingWindow:(NSWindow *)keywindow fileID:(NSInteger)fileID isOutLine:(BOOL)OutLine
+-(void)startLoadingWindow:(NSWindow *)keywindow
+                   fileID:(NSInteger)fileID
+                isOutLine:(BOOL)OutLine
 {
     //重置缓存图片
     [_ibImageView setImage:nil];
-    if(![keywindow.contentView isKindOfClass:[NSView class]]){
+    if(![keywindow.contentView isKindOfClass:[NSView class]])
+    {
         _finish = YES;
         return;
     }
     
     NSView *keyView = keywindow.contentView;
+//    keyView.translatesAutoresizingMaskIntoConstraints = false;
     [keyView addSubview:self];
     [self setEdge:keyView view:self attr:NSLayoutAttributeTop constant:0];
     [self setEdge:keyView view:self attr:NSLayoutAttributeBottom constant:0];

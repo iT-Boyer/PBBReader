@@ -56,29 +56,27 @@ class AppDelegate: NSObject, NSApplicationDelegate
     func openPDFFileByLaunchedApp(_ notification:Notification)
     {
         //
-//        if let openfilepath = notification.userInfo?["openfilepath"] as! String
-//        {
-//            appHelper.openURLOfPycFile(byLaunchedApp: openfilepath)
-//        }
+        let openfilepath = notification.userInfo?["openfilepath"] as! String
+        appHelper.openURLOfPycFile(byLaunchedApp: openfilepath)
         
-        //测试
-        let keycode:[CChar16] = [CChar16]() //[175,193,147,120,110,140,91,230,18,28,131,46,58,222,207,210]
-        let keylength:CLongLong = 0//9206048
-        let offset:CLongLong = 2097164
-        let filesize:CLongLong = 9206038
-        var dic = [String:Any]()
-        
-        dic.updateValue(NSNumber.init(value: keylength), forKey: "EncryptedLen")
-        dic.updateValue(NSNumber.init(value: offset), forKey: "offset")
-        dic.updateValue(NSNumber.init(value: filesize), forKey: "filesize")
-        dic.updateValue(NSData.init(bytes: keycode, length: 16), forKey: "fileSecretkeyR1")
-        
-        dic.updateValue(NSNumber.init(value: 10), forKey: "CountDownTime")
-        dic.updateValue("waterMarkwaterMarkwaterMark", forKey: "waterMark")
-        
-        NotificationCenter.default.post(name: NSNotification.Name("set_key_info_PDF"),
-                                      object: nil,
-                                    userInfo: dic)
+//        //测试
+//        let keycode:[CChar16] = [CChar16]() //[175,193,147,120,110,140,91,230,18,28,131,46,58,222,207,210]
+//        let keylength:CLongLong = 0//9206048
+//        let offset:CLongLong = 2097164
+//        let filesize:CLongLong = 9206038
+//        var dic = [String:Any]()
+//        
+//        dic.updateValue(NSNumber.init(value: keylength), forKey: "EncryptedLen")
+//        dic.updateValue(NSNumber.init(value: offset), forKey: "offset")
+//        dic.updateValue(NSNumber.init(value: filesize), forKey: "filesize")
+//        dic.updateValue(NSData.init(bytes: keycode, length: 16), forKey: "fileSecretkeyR1")
+//        
+//        dic.updateValue(NSNumber.init(value: 10), forKey: "CountDownTime")
+//        dic.updateValue("waterMarkwaterMarkwaterMark", forKey: "waterMark")
+//        
+//        NotificationCenter.default.post(name: NSNotification.Name("set_key_info_PDF"),
+//                                      object: nil,
+//                                    userInfo: dic)
     }
     
     
