@@ -1,8 +1,8 @@
 .DS_Store
-xcshareddata
+PBBReaderForMac.xcworkspace/xcshareddata/*
 *.xcscheme
 *.zip
 xcuserdata
 *.xcuserstate
 xcdebugger
-ImportSVN/*
+Distribution/ImportSVN/*

@@ -82,7 +82,7 @@ git commit -m "some temporary message"
 git checkout -b temporary
 git svn dcommit   //提交到svn
 在temp分支上
-git merge —no-ff master //把master合并到temp中
+git merge -—no-ff master //把master合并到temp中
 git svn dcommit 	//这样就会成功
 然后再切换到master分枝
 git checkout master //结束
