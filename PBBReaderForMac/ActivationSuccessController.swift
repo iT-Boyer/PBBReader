@@ -26,47 +26,47 @@ class ActivationSuccessController: NSViewController
     var fileId = 0
     var orderId = 0
     
-    var qq = ""
-    var phone = ""
-    var email = ""
-    var field1name = ""
-    var field2name = ""
+    var qq:String!
+    var phone:String!
+    var email:String!
+    var field1name:String!
+    var field2name:String!
     
     var bOpenInCome = 0
     
-    var showInfo = ""
+    var showInfo:String!
     var needShowDiff = 0
-    var makerNick = ""
+    var makerNick:String!
     var needReapply = 0
     var applyId = 0
-    var remark = ""
+    var remark:String!
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         ibRetoActivation.updateTitleAttribute(ibRetoActivation.title, textColor: NSColor.white)
         // Do view setup here.
-        qqLabel.stringValue =  qq
-        phoneLabel.stringValue = phone
-        emailLabel.stringValue = email
+        qqLabel.stringValue =  qq!
+        phoneLabel.stringValue = phone!
+        emailLabel.stringValue = email!
         //    BOOL uu = [qq isEqualToString:""]
         
-        if (ToolString.isBlankString(qq))
+        if (ToolString.isBlankString(qq!))
         {
             qqLabel.stringValue =  "无"
             qq = "无"
         }
-        if (ToolString.isBlankString(phone))
+        if (ToolString.isBlankString(phone!))
         {
             phoneLabel.stringValue = "无"
             phone = "无"
         }
-        if (ToolString.isBlankString(email))
+        if (ToolString.isBlankString(email!))
         {
             emailLabel.stringValue = "无"
             email = "无"
         }
-        if (ToolString.isBlankString(remark))
+        if (ToolString.isBlankString(remark!))
         {
             remark = ""
         }
@@ -92,11 +92,11 @@ class ActivationSuccessController: NSViewController
             ibShowInfoLabel.textColor = NSColor.orange
         }
         
-        ibShowInfoLabel.stringValue = showInfo
+        ibShowInfoLabel.stringValue = showInfo!
         
         //作者
-        ibMakerLabel.stringValue = makerNick
-        ibRemarkLabel.stringValue = remark
+        ibMakerLabel.stringValue = makerNick!
+        ibRemarkLabel.stringValue = remark!
     }
     
     @IBAction func ibaRetoActivation(_ sender: AnyObject)
