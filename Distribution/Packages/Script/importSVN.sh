@@ -73,21 +73,28 @@ git diff --cached
 #强制覆盖服务器端上的分支
 git push -u origin master -f
 
-####HEAD detached at origin/master
-问题解决：
-在该分支上操作如下：
-解决冲突，然后：
-git add .
-git commit -m "some temporary message"
-git checkout -b temporary
-git svn dcommit   //提交到svn
-在temp分支上
-git merge -—no-ff master //把master合并到temp中
-git svn dcommit 	//这样就会成功
-然后再切换到master分枝
-git checkout master //结束
-git branch -D temp  //删除temp分支
- 
+####(HEAD detached at origin/master)   /  rebase in progress; onto c25f039
+现象：
+git status
+提示：(HEAD detached at origin/master)
+解决在该分支上操作如下：
+1. 解决冲突
+    git add .
+    git commit -m "some temporary message"
+2. 建一个temp分支：
+    git checkout -b temp
+    git svn dcommit   //提交到svn
+    //git merge -—no-ff master //把master合并到temp中
+3. 切换到master分支：
+    git checkout master //结束
+4. 将temp分支合并到master分支：
+    git merge temp
+5. 完成：此时svn服务器上的版本已经和master分支同步
+    就可以在master分支上执行git svn dcommit
+6. 收尾：删除temp临时分支：
+    git branch -D temp  //删除temp分支
+
+
 #问题：git svn branch results in Authentication failed
 #无法新建分支http://stackoverflow.com/questions/34623108/git-svn-branch-results-in-authentication-failed
 原文：当Tortoise SVN 和 git-svn合用时，会导致git svn branch results in Authentication failed
