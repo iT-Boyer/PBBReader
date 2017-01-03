@@ -630,6 +630,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1429D5B11E1B7B2300F96E2D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 14C917971DFA5B350025F6FB /* MuPDF.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2A37B9001E00DFA60027109D;
+			remoteInfo = mypdfforos;
+		};
+		1429D5B31E1B7B2300F96E2D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 14C917971DFA5B350025F6FB /* MuPDF.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2A37B9151E00DFA60027109D;
+			remoteInfo = mypdfforosTests;
+		};
+		1429D5B51E1B7B2300F96E2D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 14C917971DFA5B350025F6FB /* MuPDF.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2A37B9201E00DFA60027109D;
+			remoteInfo = mypdfforosUITests;
+		};
 		1468723B1D9A596200460B8E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1437DD601CF2A75E001BD2D2 /* Project object */;
@@ -1964,6 +1985,9 @@
 				14C9179E1DFA5B350025F6FB /* MuPDF.app */,
 				14C917A01DFA5B350025F6FB /* MuPDFForOSX.app */,
 				14C917D51DFA85E40025F6FB /* MuPDFFramework.framework */,
+				1429D5B21E1B7B2300F96E2D /* mypdfforos.app */,
+				1429D5B41E1B7B2300F96E2D /* mypdfforosTests.xctest */,
+				1429D5B61E1B7B2300F96E2D /* mypdfforosUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2472,6 +2496,27 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		1429D5B21E1B7B2300F96E2D /* mypdfforos.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = mypdfforos.app;
+			remoteRef = 1429D5B11E1B7B2300F96E2D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1429D5B41E1B7B2300F96E2D /* mypdfforosTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = mypdfforosTests.xctest;
+			remoteRef = 1429D5B31E1B7B2300F96E2D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1429D5B61E1B7B2300F96E2D /* mypdfforosUITests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = mypdfforosUITests.xctest;
+			remoteRef = 1429D5B51E1B7B2300F96E2D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		14C9179E1DFA5B350025F6FB /* MuPDF.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
