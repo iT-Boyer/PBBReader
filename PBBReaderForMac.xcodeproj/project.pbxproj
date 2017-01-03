@@ -625,54 +625,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1426873E1E135692002CF075 /* PBXContainerItemProxy */ = {
+		1429D5B11E1B7B2300F96E2D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 142687341E135692002CF075 /* MuPDF.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 968E1E3D1779A54F0050CEA3;
-			remoteInfo = MuPDF;
-		};
-		142687401E135692002CF075 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 142687341E135692002CF075 /* MuPDF.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 14C6CCA91DF8F64A0078072A;
-			remoteInfo = MuPDFForOSX;
-		};
-		142687421E135692002CF075 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 142687341E135692002CF075 /* MuPDF.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 14C917AF1DFA734D0025F6FB;
-			remoteInfo = MuPDFFramework;
-		};
-		142687441E135692002CF075 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 142687341E135692002CF075 /* MuPDF.xcodeproj */;
+			containerPortal = 14C917971DFA5B350025F6FB /* MuPDF.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 2A37B9001E00DFA60027109D;
 			remoteInfo = mypdfforos;
 		};
-		142687461E135692002CF075 /* PBXContainerItemProxy */ = {
+		1429D5B31E1B7B2300F96E2D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 142687341E135692002CF075 /* MuPDF.xcodeproj */;
+			containerPortal = 14C917971DFA5B350025F6FB /* MuPDF.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 2A37B9151E00DFA60027109D;
 			remoteInfo = mypdfforosTests;
 		};
-		142687481E135692002CF075 /* PBXContainerItemProxy */ = {
+		1429D5B51E1B7B2300F96E2D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 142687341E135692002CF075 /* MuPDF.xcodeproj */;
+			containerPortal = 14C917971DFA5B350025F6FB /* MuPDF.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 2A37B9201E00DFA60027109D;
 			remoteInfo = mypdfforosUITests;
-		};
-		1426874C1E1357E0002CF075 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 142687341E135692002CF075 /* MuPDF.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 14C917AE1DFA734D0025F6FB;
-			remoteInfo = MuPDFFramework;
 		};
 		1468723B1D9A596200460B8E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -2001,6 +1973,19 @@
 			path = model;
 			sourceTree = "<group>";
 		};
+		14C917981DFA5B350025F6FB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				14C9179E1DFA5B350025F6FB /* MuPDF.app */,
+				14C917A01DFA5B350025F6FB /* MuPDFForOSX.app */,
+				14C917D51DFA85E40025F6FB /* MuPDFFramework.framework */,
+				1429D5B21E1B7B2300F96E2D /* mypdfforos.app */,
+				1429D5B41E1B7B2300F96E2D /* mypdfforosTests.xctest */,
+				1429D5B61E1B7B2300F96E2D /* mypdfforosUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		14E007151DF01C880056CBEF /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -2505,7 +2490,28 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		1426873F1E135692002CF075 /* MuPDF.app */ = {
+		1429D5B21E1B7B2300F96E2D /* mypdfforos.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = mypdfforos.app;
+			remoteRef = 1429D5B11E1B7B2300F96E2D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1429D5B41E1B7B2300F96E2D /* mypdfforosTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = mypdfforosTests.xctest;
+			remoteRef = 1429D5B31E1B7B2300F96E2D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1429D5B61E1B7B2300F96E2D /* mypdfforosUITests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = mypdfforosUITests.xctest;
+			remoteRef = 1429D5B51E1B7B2300F96E2D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		14C9179E1DFA5B350025F6FB /* MuPDF.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = MuPDF.app;
