@@ -236,8 +236,7 @@
 @end
 
 
-@interface PlayerLoaderWindow : NSWindow
-@end
+
 
 
 @implementation PlayerLoaderWindow

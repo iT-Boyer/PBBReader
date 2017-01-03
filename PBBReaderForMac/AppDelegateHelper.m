@@ -1249,6 +1249,12 @@ singleton_implementation(AppDelegateHelper);
     NSArray *windows = [[NSApplication sharedApplication] windows];
     for (NSWindow *window in windows)
     {
+        if ([window.identifier isEqualToString:@"MainWindow"])
+        {
+            //详情页面窗口
+            keyWindow = window;
+        }
+        
         if ([window isKindOfClass:[PlayerWindow class]])
         {
             //播放器窗口
@@ -1278,11 +1284,7 @@ singleton_implementation(AppDelegateHelper);
                 [keyWindow setStyleMask:[window styleMask] & ~ NSClosableWindowMask];
             }
         }
-        if ([window.identifier isEqualToString:@"MainWindow"])
-        {
-            //详情页面窗口
-            keyWindow = window;
-        }
+
     }
 }
 

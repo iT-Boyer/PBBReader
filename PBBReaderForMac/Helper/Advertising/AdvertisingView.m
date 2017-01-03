@@ -67,7 +67,8 @@
                 isOutLine:(BOOL)OutLine
 {
     //重置缓存图片
-    [_ibImageView setImage:nil];
+//    [_ibImageView setImage:nil];
+    [_ibImageView setImage:[NSImage imageNamed:@"advitising.jpg"]];
     if(![keywindow.contentView isKindOfClass:[NSView class]])
     {
         _finish = YES;
@@ -92,13 +93,17 @@
     }
     NSString *UidOrImgUrl = @"";
     NSInteger uid = [[ReceiveFileDao sharedReceiveFileDao] fetchUid:fileID];
-    if ([ToolString isConnectionAvailable]) {
+    if ([ToolString isConnectionAvailable])
+    {
         UidOrImgUrl = [NSString stringWithFormat:@"http://%@/myspace/deployadvertshow.aspx?fid=%ld",IP_ADDRESS_HTML,(long)fileID];
-    }else{
+    }
+    else
+    {
         UidOrImgUrl = [NSString stringWithFormat:@"%ld",(long)uid];
     }
     
-    if (!_imgCache) {
+    if (!_imgCache)
+    {
         _imgCache = [[AdvertisingImgCache alloc] init];
     }
 //    [_ibIndicator startAnimation:self];
