@@ -62,16 +62,21 @@
                                                          multiplier:1.0
                                                            constant:constant]];
 }
--(void)startLoadingWindow:(NSWindow *)keywindow fileID:(NSInteger)fileID isOutLine:(BOOL)OutLine
+-(void)startLoadingWindow:(NSWindow *)keywindow
+                   fileID:(NSInteger)fileID
+                isOutLine:(BOOL)OutLine
 {
     //重置缓存图片
-    [_ibImageView setImage:nil];
-    if(![keywindow.contentView isKindOfClass:[NSView class]]){
+//    [_ibImageView setImage:nil];
+    [_ibImageView setImage:[NSImage imageNamed:@"advitising.jpg"]];
+    if(![keywindow.contentView isKindOfClass:[NSView class]])
+    {
         _finish = YES;
         return;
     }
     
     NSView *keyView = keywindow.contentView;
+//    keyView.translatesAutoresizingMaskIntoConstraints = false;
     [keyView addSubview:self];
     [self setEdge:keyView view:self attr:NSLayoutAttributeTop constant:0];
     [self setEdge:keyView view:self attr:NSLayoutAttributeBottom constant:0];
@@ -88,13 +93,17 @@
     }
     NSString *UidOrImgUrl = @"";
     NSInteger uid = [[ReceiveFileDao sharedReceiveFileDao] fetchUid:fileID];
-    if ([ToolString isConnectionAvailable]) {
+    if ([ToolString isConnectionAvailable])
+    {
         UidOrImgUrl = [NSString stringWithFormat:@"http://%@/myspace/deployadvertshow.aspx?fid=%ld",IP_ADDRESS_HTML,(long)fileID];
-    }else{
+    }
+    else
+    {
         UidOrImgUrl = [NSString stringWithFormat:@"%ld",(long)uid];
     }
     
-    if (!_imgCache) {
+    if (!_imgCache)
+    {
         _imgCache = [[AdvertisingImgCache alloc] init];
     }
 //    [_ibIndicator startAnimation:self];

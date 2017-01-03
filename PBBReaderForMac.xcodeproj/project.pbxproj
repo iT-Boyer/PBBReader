@@ -25,6 +25,10 @@
 /* Begin PBXBuildFile section */
 		03E75CB73D882FA8AE840814 /* Pods_PBBReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A66CA53F5B73961FE573D22 /* Pods_PBBReader.framework */; };
 		1422A89E1D757FD40057E9D4 /* CustomWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1422A89D1D757FD40057E9D4 /* CustomWindowController.swift */; };
+		142687561E135906002CF075 /* MuPDFFramework.framework in [CP]MuPDF到指定目录实现集成 */ = {isa = PBXBuildFile; fileRef = 142687431E135692002CF075 /* MuPDFFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		142687581E13603C002CF075 /* MuPDFFramework.framework in [CP]Embed APP包中的Frameworks目录 */ = {isa = PBXBuildFile; fileRef = 142687431E135692002CF075 /* MuPDFFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1426875A1E136E2E002CF075 /* Manual.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 142687591E136E2E002CF075 /* Manual.pdf */; };
+		1426875D1E137611002CF075 /* Label+WaterMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1426875C1E137611002CF075 /* Label+WaterMark.swift */; };
 		14389CA11D9CB4A100EAC29C /* CustomColorProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14389CA01D9CB4A100EAC29C /* CustomColorProgressIndicator.swift */; };
 		143E37FC1D3F1809004B0A4D /* PycReceiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A68681CFEC9AD00BC66A1 /* PycReceiveModel.swift */; };
 		143E37FD1D3F1809004B0A4D /* SecretDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FCC1CFD844E001BCE84 /* SecretDao.m */; };
@@ -162,24 +166,22 @@
 		143E38991D3F1809004B0A4D /* fillscreen_lr.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F7A1D2A187300838B88 /* fillscreen_lr.pdf */; };
 		143E389A1D3F1809004B0A4D /* copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F6A1D2A187300838B88 /* copy.png */; };
 		143E389B1D3F1809004B0A4D /* credits.txt in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F6B1D2A187300838B88 /* credits.txt */; };
-		143E38A11D3F1809004B0A4D /* libavcodec.57.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E351D2A187200838B88 /* libavcodec.57.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		143E38A21D3F1809004B0A4D /* libavdevice.57.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E361D2A187200838B88 /* libavdevice.57.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		143E38A31D3F1809004B0A4D /* libavfilter.6.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E371D2A187200838B88 /* libavfilter.6.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		143E38A41D3F1809004B0A4D /* libavformat.57.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E381D2A187200838B88 /* libavformat.57.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		143E38A51D3F1809004B0A4D /* libavutil.55.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E391D2A187200838B88 /* libavutil.55.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		143E38A61D3F1809004B0A4D /* libmpv.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E3A1D2A187200838B88 /* libmpv.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		143E38A71D3F1809004B0A4D /* libswresample.2.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E3B1D2A187200838B88 /* libswresample.2.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		143E38A81D3F1809004B0A4D /* libswscale.4.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E3C1D2A187200838B88 /* libswscale.4.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		143E38A91D3F1809004B0A4D /* libz.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E3D1D2A187200838B88 /* libz.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		143E38A11D3F1809004B0A4D /* libavcodec.57.dylib in [CP]Bilibili到APP包的执行目录 */ = {isa = PBXBuildFile; fileRef = 14AA3E351D2A187200838B88 /* libavcodec.57.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		143E38A21D3F1809004B0A4D /* libavdevice.57.dylib in [CP]Bilibili到APP包的执行目录 */ = {isa = PBXBuildFile; fileRef = 14AA3E361D2A187200838B88 /* libavdevice.57.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		143E38A31D3F1809004B0A4D /* libavfilter.6.dylib in [CP]Bilibili到APP包的执行目录 */ = {isa = PBXBuildFile; fileRef = 14AA3E371D2A187200838B88 /* libavfilter.6.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		143E38A41D3F1809004B0A4D /* libavformat.57.dylib in [CP]Bilibili到APP包的执行目录 */ = {isa = PBXBuildFile; fileRef = 14AA3E381D2A187200838B88 /* libavformat.57.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		143E38A51D3F1809004B0A4D /* libavutil.55.dylib in [CP]Bilibili到APP包的执行目录 */ = {isa = PBXBuildFile; fileRef = 14AA3E391D2A187200838B88 /* libavutil.55.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		143E38A61D3F1809004B0A4D /* libmpv.dylib in [CP]Bilibili到APP包的执行目录 */ = {isa = PBXBuildFile; fileRef = 14AA3E3A1D2A187200838B88 /* libmpv.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		143E38A71D3F1809004B0A4D /* libswresample.2.dylib in [CP]Bilibili到APP包的执行目录 */ = {isa = PBXBuildFile; fileRef = 14AA3E3B1D2A187200838B88 /* libswresample.2.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		143E38A81D3F1809004B0A4D /* libswscale.4.dylib in [CP]Bilibili到APP包的执行目录 */ = {isa = PBXBuildFile; fileRef = 14AA3E3C1D2A187200838B88 /* libswscale.4.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		143E38A91D3F1809004B0A4D /* libz.1.dylib in [CP]Bilibili到APP包的执行目录 */ = {isa = PBXBuildFile; fileRef = 14AA3E3D1D2A187200838B88 /* libz.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		143EA9671D50368700457717 /* BindingPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B0CF731D34C715004D22B5 /* BindingPhoneViewController.swift */; };
 		1447A22D1D87A2D600057039 /* CustomRotateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1447A22C1D87A2D500057039 /* CustomRotateButton.swift */; };
 		1464019A1DACE04300305B12 /* indexSet+block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146401991DACE04300305B12 /* indexSet+block.swift */; };
-		146558A01DE6A89E00BDB021 /* Viewcccc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1465589F1DE6A89E00BDB021 /* Viewcccc.swift */; };
 		146872391D9A596200460B8E /* PBBReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146872381D9A596200460B8E /* PBBReaderTests.swift */; };
 		146C08D11D7FF56A00AB3153 /* CustomTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146C08D01D7FF56A00AB3153 /* CustomTableCellView.swift */; };
 		146CF12D1D88F97D0021C6B4 /* water.xml in Resources */ = {isa = PBXBuildFile; fileRef = 14815B521D4B131A00922A62 /* water.xml */; };
 		147E8BA71DE7E1A20009827D /* AppDelegateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 148AB4741CFFD24E00CAF9BA /* AppDelegateHelper.m */; };
-		14815AE71D49D7E200922A62 /* Label+shadeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14815AE61D49D7E100922A62 /* Label+shadeAnimation.swift */; };
 		14815AF21D49FCBC00922A62 /* PlayPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815AF11D49FCBC00922A62 /* PlayPosition.m */; };
 		14815B1F1D4AF55A00922A62 /* BarrageCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815AF61D4AF55A00922A62 /* BarrageCanvas.m */; };
 		14815B201D4AF55A00922A62 /* BarrageClock.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815AF81D4AF55A00922A62 /* BarrageClock.m */; };
@@ -216,9 +218,8 @@
 		149D53B11DE4270E00FC4F63 /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 149D53AB1DE4270E00FC4F63 /* Tools.m */; };
 		14A505911DAA2656008BF666 /* Toasty.h in Headers */ = {isa = PBXBuildFile; fileRef = 14A505901DAA2656008BF666 /* Toasty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		14A505951DAA2656008BF666 /* Toasty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A5058E1DAA2656008BF666 /* Toasty.framework */; };
-		14A505961DAA2656008BF666 /* Toasty.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14A5058E1DAA2656008BF666 /* Toasty.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		14A505961DAA2656008BF666 /* Toasty.framework in [CP]Embed APP包中的Frameworks目录 */ = {isa = PBXBuildFile; fileRef = 14A5058E1DAA2656008BF666 /* Toasty.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		14A5059C1DAA269C008BF666 /* Toasty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A5059B1DAA269C008BF666 /* Toasty.swift */; };
-		14B64D351DFFED81008C828F /* MuPDFFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14C917D51DFA85E40025F6FB /* MuPDFFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		14B64D361DFFED81008C828F /* Toasty.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14A5058E1DAA2656008BF666 /* Toasty.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		14B64D371DFFED81008C828F /* PBBLogSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 148B6D8F1DE69166005B5DFB /* PBBLogSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		14B64D3C1DFFED81008C828F /* PycReceiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A68681CFEC9AD00BC66A1 /* PycReceiveModel.swift */; };
@@ -236,7 +237,6 @@
 		14B64D481DFFED81008C828F /* MPVSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 149D53A51DE4270E00FC4F63 /* MPVSettings.m */; };
 		14B64D491DFFED81008C828F /* BarrageFloatTextSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B0B1D4AF55A00922A62 /* BarrageFloatTextSprite.m */; };
 		14B64D4A1DFFED81008C828F /* CustomWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1422A89D1D757FD40057E9D4 /* CustomWindowController.swift */; };
-		14B64D4B1DFFED81008C828F /* Viewcccc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1465589F1DE6A89E00BDB021 /* Viewcccc.swift */; };
 		14B64D4C1DFFED81008C828F /* SendFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FDF1CFD844E001BCE84 /* SendFileManager.m */; };
 		14B64D4D1DFFED81008C828F /* CustomBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BF31801D780AB1000EFF66 /* CustomBox.swift */; };
 		14B64D4E1DFFED81008C828F /* VerificationCodeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FF01CFD844E001BCE84 /* VerificationCodeModel.m */; };
@@ -276,7 +276,6 @@
 		14B64D701DFFED81008C828F /* NSValue+iOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B1C1D4AF55A00922A62 /* NSValue+iOS.m */; };
 		14B64D711DFFED81008C828F /* SandboxFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B260061CFD86A8001BCE84 /* SandboxFile.m */; };
 		14B64D721DFFED81008C828F /* PycSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F921CFD7823001BCE84 /* PycSocket.m */; };
-		14B64D731DFFED81008C828F /* Label+shadeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14815AE61D49D7E100922A62 /* Label+shadeAnimation.swift */; };
 		14B64D741DFFED81008C828F /* PycUserRemote.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F971CFD7823001BCE84 /* PycUserRemote.m */; };
 		14B64D751DFFED81008C828F /* readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 1437DD9F1CF2AF7C001BD2D2 /* readme.md */; };
 		14B64D761DFFED81008C828F /* DataFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FE41CFD844E001BCE84 /* DataFactory.m */; };
@@ -315,7 +314,6 @@
 		14B64D971DFFED81008C828F /* CustomTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146C08D01D7FF56A00AB3153 /* CustomTableCellView.swift */; };
 		14B64D981DFFED81008C828F /* NSString+LcsDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3FAA1D2A187300838B88 /* NSString+LcsDiff.m */; };
 		14B64D991DFFED81008C828F /* FSCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C9B6A51D8E859800A0C6B9 /* FSCustomCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		14B64D9A1DFFED81008C828F /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F921D2A187300838B88 /* Player.m */; };
 		14B64D9B1DFFED81008C828F /* PlayerView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F9A1D2A187300838B88 /* PlayerView.mm */; };
 		14B64D9C1DFFED81008C828F /* PlayerWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F9C1D2A187300838B88 /* PlayerWindow.m */; };
 		14B64D9D1DFFED81008C828F /* PlayerLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F961D2A187300838B88 /* PlayerLoader.m */; };
@@ -345,7 +343,6 @@
 		14B64DB51DFFED81008C828F /* VP_Local.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3FBB1D2A187300838B88 /* VP_Local.m */; };
 		14B64DB61DFFED81008C828F /* VideoProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3FB71D2A187300838B88 /* VideoProvider.m */; };
 		14B64DB71DFFED81008C828F /* BarrageClock.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815AF81D4AF55A00922A62 /* BarrageClock.m */; };
-		14B64DB91DFFED81008C828F /* MuPDFFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14C917D51DFA85E40025F6FB /* MuPDFFramework.framework */; };
 		14B64DBA1DFFED81008C828F /* Toasty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A5058E1DAA2656008BF666 /* Toasty.framework */; };
 		14B64DBB1DFFED81008C828F /* libmpv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AA3E3A1D2A187200838B88 /* libmpv.dylib */; };
 		14B64DBC1DFFED81008C828F /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AA3E3D1D2A187200838B88 /* libz.1.dylib */; };
@@ -491,7 +488,6 @@
 		84AEDA7C1DC5FF02001E8116 /* NSValue+iOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B1C1D4AF55A00922A62 /* NSValue+iOS.m */; };
 		84AEDA7D1DC5FF02001E8116 /* SandboxFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B260061CFD86A8001BCE84 /* SandboxFile.m */; };
 		84AEDA7E1DC5FF02001E8116 /* PycSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F921CFD7823001BCE84 /* PycSocket.m */; };
-		84AEDA7F1DC5FF02001E8116 /* Label+shadeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14815AE61D49D7E100922A62 /* Label+shadeAnimation.swift */; };
 		84AEDA801DC5FF02001E8116 /* PycUserRemote.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25F971CFD7823001BCE84 /* PycUserRemote.m */; };
 		84AEDA811DC5FF02001E8116 /* readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 1437DD9F1CF2AF7C001BD2D2 /* readme.md */; };
 		84AEDA821DC5FF02001E8116 /* DataFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B25FE41CFD844E001BCE84 /* DataFactory.m */; };
@@ -529,7 +525,6 @@
 		84AEDAA41DC5FF02001E8116 /* CustomTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146C08D01D7FF56A00AB3153 /* CustomTableCellView.swift */; };
 		84AEDAA51DC5FF02001E8116 /* NSString+LcsDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3FAA1D2A187300838B88 /* NSString+LcsDiff.m */; };
 		84AEDAA61DC5FF02001E8116 /* FSCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C9B6A51D8E859800A0C6B9 /* FSCustomCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		84AEDAA71DC5FF02001E8116 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F921D2A187300838B88 /* Player.m */; };
 		84AEDAA81DC5FF02001E8116 /* PlayerView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F9A1D2A187300838B88 /* PlayerView.mm */; };
 		84AEDAA91DC5FF02001E8116 /* PlayerWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F9C1D2A187300838B88 /* PlayerWindow.m */; };
 		84AEDAAA1DC5FF02001E8116 /* PlayerLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA3F961D2A187300838B88 /* PlayerLoader.m */; };
@@ -622,7 +617,7 @@
 		84AEDB081DC5FF02001E8116 /* libswscale.4.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E3C1D2A187200838B88 /* libswscale.4.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		84AEDB091DC5FF02001E8116 /* libz.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14AA3E3D1D2A187200838B88 /* libz.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		84B679181DE719D600496634 /* PBBLogSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 148B6D8F1DE69166005B5DFB /* PBBLogSDK.framework */; };
-		84B679191DE719D600496634 /* PBBLogSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 148B6D8F1DE69166005B5DFB /* PBBLogSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		84B679191DE719D600496634 /* PBBLogSDK.framework in [CP]Embed APP包中的Frameworks目录 */ = {isa = PBXBuildFile; fileRef = 148B6D8F1DE69166005B5DFB /* PBBLogSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		84B679551DE72A4300496634 /* PBBLogSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 148B6D911DE69166005B5DFB /* PBBLogSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84CD4F211DC7901900EE0BEB /* Fastfile_Fabric in Resources */ = {isa = PBXBuildFile; fileRef = 84CD4F201DC7901900EE0BEB /* Fastfile_Fabric */; };
 		9DEA84C4876A239142E64C4C /* Pods_PBBLogSDKForiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F37F032AEFFDD913E2AA58C6 /* Pods_PBBLogSDKForiOS.framework */; };
@@ -630,26 +625,54 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1429D5B11E1B7B2300F96E2D /* PBXContainerItemProxy */ = {
+		1426873E1E135692002CF075 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 14C917971DFA5B350025F6FB /* MuPDF.xcodeproj */;
+			containerPortal = 142687341E135692002CF075 /* MuPDF.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 968E1E3D1779A54F0050CEA3;
+			remoteInfo = MuPDF;
+		};
+		142687401E135692002CF075 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 142687341E135692002CF075 /* MuPDF.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 14C6CCA91DF8F64A0078072A;
+			remoteInfo = MuPDFForOSX;
+		};
+		142687421E135692002CF075 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 142687341E135692002CF075 /* MuPDF.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 14C917AF1DFA734D0025F6FB;
+			remoteInfo = MuPDFFramework;
+		};
+		142687441E135692002CF075 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 142687341E135692002CF075 /* MuPDF.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 2A37B9001E00DFA60027109D;
 			remoteInfo = mypdfforos;
 		};
-		1429D5B31E1B7B2300F96E2D /* PBXContainerItemProxy */ = {
+		142687461E135692002CF075 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 14C917971DFA5B350025F6FB /* MuPDF.xcodeproj */;
+			containerPortal = 142687341E135692002CF075 /* MuPDF.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 2A37B9151E00DFA60027109D;
 			remoteInfo = mypdfforosTests;
 		};
-		1429D5B51E1B7B2300F96E2D /* PBXContainerItemProxy */ = {
+		142687481E135692002CF075 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 14C917971DFA5B350025F6FB /* MuPDF.xcodeproj */;
+			containerPortal = 142687341E135692002CF075 /* MuPDF.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 2A37B9201E00DFA60027109D;
 			remoteInfo = mypdfforosUITests;
+		};
+		1426874C1E1357E0002CF075 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 142687341E135692002CF075 /* MuPDF.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 14C917AE1DFA734D0025F6FB;
+			remoteInfo = MuPDFFramework;
 		};
 		1468723B1D9A596200460B8E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -679,13 +702,6 @@
 			remoteGlobalIDString = 14A5058D1DAA2656008BF666;
 			remoteInfo = Toasty;
 		};
-		14B64D281DFFED81008C828F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 14C917971DFA5B350025F6FB /* MuPDF.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 14C917AE1DFA734D0025F6FB;
-			remoteInfo = MuPDFFramework;
-		};
 		14B64D2A1DFFED81008C828F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1437DD601CF2A75E001BD2D2 /* Project object */;
@@ -699,34 +715,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 148B6D8E1DE69166005B5DFB;
 			remoteInfo = PBBLogSDK;
-		};
-		14B64D2E1DFFED81008C828F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 14C917971DFA5B350025F6FB /* MuPDF.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 14C917AE1DFA734D0025F6FB;
-			remoteInfo = MuPDFFramework;
-		};
-		14C9179D1DFA5B350025F6FB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 14C917971DFA5B350025F6FB /* MuPDF.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 968E1E3D1779A54F0050CEA3;
-			remoteInfo = MuPDF;
-		};
-		14C9179F1DFA5B350025F6FB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 14C917971DFA5B350025F6FB /* MuPDF.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 14C6CCA91DF8F64A0078072A;
-			remoteInfo = MuPDFForOSX;
-		};
-		14C917D41DFA85E40025F6FB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 14C917971DFA5B350025F6FB /* MuPDF.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 14C917AF1DFA734D0025F6FB;
-			remoteInfo = MuPDFFramework;
 		};
 		84AEDA411DC5FF02001E8116 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -745,34 +733,47 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		143E38A01D3F1809004B0A4D /* CopyFiles */ = {
+		142687551E1357ED002CF075 /* [CP]MuPDF到指定目录实现集成 */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstPath = $PROJECT_DIR/PBBReaderForMac/bilibili/libmpv;
+			dstSubfolderSpec = 0;
+			files = (
+				142687561E135906002CF075 /* MuPDFFramework.framework in [CP]MuPDF到指定目录实现集成 */,
+			);
+			name = "[CP]MuPDF到指定目录实现集成";
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		143E38A01D3F1809004B0A4D /* [CP]Bilibili到APP包的执行目录 */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = lib;
 			dstSubfolderSpec = 6;
 			files = (
-				143E38A11D3F1809004B0A4D /* libavcodec.57.dylib in CopyFiles */,
-				143E38A21D3F1809004B0A4D /* libavdevice.57.dylib in CopyFiles */,
-				143E38A31D3F1809004B0A4D /* libavfilter.6.dylib in CopyFiles */,
-				143E38A41D3F1809004B0A4D /* libavformat.57.dylib in CopyFiles */,
-				143E38A51D3F1809004B0A4D /* libavutil.55.dylib in CopyFiles */,
-				143E38A61D3F1809004B0A4D /* libmpv.dylib in CopyFiles */,
-				143E38A71D3F1809004B0A4D /* libswresample.2.dylib in CopyFiles */,
-				143E38A81D3F1809004B0A4D /* libswscale.4.dylib in CopyFiles */,
-				143E38A91D3F1809004B0A4D /* libz.1.dylib in CopyFiles */,
+				143E38A11D3F1809004B0A4D /* libavcodec.57.dylib in [CP]Bilibili到APP包的执行目录 */,
+				143E38A21D3F1809004B0A4D /* libavdevice.57.dylib in [CP]Bilibili到APP包的执行目录 */,
+				143E38A31D3F1809004B0A4D /* libavfilter.6.dylib in [CP]Bilibili到APP包的执行目录 */,
+				143E38A41D3F1809004B0A4D /* libavformat.57.dylib in [CP]Bilibili到APP包的执行目录 */,
+				143E38A51D3F1809004B0A4D /* libavutil.55.dylib in [CP]Bilibili到APP包的执行目录 */,
+				143E38A61D3F1809004B0A4D /* libmpv.dylib in [CP]Bilibili到APP包的执行目录 */,
+				143E38A71D3F1809004B0A4D /* libswresample.2.dylib in [CP]Bilibili到APP包的执行目录 */,
+				143E38A81D3F1809004B0A4D /* libswscale.4.dylib in [CP]Bilibili到APP包的执行目录 */,
+				143E38A91D3F1809004B0A4D /* libz.1.dylib in [CP]Bilibili到APP包的执行目录 */,
 			);
+			name = "[CP]Bilibili到APP包的执行目录";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		14A5059A1DAA2657008BF666 /* Embed Frameworks */ = {
+		14A5059A1DAA2657008BF666 /* [CP]Embed APP包中的Frameworks目录 */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				14A505961DAA2656008BF666 /* Toasty.framework in Embed Frameworks */,
-				84B679191DE719D600496634 /* PBBLogSDK.framework in Embed Frameworks */,
+				142687581E13603C002CF075 /* MuPDFFramework.framework in [CP]Embed APP包中的Frameworks目录 */,
+				14A505961DAA2656008BF666 /* Toasty.framework in [CP]Embed APP包中的Frameworks目录 */,
+				84B679191DE719D600496634 /* PBBLogSDK.framework in [CP]Embed APP包中的Frameworks目录 */,
 			);
-			name = "Embed Frameworks";
+			name = "[CP]Embed APP包中的Frameworks目录";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		14B64D341DFFED81008C828F /* Embed Frameworks */ = {
@@ -781,7 +782,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				14B64D351DFFED81008C828F /* MuPDFFramework.framework in Embed Frameworks */,
 				14B64D361DFFED81008C828F /* Toasty.framework in Embed Frameworks */,
 				14B64D371DFFED81008C828F /* PBBLogSDK.framework in Embed Frameworks */,
 			);
@@ -845,6 +845,9 @@
 		14105B8C1D339912004CB1C2 /* NSTextField+Attribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTextField+Attribute.m"; sourceTree = "<group>"; };
 		1422A89D1D757FD40057E9D4 /* CustomWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomWindowController.swift; sourceTree = "<group>"; };
 		14248E461D2CCEFC00D3704C /* for_the_birds.avi */ = {isa = PBXFileReference; lastKnownFileType = video.avi; path = for_the_birds.avi; sourceTree = "<group>"; };
+		142687341E135692002CF075 /* MuPDF.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MuPDF.xcodeproj; path = ../../mupdf/platform/ios/MuPDF.xcodeproj; sourceTree = "<group>"; };
+		142687591E136E2E002CF075 /* Manual.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Manual.pdf; sourceTree = "<group>"; };
+		1426875C1E137611002CF075 /* Label+WaterMark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Label+WaterMark.swift"; sourceTree = "<group>"; };
 		142EC39D1D2CDE0A00B88F96 /* 1.mp4.pbb */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1.mp4.pbb; sourceTree = "<group>"; };
 		142EC3AA1D2D0B1A00B88F96 /* readMe.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readMe.md; sourceTree = "<group>"; };
 		142EC3B01D2D0B8D00B88F96 /* mpv.def */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mpv.def; sourceTree = "<group>"; };
@@ -868,7 +871,6 @@
 		1447A22C1D87A2D500057039 /* CustomRotateButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomRotateButton.swift; sourceTree = "<group>"; };
 		146401991DACE04300305B12 /* indexSet+block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "indexSet+block.swift"; sourceTree = "<group>"; };
 		14642DBD1DB4C251004D9E9F /* PBBReader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PBBReader.entitlements; sourceTree = "<group>"; };
-		1465589F1DE6A89E00BDB021 /* Viewcccc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Viewcccc.swift; sourceTree = "<group>"; };
 		146872361D9A596100460B8E /* PBBReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PBBReaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		146872381D9A596200460B8E /* PBBReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBBReaderTests.swift; sourceTree = "<group>"; };
 		1468723A1D9A596200460B8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1178,7 +1180,6 @@
 		14BF31791D77C9DE000EFF66 /* CellhighlightColorTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellhighlightColorTableView.swift; sourceTree = "<group>"; };
 		14BF31801D780AB1000EFF66 /* CustomBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBox.swift; sourceTree = "<group>"; };
 		14C75DCC1D6AE9C6009CBE09 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
-		14C917971DFA5B350025F6FB /* MuPDF.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MuPDF.xcodeproj; path = ../../mupdf/platform/ios/MuPDF.xcodeproj; sourceTree = "<group>"; };
 		14C9B6A41D8E859800A0C6B9 /* FSCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCustomCell.h; sourceTree = "<group>"; };
 		14C9B6A51D8E859800A0C6B9 /* FSCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCustomCell.m; sourceTree = "<group>"; };
 		14E007161DF01C880056CBEF /* PBBLogAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBBLogAPI.swift; sourceTree = "<group>"; };
@@ -1251,11 +1252,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84B679181DE719D600496634 /* PBBLogSDK.framework in Frameworks */,
 				14A505951DAA2656008BF666 /* Toasty.framework in Frameworks */,
 				14815B451D4B08AF00922A62 /* libmpv.dylib in Frameworks */,
 				14815B461D4B08AF00922A62 /* libz.1.dylib in Frameworks */,
 				03E75CB73D882FA8AE840814 /* Pods_PBBReader.framework in Frameworks */,
-				84B679181DE719D600496634 /* PBBLogSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1294,7 +1295,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14B64DB91DFFED81008C828F /* MuPDFFramework.framework in Frameworks */,
 				14B64DBA1DFFED81008C828F /* Toasty.framework in Frameworks */,
 				14B64DBB1DFFED81008C828F /* libmpv.dylib in Frameworks */,
 				14B64DBC1DFFED81008C828F /* libz.1.dylib in Frameworks */,
@@ -1324,6 +1324,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		142687351E135692002CF075 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1426873F1E135692002CF075 /* MuPDF.app */,
+				142687411E135692002CF075 /* MuPDFForOSX.app */,
+				142687431E135692002CF075 /* MuPDFFramework.framework */,
+				142687451E135692002CF075 /* mypdfforos.app */,
+				142687471E135692002CF075 /* mypdfforosTests.xctest */,
+				142687491E135692002CF075 /* mypdfforosUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1426875B1E13754F002CF075 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				1426875C1E137611002CF075 /* Label+WaterMark.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		142EC3A91D2D0B1A00B88F96 /* SMS4 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1339,7 +1360,7 @@
 		1437DD5F1CF2A75E001BD2D2 = {
 			isa = PBXGroup;
 			children = (
-				14C917971DFA5B350025F6FB /* MuPDF.xcodeproj */,
+				142687341E135692002CF075 /* MuPDF.xcodeproj */,
 				14642DBD1DB4C251004D9E9F /* PBBReader.entitlements */,
 				843CADFD1D09367800CE84F4 /* fastlane */,
 				14EA57C91D7E62220026602B /* Distribution */,
@@ -1388,12 +1409,12 @@
 				14B9EE5E1D79744400EC8986 /* PBBReader-Info.plist */,
 				142F72EF1D991DB900302896 /* updateinfo.plist */,
 				840AA6901CFCA2EA00819203 /* 114.png */,
+				142687591E136E2E002CF075 /* Manual.pdf */,
 				14248E461D2CCEFC00D3704C /* for_the_birds.avi */,
 				142EC39D1D2CDE0A00B88F96 /* 1.mp4.pbb */,
 				14815B521D4B131A00922A62 /* water.xml */,
 				14B25FB61CFD824A001BCE84 /* PBB-Prefix.pch */,
 				147A617B1CF6A01900390F83 /* PBBReaderForMac-Bridging-Header.h */,
-				1465589F1DE6A89E00BDB021 /* Viewcccc.swift */,
 			);
 			path = PBBReaderForMac;
 			sourceTree = "<group>";
@@ -1555,6 +1576,7 @@
 				14E007151DF01C880056CBEF /* API */,
 				14E0071C1DF01C980056CBEF /* Model */,
 				14E007231DF01CA10056CBEF /* Util */,
+				1426875B1E13754F002CF075 /* UI */,
 				148B6D911DE69166005B5DFB /* PBBLogSDK.h */,
 				148B6D921DE69166005B5DFB /* Info.plist */,
 				84B6795C1DE72A4400496634 /* PBBLogSDK-Info.plist */,
@@ -1979,19 +2001,6 @@
 			path = model;
 			sourceTree = "<group>";
 		};
-		14C917981DFA5B350025F6FB /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				14C9179E1DFA5B350025F6FB /* MuPDF.app */,
-				14C917A01DFA5B350025F6FB /* MuPDFForOSX.app */,
-				14C917D51DFA85E40025F6FB /* MuPDFFramework.framework */,
-				1429D5B21E1B7B2300F96E2D /* mypdfforos.app */,
-				1429D5B41E1B7B2300F96E2D /* mypdfforosTests.xctest */,
-				1429D5B61E1B7B2300F96E2D /* mypdfforosUITests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		14E007151DF01C880056CBEF /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -2214,21 +2223,22 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 143E38AA1D3F1809004B0A4D /* Build configuration list for PBXNativeTarget "PBBReader" */;
 			buildPhases = (
+				14A4203D1D549CD7009B9DF3 /* 自动递增build版本号 */,
+				143E38561D3F1809004B0A4D /* Resources */,
+				142687551E1357ED002CF075 /* [CP]MuPDF到指定目录实现集成 */,
+				14A5059A1DAA2657008BF666 /* [CP]Embed APP包中的Frameworks目录 */,
+				143E37FB1D3F1809004B0A4D /* Sources */,
+				143E38A01D3F1809004B0A4D /* [CP]Bilibili到APP包的执行目录 */,
+				143E38521D3F1809004B0A4D /* Frameworks */,
 				1E4121A42E88BC1015218FE7 /* 📦 Check Pods Manifest.lock */,
 				61283CDA81857A8A94659788 /* [CP] Check Pods Manifest.lock */,
 				E8F8A211AFB888C78DEE3106 /* [CP] Check Pods Manifest.lock */,
 				0DECE3213ECDCD8C67DD6428 /* [CP] Check Pods Manifest.lock */,
-				14A4203D1D549CD7009B9DF3 /* 自动递增build版本号 */,
-				14A5059A1DAA2657008BF666 /* Embed Frameworks */,
 				A7CEB6B6091EACAA3501D251 /* [CP] Check Pods Manifest.lock */,
 				143E37F91D3F1809004B0A4D /* [CP] Check Pods Manifest.lock */,
 				143E37FA1D3F1809004B0A4D /* [CP] Check Pods Manifest.lock */,
-				143E37FB1D3F1809004B0A4D /* Sources */,
-				143E38521D3F1809004B0A4D /* Frameworks */,
-				143E38561D3F1809004B0A4D /* Resources */,
 				143E389C1D3F1809004B0A4D /* [CP] Embed Pods Frameworks */,
 				143E389D1D3F1809004B0A4D /* [CP] Copy Pods Resources */,
-				143E38A01D3F1809004B0A4D /* CopyFiles */,
 				6FF822FB36820B453C9B8EDD /* 📦 Embed Pods Frameworks */,
 				BCDAB9E20263CFF328C04908 /* 📦 Copy Pods Resources */,
 				84AEDA3E1DC5F571001E8116 /* Run Fabric */,
@@ -2236,8 +2246,9 @@
 			buildRules = (
 			);
 			dependencies = (
-				14A505941DAA2656008BF666 /* PBXTargetDependency */,
 				84B6791B1DE719D600496634 /* PBXTargetDependency */,
+				14A505941DAA2656008BF666 /* PBXTargetDependency */,
+				1426874D1E1357E0002CF075 /* PBXTargetDependency */,
 			);
 			name = PBBReader;
 			productName = PBBReaderForMac;
@@ -2353,10 +2364,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				14B64D271DFFED81008C828F /* PBXTargetDependency */,
 				14B64D291DFFED81008C828F /* PBXTargetDependency */,
 				14B64D2B1DFFED81008C828F /* PBXTargetDependency */,
-				14B64D2D1DFFED81008C828F /* PBXTargetDependency */,
 			);
 			name = PBBReaderPDF;
 			productName = PBBReaderForMac;
@@ -2476,8 +2485,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 14C917981DFA5B350025F6FB /* Products */;
-					ProjectRef = 14C917971DFA5B350025F6FB /* MuPDF.xcodeproj */;
+					ProductGroup = 142687351E135692002CF075 /* Products */;
+					ProjectRef = 142687341E135692002CF075 /* MuPDF.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -2496,46 +2505,46 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		1429D5B21E1B7B2300F96E2D /* mypdfforos.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = mypdfforos.app;
-			remoteRef = 1429D5B11E1B7B2300F96E2D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		1429D5B41E1B7B2300F96E2D /* mypdfforosTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = mypdfforosTests.xctest;
-			remoteRef = 1429D5B31E1B7B2300F96E2D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		1429D5B61E1B7B2300F96E2D /* mypdfforosUITests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = mypdfforosUITests.xctest;
-			remoteRef = 1429D5B51E1B7B2300F96E2D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		14C9179E1DFA5B350025F6FB /* MuPDF.app */ = {
+		1426873F1E135692002CF075 /* MuPDF.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = MuPDF.app;
-			remoteRef = 14C9179D1DFA5B350025F6FB /* PBXContainerItemProxy */;
+			remoteRef = 1426873E1E135692002CF075 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		14C917A01DFA5B350025F6FB /* MuPDFForOSX.app */ = {
+		142687411E135692002CF075 /* MuPDFForOSX.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = MuPDFForOSX.app;
-			remoteRef = 14C9179F1DFA5B350025F6FB /* PBXContainerItemProxy */;
+			remoteRef = 142687401E135692002CF075 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		14C917D51DFA85E40025F6FB /* MuPDFFramework.framework */ = {
+		142687431E135692002CF075 /* MuPDFFramework.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = MuPDFFramework.framework;
-			remoteRef = 14C917D41DFA85E40025F6FB /* PBXContainerItemProxy */;
+			remoteRef = 142687421E135692002CF075 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		142687451E135692002CF075 /* mypdfforos.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = mypdfforos.app;
+			remoteRef = 142687441E135692002CF075 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		142687471E135692002CF075 /* mypdfforosTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = mypdfforosTests.xctest;
+			remoteRef = 142687461E135692002CF075 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		142687491E135692002CF075 /* mypdfforosUITests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = mypdfforosUITests.xctest;
+			remoteRef = 142687481E135692002CF075 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -2582,6 +2591,7 @@
 				143E38831D3F1809004B0A4D /* description.txt in Resources */,
 				143E38841D3F1809004B0A4D /* PlayerLoader.xib in Resources */,
 				143E38851D3F1809004B0A4D /* next-episode.pdf in Resources */,
+				1426875A1E136E2E002CF075 /* Manual.pdf in Resources */,
 				143E38861D3F1809004B0A4D /* primary_category.txt in Resources */,
 				143E38871D3F1809004B0A4D /* titlebar-corner-right.png in Resources */,
 				143E38881D3F1809004B0A4D /* primary_second_sub_category.txt in Resources */,
@@ -3255,7 +3265,7 @@
 		};
 		84AEDA3E1DC5F571001E8116 /* Run Fabric */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -3523,7 +3533,6 @@
 				149D53AE1DE4270E00FC4F63 /* MPVSettings.m in Sources */,
 				14815B281D4AF55A00922A62 /* BarrageFloatTextSprite.m in Sources */,
 				1422A89E1D757FD40057E9D4 /* CustomWindowController.swift in Sources */,
-				146558A01DE6A89E00BDB021 /* Viewcccc.swift in Sources */,
 				143E38071D3F1809004B0A4D /* SendFileManager.m in Sources */,
 				14BF31811D780AB1000EFF66 /* CustomBox.swift in Sources */,
 				143E38081D3F1809004B0A4D /* VerificationCodeModel.m in Sources */,
@@ -3563,7 +3572,6 @@
 				14815B301D4AF55A00922A62 /* NSValue+iOS.m in Sources */,
 				143E381F1D3F1809004B0A4D /* SandboxFile.m in Sources */,
 				143E38201D3F1809004B0A4D /* PycSocket.m in Sources */,
-				14815AE71D49D7E200922A62 /* Label+shadeAnimation.swift in Sources */,
 				143E38211D3F1809004B0A4D /* PycUserRemote.m in Sources */,
 				143E38221D3F1809004B0A4D /* readme.md in Sources */,
 				143E38231D3F1809004B0A4D /* DataFactory.m in Sources */,
@@ -3649,6 +3657,7 @@
 			files = (
 				14E0071F1DF01C980056CBEF /* PbbEnum.swift in Sources */,
 				14E0071A1DF01C880056CBEF /* PBBLogClient.swift in Sources */,
+				1426875D1E137611002CF075 /* Label+WaterMark.swift in Sources */,
 				14E0072E1DF01CA10056CBEF /* IOUSBDetector.swift in Sources */,
 				14E0072C1DF01CA10056CBEF /* DeviceXMLParser.swift in Sources */,
 				14E007281DF01CA10056CBEF /* ConvertToDictionary.swift in Sources */,
@@ -3694,7 +3703,6 @@
 				14B64D481DFFED81008C828F /* MPVSettings.m in Sources */,
 				14B64D491DFFED81008C828F /* BarrageFloatTextSprite.m in Sources */,
 				14B64D4A1DFFED81008C828F /* CustomWindowController.swift in Sources */,
-				14B64D4B1DFFED81008C828F /* Viewcccc.swift in Sources */,
 				14B64D4C1DFFED81008C828F /* SendFileManager.m in Sources */,
 				14B64D4D1DFFED81008C828F /* CustomBox.swift in Sources */,
 				14B64D4E1DFFED81008C828F /* VerificationCodeModel.m in Sources */,
@@ -3734,7 +3742,6 @@
 				14B64D701DFFED81008C828F /* NSValue+iOS.m in Sources */,
 				14B64D711DFFED81008C828F /* SandboxFile.m in Sources */,
 				14B64D721DFFED81008C828F /* PycSocket.m in Sources */,
-				14B64D731DFFED81008C828F /* Label+shadeAnimation.swift in Sources */,
 				14B64D741DFFED81008C828F /* PycUserRemote.m in Sources */,
 				14B64D751DFFED81008C828F /* readme.md in Sources */,
 				14B64D761DFFED81008C828F /* DataFactory.m in Sources */,
@@ -3773,7 +3780,6 @@
 				14B64D971DFFED81008C828F /* CustomTableCellView.swift in Sources */,
 				14B64D981DFFED81008C828F /* NSString+LcsDiff.m in Sources */,
 				14B64D991DFFED81008C828F /* FSCustomCell.m in Sources */,
-				14B64D9A1DFFED81008C828F /* Player.m in Sources */,
 				14B64D9B1DFFED81008C828F /* PlayerView.mm in Sources */,
 				14B64D9C1DFFED81008C828F /* PlayerWindow.m in Sources */,
 				14B64D9D1DFFED81008C828F /* PlayerLoader.m in Sources */,
@@ -3863,7 +3869,6 @@
 				84AEDA7C1DC5FF02001E8116 /* NSValue+iOS.m in Sources */,
 				84AEDA7D1DC5FF02001E8116 /* SandboxFile.m in Sources */,
 				84AEDA7E1DC5FF02001E8116 /* PycSocket.m in Sources */,
-				84AEDA7F1DC5FF02001E8116 /* Label+shadeAnimation.swift in Sources */,
 				84AEDA801DC5FF02001E8116 /* PycUserRemote.m in Sources */,
 				84AEDA811DC5FF02001E8116 /* readme.md in Sources */,
 				84AEDA821DC5FF02001E8116 /* DataFactory.m in Sources */,
@@ -3901,7 +3906,6 @@
 				84AEDAA41DC5FF02001E8116 /* CustomTableCellView.swift in Sources */,
 				84AEDAA51DC5FF02001E8116 /* NSString+LcsDiff.m in Sources */,
 				84AEDAA61DC5FF02001E8116 /* FSCustomCell.m in Sources */,
-				84AEDAA71DC5FF02001E8116 /* Player.m in Sources */,
 				84AEDAA81DC5FF02001E8116 /* PlayerView.mm in Sources */,
 				84AEDAA91DC5FF02001E8116 /* PlayerWindow.m in Sources */,
 				84AEDAAA1DC5FF02001E8116 /* PlayerLoader.m in Sources */,
@@ -3947,6 +3951,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1426874D1E1357E0002CF075 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MuPDFFramework;
+			targetProxy = 1426874C1E1357E0002CF075 /* PBXContainerItemProxy */;
+		};
 		1468723C1D9A596200460B8E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 143E37F71D3F1809004B0A4D /* PBBReader */;
@@ -3967,11 +3976,6 @@
 			target = 14A5058D1DAA2656008BF666 /* Toasty */;
 			targetProxy = 14A505931DAA2656008BF666 /* PBXContainerItemProxy */;
 		};
-		14B64D271DFFED81008C828F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MuPDFFramework;
-			targetProxy = 14B64D281DFFED81008C828F /* PBXContainerItemProxy */;
-		};
 		14B64D291DFFED81008C828F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 14A5058D1DAA2656008BF666 /* Toasty */;
@@ -3981,11 +3985,6 @@
 			isa = PBXTargetDependency;
 			target = 148B6D8E1DE69166005B5DFB /* PBBLogSDK */;
 			targetProxy = 14B64D2C1DFFED81008C828F /* PBXContainerItemProxy */;
-		};
-		14B64D2D1DFFED81008C828F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MuPDFFramework;
-			targetProxy = 14B64D2E1DFFED81008C828F /* PBXContainerItemProxy */;
 		};
 		84AEDA401DC5FF02001E8116 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -4102,7 +4101,7 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Developer ID Application: Beijing PYC Software Co., Ltd. (FA78T6VRG8)";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application: Beijing PYC Software Co., Ltd. (FA78T6VRG8)";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = FA78T6VRG8;
@@ -4112,6 +4111,9 @@
 					"\"$PODS_CONFIGURATION_BUILD_DIR/CocoaAsyncSocket\"",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/EDStarRating\"",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/FMDB\"",
+					"$(PROJECT_DIR)/PBBReaderForMac",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/PBBReaderForMac/bilibili/libmpv",
 				);
 				GCC_PREFIX_HEADER = "PBBReaderForMac/PBB-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -4151,7 +4153,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = pyc.cn.com.PBBReaderForOSX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "4d16a757-9895-4203-bfc0-0a92571e29c0";
-				PROVISIONING_PROFILE_SPECIFIER = DirectDistribution;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PBBReaderForMac/PBBReaderForMac-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -4167,7 +4169,7 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Developer ID Application: Beijing PYC Software Co., Ltd. (FA78T6VRG8)";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application: Beijing PYC Software Co., Ltd. (FA78T6VRG8)";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = FA78T6VRG8;
@@ -4178,6 +4180,9 @@
 					"\"$PODS_CONFIGURATION_BUILD_DIR/CocoaAsyncSocket\"",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/EDStarRating\"",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/FMDB\"",
+					"$(PROJECT_DIR)/PBBReaderForMac",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/PBBReaderForMac/bilibili/libmpv",
 				);
 				GCC_PREFIX_HEADER = "PBBReaderForMac/PBB-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -4217,7 +4222,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = pyc.cn.com.PBBReaderForOSX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "4d16a757-9895-4203-bfc0-0a92571e29c0";
-				PROVISIONING_PROFILE_SPECIFIER = DirectDistribution;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PBBReaderForMac/PBBReaderForMac-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				USER_HEADER_SEARCH_PATHS = "\"${PODS_ROOT}/FMDB/src/fmdb\"";

@@ -22,6 +22,8 @@
 #import "AppDelegateHelper.h"
 #import "PBBReader-Swift.h"
 
+#import "PBBLogSDK.h"
+
 #import "../CommentConvert/danmaku2ass.hpp"
 
 typedef void (^ShadeBlock)();
@@ -112,13 +114,15 @@ inline void check_error(int status)
 }
 
 //关闭播放器
--(void)CancleClosePlayerWindows:(NSNotification *)info {
+-(void)CancleClosePlayerWindows:(NSNotification *)info
+{
     [self.view.window performClose:self];
     //通知主页面刷新
     NSDictionary  *dic = [NSDictionary dictionaryWithObject:[info.userInfo valueForKey:@"pycFileID"] forKey:@"pycFileID"];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshOpenInFile" object:self userInfo:dic];
 }
-- (void)viewDidAppear{
+- (void)viewDidAppear
+{
     window = (PlayerWindow *)self.view.window;
     [window makeKeyAndOrderFront:NSApp];
     [window makeMainWindow];
@@ -128,7 +132,8 @@ inline void check_error(int status)
     }
 }
 
-- (void)loadControls {
+- (void)loadControls
+{
     playerControlWindowController = [[PlayerControlWindowController alloc] initWithWindowNibName:@"PlayerControl"];
     
     playerControlView = (PlayerControlView *)playerControlWindowController.window.contentView;

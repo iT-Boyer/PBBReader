@@ -426,7 +426,9 @@ class ActivationController: NSViewController {
         super.dismiss(sender)
         if !(sender is Bool)
         {
-            NotificationCenter.default.post(name: Notification.Name(rawValue: "CancleClosePlayerWindows"), object: nil, userInfo: ["pycFileID":fileId])
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "CancleClosePlayerWindows"),
+                                          object: nil,
+                                        userInfo: ["pycFileID":fileId])
         }
     }
 }

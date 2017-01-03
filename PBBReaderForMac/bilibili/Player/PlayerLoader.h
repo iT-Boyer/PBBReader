@@ -23,3 +23,6 @@
 - (NSString *)lastPlayerId;
 
 @end
+
+@interface PlayerLoaderWindow : NSWindow
+@end

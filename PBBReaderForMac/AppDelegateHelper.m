@@ -27,6 +27,7 @@
 #import "MBProgressHUD.h"
 #import "PlayerWindow.h"
 #import "PBBLogSDK.h"
+#import <MuPDFFramework/MuPDFFramework.h>
 
 @implementation AppDelegateHelper
 {
@@ -60,10 +61,10 @@ singleton_implementation(AppDelegateHelper);
 
 -(void)loadVideoWithLocalFiles:(NSString *)openFilePath
 {
+    //
     NSString *waterPath = [[NSBundle mainBundle] pathForResource:@"water" ofType:@"xml"];
     [[PlayerLoader sharedInstance] loadVideoWithLocalFiles:@[openFilePath,waterPath]];
 }
-
 
 -(BOOL)openURLOfPycFileByLaunchedApp:(NSString *)openURL
 {
@@ -123,25 +124,35 @@ singleton_implementation(AppDelegateHelper);
     else
     {
         //custormActivityView = (AdvertisingView *)[[NSWindowController alloc] initWithWindowNibName:@"AdvertisingView"];
-        //加载广告
-        if(!custormActivityView){
+        //TODO: 加载广告
+        if(!custormActivityView)
+        {
             [self setKeyWindow:false];
-            if (keyWindow) {
+            if (keyWindow)
+            {
                 NSArray *array;
                 NSNib *nib = [[NSNib alloc] initWithNibNamed:@"AdvertisingViewOSX" bundle:nil];
                 [nib instantiateWithOwner:self topLevelObjects:&array];
-                for (int i = 0; i < array.count; i++) {
+                for (int i = 0; i < array.count; i++)
+                {
                     //
                     id obj = array[i];
-                    if ([obj isKindOfClass:[AdvertisingView class]]) {
+                    if ([obj isKindOfClass:[AdvertisingView class]])
+                    {
                         custormActivityView = (AdvertisingView *)array[i];
-                        [custormActivityView startLoadingWindow:keyWindow fileID:fileID isOutLine:OutLine];
+                        [custormActivityView startLoadingWindow:keyWindow
+                                                         fileID:fileID
+                                                      isOutLine:OutLine];
                     }
                 }
             }
-        }else{
+        }
+        else
+        {
             [self setKeyWindow:false];
-            [custormActivityView startLoadingWindow:keyWindow fileID:fileID isOutLine:OutLine];
+            [custormActivityView startLoadingWindow:keyWindow
+                                             fileID:fileID
+                                          isOutLine:OutLine];
         }
     }
     
@@ -985,7 +996,16 @@ singleton_implementation(AppDelegateHelper);
 }
 
 #pragma mark - 申请手动激活
-- (NSString *)applyFileByFidAndOrderId:(NSInteger )fileId orderId:(NSInteger )thOrderId applyId:(NSInteger)theApplyId  qq:(NSString *)theQQ email:(NSString *)theEmail phone:(NSString *)thePhone field1:(NSString *)theField1 field2:(NSString *)theField2 seeLogName:(NSString *)theSeeLogName fileName:(NSString*)theFileName
+- (NSString *)applyFileByFidAndOrderId:(NSInteger )fileId
+                               orderId:(NSInteger )thOrderId
+                               applyId:(NSInteger)theApplyId
+                                    qq:(NSString *)theQQ
+                                 email:(NSString *)theEmail
+                                 phone:(NSString *)thePhone
+                                field1:(NSString *)theField1
+                                field2:(NSString *)theField2
+                            seeLogName:(NSString *)theSeeLogName
+                              fileName:(NSString*)theFileName
 {
     [self setKeyWindow:false];
     applyNum = 0;
@@ -1125,10 +1145,6 @@ singleton_implementation(AppDelegateHelper);
     }
 }
 
-//
-
-
-
 #pragma mark - 跳转页面
 //申请激活成功页面
 -(void)letusGOActivationSucVc:(PycFile*)pycfileObject
@@ -1204,14 +1220,16 @@ singleton_implementation(AppDelegateHelper);
 }
 
 
-- (void)setText:(NSString *)text{
+- (void)setText:(NSString *)text
+{
     dispatch_async(dispatch_get_main_queue(), ^(void){
         [self show];
         hud.labelText = NSLocalizedString(text, nil);
     });
 }
 
-- (void)show{
+- (void)show
+{
     isLoading = YES;
     //    keyWindow = [[NSApplication sharedApplication] keyWindow];
     [self setKeyWindow:false];
@@ -1229,18 +1247,14 @@ singleton_implementation(AppDelegateHelper);
 -(void)setKeyWindow:(BOOL)isCanClose
 {
     NSArray *windows = [[NSApplication sharedApplication] windows];
-    
     for (NSWindow *window in windows)
     {
-        //
-//        if ([window isKindOfClass:[NSPanel class]])
-//        {
-////            keyWindow = (NSWindow *) [windows lastObject];
-//            [window makeKeyAndOrderFront:self];
-//            [window setLevel:NSPopUpMenuWindowLevel];
-//            break;
-//        }
-//        else
+        if ([window.identifier isEqualToString:@"MainWindow"])
+        {
+            //详情页面窗口
+            keyWindow = window;
+        }
+        
         if ([window isKindOfClass:[PlayerWindow class]])
         {
             //播放器窗口
@@ -1254,15 +1268,23 @@ singleton_implementation(AppDelegateHelper);
             {
                 [keyWindow setStyleMask:[window styleMask] & ~ NSClosableWindowMask];
             }
-//            break;
         }
         
-        if ([window.identifier isEqualToString:@"MainWindow"])
+        if ([window isKindOfClass:[MuPDFWindow class]])
         {
-            //详情页面窗口
-            keyWindow = window;
-//            continue;
+            //播放器窗口
+            keyWindow = (MuPDFWindow *)window;
+            if (isCanClose)
+            {
+                //服务器响应之后，设置window关闭按钮可用
+                [keyWindow setStyleMask:[window styleMask] | NSClosableWindowMask];
+            }
+            else
+            {
+                [keyWindow setStyleMask:[window styleMask] & ~ NSClosableWindowMask];
+            }
         }
+
     }
 }
 

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -258,12 +258,12 @@ CA
                                                                                             <rect key="frame" x="-3" y="-2" width="226" height="33"/>
                                                                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="left" imageScaling="axesIndependently" imageFrameStyle="photo" image="CellBackground" id="e7v-JN-SQp"/>
                                                                                         </imageView>
-                                                                                        <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B5v-Qq-qJ0">
-                                                                                            <rect key="frame" x="-8" y="5" width="17" height="20"/>
+                                                                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B5v-Qq-qJ0">
+                                                                                            <rect key="frame" x="10" y="5" width="17" height="20"/>
                                                                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="pdfImage" id="Yvf-IP-acr"/>
                                                                                         </imageView>
                                                                                         <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="876-Em-s9i">
-                                                                                            <rect key="frame" x="12" y="5" width="207" height="21"/>
+                                                                                            <rect key="frame" x="30" y="5" width="189" height="21"/>
                                                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" focusRingType="none" alignment="left" title="Table View Cell" allowsEditingTextAttributes="YES" id="fAh-pD-7C9">
                                                                                                 <font key="font" size="13" name="MicrosoftYaHei"/>
                                                                                                 <color key="textColor" red="0.2274509804" green="0.2274509804" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
@@ -286,7 +286,7 @@ CA
                                                                                         <constraint firstAttribute="bottom" secondItem="kBb-Cm-1ny" secondAttribute="bottom" constant="1" id="lnZ-4P-KDk"/>
                                                                                         <constraint firstAttribute="trailing" secondItem="kBb-Cm-1ny" secondAttribute="trailing" id="q5B-5W-Cl1"/>
                                                                                         <constraint firstAttribute="trailing" secondItem="876-Em-s9i" secondAttribute="trailing" constant="3" id="s1N-Pa-n9c"/>
-                                                                                        <constraint firstItem="B5v-Qq-qJ0" firstAttribute="leading" secondItem="Q1U-uF-fvd" secondAttribute="leading" constant="-8" id="tmc-ab-Ex1"/>
+                                                                                        <constraint firstItem="B5v-Qq-qJ0" firstAttribute="leading" secondItem="Q1U-uF-fvd" secondAttribute="leading" constant="10" id="tmc-ab-Ex1"/>
                                                                                     </constraints>
                                                                                     <connections>
                                                                                         <outlet property="ibCellBackgroundImageView" destination="kBb-Cm-1ny" id="NjS-Db-D4C"/>
@@ -1177,32 +1177,6 @@ CA
             </objects>
             <point key="canvasLocation" x="-292" y="1267"/>
         </scene>
-        <!--Viewcccc-->
-        <scene sceneID="xE1-N5-XTw">
-            <objects>
-                <viewController id="sYq-t3-0KH" customClass="Viewcccc" customModule="PBBReader" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="Yfv-lR-auo">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7E6-hR-i33">
-                                <rect key="frame" x="189" y="182" width="73" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="ceshi" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6kz-s7-kch">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="dfdfdfdf:" target="sYq-t3-0KH" id="pkS-bc-TYR"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                    </view>
-                </viewController>
-                <customObject id="bo7-Od-dzs" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-357" y="995"/>
-        </scene>
         <!--申请页面-->
         <scene sceneID="MgF-60-Lcx">
             <objects>
@@ -1804,10 +1778,10 @@ CA
             </objects>
             <point key="canvasLocation" x="3174" y="332"/>
         </scene>
-        <!--Media Player View Controller-->
+        <!--bili播放器-->
         <scene sceneID="FHz-K6-s9k">
             <objects>
-                <viewController storyboardIdentifier="PlayerView" id="9L2-rI-XWN" userLabel="Media Player View Controller" customClass="PlayerView" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlayerView" id="9L2-rI-XWN" userLabel="bili播放器" customClass="PlayerView" sceneMemberID="viewController">
                     <view key="view" id="n1w-f8-DSb">
                         <rect key="frame" x="0.0" y="0.0" width="432" height="265"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1857,10 +1831,10 @@ CA
             </objects>
             <point key="canvasLocation" x="456" y="-1718"/>
         </scene>
-        <!--Miedia Player Window Controller-->
+        <!--bili播放器窗口-->
         <scene sceneID="FoM-kS-Mrc">
             <objects>
-                <windowController storyboardIdentifier="playerWindow" showSeguePresentationStyle="single" id="M1q-z2-1fI" userLabel="Miedia Player Window Controller" sceneMemberID="viewController">
+                <windowController storyboardIdentifier="playerWindow" showSeguePresentationStyle="single" id="M1q-z2-1fI" userLabel="bili播放器窗口" sceneMemberID="viewController">
                     <window key="window" title="PBB Reader 播放器" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="Oc1-Jb-U2t" customClass="PlayerWindow">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -1952,11 +1926,11 @@ CA
             </objects>
             <point key="canvasLocation" x="-331" y="-1224"/>
         </scene>
-        <!--General Settings-->
+        <!--偏好设置-->
         <scene sceneID="Rxw-Mq-KXu">
             <objects>
                 <customObject id="CoF-vi-6bB" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <viewController title="通用设置" id="K1o-mR-Xeb" userLabel="General Settings" customClass="Settings" sceneMemberID="viewController">
+                <viewController title="通用设置" id="K1o-mR-Xeb" userLabel="偏好设置" customClass="Settings" sceneMemberID="viewController">
                     <view key="view" id="s7c-l9-VXu">
                         <rect key="frame" x="0.0" y="0.0" width="524" height="246"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
