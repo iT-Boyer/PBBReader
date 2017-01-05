@@ -1800,14 +1800,8 @@ CA
                                     </textField>
                                 </subviews>
                             </customView>
-                            <customView canDrawConcurrently="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5C1-Zb-9nT" userLabel="LoadingView" customClass="CustomView" customModule="PBBReader" customModuleProvider="target">
+                            <customView canDrawConcurrently="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5C1-Zb-9nT" userLabel="LoadingView">
                                 <rect key="frame" x="0.0" y="0.0" width="432" height="265"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="backgroundImage" value="playerbackgroundImage"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
-                                        <color key="value" red="0.93717586994171143" green="0.93730717897415161" blue="0.9371345043182373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </customView>
                         </subviews>
                         <constraints>
@@ -2252,7 +2246,6 @@ CA
         <image name="liulan" width="38" height="28"/>
         <image name="liulan3" width="216" height="31"/>
         <image name="pdfImage" width="17" height="20"/>
-        <image name="playerbackgroundImage" width="112" height="50"/>
         <image name="refresh" width="16" height="20"/>
         <image name="shuru" width="479" height="126"/>
         <image name="wolfSpider" width="76.800003051757812" height="76.800003051757812"/>
