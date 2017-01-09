@@ -25,8 +25,6 @@
 /* Begin PBXBuildFile section */
 		03E75CB73D882FA8AE840814 /* Pods_PBBReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A66CA53F5B73961FE573D22 /* Pods_PBBReader.framework */; };
 		1422A89E1D757FD40057E9D4 /* CustomWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1422A89D1D757FD40057E9D4 /* CustomWindowController.swift */; };
-		142687561E135906002CF075 /* MuPDFFramework.framework in [CP]MuPDF到指定目录实现集成 */ = {isa = PBXBuildFile; fileRef = 142687431E135692002CF075 /* MuPDFFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		142687581E13603C002CF075 /* MuPDFFramework.framework in [CP]Embed APP包中的Frameworks目录 */ = {isa = PBXBuildFile; fileRef = 142687431E135692002CF075 /* MuPDFFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1426875A1E136E2E002CF075 /* Manual.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 142687591E136E2E002CF075 /* Manual.pdf */; };
 		1426875D1E137611002CF075 /* Label+WaterMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1426875C1E137611002CF075 /* Label+WaterMark.swift */; };
 		14389CA11D9CB4A100EAC29C /* CustomColorProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14389CA01D9CB4A100EAC29C /* CustomColorProgressIndicator.swift */; };
@@ -625,27 +623,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1429D5B11E1B7B2300F96E2D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 14C917971DFA5B350025F6FB /* MuPDF.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2A37B9001E00DFA60027109D;
-			remoteInfo = mypdfforos;
-		};
-		1429D5B31E1B7B2300F96E2D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 14C917971DFA5B350025F6FB /* MuPDF.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2A37B9151E00DFA60027109D;
-			remoteInfo = mypdfforosTests;
-		};
-		1429D5B51E1B7B2300F96E2D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 14C917971DFA5B350025F6FB /* MuPDF.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2A37B9201E00DFA60027109D;
-			remoteInfo = mypdfforosUITests;
-		};
 		1468723B1D9A596200460B8E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1437DD601CF2A75E001BD2D2 /* Project object */;
@@ -688,6 +665,48 @@
 			remoteGlobalIDString = 148B6D8E1DE69166005B5DFB;
 			remoteInfo = PBBLogSDK;
 		};
+		14D92B151E23770B0008D521 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 142687341E135692002CF075 /* MuPDF.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 968E1E3D1779A54F0050CEA3;
+			remoteInfo = MuPDF;
+		};
+		14D92B171E23770B0008D521 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 142687341E135692002CF075 /* MuPDF.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 14C6CCA91DF8F64A0078072A;
+			remoteInfo = MuPDFForOSX;
+		};
+		14D92B191E23770B0008D521 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 142687341E135692002CF075 /* MuPDF.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 14C917AF1DFA734D0025F6FB;
+			remoteInfo = MuPDFFramework;
+		};
+		14D92B1B1E23770B0008D521 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 142687341E135692002CF075 /* MuPDF.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2A37B9001E00DFA60027109D;
+			remoteInfo = mypdfforos;
+		};
+		14D92B1D1E23770B0008D521 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 142687341E135692002CF075 /* MuPDF.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2A37B9151E00DFA60027109D;
+			remoteInfo = mypdfforosTests;
+		};
+		14D92B1F1E23770B0008D521 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 142687341E135692002CF075 /* MuPDF.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2A37B9201E00DFA60027109D;
+			remoteInfo = mypdfforosUITests;
+		};
 		84AEDA411DC5FF02001E8116 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1437DD601CF2A75E001BD2D2 /* Project object */;
@@ -711,7 +730,6 @@
 			dstPath = $PROJECT_DIR/PBBReaderForMac/bilibili/libmpv;
 			dstSubfolderSpec = 0;
 			files = (
-				142687561E135906002CF075 /* MuPDFFramework.framework in [CP]MuPDF到指定目录实现集成 */,
 			);
 			name = "[CP]MuPDF到指定目录实现集成";
 			runOnlyForDeploymentPostprocessing = 1;
@@ -741,7 +759,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				142687581E13603C002CF075 /* MuPDFFramework.framework in [CP]Embed APP包中的Frameworks目录 */,
 				14A505961DAA2656008BF666 /* Toasty.framework in [CP]Embed APP包中的Frameworks目录 */,
 				84B679191DE719D600496634 /* PBBLogSDK.framework in [CP]Embed APP包中的Frameworks目录 */,
 			);
@@ -1299,12 +1316,12 @@
 		142687351E135692002CF075 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1426873F1E135692002CF075 /* MuPDF.app */,
-				142687411E135692002CF075 /* MuPDFForOSX.app */,
-				142687431E135692002CF075 /* MuPDFFramework.framework */,
-				142687451E135692002CF075 /* mypdfforos.app */,
-				142687471E135692002CF075 /* mypdfforosTests.xctest */,
-				142687491E135692002CF075 /* mypdfforosUITests.xctest */,
+				14D92B161E23770B0008D521 /* MuPDF.app */,
+				14D92B181E23770B0008D521 /* MuPDFForOSX.app */,
+				14D92B1A1E23770B0008D521 /* MuPDFFramework.framework */,
+				14D92B1C1E23770B0008D521 /* mypdfforos.app */,
+				14D92B1E1E23770B0008D521 /* mypdfforosTests.xctest */,
+				14D92B201E23770B0008D521 /* mypdfforosUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1973,19 +1990,6 @@
 			path = model;
 			sourceTree = "<group>";
 		};
-		14C917981DFA5B350025F6FB /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				14C9179E1DFA5B350025F6FB /* MuPDF.app */,
-				14C917A01DFA5B350025F6FB /* MuPDFForOSX.app */,
-				14C917D51DFA85E40025F6FB /* MuPDFFramework.framework */,
-				1429D5B21E1B7B2300F96E2D /* mypdfforos.app */,
-				1429D5B41E1B7B2300F96E2D /* mypdfforosTests.xctest */,
-				1429D5B61E1B7B2300F96E2D /* mypdfforosUITests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		14E007151DF01C880056CBEF /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -2490,67 +2494,46 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		1429D5B21E1B7B2300F96E2D /* mypdfforos.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = mypdfforos.app;
-			remoteRef = 1429D5B11E1B7B2300F96E2D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		1429D5B41E1B7B2300F96E2D /* mypdfforosTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = mypdfforosTests.xctest;
-			remoteRef = 1429D5B31E1B7B2300F96E2D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		1429D5B61E1B7B2300F96E2D /* mypdfforosUITests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = mypdfforosUITests.xctest;
-			remoteRef = 1429D5B51E1B7B2300F96E2D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		14C9179E1DFA5B350025F6FB /* MuPDF.app */ = {
+		14D92B161E23770B0008D521 /* MuPDF.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = MuPDF.app;
-			remoteRef = 1426873E1E135692002CF075 /* PBXContainerItemProxy */;
+			remoteRef = 14D92B151E23770B0008D521 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		142687411E135692002CF075 /* MuPDFForOSX.app */ = {
+		14D92B181E23770B0008D521 /* MuPDFForOSX.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = MuPDFForOSX.app;
-			remoteRef = 142687401E135692002CF075 /* PBXContainerItemProxy */;
+			remoteRef = 14D92B171E23770B0008D521 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		142687431E135692002CF075 /* MuPDFFramework.framework */ = {
+		14D92B1A1E23770B0008D521 /* MuPDFFramework.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = MuPDFFramework.framework;
-			remoteRef = 142687421E135692002CF075 /* PBXContainerItemProxy */;
+			remoteRef = 14D92B191E23770B0008D521 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		142687451E135692002CF075 /* mypdfforos.app */ = {
+		14D92B1C1E23770B0008D521 /* mypdfforos.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = mypdfforos.app;
-			remoteRef = 142687441E135692002CF075 /* PBXContainerItemProxy */;
+			remoteRef = 14D92B1B1E23770B0008D521 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		142687471E135692002CF075 /* mypdfforosTests.xctest */ = {
+		14D92B1E1E23770B0008D521 /* mypdfforosTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = mypdfforosTests.xctest;
-			remoteRef = 142687461E135692002CF075 /* PBXContainerItemProxy */;
+			remoteRef = 14D92B1D1E23770B0008D521 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		142687491E135692002CF075 /* mypdfforosUITests.xctest */ = {
+		14D92B201E23770B0008D521 /* mypdfforosUITests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = mypdfforosUITests.xctest;
-			remoteRef = 142687481E135692002CF075 /* PBXContainerItemProxy */;
+			remoteRef = 14D92B1F1E23770B0008D521 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -3960,7 +3943,6 @@
 		1426874D1E1357E0002CF075 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MuPDFFramework;
-			targetProxy = 1426874C1E1357E0002CF075 /* PBXContainerItemProxy */;
 		};
 		1468723C1D9A596200460B8E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -4134,7 +4116,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/PBBReaderForMac/bilibili/libmpv",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-iquote",
@@ -4203,7 +4185,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/PBBReaderForMac/bilibili/libmpv",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-iquote",
