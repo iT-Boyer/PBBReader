@@ -1,24 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="AdvertisingView">
-            <connections>
-                <outlet property="ibLogoView" destination="9p9-8l-lCZ" id="prs-NM-BBo"/>
-            </connections>
-        </customObject>
+        <customObject id="-2" userLabel="File's Owner" customClass="AdvertisingView"/>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="c22-O7-iKe" customClass="AdvertisingView">
             <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <customView translatesAutoresizingMaskIntoConstraints="NO" id="9p9-8l-lCZ">
-                    <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
-                </customView>
                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hvR-sp-3gz">
                     <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="kjx-eN-kVs"/>
@@ -36,27 +29,17 @@
                 </progressIndicator>
             </subviews>
             <constraints>
-                <constraint firstItem="9p9-8l-lCZ" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="8k4-GZ-Did"/>
-                <constraint firstAttribute="bottom" secondItem="9p9-8l-lCZ" secondAttribute="bottom" id="8yh-YB-w5b"/>
                 <constraint firstAttribute="trailing" secondItem="hvR-sp-3gz" secondAttribute="trailing" id="Gky-4v-pf0"/>
-                <constraint firstAttribute="trailing" secondItem="9p9-8l-lCZ" secondAttribute="trailing" id="Txy-SX-Scv"/>
                 <constraint firstItem="hvR-sp-3gz" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="UzE-k8-J0F"/>
                 <constraint firstItem="brp-tI-6J1" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="aCd-vr-KcY"/>
                 <constraint firstItem="hvR-sp-3gz" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="jof-lY-8H7"/>
                 <constraint firstItem="brp-tI-6J1" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" id="nDh-Rr-nGu"/>
-                <constraint firstItem="9p9-8l-lCZ" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="pef-oB-khV"/>
                 <constraint firstAttribute="bottom" secondItem="hvR-sp-3gz" secondAttribute="bottom" id="z2C-3p-hFn"/>
             </constraints>
-            <userDefinedRuntimeAttributes>
-                <userDefinedRuntimeAttribute type="image" keyPath="backgroundImage" value="playerbackgroundImage"/>
-            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="ibImageView" destination="hvR-sp-3gz" id="Ojn-FT-nh4"/>
                 <outlet property="ibIndicator" destination="brp-tI-6J1" id="img-hP-Vyy"/>
             </connections>
         </customView>
     </objects>
-    <resources>
-        <image name="playerbackgroundImage" width="112" height="50"/>
-    </resources>
 </document>

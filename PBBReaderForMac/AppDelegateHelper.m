@@ -125,36 +125,35 @@ singleton_implementation(AppDelegateHelper);
     {
         //custormActivityView = (AdvertisingView *)[[NSWindowController alloc] initWithWindowNibName:@"AdvertisingView"];
         //TODO: 加载广告
-        [self setKeyWindow:false];
-        if (keyWindow)
+        if(!custormActivityView)
         {
-            NSArray *array;
-            NSNib *nib = [[NSNib alloc] initWithNibNamed:@"AdvertisingViewOSX" bundle:nil];
-            [nib instantiateWithOwner:self topLevelObjects:&array];
-            for (int i = 0; i < array.count; i++)
+            [self setKeyWindow:false];
+            if (keyWindow)
             {
-                //
-                id obj = array[i];
-                if ([obj isKindOfClass:[AdvertisingView class]])
+                NSArray *array;
+                NSNib *nib = [[NSNib alloc] initWithNibNamed:@"AdvertisingViewOSX" bundle:nil];
+                [nib instantiateWithOwner:self topLevelObjects:&array];
+                for (int i = 0; i < array.count; i++)
                 {
-                    custormActivityView = (AdvertisingView *)array[i];
-                    [custormActivityView startLoadingWindow:keyWindow
-                                                     fileID:fileID
-                                                  isOutLine:OutLine];
+                    //
+                    id obj = array[i];
+                    if ([obj isKindOfClass:[AdvertisingView class]])
+                    {
+                        custormActivityView = (AdvertisingView *)array[i];
+                        [custormActivityView startLoadingWindow:keyWindow
+                                                         fileID:fileID
+                                                      isOutLine:OutLine];
+                    }
                 }
             }
         }
-
-//        if(!custormActivityView)
-//        {
-//        }
-//        else
-//        {
-//            [self setKeyWindow:false];
-//            [custormActivityView startLoadingWindow:keyWindow
-//                                             fileID:fileID
-//                                          isOutLine:OutLine];
-//        }
+        else
+        {
+            [self setKeyWindow:false];
+            [custormActivityView startLoadingWindow:keyWindow
+                                             fileID:fileID
+                                          isOutLine:OutLine];
+        }
     }
     
     
@@ -218,14 +217,14 @@ singleton_implementation(AppDelegateHelper);
     
     if(returnValue == -1)
     {
-        [custormActivityView.ibImageView removeFromSuperview];
+        [custormActivityView removeFromSuperview];
         [self setAlertView:@"条件到期，无权阅读!"];
 //        return;
     }
     if(returnValue & ERR_NEED_UPDATE)
     {
         applyNum =0;
-        [custormActivityView.ibImageView removeFromSuperview];
+        [custormActivityView removeFromSuperview];
         [self setAlertView:@"条件到期，无权阅读!"];
 //        return;
     }
@@ -384,7 +383,7 @@ singleton_implementation(AppDelegateHelper);
     if(returnValue & ERR_OK_OR_CANOPEN)
     {
         [[[PBBLogModel alloc] initWithType:LogDEBUG inApp:APPReaderMac desc:@"can open"] sendToServer];
-        [custormActivityView.ibImageView removeFromSuperview];
+        [custormActivityView removeFromSuperview];
         applyNum =0;
         if (returnValue & ERR_OK_IS_FEE)
         {
@@ -441,7 +440,7 @@ singleton_implementation(AppDelegateHelper);
     }
     else if (seePycFile.iResultIsOffLine) {
         applyNum =0;
-        [custormActivityView.ibImageView removeFromSuperview];
+        [custormActivityView removeFromSuperview];
         
         if (returnValue & ERR_OUTLINE_HDID_ERR) {
             //硬件标识不对
@@ -532,7 +531,7 @@ singleton_implementation(AppDelegateHelper);
                 
             }else{
                 applyNum=0;
-                [custormActivityView.ibImageView removeFromSuperview];
+                [custormActivityView removeFromSuperview];
                 //申请成功界
                 [self letusGOActivationSucVc:seePycFile];
             }
@@ -540,13 +539,13 @@ singleton_implementation(AppDelegateHelper);
         else if(returnValue & ERR_OK_IS_FEE)
         {
             applyNum =0;
-            [custormActivityView.ibImageView removeFromSuperview];
+            [custormActivityView removeFromSuperview];
             [self letusGOActivationController:seePycFile];
         }
         else if((returnValue) & ERR_FREE && ((returnValue & ERR_FEE_SALER) == 0))
         {
             applyNum =0;
-            [custormActivityView.ibImageView removeFromSuperview];
+            [custormActivityView removeFromSuperview];
             // 自由传播不能看
             if (seePycFile.bNeedBinding) {
                 // 需要验证手机号
@@ -560,20 +559,20 @@ singleton_implementation(AppDelegateHelper);
             } else {
                 applyNum =0;
                 [self setAlertView:@"条件到期，无权阅读!"];
-                [custormActivityView.ibImageView removeFromSuperview];
+                [custormActivityView removeFromSuperview];
                 return;
             }
         }
         else if(returnValue & ERR_FREE)
         {
             applyNum =0;
-            [custormActivityView.ibImageView removeFromSuperview];
+            [custormActivityView removeFromSuperview];
             //目前用不到
         }
         else
         {
             applyNum =0;
-            [custormActivityView.ibImageView removeFromSuperview];
+            [custormActivityView removeFromSuperview];
             //目前用不到
         }
     }
@@ -927,12 +926,12 @@ singleton_implementation(AppDelegateHelper);
                     if ([result isEqualToString:@"1"]||[result isEqualToString:@"2"]||[result isEqualToString:@"3"]||
                         [result isEqualToString:@"4"]||[result isEqualToString:@"5"]) {
                         dispatch_async(dispatch_get_main_queue(), ^{
-                            [custormActivityView.ibImageView removeFromSuperview];
+                            [custormActivityView removeFromSuperview];
                             [self setAlertView:@"读取文件失败。可能错误原因：文件下载不完整，请重新下载！"];
                         });
                     }else if([result isEqualToString:@"6"]){
                         dispatch_async(dispatch_get_main_queue(), ^{
-                            [custormActivityView.ibImageView removeFromSuperview];
+                            [custormActivityView removeFromSuperview];
                             [self setAlertView:@"您的网络不给力哦，请检查网络连接后重试！"];
                         });
                     }
@@ -944,7 +943,7 @@ singleton_implementation(AppDelegateHelper);
     if (!reslut1) {
         applyNum=0;
         [self hide:-0.5];
-        [custormActivityView.ibImageView removeFromSuperview];
+        [custormActivityView removeFromSuperview];
         //申请成功界面
         [self letusGOActivationSucVc:seePycFile];
     }

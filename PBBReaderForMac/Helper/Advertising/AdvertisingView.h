@@ -9,13 +9,9 @@
 //@import AppKit;
 #import <Cocoa/Cocoa.h>
 #import "AdvertisingImgCache.h"
-
-IB_DESIGNABLE
 @interface AdvertisingView : NSView
 
 @property (weak, nonatomic) IBOutlet NSImageView *ibImageView;
-@property (weak) IBOutlet NSView *ibLogoView;
-
 @property (weak) IBOutlet NSProgressIndicator *ibIndicator;
 
 @property(strong,nonatomic)AdvertisingImgCache *imgCache;
@@ -26,9 +22,6 @@ IB_DESIGNABLE
 
 @property(assign,nonatomic)NSInteger advertime;
 @property(strong,nonatomic)NSTimer *adverTimer;
-
-@property (nonatomic, assign) IBInspectable NSColor *backgroundColor;
-@property (nonatomic, assign) IBInspectable NSImage *backgroundImage;
 
 -(void)startLoadingWindow:(NSWindow *)keywindow fileID:(NSInteger)fileID isOutLine:(BOOL)isOutLine;
 
