@@ -22,6 +22,7 @@ class AppDelegate: NSObject, NSApplicationDelegate
     let appHelper = AppDelegateHelper()
     func applicationDidFinishLaunching(_ aNotification: Notification)
     {
+        PBBLogModel(.INFO, in: .ReaderMac, desc: "启动+1").sendTo()
         //设置日志序列号
         UserDefaults.standard.setValue(OpenUDID.value(), forKey: "equip_serial")
         UserDefaults.standard.synchronize()

@@ -35,7 +35,6 @@ fi
 echo "cp -rf $ProductPath ${ImportSVN}/${APPName}.app"
 cp -rf $ProductPath "${ImportSVN}/${APPName}.app"
 
-
 #下载安装
 Perfect="/Applications/Packages.app"
 # -d: 判断目录是否存在  -f: 判断文件是否存在
@@ -78,14 +77,16 @@ svn checkout ${SVNURL}/${timeDir}
 SVNTimeDir=$ImportSVN/${timeDir}
 if [ -d "$SVNTimeDir" ]; then
     echo 'SVNTimeDir目录已存在，先svn checkout再commit'
+    cat $Distribution/releaseNote.md > ${SVNTimeDir}/${ProductName}.txt
     #把pkg文件移动到SVN版本目录，同时实现重命名
     mv -i ${ImportSVN}/${APPName}.pkg "${SVNTimeDir}/$ProductName.pkg"
     cd ${timeDir}     # 进入checkout目录
-    svn add "$ProductName.pkg"    # 安装包加入版本库
+    svn add *.*      # 安装包加入版本库
     svn commit -m "${releaseNote}"   # 提交
 else
     echo '新建SVNTimeDir目录，直接svn import'
     mkdir $SVNTimeDir
+    cat $Distribution/releaseNote.md > ${SVNTimeDir}/${ProductName}.txt
     mv -i ${ImportSVN}/${APPName}.pkg "${SVNTimeDir}/$ProductName.pkg"
     svn import "${ImportSVN}" ${SVNURL} -m "${releaseNote}"
 fi

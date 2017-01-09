@@ -415,6 +415,8 @@
 		14BF317A1D77C9DE000EFF66 /* CellhighlightColorTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BF31791D77C9DE000EFF66 /* CellhighlightColorTableView.swift */; };
 		14BF31811D780AB1000EFF66 /* CustomBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BF31801D780AB1000EFF66 /* CustomBox.swift */; };
 		14C9B6A61D8E859800A0C6B9 /* FSCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C9B6A51D8E859800A0C6B9 /* FSCustomCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		14D92B2A1E2389640008D521 /* MuPDFFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14D92B1A1E23770B0008D521 /* MuPDFFramework.framework */; };
+		14D92B2D1E238B5C0008D521 /* MuPDFFramework.framework in [CP]Embed APP包中的Frameworks目录 */ = {isa = PBXBuildFile; fileRef = 14D92B1A1E23770B0008D521 /* MuPDFFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		14E007181DF01C880056CBEF /* PBBLogAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E007161DF01C880056CBEF /* PBBLogAPI.swift */; };
 		14E007191DF01C880056CBEF /* PBBLogAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E007161DF01C880056CBEF /* PBBLogAPI.swift */; };
 		14E0071A1DF01C880056CBEF /* PBBLogClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E007171DF01C880056CBEF /* PBBLogClient.swift */; };
@@ -707,6 +709,13 @@
 			remoteGlobalIDString = 2A37B9201E00DFA60027109D;
 			remoteInfo = mypdfforosUITests;
 		};
+		14D92B2B1E2389BB0008D521 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 142687341E135692002CF075 /* MuPDF.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 14C917AE1DFA734D0025F6FB;
+			remoteInfo = MuPDFFramework;
+		};
 		84AEDA411DC5FF02001E8116 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1437DD601CF2A75E001BD2D2 /* Project object */;
@@ -759,6 +768,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				14D92B2D1E238B5C0008D521 /* MuPDFFramework.framework in [CP]Embed APP包中的Frameworks目录 */,
 				14A505961DAA2656008BF666 /* Toasty.framework in [CP]Embed APP包中的Frameworks目录 */,
 				84B679191DE719D600496634 /* PBBLogSDK.framework in [CP]Embed APP包中的Frameworks目录 */,
 			);
@@ -1241,6 +1251,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14D92B2A1E2389640008D521 /* MuPDFFramework.framework in Frameworks */,
 				84B679181DE719D600496634 /* PBBLogSDK.framework in Frameworks */,
 				14A505951DAA2656008BF666 /* Toasty.framework in Frameworks */,
 				14815B451D4B08AF00922A62 /* libmpv.dylib in Frameworks */,
@@ -2237,6 +2248,7 @@
 			dependencies = (
 				84B6791B1DE719D600496634 /* PBXTargetDependency */,
 				14A505941DAA2656008BF666 /* PBXTargetDependency */,
+				14D92B2C1E2389BB0008D521 /* PBXTargetDependency */,
 				1426874D1E1357E0002CF075 /* PBXTargetDependency */,
 			);
 			name = PBBReader;
@@ -3973,6 +3985,11 @@
 			isa = PBXTargetDependency;
 			target = 148B6D8E1DE69166005B5DFB /* PBBLogSDK */;
 			targetProxy = 14B64D2C1DFFED81008C828F /* PBXContainerItemProxy */;
+		};
+		14D92B2C1E2389BB0008D521 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MuPDFFramework;
+			targetProxy = 14D92B2B1E2389BB0008D521 /* PBXContainerItemProxy */;
 		};
 		84AEDA401DC5FF02001E8116 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
