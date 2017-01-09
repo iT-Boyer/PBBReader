@@ -12,55 +12,27 @@
 #import <Cocoa/Cocoa.h>
 #import "MBProgressHUD.h"
 #import "PlayerWindow.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 #define THERMOMETER_FRAME (20, 5, 25, 5);
 @implementation AdvertisingView
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
-//UIView构造方法
-- (id)initWithFrame:(CGRect)aRect
-{
-    if ((self = [super initWithFrame:aRect])) {
-        [self commonInit];
-    }
-    return self;
-}
-
-//Storyboard用
-- (id)initWithCoder:(NSCoder*)coder
-{
-    if ((self = [super initWithCoder:coder])) {
-        [self commonInit];
-    }
-    return self;
-}
-
-- (void)commonInit
-{
-    /* 这里开始初始化 */
-    
-    //如果需要重新调用drawRect则设置contentMode为UIViewContentModeRedraw
-//    self.contentMode = NSViewContentModeRedraw;
-    //不允许从Autoresizing转换Autolayout的Constraints
-    //貌似Storyboard创建时调用initWithCoder方法时translatesAutoresizingMaskIntoConstraints已经是NO了
-    self.translatesAutoresizingMaskIntoConstraints = NO;
-
-}
-
 
 -(void)awakeFromNib
 {
     _ibLogoView.wantsLayer = true;
+//    _ibImageView.wantsLayer = true;
     NSColor *bannerColor = [NSColor colorWithPatternImage:_backgroundImage];
-//    _ibLogoView.layer.backgroundColor = bannerColor.CGColor;
-    _ibLogoView.layer.backgroundColor = [[NSColor yellowColor] CGColor];
-    //
-    _ibLogoView.boundsRotation = 20;
-//    _ibImageView.frameRotation = -20; //必须设置视频广告的倾向，否则将导致视频画面错位
+    _ibLogoView.layer.backgroundColor = bannerColor.CGColor;
+//    _ibImageView.layer.backgroundColor = bannerColor.CGColor;
+    
+    _ibLogoView.boundsRotation = 30;
+//    _ibImageView.frameRotation = -30;
+    
+//    _ibImageView.boundsRotation = -20; //必须设置视频广告的倾向，否则将导致视频画面错位
+}
+
+-(BOOL)needsDisplay
+{
+    return true;
 }
 
 -(void)startLoadingWindow:(NSWindow *)keywindow
@@ -75,12 +47,11 @@
         return;
     }
 
-//    NSView *keyView = keywindow.contentView.subviews[1];
     NSView *keyView = keywindow.contentView;
-//    keyView.translatesAutoresizingMaskIntoConstraints = false;
-//    [keyView addSubview:self];
 //    [keyView addSubview:self positioned:NSWindowAbove relativeTo:keyView.subviews[1]];
     [keyView addSubview:self];
+    self.wantsLayer = true;
+    self.translatesAutoresizingMaskIntoConstraints = NO;
     [self setEdge:keyView view:self attr:NSLayoutAttributeTop constant:0];
     [self setEdge:keyView view:self attr:NSLayoutAttributeBottom constant:0];
     [self setEdge:keyView view:self attr:NSLayoutAttributeLeft constant:0];
@@ -110,6 +81,20 @@
         UidOrImgUrl = [NSString stringWithFormat:@"%ld",(long)uid];
     }
     
+//    [_ibImageView sd_setImageWithURL:[NSURL URLWithString:UidOrImgUrl]
+//                    placeholderImage:[NSImage imageNamed:@"advitising.jpg"]
+//                           completed:^(NSImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+//
+//                               dispatch_async(dispatch_get_main_queue(), ^{
+//                                   //当此时，广告已加载完成
+//                                   while (!_finish)
+//                                   {
+//                                       [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
+//                                   }
+//                                   [_adverTimer invalidate];
+//                               });
+//                           }];
+    
     if (!_imgCache)
     {
         _imgCache = [[AdvertisingImgCache alloc] init];
@@ -133,7 +118,8 @@
                 
             }
             //当此时，广告已加载完成
-            while (!_finish) {
+            while (!_finish)
+            {
                 [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
             }
             [_adverTimer invalidate];

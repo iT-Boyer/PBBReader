@@ -81,6 +81,11 @@
 			<key>orderHint</key>
 			<integer>16</integer>
 		</dict>
+		<key>SDWebImage.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>28</integer>
+		</dict>
 		<key>SnapKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -122,6 +127,11 @@
 			<true/>
 		</dict>
 		<key>280A0BBE61FBA4DEECC8D5BF4F4CB705</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2D058D7DEEBC037D90B608A62E7F56F8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -192,6 +202,11 @@
 			<true/>
 		</dict>
 		<key>B37E19CA872A7535725D1E1946E5C271</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B77F54BECCCBE1425AF4307D29384C76</key>
 		<dict>
 			<key>primary</key>
 			<true/>
