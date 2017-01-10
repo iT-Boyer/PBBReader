@@ -18,7 +18,7 @@
 
 -(void)awakeFromNib
 {
-    _ibLogoView.wantsLayer = true;
+//    _ibLogoView.wantsLayer = true;
 //    _ibImageView.wantsLayer = true;
     NSColor *bannerColor = [NSColor colorWithPatternImage:_backgroundImage];
     _ibLogoView.layer.backgroundColor = bannerColor.CGColor;
@@ -48,6 +48,7 @@
     }
 
     NSView *keyView = keywindow.contentView;
+    keyView.canDrawSubviewsIntoLayer = true;
 //    [keyView addSubview:self positioned:NSWindowAbove relativeTo:keyView.subviews[1]];
     [keyView addSubview:self];
     self.wantsLayer = true;
