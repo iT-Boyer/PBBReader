@@ -38,7 +38,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>PbbReader</string>
+	<string>PBB Reader</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -61,7 +61,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>0030</string>
+	<string>0031</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>

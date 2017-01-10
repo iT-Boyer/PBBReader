@@ -863,7 +863,7 @@
 		143A68601CFEB64300BC66A1 /* PycFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PycFile.m; sourceTree = "<group>"; };
 		143A68661CFEC71600BC66A1 /* PycSocketClientManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PycSocketClientManager.swift; sourceTree = "<group>"; };
 		143A68681CFEC9AD00BC66A1 /* PycReceiveModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PycReceiveModel.swift; sourceTree = "<group>"; };
-		143E38AD1D3F1809004B0A4D /* PBBReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PBBReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		143E38AD1D3F1809004B0A4D /* PBB Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PBB Reader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		14430C1D1D01214000A5394D /* AdvertisingViewOSX.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdvertisingViewOSX.xib; sourceTree = "<group>"; };
 		14430C291D012D1D00A5394D /* LookMedia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LookMedia.h; path = API/LookMedia.h; sourceTree = "<group>"; };
 		14430C2A1D012D1D00A5394D /* LookMedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LookMedia.m; path = API/LookMedia.m; sourceTree = "<group>"; };
@@ -1378,7 +1378,7 @@
 		1437DD691CF2A75F001BD2D2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				143E38AD1D3F1809004B0A4D /* PBBReader.app */,
+				143E38AD1D3F1809004B0A4D /* PBB Reader.app */,
 				146872361D9A596100460B8E /* PBBReaderTests.xctest */,
 				14A5058E1DAA2656008BF666 /* Toasty.framework */,
 				84AEDB141DC5FF02001E8116 /* PBBReaderForOSXRelese.app */,
@@ -2219,9 +2219,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		143E37F71D3F1809004B0A4D /* PBBReader */ = {
+		143E37F71D3F1809004B0A4D /* PBB Reader */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 143E38AA1D3F1809004B0A4D /* Build configuration list for PBXNativeTarget "PBBReader" */;
+			buildConfigurationList = 143E38AA1D3F1809004B0A4D /* Build configuration list for PBXNativeTarget "PBB Reader" */;
 			buildPhases = (
 				14A4203D1D549CD7009B9DF3 /* 自动递增build版本号 */,
 				143E38561D3F1809004B0A4D /* Resources */,
@@ -2251,9 +2251,9 @@
 				14D92B2C1E2389BB0008D521 /* PBXTargetDependency */,
 				1426874D1E1357E0002CF075 /* PBXTargetDependency */,
 			);
-			name = PBBReader;
+			name = "PBB Reader";
 			productName = PBBReaderForMac;
-			productReference = 143E38AD1D3F1809004B0A4D /* PBBReader.app */;
+			productReference = 143E38AD1D3F1809004B0A4D /* PBB Reader.app */;
 			productType = "com.apple.product-type.application";
 		};
 		146872351D9A596100460B8E /* PBBReaderTests */ = {
@@ -2492,7 +2492,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				143E37F71D3F1809004B0A4D /* PBBReader */,
+				143E37F71D3F1809004B0A4D /* PBB Reader */,
 				14B64D261DFFED81008C828F /* PBBReaderPDF */,
 				146872351D9A596100460B8E /* PBBReaderTests */,
 				14A5058D1DAA2656008BF666 /* Toasty */,
@@ -3958,12 +3958,12 @@
 		};
 		1468723C1D9A596200460B8E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 143E37F71D3F1809004B0A4D /* PBBReader */;
+			target = 143E37F71D3F1809004B0A4D /* PBB Reader */;
 			targetProxy = 1468723B1D9A596200460B8E /* PBXContainerItemProxy */;
 		};
 		146C1D191DDC61D400041D59 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 143E37F71D3F1809004B0A4D /* PBBReader */;
+			target = 143E37F71D3F1809004B0A4D /* PBB Reader */;
 			targetProxy = 146C1D181DDC61D400041D59 /* PBXContainerItemProxy */;
 		};
 		148B6D9A1DE69167005B5DFB /* PBXTargetDependency */ = {
@@ -4160,6 +4160,7 @@
 				PROVISIONING_PROFILE = "4d16a757-9895-4203-bfc0-0a92571e29c0";
 				PROVISIONING_PROFILE_SPECIFIER = DirectDistribution;
 				SWIFT_OBJC_BRIDGING_HEADER = "PBBReaderForMac/PBBReaderForMac-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "PBBReader-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				USER_HEADER_SEARCH_PATHS = "\"${PODS_ROOT}/FMDB/src/fmdb\"";
@@ -4229,6 +4230,7 @@
 				PROVISIONING_PROFILE = "4d16a757-9895-4203-bfc0-0a92571e29c0";
 				PROVISIONING_PROFILE_SPECIFIER = DirectDistribution;
 				SWIFT_OBJC_BRIDGING_HEADER = "PBBReaderForMac/PBBReaderForMac-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "PBBReader-Swift.h";
 				SWIFT_VERSION = 3.0;
 				USER_HEADER_SEARCH_PATHS = "\"${PODS_ROOT}/FMDB/src/fmdb\"";
 			};
@@ -4786,7 +4788,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		143E38AA1D3F1809004B0A4D /* Build configuration list for PBXNativeTarget "PBBReader" */ = {
+		143E38AA1D3F1809004B0A4D /* Build configuration list for PBXNativeTarget "PBB Reader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				143E38AB1D3F1809004B0A4D /* Debug */,
