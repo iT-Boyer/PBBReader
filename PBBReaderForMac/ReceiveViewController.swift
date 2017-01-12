@@ -1000,7 +1000,7 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
     //双击打开文件
     @IBAction func tblvwDoubleClick(_ sender:AnyObject)
     {
-        if(!readBtn.isEnabled)
+        if(readBtn.isHidden)
         {
             //提示本地文件错误
             // Make a copy of default style.

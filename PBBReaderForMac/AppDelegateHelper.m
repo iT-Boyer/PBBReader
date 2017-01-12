@@ -272,7 +272,8 @@ singleton_implementation(AppDelegateHelper);
     
     
     //第一open In 本地没有该文件时更新
-    if (!isReceiveFileExist) {
+    if (!isReceiveFileExist)
+    {
         [[[PBBLogModel alloc] initWithType:LogINFO inApp:APPReaderMac desc:@"存储到SQLite 接收文件"] sendToServer];
         //存储到SQLite 接收文件
         [[ReceiveFileDao sharedReceiveFileDao] saveReceiveFile:[OutFile initWithReceiveFileId:fileID//seePycFile.fileID
@@ -304,7 +305,9 @@ singleton_implementation(AppDelegateHelper);
                                                                                         isEye:isEye]];
         [[ReceiveFileDao sharedReceiveFileDao] updateReceiveFileFirstOpenTime:seePycFile.firstSeeTime FileId:fileID];//seePycFile.fileID];
         
-    } else {
+    }
+    else
+    {
         [[[PBBLogModel alloc] initWithType:LogINFO inApp:APPReaderMac desc:@"接收文件插入到SQLite"] sendToServer];
         [[ReceiveFileDao sharedReceiveFileDao] updateReceiveFile:[OutFile initWithReceiveFileId:fileID//seePycFile.fileID
                                                                                        FileName:[seePycFile.filePycNameFromServer stringByDeletingPathExtension]
@@ -582,7 +585,8 @@ singleton_implementation(AppDelegateHelper);
 {
     [self setKeyWindow:true];
     NSLog(@"提示框口keyWindow：%@",keyWindow);
-    if (!alertShow) {
+    if (!alertShow)
+    {
         alertShow = [[NSAlert alloc] init];
         [alertShow addButtonWithTitle:@"确定"];
 //        [alertShow addButtonWithTitle:@"我知道了"];
@@ -596,9 +600,12 @@ singleton_implementation(AppDelegateHelper);
     {
         //当提示框在播放器页面时，通知关闭播放器窗口
         NSDictionary  *dic = [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:fileID] forKey:@"pycFileID"];
-        if([keyWindow isKindOfClass:[PlayerWindow class]])
+        if([keyWindow isKindOfClass:[PlayerWindow class]]
+           || [keyWindow isKindOfClass:[MuPDFWindow class]])
         {
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"CancleClosePlayerWindows" object:self userInfo:dic];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"CancleClosePlayerWindows"
+                                                                object:self
+                                                              userInfo:dic];
         }
     }
 }
