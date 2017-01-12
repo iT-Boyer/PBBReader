@@ -218,15 +218,15 @@ singleton_implementation(AppDelegateHelper);
     if(returnValue == -1)
     {
         [custormActivityView removeFromSuperview];
-        [self setAlertView:@"条件到期，无权阅读!"];
-//        return;
+        [self setAlertView:@"数据传输错误，请重试!"];
+        return;
     }
     if(returnValue & ERR_NEED_UPDATE)
     {
         applyNum =0;
         [custormActivityView removeFromSuperview];
-        [self setAlertView:@"条件到期，无权阅读!"];
-//        return;
+        [self setAlertView:@"当前版本过低，需要升级哦!"];
+        return;
     }
     if (returnValue == 6) {
         //
