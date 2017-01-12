@@ -659,7 +659,8 @@ extension ReceiveViewController
         }
         
         if !FileManager.default.fileExists(atPath: receiveFile.fileurl)
-            || !((appHelper?.fileIsType(ofVideo: receiveFile.filetype))! || receiveFile.filetype.lowercased() == "pdf")
+            || !((appHelper?.fileIsType(ofVideo: receiveFile.filetype))!
+            || receiveFile.filetype.lowercased() == "pdf")
         {
             readBtn.isEnabled = false
             readBtn.isHidden = true
@@ -861,7 +862,7 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
             cellView.cellID = ReceiveColumn.fileid
             cellView.textField?.stringValue = ReceiveColumn.filename
             //视频/PDF.png
-            if ReceiveColumn.filetype == "pdf"
+            if ReceiveColumn.filetype.lowercased() == "pdf"
             {
                   cellView.ibFileTypeIamge.image = NSImage.init(named: "pdfImage")
             }
