@@ -569,6 +569,7 @@ singleton_implementation(AppDelegateHelper);
 //                NSWindow *superView = [[NSApplication sharedApplication] keyWindow];
 //                superView.contentViewController = bindingPhone;
                 [self setKeyWindow:true];
+                [keyWindow.contentViewController presentViewControllerAsSheet:bindingPhone];
             }
             else
             {
