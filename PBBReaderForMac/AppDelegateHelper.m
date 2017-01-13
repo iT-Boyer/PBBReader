@@ -560,23 +560,6 @@ singleton_implementation(AppDelegateHelper);
                 [self setKeyWindow:true];
                 [keyWindow.contentViewController presentViewControllerAsSheet:bindingPhone];
             } else {
-                if (returnValue & ERR_OUTLINE_NUM_ERR) {
-                    //次数已到
-                    [self setAlertView:@"阅读次数已用完！再次打开该文件，需要重新申请！"];
-                    return;
-                }
-                if (returnValue & ERR_OUTLINE_DAY_ERR) {
-                    //时效已到
-                    [self setAlertView:@"阅读时间已用完！再次打开该文件，需要重新申请！"];
-                    return;
-                }
-                
-                if (returnValue & ERR_OUTLINE_IS_OTHER_ERR) {
-                    //并非原文件
-                    [self setAlertView:@"不能阅读！"];
-                    return;
-                }
-                
                 applyNum =0;
                 [self setAlertView:@"条件到期，无权阅读!"];
                 [custormActivityView removeFromSuperview];
