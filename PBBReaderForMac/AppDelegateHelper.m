@@ -385,6 +385,7 @@ singleton_implementation(AppDelegateHelper);
     //can open
     if(returnValue & ERR_OK_OR_CANOPEN)
     {
+        //能看状态
         [[[PBBLogModel alloc] initWithType:LogDEBUG inApp:APPReaderMac desc:@"can open"] sendToServer];
         [custormActivityView removeFromSuperview];
         applyNum =0;
@@ -441,11 +442,14 @@ singleton_implementation(AppDelegateHelper);
             [look lookMedia:seePycFile.filePycName];
         }
     }
-    else if (seePycFile.iResultIsOffLine) {
+    else if (seePycFile.iResultIsOffLine)
+    {
+        //离线不能看状态
         applyNum =0;
         [custormActivityView removeFromSuperview];
         
-        if (returnValue & ERR_OUTLINE_HDID_ERR) {
+        if (returnValue & ERR_OUTLINE_HDID_ERR)
+        {
             //硬件标识不对
             /**
              1、  检查到不同设备，提示：不能阅读！与原阅读设备不符！是否在此设备上申请阅读？
@@ -482,18 +486,21 @@ singleton_implementation(AppDelegateHelper);
         
         [[ReceiveFileDao sharedReceiveFileDao]updateReceiveFileApplyOpen:0 FileId:fileID];//_fileObject.fileID];
 
-        if (returnValue & ERR_OUTLINE_NUM_ERR) {
+        if (returnValue & ERR_OUTLINE_NUM_ERR)
+        {
             //次数已到
             [self setAlertView:@"阅读次数已用完！再次打开该文件，需要重新申请！"];
             return;
         }
-        if (returnValue & ERR_OUTLINE_DAY_ERR) {
+        if (returnValue & ERR_OUTLINE_DAY_ERR)
+        {
             //时效已到
             [self setAlertView:@"阅读时间已用完！再次打开该文件，需要重新申请！"];
             return;
         }
         
-        if (returnValue & ERR_OUTLINE_IS_OTHER_ERR) {
+        if (returnValue & ERR_OUTLINE_IS_OTHER_ERR)
+        {
             //并非原文件
             [self setAlertView:@"不能阅读！"];
             return;
@@ -524,15 +531,18 @@ singleton_implementation(AppDelegateHelper);
             [self setAlertView:@"不能阅读！文件阅读错误！"];
             return;
         }
-        
-    }else
+    }
+    else
     {
+        //非离线不能看
         if(returnValue & ERR_APPLIED)
         {
-            if (returnValue & ERR_AUTO_APPLIED) {
+            if (returnValue & ERR_AUTO_APPLIED)
+            {
                 [self performSelector:@selector(seeFile:) withObject:seePycFile afterDelay:2.0f];
-                
-            }else{
+            }
+            else
+            {
                 applyNum=0;
                 [custormActivityView removeFromSuperview];
                 //申请成功界
@@ -550,7 +560,8 @@ singleton_implementation(AppDelegateHelper);
             applyNum =0;
             [custormActivityView removeFromSuperview];
             // 自由传播不能看
-            if (seePycFile.bNeedBinding) {
+            if (seePycFile.bNeedBinding)
+            {
                 // 需要验证手机号
                 BindingPhoneViewController *bindingPhone = (BindingPhoneViewController *)[[NSStoryboard storyboardWithName:@"Main" bundle:nil] instantiateControllerWithIdentifier:@"BindingPhoneViewController"];
                 bindingPhone.filePath = seePycFile.filePycName;
@@ -558,8 +569,25 @@ singleton_implementation(AppDelegateHelper);
 //                NSWindow *superView = [[NSApplication sharedApplication] keyWindow];
 //                superView.contentViewController = bindingPhone;
                 [self setKeyWindow:true];
-                [keyWindow.contentViewController presentViewControllerAsSheet:bindingPhone];
-            } else {
+            }
+            else
+            {
+                if (returnValue & ERR_OUTLINE_NUM_ERR) {
+                    //次数已到
+                    [self setAlertView:@"阅读次数已用完！再次打开该文件，需要重新申请！"];
+                    return;
+                }
+                if (returnValue & ERR_OUTLINE_DAY_ERR) {
+                    //时效已到
+                    [self setAlertView:@"阅读时间已用完！再次打开该文件，需要重新申请！"];
+                    return;
+                }
+                
+                if (returnValue & ERR_OUTLINE_IS_OTHER_ERR) {
+                    //并非原文件
+                    [self setAlertView:@"不能阅读！"];
+                    return;
+                }
                 applyNum =0;
                 [self setAlertView:@"条件到期，无权阅读!"];
                 [custormActivityView removeFromSuperview];
