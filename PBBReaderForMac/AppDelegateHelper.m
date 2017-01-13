@@ -574,7 +574,7 @@ singleton_implementation(AppDelegateHelper);
             else
             {
                 applyNum =0;
-                [self setAlertView:@"条件到期，无权阅读!"];
+                [self setAlertView:@"可读次数或可读时间不够，无法阅读!"];
                 [custormActivityView removeFromSuperview];
                 return;
             }
