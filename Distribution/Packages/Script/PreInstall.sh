@@ -12,7 +12,7 @@ echo "------------------------${timeDir}=============="
 pwd
 #拷贝
 
-APPName="PBBReader"
+APPName="PBB Reader"
 ProductPath="$TARGET_BUILD_DIR/${APPName}.app"
 Distribution="$PROJECT_DIR/Distribution"
 ImportSVN="$Distribution/ImportSVN"
@@ -33,7 +33,7 @@ echo '新建svn目录'
 mkdir $ImportSVN
 fi
 echo "cp -rf $ProductPath ${ImportSVN}/${APPName}.app"
-cp -rf $ProductPath "${ImportSVN}/${APPName}.app"
+cp -rf "$ProductPath" "${ImportSVN}/${APPName}.app"
 
 #下载安装
 Perfect="/Applications/Packages.app"
@@ -62,7 +62,7 @@ else
 fi
 
 #安装packages并生成pkg安装包之后删除.app文件,目的是不让在上传SVN时，误上传文件
-rm -rf "${ImportSVN}/${APPName}.app"
+#rm -rf "${ImportSVN}/${APPName}.app"
 
 ##########导入svn============
 #读取releaseNote.md更新信息
@@ -77,22 +77,22 @@ svn checkout ${SVNURL}/${timeDir}
 SVNTimeDir=$ImportSVN/${timeDir}
 if [ -d "$SVNTimeDir" ]; then
     echo 'SVNTimeDir目录已存在，先svn checkout再commit'
-    cat $Distribution/releaseNote.md > ${SVNTimeDir}/${ProductName}.txt
+    cat "$Distribution/releaseNote.md" > "${SVNTimeDir}/${ProductName}.txt"
     #把pkg文件移动到SVN版本目录，同时实现重命名
-    mv -i ${ImportSVN}/${APPName}.pkg "${SVNTimeDir}/$ProductName.pkg"
+    mv -i "${ImportSVN}/${APPName}.pkg" "${SVNTimeDir}/${ProductName}.pkg"
     cd ${timeDir}     # 进入checkout目录
     svn add *.*      # 安装包加入版本库
     svn commit -m "${releaseNote}"   # 提交
 else
     echo '新建SVNTimeDir目录，直接svn import'
     mkdir $SVNTimeDir
-    cat $Distribution/releaseNote.md > ${SVNTimeDir}/${ProductName}.txt
-    mv -i ${ImportSVN}/${APPName}.pkg "${SVNTimeDir}/$ProductName.pkg"
+    cat "$Distribution/releaseNote.md" > "${SVNTimeDir}/${ProductName}.txt"
+    mv -i "${ImportSVN}/${APPName}.pkg" "${SVNTimeDir}/${ProductName}.pkg"
     svn import "${ImportSVN}" ${SVNURL} -m "${releaseNote}"
 fi
 
 #上传到SVN服务器之后，移除pkg
-#rm -rf "${SVNTimeDir}/$ProductName.pkg"
+rm -rf "${SVNTimeDir}/$ProductName.pkg"
 
 #Showing All Messages
 #svn: E170013: Unable to connect to a repository at URL 'https://192.168.85.6/svn/Installation_Package/mac%20os'
