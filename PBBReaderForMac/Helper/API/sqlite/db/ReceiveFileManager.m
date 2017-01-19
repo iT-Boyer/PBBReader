@@ -1017,14 +1017,10 @@ singleton_implementation(ReceiveFileManager)
         NSString *startDay = [self base64decode:[rs stringForColumn:@"startTime"]];
         NSString *endDay = [self base64decode:[rs stringForColumn:@"endTime"]];
         NSString *lastSeeTime = [self base64decode:[rs stringForColumn:@"lastSeeTime"]];
-        if (FileMakeType == 0)
+        if (FileMakeType == 0)//手动激活文件
         {
-            //手动激活文件
-            
-            
-            
-            
-            if (FileTimeType==4) {
+            if (FileTimeType==4)
+            {
                 //手动激活文件启用时间段限制
                 FreeTime=YES;
                 
@@ -1040,7 +1036,9 @@ singleton_implementation(ReceiveFileManager)
                     canopenFile = ERR_OUTLINE_DAY_ERR;
                 }
 
-            }else{
+            }
+            else
+            {
                 
                 //NSString *firstOpenTime = [rs intForColumn:@"firstOpenTime"];
                 if (FileOpenDay<=0 && FileOpenDay<=0) {
@@ -1064,7 +1062,9 @@ singleton_implementation(ReceiveFileManager)
             }
 
             
-        }else{
+        }
+        else
+        {
             
             NSString *startDay = [self base64decode:[rs stringForColumn:@"startTime"]];
             NSString *endDay = [self base64decode:[rs stringForColumn:@"endTime"]];

@@ -488,7 +488,9 @@ extension ReceiveViewController
                 lastDayProgressView.isHidden = false
                 canTimeDateLabel.isHidden = false
                 lastNumProgressView.isHidden = false
-            }else{
+            }
+            else
+            {
                 if (receiveFile.fileOpenDay > 0)
                 {
                     if(b_CanOpen)//能打开
@@ -519,9 +521,8 @@ extension ReceiveViewController
                             
                         }
                     }
-                    else
+                    else   //未激活
                     {
-                        //未激活
                         lastDayLabel.attributedStringValue = NSMutableAttributedString.init(string: "共\(openDay)天")
                         lastDayLabel.addColorText("共", aColor: kGray, aFont: nil)
                         lastDayLabel.addColorText("天", aColor: kGray, aFont: nil)

@@ -367,7 +367,7 @@ singleton_implementation(AppDelegateHelper);
     
     //将系列ID和文件关联
     [[ReceiveFileDao sharedReceiveFileDao] updateReceiveSeriesID:seePycFile.seriesID fileId:fileID];//seePycFile.fileID];
-    
+    [[ReceiveFileDao sharedReceiveFileDao] updateReceiveFileTimeType:seePycFile.timeType FileId:fileID];
     //TODO:插入系列表信息
     SeriesModel *series = [[SeriesModel alloc] init];
     series.seriesID = seePycFile.seriesID;

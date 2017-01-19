@@ -444,6 +444,7 @@
 		14E0072D1DF01CA10056CBEF /* DeviceXMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E007261DF01CA10056CBEF /* DeviceXMLParser.swift */; };
 		14E0072E1DF01CA10056CBEF /* IOUSBDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E007271DF01CA10056CBEF /* IOUSBDetector.swift */; };
 		14EA57EA1D7EBEAA0026602B /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EA57E91D7EBEA90026602B /* CustomView.swift */; };
+		14EF3E4A1E30930100EC6797 /* MuPDFFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14BEC4221E3059D700E016DA /* MuPDFFramework.framework */; };
 		55E1BE6FD2144EFE8882E2B8 /* Pods_PBBLogSDKTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40874F023A774C2E48331599 /* Pods_PBBLogSDKTests.framework */; };
 		840E72451DE91ECC00E90644 /* DeviceInfoTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E72441DE91ECC00E90644 /* DeviceInfoTest.swift */; };
 		84AEDA461DC5FF02001E8116 /* Toasty.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14A5058E1DAA2656008BF666 /* Toasty.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -1273,6 +1274,7 @@
 			files = (
 				84B679181DE719D600496634 /* PBBLogSDK.framework in Frameworks */,
 				14A505951DAA2656008BF666 /* Toasty.framework in Frameworks */,
+				14EF3E4A1E30930100EC6797 /* MuPDFFramework.framework in Frameworks */,
 				14815B451D4B08AF00922A62 /* libmpv.dylib in Frameworks */,
 				14815B461D4B08AF00922A62 /* libz.1.dylib in Frameworks */,
 				03E75CB73D882FA8AE840814 /* Pods_PBBReader.framework in Frameworks */,
@@ -2244,7 +2246,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 143E38AA1D3F1809004B0A4D /* Build configuration list for PBXNativeTarget "PBB Reader" */;
 			buildPhases = (
-				14BEC42C1E305A9700E016DA /* 更新mupdf库 */,
 				14A4203D1D549CD7009B9DF3 /* 自动递增build版本号 */,
 				143E38561D3F1809004B0A4D /* Resources */,
 				142687551E1357ED002CF075 /* [CP]MuPDF到指定目录实现集成 */,
@@ -3139,20 +3140,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 9fe72e817cb7d235a9b4e3724ead9eca82d6b85e 455a4df6bc7c170d9bbe8a1abfd4c796d16f34ebe3b46ac35dafabc2e88e8a84";
-		};
-		14BEC42C1E305A9700E016DA /* 更新mupdf库 */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "更新mupdf库";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "";
 		};
 		14BEC4311E305BB600E016DA /* updateVersion */ = {
 			isa = PBXShellScriptBuildPhase;
