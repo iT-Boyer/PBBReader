@@ -217,8 +217,6 @@
 		14815B4F1D4B0D0600922A62 /* BilibiliSocketClient.mm in Sources */ = {isa = PBXBuildFile; fileRef = 14815B4A1D4B0D0600922A62 /* BilibiliSocketClient.mm */; };
 		14815B501D4B0D0600922A62 /* LiveChat.m in Sources */ = {isa = PBXBuildFile; fileRef = 14815B4C1D4B0D0600922A62 /* LiveChat.m */; };
 		14815B511D4B0D0600922A62 /* Socket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14815B4D1D4B0D0600922A62 /* Socket.cpp */; };
-		1486CB7D1E2E012E005886C5 /* MuPDFFramework.framework in [CP]Embed APP包中的Frameworks目录 */ = {isa = PBXBuildFile; fileRef = 1486CB731E2E00F9005886C5 /* MuPDFFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1486CB7E1E2E02C5005886C5 /* MuPDFFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1486CB731E2E00F9005886C5 /* MuPDFFramework.framework */; };
 		148B6D981DE69167005B5DFB /* PBBLogSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 148B6D8F1DE69166005B5DFB /* PBBLogSDK.framework */; };
 		148B6D9F1DE69167005B5DFB /* PBBLogSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148B6D9E1DE69167005B5DFB /* PBBLogSDKTests.swift */; };
 		148B6DA11DE69167005B5DFB /* PBBLogSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 148B6D911DE69166005B5DFB /* PBBLogSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1275,7 +1273,6 @@
 			files = (
 				84B679181DE719D600496634 /* PBBLogSDK.framework in Frameworks */,
 				14A505951DAA2656008BF666 /* Toasty.framework in Frameworks */,
-				1486CB7E1E2E02C5005886C5 /* MuPDFFramework.framework in Frameworks */,
 				14815B451D4B08AF00922A62 /* libmpv.dylib in Frameworks */,
 				14815B461D4B08AF00922A62 /* libz.1.dylib in Frameworks */,
 				03E75CB73D882FA8AE840814 /* Pods_PBBReader.framework in Frameworks */,
@@ -1565,19 +1562,6 @@
 				14815B4E1D4B0D0600922A62 /* Socket.hpp */,
 			);
 			path = LiveChat;
-			sourceTree = "<group>";
-		};
-		1486CB651E2E00F8005886C5 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				1486CB6F1E2E00F9005886C5 /* MuPDF.app */,
-				1486CB711E2E00F9005886C5 /* MuPDFForOSX.app */,
-				1486CB731E2E00F9005886C5 /* MuPDFFramework.framework */,
-				1486CB751E2E00F9005886C5 /* mypdfforos.app */,
-				1486CB771E2E00F9005886C5 /* mypdfforosTests.xctest */,
-				1486CB791E2E00F9005886C5 /* mypdfforosUITests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		148AB47A1CFFD78600CAF9BA /* Advertising */ = {
@@ -4030,11 +4014,6 @@
 			isa = PBXTargetDependency;
 			target = 143E37F71D3F1809004B0A4D /* PBB Reader */;
 			targetProxy = 146C1D181DDC61D400041D59 /* PBXContainerItemProxy */;
-		};
-		1486CB7C1E2E011A005886C5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MuPDFFramework;
-			targetProxy = 1486CB7B1E2E011A005886C5 /* PBXContainerItemProxy */;
 		};
 		148B6D9A1DE69167005B5DFB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
