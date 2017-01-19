@@ -12,7 +12,7 @@ mupdfRepo="https://server.local/git/mupdf.git"
 if [ -d "$mupdfDir" ]; then
     echo 'mupdf目录已存在，开始拉取mupdf最新代码'
     cd ${mupdfDir}     # 进入mupdf目录
-    git pull server master    # 安装包加入版本库
+    git pull origin master    # 拉取新代码
 else
     echo 'mupdf目录不存在时,开始下载mupdf库'
     cd ../
