@@ -1028,14 +1028,12 @@ singleton_implementation(ReceiveFileManager)
                 endTime = [NSDate dateWithStringByDay:endDay];
                 allDay = [NSDate DayByFromDate:startTime ToDate:endTime];
                 lastDay = [NSDate LastDayByFromDate:startTime ToDate:endTime];
-                
-                
-                if (lastDay<=0) {
+                if (lastDay<=0)
+                {
                     open = 2;
                     status = NO;
                     canopenFile = ERR_OUTLINE_DAY_ERR;
                 }
-
             }
             else
             {
@@ -1055,17 +1053,11 @@ singleton_implementation(ReceiveFileManager)
                         status = NO;
                         canopenFile = ERR_OUTLINE_DAY_ERR;
                     }
-//
                 }
-                
-                
             }
-
-            
         }
         else
         {
-            
             NSString *startDay = [self base64decode:[rs stringForColumn:@"startTime"]];
             NSString *endDay = [self base64decode:[rs stringForColumn:@"endTime"]];
             
