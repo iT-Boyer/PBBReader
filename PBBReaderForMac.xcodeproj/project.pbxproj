@@ -356,7 +356,6 @@
 		14B64DBA1DFFED81008C828F /* Toasty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A5058E1DAA2656008BF666 /* Toasty.framework */; };
 		14B64DBB1DFFED81008C828F /* libmpv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AA3E3A1D2A187200838B88 /* libmpv.dylib */; };
 		14B64DBC1DFFED81008C828F /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AA3E3D1D2A187200838B88 /* libz.1.dylib */; };
-		14B64DBD1DFFED81008C828F /* Pods_PBBReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A66CA53F5B73961FE573D22 /* Pods_PBBReader.framework */; };
 		14B64DBE1DFFED81008C828F /* PBBLogSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 148B6D8F1DE69166005B5DFB /* PBBLogSDK.framework */; };
 		14B64DC01DFFED81008C828F /* exitfillscreen_lr.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F771D2A187300838B88 /* exitfillscreen_lr.pdf */; };
 		14B64DC11DFFED81008C828F /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 14AA3F8E1D2A187300838B88 /* search.png */; };
@@ -1226,6 +1225,7 @@
 		1C40DC9F339715B6A2E7A3F6 /* Pods-PBBReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PBBReader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PBBReader/Pods-PBBReader.debug.xcconfig"; sourceTree = "<group>"; };
 		40874F023A774C2E48331599 /* Pods_PBBLogSDKTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PBBLogSDKTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		434B0666046D9F6CE037531F /* Pods-PBBLogSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PBBLogSDK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PBBLogSDK/Pods-PBBLogSDK.debug.xcconfig"; sourceTree = "<group>"; };
+		4D1C67E7B956F3FBF14CE4D2 /* Pods-PBBReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PBBReader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PBBReader/Pods-PBBReader.debug.xcconfig"; sourceTree = "<group>"; };
 		7A66CA53F5B73961FE573D22 /* Pods_PBBReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PBBReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		840AA6901CFCA2EA00819203 /* 114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 114.png; sourceTree = "<group>"; };
 		840E72441DE91ECC00E90644 /* DeviceInfoTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfoTest.swift; sourceTree = "<group>"; };
@@ -1320,7 +1320,6 @@
 				14B64DBA1DFFED81008C828F /* Toasty.framework in Frameworks */,
 				14B64DBB1DFFED81008C828F /* libmpv.dylib in Frameworks */,
 				14B64DBC1DFFED81008C828F /* libz.1.dylib in Frameworks */,
-				14B64DBD1DFFED81008C828F /* Pods_PBBReader.framework in Frameworks */,
 				14B64DBE1DFFED81008C828F /* PBBLogSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2210,6 +2209,8 @@
 				C5891DAAC3F08EE858B4202F /* Pods-PBBLogSDKForiOS.release.xcconfig */,
 				11FA829A05C5EB6E83A4721B /* Pods-PBBLogSDKTests.debug.xcconfig */,
 				15F868F5A0168D2547B4F472 /* Pods-PBBLogSDKTests.release.xcconfig */,
+				4D1C67E7B956F3FBF14CE4D2 /* Pods-PBBReader.debug.xcconfig */,
+				935FCD8FB1202CF927FB56CD /* Pods-PBBReader.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -2255,7 +2256,6 @@
 				143E37FB1D3F1809004B0A4D /* Sources */,
 				143E38A01D3F1809004B0A4D /* [CP]Bilibili到APP包的执行目录 */,
 				143E38521D3F1809004B0A4D /* Frameworks */,
-				1E4121A42E88BC1015218FE7 /* 📦 Check Pods Manifest.lock */,
 				61283CDA81857A8A94659788 /* [CP] Check Pods Manifest.lock */,
 				E8F8A211AFB888C78DEE3106 /* [CP] Check Pods Manifest.lock */,
 				0DECE3213ECDCD8C67DD6428 /* [CP] Check Pods Manifest.lock */,
@@ -3128,6 +3128,7 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PBBReader/Pods-PBBReader-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		14B64E061DFFED81008C828F /* Run Fabric */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -3994,6 +3995,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1426874D1E1357E0002CF075 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MuPDFFramework;
+		};
 		1468723C1D9A596200460B8E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 143E37F71D3F1809004B0A4D /* PBB Reader */;
@@ -4143,7 +4148,7 @@
 		};
 		143E38AB1D3F1809004B0A4D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1C40DC9F339715B6A2E7A3F6 /* Pods-PBBReader.debug.xcconfig */;
+			baseConfigurationReference = 4D1C67E7B956F3FBF14CE4D2 /* Pods-PBBReader.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ARCHS = "$(ARCHS_STANDARD)";
@@ -4212,7 +4217,7 @@
 		};
 		143E38AC1D3F1809004B0A4D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E8D9B98EF7820D3CB0B60E24 /* Pods-PBBReader.release.xcconfig */;
+			baseConfigurationReference = 935FCD8FB1202CF927FB56CD /* Pods-PBBReader.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ARCHS = "$(ARCHS_STANDARD)";
@@ -4500,7 +4505,6 @@
 		};
 		14B64E081DFFED81008C828F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1C40DC9F339715B6A2E7A3F6 /* Pods-PBBReader.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ARCHS = "$(ARCHS_STANDARD)";
@@ -4565,7 +4569,6 @@
 		};
 		14B64E091DFFED81008C828F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E8D9B98EF7820D3CB0B60E24 /* Pods-PBBReader.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ARCHS = "$(ARCHS_STANDARD)";

@@ -7,6 +7,8 @@ target 'PBBReader' do
     pod 'FMDB'
 #     pod 'SnapKit', '~> 3.0.2'
 
+    pod 'SDWebImage', '~> 4.0.0-beta2'
+    
     pod 'Fabric'
     pod 'Crashlytics'
 

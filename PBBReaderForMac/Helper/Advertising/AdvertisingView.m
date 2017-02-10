@@ -42,6 +42,8 @@
     self.wantsLayer = true;
     self.translatesAutoresizingMaskIntoConstraints = NO;
     [keyView addSubview:self];
+    self.wantsLayer = true;
+    self.translatesAutoresizingMaskIntoConstraints = NO;
     [self setEdge:keyView view:self attr:NSLayoutAttributeTop constant:0];
     [self setEdge:keyView view:self attr:NSLayoutAttributeBottom constant:0];
     [self setEdge:keyView view:self attr:NSLayoutAttributeLeft constant:0];
@@ -66,6 +68,20 @@
         UidOrImgUrl = [NSString stringWithFormat:@"%ld",(long)uid];
     }
     
+//    [_ibImageView sd_setImageWithURL:[NSURL URLWithString:UidOrImgUrl]
+//                    placeholderImage:[NSImage imageNamed:@"advitising.jpg"]
+//                           completed:^(NSImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+//
+//                               dispatch_async(dispatch_get_main_queue(), ^{
+//                                   //当此时，广告已加载完成
+//                                   while (!_finish)
+//                                   {
+//                                       [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
+//                                   }
+//                                   [_adverTimer invalidate];
+//                               });
+//                           }];
+    
     if (!_imgCache)
     {
         _imgCache = [[AdvertisingImgCache alloc] init];
@@ -88,7 +104,8 @@
                 
             }
             //当此时，广告已加载完成
-            while (!_finish) {
+            while (!_finish)
+            {
                 [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
             }
             [_adverTimer invalidate];
