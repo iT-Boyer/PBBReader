@@ -7,32 +7,27 @@
 		<key>MakeInstaller.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>10</integer>
-		</dict>
-		<key>PBB Reader.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>27</integer>
-		</dict>
-		<key>PBB Reader.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
 			<integer>8</integer>
+		</dict>
+		<key>PBB Reader.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
 		</dict>
 		<key>PBBLogSDK.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>13</integer>
+			<integer>11</integer>
 		</dict>
 		<key>PBBLogSDKForiOS.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>20</integer>
+			<integer>18</integer>
 		</dict>
 		<key>PBBLogSDKTests.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>22</integer>
+			<integer>20</integer>
 		</dict>
 		<key>PBBReader.xcscheme</key>
 		<dict>
@@ -44,24 +39,29 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>7</integer>
+			<integer>4</integer>
 		</dict>
 		<key>PBBReaderPDF.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>25</integer>
+			<integer>22</integer>
 		</dict>
 		<key>Toasty.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>14</integer>
+			<integer>12</integer>
+		</dict>
+		<key>updateMupdf copy.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>30</integer>
 		</dict>
 		<key>updateMupdf.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>29</integer>
+			<integer>24</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -122,6 +122,11 @@
 			<true/>
 		</dict>
 		<key>14B64D261DFFED81008C828F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>14B6568C1E4D798300CC45E2</key>
 		<dict>
 			<key>primary</key>
 			<true/>

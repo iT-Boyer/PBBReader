@@ -83,12 +83,14 @@ if [ -d "$SVNTimeDir" ]; then
     cd ${timeDir}     # 进入checkout目录
     svn add *.*      # 安装包加入版本库
     svn commit -m "${releaseNote}"   # 提交
+    echo "提交SVN成功：$SVNURL/${timeDir}/${ProductName}.pkg"
 else
     echo '新建SVNTimeDir目录，直接svn import'
     mkdir $SVNTimeDir
     cat "$Distribution/releaseNote.md" > "${SVNTimeDir}/${ProductName}.txt"
     mv -i "${ImportSVN}/${APPName}.pkg" "${SVNTimeDir}/${ProductName}.pkg"
     svn import "${ImportSVN}" ${SVNURL} -m "${releaseNote}"
+    echo "导入SVN成功：$SVNURL/${timeDir}/${ProductName}.pkg"
 fi
 
 #上传到SVN服务器之后，移除pkg

@@ -16,7 +16,7 @@
 			);
 			dependencies = (
 				14BEC4391E305EFC00E016DA /* PBXTargetDependency */,
-				146C1D191DDC61D400041D59 /* PBXTargetDependency */,
+				14B656951E4D7C3200CC45E2 /* PBXTargetDependency */,
 			);
 			name = MakeInstaller;
 			productName = PackagesMakeInstaller;
@@ -644,13 +644,6 @@
 			remoteGlobalIDString = 143E37F71D3F1809004B0A4D;
 			remoteInfo = PBBReader;
 		};
-		146C1D181DDC61D400041D59 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1437DD601CF2A75E001BD2D2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 143E37F71D3F1809004B0A4D;
-			remoteInfo = PBBReader;
-		};
 		148B6D991DE69167005B5DFB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1437DD601CF2A75E001BD2D2 /* Project object */;
@@ -678,6 +671,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 148B6D8E1DE69166005B5DFB;
 			remoteInfo = PBBLogSDK;
+		};
+		14B656941E4D7C3200CC45E2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1437DD601CF2A75E001BD2D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 143E37F71D3F1809004B0A4D;
+			remoteInfo = "PBB Reader";
 		};
 		14BEC41D1E3059D700E016DA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -1194,6 +1194,7 @@
 		14B2600B1CFD8AED001BCE84 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		14B2600C1CFD8AED001BCE84 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		14B64E0A1DFFED81008C828F /* PBBReaderPDF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PBBReaderPDF.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		14B656911E4D798300CC45E2 /* updateMupdf copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "updateMupdf copy-Info.plist"; path = "/Users/pengyucheng/git-svn/PBBReader/updateMupdf copy-Info.plist"; sourceTree = "<absolute>"; };
 		14B9EE5E1D79744400EC8986 /* PBBReader-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "PBBReader-Info.plist"; sourceTree = "<group>"; };
 		14BEC4361E305BB800E016DA /* MakeInstaller copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "MakeInstaller copy-Info.plist"; path = "/Users/pengyucheng/git-svn/PBBReader/MakeInstaller copy-Info.plist"; sourceTree = "<absolute>"; };
 		14BEC4371E305CA900E016DA /* updateMupdf.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = updateMupdf.sh; sourceTree = "<group>"; };
@@ -1381,6 +1382,7 @@
 				E015C5766FC51DAFA87206A5 /* Pods */,
 				41FC969B23ABC5E9052852E0 /* Frameworks */,
 				14BEC4361E305BB800E016DA /* MakeInstaller copy-Info.plist */,
+				14B656911E4D798300CC45E2 /* updateMupdf copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -3997,11 +3999,6 @@
 			target = 143E37F71D3F1809004B0A4D /* PBB Reader */;
 			targetProxy = 1468723B1D9A596200460B8E /* PBXContainerItemProxy */;
 		};
-		146C1D191DDC61D400041D59 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 143E37F71D3F1809004B0A4D /* PBB Reader */;
-			targetProxy = 146C1D181DDC61D400041D59 /* PBXContainerItemProxy */;
-		};
 		148B6D9A1DE69167005B5DFB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 148B6D8E1DE69166005B5DFB /* PBBLogSDK */;
@@ -4021,6 +4018,11 @@
 			isa = PBXTargetDependency;
 			target = 148B6D8E1DE69166005B5DFB /* PBBLogSDK */;
 			targetProxy = 14B64D2C1DFFED81008C828F /* PBXContainerItemProxy */;
+		};
+		14B656951E4D7C3200CC45E2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 143E37F71D3F1809004B0A4D /* PBB Reader */;
+			targetProxy = 14B656941E4D7C3200CC45E2 /* PBXContainerItemProxy */;
 		};
 		14BEC42A1E305A1200E016DA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
