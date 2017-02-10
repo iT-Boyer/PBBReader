@@ -62,7 +62,7 @@ else
 fi
 
 #安装packages并生成pkg安装包之后删除.app文件,目的是不让在上传SVN时，误上传文件
-#rm -rf "${ImportSVN}/${APPName}.app"
+rm -rf "${ImportSVN}/${APPName}.app"
 
 ##########导入svn============
 #读取releaseNote.md更新信息
