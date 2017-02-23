@@ -2,36 +2,24 @@ PODS:
   - CocoaAsyncSocket (7.5.0):
     - CocoaAsyncSocket/GCD (= 7.5.0)
   - CocoaAsyncSocket/GCD (7.5.0)
-  - Crashlytics (3.8.3):
-    - Fabric (~> 1.6.3)
   - EDStarRating (1.1)
-  - Fabric (1.6.8)
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
   - RNCryptor (5.0.1)
-  - SDWebImage (4.0.0-beta2):
-    - SDWebImage/Core (= 4.0.0-beta2)
-  - SDWebImage/Core (4.0.0-beta2)
 
 DEPENDENCIES:
   - CocoaAsyncSocket
-  - Crashlytics
   - EDStarRating
-  - Fabric
   - FMDB
   - RNCryptor (~> 5.0.1)
-  - SDWebImage (~> 4.0.0-beta2)
 
 SPEC CHECKSUMS:
   CocoaAsyncSocket: 3baeb1ddd969f81cf9fca81053ae49ef2d1cbbfa
-  Crashlytics: 2b6dbe138a42395577cfa73dfa1aa7248cadf39e
   EDStarRating: a41a6440a945020745d0e9ff8ada7d1afa952114
-  Fabric: 5755268d0171435ab167e3d0878a28a777deaf10
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   RNCryptor: 2e352a488779d1a9184ab629be22a7c5bc84acb5
-  SDWebImage: e379f33106cf8d6766f970c0ef1c3fb609c94d78
 
-PODFILE CHECKSUM: 82a63af3a70f64097259d7d8ee06233920d38d46
+PODFILE CHECKSUM: 935538a77eee33f5bbc370ac100faeb2d7220e8f
 
 COCOAPODS: 1.0.0

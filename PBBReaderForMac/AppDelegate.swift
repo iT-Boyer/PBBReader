@@ -7,8 +7,8 @@
 //
 
 import Cocoa
-import Fabric
-import Crashlytics
+//import Fabric
+//import Crashlytics
 import PBBLogSDK
 //全局变量
  let KDataBasePath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
@@ -190,9 +190,9 @@ class AppDelegate: NSObject, NSApplicationDelegate
     {
         //TODO: Use the current user`s information
         //you can call any combination of these three methods
-        Crashlytics.sharedInstance().setUserName("boyers")
-        Crashlytics.sharedInstance().setUserEmail("724987481@qq.com")
-        Crashlytics.sharedInstance().setUserIdentifier("724987481")
+//        Crashlytics.sharedInstance().setUserName("boyers")
+//        Crashlytics.sharedInstance().setUserEmail("724987481@qq.com")
+//        Crashlytics.sharedInstance().setUserIdentifier("724987481")
     }
     
     

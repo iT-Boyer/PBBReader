@@ -632,6 +632,7 @@
 		84B679551DE72A4300496634 /* PBBLogSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 148B6D911DE69166005B5DFB /* PBBLogSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84CD4F211DC7901900EE0BEB /* Fastfile_Fabric in Resources */ = {isa = PBXBuildFile; fileRef = 84CD4F201DC7901900EE0BEB /* Fastfile_Fabric */; };
 		9DEA84C4876A239142E64C4C /* Pods_PBBLogSDKForiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F37F032AEFFDD913E2AA58C6 /* Pods_PBBLogSDKForiOS.framework */; };
+		E539A9ADBBA3644C4C5C017A /* Pods_PBB_Reader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BD8C817D0E592972C4F7E2A /* Pods_PBB_Reader.framework */; };
 		FC196F6F5C313585C6C29187 /* Pods_PBBLogSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD3A0CE932E7E0812171DA7E /* Pods_PBBLogSDK.framework */; };
 /* End PBXBuildFile section */
 
@@ -856,6 +857,7 @@
 
 /* Begin PBXFileReference section */
 		0090F6BCE53F529B6F20CE05 /* Pods_PBBReaderForOSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PBBReaderForOSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C91FEF404793C36418C1A24 /* Pods-PBB Reader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PBB Reader.release.xcconfig"; path = "Pods/Target Support Files/Pods-PBB Reader/Pods-PBB Reader.release.xcconfig"; sourceTree = "<group>"; };
 		11FA829A05C5EB6E83A4721B /* Pods-PBBLogSDKTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PBBLogSDKTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PBBLogSDKTests/Pods-PBBLogSDKTests.debug.xcconfig"; sourceTree = "<group>"; };
 		14105B811D337FD1004CB1C2 /* ReceiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiveViewController.swift; sourceTree = "<group>"; };
 		14105B8B1D339912004CB1C2 /* NSTextField+Attribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTextField+Attribute.h"; sourceTree = "<group>"; };
@@ -1223,10 +1225,12 @@
 		14EE618D1CF816E50051FD1A /* NSImage+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+Extras.m"; sourceTree = "<group>"; };
 		15F868F5A0168D2547B4F472 /* Pods-PBBLogSDKTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PBBLogSDKTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PBBLogSDKTests/Pods-PBBLogSDKTests.release.xcconfig"; sourceTree = "<group>"; };
 		1C40DC9F339715B6A2E7A3F6 /* Pods-PBBReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PBBReader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PBBReader/Pods-PBBReader.debug.xcconfig"; sourceTree = "<group>"; };
+		2BD8C817D0E592972C4F7E2A /* Pods_PBB_Reader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PBB_Reader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		40874F023A774C2E48331599 /* Pods_PBBLogSDKTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PBBLogSDKTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		434B0666046D9F6CE037531F /* Pods-PBBLogSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PBBLogSDK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PBBLogSDK/Pods-PBBLogSDK.debug.xcconfig"; sourceTree = "<group>"; };
 		4D1C67E7B956F3FBF14CE4D2 /* Pods-PBBReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PBBReader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PBBReader/Pods-PBBReader.debug.xcconfig"; sourceTree = "<group>"; };
 		7A66CA53F5B73961FE573D22 /* Pods_PBBReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PBBReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C6E6AD6CB7E4691E6F81808 /* Pods-PBB Reader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PBB Reader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PBB Reader/Pods-PBB Reader.debug.xcconfig"; sourceTree = "<group>"; };
 		840AA6901CFCA2EA00819203 /* 114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 114.png; sourceTree = "<group>"; };
 		840E72441DE91ECC00E90644 /* DeviceInfoTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfoTest.swift; sourceTree = "<group>"; };
 		843CADFE1D09367800CE84F4 /* Appfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = Appfile; sourceTree = "<group>"; };
@@ -1279,6 +1283,7 @@
 				14815B451D4B08AF00922A62 /* libmpv.dylib in Frameworks */,
 				14815B461D4B08AF00922A62 /* libz.1.dylib in Frameworks */,
 				03E75CB73D882FA8AE840814 /* Pods_PBBReader.framework in Frameworks */,
+				E539A9ADBBA3644C4C5C017A /* Pods_PBB_Reader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2144,6 +2149,7 @@
 				DD3A0CE932E7E0812171DA7E /* Pods_PBBLogSDK.framework */,
 				F37F032AEFFDD913E2AA58C6 /* Pods_PBBLogSDKForiOS.framework */,
 				40874F023A774C2E48331599 /* Pods_PBBLogSDKTests.framework */,
+				2BD8C817D0E592972C4F7E2A /* Pods_PBB_Reader.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -2210,7 +2216,8 @@
 				11FA829A05C5EB6E83A4721B /* Pods-PBBLogSDKTests.debug.xcconfig */,
 				15F868F5A0168D2547B4F472 /* Pods-PBBLogSDKTests.release.xcconfig */,
 				4D1C67E7B956F3FBF14CE4D2 /* Pods-PBBReader.debug.xcconfig */,
-				935FCD8FB1202CF927FB56CD /* Pods-PBBReader.release.xcconfig */,
+				7C6E6AD6CB7E4691E6F81808 /* Pods-PBB Reader.debug.xcconfig */,
+				0C91FEF404793C36418C1A24 /* Pods-PBB Reader.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -2249,6 +2256,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 143E38AA1D3F1809004B0A4D /* Build configuration list for PBXNativeTarget "PBB Reader" */;
 			buildPhases = (
+				37063D0CC37132C8341672DE /* 📦 Check Pods Manifest.lock */,
 				14A4203D1D549CD7009B9DF3 /* 自动递增build版本号 */,
 				143E38561D3F1809004B0A4D /* Resources */,
 				142687551E1357ED002CF075 /* [CP]MuPDF到指定目录实现集成 */,
@@ -2367,7 +2375,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14B64E071DFFED81008C828F /* Build configuration list for PBXNativeTarget "PBBReaderPDF" */;
 			buildPhases = (
-				14B64D2F1DFFED81008C828F /* 📦 Check Pods Manifest.lock */,
 				14B64D301DFFED81008C828F /* [CP] Check Pods Manifest.lock */,
 				14B64D311DFFED81008C828F /* [CP] Check Pods Manifest.lock */,
 				14B64D321DFFED81008C828F /* [CP] Check Pods Manifest.lock */,
@@ -2382,8 +2389,6 @@
 				14B64DF81DFFED81008C828F /* [CP] Embed Pods Frameworks */,
 				14B64DF91DFFED81008C828F /* [CP] Copy Pods Resources */,
 				14B64DFA1DFFED81008C828F /* CopyFiles */,
-				14B64E041DFFED81008C828F /* 📦 Embed Pods Frameworks */,
-				14B64E051DFFED81008C828F /* 📦 Copy Pods Resources */,
 				14B64E061DFFED81008C828F /* Run Fabric */,
 			);
 			buildRules = (
@@ -2892,7 +2897,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PBBReader/Pods-PBBReader-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PBB Reader/Pods-PBB Reader-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		143E389D1D3F1809004B0A4D /* [CP] Copy Pods Resources */ = {
@@ -2907,7 +2912,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PBBReader/Pods-PBBReader-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PBB Reader/Pods-PBB Reader-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		146C1CF51DD9878000041D59 /* makeInstaller */ = {
@@ -2951,21 +2956,6 @@
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "#递增build版本号，重命名app带版本号的文件名称\n#递增版本号\n#方法一：获取上一版本号并递增\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\necho $buildNumber\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"\n\n#方法二：直接修改指定版本号\n#pwd\n#PLIST_FILE_PATH=${PROJECT_DIR}/'PBBReader-Info.plist'\n#buildVersion=13\n#ImportSVN=\"importSVN\"\n\n#echo $PLIST_FILE_PATH\n#echo \"/<key>CFBundleVersion<\\/key>/{ n; s/\\(<string>\\).*\\(<\\/string>\\)/\\1${buildVersion}\\2/;}\" ${PLIST_FILE_PATH}\n\n#sed -i '' \"/<key>CFBundleVersion<\\/key>/{ n; s/\\(<string>\\).*\\(<\\/string>\\)/\\1${buildVersion}\\2/;}\" ${PLIST_FILE_PATH}\n\n";
-		};
-		14B64D2F1DFFED81008C828F /* 📦 Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
 		};
 		14B64D301DFFED81008C828F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -3101,35 +3091,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PBBReader/Pods-PBBReader-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		14B64E041DFFED81008C828F /* 📦 Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PBBReader/Pods-PBBReader-frameworks.sh\"\n";
-		};
-		14B64E051DFFED81008C828F /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PBBReader/Pods-PBBReader-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		14B64E061DFFED81008C828F /* Run Fabric */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -3157,21 +3118,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "SHELL_PATH=$PROJECT_DIR/Distribution/Packages/Script/updateMupdf.sh\nchmod +x ${SHELL_PATH}\nsh ${SHELL_PATH}\n";
-		};
-		1E4121A42E88BC1015218FE7 /* 📦 Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
 		};
 		226B9A6DC0A5753960E9F853 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -3201,6 +3147,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PBBLogSDK/Pods-PBBLogSDK-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		37063D0CC37132C8341672DE /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		45FC8F0D51472DD08A4A1D5C /* [CP] Check Pods Manifest.lock */ = {
@@ -3290,7 +3251,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PBBReader/Pods-PBBReader-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PBB Reader/Pods-PBB Reader-frameworks.sh\"\n";
 		};
 		707596BFE32F8D25AF60B5EA /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -3319,7 +3280,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" 9fe72e817cb7d235a9b4e3724ead9eca82d6b85e 455a4df6bc7c170d9bbe8a1abfd4c796d16f34ebe3b46ac35dafabc2e88e8a84";
+			shellScript = "#\"${PODS_ROOT}/Fabric/run\" 9fe72e817cb7d235a9b4e3724ead9eca82d6b85e 455a4df6bc7c170d9bbe8a1abfd4c796d16f34ebe3b46ac35dafabc2e88e8a84";
 		};
 		84AEDA441DC5FF02001E8116 /* 自动递增build版本号 */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -3493,7 +3454,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PBBReader/Pods-PBBReader-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PBB Reader/Pods-PBB Reader-resources.sh\"\n";
 		};
 		E8F8A211AFB888C78DEE3106 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -3995,10 +3956,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1426874D1E1357E0002CF075 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MuPDFFramework;
-		};
 		1468723C1D9A596200460B8E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 143E37F71D3F1809004B0A4D /* PBB Reader */;
@@ -4148,7 +4105,7 @@
 		};
 		143E38AB1D3F1809004B0A4D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4D1C67E7B956F3FBF14CE4D2 /* Pods-PBBReader.debug.xcconfig */;
+			baseConfigurationReference = 7C6E6AD6CB7E4691E6F81808 /* Pods-PBB Reader.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ARCHS = "$(ARCHS_STANDARD)";
@@ -4217,7 +4174,7 @@
 		};
 		143E38AC1D3F1809004B0A4D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 935FCD8FB1202CF927FB56CD /* Pods-PBBReader.release.xcconfig */;
+			baseConfigurationReference = 0C91FEF404793C36418C1A24 /* Pods-PBB Reader.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ARCHS = "$(ARCHS_STANDARD)";

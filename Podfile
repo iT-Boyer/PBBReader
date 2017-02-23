@@ -1,4 +1,4 @@
-target 'PBBReader' do
+target 'PBB Reader' do
     platform :osx, '10.11'
     use_frameworks!
     project 'PBBReaderForMac.xcodeproj'
@@ -7,10 +7,10 @@ target 'PBBReader' do
     pod 'FMDB'
 #     pod 'SnapKit', '~> 3.0.2'
 
-    pod 'SDWebImage', '~> 4.0.0-beta2'
-    
-    pod 'Fabric'
-    pod 'Crashlytics'
+#    pod 'SDWebImage', '~> 4.0.0-beta2'
+#    
+#    pod 'Fabric'
+#    pod 'Crashlytics'
 
     pod 'RNCryptor', '~> 5.0.1'  #https://github.com/RNCryptor/RNCryptor/releases/tag/RNCryptor-5.0.1
     

@@ -23,73 +23,73 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>3</integer>
+		</dict>
+		<key>Pods-PBB Reader.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>31</integer>
 		</dict>
 		<key>Pods-PBBLogSDK.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>14</integer>
+			<integer>17</integer>
 		</dict>
 		<key>Pods-PBBLogSDKForiOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>15</integer>
+			<integer>18</integer>
 		</dict>
 		<key>Pods-PBBLogSDKTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>19</integer>
+			<integer>22</integer>
 		</dict>
 		<key>Pods-PBBReader.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>6</integer>
+			<integer>9</integer>
 		</dict>
 		<key>Pods-PBBReaderForOSX.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>5</integer>
 		</dict>
 		<key>RNCryptor-OSX.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>17</integer>
+			<integer>20</integer>
 		</dict>
 		<key>RNCryptor-iOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>16</integer>
+			<integer>19</integer>
 		</dict>
 		<key>RNCryptor.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>13</integer>
+			<integer>16</integer>
 		</dict>
 		<key>SDWebImage.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>23</integer>
-		</dict>
-		<key>SDWebImage.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>28</integer>
+			<integer>29</integer>
 		</dict>
 		<key>SnapKit.xcscheme</key>
 		<dict>
@@ -132,6 +132,11 @@
 			<true/>
 		</dict>
 		<key>280A0BBE61FBA4DEECC8D5BF4F4CB705</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2C611DA8F26A6FC002EF946B2833AFC6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -182,6 +187,11 @@
 			<true/>
 		</dict>
 		<key>7D6B752AEA070BEA1A3A968CDF8AA1F3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9FF60E8B891F1961ED413B007DC13D78</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -8,7 +8,7 @@
 
 import Cocoa
 import Toasty
-import Crashlytics
+//import Crashlytics
 
 let kGreen = NSColor.init(colorLiteralRed: 37.0 / 255.0, green: 170.0 / 255, blue: 70.0 / 255, alpha: 1.0)
 let kGray =  NSColor.init(red: 58/255, green: 58/255, blue: 58/255, alpha: 1.0)
@@ -122,7 +122,7 @@ class ReceiveViewController: NSViewController{
     //浏览按钮
     @IBAction func ibaBrowseFinder(_ sender: AnyObject)
     {
-        CLSLogv("Log awesomeness %d %d %@", getVaList([1, 2, "three"]))
+//        CLSLogv("Log awesomeness %d %d %@", getVaList([1, 2, "three"]))
 //        Crashlytics.sharedInstance().crash()
 //        Crashlytics.sharedInstance().throwException()
 
