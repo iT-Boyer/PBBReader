@@ -1254,6 +1254,7 @@ singleton_implementation(AppDelegateHelper);
     //    keyWindow = [[NSApplication sharedApplication] keyWindow];
     [self setKeyWindow:false];
     if(!hud){
+        keyWindow.contentView.wantsLayer = true;
         hud = [MBProgressHUD showHUDAddedTo:keyWindow.contentView animated:YES];
         hud.removeFromSuperViewOnHide = YES;
         hud.mode = MBProgressHUDModeIndeterminate;
