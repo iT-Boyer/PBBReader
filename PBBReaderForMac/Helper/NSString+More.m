@@ -8,6 +8,13 @@
 
 #import "NSString+More.h"
 
+#define FILE_TYPE_MOVIE 1
+#define FILE_TYPE_PIC   2
+#define FILE_TYPE_PDF   3
+#define FILE_TYPE_UNKOWN    4
+
+static NSDictionary * fileTypeDic;
+
 @implementation NSString (More)
 
 #pragma mark 获取金额的字符串
@@ -76,41 +83,48 @@
 
 -(NSDictionary *)getFileType
 {
-    //不是.pbb为扩展名的文件一律视为非法格式
-    if (self == nil || ![self hasSuffix:@".pbb"])
+    if (!fileTypeDic)
     {
-        return [NSDictionary dictionaryWithObject:[NSNumber numberWithInteger:4]
-                                           forKey:self];
+        fileTypeDic = [NSDictionary dictionaryWithObjectsAndKeys:
+                       [NSNumber numberWithInt:FILE_TYPE_MOVIE], @"mp4",
+                       [NSNumber numberWithInt:FILE_TYPE_MOVIE], @"rmvb",
+                       [NSNumber numberWithInt:FILE_TYPE_MOVIE], @"mkv",
+                       [NSNumber numberWithInt:FILE_TYPE_MOVIE], @"mpeg",
+                       [NSNumber numberWithInt:FILE_TYPE_MOVIE], @"mov",
+                       [NSNumber numberWithInt:FILE_TYPE_MOVIE], @"avi",
+                       [NSNumber numberWithInt:FILE_TYPE_MOVIE], @"3gp",
+                       [NSNumber numberWithInt:FILE_TYPE_MOVIE], @"flv",
+                       [NSNumber numberWithInt:FILE_TYPE_MOVIE], @"wmv",
+                       [NSNumber numberWithInt:FILE_TYPE_MOVIE], @"mpg",
+                       [NSNumber numberWithInt:FILE_TYPE_MOVIE], @"vob",
+                       [NSNumber numberWithInt:FILE_TYPE_MOVIE], @"rm",
+                       [NSNumber numberWithInt:FILE_TYPE_MOVIE], @"wav",
+                       [NSNumber numberWithInt:FILE_TYPE_MOVIE], @"dat",
+                       [NSNumber numberWithInt:FILE_TYPE_PIC], @"jpg",
+                       [NSNumber numberWithInt:FILE_TYPE_PIC], @"bmp",
+                       [NSNumber numberWithInt:FILE_TYPE_PIC], @"gif",
+                       [NSNumber numberWithInt:FILE_TYPE_PIC], @"jpeg",
+                       [NSNumber numberWithInt:FILE_TYPE_PIC], @"jpe",
+                       [NSNumber numberWithInt:FILE_TYPE_PIC], @"png",
+                       [NSNumber numberWithInt:FILE_TYPE_PDF], @"pdf",nil];
+        
+    }
+
+    
+    //先清空服务器数据中"\0"的填充部分
+    NSString * fileWithOutPBB = [self stringByReplacingOccurrencesOfString:@"\0" withString:@""];
+    //不是.pbb为扩展名的文件一律视为非法格式
+    if (fileWithOutPBB == nil || !([fileWithOutPBB isEqualToString:@""] || [fileWithOutPBB hasSuffix:@".pbb"]))
+    {
+        return [NSDictionary dictionaryWithObject:[NSNumber numberWithInteger:FILE_TYPE_UNKOWN]
+                                           forKey:fileWithOutPBB];
     }
     
-    NSString * fileWithOutPBB = [self stringByReplacingOccurrencesOfString:@".pbb" withString:@""];
+    fileWithOutPBB = [fileWithOutPBB stringByReplacingOccurrencesOfString:@".pbb" withString:@""];
     NSString *fileExtention = [[fileWithOutPBB pathExtension] lowercaseString];
     
-    NSDictionary * fileTypeDic = [NSDictionary dictionaryWithObjectsAndKeys:
-                                  [NSNumber numberWithInt:1], @"mp4",
-                                  [NSNumber numberWithInt:1], @"rmvb",
-                                  [NSNumber numberWithInt:1], @"mkv",
-                                  [NSNumber numberWithInt:1], @"mpeg",
-                                  [NSNumber numberWithInt:1], @"mov",
-                                  [NSNumber numberWithInt:1], @"avi",
-                                  [NSNumber numberWithInt:1], @"3gp",
-                                  [NSNumber numberWithInt:1], @"flv",
-                                  [NSNumber numberWithInt:1], @"wmv",
-                                  [NSNumber numberWithInt:1], @"mpg",
-                                  [NSNumber numberWithInt:1], @"vob",
-                                  [NSNumber numberWithInt:1], @"rm",
-                                  [NSNumber numberWithInt:1], @"wav",
-                                  [NSNumber numberWithInt:1], @"dat",
-                                  [NSNumber numberWithInt:2], @"jpg",
-                                  [NSNumber numberWithInt:2], @"bmp",
-                                  [NSNumber numberWithInt:2], @"gif",
-                                  [NSNumber numberWithInt:2], @"jpeg",
-                                  [NSNumber numberWithInt:2], @"jpe",
-                                  [NSNumber numberWithInt:2], @"png",
-                                  [NSNumber numberWithInt:3], @"pdf",nil];
-    
+
     NSNumber *nsfileType  = fileTypeDic[fileExtention];
-    NSNumber *ns = [fileTypeDic objectForKey:fileExtention];
     if (nsfileType == nil)
     {
         return [NSDictionary dictionaryWithObject:[NSNumber numberWithInteger:4]

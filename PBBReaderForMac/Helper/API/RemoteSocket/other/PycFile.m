@@ -2146,9 +2146,19 @@ _ALL_END:
     
     //add end
     self.openTimeLong = receiveData->userData.iOpenTimeLong;
-    
+
     //文件类型
     self.fileType = [self getFileType:self.filePycNameFromServer];
+    
+    self.fileName = [self getNotExistFileNameFromPycFile:self.filePycNameFromServer
+                                           withExtention:[ self.filePycNameFromServer  pathExtension]
+                                                 forUser:@"not use"];
+    if (self.fileName == nil)
+    {
+        receiveData->suc = 0;
+    }
+    
+//    [self makeOpenFile];
     
     if (receiveData->suc & ERR_OK_OR_CANOPEN)
     {
@@ -2864,8 +2874,10 @@ _ALL_END:
      */
     self.seriesName = [[NSString alloc] initWithBytes:receiveData->userData.seriesname length:SERIESNAME_LEN encoding:NSUTF8StringEncoding];
     self.seriesName = [self.seriesName stringByReplacingOccurrencesOfString:@"\0" withString:@""];
+    
     //文件类型
     self.fileType = [self getFileType:self.filePycNameFromServer];
+
 }
 #pragma mark - 申请
 #pragma mark 查看申请提交申请<信息>
@@ -3656,12 +3668,9 @@ _ALL_END:
             //文件类型
             self.fileType = [self getFileType:self.filePycNameFromServer];
             
-            if (strlen(fileOutLineStru->firstseeTime)>0)
-            {
+            if (strlen(fileOutLineStru->firstseeTime)>0) {
                 self.firstSeeTime = [[NSString alloc]initWithBytes:fileOutLineStru->firstseeTime length:LONGTIME_LEN encoding:NSUTF8StringEncoding];
-            }
-            else
-            {
+            }else{
                 self.firstSeeTime = @"";
             }
             
