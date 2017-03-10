@@ -3,9 +3,11 @@
 //
 
 #import "NSImage+Extras.h"
+#import "NSString+More.h"
 
 #import "NSTextField+Attribute.h"
 #import "NSDate+String.h"
+
 #import "ToolString.h"
 #import "userDao.h"
 #import "SeriesDao.h"

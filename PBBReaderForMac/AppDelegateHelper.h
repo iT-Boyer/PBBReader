@@ -38,7 +38,6 @@ singleton_interface(AppDelegateHelper);
 //刷新单个文件信息
 -(BOOL)getFileInfoById:(NSInteger )theFileId pbbFile:(NSString *)pbbFileName PycFile:(NSString *)pycFileName fileType:(NSInteger) theFileType;
 
--(BOOL)fileIsTypeOfVideo:(NSString *)pathExt;
 //浮动窗口
 -(void)setText:(NSString *)text;
 -(void)hide:(NSTimeInterval)i;

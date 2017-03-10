@@ -234,7 +234,7 @@ singleton_implementation(AppDelegateHelper);
         return;
     }
     NSString *fileExt = [seePycFile.fileExtentionWithOutDot lowercaseString];
-    if (![self fileIsTypeOfVideo:fileExt] && ![fileExt isEqualToString:@"pdf"])
+    if (![fileExt fileIsTypeOfVideo] && ![fileExt isEqualToString:@"pdf"])
     {
         [self setAlertView:[NSString stringWithFormat:@"不支持该(%@)格式文件!",seePycFile.fileExtentionWithOutDot]];
         return;
@@ -1334,21 +1334,5 @@ singleton_implementation(AppDelegateHelper);
     isLoading = NO;
 }
 
-
--(BOOL)fileIsTypeOfVideo:(NSString *)pathExt
-{
-    if(pathExt == nil || pathExt.length == 0)
-    {
-        return NO;
-    }
-    NSString *str = [NSString stringWithFormat:@"%@",@"+rmvb+mkv+mpeg+mp4+mov+avi+3gp+flv+wmv+rm+mpg+vob+dat+"];
-    pathExt = [pathExt lowercaseString];
-    //    NSComparisonResult *result = [pathExt commonPrefixWithString:str options:NSCaseInsensitiveSearch|NSNumericSearch];
-    NSRange range=[str rangeOfString: pathExt];
-    if (!(range.location==NSNotFound)) {
-        return YES;
-    }
-    return NO;
-}
 
 @end

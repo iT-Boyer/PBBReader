@@ -21,4 +21,7 @@
 
 -(NSString *)stringReplaceDelWater:(NSArray *)items;
 -(BOOL)fileIsTypeOfVideo;
+
+//排查字符串包含
+-(NSDictionary *)getFileType;
 @end

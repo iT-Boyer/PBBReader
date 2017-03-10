@@ -273,50 +273,10 @@
 
 -(NSInteger)getFileType:(NSString *)filePath
 {
-    NSString *strFileExtend = [NSString stringWithFormat:@".%@",[filePath  pathExtension]];
-    NSMutableString *fileWithOutExtention = [NSMutableString stringWithFormat:@"%@", filePath];
-    NSRange range = [fileWithOutExtention rangeOfString:strFileExtend];
-    [fileWithOutExtention deleteCharactersInRange:range];
-
-//  NSMutableString *fileWithOutExtention = [NSMutableString stringWithFormat:@"%@", [filePath stringByDeletingPathExtension]];
-    
-    NSString *fileExtention1 = [fileWithOutExtention pathExtension];
-    self.fileExtentionWithOutDot = [fileWithOutExtention pathExtension];
-    
-    NSString *fileExtention = [fileExtention1 lowercaseString];
-    
-     NSDictionary * fileTypeDic = [NSDictionary dictionaryWithObjectsAndKeys:
-                                                 [NSNumber numberWithInteger:FILE_TYPE_MOVIE], @"mp4",
-                                                 [NSNumber numberWithInteger:FILE_TYPE_MOVIE], @"rmvb",
-                                                 [NSNumber numberWithInteger:FILE_TYPE_MOVIE], @"mkv",
-                                                 [NSNumber numberWithInteger:FILE_TYPE_MOVIE], @"mpeg",
-                                                 [NSNumber numberWithInteger:FILE_TYPE_MOVIE], @"mov",
-                                                 [NSNumber numberWithInteger:FILE_TYPE_MOVIE], @"avi",
-                                                 [NSNumber numberWithInteger:FILE_TYPE_MOVIE], @"3gp",
-                                                 [NSNumber numberWithInteger:FILE_TYPE_MOVIE], @"flv",
-                                                 [NSNumber numberWithInteger:FILE_TYPE_MOVIE], @"wmv",
-                                                 [NSNumber numberWithInteger:FILE_TYPE_MOVIE], @"mpg",
-                                                 [NSNumber numberWithInteger:FILE_TYPE_MOVIE], @"vob",
-                                                 [NSNumber numberWithInteger:FILE_TYPE_MOVIE], @"rm",
-                                                 [NSNumber numberWithInteger:FILE_TYPE_MOVIE], @"wav",
-                                                 [NSNumber numberWithInteger:FILE_TYPE_MOVIE], @"dat",
-                                                 [NSNumber numberWithInteger:FILE_TYPE_PIC], @"jpg",
-                                                 [NSNumber numberWithInteger:FILE_TYPE_PIC], @"bmp",
-                                                 [NSNumber numberWithInteger:FILE_TYPE_PIC], @"gif",
-                                                 [NSNumber numberWithInteger:FILE_TYPE_PIC], @"jpeg",
-                                                 [NSNumber numberWithInteger:FILE_TYPE_PIC], @"jpe",
-                                                 [NSNumber numberWithInteger:FILE_TYPE_PIC], @"png",nil];
-    
-    NSNumber *nsfileType  = fileTypeDic[fileExtention];
-    if (nsfileType == nil)
-    {
-        self.fileType = FILE_TYPE_UNKOWN;
-    }
-    else
-    {
-        self.fileType = [nsfileType integerValue];
-    }
-    return self.fileType;
+    NSDictionary *typeDic = [filePath getFileType];
+    self.fileExtentionWithOutDot = (NSString *)[typeDic allKeys][0];
+    NSNumber *typeNum = (NSNumber *)[typeDic allValues][0];
+    return [typeNum integerValue];
 }
 
 /**
@@ -2064,6 +2024,7 @@ _ALL_END:
     [self printByte:fileScreateR1 len:ENCRYPKEY_LEN description:@"miyao r1' "];
     self.fileOwner = [[NSString alloc] initWithBytes:receiveData->userData.logName length:USERNAME_LEN encoding:NSUTF8StringEncoding];
     self.filePycNameFromServer = [[NSString alloc]initWithBytes:receiveData->userData.fileoutName length:FILENAME_LEN encoding:NSUTF8StringEncoding];
+    self.filePycNameFromServer = [self.filePycNameFromServer stringByReplacingOccurrencesOfString:@"\0" withString:@""];
     self.startDay =  [[NSString alloc]initWithBytes:receiveData->userData.startTime  length:TIME_LEN encoding:NSUTF8StringEncoding];
     self.endDay = [[NSString alloc]initWithBytes:receiveData->userData.endTime  length:TIME_LEN encoding:NSUTF8StringEncoding];
     self.AllowOpenmaxNum = receiveData->userData.fileOpenNum;
@@ -2864,6 +2825,7 @@ _ALL_END:
 {
     self.fileOwner = [[NSString alloc] initWithBytes:receiveData->userData.logName length:USERNAME_LEN encoding:NSUTF8StringEncoding];
     self.filePycNameFromServer = [[NSString alloc]initWithBytes:receiveData->userData.fileoutName length:FILENAME_LEN encoding:NSUTF8StringEncoding];
+    self.filePycNameFromServer = [self.filePycNameFromServer stringByReplacingOccurrencesOfString:@"\0" withString:@""];
     self.startDay =  [[NSString alloc]initWithBytes:receiveData->userData.startTime  length:TIME_LEN encoding:NSUTF8StringEncoding];
     self.endDay = [[NSString alloc]initWithBytes:receiveData->userData.endTime  length:TIME_LEN encoding:NSUTF8StringEncoding];
     self.AllowOpenmaxNum = receiveData->userData.fileOpenNum;

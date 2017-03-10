@@ -660,8 +660,7 @@ extension ReceiveViewController
         }
         
         if !FileManager.default.fileExists(atPath: receiveFile.fileurl)
-            || !((appHelper?.fileIsType(ofVideo: receiveFile.filetype))!
-            || receiveFile.filetype.lowercased() == "pdf")
+            || !(receiveFile.filetype.fileIsTypeOfVideo() || receiveFile.filetype.lowercased() == "pdf")
         {
             readBtn.isEnabled = false
             readBtn.isHidden = true
@@ -878,7 +877,8 @@ extension ReceiveViewController:NSTableViewDelegate,NSTableViewDataSource
                 //原文件存在
                 cellView.textField?.textColor = kGray
                 //不支持文件格式
-                if !(appHelper?.fileIsType(ofVideo: ReceiveColumn.filetype))!
+                
+                if !ReceiveColumn.filetype.fileIsTypeOfVideo()
                 {
 //                    cellView.textField?.textColor = NSColor.grayColor()
                 }

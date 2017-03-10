@@ -60,14 +60,67 @@
 
 -(BOOL)fileIsTypeOfVideo
 {
-    NSString *pathExt = self;
+    if(self == nil || self.length == 0)
+    {
+        return NO;
+    }
     NSString *str = [NSString stringWithFormat:@"%@",@"+rmvb+mkv+mpeg+mp4+mov+avi+3gp+flv+wmv+rm+mpg+vob+dat+"];
-    pathExt = [pathExt lowercaseString];
     //    NSComparisonResult *result = [pathExt commonPrefixWithString:str options:NSCaseInsensitiveSearch|NSNumericSearch];
-    NSRange range=[str rangeOfString: pathExt];
-    if (!(range.location==NSNotFound)) {
+    NSRange range=[str rangeOfString: [self lowercaseString]];
+    if (!(range.location==NSNotFound))
+    {
         return YES;
     }
     return NO;
 }
+
+-(NSDictionary *)getFileType
+{
+    //不是.pbb为扩展名的文件一律视为非法格式
+    if (self == nil || ![self hasSuffix:@".pbb"])
+    {
+        return [NSDictionary dictionaryWithObject:[NSNumber numberWithInteger:4]
+                                           forKey:self];
+    }
+    
+    NSString * fileWithOutPBB = [self stringByReplacingOccurrencesOfString:@".pbb" withString:@""];
+    NSString *fileExtention = [[fileWithOutPBB pathExtension] lowercaseString];
+    
+    NSDictionary * fileTypeDic = [NSDictionary dictionaryWithObjectsAndKeys:
+                                  [NSNumber numberWithInt:1], @"mp4",
+                                  [NSNumber numberWithInt:1], @"rmvb",
+                                  [NSNumber numberWithInt:1], @"mkv",
+                                  [NSNumber numberWithInt:1], @"mpeg",
+                                  [NSNumber numberWithInt:1], @"mov",
+                                  [NSNumber numberWithInt:1], @"avi",
+                                  [NSNumber numberWithInt:1], @"3gp",
+                                  [NSNumber numberWithInt:1], @"flv",
+                                  [NSNumber numberWithInt:1], @"wmv",
+                                  [NSNumber numberWithInt:1], @"mpg",
+                                  [NSNumber numberWithInt:1], @"vob",
+                                  [NSNumber numberWithInt:1], @"rm",
+                                  [NSNumber numberWithInt:1], @"wav",
+                                  [NSNumber numberWithInt:1], @"dat",
+                                  [NSNumber numberWithInt:2], @"jpg",
+                                  [NSNumber numberWithInt:2], @"bmp",
+                                  [NSNumber numberWithInt:2], @"gif",
+                                  [NSNumber numberWithInt:2], @"jpeg",
+                                  [NSNumber numberWithInt:2], @"jpe",
+                                  [NSNumber numberWithInt:2], @"png",
+                                  [NSNumber numberWithInt:3], @"pdf",nil];
+    
+    NSNumber *nsfileType  = fileTypeDic[fileExtention];
+    NSNumber *ns = [fileTypeDic objectForKey:fileExtention];
+    if (nsfileType == nil)
+    {
+        return [NSDictionary dictionaryWithObject:[NSNumber numberWithInteger:4]
+                                           forKey:fileExtention];
+    }
+    else
+    {
+        return [NSDictionary dictionaryWithObject:nsfileType
+                                           forKey:fileExtention];
+    }
+}
+
 @end
