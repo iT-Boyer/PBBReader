@@ -46,6 +46,27 @@ echo "svn import "${ImportSVN}" https:\/\/192.168.85.64/svn/安装包/MAC -m "${
 export LC_CTYPE="zh_CN.UTF-8" #设置当前系统的 locale,支持中文路径
 #svn import "${ImportSVN}" https:\/\/192.168.85.64/svn/安装包/MAC -m "${ProductName}"
 
+###把Git迁移到SVN
+[参考](http://blog.csdn.net/zhangskd/article/details/43452627)
+cd git项目
+svn mkdir https://192.168.85.6/svn/DRM_iOS/trunk/MusicLrc -m "init"
+git svn init https://huoshuguang@192.168.85.6/svn/DRM_iOS/trunk/MusicLrc
+git show-ref  #获取git-svn最新提交hash SVNLastcommitID
+git log --pretty=oneline master | tail -n 1  #获取Git proj 的第一个GitFirstcommitID
+echo "GitFirstcommitID SVNLastcommitID" >> .git/info/grafts  #把Git proj从第一次提交，添加到SVN proj在最后一次提交之后。
+git-svn dcommit // 提交Git proj的更新
+注意！这个时候会报错：
+Unable to determine upstream SVN information from HEAD history.
+Perhaps the repository is empty. at /usr/local/git/libexec/git-core/git-svn line 852.
+解决方法
+# git show-ref trunk // 显示SVN proj trunk分支的HEAD，即r1
+79563196f21ce4699a04fa4ae24d0ca916bf3acf refs/remotes/trunk
+# git log --pretty=oneline master | tail -n 1 // 显示Git proj 的第一个commit
+561c439a15f807b8d62551a0c64f939c15489899 initial import
+# echo "561c439a15f807b8d62551a0c64f939c15489899 79563196f21ce4699a04fa4ae24d0ca916bf3acf" >> .git/info/grafts
+把Git proj从561c43开始的提交，添加到SVN proj在795631之后的提交。
+# git-svn dcommit // 提交Git proj的更新到SVN proj中
+这个时候就把Git proj完整的转化成SVN proj，后者完全符合SVN的规范了。
 
 
 ------------------------------
