@@ -65,7 +65,7 @@
 #define QQ_LEN 20
 #define ORDERNO_LEN 29
 #define FIELD_LEN 24
-#define VERSION 9
+#define VERSION 2030100  //2.1.2-9；2.3.1-2030100
 
 #define NOT_USE_LEN_NEW_FILE 124
 #define SESSION_KEY_LEN 256

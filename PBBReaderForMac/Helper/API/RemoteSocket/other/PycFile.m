@@ -41,8 +41,8 @@
     NSString *_sysInfoVersion;
     NSString *_OpenUUID;
     BOOL b_needNet;
-    
-    
+   
+    int _VersionInt;
 }
 //singleton_implementation(PycFile)
 
@@ -70,6 +70,7 @@
 //        _OpenUUID = [OpenUDID value];
         NSLog(@"init- pycfile-----");
         
+        _VersionInt=[ToolString getVersionStr];
     }
     return self;
 }
@@ -964,7 +965,7 @@
     //memcpy(&(data->userData.nick[0]), [self.nickname UTF8String], [self.nickname length]);
     data->userData.appType = CURRENTAPPTYPE;
     data->userData.random = self.Random;
-    data->userData.version = VERSION;
+    data->userData.version =_VersionInt;
     data->userData.dayNum = (int)self.openDay;
     data->userData.yearNum = (int)self.openYear;
     //add end
@@ -1212,7 +1213,7 @@ _ALL_END:
     
     //add by lry 2014-05-05
     data->userData.random = self.Random;
-    data->userData.version = VERSION;
+    data->userData.version =_VersionInt;
     //add end
     
     [coder codeBuffer:(Byte *)&((*data).userData) length:sizeof(SENDDATA_NEW_NEW)];
@@ -1262,7 +1263,7 @@ _ALL_END:
     
     //add by lry 2014-05-05
     data->userData.random = self.Random;
-    data->userData.version = VERSION;
+    data->userData.version =_VersionInt;
     data->userData.appType = 33; //MAC版本
     //add end
     
@@ -1325,7 +1326,7 @@ _ALL_END:
     
     //add by lry 2014-05-05
     data->userData.random = self.Random;
-    data->userData.version = VERSION;
+    data->userData.version =_VersionInt;
     data->userData.appType = CURRENTAPPTYPE;
     //add end
     
@@ -1994,7 +1995,7 @@ _ALL_END:
     //add by lry 2014-05-05
     data->userData.random = self.Random;
     NSLog(@"random = %d", data->userData.random);
-    data->userData.version = VERSION;
+    data->userData.version =_VersionInt;
     data->userData.appType = CURRENTAPPTYPE;
     memcpy((Byte *)(data->userData.hardno ), [_OpenUUID UTF8String], HARDNO_LEN);  //例子:vindor
     memcpy((Byte *)(data->userData.sysinfo ), [_sysInfoVersion UTF8String], SYSINFO_LEN);//例子:IOS7.0
@@ -2815,7 +2816,7 @@ _ALL_END:
     //add by lry 2014-05-05
     data->userData.random = self.Random;
     
-    data->userData.version = VERSION;
+    data->userData.version =_VersionInt;
     data->userData.appType = CURRENTAPPTYPE;
     //add end
     if(self.refreshType == 1)
@@ -3050,7 +3051,7 @@ _ALL_END:
     PycCode *coder = [[PycCode alloc] init];
     
     data->userData.random = self.Random;
-    data->userData.version = VERSION;
+    data->userData.version =_VersionInt;
     memcpy((Byte *)(data->userData.hardno ), [_OpenUUID UTF8String], HARDNO_LEN);
     memcpy((Byte *)(data->userData.sysinfo ), [_sysInfoVersion UTF8String], SYSINFO_LEN);
     memcpy(&(data->userData.logName[0]), [self.fileSeeLogname UTF8String] , MIN([self.fileSeeLogname lengthOfBytesUsingEncoding:NSUTF8StringEncoding], USERNAME_LEN));
@@ -3171,7 +3172,7 @@ _ALL_END:
     PycCode *coder = [[PycCode alloc] init];
     
     data->userData.random = self.Random;
-    data->userData.version = VERSION;
+    data->userData.version =_VersionInt;
     memcpy((Byte *)(data->userData.hardno ), [_OpenUUID UTF8String], HARDNO_LEN);
     memcpy(&(data->userData.QQ[0] ), [self.QQ UTF8String], QQ_LEN);
     memcpy(&(data->userData.email[0] ), [self.email UTF8String], EMAIL_LEN);
@@ -3270,7 +3271,7 @@ _ALL_END:
     
     PycCode *coder = [[PycCode alloc] init];
     data->userData.random = self.Random;
-    data->userData.version = VERSION;
+    data->userData.version =_VersionInt;
     memcpy(&(data->userData.phone[0] ), [self.bindingPhone UTF8String], PHONE_LEN);
 
     [coder codeBuffer:(Byte *)&((*data).userData) length:sizeof(STRUCTDATA_NEW_NEW)];
@@ -3359,7 +3360,7 @@ _ALL_END:
     pSendData->userData.random = self.Random;
     
     pSendData->type = NewPycUerRemoteOperateTypeBindPhone;
-    pSendData->userData.version = VERSION;
+    pSendData->userData.version =_VersionInt;
     memcpy(&(pSendData->userData.phone), [self.phone UTF8String], MIN([self.phone lengthOfBytesUsingEncoding:NSUTF8StringEncoding],PHONE_LEN));
     //    memcpy(&(pSendData->userData.versionStr), [self.versionStr UTF8String], MIN([self.versionStr lengthOfBytesUsingEncoding:NSUTF8StringEncoding],VERSION_LEN));
     memcpy(&(pSendData->userData.messageId), [self.verificationCodeID UTF8String], MIN([self.verificationCodeID lengthOfBytesUsingEncoding:NSUTF8StringEncoding],MESSAGE_ID_LEN));
@@ -3422,7 +3423,7 @@ _ALL_END:
     PycCode *coder = [[PycCode alloc] init];
     
     data->userData.random = self.Random;
-    data->userData.version = VERSION;
+    data->userData.version =_VersionInt;
     memcpy((Byte *)(data->userData.hardno ), [_OpenUUID UTF8String], HARDNO_LEN);
     memcpy((Byte *)(data->userData.sysinfo ), [_sysInfoVersion UTF8String], SYSINFO_LEN);
     memcpy(&(data->userData.logName[0]), [self.fileSeeLogname UTF8String] , MIN([self.fileSeeLogname lengthOfBytesUsingEncoding:NSUTF8StringEncoding], USERNAME_LEN));
@@ -3665,6 +3666,7 @@ _ALL_END:
             self.selffieldnum = fileOutLineStru->fieldnum;  //自定义字段的个数
             self.field1needprotect = fileOutLineStru->fieldprotect&1?1:0;  //1:保密
             self.field2needprotect = fileOutLineStru->fieldprotect&2?1:0;  //1:保密
+
             //文件类型
             self.fileType = [self getFileType:self.filePycNameFromServer];
             

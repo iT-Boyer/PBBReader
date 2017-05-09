@@ -23,6 +23,7 @@
 //判断运行环境，区别（虚拟机【Simulator】，或真机）
 + (NSString *) platformString;
 
++(int)getVersionStr;
 
 //判断本机网络是否正常
 +(BOOL)isConnectionAvailable;

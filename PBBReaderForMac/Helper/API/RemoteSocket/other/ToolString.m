@@ -35,7 +35,13 @@
 }
 
 
-
++(int)getVersionStr{
+    
+    NSString *str=[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+    NSArray *array = [str componentsSeparatedByString:@"."];
+    int versionStr = [array[0] intValue]*1000000+[array[1] intValue]*10000+[array[2] intValue]*100;
+    return versionStr;
+}
 
 /**
  *  转化本地时间
