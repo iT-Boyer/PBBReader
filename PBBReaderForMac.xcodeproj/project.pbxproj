@@ -962,6 +962,7 @@
 		14815B4D1D4B0D0600922A62 /* Socket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Socket.cpp; sourceTree = "<group>"; };
 		14815B4E1D4B0D0600922A62 /* Socket.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Socket.hpp; sourceTree = "<group>"; };
 		14815B521D4B131A00922A62 /* water.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = water.xml; sourceTree = "<group>"; };
+		148388151EF8ED530011DEC4 /* 搭建项目环境.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "搭建项目环境.md"; sourceTree = "<group>"; };
 		148AB4731CFFD24E00CAF9BA /* AppDelegateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegateHelper.h; path = ../AppDelegateHelper.h; sourceTree = "<group>"; };
 		148AB4741CFFD24E00CAF9BA /* AppDelegateHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegateHelper.m; path = ../AppDelegateHelper.m; sourceTree = "<group>"; };
 		148AB47B1CFFD78600CAF9BA /* AdvertisingImgCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvertisingImgCache.h; sourceTree = "<group>"; };
@@ -1374,6 +1375,7 @@
 		1437DD5F1CF2A75E001BD2D2 = {
 			isa = PBXGroup;
 			children = (
+				148388151EF8ED530011DEC4 /* 搭建项目环境.md */,
 				14DC955A1E6972C100055361 /* PBB Reader.entitlements */,
 				142687341E135692002CF075 /* MuPDF.xcodeproj */,
 				14642DBD1DB4C251004D9E9F /* PBBReader.entitlements */,
