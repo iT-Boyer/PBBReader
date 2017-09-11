@@ -219,6 +219,9 @@
 		148B6D981DE69167005B5DFB /* PBBLogSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 148B6D8F1DE69166005B5DFB /* PBBLogSDK.framework */; };
 		148B6D9F1DE69167005B5DFB /* PBBLogSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148B6D9E1DE69167005B5DFB /* PBBLogSDKTests.swift */; };
 		148B6DA11DE69167005B5DFB /* PBBLogSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 148B6D911DE69166005B5DFB /* PBBLogSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		148C83E21F66739100C25AC5 /* PBB-Prefix.pch in Resources */ = {isa = PBXBuildFile; fileRef = 14B25FB61CFD824A001BCE84 /* PBB-Prefix.pch */; };
+		148C83E31F66739100C25AC5 /* PBB-Prefix.pch in Resources */ = {isa = PBXBuildFile; fileRef = 14B25FB61CFD824A001BCE84 /* PBB-Prefix.pch */; };
+		148C83E41F66739100C25AC5 /* PBB-Prefix.pch in Resources */ = {isa = PBXBuildFile; fileRef = 14B25FB61CFD824A001BCE84 /* PBB-Prefix.pch */; };
 		149D53AC1DE4270E00FC4F63 /* CommentBlockSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 149D53A11DE4270E00FC4F63 /* CommentBlockSettings.m */; };
 		149D53AD1DE4270E00FC4F63 /* KeywordBlockSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 149D53A31DE4270E00FC4F63 /* KeywordBlockSettings.m */; };
 		149D53AE1DE4270E00FC4F63 /* MPVSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 149D53A51DE4270E00FC4F63 /* MPVSettings.m */; };
@@ -1417,28 +1420,12 @@
 		1437DD6A1CF2A75F001BD2D2 /* PBBReaderForMac */ = {
 			isa = PBXGroup;
 			children = (
-				1437DD9F1CF2AF7C001BD2D2 /* readme.md */,
+				148C83DA1F6671C300C25AC5 /* Controller */,
 				14AA3DC91D2A187200838B88 /* bilibili */,
 				14EE61891CF816E50051FD1A /* Helper */,
 				1437DD9A1CF2AC6E001BD2D2 /* Model */,
 				1437DD6B1CF2A75F001BD2D2 /* AppDelegate.swift */,
-				1437DD981CF2A8AC001BD2D2 /* MasterViewController.swift */,
-				14105B811D337FD1004CB1C2 /* ReceiveViewController.swift */,
-				14B0CF731D34C715004D22B5 /* BindingPhoneViewController.swift */,
-				14B0CF771D34F394004D22B5 /* ActivationController.swift */,
-				1494D6081D36305900842CD1 /* ApplyInfoViewController.swift */,
-				14B0CF791D34F3AE004D22B5 /* ActivationSuccessController.swift */,
-				1437DD6F1CF2A75F001BD2D2 /* Assets.xcassets */,
-				1437DD711CF2A75F001BD2D2 /* Main.storyboard */,
-				14B9EE5E1D79744400EC8986 /* PBBReader-Info.plist */,
-				142F72EF1D991DB900302896 /* updateinfo.plist */,
-				840AA6901CFCA2EA00819203 /* 114.png */,
-				142687591E136E2E002CF075 /* Manual.pdf */,
-				14248E461D2CCEFC00D3704C /* for_the_birds.avi */,
-				142EC39D1D2CDE0A00B88F96 /* 1.mp4.pbb */,
-				14815B521D4B131A00922A62 /* water.xml */,
-				14B25FB61CFD824A001BCE84 /* PBB-Prefix.pch */,
-				147A617B1CF6A01900390F83 /* PBBReaderForMac-Bridging-Header.h */,
+				148C83E11F66737700C25AC5 /* Supporting Files */,
 			);
 			path = PBBReaderForMac;
 			sourceTree = "<group>";
@@ -1616,6 +1603,46 @@
 				840E72441DE91ECC00E90644 /* DeviceInfoTest.swift */,
 			);
 			path = PBBLogSDKTests;
+			sourceTree = "<group>";
+		};
+		148C83DA1F6671C300C25AC5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1437DD981CF2A8AC001BD2D2 /* MasterViewController.swift */,
+				14105B811D337FD1004CB1C2 /* ReceiveViewController.swift */,
+				14B0CF731D34C715004D22B5 /* BindingPhoneViewController.swift */,
+				14B0CF771D34F394004D22B5 /* ActivationController.swift */,
+				1494D6081D36305900842CD1 /* ApplyInfoViewController.swift */,
+				14B0CF791D34F3AE004D22B5 /* ActivationSuccessController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		148C83E11F66737700C25AC5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				148C83E51F6673EB00C25AC5 /* testFile */,
+				1437DD711CF2A75F001BD2D2 /* Main.storyboard */,
+				1437DD9F1CF2AF7C001BD2D2 /* readme.md */,
+				14B9EE5E1D79744400EC8986 /* PBBReader-Info.plist */,
+				142F72EF1D991DB900302896 /* updateinfo.plist */,
+				840AA6901CFCA2EA00819203 /* 114.png */,
+				1437DD6F1CF2A75F001BD2D2 /* Assets.xcassets */,
+				14B25FB61CFD824A001BCE84 /* PBB-Prefix.pch */,
+				147A617B1CF6A01900390F83 /* PBBReaderForMac-Bridging-Header.h */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		148C83E51F6673EB00C25AC5 /* testFile */ = {
+			isa = PBXGroup;
+			children = (
+				142687591E136E2E002CF075 /* Manual.pdf */,
+				14248E461D2CCEFC00D3704C /* for_the_birds.avi */,
+				142EC39D1D2CDE0A00B88F96 /* 1.mp4.pbb */,
+				14815B521D4B131A00922A62 /* water.xml */,
+			);
+			name = testFile;
 			sourceTree = "<group>";
 		};
 		149D539F1DE4270E00FC4F63 /* Settings */ = {
@@ -2628,6 +2655,7 @@
 				143E387C1D3F1809004B0A4D /* mute.pdf in Resources */,
 				143E387D1D3F1809004B0A4D /* backwards.png in Resources */,
 				143E387E1D3F1809004B0A4D /* prev-episode.pdf in Resources */,
+				148C83E21F66739100C25AC5 /* PBB-Prefix.pch in Resources */,
 				143E387F1D3F1809004B0A4D /* name.txt in Resources */,
 				143E38801D3F1809004B0A4D /* privacy_url.txt in Resources */,
 				143E38811D3F1809004B0A4D /* titlebar-corner-left.png in Resources */,
@@ -2741,6 +2769,7 @@
 				14B64DF01DFFED81008C828F /* resizeindicator.png in Resources */,
 				14B64DF11DFFED81008C828F /* water.xml in Resources */,
 				14B64DF21DFFED81008C828F /* play.png in Resources */,
+				148C83E31F66739100C25AC5 /* PBB-Prefix.pch in Resources */,
 				14B64DF31DFFED81008C828F /* unfold.pdf in Resources */,
 				14B64DF41DFFED81008C828F /* vol_low.pdf in Resources */,
 				14B64DF51DFFED81008C828F /* fillscreen_lr.pdf in Resources */,
@@ -2799,6 +2828,7 @@
 				84AEDAF31DC5FF02001E8116 /* copyright.txt in Resources */,
 				84AEDAF41DC5FF02001E8116 /* fillscreen_ub.pdf in Resources */,
 				84AEDAF51DC5FF02001E8116 /* keywords.txt in Resources */,
+				148C83E41F66739100C25AC5 /* PBB-Prefix.pch in Resources */,
 				84AEDAF61DC5FF02001E8116 /* resizeindicator.png in Resources */,
 				84AEDAF71DC5FF02001E8116 /* water.xml in Resources */,
 				84AEDAF81DC5FF02001E8116 /* play.png in Resources */,

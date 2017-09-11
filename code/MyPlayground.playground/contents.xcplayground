@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<playground version='6.0' target-platform='osx' executeOnSourceChanges='false' last-migration='0810'>
-    <pages>
-        <page name='单元格高亮色'/>
-        <page name='版本升级'/>
-        <page name='FileManager使用'/>
-        <page name='单元测试'/>
-    </pages>
-</playground>
